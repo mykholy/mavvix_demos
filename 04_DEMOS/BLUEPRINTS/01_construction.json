@@ -1,0 +1,133 @@
+{
+  "slug": "construction",
+  "number": "01",
+  "displayName": "ATLAS STRUCTURES / أطلس للبناء",
+  "sector": "Construction & Engineering",
+  "routePrefix": "/[locale]/preview/construction",
+  "required": true,
+  "routeCount": 11,
+  "routes": [
+    {
+      "route": "/",
+      "name": "Homepage",
+      "goal": "Make capability and fit evident in first 5 seconds",
+      "sections": "Hero with rotating editorial project index; four core service pathways; selected case studies with sector and area; deliverables timeline; materials/process story; editorial journal; quote CTA",
+      "actions": "Hero projects link to correct case; tabs change project imagery; sticky inquiry preselects service; skip animation accessibility",
+      "acceptance": "Above-fold screenshot AR+EN reads as a construction company, not SaaS"
+    },
+    {
+      "route": "/projects",
+      "name": "Project atlas",
+      "goal": "Let buyer narrow references comparable to own project",
+      "sections": "Featured project; sidebar multi-filter sector, scope, city, area; reset; sort newest/area; results count; masonry/list switch; empty state",
+      "actions": "Filtering AND across dimensions; filters URL deep-linkable, back/forward working; project cards link",
+      "acceptance": "Filtered count and content match source dataset after refresh"
+    },
+    {
+      "route": "/projects/[slug]",
+      "name": "Project case study",
+      "goal": "Demonstrate breadth of an example project without false claims",
+      "sections": "Project identity; objective; constraints; scope and phases; annotated gallery; materials spec; design intent; download demo brief; related projects",
+      "actions": "Keyboard zoom gallery; before/after draggable; project-level contact prefill; gallery touch swipes",
+      "acceptance": "No unsupported completion stats or client names; all images coherent to same fictional property"
+    },
+    {
+      "route": "/services",
+      "name": "Services index",
+      "goal": "Help compare actual service packages",
+      "sections": "Service navigator; work type selector; deliverable comparisons; typical inputs; exclusions; sectors; related cases",
+      "actions": "Select service to detail; request quote prefill",
+      "acceptance": "Each service has different deliverables and tailored copy"
+    },
+    {
+      "route": "/services/[slug]",
+      "name": "Service dossier",
+      "goal": "Describe specific work for informed purchase",
+      "sections": "Overview; suitability; included/excluded scope; engagement sequence; dependencies; FAQs; 3 applicable cases",
+      "actions": "Scope CTA passes service and optional project; accordion keyboard usable",
+      "acceptance": "Refreshing deep link retains selected service"
+    },
+    {
+      "route": "/process",
+      "name": "Project methodology",
+      "goal": "Make realistic tender and handover stages concrete",
+      "sections": "Discovery intake; site survey; BOQ planning; procurement coordination; execution; QC/handover; illustrative artefact thumbnails",
+      "actions": "Phase accordion, scope checklist download or print",
+      "acceptance": "No promise of licensing or certification not provided"
+    },
+    {
+      "route": "/journal",
+      "name": "Insights",
+      "goal": "Show long-form editorial capability",
+      "sections": "Topic archive; search; category cards; related services",
+      "actions": "Search and pagination, article cards lead to real routes",
+      "acceptance": "All six articles unique Arabic/English substantive content"
+    },
+    {
+      "route": "/journal/[slug]",
+      "name": "Article",
+      "goal": "Demonstrate editorial detail",
+      "sections": "Intro, sections with diagram/table as relevant, glossary, related cases, next article",
+      "actions": "In-page TOC anchors, related links",
+      "acceptance": "Structured hierarchy and reading progress functional"
+    },
+    {
+      "route": "/request-quote",
+      "name": "Tender scope wizard",
+      "goal": "Capture demonstrative structured inquiry",
+      "sections": "Step 1 building sector and project stage; 2 scope services and approximate area; 3 constraints/timeline/budget band; 4 file checklist; 5 review; 6 receipt",
+      "actions": "Validate cross-fields; retain draft; back and edit; persist anonymized demo submission in SQLite; print summary",
+      "acceptance": "Completing journey creates scoped record, no real contractor contacted"
+    },
+    {
+      "route": "/about",
+      "name": "Studio profile",
+      "goal": "Support trust without inventing history",
+      "sections": "Work philosophy; team roles as illustrative; fieldwork methods; detailed FAQ",
+      "actions": "Process links and quote CTA",
+      "acceptance": "No fake ISO, awards, years or authentic testimonials"
+    },
+    {
+      "route": "/contact",
+      "name": "Contact & offices",
+      "goal": "Provide transparent intent",
+      "sections": "Sample contact routes; inquiry guide; Mavvix cross-site inquiry",
+      "actions": "Only Mavvix CTA leaves demo; fictional contact routes do not submit outbound",
+      "acceptance": "No fictional phone dial / address pin that pretends physical office"
+    }
+  ],
+  "flows": [
+    {
+      "name": "Tender for an office renovation",
+      "steps": "Home > Projects > filter commercial+interiors > project atlas-office-01 > review gallery+constraints > Similar scope > wizard prefilled > add area and required works > review > DEMO request receipt > admin sees request tagged construction.",
+      "oracle": "Required area positive; 2+ compatible services; demo-only confirmation and DB record visible in operator area."
+    },
+    {
+      "name": "Compare finishing packages",
+      "steps": "Services > Fit-out > Deliverables > Browse related references > share permalink > request-scope, selected package remains.",
+      "oracle": "Service selection and referral context survive refresh, deep-link and language switch."
+    },
+    {
+      "name": "Project search failure path",
+      "steps": "Projects > choose conflicting filters > purposeful zero-state > clear one dimension > results return > open relevant project.",
+      "oracle": "No fake count, no dead end or unresponsive reset."
+    }
+  ],
+  "design": "Architectural journal, ink #162327 / limestone #F2EFE9 / rust #D26A3B. Bold architecturally cropped hero with measured grid and vertical project rail; image-led detail, project index typography and annotated plan-like drawings. Avoid generic 3-card hero and blue gradients. AR IBM Plex Sans Arabic; EN Manrope. Mobile uses visual timeline and collapsible spec sheets.",
+  "signatureFeatures": [
+    "Project Atlas Explorer: sector x service x 6 area bands; URL-searchParams synced",
+    "Immersive before/after comparison on illustrative projects, keyboard accessible",
+    "Tender Scope Wizard with dependencies, review screen and persistent DEMO RFQ receipt",
+    "Technical service packages with clear deliverables/exclusions and related work",
+    "Project cross-references based on sector and work type"
+  ],
+  "seedRequirements": "12 projects (at least 3 sectors, 4 scope families, diverse size/location), 7 service packages, 6 journal posts, 12 gallery sets (minimum 3 images each), 6 FAQs, 2 featured case deep dives, 2 downloadable DEMO scope-checklist sheets.",
+  "adminRequirements": "Manage project records, multilingual cases, gallery order and alt text, service packages, FAQs and articles; update visibility/featured ordering; see demo RFQ submissions by scope/sector and status (new/reviewed/archived), never send an external quotation. Changing project visibility updates index, filters, home and sitemap previews.",
+  "negativeScenarios": [
+    "A 420 m² villa scope, two service packages, future requested start",
+    "Office fit-out 850 m², constrained access, filtered using city+sector",
+    "Archived project should disappear publicly but remain in admin",
+    "RFQ with 0 m² / invalid category is rejected",
+    "Same quote form submitted twice via rapid taps must not duplicate confirmation"
+  ]
+}

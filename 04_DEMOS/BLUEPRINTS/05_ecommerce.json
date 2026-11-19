@@ -1,0 +1,150 @@
+{
+  "slug": "ecommerce",
+  "number": "05",
+  "displayName": "NORIA ATELIER / نوريا أتيليه",
+  "sector": "Fashion & Lifestyle Ecommerce Store",
+  "routePrefix": "/[locale]/preview/ecommerce",
+  "required": true,
+  "routeCount": 13,
+  "routes": [
+    {
+      "route": "/",
+      "name": "Brand storefront",
+      "goal": "Enable visual merchandising",
+      "sections": "Collection campaign, editorial looks, category grid, trending products, artisan material story, journal teaser",
+      "actions": "Campaign link, wishlist toggles, product quick view",
+      "acceptance": "No fabricated claims or pressure countdown"
+    },
+    {
+      "route": "/collections",
+      "name": "Category overview",
+      "goal": "Surface product categories",
+      "sections": "Distinct category art, descriptions, curated products",
+      "actions": "Category select navigates to category-specific view",
+      "acceptance": "Different category content"
+    },
+    {
+      "route": "/collections/[slug]",
+      "name": "Collection listing",
+      "goal": "Filter practical options",
+      "sections": "Search bar, size/color/material/price filters, sort, result count, product cards",
+      "actions": "URL state, search debounced, quick add only if variant unambiguous",
+      "acceptance": "Out-of-stock products flagged"
+    },
+    {
+      "route": "/products/[slug]",
+      "name": "Product detail",
+      "goal": "Evaluate exact variant",
+      "sections": "Image gallery, swatches, size choice, true variant inventory, quantity, materials, size guide, delivery & care, related items",
+      "actions": "Variant switching changes image/stock/price, add to cart, size modal",
+      "acceptance": "Variant-specific stock server enforced"
+    },
+    {
+      "route": "/search",
+      "name": "Search results",
+      "goal": "Find SKU or product",
+      "sections": "Search suggestions, relevance, zero state, filters",
+      "actions": "Search query persists across nav",
+      "acceptance": "Search results correct"
+    },
+    {
+      "route": "/wishlist",
+      "name": "Saved items",
+      "goal": "Revisit favorites",
+      "sections": "Saved product cards, empty state, related suggestions",
+      "actions": "Add/remove and persist locally",
+      "acceptance": "No ghost items"
+    },
+    {
+      "route": "/cart",
+      "name": "Cart",
+      "goal": "Understand true order arithmetic",
+      "sections": "Line items with variant, image, price, qty, subtotal, promotion code, shipping region",
+      "actions": "Increment/decrement, remove, apply code, update shipping and totals",
+      "acceptance": "Server re-prices in demo checkout; no client price trust"
+    },
+    {
+      "route": "/checkout",
+      "name": "Simulated checkout",
+      "goal": "Complete realistic checkout without payment",
+      "sections": "Review basket, example address zone, optional COD method only, promo, demo terms, final action",
+      "actions": "Validate fields and stock; create SQLite demo order and items; display simulation receipt",
+      "acceptance": "Never collect real card data; no real order sent"
+    },
+    {
+      "route": "/orders/[id]",
+      "name": "Demo order summary",
+      "goal": "Verify receipt state",
+      "sections": "Order line items, prices, shipping, example address redacted, label SIMULATED",
+      "actions": "Lookup by session-owned demo order id",
+      "acceptance": "No public leak of another session order"
+    },
+    {
+      "route": "/story",
+      "name": "Brand story",
+      "goal": "Explain product positioning",
+      "sections": "Materials, process editorial, care policy",
+      "actions": "Links to product material filters",
+      "acceptance": "No counterfeit sustainability certification"
+    },
+    {
+      "route": "/journal",
+      "name": "Style journal",
+      "goal": "Build lifestyle editorial",
+      "sections": "4 posts, editorial images, taxonomy",
+      "actions": "Article detail routes and related products",
+      "acceptance": "No thin stubs"
+    },
+    {
+      "route": "/journal/[slug]",
+      "name": "Editorial article",
+      "goal": "Offer styling detail",
+      "sections": "Longform copy, material advice, related collection",
+      "actions": "TOC, product links",
+      "acceptance": "Bilingual original copy"
+    },
+    {
+      "route": "/help",
+      "name": "Policy & FAQ",
+      "goal": "Clarify order example limitations",
+      "sections": "Delivery zones, returns example, size/availability help",
+      "actions": "FAQ accordion and cart links",
+      "acceptance": "Label fictional sample policies"
+    }
+  ],
+  "flows": [
+    {
+      "name": "Full shopping cart to demo COD",
+      "steps": "Home > collection > size and color filter > product sku-01 > choose M ivory > add qty 2 > cart > set shipping zone > apply valid promo > checkout > server recalculates > create simulated order > order summary route > admin sees DEMO order.",
+      "oracle": "Totals match server and data, stock cannot go negative, receipts session-protected."
+    },
+    {
+      "name": "Out-of-stock handling",
+      "steps": "Product > select sold-out size/color > add disabled with meaningful text > select available > add 1 > return cart.",
+      "oracle": "Variant selection correctly prevents unavailable combinations."
+    },
+    {
+      "name": "Coupon rejection",
+      "steps": "Cart > enter expired or below-minimum coupon > error inline > valid coupon passes > total updated.",
+      "oracle": "Same rule enforced server-side."
+    }
+  ],
+  "design": "Modern fashion editorial with warm white, desaturated rose and ink; campaign art direction, bold typography and material details. Avoid default template/store builder demo appearance. Product imagery consistent by SKU/color.",
+  "signatureFeatures": [
+    "Real SKU and variant inventory availability (at least 3 sizes and 3 colors across items)",
+    "Persistent cart with line merge only for same variant, quantity and stock constraints",
+    "Pricing engine: subtotal + deterministic sample shipping – valid discount = total",
+    "Working product search/filter/sort, wish list and recently viewed",
+    "Simulated checkout and order status read-only viewer with no delivery guarantee"
+  ],
+  "seedRequirements": "24 products, 4 collections, minimum 60 variants, 5 size charts/material guides, 4 editorial journal articles, 3 demo promo rules incl expired/min-cart, 3 shipping zones/prices, 5 intentionally sold-out variants.",
+  "adminRequirements": "Product catalog, variants, stock, collections, editorial sections, sample promo rules and shipping zones, demo orders (SIMULATED) with read-only timeline. Changes to stock must appear in product, search, cart and checkout validation.",
+  "negativeScenarios": [
+    "sku-01 M ivory stock=7; qty 2 works and decrements simulated availability only if order policy says so",
+    "Sold-out combination stock=0; add action disabled",
+    "Promo 10% requires >=1000 EGP, max 200 EGP; expired code rejected",
+    "Cairo shipping 70 EGP, Alexandria 95 EGP, other zone 125 EGP (all illustrative)",
+    "Two distinct variants stay separate in cart; same variant merges",
+    "Session A cannot see Session B demo order"
+  ]
+}

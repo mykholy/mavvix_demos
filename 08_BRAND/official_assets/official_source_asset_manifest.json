@@ -1,0 +1,37 @@
+{
+  "brand": "Mavvix Software",
+  "release": "2026-10-20",
+  "palette": {
+    "navy": "#08132d",
+    "electric_blue": "#1667F5",
+    "teal": "#0BBFC7",
+    "light": "#F8FAFC"
+  },
+  "logo_source": "01_ORIGINAL_SOURCES/horizontal_primary_original.png",
+  "icon_source": "01_ORIGINAL_SOURCES/symbol_gradient_original.png",
+  "notes": [
+    "Source PNG originals are preserved unmodified.",
+    "Derived PNGs and favicon are raster exports.",
+    "This package is not a true editable vector master and should not be described as such.",
+    "For dark headers, use 03_WEB_ICONS/site-logo-dark-bg.png rather than dark text original."
+  ],
+  "website": {
+    "light_header": "03_WEB_ICONS/site-logo-light-bg.png",
+    "dark_header": "03_WEB_ICONS/site-logo-dark-bg.png",
+    "favicon_ico": "03_WEB_ICONS/favicon.ico",
+    "favicon_32": "03_WEB_ICONS/favicon-32x32.png",
+    "apple_touch": "03_WEB_ICONS/apple-touch-icon.png",
+    "pwa_192": "03_WEB_ICONS/android-chrome-192x192.png",
+    "pwa_512": "03_WEB_ICONS/android-chrome-512x512.png",
+    "maskable": "03_WEB_ICONS/maskable-icon-512x512.png",
+    "og": "04_SOCIAL/mavvix-og-1200x630.png"
+  },
+  "source_files": [
+    "horizontal_primary_original.png",
+    "horizontal_navy_monochrome_original.png",
+    "stacked_primary_original.png",
+    "symbol_gradient_original.png",
+    "app_icon_light_original.png",
+    "app_icon_navy_original.png"
+  ]
+}

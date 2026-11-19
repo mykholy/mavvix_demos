@@ -1,0 +1,134 @@
+{
+  "slug": "industrial",
+  "number": "02",
+  "displayName": "FERROLINE INDUSTRIES / فيرولاين للصناعات",
+  "sector": "Industrial, Manufacturing & Export",
+  "routePrefix": "/[locale]/preview/industrial",
+  "required": true,
+  "routeCount": 11,
+  "routes": [
+    {
+      "route": "/",
+      "name": "Industrial landing",
+      "goal": "Communicate capability by product class and sourcing workflow",
+      "sections": "Technical split hero; categories rail; production process strip; material grade quick selector; sample industrial applications; RFQ steps",
+      "actions": "Category tile opens filtered catalog; product selector updates spec quickview",
+      "acceptance": "First fold communicates B2B procurement value"
+    },
+    {
+      "route": "/products",
+      "name": "Engineering catalog",
+      "goal": "Discover correct SKU efficiently",
+      "sections": "Search by code/name; category, grade, dimension, finish filters; price disclosure as request quote; card/table switch; sort",
+      "actions": "Intersection filters; URL persistence; table accessible and horizontally scroll contained",
+      "acceptance": "Counts/units accurate after filters"
+    },
+    {
+      "route": "/products/[slug]",
+      "name": "SKU dossier",
+      "goal": "Answer buyer spec checklist",
+      "sections": "Product photo set; unique identifier; dimensional drawings; gauge, material, finish; packing; lead-time example caveat; use cases; downloads; related SKUs",
+      "actions": "Variant/grade selection changes exact specs; add correct variant and MOQ to RFQ",
+      "acceptance": "SKU detail matches quote basket and downloaded sheet"
+    },
+    {
+      "route": "/compare",
+      "name": "Spec comparison",
+      "goal": "Compare material/size variants fairly",
+      "sections": "3-column comparison with grouped attributes and missing values marked",
+      "actions": "Add/remove SKU; compare URLs; export print view",
+      "acceptance": "Each column matches selected SKU, no mismatched units"
+    },
+    {
+      "route": "/rfq",
+      "name": "Quotation basket",
+      "goal": "Prepare a multi-item quote",
+      "sections": "Line items, grades, quantities and units, MOQ messaging, notes and region, validation, review summary",
+      "actions": "Update remove items, save draft, submit SQLite, produce demonstrative receipt",
+      "acceptance": "Duplicate SKU merges only when variant identical"
+    },
+    {
+      "route": "/industries",
+      "name": "Applications",
+      "goal": "Connect specification to real buying context",
+      "sections": "Construction, packaging, machinery, architectural and HVAC example use cases",
+      "actions": "Filter products by use case and link to matching detail",
+      "acceptance": "No unrelated products shown"
+    },
+    {
+      "route": "/process",
+      "name": "Production capabilities",
+      "goal": "Explain possible production workflow honestly",
+      "sections": "Material input, forming/cutting/finishing, quality checks, packing workflow, tolerance explanation",
+      "actions": "Interactively choose process and see compatible SKUs",
+      "acceptance": "No false certifications or ISO claims"
+    },
+    {
+      "route": "/resources",
+      "name": "Technical library",
+      "goal": "Make knowledge useful",
+      "sections": "Materials glossary, tolerances, finishes, FAQ and resources",
+      "actions": "Search resources; article/datasheet route",
+      "acceptance": "Resources have actual detail"
+    },
+    {
+      "route": "/resources/[slug]",
+      "name": "Technical article",
+      "goal": "Give procurement education",
+      "sections": "Specification example tables, application checklist, download CTA, related products",
+      "actions": "TOC anchors, named relevant links",
+      "acceptance": "Article at least 300 words each language for key resources"
+    },
+    {
+      "route": "/about",
+      "name": "Company profile",
+      "goal": "Represent hypothetical operation clearly",
+      "sections": "Manufacturing overview, process diagram, service coverage, philosophy, contact intent",
+      "actions": "RFQ and catalog navigation",
+      "acceptance": "No false factory capacity or export permits"
+    },
+    {
+      "route": "/contact",
+      "name": "Business inquiry",
+      "goal": "Move visitor to right process",
+      "sections": "Sales vs technical routes, RFQ link, example response steps",
+      "actions": "Contact demo request and actual Mavvix sales link separate",
+      "acceptance": "No unverified phone/address"
+    }
+  ],
+  "flows": [
+    {
+      "name": "Buyer builds export RFQ",
+      "steps": "Home > profiles category > filter 304 stainless and size > SKU ferro-304-40 > datasheet > add 500 m > select second SKU > RFQ basket > adjust quantity > set packaging and export destination > review > DEMO receipt > admin review queue.",
+      "oracle": "Qty unit correct; MOQ enforce; receipt item rows equal basket; preserved across refresh."
+    },
+    {
+      "name": "Technical side-by-side selection",
+      "steps": "Catalog > add two compatible fasteners + one profile to compare > compare grade/diameter/finish > remove one > printable spec summary.",
+      "oracle": "Missing attributes shown as n/a; no false equivalence."
+    },
+    {
+      "name": "Bad MOQ rejection",
+      "steps": "Select quantity below pack multiple > inline error > adjust to 200 > add successfully.",
+      "oracle": "Server rejects invalid MOQ independently of client UI."
+    }
+  ],
+  "design": "Steel-blue precision instrument aesthetic. Navy #12243C / neutral #F4F6F6 / ochre #DE9E37. Clear dense tables, precise grid, macro material imagery, integrated spec sheet look, catalog-first mega-menu. Technical English typography paired to formal Arabic. No large luxury real-estate imagery.",
+  "signatureFeatures": [
+    "Multi-SKU quote basket with persisted draft and quantity units/MOQ validation",
+    "Spec comparison up to 3 SKUs across consistent attributes",
+    "Interactive process and surface-treatment guide",
+    "Technical datasheet export generated from selected local data",
+    "Export inquiry with target region, packaging unit and requested volume"
+  ],
+  "seedRequirements": "24 SKUs across 5 coherent families, 4 material grades, 3 finish types, 5 use cases, 5 process records, 7 FAQ, 6 technical articles, 3 downloadable datasheets whose tables match source records.",
+  "adminRequirements": "Product families, SKUs, grade/finish variants, datasheet files, technical articles and translation; RFQ requests and line item status; CSV export demo-only; publish/unpublish item. A product update must be reflected in detail, compare, search and RFQ selection.",
+  "negativeScenarios": [
+    "500 m profiles from source SKU with exact pack of 10",
+    "Product with incompatible grade missing from another SKU comparison",
+    "SKU with no image uses designed placeholder without broken icon",
+    "Quote basket survives restart in local guest session",
+    "Qty negative or non-integer pack multiplier rejected",
+    "Versioned spec sheet matches current seeded material values"
+  ]
+}

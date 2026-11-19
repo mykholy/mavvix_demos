@@ -1,0 +1,141 @@
+{
+  "slug": "real-estate",
+  "number": "03",
+  "displayName": "MERIDIAN RESIDENCES / ميريديان العقارية",
+  "sector": "Property Discovery & Real Estate",
+  "routePrefix": "/[locale]/preview/real-estate",
+  "required": true,
+  "routeCount": 12,
+  "routes": [
+    {
+      "route": "/",
+      "name": "Showcase home",
+      "goal": "Make developer experience concrete",
+      "sections": "Immersive project hero; search bar; featured development; property types; district journal; featured unit matrix; consultation CTA",
+      "actions": "Search submits supported filters; featured units open correct details",
+      "acceptance": "No unsupported guaranteed returns claims"
+    },
+    {
+      "route": "/developments",
+      "name": "Developments",
+      "goal": "Choose project before specific unit",
+      "sections": "Project cards with area, location, unit types, sample plan, amenities, progress labeled demo",
+      "actions": "Filter by area and project type; open project details",
+      "acceptance": "All projects contain linked units"
+    },
+    {
+      "route": "/developments/[slug]",
+      "name": "Development story",
+      "goal": "Explore real-estate choice context",
+      "sections": "Editorial masterplan; amenities map illustration; unit mix table; location guide; photos; sample payment explanation",
+      "actions": "Switch unit mix tab; filter available unit listings by project",
+      "acceptance": "Unit list matches development id"
+    },
+    {
+      "route": "/properties",
+      "name": "Search listings",
+      "goal": "Find budget-appropriate units",
+      "sections": "Search and filters price/area/type/beds/district/status; sort price/size; list/grid and optional illustrative map",
+      "actions": "Filter URL sync; saved favorites; compare toggle",
+      "acceptance": "No filter offers out-of-range results"
+    },
+    {
+      "route": "/properties/[slug]",
+      "name": "Property details",
+      "goal": "Determine feasibility",
+      "sections": "Structured spec sheet; price; beds; baths; area; floor; finishing; status; floorplan; photos; project context; similar units",
+      "actions": "Gallery zoom, share, favorite, add to compare, request viewing prefilled",
+      "acceptance": "No sale of unavailable unit; demo availability clear"
+    },
+    {
+      "route": "/compare",
+      "name": "Compare listings",
+      "goal": "Support choice across candidates",
+      "sections": "3 columns specs, price/m² calculation, difference emphasis, strengths, printing",
+      "actions": "Remove/add and persist selection; responsive mobile comparison layout",
+      "acceptance": "No horizontal overflow on 320px"
+    },
+    {
+      "route": "/saved",
+      "name": "Saved properties",
+      "goal": "Return to shortlist",
+      "sections": "Saved items with empty state and CTA to search",
+      "actions": "Toggle favorite consistent with list/detail",
+      "acceptance": "No phantom favorites"
+    },
+    {
+      "route": "/viewing",
+      "name": "Viewing request",
+      "goal": "Submit meaningful preference",
+      "sections": "Select property, preferred slot/time, mode in-person/video, short note, review and receipt",
+      "actions": "Validate unavailable property; persist demo request in SQLite; no actual hold created",
+      "acceptance": "Confirmation says REQUEST ONLY, not appointment booked"
+    },
+    {
+      "route": "/journal",
+      "name": "Neighborhood guides",
+      "goal": "Explain decision factors",
+      "sections": "Guide archive; neighborhood highlights; budget/stage explainers",
+      "actions": "Articles links and related listings",
+      "acceptance": "No fabricated demographic/price market data"
+    },
+    {
+      "route": "/journal/[slug]",
+      "name": "Buyer guide",
+      "goal": "Support informed comparison",
+      "sections": "Localized long-form; practical checklist and considerations",
+      "actions": "In-page links back to filtered listings",
+      "acceptance": "No investment guarantee"
+    },
+    {
+      "route": "/about",
+      "name": "Company",
+      "goal": "Present editorial service identity",
+      "sections": "Process, publishing ethics, fictional team roles, FAQ",
+      "actions": "Consultation CTA",
+      "acceptance": "No invented developer license or partnerships"
+    },
+    {
+      "route": "/contact",
+      "name": "Request help",
+      "goal": "Find next step",
+      "sections": "Inquiry category, sample request or Mavvix CTA",
+      "actions": "Clear distinction fictional developer vs Mavvix provider",
+      "acceptance": "No real-world address claims"
+    }
+  ],
+  "flows": [
+    {
+      "name": "Buyer filters and books viewing inquiry",
+      "steps": "Home filter apartment+max 3m > 12+ listing candidates > open unit prop-01 > inspect images and plan > save/compare two alternatives > request a Tuesday preference > receipt request id (not confirmation) > admin view queue.",
+      "oracle": "Numeric filter and compare correct; unit ID bound to viewing request."
+    },
+    {
+      "name": "Investor compares options",
+      "steps": "Developments > explore development > choose listing > add 3 compare > attempt 4th shows limit > print summary with sample disclaimers.",
+      "oracle": "No more than 3; compare list persists on refresh."
+    },
+    {
+      "name": "Out of stock viewing rejected",
+      "steps": "Mark one seed unit unavailable > details show unavailable > request viewing action disabled/indicates alternative.",
+      "oracle": "Server refuses request for unavailable unit."
+    }
+  ],
+  "design": "Luxury but legible editorial property publication. Stone #F5F0E6 / forest-charcoal #25312D / bronze #A8764F. Landscape visual edge, map/list rhythm, restrained serif accents, project identity panels; not generic cards or unsupported ROI badges.",
+  "signatureFeatures": [
+    "Linked project/unit taxonomy with persistent multi-filters and query URL",
+    "Compare up to 3 properties including price/area/layout and exact differences",
+    "Mortgage/instalment estimator clearly labeled illustrative and non-financial advice",
+    "Photo gallery and floorplan viewer with true example dimensions labels",
+    "Request viewing with preference picker, status REQUESTED in operator console"
+  ],
+  "seedRequirements": "5 fictional developments; 24 units across 5 types, 4 neighborhoods; 3 size ranges; 6 editorial location guides; 2 illustrative plans per development; 4+ visual assets per detail; some units unavailable and transparently flagged.",
+  "adminRequirements": "Projects/developments, unit listings, prices, statuses, floor plans, galleries, neighborhood articles and incoming viewing requests. Admin changing property status immediately updates filters, comparison and request eligibility.",
+  "negativeScenarios": [
+    "Apartments <=3m EGP returns deterministic subset",
+    "One 135 m² property with 2 beds and 1 bath, all contexts consistent",
+    "One unit status unavailable; viewing request blocked",
+    "Compare 3 then add fourth shows helpful feedback",
+    "Estimated monthly instalment formula displayed with input assumptions and disclaimers"
+  ]
+}

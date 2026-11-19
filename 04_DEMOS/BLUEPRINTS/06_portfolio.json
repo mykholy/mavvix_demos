@@ -1,0 +1,125 @@
+{
+  "slug": "portfolio",
+  "number": "06",
+  "displayName": "SALMA HASSAN STUDIO / سلمى حسن ستوديو",
+  "sector": "Professional / Creative Portfolio",
+  "routePrefix": "/[locale]/preview/portfolio",
+  "required": true,
+  "routeCount": 10,
+  "routes": [
+    {
+      "route": "/",
+      "name": "Home",
+      "goal": "Express distinctive creative practice",
+      "sections": "Hero identity, moving type strip optional, flagship cases, capabilities, writing excerpt, project inquiry CTA",
+      "actions": "Project reveal interactions; content links to case",
+      "acceptance": "Different from contractor despite both having projects"
+    },
+    {
+      "route": "/work",
+      "name": "Work index",
+      "goal": "Find relevant case",
+      "sections": "Filter discipline/year/type; grid/table layout; visible tags; project count",
+      "actions": "Filter retained in URL; toggle view; sort if supported",
+      "acceptance": "Counts/data correct"
+    },
+    {
+      "route": "/work/[slug]",
+      "name": "Long case study",
+      "goal": "Teach the craft of real deliverables",
+      "sections": "Context, research, constraint, moodboard, iterations, chosen direction, what changed, final asset gallery, deliverable inventory",
+      "actions": "Annotation toggles, zoom gallery, project inquiry preselects case",
+      "acceptance": "Each case 6+ distinct content sections and 5+ consistent images"
+    },
+    {
+      "route": "/services",
+      "name": "Engagements",
+      "goal": "Define offers and prerequisites",
+      "sections": "Strategy/design/consultancy scopes, deliverables, sample phases, exclusions",
+      "actions": "Select service in intake",
+      "acceptance": "Not vague service tiles"
+    },
+    {
+      "route": "/services/[slug]",
+      "name": "Offer detail",
+      "goal": "Answer buyer intent",
+      "sections": "Who suited, discovery inputs, scope options, timeline variables, sample outputs and related projects",
+      "actions": "CTA prefilled to intake",
+      "acceptance": "Each offer distinct"
+    },
+    {
+      "route": "/about",
+      "name": "Practice story",
+      "goal": "Communicate character and trust without fakery",
+      "sections": "Ethos, sample process, editorial portrait illustration, values and tools",
+      "actions": "Contact CTA, bio downloads sample",
+      "acceptance": "Not actual unverified credentials"
+    },
+    {
+      "route": "/journal",
+      "name": "Essays",
+      "goal": "Show expertise",
+      "sections": "Article categories, archives and search",
+      "actions": "Search and article route",
+      "acceptance": "6 articles written intentionally"
+    },
+    {
+      "route": "/journal/[slug]",
+      "name": "Essay detail",
+      "goal": "Go beyond blog stub",
+      "sections": "300+ words, annotations and references where appropriate",
+      "actions": "TOC, related links",
+      "acceptance": "Text readable AR EN"
+    },
+    {
+      "route": "/contact",
+      "name": "Project brief",
+      "goal": "Qualify scope",
+      "sections": "Brief type, goal, project size, deliverables, start window, sample contact, review",
+      "actions": "Validate and persist DEMO inquiry; CTA to hire Mavvix clearly separate",
+      "acceptance": "No fake calendar booking confirmation"
+    },
+    {
+      "route": "/now",
+      "name": "Working now",
+      "goal": "Humanizing editorial panel",
+      "sections": "Current conceptual focus, methods, available engagement types",
+      "actions": "Internal links, update through admin",
+      "acceptance": "No false statement of real schedule"
+    }
+  ],
+  "flows": [
+    {
+      "name": "Agency client studies brand work",
+      "steps": "Home > work > filter branding > detailed case > toggle annotations > inspect decisions > request similar scope > prefilled inquiry > DEMO receipt > admin queue.",
+      "oracle": "Query and service prefill consistent."
+    },
+    {
+      "name": "Visitor reads editorial article",
+      "steps": "Journal > article about brand constraints > jump to headings > relevant case > linked service.",
+      "oracle": "Related items semantically linked"
+    },
+    {
+      "name": "No results",
+      "steps": "Work > conflicting filters > clear controls > navigate case > back retains filter",
+      "oracle": "Responsive, no dead end"
+    }
+  ],
+  "design": "Swiss-Editorial typographic expression, off-white black and electric lime accents, oversized grid/typographic hierarchy, photo/typography cadence and unusually beautiful long-form project writing. Not templated resume or small card list.",
+  "signatureFeatures": [
+    "Rich case storytelling with problem, constraints, process, decisions and deliverables",
+    "Portfolio filters by sector/service and a true grid/list mode",
+    "Interactive image annotations and before/after concept rationale",
+    "Project brief intake with scope/budget/timeline and matching service preselection",
+    "Bilingual opinionated essays linked to services and work"
+  ],
+  "seedRequirements": "12 projects with 4 unique discipline narratives, 7 service packages, 6 thought articles, 12 galleries, 8 FAQs, 3 inquiry scenarios.",
+  "adminRequirements": "Cases, services, asset annotations, journals, pages and inquiry queue; editor can reorder case sections and preview AR/EN before publishing. All public claims marked concept.",
+  "negativeScenarios": [
+    "Filter by brand strategy leaves correct case subset",
+    "Grid/list mode accessible at 320 px",
+    "Project gallery annotations follow correct image",
+    "Inquiry form retains selected case and service after language switch",
+    "Draft article does not appear publicly"
+  ]
+}

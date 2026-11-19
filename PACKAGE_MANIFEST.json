@@ -1,0 +1,392 @@
+{
+  "title": "Mavvix Gemini Flash Demo Factory — V2 Full Working Demo Specifications",
+  "date": "2026-11-19",
+  "version": "2.0",
+  "kind": "Implementation kit / prompts / seed / SQL schema / QA / official Mavvix brand assets; not built React sites",
+  "mandatory_verticals": 8,
+  "route_patterns": 91,
+  "qa_test_cases": 197,
+  "sqlite_schema_tables": 28,
+  "files": [
+    {
+      "path": "00_AGENT/MASTER_IMPLEMENTATION_PROMPT.md",
+      "bytes": 14146,
+      "sha256": "153be88a39b6b463236a190e5a49b390f64af35111f84bc2ccd58065b7699b6e"
+    },
+    {
+      "path": "00_AGENT/ONE_MESSAGE_AR_TO_GEMINI.txt",
+      "bytes": 1270,
+      "sha256": "c422f596bda344c5e03d07d217765014f46f6ab7c6613dbe3c237a6b8bc0f137"
+    },
+    {
+      "path": "00_AGENT/PER_VERTICAL_RESUME_INDEX.md",
+      "bytes": 1139,
+      "sha256": "b86a7fe238f0e4426e7bedd68c1f3a82eb22a0fa3b8060f57ed9236e612b1fbf"
+    },
+    {
+      "path": "00_AGENT/RESUME_PROMPT.txt",
+      "bytes": 509,
+      "sha256": "27937c2ae2cdeb4a5ea4ac238439f35b50cb514d9a7c5e67be0547e3a5b01652"
+    },
+    {
+      "path": "00_AGENT/SECTOR_PROMPTS/01_construction.txt",
+      "bytes": 716,
+      "sha256": "e482cf6fd3bdb247f7080942bab8b9972af8bb4e064c243acccf0bcdbe07a491"
+    },
+    {
+      "path": "00_AGENT/SECTOR_PROMPTS/02_industrial.txt",
+      "bytes": 728,
+      "sha256": "1fb6341f65c19a3bd171dc59b73c27678d58a7ba6c2431de47bca5dea6f290c2"
+    },
+    {
+      "path": "00_AGENT/SECTOR_PROMPTS/03_real-estate.txt",
+      "bytes": 729,
+      "sha256": "e2a8a25e995ff4090c10a089b9fd8bd536b36a2bcff52b67e601ca18b5f44b82"
+    },
+    {
+      "path": "00_AGENT/SECTOR_PROMPTS/04_dental.txt",
+      "bytes": 711,
+      "sha256": "b0b9b6ade0d7a7478461e692cb12d00c4aab21a2dac7f9ce627037eb4b989d4c"
+    },
+    {
+      "path": "00_AGENT/SECTOR_PROMPTS/05_ecommerce.txt",
+      "bytes": 709,
+      "sha256": "58e832eee27825235a2f553d76c44175018aae1f988b2a1c40970dd290bca962"
+    },
+    {
+      "path": "00_AGENT/SECTOR_PROMPTS/06_portfolio.txt",
+      "bytes": 720,
+      "sha256": "90a9de7db7af1ec09afe3301bff0829e0bc2ba4e239ebac0da41d2a8f24da9e5"
+    },
+    {
+      "path": "00_AGENT/SECTOR_PROMPTS/07_restaurant.txt",
+      "bytes": 709,
+      "sha256": "28f4b262b32642c842c562d4287f2ce61d6acab7e07d2df182552fcdb1ee04e8"
+    },
+    {
+      "path": "00_AGENT/SECTOR_PROMPTS/08_academy.txt",
+      "bytes": 703,
+      "sha256": "6681e33c0e77054e386954041e797e39db85e9063f8eb7e34bf3ee303d4760b8"
+    },
+    {
+      "path": "00_AGENT/START_WITH_THIS_PROMPT.txt",
+      "bytes": 2459,
+      "sha256": "684bdb0585fbcf020069e588757d5abc0466cb8fc768f717226b9a5a11e111a5"
+    },
+    {
+      "path": "01_PRODUCT/PRODUCT_REQUIREMENTS.md",
+      "bytes": 2744,
+      "sha256": "d2a7d3c1392c2dae83faaf2183b4a29a2dba688259b77001f11381cb81aa55c7"
+    },
+    {
+      "path": "02_DESIGN/CONTENT_AND_BRAND_VOICE.md",
+      "bytes": 2046,
+      "sha256": "f61be078f0803058e7a6eb253bf47389c7f76fa7302fe3502fb075b02d33766b"
+    },
+    {
+      "path": "02_DESIGN/DESIGN_SYSTEMS.json",
+      "bytes": 7498,
+      "sha256": "8183733d85d01ae9b37d95efeffa50dcaf5163bb559981ead067873b14b73a60"
+    },
+    {
+      "path": "02_DESIGN/FIRST_FOLD_AND_STORYTELLING_V2.md",
+      "bytes": 7851,
+      "sha256": "2fde90294ae1d66d6f30a20b4f598a6e18b971da46141be476e02a162751a729"
+    },
+    {
+      "path": "02_DESIGN/IMAGERY_AND_COPY_SHOTLIST.md",
+      "bytes": 3005,
+      "sha256": "b85536d1f681d32efd1aa4783bcefedebdbfdc4484994efe3b95c5ebb8e50840"
+    },
+    {
+      "path": "02_DESIGN/VISUAL_QUALITY_RULES.md",
+      "bytes": 3645,
+      "sha256": "b94cdc6e2284850389a5a6d67d2881c79817ca1f71f170a85d021cdbc4271bac"
+    },
+    {
+      "path": "03_PLAN/BUILD_ORDER.md",
+      "bytes": 2784,
+      "sha256": "ce2d647bef1e56ac87fd95850cd164ee02ec7d707d995999d5e5496a83bf6474"
+    },
+    {
+      "path": "03_PLAN/DEFINITION_OF_DONE_V2.md",
+      "bytes": 1679,
+      "sha256": "3f29f0314c0192dcc186935566f903aa07baf5e246c3211388cd9d304bdb8a80"
+    },
+    {
+      "path": "03_PLAN/TASKS.json",
+      "bytes": 1986,
+      "sha256": "1182ec70659e3ab4a23cc2d6c08c846d214cfcf294397a8237dc5052b36d90fd"
+    },
+    {
+      "path": "04_DEMOS/01_CONSTRUCTION.md",
+      "bytes": 19131,
+      "sha256": "00e533c8ee5d2f7ab6cbcd9339ea103168eff87e861030a8bb26e02ead2720b7"
+    },
+    {
+      "path": "04_DEMOS/02_INDUSTRIAL.md",
+      "bytes": 18020,
+      "sha256": "3425ee95efcadeae6ecb70eaa11671d84544f10fd18eeaf24b4da8718760059b"
+    },
+    {
+      "path": "04_DEMOS/03_REAL_ESTATE.md",
+      "bytes": 18358,
+      "sha256": "22e8d4ee5ac6a6401b78a75cd98fd53d3b86b6eea71b83889659e131430320a7"
+    },
+    {
+      "path": "04_DEMOS/04_DENTAL.md",
+      "bytes": 17473,
+      "sha256": "6fd89f43af93f06aee5409d7ddba4012fd1b0c65337863c904ca4ab668843d5c"
+    },
+    {
+      "path": "04_DEMOS/05_ECOMMERCE.md",
+      "bytes": 18688,
+      "sha256": "162aad916321e36fe5ba033e9dc0e9f82afe172efe4cf84aaf70ea9e8623b8de"
+    },
+    {
+      "path": "04_DEMOS/06_PORTFOLIO.md",
+      "bytes": 16219,
+      "sha256": "6ad8fd622c841147f98b8a51efef1a56537a34b578402af7a588b49bf0ca6b9f"
+    },
+    {
+      "path": "04_DEMOS/07_RESTAURANT.md",
+      "bytes": 16943,
+      "sha256": "33bfb3ee5e8118e18229f4f35cb6dd1850ae95283e30562f232d58f6a3b1febe"
+    },
+    {
+      "path": "04_DEMOS/08_ACADEMY.md",
+      "bytes": 17844,
+      "sha256": "883f5f01992b8cca3a009fb7878e894535b80582f69304d04c4d2311720914e2"
+    },
+    {
+      "path": "04_DEMOS/BLUEPRINTS/01_construction.json",
+      "bytes": 8071,
+      "sha256": "b30d887b84cbcf209b99951718932653c019263ba7dba1ce3f708688aafcf2ea"
+    },
+    {
+      "path": "04_DEMOS/BLUEPRINTS/02_industrial.json",
+      "bytes": 7113,
+      "sha256": "8251a0f56556813b107f984e2224d34a6b1c702b63704e2b028eeb694211eddf"
+    },
+    {
+      "path": "04_DEMOS/BLUEPRINTS/03_real-estate.json",
+      "bytes": 7139,
+      "sha256": "fe9ab1a86282f6a09f917ea4bcb1500e3cfacc967ddc2cbdfeffba9248a3888a"
+    },
+    {
+      "path": "04_DEMOS/BLUEPRINTS/04_dental.json",
+      "bytes": 6610,
+      "sha256": "9e5dd264910d64ff03e10800934c9db058aed33505468bdede84cc580d6be73b"
+    },
+    {
+      "path": "04_DEMOS/BLUEPRINTS/05_ecommerce.json",
+      "bytes": 7190,
+      "sha256": "47c09c02106008a04a539477bbb6f2fe6f3cd1af338ebae0902a3826c15ca75f"
+    },
+    {
+      "path": "04_DEMOS/BLUEPRINTS/06_portfolio.json",
+      "bytes": 5650,
+      "sha256": "1c363fbd664dff7464ab12cd969adc395d6a1a7553a68cd5f5db1d19b8a02847"
+    },
+    {
+      "path": "04_DEMOS/BLUEPRINTS/07_restaurant.json",
+      "bytes": 6153,
+      "sha256": "3ff5ed6cb4befdf3c48ce14df791857efa05083c1d0bbc26fd1acc2d890724d4"
+    },
+    {
+      "path": "04_DEMOS/BLUEPRINTS/08_academy.json",
+      "bytes": 6534,
+      "sha256": "93a0d2bede5c280b5941549e989f43150dff505fe8f2f9de98cb058894f98b4d"
+    },
+    {
+      "path": "04_DEMOS/DEMO_INDEX.md",
+      "bytes": 1301,
+      "sha256": "5cad8f6b39a6626a836d037f3b58c9d1a94f855cc8e55ff82cb33f4b6cff4158"
+    },
+    {
+      "path": "05_ENGINEERING/.env.example",
+      "bytes": 570,
+      "sha256": "2fd4f0c8f43a1af9ed1c81bfe86d786b6ee104f05fe114051b0b050729319ae2"
+    },
+    {
+      "path": "05_ENGINEERING/ADMIN_STUDIO_REQUIREMENTS.md",
+      "bytes": 4513,
+      "sha256": "b016854b1479d8857d3901cfff0d89620e83452b96e25676e16aace6f5ee7c4a"
+    },
+    {
+      "path": "05_ENGINEERING/API_AND_DOMAIN_CONTRACTS.md",
+      "bytes": 3380,
+      "sha256": "f40583880ef757b38e7afeae8565123bdb3421d10236c8fe549d0b951c9688f0"
+    },
+    {
+      "path": "05_ENGINEERING/ARCHITECTURE.md",
+      "bytes": 6362,
+      "sha256": "04a40a7ba99d0e3ef997ff2ec1840efad01c4675ed57c5b4e068706417fd58de"
+    },
+    {
+      "path": "05_ENGINEERING/ARCHITECTURE_V2.md",
+      "bytes": 5433,
+      "sha256": "0b48aa2bf767db4046d91e5932150c29883d0172db4b92e4bae7ef2fdc2256a3"
+    },
+    {
+      "path": "05_ENGINEERING/BILINGUAL_SEO_MEDIA.md",
+      "bytes": 3489,
+      "sha256": "456b02908288bee2e96a21aebcce136af30be37175c36df5ee1dca67e2123a24"
+    },
+    {
+      "path": "05_ENGINEERING/DATA_CONTRACTS.md",
+      "bytes": 2406,
+      "sha256": "6e548b8211e9a175d08bd603d2ce8865cc1c180a075ce07b0cdec37615563419"
+    },
+    {
+      "path": "05_ENGINEERING/EXAMPLE_TYPED_CONFIG.ts",
+      "bytes": 744,
+      "sha256": "d1326f3b424feaab158ef945897c85a29854b96ace272967e437a3470f59a743"
+    },
+    {
+      "path": "05_ENGINEERING/SEED_CONTENT_STRUCTURE_V2.json",
+      "bytes": 1136,
+      "sha256": "3dc29034df8dcddb49e869123f37f5c3dd08d00fd70b424cf08739bc17a31a40"
+    },
+    {
+      "path": "05_ENGINEERING/SEED_DATA.json",
+      "bytes": 272086,
+      "sha256": "463763c3150ba40c2f794357ab7c0fb42443d4e9dd7117de99b83b3d9a5f7aa7"
+    },
+    {
+      "path": "05_ENGINEERING/SQLITE_SEED_AND_CONSISTENCY.md",
+      "bytes": 4076,
+      "sha256": "62e7aa3793374e16244de5caebef21bf9e8cf8295b18c56a8c7ae6b54c755833"
+    },
+    {
+      "path": "05_ENGINEERING/sqlite_schema.sql",
+      "bytes": 12799,
+      "sha256": "1b48fc14407b27de4027a9ce3997934ff1e01443048eb7f00e863baa1d79629a"
+    },
+    {
+      "path": "06_QA/ACCEPTANCE_MATRIX.md",
+      "bytes": 2900,
+      "sha256": "8aa5d9147a4062d87b4c4ae153ca544ea5cd5a9175333cd3684fd949e6b61be3"
+    },
+    {
+      "path": "06_QA/MATRICES/ACCEPTANCE_COUNTS.json",
+      "bytes": 407,
+      "sha256": "25f38b598ab31f6c3ce4fc5c8a17058880f1f7e240ed5edb230123c82770169c"
+    },
+    {
+      "path": "06_QA/MATRICES/ACCEPTANCE_TESTS_V2.csv",
+      "bytes": 40335,
+      "sha256": "e3d51e95cbcead80f0aea4d60b8b1d1f0a2449b516531fc801dd58d84f928dfe"
+    },
+    {
+      "path": "06_QA/RELEASE_GATE_V2.md",
+      "bytes": 1199,
+      "sha256": "0557c280eea7e88fd1e16cd4dd58d0d0a79dcccda1c2e3258e03bf63ca29bc89"
+    },
+    {
+      "path": "06_QA/RUNBOOK.md",
+      "bytes": 965,
+      "sha256": "4712b7ecbc10bc98e8693a0194b8b3740dba3b54c9375666d9424161fa1dd332"
+    },
+    {
+      "path": "06_QA/TEST_SCENARIOS.md",
+      "bytes": 3108,
+      "sha256": "b00a62cfb104f869180ff4225312c73c758b2a7844484abd84a577094b89b4ba"
+    },
+    {
+      "path": "07_MARKETING/SHOWCASE_AND_AD_FUNNEL.md",
+      "bytes": 1155,
+      "sha256": "c000845575a5d6c9a58a9a370fca613051c1e632d1c8c596f2d8aa6a829e92b5"
+    },
+    {
+      "path": "07_MARKETING/SHOWCASE_SALES_EXPERIENCE_V2.md",
+      "bytes": 2939,
+      "sha256": "0ba7fd2d12b5d8b577b0b330664101be6591bed7c45ae3000ae38593b30bb57e"
+    },
+    {
+      "path": "08_BRAND/MAVVIX_BRAND_RULES.md",
+      "bytes": 1538,
+      "sha256": "b26124bc7a94ae1f3195a77e158e058985801dff62f07cf0985ffcb09a91578d"
+    },
+    {
+      "path": "08_BRAND/official_assets/apple-touch-icon.png",
+      "bytes": 7694,
+      "sha256": "963a08c03602efcf55ff9fe096f639c181cd20068167bda63d1b85b1182647cc"
+    },
+    {
+      "path": "08_BRAND/official_assets/favicon.ico",
+      "bytes": 24342,
+      "sha256": "71457c4b05a12f946b802587af3bb0d6c93a63557bbe8339acf6bd5ecd08bfd4"
+    },
+    {
+      "path": "08_BRAND/official_assets/mavvix-og-1200x630.png",
+      "bytes": 84297,
+      "sha256": "1e107d2b3d78dff8e73a02073017b098201230c0f2c49ad68e15117e5dbf0262"
+    },
+    {
+      "path": "08_BRAND/official_assets/mavvix-symbol-transparent-512.png",
+      "bytes": 67321,
+      "sha256": "312c9b85ab05be5a63422a9e5b6bf07769f8ff7b1d22fd3820639fc56731ccb6"
+    },
+    {
+      "path": "08_BRAND/official_assets/mavvix_software_brand_identity_board.png",
+      "bytes": 1860550,
+      "sha256": "32706d59bdbfd9636d3a4b000aaeb0d711e2a584960e0c271dddad3a2ba2990d"
+    },
+    {
+      "path": "08_BRAND/official_assets/official_source_asset_manifest.json",
+      "bytes": 1395,
+      "sha256": "8e4c3c9e1f3dec16eace72bd5625a433c16e3e5a8c4f8b787585331d5210af75"
+    },
+    {
+      "path": "08_BRAND/official_assets/site-logo-dark-bg.png",
+      "bytes": 247147,
+      "sha256": "3a7f80b6b7aa786316fbb3b018ff49fc4e51ef42b7e772103b0ee183ae4efd85"
+    },
+    {
+      "path": "08_BRAND/official_assets/site-logo-light-bg.png",
+      "bytes": 350433,
+      "sha256": "69960ffc6361efb0bf6de16a91d410d07c6018cef4a1a2b8fc52b9a8e315c8a1"
+    },
+    {
+      "path": "09_OPERATIONS/DEPLOYMENT_MODES.md",
+      "bytes": 1219,
+      "sha256": "7fff93fc06cfdaf0cfeed5b0854d547b7efd8c989c7bd05b750eb1f073572b74"
+    },
+    {
+      "path": "09_OPERATIONS/GEMINI_DEMO_PROOF_REPORT_TEMPLATE.md",
+      "bytes": 1118,
+      "sha256": "61f8ae04dc960b17def776ad059d8ae85e60b7964db524db824f0e9a4011a15c"
+    },
+    {
+      "path": "09_OPERATIONS/GEMINI_FLASH_EXECUTION_TIPS.md",
+      "bytes": 1063,
+      "sha256": "925d2ebd8a824f8f95a71eb0305170f8daf7cdd00bb0598f17d476e0a3d27b9a"
+    },
+    {
+      "path": "09_OPERATIONS/GEMINI_FLASH_SESSION_PROTOCOL_V2.md",
+      "bytes": 1561,
+      "sha256": "b5c2a43a538df48a5e9430547c872d1ac518bab0b82f721b305f8c644fed7cdf"
+    },
+    {
+      "path": "09_OPERATIONS/NOTES_ON_COMPETITORS.md",
+      "bytes": 1004,
+      "sha256": "5b52bb14e59cfbc44640890db4dec4d62e02b8e74ea0c86f17d49ecb0cfed580"
+    },
+    {
+      "path": "AUDIT_REPORT_AR.md",
+      "bytes": 5737,
+      "sha256": "f05a1be8907d6f79199e0db9d3b15c39f368607fc548203dbe6c380b8a74914c"
+    },
+    {
+      "path": "README_START_HERE_AR.md",
+      "bytes": 6348,
+      "sha256": "2aee5355eadf44b58af3f3cb41e3b4aa7f8015b02747f25eba6e9c6b46ae4e3d"
+    },
+    {
+      "path": "VERIFY_PACKAGE.py",
+      "bytes": 5750,
+      "sha256": "6ce92ddcc38db1948a0ea39a6e127217c902cd8d5b722248be9931950bb7ec25"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "slug": "dental",
+  "number": "04",
+  "displayName": "LUMEN DENTAL / لومِن لطب الأسنان",
+  "sector": "Dental Clinic & Patient Service Discovery",
+  "routePrefix": "/[locale]/preview/dental",
+  "required": true,
+  "routeCount": 11,
+  "routes": [
+    {
+      "route": "/",
+      "name": "Welcome",
+      "goal": "Provide clear care navigation",
+      "sections": "Clear consultation CTA; service finder; patient journey intro; practice values; sample team; accessibility details; FAQ",
+      "actions": "Click concern category filters service cards and navigates",
+      "acceptance": "No medical outcome guarantee"
+    },
+    {
+      "route": "/services",
+      "name": "Treatments",
+      "goal": "Browse services without self-diagnosis",
+      "sections": "Service categories, estimated visit type not medical claim, service overview, FAQs, possible evaluation questions",
+      "actions": "Category/filter/search; service routes",
+      "acceptance": "No risky self-diagnosis suggestion"
+    },
+    {
+      "route": "/services/[slug]",
+      "name": "Service information",
+      "goal": "Explain service boundaries",
+      "sections": "What service is, who evaluates suitability, expected visit flow, common questions, safety note, associated professionals",
+      "actions": "Request appointment preselects service",
+      "acceptance": "Medical information reviewed placeholder flagged"
+    },
+    {
+      "route": "/team",
+      "name": "Practitioner directory",
+      "goal": "Navigate by focus",
+      "sections": "Profile cards with fictional illustrations, categories, clinic location labels",
+      "actions": "Filter specialty, details links",
+      "acceptance": "No invented licenses or degrees"
+    },
+    {
+      "route": "/team/[slug]",
+      "name": "Practitioner profile",
+      "goal": "Introduce hypothetical staff role",
+      "sections": "Focus areas, philosophy, linked services, consultation approach",
+      "actions": "Appointment request preselect practitioner",
+      "acceptance": "No impersonation of real physician"
+    },
+    {
+      "route": "/patient-guide",
+      "name": "Preparing for visit",
+      "goal": "Remove logistical doubts",
+      "sections": "First visit checklist, what to bring in general, hygiene overview, example policies, FAQs",
+      "actions": "Checklist saved locally (non-sensitive)",
+      "acceptance": "No storage of symptoms or medical histories"
+    },
+    {
+      "route": "/patient-guide/[slug]",
+      "name": "Patient article",
+      "goal": "Offer accurate content caveated for review",
+      "sections": "300+ words general informational content, related service links, sources placeholder requiring review",
+      "actions": "TOC; reading progress; related links",
+      "acceptance": "No fake medical references or diagnosis"
+    },
+    {
+      "route": "/locations",
+      "name": "Example branches",
+      "goal": "Demonstrate multi-branch design",
+      "sections": "Three fictional branch cards with general access/amenity descriptions, map as labeled illustration only",
+      "actions": "Select branch prepopulates request",
+      "acceptance": "No invented phone or precise map pins"
+    },
+    {
+      "route": "/request-appointment",
+      "name": "Request appointment",
+      "goal": "Capture simple interest only",
+      "sections": "Choose service; optional practitioner; branch; preferred date/time; sample contact; review; request receipt",
+      "actions": "Server validation; no medical symptoms or DOB; SQLite demo request",
+      "acceptance": "Explicit not a confirmed booking"
+    },
+    {
+      "route": "/faq",
+      "name": "Patient FAQ",
+      "goal": "Answer access/policy questions",
+      "sections": "Topic filters and service-linked questions",
+      "actions": "Accessible accordion, search",
+      "acceptance": "Safety caveat on medical-specific FAQs"
+    },
+    {
+      "route": "/contact",
+      "name": "Contact intent",
+      "goal": "Guide real Mavvix prospect separately",
+      "sections": "Clinic info demonstrative; Mavvix commercial CTA",
+      "actions": "Clear demo boundary",
+      "acceptance": "No fake patient login or medical record"
+    }
+  ],
+  "flows": [
+    {
+      "name": "Service discovery to appointment request",
+      "steps": "Home > service finder preventative > cleaning service > team filter > select doctor > example branch > time preference > review > request only receipt; admin sees new demo request.",
+      "oracle": "All prefills correct and request clearly nonconfirmed."
+    },
+    {
+      "name": "Parent explores first visit",
+      "steps": "Patient guide > first visit checklist > FAQs > linked service > request branch selection.",
+      "oracle": "Content actually informative; checklist local no PII."
+    },
+    {
+      "name": "Invalid sensitive data path",
+      "steps": "User enters symptoms or medical record-like notes > copy discourages health details; server rejects restricted fields > safe error.",
+      "oracle": "No medical notes saved or logged; no fake clinician credential."
+    }
+  ],
+  "design": "Calm specialist editorial. Sage #EDF5F2 / teal #193A39 / muted clay #A67A6D. Intentional personal portrait crops, accessible readability, reassuring patient guide layouts; no fake before/after patient images or fabricated treatment outcomes.",
+  "signatureFeatures": [
+    "Service finder via concern categories (non-diagnostic) and plain language",
+    "Filter clinicians by service focus and available example consultation windows",
+    "Appointment request form with preferred day/time and honest non-confirmation",
+    "First-visit practical preparation guide with dynamic checklist",
+    "Long-form clinical content subject to expert review before production"
+  ],
+  "seedRequirements": "10 services, 6 fictitious practitioner profiles without real credentials, 3 example clinic locations clearly fictional, 8 patient guides, 10 FAQs, 12 sample appointment preferences (non-confirmed).",
+  "adminRequirements": "Services and clinics editorial content, practitioners (fictional), locations and availability examples, guides, FAQ and appointment request queue (requested/reviewed/archived). Public admin read-only tour available; full edits require auth.",
+  "negativeScenarios": [
+    "Prefilled service and clinician match only appropriate services",
+    "Future slot preference must be future; no booking guarantee",
+    "Invalid email rejected but demo guest mode possible",
+    "No fields for diagnosis, images, patient history or DOB",
+    "All medical articles flagged as example subject to clinician review"
+  ]
+}

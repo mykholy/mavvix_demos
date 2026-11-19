@@ -1,0 +1,133 @@
+{
+  "slug": "restaurant",
+  "number": "07",
+  "displayName": "SAFFRON TABLE / سفرة زعفران",
+  "sector": "Restaurant & Café Digital Experience",
+  "routePrefix": "/[locale]/preview/restaurant",
+  "required": true,
+  "routeCount": 11,
+  "routes": [
+    {
+      "route": "/",
+      "name": "Restaurant landing",
+      "goal": "Establish venue identity and two primary tasks",
+      "sections": "Cinematic cuisine imagery, order menu CTA, season menu highlights, chef story, venue cards, menu shortcuts",
+      "actions": "Dish cards open menu/detail; branches link to request",
+      "acceptance": "No pretend real customer ratings"
+    },
+    {
+      "route": "/menu",
+      "name": "Menu",
+      "goal": "Choose suitable dishes",
+      "sections": "Category tabs, ingredient search, dietary/allergen filter, price and tags, availability, category lists",
+      "actions": "URL filter persistence and accurate count",
+      "acceptance": "Allergen warnings consistent and nonmedical"
+    },
+    {
+      "route": "/menu/[slug]",
+      "name": "Dish detail",
+      "goal": "Know ingredients and customize sample meal",
+      "sections": "Gallery, ingredients, allergen list, sample calories omitted unless sourced, sizes/extras, cost breakdown",
+      "actions": "Modifier controls affect valid price; add to demo order",
+      "acceptance": "Cannot add unavailable dish/option"
+    },
+    {
+      "route": "/order",
+      "name": "Sample order",
+      "goal": "See coherent order choices",
+      "sections": "Ordered items, modifiers, quantities, subtotal, optional sample packaging fee",
+      "actions": "Edit, remove, copy formatted order preview; simulate receipt SQLite",
+      "acceptance": "No connection to real kitchen or WhatsApp"
+    },
+    {
+      "route": "/locations",
+      "name": "Branches & hours",
+      "goal": "Plan in-person visit",
+      "sections": "Three clearly fictional branch profiles with example opening windows and services",
+      "actions": "Select location for table request",
+      "acceptance": "No real map pins"
+    },
+    {
+      "route": "/locations/[slug]",
+      "name": "Branch detail",
+      "goal": "Explain branch specifics",
+      "sections": "Menu offerings, sample hours, seating styles, location illustration",
+      "actions": "Request table with branch prefilled",
+      "acceptance": "Hours/slots consistent"
+    },
+    {
+      "route": "/reserve",
+      "name": "Table request",
+      "goal": "Select date/size preference",
+      "sections": "Party size, branch, future date/time, seating preference; review and DEMO request",
+      "actions": "Validate capacity and disabled sample slots, persist as REQUESTED only",
+      "acceptance": "Not confirmed reservation"
+    },
+    {
+      "route": "/story",
+      "name": "Kitchen story",
+      "goal": "Make restaurant credible through details",
+      "sections": "Ingredient sourcing style, food prep philosophy, menu seasonality example",
+      "actions": "Related menu links",
+      "acceptance": "Not invented supplier endorsements"
+    },
+    {
+      "route": "/journal",
+      "name": "Food editorial",
+      "goal": "Offer meaningful content",
+      "sections": "4 food stories and guides",
+      "actions": "Article routes",
+      "acceptance": "No duplicate generic copy"
+    },
+    {
+      "route": "/journal/[slug]",
+      "name": "Article",
+      "goal": "Explain single food topic",
+      "sections": "Recipe inspiration/ingredient insight, related menu",
+      "actions": "TOC and tags",
+      "acceptance": "250+ words AR and EN"
+    },
+    {
+      "route": "/faq",
+      "name": "FAQ",
+      "goal": "Clarify allergens and sample logistics",
+      "sections": "Menu, ingredients, group dining, reservation guidelines",
+      "actions": "Accordion search and links",
+      "acceptance": "No unsupported allergy-free claims"
+    }
+  ],
+  "flows": [
+    {
+      "name": "Guest chooses meal",
+      "steps": "Menu > filter vegetarian/no-nuts tag > dish details > choose size and extras > add to demo order > edit qty > see totals > create DEMO order copy > admin sees simulated order.",
+      "oracle": "Modifiers, availability, sum and currency exact."
+    },
+    {
+      "name": "Group table preference",
+      "steps": "Locations > branch > choose party size 6 > view sample times > choose available slot > request table > REQUESTED receipt.",
+      "oracle": "Unavailable slots do not accept new requests."
+    },
+    {
+      "name": "Allergen conflict",
+      "steps": "Dish tagged nuts visible > no-nuts filter hides it > reset reveals item",
+      "oracle": "No wrong allergen tags or dangerous safety promises."
+    }
+  ],
+  "design": "Tactile warm food editorial; cream #F6F0E4, burnt cinnamon #AC5239, deep olive #3C4A35. Rich food photography, handwritten-like small markers, oversized menu typography, playful menu sheet transitions. Different from fashion store, less catalog-grid more menu-list.",
+  "signatureFeatures": [
+    "Category/dietary/allergen filter with accurate ingredient metadata",
+    "Dish customization (size, protein, extras) tied to item pricing and availability",
+    "Demo order builder with calculated total and copyable sample order text",
+    "Table request with party size, future preference and available sample slots",
+    "Location/hours and editorial sourcing story without fabricated reviews"
+  ],
+  "seedRequirements": "30 dishes across 6 menu categories, 12 modifiers, 3 fictional branches, 14 sample time slots with some unavailable, 4 food editorial stories, 10 FAQs, 4 dietary tags; per-dish allergen fields.",
+  "adminRequirements": "Menu categories/dishes/ingredients/allergen metadata, pricing/modifiers, branch hours/sample slots, example orders and table requests, editorial articles. Updating a dish price recalculates cart server-side.",
+  "negativeScenarios": [
+    "Large dish 220 EGP + extras 35 and quantity 2 = 510 EGP before fees",
+    "No-nuts filter excludes an explicit nuts dish",
+    "Example branch Friday opening hours differ and slots follow schedule",
+    "Party size max 8 and 0 invalid",
+    "Restaurant demo order receipt says no kitchen submission"
+  ]
+}

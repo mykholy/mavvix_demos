@@ -1,0 +1,54 @@
+{
+  "version": "2.0",
+  "counts": {
+    "construction": {
+      "projects": 12,
+      "services": 7,
+      "articles": 6
+    },
+    "industrial": {
+      "products": 24,
+      "applications": 5,
+      "articles": 6
+    },
+    "real-estate": {
+      "properties": 24,
+      "developments": 5,
+      "articles": 6
+    },
+    "dental": {
+      "services": 10,
+      "practitioners": 6,
+      "locations": 3,
+      "articles": 8
+    },
+    "ecommerce": {
+      "products": 24,
+      "collections": 4,
+      "promotions": 3,
+      "shipping": 3,
+      "articles": 6
+    },
+    "portfolio": {
+      "cases": 12,
+      "articles": 6
+    },
+    "restaurant": {
+      "dishes": 30,
+      "categories": 6,
+      "modifiers": 12,
+      "branches": 3,
+      "time_slots": 14,
+      "articles": 6
+    },
+    "academy": {
+      "courses": 12,
+      "lessons": 60,
+      "quiz_questions": 72,
+      "instructors": 8,
+      "tracks": 5,
+      "articles": 6
+    }
+  },
+  "note": "Starter seed includes domain IDs and relationships; long-form Arabic/English text must be written and QA reviewed by Gemini, cannot be replaced by repeated generic text."
+}

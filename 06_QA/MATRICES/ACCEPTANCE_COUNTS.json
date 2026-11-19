@@ -1,0 +1,23 @@
+{
+  "total": 197,
+  "perVertical": {
+    "construction": 24,
+    "industrial": 25,
+    "real-estate": 25,
+    "dental": 24,
+    "ecommerce": 27,
+    "portfolio": 23,
+    "restaurant": 24,
+    "academy": 25
+  },
+  "routePatterns": {
+    "construction": 11,
+    "industrial": 11,
+    "real-estate": 12,
+    "dental": 11,
+    "ecommerce": 13,
+    "portfolio": 10,
+    "restaurant": 11,
+    "academy": 12
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "construction": {
+    "demo_brand": "ATLAS STRUCTURES / أطلس للبناء",
+    "audience": "contracting, fit-out, engineering",
+    "palette": {
+      "ink": "#162327",
+      "surface": "#F2EFE9",
+      "accent": "#D26A3B",
+      "secondary": "#667F7B",
+      "paper": "#FFFFFF"
+    },
+    "fonts": {
+      "ar": "IBM Plex Sans Arabic",
+      "en": "Manrope"
+    },
+    "hero": "Full-bleed architectural photography with vertical project index, overscaled asymmetric title, slim amber progress rule",
+    "nav": "Transparent top nav becomes solid on scroll, Projects prominently first",
+    "visualDNA": [
+      "architectural project photography",
+      "vertical chapter numbers",
+      "tall thin rules",
+      "deep dark-green-charcoal section",
+      "minimal terracotta accent"
+    ],
+    "uniqueFeature": "Project explorer by type/city + tender scope checklist",
+    "demo_only": true,
+    "do_not_reuse_other_vertical_hero": true
+  },
+  "industrial": {
+    "demo_brand": "FERROLINE INDUSTRIES / فيرولاين للصناعات",
+    "audience": "factories, exporters, distributors",
+    "palette": {
+      "ink": "#12243C",
+      "surface": "#F4F6F6",
+      "accent": "#DE9E37",
+      "secondary": "#4E697C",
+      "paper": "#FFFFFF"
+    },
+    "fonts": {
+      "ar": "Tajawal",
+      "en": "IBM Plex Sans"
+    },
+    "hero": "Left-aligned technical specification headline with split industrial macro photography and precise manufacturing diagram annotations",
+    "nav": "Product mega-menu emphasizing categories, catalog-first",
+    "visualDNA": [
+      "technical gridlines",
+      "catalog table density",
+      "yellow measurement labels",
+      "cool steel photography",
+      "functional sticky RFQ side panel"
+    ],
+    "uniqueFeature": "Multi-product RFQ basket with quantities and specifications",
+    "demo_only": true,
+    "do_not_reuse_other_vertical_hero": true
+  },
+  "real-estate": {
+    "demo_brand": "MERIDIAN RESIDENCES / ميريديان العقارية",
+    "audience": "residential developers and agencies",
+    "palette": {
+      "ink": "#25312D",
+      "surface": "#F5F0E6",
+      "accent": "#A8764F",
+      "secondary": "#7B8272",
+      "paper": "#FFFDF8"
+    },
+    "fonts": {
+      "ar": "Cairo",
+      "en": "DM Sans"
+    },
+    "hero": "High-end editorial villa imagery with large serif English line and rich Arabic display title, floating property search",
+    "nav": "Minimal sticky line navigation, Discover Projects emphasis",
+    "visualDNA": [
+      "luxury serif moments",
+      "warm stone textures",
+      "wide cinematic crops",
+      "floating filter panel",
+      "architectural floorplan detail panels"
+    ],
+    "uniqueFeature": "Search + multi-select compare up to 3 listings + viewing request",
+    "demo_only": true,
+    "do_not_reuse_other_vertical_hero": true
+  },
+  "dental": {
+    "demo_brand": "LUMEN DENTAL / لومِن لطب الأسنان",
+    "audience": "dental clinics and specialist practice",
+    "palette": {
+      "ink": "#193A39",
+      "surface": "#EDF5F2",
+      "accent": "#2D887A",
+      "secondary": "#A67A6D",
+      "paper": "#FFFFFF"
+    },
+    "fonts": {
+      "ar": "Tajawal",
+      "en": "Plus Jakarta Sans"
+    },
+    "hero": "Friendly magazine-like split with authentic clinical care imagery and clear service finder",
+    "nav": "Care-led nav: Services, Team, Patient Guide, Location",
+    "visualDNA": [
+      "rounded generous whitespace",
+      "editorial portrait panels",
+      "minimal clinical icon diagrams",
+      "sage section bands",
+      "patient journey timeline"
+    ],
+    "uniqueFeature": "Find a service + doctor directory + appointment REQUEST (not confirmation)",
+    "demo_only": true,
+    "do_not_reuse_other_vertical_hero": true
+  },
+  "ecommerce": {
+    "demo_brand": "NORIA ATELIER / نوريا أتولييه",
+    "audience": "independent apparel, beauty and lifestyle brands",
+    "palette": {
+      "ink": "#282222",
+      "surface": "#F7F0E9",
+      "accent": "#9E5F57",
+      "secondary": "#C6A88D",
+      "paper": "#FFFFFF"
+    },
+    "fonts": {
+      "ar": "Cairo",
+      "en": "Cormorant Garamond + Inter"
+    },
+    "hero": "Full-bleed editorial product photograph with quiet typographic offer, asymmetric category navigation",
+    "nav": "Shop collections mega-nav, minimal icon cart, search",
+    "visualDNA": [
+      "fashion campaign photography",
+      "airy editorial headings",
+      "product image hover details",
+      "warm tactile paper",
+      "ecommerce utilitarian product forms"
+    ],
+    "uniqueFeature": "Variant selection + cart + demo order and correct totals",
+    "demo_only": true,
+    "do_not_reuse_other_vertical_hero": true
+  },
+  "portfolio": {
+    "demo_brand": "SALMA HASSAN STUDIO / استوديو سلمى حسن",
+    "audience": "creative consultants, architects, independent experts",
+    "palette": {
+      "ink": "#151515",
+      "surface": "#F6F6F2",
+      "accent": "#C8FF62",
+      "secondary": "#646464",
+      "paper": "#FFFFFF"
+    },
+    "fonts": {
+      "ar": "IBM Plex Sans Arabic",
+      "en": "Space Grotesk"
+    },
+    "hero": "Oversized typography-first canvas with modular case-study snippets and restrained lime highlight",
+    "nav": "One-line nav with distinctive work index, no traditional giant hero photo",
+    "visualDNA": [
+      "type-dominant minimalism",
+      "monospaced project metadata",
+      "unexpected asymmetrical grid",
+      "case study editorial diagrams",
+      "poster-like project covers"
+    ],
+    "uniqueFeature": "Filterable case studies + project deep dives + consultation inquiry",
+    "demo_only": true,
+    "do_not_reuse_other_vertical_hero": true
+  },
+  "restaurant": {
+    "demo_brand": "SAFFRON TABLE / زعفران كافيه",
+    "palette": {
+      "ink": "#321F18",
+      "surface": "#FAF3E6",
+      "accent": "#BA5C34",
+      "secondary": "#8B8B52",
+      "paper": "#FFFFFF"
+    },
+    "fonts": {
+      "ar": "Tajawal",
+      "en": "Fraunces + Inter"
+    },
+    "hero": "Warm art-directed food story with narrow editorial navigation",
+    "uniqueFeature": "Menu search/allergens, item modifiers, real demo cart, sample table request",
+    "audience": "Restaurant and cafe owners; diners",
+    "nav": "Mobile-first menu ribbon, reservation button, locations",
+    "visualDNA": [
+      "ingredient editorial photography",
+      "menu list rather than card grids",
+      "handwritten small labels",
+      "warm tactile sections",
+      "live dish modifier interactions"
+    ],
+    "demo_only": true,
+    "do_not_reuse_other_vertical_hero": true
+  },
+  "academy": {
+    "demo_brand": "NOVA LEARNING / نوفا للتعلّم",
+    "palette": {
+      "ink": "#192A48",
+      "surface": "#F5F7FF",
+      "accent": "#EF6A55",
+      "secondary": "#5F67B5",
+      "paper": "#FFFFFF"
+    },
+    "fonts": {
+      "ar": "Cairo",
+      "en": "Plus Jakarta Sans"
+    },
+    "hero": "Learning-path illustration mixed with instructor editorial photography",
+    "uniqueFeature": "Courses, curriculum-linked lessons, scored quiz and demo progress",
+    "audience": "Education providers, learners, course creators",
+    "nav": "Track-led search, programs, teachers, lesson preview",
+    "visualDNA": [
+      "structured syllabus progress rail",
+      "teacher editorial portrait",
+      "graphic course outcome diagrams",
+      "educational content hierarchy",
+      "interactive preview player and quizzes"
+    ],
+    "demo_only": true,
+    "do_not_reuse_other_vertical_hero": true
+  }
+}

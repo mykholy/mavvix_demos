@@ -1,0 +1,88 @@
+{
+  "version": "2.0",
+  "required_demos": [
+    {
+      "slug": "construction",
+      "routePatterns": 11,
+      "required": true,
+      "minFunctionalJourneys": 3,
+      "sqlite": true,
+      "admin": true,
+      "ar_en": true,
+      "visualQA": true
+    },
+    {
+      "slug": "industrial",
+      "routePatterns": 11,
+      "required": true,
+      "minFunctionalJourneys": 3,
+      "sqlite": true,
+      "admin": true,
+      "ar_en": true,
+      "visualQA": true
+    },
+    {
+      "slug": "real-estate",
+      "routePatterns": 12,
+      "required": true,
+      "minFunctionalJourneys": 3,
+      "sqlite": true,
+      "admin": true,
+      "ar_en": true,
+      "visualQA": true
+    },
+    {
+      "slug": "dental",
+      "routePatterns": 11,
+      "required": true,
+      "minFunctionalJourneys": 3,
+      "sqlite": true,
+      "admin": true,
+      "ar_en": true,
+      "visualQA": true
+    },
+    {
+      "slug": "ecommerce",
+      "routePatterns": 13,
+      "required": true,
+      "minFunctionalJourneys": 3,
+      "sqlite": true,
+      "admin": true,
+      "ar_en": true,
+      "visualQA": true
+    },
+    {
+      "slug": "portfolio",
+      "routePatterns": 10,
+      "required": true,
+      "minFunctionalJourneys": 3,
+      "sqlite": true,
+      "admin": true,
+      "ar_en": true,
+      "visualQA": true
+    },
+    {
+      "slug": "restaurant",
+      "routePatterns": 11,
+      "required": true,
+      "minFunctionalJourneys": 3,
+      "sqlite": true,
+      "admin": true,
+      "ar_en": true,
+      "visualQA": true
+    },
+    {
+      "slug": "academy",
+      "routePatterns": 12,
+      "required": true,
+      "minFunctionalJourneys": 3,
+      "sqlite": true,
+      "admin": true,
+      "ar_en": true,
+      "visualQA": true
+    }
+  ],
+  "release_rule": "All eight must pass. Staged previews may publish 3/8 when tested but do not represent final complete kit.",
+  "admin": "Content Studio mandatory in complete eight-demo delivery",
+  "runtime": "Node + persistent SQLite"
+}

@@ -1,0 +1,141 @@
+{
+  "slug": "academy",
+  "number": "08",
+  "displayName": "NOVA LEARNING / نوفا للتعلم",
+  "sector": "Academy & Online Courses",
+  "routePrefix": "/[locale]/preview/academy",
+  "required": true,
+  "routeCount": 12,
+  "routes": [
+    {
+      "route": "/",
+      "name": "Academy homepage",
+      "goal": "Offer clear learning paths",
+      "sections": "Editorial learning track hero, course finder, learning outcomes stated as examples not guarantees, instructor preview, sample lesson CTA",
+      "actions": "Track tiles lead to filtered catalog",
+      "acceptance": "No false job placement guarantees"
+    },
+    {
+      "route": "/courses",
+      "name": "Course catalog",
+      "goal": "Filter for fit",
+      "sections": "Subject/level/duration/language/price filters; card/list; sorting",
+      "actions": "Real filter and search across fixtures",
+      "acceptance": "Counts match data"
+    },
+    {
+      "route": "/courses/[slug]",
+      "name": "Course sales page",
+      "goal": "Evaluate real curriculum",
+      "sections": "Syllabus tree, skills/prereqs, lesson count, accessible instructor, practical projects, scope, sample course price",
+      "actions": "Preview module and enrollment interest CTA",
+      "acceptance": "Syllabus linked to actual lessons"
+    },
+    {
+      "route": "/learn/[courseSlug]/[lessonSlug]",
+      "name": "Demo lesson player",
+      "goal": "Experience course delivery",
+      "sections": "Lesson text/media transcript, chapter outline, exercise, next/previous, quiz and notes local",
+      "actions": "Next/previous works, progress updates after completion",
+      "acceptance": "Never claim enrollment or award credential"
+    },
+    {
+      "route": "/quiz/[lessonSlug]",
+      "name": "Lesson quiz",
+      "goal": "Test knowledge in functional way",
+      "sections": "3–5 questions, answer selection, submission, explanations and result",
+      "actions": "Score deterministic, retries reset correctly, progress stored per session",
+      "acceptance": "Correct answer checks on server or deterministic local data"
+    },
+    {
+      "route": "/learning-paths",
+      "name": "Programs",
+      "goal": "Connect courses in meaningful sequence",
+      "sections": "Track map, prerequisites, course order, example outcomes",
+      "actions": "Navigate step to course",
+      "acceptance": "No inaccessible phantom modules"
+    },
+    {
+      "route": "/instructors",
+      "name": "Instructor directory",
+      "goal": "Establish instructor fit",
+      "sections": "8 fictional educator cards with topics and related courses",
+      "actions": "Filter and profile links",
+      "acceptance": "No fabricated academic accreditation"
+    },
+    {
+      "route": "/instructors/[slug]",
+      "name": "Instructor profile",
+      "goal": "Explain teaching method",
+      "sections": "Bio as fictional, pedagogy, related courses",
+      "actions": "Course links",
+      "acceptance": "No real person impersonation"
+    },
+    {
+      "route": "/resources",
+      "name": "Learning resources",
+      "goal": "Make academy a resource",
+      "sections": "6 meaningful articles and worksheets",
+      "actions": "Search, detail routes",
+      "acceptance": "No filler posts"
+    },
+    {
+      "route": "/resources/[slug]",
+      "name": "Learning article",
+      "goal": "Provide useful educational material",
+      "sections": "300+ words, concept graphics, related courses",
+      "actions": "TOC and glossary",
+      "acceptance": "AR/EN complete"
+    },
+    {
+      "route": "/enrollment-interest",
+      "name": "Enrollment inquiry",
+      "goal": "Capture interest only",
+      "sections": "Selected course, level, target, timeline, sample contact, review",
+      "actions": "Validation and SQLite interest receipt",
+      "acceptance": "Not enrolled, no tuition charged"
+    },
+    {
+      "route": "/faq",
+      "name": "Learning FAQ",
+      "goal": "Clarify expectations",
+      "sections": "Eligibility, schedule, access, certificates hypothetical",
+      "actions": "Topic accordion",
+      "acceptance": "No claims of accredited certificates"
+    }
+  ],
+  "flows": [
+    {
+      "name": "Learner tests course and submits interest",
+      "steps": "Home > data analytics track > filter beginner and <8h > course nova-data-01 > syllabus > free preview > chapter > complete 4-question quiz > see score and saved progress > enrollment interest > DEMO request.",
+      "oracle": "Quiz scoring repeatable; progress survives refresh in session; interest not purchase."
+    },
+    {
+      "name": "Learning path discovery",
+      "steps": "Learning paths > design track > prerequisite course > instructor profile > lesson preview",
+      "oracle": "Every syllabus link resolves valid lesson"
+    },
+    {
+      "name": "Invalid quiz / enrollment",
+      "steps": "Submit quiz incomplete > errors > complete; submit enrollment with invalid choice > reject",
+      "oracle": "No ghost progress, no fake certificate."
+    }
+  ],
+  "design": "Thoughtful learning editorial: deep indigo #222A4D, soft periwinkle #E8EBFF, coral #E37E6B. Lesson outline rails, course syllabus accordion, high quality illustrations, instructor storytelling, no generic EdTech dashboard screenshots.",
+  "signatureFeatures": [
+    "Course discovery filters by subject, level, duration, language and price example",
+    "Curriculum tree with lesson previews and transparent unlocked content",
+    "Interactive local lesson player substitute (slides/text/video placeholder with transcript), chapter navigation",
+    "Quiz with scoring, explanations and persisted guest progress in SQLite or local session",
+    "Enrollment interest request, no actual account/payment/enrollment"
+  ],
+  "seedRequirements": "12 courses across 4 tracks, 8 illustrative instructors, 60 lessons with 2 public demo previews per course, 3+ questions per demo lesson, 6 editorial resources, 8 FAQs, 3 price tiers as examples.",
+  "adminRequirements": "Course catalog, lesson blocks, syllabus tree, question bank and correct answers, instructor profiles, learning paths and inquiry queue; admin can publish/unpublish lessons, but public preview only shows released sample lessons.",
+  "negativeScenarios": [
+    "Course with 6 lessons and 2 previews; one preview has 4 quiz questions",
+    "Quiz result 3/4 is 75%, persisted per session",
+    "Course filter by duration and track matches actual seed",
+    "Progress cannot be used as authentic qualification",
+    "No lesson paywall or billing API unless future signed scope"
+  ]
+}
