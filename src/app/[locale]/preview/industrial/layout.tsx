@@ -107,7 +107,7 @@ export default function IndustrialLayout({ children, params }: Props) {
                   : 'Precision manufacturing and industrial metallurgical supplier delivering structural steel profiles, high-tensile fasteners, and certified OEM assemblies.'}
               </p>
               <div className="inline-block bg-slate-900 border border-slate-800 rounded px-3 py-1.5 text-[11px] text-amber-400 font-mono">
-                Concept Website by Mavvix Software • Simulated Industrial Catalog Demo
+                Digital Experience by Mavvix Studio
               </div>
             </div>
 
@@ -143,7 +143,7 @@ export default function IndustrialLayout({ children, params }: Props) {
                 </li>
                 <li>
                   <Link href={`/${locale}/showcase`} className="text-cyan-400 hover:underline flex items-center gap-1 mt-4">
-                    <span>{isAr ? 'العودة لمعرض Mavvix' : 'Mavvix Demo Showcase'}</span>
+                    <span>{isAr ? 'العودة لمعرض Mavvix' : 'Mavvix Showcase'}</span>
                     <ExternalLink className="w-3 h-3" />
                   </Link>
                 </li>
@@ -153,7 +153,7 @@ export default function IndustrialLayout({ children, params }: Props) {
 
           <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500">
             <p>© {new Date().getFullYear()} FERROLINE Industries. Synthetic data for demonstrative purposes.</p>
-            <p>Built for Mavvix Demo Factory V2.</p>
+            <p>Built for Mavvix Studio.</p>
           </div>
         </div>
       </footer>

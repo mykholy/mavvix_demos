@@ -25,8 +25,8 @@ export default function RestaurantLayout({
               <span className="inline-block w-2 h-2 rounded-full bg-[#BA5C34] animate-pulse" />
               <span>
                 {isAr
-                  ? 'عرض توضيحي تجريبي من مافيكس — نموذج تفاعلي لمطعم شرقي ذكي، لا يتصل بمطابخ حقيقية أو عمليات دفع فعلية.'
-                  : 'Mavvix Concept Demo — Interactive smart restaurant model. No real kitchen order or financial transaction.'}
+                  ? 'عرض توضيحي توضيحي من مافيكس — نموذج تفاعلي لمطعم شرقي ذكي، لا يتصل بمطابخ حقيقية أو عمليات دفع فعلية.'
+                  : 'Saffron Table — Modern Dining Experience. No real kitchen order or financial transaction.'}
               </span>
             </div>
             <div className="flex items-center gap-4 text-[11px]">
@@ -105,7 +105,7 @@ export default function RestaurantLayout({
                   </li>
                   <li>
                     <Link href={`/${locale}/preview/restaurant/reserve`} className="hover:text-white transition-colors">
-                      {isAr ? 'حجز طاولة تجريبي' : 'Table Reservation'}
+                      {isAr ? 'حجز طاولة توضيحي' : 'Table Reservation'}
                     </Link>
                   </li>
                   <li>
@@ -178,13 +178,13 @@ export default function RestaurantLayout({
             {/* Bottom Bar */}
             <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 gap-4">
               <p>
-                © 2026 SAFFRON TABLE. {isAr ? 'مفهوم رقمي مصمم ومطور بواسطة' : 'Concept demo engineered by'}{' '}
+                © 2026 SAFFRON TABLE. {isAr ? 'مفهوم رقمي مصمم ومطور بواسطة' : 'Concept design by'}{' '}
                 <a href={mavvixSalesUrl} target="_blank" rel="noreferrer" className="text-[#BA5C34] hover:underline">
                   Mavvix
                 </a>.
               </p>
               <div className="flex items-center gap-6">
-                <span>{isAr ? 'تجربة تفاعلية آمنة (بدون دفع فعلي)' : 'Safe Interactive Demo (No Real Payments)'}</span>
+                <span>{isAr ? 'تجربة تفاعلية آمنة (بدون دفع فعلي)' : 'Online Menu (No Payments Collected)'}</span>
                 <Link href={`/${locale}/showcase`} className="hover:text-white transition-colors">
                   {isAr ? 'المعرض الرئيسي' : 'Main Showcase'}
                 </Link>

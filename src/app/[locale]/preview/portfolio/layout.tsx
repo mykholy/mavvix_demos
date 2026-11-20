@@ -22,7 +22,7 @@ export default function PortfolioLayout({
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#CCFF00] animate-pulse" />
             <span className="font-mono text-[11px] uppercase tracking-wider">
-              {isAr ? 'سلمى حسن ستوديو — نموذج تفاعلي لمحفظة أعمال استشارية بواسطة مافيكس' : 'Salma Hassan Studio — Interactive Creative Practice Demo by Mavvix'}
+              {isAr ? 'سلمى حسن ستوديو — نموذج تفاعلي لمحفظة أعمال استشارية بواسطة مافيكس' : 'Salma Hassan Studio — Designed by Mavvix Studio'}
             </span>
             <span className="hidden sm:inline text-white/30">•</span>
             <span className="hidden sm:inline text-white/60 text-[11px]">
@@ -178,7 +178,7 @@ export default function PortfolioLayout({
 
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-white/50">
             <p>
-              © {new Date().getFullYear()} Salma Hassan Studio. Concept Portfolio Demo by Mavvix.
+              © {new Date().getFullYear()} Salma Hassan Studio. Concept portfolio by Mavvix.
             </p>
             <div className="flex items-center gap-6">
               <Link href={`/${locale}/preview/portfolio/about`} className="hover:text-white transition-colors">

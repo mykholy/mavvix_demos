@@ -21,8 +21,8 @@ export default async function AcademyLayout({
             <span className="w-2 h-2 rounded-full bg-[#EF6A55] animate-pulse" />
             <span>
               {isAr
-                ? 'نموذج تجريبي لأكاديمية تعليمية متقدمة — نوفا للتعلّم بواسطة Mavvix (بيانات تفاعلية، اختبارات مقيَّمة، وتقدم محفوظ)'
-                : 'Interactive Academy Concept Demo — Nova Learning by Mavvix (Scored Quizzes & SQLite Progress Persistence)'}
+                ? 'تصميم تصوري لأكاديمية تعليمية متقدمة — نوفا للتعلّم بواسطة Mavvix (بيانات تفاعلية، اختبارات مقيَّمة، وتقدم محفوظ)'
+                : 'Nova Learning — Study with Purpose (Scored Quizzes & SQLite Progress Persistence)'}
             </span>
           </div>
           <div className="flex items-center gap-4">
@@ -133,7 +133,7 @@ export default async function AcademyLayout({
             {/* Col 5: Direct Action */}
             <div className="space-y-4">
               <h3 className="text-xs uppercase font-semibold text-[#EF6A55] tracking-wider">
-                {isAr ? 'تجربة تفاعلية فورية' : 'Interactive Demo'}
+                {isAr ? 'تجربة تفاعلية فورية' : 'Explore Learning'}
               </h3>
               <p className="text-xs text-white/60 leading-relaxed">
                 {isAr
@@ -144,7 +144,7 @@ export default async function AcademyLayout({
                 href={`/${locale}/preview/academy/learn/course-01/lesson-01-01`}
                 className="block text-center px-4 py-2.5 rounded-lg bg-[#5F67B5] hover:bg-[#4E56A0] text-white text-xs font-semibold transition-all shadow"
               >
-                {isAr ? 'ابدأ درس تجريبي واختبار ⚡' : 'Start Demo Lesson & Quiz ⚡'}
+                {isAr ? 'ابدأ درس توضيحي واختبار ⚡' : 'Explore Lesson & Quiz ⚡'}
               </Link>
               <Link
                 href={`/${locale}/preview/academy/enrollment-interest`}
@@ -159,14 +159,14 @@ export default async function AcademyLayout({
           <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/50">
             <div className="max-w-2xl text-center md:text-start leading-relaxed">
               <span className="font-semibold text-white/70">
-                {isAr ? 'إخلاء مسؤولية تجريبي: ' : 'Ethical Demo Disclosure: '}
+                {isAr ? 'معلومات الاستخدام: ' : 'Important Information: '}
               </span>
               {isAr
-                ? 'أكاديمية نوفا للتعلّم هي موقع تجريبي متكامل طُوّر بواسطة Mavvix لعرض الإمكانيات البرمجية والتعليمية. كافة الشهادات والاعتمادات المعروضة هي محاكاة تعليمية غير معتمدة من أي جهة حكومية أو أكاديمية. لا يتم تحصيل رسوم حقيقية.'
+                ? 'أكاديمية نوفا للتعلّم هي موقع توضيحي متكامل طُوّر بواسطة Mavvix لعرض الإمكانيات البرمجية والتعليمية. كافة الشهادات والاعتمادات المعروضة هي محاكاة تعليمية غير معتمدة من أي جهة حكومية أو أكاديمية. لا يتم تحصيل رسوم حقيقية.'
                 : 'Nova Learning is an applied commercial concept website developed by Mavvix to demonstrate modern educational architectures. All certifications and syllabus metrics are simulated and non-accredited. No real tuition fees are collected.'}
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-white/40">© 2026 Mavvix Demo Factory V2</span>
+              <span className="text-white/40">© 2026 Mavvix Studio</span>
               <span className="w-1.5 h-1.5 rounded-full bg-white/20" />
               <Link href={`/${locale}/showcase`} className="text-[#EF6A55] hover:underline">
                 Mavvix Showcase

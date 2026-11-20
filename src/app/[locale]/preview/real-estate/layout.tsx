@@ -102,11 +102,11 @@ export default function RealEstateLayout({ children, params }: Props) {
               </div>
               <p className="text-stone-300 text-xs max-w-md leading-relaxed">
                 {isAr
-                  ? 'منصة تطوير عقاري راقية تعرض مجمعات سكنية متكاملة ووحدات فاخرة، مع إمكانية مقارنة المخططات وحساب خطط السداد وطلب معاينات تجريبية.'
+                  ? 'منصة تطوير عقاري راقية تعرض مجمعات سكنية متكاملة ووحدات فاخرة، مع إمكانية مقارنة المخططات وحساب خطط السداد وطلب معاينات توضيحية.'
                   : 'Premier residential portfolio showcasing masterplanned communities, apartment layouts, and transparent installment calculators.'}
               </p>
               <div className="inline-block bg-stone-900 border border-stone-800 rounded px-3 py-1.5 text-[11px] text-amber-300 font-mono">
-                Concept Website by Mavvix Software • Simulated Real Estate Demo
+                Digital Experience by Mavvix Studio
               </div>
             </div>
 
@@ -137,12 +137,12 @@ export default function RealEstateLayout({ children, params }: Props) {
                 </li>
                 <li>
                   <Link href={`/${locale}/preview/real-estate/viewing`} className="hover:text-white">
-                    {isAr ? 'حجز موعد معاينة تجريبي' : 'Simulated Viewing Request'}
+                    {isAr ? 'حجز موعد معاينة توضيحي' : 'Viewing Enquiry'}
                   </Link>
                 </li>
                 <li>
                   <Link href={`/${locale}/showcase`} className="text-cyan-400 hover:underline flex items-center gap-1 mt-4">
-                    <span>{isAr ? 'العودة لمعرض Mavvix' : 'Mavvix Demo Showcase'}</span>
+                    <span>{isAr ? 'العودة لمعرض Mavvix' : 'Mavvix Showcase'}</span>
                     <ExternalLink className="w-3 h-3" />
                   </Link>
                 </li>
@@ -152,7 +152,7 @@ export default function RealEstateLayout({ children, params }: Props) {
 
           <div className="pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-stone-500">
             <p>© {new Date().getFullYear()} Meridian Residences. Simulated concept data for evaluation.</p>
-            <p>Designed and engineered for Mavvix Demo Factory V2.</p>
+            <p>Designed and engineered for Mavvix Studio.</p>
           </div>
         </div>
       </footer>

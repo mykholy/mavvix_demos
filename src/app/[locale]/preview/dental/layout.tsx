@@ -20,7 +20,7 @@ export default function DentalLayout({
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#7AC7A5] animate-pulse" />
             <span className="font-medium">
-              {isAr ? 'لومِن لطب الأسنان — نموذج تجريبي استعراضي بواسطة مافيكس' : 'Lumen Dental — Interactive Commercial Concept Demo by Mavvix'}
+              {isAr ? 'لومِن لطب الأسنان — تصميم تصوري استعراضي بواسطة مافيكس' : 'Lumen Dental — Designed by Mavvix Studio'}
             </span>
             <span className="hidden sm:inline text-white/50">•</span>
             <span className="hidden sm:inline text-white/80">
@@ -122,7 +122,7 @@ export default function DentalLayout({
                 <AlertTriangle className="w-4 h-4 text-[#E29D52] flex-shrink-0 mt-0.5" />
                 <span>
                   {isAr
-                    ? 'هذا موقع نموذجي تفاعلي صممته شركة مافيكس. جميع الأسماء والأطباء تمثيلية استعراضية.'
+                    ? 'هذا موقع عرض تفاعلي صممته شركة مافيكس. جميع الأسماء والأطباء تمثيلية استعراضية.'
                     : 'Interactive commercial concept demo engineered by Mavvix. All clinician profiles and facilities are simulated.'}
                 </span>
               </div>
