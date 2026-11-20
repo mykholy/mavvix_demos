@@ -1,3 +1,4 @@
+import { getSectorHeroStyle } from '@/lib/media/sector-images';
 import React from 'react';
 import Link from 'next/link';
 import { getAcademyCourses, getAcademyTracks, getAcademyInstructors, getEditorialPosts } from '@/lib/db/repositories';
@@ -25,7 +26,7 @@ export default async function AcademyHomePage({
   return (
     <div className="space-y-20 pb-16">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#192A48]/5 via-[#F5F7FF] to-[#F5F7FF] pt-16 pb-20 border-b border-[#192A48]/10">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#192A48]/5 via-[#F5F7FF] to-[#F5F7FF] pt-16 pb-20 border-b border-[#192A48]/10" style={getSectorHeroStyle('academy')}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#192A48]/10 text-[#192A48] text-xs font-semibold">

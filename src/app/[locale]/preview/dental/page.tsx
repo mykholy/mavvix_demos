@@ -1,3 +1,4 @@
+import { getSectorHeroStyle } from '@/lib/media/sector-images';
 import React from 'react';
 import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
@@ -29,7 +30,7 @@ export default function DentalHomePage({
   return (
     <div className="space-y-16 sm:space-y-24 pb-20">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#EDF5F2] via-[#F4F8F7] to-[#F7FAF9] pt-12 sm:pt-20 pb-16 sm:pb-24 border-b border-[#E0EBE7]">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#EDF5F2] via-[#F4F8F7] to-[#F7FAF9] pt-12 sm:pt-20 pb-16 sm:pb-24 border-b border-[#E0EBE7]" style={getSectorHeroStyle('dental')}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column: Clinical Philosophy */}

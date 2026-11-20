@@ -1,3 +1,4 @@
+import { getSectorHeroStyle } from '@/lib/media/sector-images';
 import Link from 'next/link';
 import { getPropertyUnits, getEditorialPosts } from '@/lib/db/repositories';
 import type { Locale } from '@/lib/i18n/config';
@@ -31,7 +32,7 @@ export default function RealEstateHomePage({ params }: Props) {
   return (
     <div className="space-y-16 pb-20">
       {/* Hero Section */}
-      <section className="bg-[#25312D] text-white pt-16 pb-24 border-b border-stone-800">
+      <section className="bg-[#25312D] text-white pt-16 pb-24 border-b border-stone-800" style={getSectorHeroStyle('real-estate')}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content */}

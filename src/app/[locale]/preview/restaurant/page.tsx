@@ -1,3 +1,4 @@
+import { getSectorHeroStyle } from '@/lib/media/sector-images';
 import React from 'react';
 import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
@@ -30,7 +31,7 @@ export default function RestaurantHomePage({
   return (
     <div className="space-y-24">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#FAF3E6] via-[#F4EADB] to-[#FAF3E6] py-16 md:py-24 border-b border-[#321F18]/10">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#FAF3E6] via-[#F4EADB] to-[#FAF3E6] py-16 md:py-24 border-b border-[#321F18]/10" style={getSectorHeroStyle('restaurant')}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content */}

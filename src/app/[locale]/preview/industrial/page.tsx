@@ -1,3 +1,4 @@
+import { getSectorHeroStyle } from '@/lib/media/sector-images';
 import Link from 'next/link';
 import { getCatalogItems, getEditorialPosts } from '@/lib/db/repositories';
 import type { Locale } from '@/lib/i18n/config';
@@ -37,7 +38,7 @@ export default function IndustrialHomePage({ params }: Props) {
   return (
     <div className="space-y-16 pb-20">
       {/* Hero Section */}
-      <section className="bg-[#12243C] text-white pt-16 pb-20 border-b border-slate-800">
+      <section className="bg-[#12243C] text-white pt-16 pb-20 border-b border-slate-800" style={getSectorHeroStyle('industrial')}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content */}

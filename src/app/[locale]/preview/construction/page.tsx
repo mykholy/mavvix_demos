@@ -1,3 +1,4 @@
+import { getSectorHeroStyle } from '@/lib/media/sector-images';
 import Link from 'next/link';
 import { getProjects, getEditorialPosts } from '@/lib/db/repositories';
 import type { Locale } from '@/lib/i18n/config';
@@ -61,7 +62,7 @@ export default function ConstructionHomePage({ params }: Props) {
   return (
     <div className="space-y-20 pb-20">
       {/* Hero Section */}
-      <section className="relative bg-[#162327] text-white pt-16 pb-24 border-b border-stone-800 overflow-hidden">
+      <section className="relative bg-[#162327] text-white pt-16 pb-24 border-b border-stone-800 overflow-hidden" style={getSectorHeroStyle('construction')}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left/Right Asymmetric Column */}

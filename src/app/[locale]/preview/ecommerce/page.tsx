@@ -1,3 +1,4 @@
+import { getSectorHeroStyle } from '@/lib/media/sector-images';
 import React from 'react';
 import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
@@ -27,7 +28,7 @@ export default function EcommerceStorefrontPage({
   return (
     <div className="space-y-16 sm:space-y-24 pb-20">
       {/* Campaign Editorial Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#F2ECE4] via-[#F7F2EC] to-[#FAF8F5] pt-12 sm:pt-20 pb-16 sm:pb-24 border-b border-[#E8E1D9]">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#F2ECE4] via-[#F7F2EC] to-[#FAF8F5] pt-12 sm:pt-20 pb-16 sm:pb-24 border-b border-[#E8E1D9]" style={getSectorHeroStyle('ecommerce')}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content */}

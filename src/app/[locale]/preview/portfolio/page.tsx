@@ -1,3 +1,4 @@
+import { getSectorHeroStyle } from '@/lib/media/sector-images';
 import React from 'react';
 import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
@@ -26,7 +27,7 @@ export default function PortfolioHomePage({
   return (
     <div className="space-y-16 sm:space-y-24 pb-20">
       {/* Swiss Editorial Hero */}
-      <section className="pt-12 sm:pt-20 pb-16 sm:pb-24 border-b border-[#E2E0D8]">
+      <section className="pt-12 sm:pt-20 pb-16 sm:pb-24 border-b border-[#E2E0D8]" style={getSectorHeroStyle('portfolio')}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-[#737068]">
             <span className="px-3 py-1 rounded-full bg-[#EAE8E1] border border-[#DDD9CE] text-[#0F0F10] uppercase tracking-widest">
