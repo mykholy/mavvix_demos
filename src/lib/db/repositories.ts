@@ -905,13 +905,13 @@ export function getRestaurantTimeSlots(branchId?: string): any[] {
   return query<any>(sql, params);
 }
 
-export function verifyRestaurantSlotAvailable(slotId: string): boolean {
+export function verifyRestaurantSlotAvailable(slotId: string, date?: string): boolean {
   const slot = queryOne<{ status: string; capacity: number }>(
     "SELECT status, capacity FROM demo_time_slots WHERE site_id = 'site-restaurant' AND id = ?", [slotId]
   );
   if (!slot || slot.status !== 'available') return false;
   const reserved = queryOne<{ count: number }>(
-    "SELECT COUNT(*) as count FROM demo_submissions WHERE site_id = 'site-restaurant' AND flow_type = 'restaurant_table' AND status IN ('simulated','reviewed') AND json_extract(payload_json, '$.slotId') = ?", [slotId]
+    "SELECT COUNT(*) as count FROM demo_submissions WHERE site_id = 'site-restaurant' AND flow_type = 'restaurant_table' AND status IN ('simulated','reviewed') AND json_extract(payload_json, '$.slotId') = ? AND (? IS NULL OR json_extract(payload_json, '$.date') = ?)", [slotId, date || null, date || null]
   );
   return (reserved?.count || 0) < slot.capacity;
 }
