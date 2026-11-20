@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { servicesData } from '../page';
+import { servicesData } from '@/lib/content/construction-services';
 import { getProjects } from '@/lib/db/repositories';
 import type { Locale } from '@/lib/i18n/config';
 import {
