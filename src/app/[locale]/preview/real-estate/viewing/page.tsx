@@ -1,0 +1,38 @@
+import { getPropertyUnits } from '@/lib/db/repositories';
+import type { Locale } from '@/lib/i18n/config';
+import { ViewingRequestWizard } from './ViewingRequestWizard';
+
+interface Props {
+  params: { locale: Locale };
+  searchParams: { unit?: string };
+}
+
+export default function RealEstateViewingPage({ params, searchParams }: Props) {
+  const { locale } = params;
+  const allUnits = getPropertyUnits(locale);
+
+  return (
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="mb-10 text-center space-y-2">
+        <span className="text-xs font-mono font-bold text-[#A8764F] uppercase tracking-widest block">
+          PRIVATE APPOINTMENT INTAKE // DEMO WORKFLOW
+        </span>
+        <h1 className="text-3xl sm:text-5xl font-black text-[#25312D] tracking-tight font-serif">
+          {locale === 'ar' ? 'طلب موعد معاينة خاصة للوحدة' : 'Request a Private Property Viewing'}
+        </h1>
+        <p className="text-stone-600 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
+          {locale === 'ar'
+            ? 'حدد الوحدة المفضلة والوقت المناسب؛ يتم تسجيل طلبك تجريبيًا في قاعدة بيانات SQLite مع إصدار إيصال طلب فوري.'
+            : 'Select your preferred candidate unit and date preference. Submissions are persisted to local SQLite with simulated receipt confirmation.'}
+        </p>
+      </div>
+
+      <ViewingRequestWizard
+        allUnits={allUnits}
+        locale={locale}
+        initialUnitSlug={searchParams.unit}
+      />
+    </div>
+  );
+}
+

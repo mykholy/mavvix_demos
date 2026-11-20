@@ -1,0 +1,96 @@
+export type Locale = 'ar' | 'en';
+
+export const locales: Locale[] = ['ar', 'en'];
+export const defaultLocale: Locale = 'ar';
+
+export function getDirection(locale: Locale): 'rtl' | 'ltr' {
+  return locale === 'ar' ? 'rtl' : 'ltr';
+}
+
+export function isRTL(locale: Locale): boolean {
+  return locale === 'ar';
+}
+
+export const i18nCommon = {
+  ar: {
+    demoNotice: 'موقع تجريبي ونموذج عمل مفاهيمي من تطوير Mavvix. كافة البيانات تجريبية وغير موجهة لتعاملات مالية أو تعاقدات حقيقية.',
+    mavvixTagline: 'حلول رقمية لنمو أكثر ذكاء',
+    mavvixAttribution: 'نموذج أعمال تجريبي مطور بواسطة Mavvix',
+    viewShowcase: 'معرض النماذج',
+    requestSimilar: 'اطلب موقعًا مماثلاً لشركتك',
+    switchLanguage: 'English',
+    otherLang: 'en',
+    home: 'الرئيسية',
+    projects: 'المشاريع',
+    services: 'الخدمات',
+    products: 'المنتجات',
+    menu: 'قائمة الطعام',
+    courses: 'الدورات التدريبية',
+    about: 'عن الشركة',
+    contact: 'تواصل معنا',
+    journal: 'المقالات والأفكار',
+    requestQuote: 'طلب عرض سعر',
+    compare: 'المقارنة',
+    addToCart: 'أضف للسلة',
+    viewDetails: 'عرض التفاصيل',
+    all: 'الكل',
+    filter: 'تصفية',
+    resetFilters: 'إعادة ضبط',
+    search: 'بحث',
+    noResults: 'لم يتم العثور على نتائج مطابقة لخيارات التصفية الحالية.',
+    submit: 'إرسال الطلب',
+    submitting: 'جاري الإرسال...',
+    success: 'تم إرسال الطلب بنجاح',
+    demoReceiptTitle: 'إيصال طلب تجريبي (Demo Receipt)',
+    demoReceiptNotice: 'هذا إيصال تجريبي محلي محفوظ في قاعدة البيانات للاختبار فقط، ولم يتم خصم أي مبالغ أو إرسال مراسلات حقيقية.',
+    referenceNumber: 'رقم المرجع التجريبي',
+    status: 'الحالة',
+    date: 'التاريخ',
+    currency: 'ج.م',
+    areaUnit: 'م²',
+    adminPortal: 'لوحة التحكم',
+    login: 'تسجيل الدخول',
+    logout: 'تسجيل الخروج',
+  },
+  en: {
+    demoNotice: 'Concept demonstration developed by Mavvix. All data is synthetic and not intended for commercial transactions or live bookings.',
+    mavvixTagline: 'Digital Solutions for Smarter Growth',
+    mavvixAttribution: 'Concept demonstration developed by Mavvix',
+    viewShowcase: 'Demo Showcase',
+    requestSimilar: 'Request Similar Website',
+    switchLanguage: 'العربية',
+    otherLang: 'ar',
+    home: 'Home',
+    projects: 'Projects',
+    services: 'Services',
+    products: 'Products',
+    menu: 'Menu',
+    courses: 'Courses',
+    about: 'About',
+    contact: 'Contact',
+    journal: 'Insights & Journal',
+    requestQuote: 'Request Quote',
+    compare: 'Compare',
+    addToCart: 'Add to Cart',
+    viewDetails: 'View Details',
+    all: 'All',
+    filter: 'Filter',
+    resetFilters: 'Reset Filters',
+    search: 'Search',
+    noResults: 'No results found matching your current filter criteria.',
+    submit: 'Submit Request',
+    submitting: 'Submitting...',
+    success: 'Request submitted successfully',
+    demoReceiptTitle: 'Simulated Demo Receipt',
+    demoReceiptNotice: 'This is a synthetic demonstrative receipt persisted to the local database for validation. No actual payment or booking was made.',
+    referenceNumber: 'Demo Reference No.',
+    status: 'Status',
+    date: 'Date',
+    currency: 'EGP',
+    areaUnit: 'sqm',
+    adminPortal: 'Admin Studio',
+    login: 'Sign In',
+    logout: 'Sign Out',
+  },
+};
+

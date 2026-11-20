@@ -1,0 +1,376 @@
+import Link from 'next/link';
+import { MavvixHeader } from '@/components/shared/MavvixHeader';
+import { MavvixFooter } from '@/components/shared/MavvixFooter';
+import type { Locale } from '@/lib/i18n/config';
+import {
+  Building2,
+  Factory,
+  Home,
+  HeartPulse,
+  ShoppingBag,
+  Palette,
+  UtensilsCrossed,
+  GraduationCap,
+  ArrowUpRight,
+  ShieldCheck,
+  CheckCircle2,
+  Sparkles,
+  Layers,
+  Database
+} from 'lucide-react';
+
+interface Props {
+  params: { locale: Locale };
+}
+
+const demos = [
+  {
+    number: '01',
+    slug: 'construction',
+    name: { ar: 'أطلس للبناء والتطوير الهندسي', en: 'Atlas Structures & Contracting' },
+    sector: { ar: 'مقاولات وهندسة وتجهيزات', en: 'Construction & Engineering' },
+    icon: Building2,
+    color: '#D26A3B',
+    bgColor: 'bg-amber-50',
+    borderColor: 'border-amber-200',
+    routesCount: 11,
+    tagline: {
+      ar: 'المشروع القوي يبدأ بتفاصيل واضحة ونطاق محدد',
+      en: 'Build quality starts with a clear scope and transparent deliverables.'
+    },
+    journeys: [
+      { ar: 'مستكشف المشاريع وتصفية المساحات ونوع الأعمال', en: 'Project explorer by sector, scope & area' },
+      { ar: 'معالج تسعير المقاولات وحساب التكلفة التقديرية', en: 'Multi-step tender scope wizard & BOQ inquiry' },
+      { ar: 'إيصال حفظ محلي في SQLite ومتابعة الطلبات', en: 'Persisted local SQLite quotation receipt' }
+    ],
+    features: ['Project Atlas Explorer', 'Interactive Scope Wizard', 'Deliverables Breakdown']
+  },
+  {
+    number: '02',
+    slug: 'industrial',
+    name: { ar: 'فيرولاين للصناعات والتشكيل المعدني', en: 'Ferroline Industrial Supplies' },
+    sector: { ar: 'مصانع وتوريدات هندسية وتصدير', en: 'Industrial & Manufacturing' },
+    icon: Factory,
+    color: '#DE9E37',
+    bgColor: 'bg-yellow-50',
+    borderColor: 'border-yellow-200',
+    routesCount: 11,
+    tagline: {
+      ar: 'المواصفات أولاً، ثم يبدأ التوريد بدقة قياسية',
+      en: 'Specify accurately. Source confidently with full metallurgical compliance.'
+    },
+    journeys: [
+      { ar: 'دليل المنتجات والمواصفات بالكود الصناعي ودرجة الصلب', en: 'Technical SKU catalog with grade & spec filters' },
+      { ar: 'سلة طلب عروض أسعار متعددة البنود مع كميات الحد الأدنى', en: 'Multi-line RFQ basket with MOQ & pack rules' },
+      { ar: 'مقارنة فنية مباشرة بين الخامات والشهادات القياسية', en: 'Side-by-side technical material comparator' }
+    ],
+    features: ['Technical SKU Dossier', 'Multi-line RFQ Basket', 'Specification Matrix']
+  },
+  {
+    number: '03',
+    slug: 'real-estate',
+    name: { ar: 'ميريديان للتطوير والاستثمار العقاري', en: 'Meridian Residences & Developments' },
+    sector: { ar: 'تطوير وتسويق عقاري فاخر', en: 'Luxury Real Estate' },
+    icon: Home,
+    color: '#A8764F',
+    bgColor: 'bg-stone-50',
+    borderColor: 'border-stone-200',
+    routesCount: 12,
+    tagline: {
+      ar: 'مساحات تختارها بالمقارنة والبيانات الدقيقة، مش بالصور بس',
+      en: 'Explore premier spaces with the engineering details that matter.'
+    },
+    journeys: [
+      { ar: 'تصفية 24 وحدة حسب الميزانية والغرف ومخطط الدور', en: 'Filter 24 residential units by budget, area & floor' },
+      { ar: 'مقارنة تفاعلية مباشرة بين 3 وحدات وجداول الأقساط', en: '3-unit side-by-side comparison & payment schedule' },
+      { ar: 'طلب موعد معاينة خاصة مع حفظ الحالة محليًا', en: 'Simulated private viewing request & confirmation' }
+    ],
+    features: ['3-Unit Comparison Drawer', 'Installment Calculator', 'Floorplan Inspector']
+  },
+  {
+    number: '04',
+    slug: 'dental',
+    name: { ar: 'لومِن لطب وجراحة الأسنان التخصصية', en: 'Lumen Dental Clinic & Specialists' },
+    sector: { ar: 'عيادات ومراكز طبية تخصصية', en: 'Specialist Healthcare' },
+    icon: HeartPulse,
+    color: '#2A8E7D',
+    bgColor: 'bg-emerald-50',
+    borderColor: 'border-emerald-200',
+    routesCount: 11,
+    tagline: {
+      ar: 'اعرف تفاصيل الزيارة والتجهيزات قبل ما تطلب موعدك',
+      en: 'Clear clinical information and transparent preparation before your visit.'
+    },
+    journeys: [
+      { ar: 'مستكشف التخصصات وفريق الأطباء الاستشاريين', en: 'Specialty finder & consultant doctor profiles' },
+      { ar: 'دليل الزيارة الأولى وإرشادات التحضير قبل الموعد', en: 'First-visit preparation guide & service dossier' },
+      { ar: 'طلب موعد كشف تجريبي واختيار الفترة المفضلة', en: 'Appointment preference intake (no clinical PII)' }
+    ],
+    features: ['Doctor & Service Matcher', 'Patient Preparation Dossier', 'Intake Preference Scheduler']
+  },
+  {
+    number: '05',
+    slug: 'ecommerce',
+    name: { ar: 'نوريا أتيليه للأزياء والمقتنيات', en: 'Noria Atelier Fashion & Objects' },
+    sector: { ar: 'تجارة إلكترونية ومقتنيات فاخرة', en: 'Boutique E-commerce' },
+    icon: ShoppingBag,
+    color: '#9E472A',
+    bgColor: 'bg-orange-50',
+    borderColor: 'border-orange-200',
+    routesCount: 13,
+    tagline: {
+      ar: 'تفاصيل بسيطة. حضور مختلف. وحسابات سلة دقيقة',
+      en: 'Considered pieces with accurate stock, multi-line cart, and simulated checkout.'
+    },
+    journeys: [
+      { ar: 'تصفح التشكيلات واختيار المقاسات والخامات المتوفرة', en: 'Collection browser with real variant stock validation' },
+      { ar: 'سلة مشتريات متعددة وحساب الشحن وكوبونات الخصم', en: 'Cart drawer with real discount logic & shipping rules' },
+      { ar: 'إتمام طلب تجريبي بالدفع عند الاستلام مع إيصال محلي', en: 'Simulated cash-on-delivery checkout & SQLite order' }
+    ],
+    features: ['Variant Stock Matrix', 'Discount & Shipping Engine', 'Simulated Checkout Receipt']
+  },
+  {
+    number: '06',
+    slug: 'portfolio',
+    name: { ar: 'سلمى حسن — استوديو التصميم المعماري', en: 'Salma Hassan Architecture Studio' },
+    sector: { ar: 'بورتفوليو معماري واستشارات تصميمية', en: 'Design & Architecture Studio' },
+    icon: Palette,
+    color: '#3B82F6',
+    bgColor: 'bg-blue-50',
+    borderColor: 'border-blue-200',
+    routesCount: 10,
+    tagline: {
+      ar: 'التصميم مش مجرد شكل؛ قرارات هندسية وراء كل تفصيلة',
+      en: 'Good architecture makes deliberate design decisions visible.'
+    },
+    journeys: [
+      { ar: 'دراسات حالة تفصيلية توضح البدائل المرفوضة والمختارة', en: 'In-depth case studies with decision rationale' },
+      { ar: 'معرض مرئي تفاعلي وتبديل نمط العرض بين الشبكة والقائمة', en: 'Interactive gallery with grid/list mode toggle' },
+      { ar: 'معالج صياغة ملخص المشروع المبدئي وطلب استشارة', en: 'Interactive brief configurator & studio intake' }
+    ],
+    features: ['Decision-Led Case Studies', 'Interactive Grid/List Explorer', 'Client Brief Builder']
+  },
+  {
+    number: '07',
+    slug: 'restaurant',
+    name: { ar: 'سفرة زعفران — مطبخ شرقي أصيل', en: 'Saffron Table Heritage Dining' },
+    sector: { ar: 'مطاعم وضيافة وتجارب طعام', en: 'Hospitality & Dining' },
+    icon: UtensilsCrossed,
+    color: '#C65D23',
+    bgColor: 'bg-amber-50',
+    borderColor: 'border-amber-200',
+    routesCount: 11,
+    tagline: {
+      ar: 'الأكل الأصيل يبدأ من اختيار المكونات والبهارات الطازجة',
+      en: 'Heritage recipes prepared with deliberate seasonal craft and allergen clarity.'
+    },
+    journeys: [
+      { ar: 'قائمة طعام تفاعلية مع تصفية مسببات الحساسية والأنظمة الغذائية', en: 'Dietary & allergen-filtered menu explorer' },
+      { ar: 'تخصيص مكونات الطبق والإضافات وتحديث السعر فوريًا', en: 'Dish modifier customizer with live price updates' },
+      { ar: 'طلب استلام تجريبي أو طلب حجز طاولة باختيار الفرع', en: 'Demo pickup order & table reservation request' }
+    ],
+    features: ['Allergen & Dietary Filters', 'Real-time Dish Customizer', 'Branch Table Request']
+  },
+  {
+    number: '08',
+    slug: 'academy',
+    name: { ar: 'نوفا للتعلم والتدريب المهني المتقدم', en: 'Nova Learning Academy' },
+    sector: { ar: 'تعليم مهني ومنصات تدريب احترافية', en: 'EdTech & Professional Academy' },
+    icon: GraduationCap,
+    color: '#4F46E5',
+    bgColor: 'bg-indigo-50',
+    borderColor: 'border-indigo-200',
+    routesCount: 12,
+    tagline: {
+      ar: 'ابدأ بدرس تجريبي حقيقي، واختبر فهمك وتتبع تقدمك',
+      en: 'Experience a real interactive lesson, test your mastery, and track progress.'
+    },
+    journeys: [
+      { ar: 'تصفح مسارات التعلم والمناهج التفصيلية للدورات', en: 'Curriculum explorer with syllabus & module breakdown' },
+      { ar: 'مشغل درس تفاعلي متكامل مع اختبار فوري متعدد الخيارات', en: 'Fully functioning preview lesson with interactive quiz' },
+      { ar: 'تسجيل نسبة الإنجاز والدرجة في SQLite وطلب الالتحاق', en: 'Persisted quiz score progress & enrollment interest' }
+    ],
+    features: ['Interactive Lesson Player', 'Scored Knowledge Quiz', 'Persistent Progress Tracker']
+  }
+];
+
+export default function ShowcasePage({ params }: Props) {
+  const { locale } = params;
+  const isAr = locale === 'ar';
+
+  return (
+    <div className="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+      <MavvixHeader locale={locale} />
+
+      {/* Hero Section */}
+      <section className="bg-gradient-to-b from-mavvix-navy to-slate-900 text-white py-16 sm:py-24 border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-start">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-6">
+            <Sparkles className="w-4 h-4 text-cyan-400" />
+            <span>{isAr ? 'مصنع النماذج التفاعلية V2 • إنتاج احترافي' : 'Interactive Demo Factory V2 • Production Grade'}</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight max-w-4xl leading-tight">
+            {isAr ? (
+              <>مواقع أعمال حقيقية متكاملة، <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">وليست مجرد واجهات ثابتة</span></>
+            ) : (
+              <>Full-Stack Commercial Demos, <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Not Dead Prototypes</span></>
+            )}
+          </h1>
+
+          <p className="mt-6 text-slate-300 text-base sm:text-xl max-w-3xl leading-relaxed">
+            {isAr
+              ? 'ثمانية قطاعات تجارية متكاملة؛ كل موقع يتميز بهوية بصرية مخصصة، ومسارات فرعية متعددة، وقاعدة بيانات SQLite حقيقية، ولوحة تحكم لإدارة المحتوى والطلبات.'
+              : 'Eight comprehensive industry business websites. Each demo features bespoke visual art direction, 10+ deep routes, persistent SQLite database state, and protected Content Studio.'}
+          </p>
+
+          <div className="mt-8 flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs sm:text-sm">
+            <div className="flex items-center gap-2 bg-slate-800/80 border border-slate-700 px-3.5 py-2 rounded-lg text-slate-200">
+              <Database className="w-4 h-4 text-cyan-400" />
+              <span>{isAr ? 'قاعدة بيانات علائقية SQLite' : 'Persisted Relational SQLite'}</span>
+            </div>
+            <div className="flex items-center gap-2 bg-slate-800/80 border border-slate-700 px-3.5 py-2 rounded-lg text-slate-200">
+              <Layers className="w-4 h-4 text-blue-400" />
+              <span>{isAr ? '91 مسارًا تفاعليًا عربي/إنجليزي' : '91 Bilingual Route Patterns'}</span>
+            </div>
+            <div className="flex items-center gap-2 bg-slate-800/80 border border-slate-700 px-3.5 py-2 rounded-lg text-slate-200">
+              <ShieldCheck className="w-4 h-4 text-amber-400" />
+              <span>{isAr ? 'استوديو إدارة محتوى محمي' : 'Protected CMS Studio'}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Demos Grid */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-1 w-full">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 pb-6 border-b border-slate-200 gap-4">
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
+              {isAr ? 'استكشف نماذج القطاعات الثمانية' : 'Explore All Eight Sector Demos'}
+            </h2>
+            <p className="mt-2 text-slate-600 text-sm">
+              {isAr
+                ? 'انقر على أي موقع لتصفح كافة مساراته واختبار رحلات العمل ونظام الطلبات التجريبي.'
+                : 'Click any concept demo to inspect its deep routes, interactive workflows, and local state.'}
+            </p>
+          </div>
+          <div className="text-xs font-semibold px-3 py-1.5 rounded bg-slate-100 text-slate-700 border border-slate-300 w-fit">
+            8 / 8 {isAr ? 'نماذج جاهزة ومعتمدة' : 'Demos Ready & Verified'}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          {demos.map((d) => {
+            const Icon = d.icon;
+            return (
+              <div
+                key={d.slug}
+                className="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden group"
+              >
+                {/* Demo Card Header */}
+                <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-start justify-between gap-4 mb-4">
+                      <div className="flex items-center gap-3">
+                        <div
+                          className="w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-sm"
+                          style={{ backgroundColor: d.color }}
+                        >
+                          <Icon className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <span className="text-xs font-mono font-bold text-slate-400 tracking-wider">
+                            VER-{d.number}
+                          </span>
+                          <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-mavvix-blue transition-colors">
+                            {d.name[locale]}
+                          </h3>
+                          <span className="text-xs font-medium text-slate-500">
+                            {d.sector[locale]}
+                          </span>
+                        </div>
+                      </div>
+
+                      <span className="text-xs font-semibold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-full shrink-0 border border-slate-200">
+                        {d.routesCount} {isAr ? 'مسارات' : 'Routes'}
+                      </span>
+                    </div>
+
+                    <p className="text-sm text-slate-600 italic mb-6 leading-relaxed">
+                      "{d.tagline[locale]}"
+                    </p>
+
+                    {/* 3 Core Journeys */}
+                    <div className="space-y-2 mb-6">
+                      <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                        {isAr ? 'رحلات الاستخدام المنفذة:' : 'Implemented Core Journeys:'}
+                      </h4>
+                      {d.journeys.map((j, idx) => (
+                        <div key={idx} className="flex items-start gap-2 text-xs text-slate-700">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 mt-0.5 shrink-0" />
+                          <span>{j[locale]}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Feature Badges & Link */}
+                  <div className="pt-6 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div className="flex flex-wrap gap-1.5">
+                      {d.features.map((f, idx) => (
+                        <span
+                          key={idx}
+                          className="text-[11px] font-medium bg-slate-100 text-slate-600 px-2 py-0.5 rounded"
+                        >
+                          {f}
+                        </span>
+                      ))}
+                    </div>
+
+                    <Link
+                      href={`/${locale}/preview/${d.slug}`}
+                      className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-white transition-all shadow-sm shrink-0"
+                      style={{ backgroundColor: d.color }}
+                    >
+                      <span>{isAr ? 'تصفح الموقع' : 'Launch Demo'}</span>
+                      <ArrowUpRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Admin Studio Promotion Banner */}
+      <section className="bg-slate-900 text-white py-12 border-t border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider">
+              <ShieldCheck className="w-4 h-4" />
+              <span>{isAr ? 'إدارة وتحرير المحتوى الفعلي' : 'Client-Grade Content Studio'}</span>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-bold">
+              {isAr ? 'هل تريد استكشاف لوحة التحكم وإدارة الطلبات؟' : 'Explore the Protected Content Studio & Orders'}
+            </h3>
+            <p className="text-slate-400 text-sm max-w-2xl">
+              {isAr
+                ? 'لوحة إدارة فعلية تتيح تعديل المحتوى ثنائي اللغة، ومراجعة طلبات عروض الأسعار والمواعيد، وسجل التدقيق لجميع القطاعات.'
+                : 'Protected operator interface to edit bilingual articles and projects, review simulated RFQ and appointment queues, and inspect audit logs.'}
+            </p>
+          </div>
+          <Link
+            href="/admin"
+            className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-6 py-3 rounded-xl text-sm transition-all shadow-sm shrink-0"
+          >
+            {isAr ? 'الدخول للوحة الإدارة (Admin Studio)' : 'Open Admin Studio'}
+          </Link>
+        </div>
+      </section>
+
+      <MavvixFooter locale={locale} />
+    </div>
+  );
+}
+
