@@ -1373,7 +1373,7 @@ export function getSubmissions(siteSlug?: string) {
 
 export function getSubmissionById(id: string) {
   const sql = `
-    SELECT sub.id, sub.flow_type, sub.status, sub.payload_json, sub.created_at, s.slug as site_slug, s.name_ar, s.name_en
+    SELECT sub.id, sub.flow_type, sub.status, sub.guest_token_hash, sub.payload_json, sub.created_at, s.slug as site_slug, s.name_ar, s.name_en
     FROM demo_submissions sub
     JOIN demo_sites s ON s.id = sub.site_id
     WHERE sub.id = ?
