@@ -1,3 +1,4 @@
+import { SectorPhoto } from '@/components/shared/SectorPhoto';
 import { getSectorHeroStyle } from '@/lib/media/sector-images';
 import React from 'react';
 import Link from 'next/link';
@@ -112,6 +113,16 @@ export default function EcommerceStorefrontPage({
           </div>
         </div>
       </section>
+      <figure className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8 sm:my-12">
+        <div className="grid grid-cols-12 gap-3 sm:gap-5 rounded-[2rem] overflow-hidden shadow-[0_20px_65px_rgba(0,0,0,0.12)] bg-white p-2 sm:p-3">
+          <SectorPhoto sector="ecommerce" secondary alt="" className="col-span-8 h-52 sm:h-[340px] rounded-[1.5rem]" />
+          <SectorPhoto sector="ecommerce" alt="" className="col-span-4 h-52 sm:h-[340px] rounded-[1.5rem]" />
+        </div>
+        <figcaption className="text-[11px] mt-3 opacity-60 text-center px-4">
+          {isAr ? 'صور فوتوغرافية مرجعية لاتجاه التصميم، وليست توثيقًا لمشروعات أو منشآت هذه العلامة' : 'Licensed editorial art direction — not documentation of this brand’s real facilities or work'}
+        </figcaption>
+      </figure>
+
 
       {/* Category Overview Grid (4 Collections) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
