@@ -1,20 +1,12 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
-
 export const metadata: Metadata = {
-  title: 'Mavvix Demo Factory V2 — Commercial Concept Websites',
-  description: 'Production-grade showcase of 8 bespoke commercial websites with relational SQLite persistence and protected CMS Studio.',
-  icons: {
-    icon: '/assets/mavvix/favicon.ico',
-    apple: '/assets/mavvix/apple-touch-icon.png',
-  },
+  title: { default: 'Mavvix | Digital Experiences', template: '%s | Mavvix' },
+  description: 'Premium digital experiences built by Mavvix Software.',
+  robots: { index: false, follow: false },
+  referrer: 'no-referrer',
+  icons: { icon: '/assets/mavvix/favicon.ico', apple: '/assets/mavvix/apple-touch-icon.png' },
 };
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return children;
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return <html lang="ar"><body className="antialiased">{children}</body></html>;
 }
-

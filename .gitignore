@@ -16,5 +16,10 @@
 **/.phpunit.cache/
 .phpstan.cache/
 coverage/
+.env.*
+!.env.example
+/data/*.sqlite*
+*.tsbuildinfo
+/test-results/
 *.log
 

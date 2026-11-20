@@ -18,17 +18,18 @@ const seedData = JSON.parse(fs.readFileSync(path.join(rootDir, '05_ENGINEERING',
 const designSystems = JSON.parse(fs.readFileSync(path.join(rootDir, '02_DESIGN', 'DESIGN_SYSTEMS.json'), 'utf8'));
 
 // 1. Seed Admin User
-const adminEmail = process.env.ADMIN_BOOTSTRAP_EMAIL || 'admin@mavvix.demo';
-const adminPass = process.env.ADMIN_BOOTSTRAP_PASSWORD || 'MavvixDemo2026!Studio';
-const passHash = bcrypt.hashSync(adminPass, 10);
-
-const upsertAdmin = db.prepare(`
-  INSERT INTO admin_users (id, email, password_hash, role, active)
-  VALUES ('admin-01', ?, ?, 'owner', 1)
-  ON CONFLICT(email) DO UPDATE SET password_hash = excluded.password_hash;
-`);
-upsertAdmin.run(adminEmail, passHash);
-console.log('✅ Admin user seeded.');
+const adminEmail = process.env.ADMIN_BOOTSTRAP_EMAIL;
+const adminPass = process.env.ADMIN_BOOTSTRAP_PASSWORD;
+if (adminEmail && adminPass && adminPass.length >= 16) {
+  const passHash = bcrypt.hashSync(adminPass, 12);
+  db.prepare("INSERT INTO admin_users (id, email, password_hash, role, active) VALUES ('admin-01', ?, ?, 'owner', 1) ON CONFLICT(email) DO NOTHING")
+    .run(adminEmail.toLowerCase().trim(), passHash);
+  console.log('✅ Initial admin seeded without resetting existing passwords.');
+} else if (process.env.NODE_ENV === 'production') {
+  throw new Error('Secure ADMIN_BOOTSTRAP_EMAIL and ADMIN_BOOTSTRAP_PASSWORD are required for the first production seed.');
+} else {
+  console.log('No admin seeded; set both ADMIN_BOOTSTRAP_EMAIL and ADMIN_BOOTSTRAP_PASSWORD.');
+}
 
 // 2. Seed Demo Sites
 const sites = [
