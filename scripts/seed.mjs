@@ -1514,6 +1514,49 @@ const richAcademyArticles = [
   }
 ];
 
+for (const [index, article] of richAcademyArticles.entries()) {
+  const enrichment = [
+  {
+    "ar": "حول تحويل المعرفة إلى ممارسة عملية",
+    "en": "Turning learning into a repeatable professional practice",
+    "arText": "حتى يكون مسارك المهني قابلاً للقياس، قسّم خطة التعلم إلى أربع دورات قصيرة، وخصص لكل دورة مخرجًا واضحًا يمكن عرضه ومراجعته. اكتب مصادر البيانات التي تستخدمها، وحدد معايير الجودة، واحفظ قراراتك الهندسية مع بدائلها. نفّذ تجربة أولية، ثم اطلب مراجعة من زميل مستقل، وحسّن الأداء بعد تحليل الأخطاء. لا تكتفِ بعرض النتيجة النهائية؛ اشرح أيضًا كيف تأكدت من سلامة البيانات، وما القيود التي لم تتمكن من تجاوزها، وأي خطوات ستنفذها عند توسيع الحل.",
+    "enText": "Translate your learning plan into four short delivery cycles, each with a reviewable artifact and clear acceptance criteria. Document your data sources, describe quality checks, and preserve engineering decisions alongside the alternatives you rejected. Deliver an early implementation, request peer review, and profile failures before optimizing performance. A convincing portfolio does more than show the final dashboard: it explains validation methods, resource constraints, trade-offs and the next steps needed to operate the system safely at higher scale."
+  },
+  {
+    "ar": "خطة تطبيقية لتأسيس نظام تصميم موحد",
+    "en": "A practical implementation checklist for design systems",
+    "arText": "ابدأ بمراجعة ثلاث شاشات من المنتج الحالي وحدد مواضع الاختلاف في المسافات والألوان ونصوص الأزرار ورسائل الأخطاء. أنشئ جدولًا يربط كل اختلاف برمز تصميمي أو قاعدة استخدام، ثم اختبر المكونات في حالاتها المختلفة مثل التحميل والتعطيل والأخطاء. أضف دعم اتجاه النص العربي وتباين الألوان والتنقل باستخدام لوحة المفاتيح منذ البداية، ولا تؤجل إمكانية الوصول إلى نهاية المشروع. اختبر نسختين من المكون مع مطورين مختلفين وسجل الصعوبات، واجعل التوثيق جزءًا من مراجعة كل طلب دمج.",
+    "enText": "Start by auditing three representative product screens. Record inconsistencies in spacing, typography, button labels, error messages and interaction states. Map each variation to a design token or documented usage rule, then verify components in loading, disabled, empty and failure states. Include right-to-left content, color contrast, keyboard navigation and screen-reader semantics from the first iteration. Ask two developers to implement the same flow using the system, compare friction points, and make documentation updates a required part of code review rather than optional cleanup."
+  },
+  {
+    "ar": "ممارسة عملية للتحقق من سلامة الأنواع",
+    "en": "A hands-on workflow for reliable TypeScript",
+    "arText": "اختر وظيفة تتعامل مع بيانات واردة من API خارجي، وحدد شكل البيانات المتوقع ومجموعة حالات الفشل الواقعية. استخدم التحقق في وقت التشغيل قبل تحويل البيانات إلى أنواع موثوقة، ولا تعتمد على فرضيات ثابتة أو تحويلات قسرية دون دليل. اكتب اختبارات للحقل المفقود والقيمة غير المتوقعة والاستجابة المتأخرة، ثم راقب الرسائل التي سيقرأها المستخدم عند حدوث الخطأ. الهدف ليس زيادة عدد الأنواع في المشروع، بل تقليل المسارات التي تفشل بصمت وتسهيل فهم سبب العطل قبل أن يصل إلى العملاء.",
+    "enText": "Choose a function that consumes data from an external API and describe the expected response alongside plausible failure cases. Validate untrusted values at runtime before promoting them to trusted TypeScript types. Avoid assertions that hide uncertainty. Add tests for missing properties, unexpected enum values, delayed responses and malformed dates. Review the error states that users will actually encounter. The objective is not maximal type complexity; it is predictable failure behavior, clearer debugging and safer refactoring when business requirements change."
+  },
+  {
+    "ar": "دورة تحسين قابلة للقياس",
+    "en": "An evidence-based optimization cycle",
+    "arText": "قبل تغيير إعلان أو صفحة هبوط، سجل معدل التحويل الأساسي وحدد الحد الأدنى من البيانات المطلوبة لاتخاذ قرار. افصل بين جودة الزيارات وسهولة استخدام الصفحة وسرعة الرد على الاستفسارات، لأن كل عامل يتطلب إجراء مختلفًا. صمم تجربة تقارن تغييرًا واحدًا واضحًا، مثل صياغة العرض أو ترتيب الحقول، ثم راجع أثره على العملاء المؤهلين وليس على النقرات فقط. احتفظ بسجل القرارات والنتائج لتجنب تكرار الاختبارات الفاشلة، وراعِ خصوصية الزوار عند جمع بيانات القياس.",
+    "enText": "Before changing an advertisement or landing page, record the baseline conversion rate and define the minimum evidence required for a decision. Separate traffic quality from page usability and lead-response speed because each issue requires a different intervention. Design a controlled experiment around one specific change, such as the offer or the order of form fields. Evaluate qualified leads rather than clicks alone, and maintain a decision log so unsuccessful experiments are not repeated. Preserve user privacy throughout analytics collection."
+  },
+  {
+    "ar": "من مقابلة المستخدم إلى قرار المنتج",
+    "en": "From discovery interviews to product decisions",
+    "arText": "صغ سؤالًا بحثيًا محددًا عن سلوك المستخدم بدل أن تسأله هل يحب فكرة منتج جديد. اطلب منه وصف آخر مرة واجه فيها المشكلة، والخطوات التي اتبعها، والبدائل التي جربها، والتكلفة التي تحملها. قارن إجابات عدة أشخاص قبل أن تعمم النتائج، ولا تخلط بين رغبة عابرة واستعداد فعلي لتغيير السلوك. حول الملاحظات إلى فرضيات قابلة للاختبار بنموذج بسيط، ثم راقب ما يفعله المشاركون دون توجيههم إلى الإجابة التي تريدها.",
+    "enText": "Frame a specific behavioral research question rather than asking whether someone likes a proposed feature. Invite participants to describe the last time they encountered the problem, their workaround, its cost and the alternatives they considered. Compare several interviews before generalizing patterns, and distinguish polite enthusiasm from willingness to change behavior. Convert observations into falsifiable hypotheses, test them with a narrow prototype, and watch how participants act without leading them toward the answer your team hopes to hear."
+  },
+  {
+    "ar": "تعلم مبني على مشروع يمكن مراجعته",
+    "en": "Build a reviewable project, not just a completed lesson",
+    "arText": "لكل مهارة جديدة، حدد مشروعًا صغيرًا يوضح مفهومًا واحدًا بوضوح، ثم ضع شروط نجاح قابلة للفحص قبل بدء التنفيذ. اطلب من المتعلم شرح اختيار الأدوات وبدائلها ومصدر الأخطاء وكيف تحقق من النتيجة. استخدم مراجعة الأقران وأسئلة التفكير النقدي لتثبيت الفهم بدل الاعتماد على مشاهدة الفيديو حتى النهاية. عندما يفشل المشروع، سجل سبب الفشل والإصلاح الذي جربته والاختبار الذي منع تكراره. بهذه الطريقة يصبح سجل التعلم دليلًا على مهارة حقيقية قابلة للنقل إلى بيئة العمل.",
+    "enText": "For every new skill, define a small project that demonstrates one concept and write testable success criteria before implementation. Ask the learner to explain tool selection, rejected alternatives, encountered failures and the evidence used to validate the result. Use peer review and reflective questioning to reinforce understanding rather than measuring only video completion. When a project fails, document the cause, corrective action and regression test. A visible record of these decisions becomes stronger evidence of practical competency than a completed progress bar."
+  }
+][index];
+  article.body_ar.sections.push({ heading: enrichment.ar, content: enrichment.arText });
+  article.body_en.sections.push({ heading: enrichment.en, content: enrichment.enText });
+}
+
 for (const a of richAcademyArticles) {
   upsertPost.run(a.id, acadSiteId, a.slug, a.category);
   upsertContent.run(
