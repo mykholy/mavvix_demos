@@ -28,7 +28,7 @@ export default function RealEstateDevelopmentDetailPage({ params }: Props) {
     notFound();
   }
 
-  const units = getPropertyUnits(locale).slice(0, 3);
+  const units = getPropertyUnits(locale).filter(unit => unit.development_id === development.id).slice(0, 3);
 
   const amenities = [
     { title: isAr ? 'النادي الصحي والرياضي الخاص' : 'Private Resident Clubhouse & Spa' },

@@ -1,7 +1,7 @@
 import { SectorPhoto } from '@/components/shared/SectorPhoto';
 import { getSectorHeroStyle } from '@/lib/media/sector-images';
 import Link from 'next/link';
-import { getPropertyUnits, getEditorialPosts } from '@/lib/db/repositories';
+import { getPropertyUnits, getDevelopments, getEditorialPosts } from '@/lib/db/repositories';
 import type { Locale } from '@/lib/i18n/config';
 import {
   Building,
@@ -29,6 +29,7 @@ export default function RealEstateHomePage({ params }: Props) {
 
   const units = getPropertyUnits(locale).slice(0, 6);
   const articles = getEditorialPosts('real-estate', locale).slice(0, 3);
+  const developments = getDevelopments(locale).slice(0, 3);
 
   return (
     <div className="space-y-16 pb-20">
@@ -223,6 +224,60 @@ export default function RealEstateHomePage({ params }: Props) {
         </div>
       </section>
 
+
+      {/* Masterplanned developments: real linked database records, not invented metrics. */}
+      <section className="bg-[#EAE5DB] py-16 sm:py-20 border-y border-[#DDD4C6]" aria-labelledby="meridian-communities-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-9">
+          <div className="flex flex-wrap items-end justify-between gap-5">
+            <div className="max-w-2xl">
+              <span className="font-mono text-[11px] tracking-[.25em] uppercase text-[#966D4C]">{isAr ? 'تصوّر متكامل للمكان' : 'THE COMMUNITY COLLECTION'}</span>
+              <h2 id="meridian-communities-heading" className="mt-3 font-serif text-3xl sm:text-4xl font-bold text-[#25312D]">{isAr ? 'المكان أكثر من مجرد مساحة' : 'Thoughtful places to call home'}</h2>
+              <p className="text-sm mt-3 text-[#4F6056] leading-7">{isAr ? 'ابدأ بالمجتمع السكني، ثم تعرّف على المخططات والأسعار والتفاصيل التي تهم قرارك.' : 'Explore each neighborhood idea, its planning approach, residence layouts and available home types before making a decision.'}</p>
+            </div>
+            <Link href={`/${locale}/preview/real-estate/developments`} className="inline-flex items-center gap-2 rounded-full border border-[#25312D] px-5 py-3 text-xs font-bold hover:bg-[#25312D] hover:text-white transition-colors">{isAr ? 'استكشف المجمعات' : 'Explore all developments'} <Arrow className="w-4 h-4" /></Link>
+          </div>
+          <div className="grid md:grid-cols-3 gap-5">
+            {developments.map((development, index) => (
+              <article key={development.id} className="group bg-[#FAF9F5] rounded-[1.6rem] border border-white/60 shadow-sm p-6 sm:p-7 flex flex-col justify-between min-h-[250px] hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                <div>
+                  <div className="flex justify-between items-center font-mono text-xs text-[#8D795F] mb-6"><span>{String(index + 1).padStart(2,'0')} / {String(developments.length).padStart(2,'0')}</span><span>{development.city}</span></div>
+                  <h3 className="font-serif text-2xl text-[#25312D] font-bold mb-3">{development.title}</h3>
+                  <p className="text-sm text-[#637068] leading-6 line-clamp-4">{development.summary}</p>
+                </div>
+                <Link href={`/${locale}/preview/real-estate/developments/${development.slug}`} className="mt-6 pt-4 border-t border-[#DED6C9] inline-flex items-center justify-between font-bold text-sm text-[#936B4C]">
+                  {isAr ? 'استعراض تفاصيل المشروع' : 'Explore the development'} <Arrow className="w-4 h-4 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" />
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="meridian-process-heading">
+        <div className="bg-[#25312D] rounded-[2rem] text-[#F7F2E8] p-8 sm:p-12 lg:p-16">
+          <div className="max-w-3xl">
+            <span className="text-[#D8B18A] text-xs tracking-[.22em] uppercase font-mono">{isAr ? 'قرار سكني أكثر وضوحًا' : 'CLEAR DECISIONS, NO SURPRISES'}</span>
+            <h2 id="meridian-process-heading" className="font-serif text-3xl sm:text-4xl font-bold mt-4">{isAr ? 'رحلتك من أول بحث حتى طلب المعاينة' : 'A considered journey from search to viewing'}</h2>
+            <p className="mt-4 text-white/70 text-sm leading-7">{isAr ? 'كل خطوة لها هدف محدد، من مقارنة احتياجات الأسرة إلى مراجعة التفاصيل المكتوبة قبل أي التزام.' : 'Compare the essentials, examine unit details, and confirm all commitments in writing before proceeding.'}</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+            {[
+              { n:'01', ar:'حدّد أولوياتك', en:'Set your priorities', arBody:'الموقع والمساحة والميزانية وتفضيلات التشطيب.', enBody:'Location, budget, layout and finishing priorities.' },
+              { n:'02', ar:'قارن وحدات مناسبة', en:'Shortlist residences', arBody:'احفظ الوحدات وقارن المواصفات والسعر المرجعي.', enBody:'Save homes and compare specifications and indicative pricing.' },
+              { n:'03', ar:'راجع التفاصيل', en:'Review the details', arBody:'اطلع على توزيع الغرف وتفاصيل الوحدة والشروط.', enBody:'Understand room arrangements, unit specifics and terms.' },
+              { n:'04', ar:'اطلب موعد معاينة', en:'Request a viewing', arBody:'أرسل تفضيلات الموعد لتأكيدها لاحقًا مع المسؤول.', enBody:'Submit a viewing preference for later confirmation.' },
+            ].map(step => (
+              <div key={step.n} className="border-t-2 border-[#A8764F] pt-5">
+                <span className="text-[#D8B18A] font-mono text-sm">{step.n}</span>
+                <h3 className="text-lg font-semibold mt-4 mb-2">{isAr ? step.ar : step.en}</h3>
+                <p className="text-sm leading-6 text-white/60">{isAr ? step.arBody : step.enBody}</p>
+              </div>
+            ))}
+          </div>
+          <Link href={`/${locale}/preview/real-estate/compare`} className="inline-flex gap-2 items-center bg-[#D7AE85] hover:bg-[#E4BF99] text-[#25312D] px-6 py-3 rounded-full mt-10 text-sm font-bold transition-colors">{isAr ? 'ابدأ مقارنة الوحدات' : 'Compare residences'} <Arrow className="w-4 h-4" /></Link>
+        </div>
+      </section>
+
       {/* Neighborhood Guides / Journal Preview */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-8 pb-4 border-b border-stone-300">
@@ -273,7 +328,28 @@ export default function RealEstateHomePage({ params }: Props) {
           ))}
         </div>
       </section>
+
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="meridian-faq-heading">
+        <div className="grid lg:grid-cols-12 gap-10 items-start">
+          <div className="lg:col-span-4 space-y-4">
+            <span className="text-[#966D4C] font-mono text-xs tracking-widest">{isAr ? 'قبل اتخاذ القرار' : 'BEFORE YOU DECIDE'}</span>
+            <h2 id="meridian-faq-heading" className="font-serif text-3xl font-bold text-[#25312D]">{isAr ? 'إجابات توضح الصورة كاملة' : 'Answers for a more confident choice'}</h2>
+            <Link href={`/${locale}/preview/real-estate/contact`} className="inline-flex items-center gap-2 text-sm font-bold text-[#A8764F] hover:underline">{isAr ? 'أرسل استفسارك' : 'Ask a question'} <Arrow className="w-4 h-4" /></Link>
+          </div>
+          <div className="lg:col-span-8 space-y-3">
+            {[
+              {ar:'هل طلب المعاينة يعني تأكيد موعد؟',en:'Does a viewing request confirm an appointment?',arA:'لا. يتم تسجيل تفضيلك للموعد، ولا يصبح الحجز مؤكدًا إلا بعد رد الجهة المسؤولة.',enA:'No. The preferred time is recorded and requires explicit confirmation from the responsible team.'},
+              {ar:'هل خطط الأقساط المعروضة عروض تمويل رسمية؟',en:'Are the installment examples official financing offers?',arA:'الحاسبة استرشادية فقط؛ الأسعار والدفعات والرسوم النهائية تتطلب عرضًا تعاقديًا موثقًا.',enA:'The calculator is illustrative. Final prices, payment schedules and fees require a written offer.'},
+              {ar:'ما أهم المعلومات التي أراجعها قبل التعاقد؟',en:'What should I check before signing?',arA:'ملكية الوحدة والتراخيص والمساحة الفعلية وجدول التسليم وبنود التشطيب وأي رسوم إضافية.',enA:'Ownership, legal approvals, measured area, delivery terms, fit-out scope and any extra fees.'},
+            ].map((item,i) => (
+              <details key={i} className="group bg-white border border-[#E2DDD2] rounded-2xl p-5 sm:p-6 open:shadow-sm">
+                <summary className="cursor-pointer font-semibold text-[#25312D] text-sm sm:text-base">{isAr ? item.ar : item.en}</summary>
+                <p className="mt-4 text-sm leading-7 text-[#647168]">{isAr ? item.arA : item.enA}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
-

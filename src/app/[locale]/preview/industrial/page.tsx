@@ -26,15 +26,21 @@ export default function IndustrialHomePage({ params }: Props) {
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;
 
-  const products = getCatalogItems('industrial', locale).slice(0, 6);
+  const catalog = getCatalogItems('industrial', locale);
+  const products = catalog.slice(0, 6);
   const articles = getEditorialPosts('industrial', locale).slice(0, 3);
 
   const categories = [
-    { id: 'profiles', title: isAr ? 'قطاعات وهياكل الصلب' : 'Structural Steel Profiles', count: '12 SKUs' },
-    { id: 'fasteners', title: isAr ? 'وصلات ومثبتات عالية الشد' : 'High-Tensile Fasteners', count: '8 SKUs' },
-    { id: 'piping', title: isAr ? 'أنابيب ووصلات الضغط العالي' : 'Industrial Pressure Piping', count: '6 SKUs' },
-    { id: 'sheets', title: isAr ? 'ألواح ولفائف مسحوبة على البارد' : 'Cold-Rolled Steel Sheets', count: '6 SKUs' },
-  ];
+    { id: 'profiles', title: isAr ? 'قطاعات معدنية' : 'Industrial Profiles' },
+    { id: 'tubes', title: isAr ? 'أنابيب معدنية' : 'Metal Tubes' },
+    { id: 'sheets', title: isAr ? 'ألواح ولفائف' : 'Sheets & Plates' },
+    { id: 'fittings', title: isAr ? 'وصلات وتجهيزات' : 'Fittings' },
+    { id: 'fasteners', title: isAr ? 'مثبتات ميكانيكية' : 'Fasteners' },
+    { id: 'pipes', title: isAr ? 'مواسير صناعية' : 'Industrial Pipes' },
+  ].map(category => ({
+    ...category,
+    count: `${catalog.filter(product => product.item_type === category.id).length} SKUs`,
+  }));
 
   return (
     <div className="space-y-16 pb-20">
@@ -267,7 +273,7 @@ export default function IndustrialHomePage({ params }: Props) {
               PRECISION MANUFACTURING
             </span>
             <h2 className="text-2xl sm:text-3xl font-black tracking-tight">
-              {isAr ? 'قدرات التصنيع والتشكيل الميكانيكي' : 'Certified Manufacturing Capabilities'}
+              {isAr ? 'أساليب التصنيع ونقاط فحص الجودة' : 'Manufacturing Methods & Quality Considerations'}
             </h2>
           </div>
 

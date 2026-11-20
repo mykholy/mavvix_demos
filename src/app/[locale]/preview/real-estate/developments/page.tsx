@@ -28,7 +28,7 @@ export default function RealEstateDevelopmentsPage({ params }: Props) {
       {/* Header */}
       <div className="pb-6 border-b border-stone-300">
         <span className="text-xs font-mono font-bold text-[#A8764F] uppercase tracking-widest block mb-1">
-          MASTERPLANNED COMMUNITIES // 5 SIGNATURE PROJECTS
+          MASTERPLANNED COMMUNITIES // CURATED RESIDENTIAL CONCEPTS
         </span>
         <h1 className="text-3xl sm:text-5xl font-black text-[#25312D] tracking-tight font-serif">
           {isAr ? 'المجمعات السكنية والمشاريع المتكاملة' : 'Signature Masterplanned Developments'}
@@ -65,12 +65,12 @@ export default function RealEstateDevelopmentsPage({ params }: Props) {
 
               <div className="p-4 bg-[#F5F0E6] rounded-xl border border-stone-200 space-y-2 text-xs font-mono mb-6">
                 <div className="flex justify-between">
-                  <span className="text-stone-500 font-sans">{isAr ? 'تاريخ التسليم المتوقع:' : 'Handover Target:'}</span>
-                  <span className="font-bold text-[#25312D]">Q4 2027</span>
+                  <span className="text-stone-500 font-sans">{isAr ? 'تفاصيل التسليم:' : 'Handover details:'}</span>
+                  <span className="font-bold text-[#25312D]">{isAr ? "حسب العقد" : "Per written contract"}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-stone-500 font-sans">{isAr ? 'إجمالي الوحدات:' : 'Master Plan:'}</span>
-                  <span className="font-bold text-[#25312D]">120 Units</span>
+                  <span className="text-stone-500 font-sans">{isAr ? 'Master Plan:' : 'Master Plan:'}</span>
+                  <span className="font-bold text-[#25312D]">{isAr ? "المخطط والمرافق" : "Layout & amenities"}</span>
                 </div>
               </div>
             </div>
