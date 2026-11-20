@@ -27,7 +27,7 @@ export function MavvixHeader({ locale }: Props) {
             />
           </div>
           <span className="hidden sm:inline-block text-xs font-medium tracking-wide uppercase px-2 py-0.5 rounded bg-mavvix-blue/30 text-cyan-300 border border-cyan-500/20">
-            Demo Factory V2
+            Mavvix Studio
           </span>
         </Link>
 
@@ -37,14 +37,14 @@ export function MavvixHeader({ locale }: Props) {
             className="text-sm font-medium text-slate-300 hover:text-white transition-colors flex items-center gap-1.5"
           >
             <Layers className="w-4 h-4 text-cyan-400" />
-            <span>{locale === 'ar' ? 'نماذج الأعمال' : 'Demos'}</span>
+            <span>{locale === 'ar' ? 'نماذج الأعمال' : 'Our Work'}</span>
           </Link>
           <Link
-            href="/admin"
+            href="https://mavvix.com/contact"
             className="text-sm font-medium text-slate-300 hover:text-white transition-colors flex items-center gap-1.5"
           >
             <ShieldCheck className="w-4 h-4 text-amber-400" />
-            <span>{t.adminPortal}</span>
+            <span>{locale === 'ar' ? 'ابدأ مشروعك' : 'Start Your Project'}</span>
           </Link>
           <a
             href={process.env.NEXT_PUBLIC_MAVVIX_SALES_URL || 'https://mavvix.com/'}

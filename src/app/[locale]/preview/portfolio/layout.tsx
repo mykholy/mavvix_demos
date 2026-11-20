@@ -1,3 +1,4 @@
+import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import React from 'react';
 import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
@@ -77,6 +78,13 @@ export default function PortfolioLayout({
             </Link>
           </nav>
 
+          <MobileSectorNav tone="light" breakpoint="md" links={[
+            { href: `/${locale}/preview/portfolio/work`, label: isAr ? 'الأعمال' : 'Work' },
+            { href: `/${locale}/preview/portfolio/services`, label: isAr ? 'الخدمات' : 'Services' },
+            { href: `/${locale}/preview/portfolio/about`, label: isAr ? 'عن الاستوديو' : 'About' },
+            { href: `/${locale}/preview/portfolio/journal`, label: isAr ? 'المقالات' : 'Journal' },
+            { href: `/${locale}/preview/portfolio/contact`, label: isAr ? 'تواصل' : 'Contact' },
+          ]} />
           {/* Action CTA */}
           <div className="flex items-center gap-3">
             <Link

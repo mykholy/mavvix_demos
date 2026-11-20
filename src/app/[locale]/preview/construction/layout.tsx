@@ -1,3 +1,4 @@
+import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import Link from 'next/link';
 import { locales, type Locale } from '@/lib/i18n/config';
 import {
@@ -66,6 +67,7 @@ export default function ConstructionLayout({ children, params }: Props) {
               </Link>
             ))}
           </nav>
+          <MobileSectorNav links={navLinks} />
 
           <div className="flex items-center gap-3">
             <Link
