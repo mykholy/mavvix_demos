@@ -25,6 +25,8 @@ jobs:
         run: npm run db:migrate
       - name: Seed fresh SQLite
         run: npm run db:seed
+      - name: Sector structure & handoff audit
+        run: npm run qa:handoff
       - name: Run unit tests
         run: npm run test:unit
       - name: TypeScript contract
