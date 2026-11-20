@@ -30,7 +30,7 @@ const cents = (x: number) => Number.isFinite(x) && Number.isSafeInteger(x) && x 
 
 export async function POST(request: Request, { params }: { params: { vertical: string } }) {
   try {
-    const rate = checkRateLimit('intake:' + getRequestIdentity(request), 12, 60_000);
+    const rate = checkRateLimit('intake:' + params.vertical + ':' + getRequestIdentity(request), 12, 60_000);
     if (!rate.allowed) return NextResponse.json({ error: 'Please try again later' }, { status: 429, headers: { 'Retry-After': String(rate.retryAfter) } });
     const text = await request.text();
     if (text.length > 65536) return reject('TOO_LARGE', 'Request exceeds 64KB', 413);
