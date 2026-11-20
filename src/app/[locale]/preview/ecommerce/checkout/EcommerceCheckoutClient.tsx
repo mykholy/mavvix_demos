@@ -113,7 +113,7 @@ export default function EcommerceCheckoutClient({ locale }: Props) {
 
       // Clear cart and redirect to order receipt
       clearCart();
-      router.push(`/${locale}/preview/ecommerce/orders/${data.submissionId}`);
+      router.push(`/${locale}/preview/ecommerce/orders/${data.submissionId}?access=${encodeURIComponent(data.receiptToken)}`);
     } catch (err: any) {
       setErrorMessage(err.message || 'An error occurred during checkout');
     } finally {
