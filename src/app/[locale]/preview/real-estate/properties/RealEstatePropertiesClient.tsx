@@ -27,15 +27,16 @@ interface Props {
   locale: Locale;
   initialType?: string;
   initialMaxPrice?: string;
+  initialBeds?: string;
 }
 
-export function RealEstatePropertiesClient({ units, locale, initialType, initialMaxPrice }: Props) {
+export function RealEstatePropertiesClient({ units, locale, initialType, initialMaxPrice, initialBeds }: Props) {
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;
 
   const [typeFilter, setTypeFilter] = useState<string>(initialType || 'all');
   const [maxPrice, setMaxPrice] = useState<number>(initialMaxPrice ? parseInt(initialMaxPrice, 10) : 0);
-  const [bedsFilter, setBedsFilter] = useState<string>('all');
+  const [bedsFilter, setBedsFilter] = useState<string>(initialBeds || 'all');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   const [compareList, setCompareList] = useState<string[]>([]);

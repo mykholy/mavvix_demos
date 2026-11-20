@@ -77,7 +77,7 @@ export default function RealEstateHomePage({ params }: Props) {
             </div>
 
             {/* Right: Property Finder Card (Signature Hero Module) */}
-            <div className="lg:col-span-5 bg-white text-[#25312D] rounded-2xl p-6 sm:p-8 shadow-xl space-y-4">
+            <form action={`/${locale}/preview/real-estate/properties`} method="GET" className="lg:col-span-5 bg-white text-[#25312D] rounded-2xl p-6 sm:p-8 shadow-xl space-y-4">
               <h3 className="text-sm font-bold uppercase tracking-wider text-stone-500 font-mono pb-2 border-b border-stone-100">
                 {isAr ? 'البحث الذكي عن الوحدات' : 'Property Discovery Filter'}
               </h3>
@@ -85,7 +85,7 @@ export default function RealEstateHomePage({ params }: Props) {
               <div className="space-y-3 text-xs">
                 <div>
                   <label className="block text-stone-600 font-bold mb-1">{isAr ? 'نوع الوحدة' : 'Property Type'}</label>
-                  <select className="w-full p-2.5 bg-[#F5F0E6] border border-stone-300 rounded-lg text-xs font-bold text-[#25312D]">
+                  <select name="type" aria-label={isAr ? "نوع الوحدة" : "Property type"} className="w-full p-2.5 bg-[#F5F0E6] border border-stone-300 rounded-lg text-xs font-bold text-[#25312D]">
                     <option value="">{isAr ? 'كافة الأنواع (شقق، دوبلكس، فيلات)' : 'All Typologies'}</option>
                     <option value="apartment">{isAr ? 'شقة سكنية فاخرة' : 'Luxury Apartment'}</option>
                     <option value="penthouse">{isAr ? 'بنتهاوس مع روف' : 'Penthouse'}</option>
@@ -95,7 +95,7 @@ export default function RealEstateHomePage({ params }: Props) {
 
                 <div>
                   <label className="block text-stone-600 font-bold mb-1">{isAr ? 'الحد الأقصى للميزانية' : 'Max Budget'}</label>
-                  <select className="w-full p-2.5 bg-[#F5F0E6] border border-stone-300 rounded-lg text-xs font-bold text-[#25312D]">
+                  <select name="maxPrice" aria-label={isAr ? "حد الميزانية" : "Maximum budget"} className="w-full p-2.5 bg-[#F5F0E6] border border-stone-300 rounded-lg text-xs font-bold text-[#25312D]">
                     <option value="">{isAr ? 'بدون حد أقصى' : 'No Limit'}</option>
                     <option value="10000000">10,000,000 EGP</option>
                     <option value="15000000">15,000,000 EGP</option>
@@ -106,23 +106,21 @@ export default function RealEstateHomePage({ params }: Props) {
                 <div>
                   <label className="block text-stone-600 font-bold mb-1">{isAr ? 'عدد غرف النوم' : 'Bedrooms'}</label>
                   <div className="grid grid-cols-4 gap-2">
-                    {['Any', '2+', '3+', '4+'].map((b) => (
-                      <button key={b} type="button" className="p-2 text-center rounded bg-[#F5F0E6] border border-stone-300 font-bold hover:bg-[#A8764F] hover:text-white transition-colors">
-                        {b}
-                      </button>
+                    {[{ label: isAr ? 'الكل' : 'Any', value: 'all' }, { label: '2+', value: '2' }, { label: '3+', value: '3' }, { label: '4+', value: '4' }].map((b) => (
+                      <label key={b.value} className="relative cursor-pointer rounded bg-[#F5F0E6] border border-stone-300 font-bold hover:bg-[#A8764F]/10 focus-within:ring-2 focus-within:ring-[#A8764F]">
+                        <input type="radio" name="beds" value={b.value} defaultChecked={b.value === 'all'} className="peer sr-only" />
+                        <span className="block p-2 text-center peer-checked:bg-[#25312D] peer-checked:text-white rounded">{b.label}</span>
+                      </label>
                     ))}
                   </div>
                 </div>
               </div>
 
-              <Link
-                href={`/${locale}/preview/real-estate/properties`}
-                className="w-full bg-[#25312D] hover:bg-black text-white text-xs font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all uppercase tracking-wider"
-              >
+              <button type="submit" className="w-full bg-[#25312D] hover:bg-black text-white text-xs font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all uppercase tracking-wider">
                 <Search className="w-3.5 h-3.5" />
                 <span>{isAr ? 'عرض الوحدات المطابقة' : 'Search Matching Units'}</span>
-              </Link>
-            </div>
+              </button>
+            </form>
           </div>
         </div>
       </section>

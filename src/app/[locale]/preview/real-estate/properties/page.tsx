@@ -33,6 +33,7 @@ export default function RealEstatePropertiesPage({ params, searchParams }: Props
         locale={locale}
         initialType={searchParams.type}
         initialMaxPrice={searchParams.maxPrice}
+        initialBeds={searchParams.beds}
       />
     </div>
   );
