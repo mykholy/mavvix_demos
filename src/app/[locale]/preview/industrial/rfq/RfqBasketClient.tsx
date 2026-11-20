@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import type { LocalizedCatalogItem } from '@/lib/db/repositories';
 import type { Locale } from '@/lib/i18n/config';
@@ -37,42 +37,40 @@ export function RfqBasketClient({ allProducts, locale, initialSku }: Props) {
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;
 
-  // Initialize lines with initialSku if provided, or default to first 2 products
-  const defaultProduct1 = initialSku
-    ? allProducts.find((p) => p.sku === initialSku) || allProducts[0]
-    : allProducts[0];
-  const defaultProduct2 = allProducts.find((p) => p.sku !== defaultProduct1?.sku) || allProducts[1];
+  const createLine = (prod: LocalizedCatalogItem): RfqLine => {
+    const variant = prod.variants?.[0];
+    const minQty = Math.max(1, Number(variant?.min_qty) || 1);
+    const packMultiple = Math.max(1, Number(variant?.pack_multiple) || 1);
+    return {
+      id: 'line_' + prod.sku, sku: prod.sku, title: prod.title,
+      quantity: Math.ceil(minQty / packMultiple) * packMultiple,
+      minQty, packMultiple, unit: String(prod.attributes?.unit || 'pcs'),
+    };
+  };
+  const [lines, setLines] = useState<RfqLine[]>([]);
+  const [hydrated, setHydrated] = useState(false);
+  useEffect(() => {
+    try {
+      const parsed = JSON.parse(localStorage.getItem('mavvix_industrial_rfq_skus') || '[]');
+      const saved = Array.isArray(parsed) ? parsed.filter((v: unknown): v is string => typeof v === 'string') : [];
+      const selected = [...new Set([...saved, ...(initialSku ? [initialSku] : [])])];
+      setLines(selected.map(sku => allProducts.find(p => p.sku === sku)).filter((p): p is LocalizedCatalogItem => Boolean(p)).map(createLine));
+    } catch {
+      setLines(initialSku ? allProducts.filter(p => p.sku === initialSku).map(createLine) : []);
+    }
+    setHydrated(true);
+  }, [initialSku, allProducts]);
 
-  const [lines, setLines] = useState<RfqLine[]>([
-    {
-      id: 'line_1',
-      sku: defaultProduct1?.sku || 'FERRO-304-40',
-      title: defaultProduct1?.title || 'Steel Profile',
-      quantity: 500,
-      minQty: 100,
-      packMultiple: 50,
-      unit: 'meters',
-    },
-    ...(defaultProduct2
-      ? [
-          {
-            id: 'line_2',
-            sku: defaultProduct2.sku,
-            title: defaultProduct2.title,
-            quantity: 250,
-            minQty: 100,
-            packMultiple: 50,
-            unit: 'pcs',
-          },
-        ]
-      : []),
-  ]);
+  useEffect(() => {
+    if (!hydrated) return;
+    try { localStorage.setItem('mavvix_industrial_rfq_skus', JSON.stringify(lines.map(line => line.sku))); } catch {}
+  }, [lines, hydrated]);
 
   const [packaging, setPackaging] = useState('export_crates');
   const [destination, setDestination] = useState('gcc_region');
   const [buyerCompany, setBuyerCompany] = useState('');
   const [buyerEmail, setBuyerEmail] = useState('');
-  const [buyerNotes, setBuyerNotes] = useState('Requires EN 10204 3.1 inspection certificate and moisture barrier.');
+  const [buyerNotes, setBuyerNotes] = useState('');
 
   const [submitting, setSubmitting] = useState(false);
   const [receipt, setReceipt] = useState<{ id: string; refNumber: string } | null>(null);
@@ -85,11 +83,8 @@ export function RfqBasketClient({ allProducts, locale, initialSku }: Props) {
   }
 
   function removeLine(id: string) {
-    if (lines.length > 1) {
-      setLines(lines.filter((l) => l.id !== id));
-    } else {
-      setError(isAr ? 'يجب أن تحتوي سلة التسعير على بند واحد على الأقل' : 'RFQ basket must contain at least one line item');
-    }
+    setLines(previous => previous.filter(line => line.id !== id));
+    setError(null);
   }
 
   function addProductToBasket(sku: string) {
@@ -101,21 +96,20 @@ export function RfqBasketClient({ allProducts, locale, initialSku }: Props) {
       return;
     }
 
-    const newLine: RfqLine = {
-      id: 'line_' + Date.now(),
-      sku: prod.sku,
-      title: prod.title,
-      quantity: 200,
-      minQty: 100,
-      packMultiple: 50,
-      unit: 'pcs',
-    };
-    setLines([...lines, newLine]);
+    setLines([...lines, createLine(prod)]);
     setError(null);
   }
 
   async function handleRfqSubmit() {
     setError(null);
+    if (lines.length === 0) {
+      setError(isAr ? 'أضف منتجًا واحدًا على الأقل إلى طلب التسعير' : 'Add at least one SKU to the quotation basket');
+      return;
+    }
+    if (!buyerCompany.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(buyerEmail.trim())) {
+      setError(isAr ? 'أدخل اسم الشركة وبريدًا إلكترونيًا صالحًا' : 'Enter the company name and a valid business email');
+      return;
+    }
 
     // Validate MOQ for each line (Journey 3 tested invariant)
     for (const l of lines) {
@@ -168,6 +162,7 @@ export function RfqBasketClient({ allProducts, locale, initialSku }: Props) {
         throw new Error(data.error || 'RFQ submission failed');
       }
 
+      try { localStorage.removeItem('mavvix_industrial_rfq_skus'); } catch {}
       setReceipt({ id: data.submissionId, refNumber: data.refNumber });
     } catch (err: any) {
       setError(err.message || 'Error recording RFQ submission');

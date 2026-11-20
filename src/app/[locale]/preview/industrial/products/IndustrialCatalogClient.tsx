@@ -62,8 +62,16 @@ export function IndustrialCatalogClient({ products, locale, initialCategory, ini
   }
 
   function handleQuickAddRfq(sku: string) {
-    setRfqAddedNotice(sku);
-    setTimeout(() => setRfqAddedNotice(null), 3000);
+    try {
+      const stored = JSON.parse(localStorage.getItem('mavvix_industrial_rfq_skus') || '[]');
+      const items: string[] = Array.isArray(stored) ? stored.filter((v: unknown): v is string => typeof v === 'string') : [];
+      if (!items.includes(sku)) items.push(sku);
+      localStorage.setItem('mavvix_industrial_rfq_skus', JSON.stringify(items));
+      setRfqAddedNotice(sku);
+    } catch {
+      // If browser storage is blocked, the item can still be added through the RFQ selector.
+      window.location.assign(`/${locale}/preview/industrial/rfq?sku=${encodeURIComponent(sku)}`);
+    }
   }
 
   return (
@@ -90,7 +98,9 @@ export function IndustrialCatalogClient({ products, locale, initialCategory, ini
             { id: 'all', label: isAr ? 'الكل' : 'All' },
             { id: 'profiles', label: isAr ? 'قطاعات' : 'Profiles' },
             { id: 'fasteners', label: isAr ? 'مثبتات' : 'Fasteners' },
-            { id: 'piping', label: isAr ? 'أنابيب' : 'Piping' },
+            { id: 'pipes', label: isAr ? 'مواسير' : 'Pipes' },
+            { id: 'tubes', label: isAr ? 'أنابيب' : 'Tubes' },
+            { id: 'fittings', label: isAr ? 'وصلات' : 'Fittings' },
             { id: 'sheets', label: isAr ? 'ألواح' : 'Sheets' },
           ].map((cat) => (
             <button
