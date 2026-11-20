@@ -70,8 +70,8 @@ export function RfqBasketClient({ allProducts, locale, initialSku }: Props) {
 
   const [packaging, setPackaging] = useState('export_crates');
   const [destination, setDestination] = useState('gcc_region');
-  const [buyerCompany, setBuyerCompany] = useState('Al-Mashriq Industrial Trading');
-  const [buyerEmail, setBuyerEmail] = useState('procurement@almashriq.demo');
+  const [buyerCompany, setBuyerCompany] = useState('');
+  const [buyerEmail, setBuyerEmail] = useState('');
   const [buyerNotes, setBuyerNotes] = useState('Requires EN 10204 3.1 inspection certificate and moisture barrier.');
 
   const [submitting, setSubmitting] = useState(false);

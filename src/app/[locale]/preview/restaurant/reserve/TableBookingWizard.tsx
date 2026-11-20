@@ -29,8 +29,8 @@ export function TableBookingWizard({
     return tomorrow.toISOString().split('T')[0];
   });
   const [selectedSlotId, setSelectedSlotId] = useState<string>('');
-  const [guestName, setGuestName] = useState('Sara Al-Mansoor (Demo Guest)');
-  const [guestPhone, setGuestPhone] = useState('+20 102 345 6789');
+  const [guestName, setGuestName] = useState('');
+  const [guestPhone, setGuestPhone] = useState('');
   const [guestNotes, setGuestNotes] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [validationError, setValidationError] = useState<string | null>(null);

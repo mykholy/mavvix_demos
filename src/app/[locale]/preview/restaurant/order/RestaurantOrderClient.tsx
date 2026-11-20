@@ -24,8 +24,8 @@ export function RestaurantOrderClient({
     generateOrderText,
   } = useOrder();
 
-  const [guestName, setGuestName] = useState('Ahmed Mostafa (Demo Guest)');
-  const [guestPhone, setGuestPhone] = useState('+20 100 000 0000');
+  const [guestName, setGuestName] = useState('');
+  const [guestPhone, setGuestPhone] = useState('');
   const [selectedBranchId, setSelectedBranchId] = useState(branches[0]?.id || 'rest-branch-1');
   const [pickupNote, setPickupNote] = useState('');
   const [copied, setCopied] = useState(false);
