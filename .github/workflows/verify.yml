@@ -31,3 +31,5 @@ jobs:
         run: npm run typecheck
       - name: Next.js production build
         run: npm run build
+      - name: HTTP smoke — public routes, DB writes, protected routes
+        run: node scripts/smoke.mjs
