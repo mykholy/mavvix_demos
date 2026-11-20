@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Locale } from '@/lib/i18n/config';
 import { getDentalServices, getDentalPractitioners, getDentalLocations } from '@/lib/db/repositories';
 import AppointmentRequestWizard from './AppointmentRequestWizard';
@@ -35,12 +35,12 @@ export default function DentalAppointmentPage({
           </p>
         </div>
 
-        <AppointmentRequestWizard
+        <Suspense fallback={<div className="min-h-80 animate-pulse rounded-2xl bg-[#EDF5F2]" />}><AppointmentRequestWizard
           locale={locale}
           services={services}
           practitioners={practitioners}
           locations={locations}
-        />
+        /></Suspense>
       </div>
     </div>
   );

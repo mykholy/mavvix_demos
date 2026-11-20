@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Locale } from '@/lib/i18n/config';
 import { getRestaurantBranches, getRestaurantTimeSlots } from '@/lib/db/repositories';
 import { TableBookingWizard } from './TableBookingWizard';
@@ -29,7 +29,7 @@ export default function RestaurantReservePage({
         </p>
       </div>
 
-      <TableBookingWizard branches={branches} slots={slots} locale={locale} />
+      <Suspense fallback={<div className="min-h-80 animate-pulse rounded-2xl bg-[#F7F0E8]" />}><TableBookingWizard branches={branches} slots={slots} locale={locale} /></Suspense>
     </div>
   );
 }

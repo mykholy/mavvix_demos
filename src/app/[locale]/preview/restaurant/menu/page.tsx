@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Locale } from '@/lib/i18n/config';
 import { getRestaurantDishes } from '@/lib/db/repositories';
 import { RestaurantMenuClient } from './RestaurantMenuClient';
@@ -30,7 +30,7 @@ export default function RestaurantMenuPage({
       </div>
 
       {/* Interactive Filter and Dish Grid */}
-      <RestaurantMenuClient initialDishes={dishes} locale={locale} />
+      <Suspense fallback={<div className="min-h-80 animate-pulse rounded-2xl bg-[#F7F0E8]" />}><RestaurantMenuClient initialDishes={dishes} locale={locale} /></Suspense>
     </div>
   );
 }

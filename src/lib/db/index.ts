@@ -20,14 +20,14 @@ export function getDb(): DatabaseSync {
 export function query<T = any>(sql: string, params: any[] = []): T[] {
   const db = getDb();
   const stmt = db.prepare(sql);
-  return stmt.all(...params) as T[];
+  return stmt.all(...params).map(row => ({ ...row })) as T[];
 }
 
 export function queryOne<T = any>(sql: string, params: any[] = []): T | null {
   const db = getDb();
   const stmt = db.prepare(sql);
   const result = stmt.get(...params);
-  return (result as T) || null;
+  return result ? ({ ...result } as T) : null;
 }
 
 export function execute(sql: string, params: any[] = []): { changes: number | bigint; lastInsertRowid: number | bigint } {

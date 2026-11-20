@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { getPropertyUnits } from '@/lib/db/repositories';
 import type { Locale } from '@/lib/i18n/config';
 import { ViewingRequestWizard } from './ViewingRequestWizard';
@@ -27,11 +28,11 @@ export default function RealEstateViewingPage({ params, searchParams }: Props) {
         </p>
       </div>
 
-      <ViewingRequestWizard
+      <Suspense fallback={<div className="min-h-80 animate-pulse rounded-2xl bg-[#F5F0E6]" />}><ViewingRequestWizard
         allUnits={allUnits}
         locale={locale}
         initialUnitSlug={searchParams.unit}
-      />
+      /></Suspense>
     </div>
   );
 }
