@@ -1,5 +1,6 @@
-import { getProductEditorialPhoto } from '@/lib/media/sector-images';
 'use client';
+
+import { getProductEditorialPhoto } from '@/lib/media/sector-images';
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
