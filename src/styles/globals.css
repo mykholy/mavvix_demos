@@ -29,3 +29,18 @@
   }
 }
 
+
+/* Premium polish: tactile interaction and disciplined typography, preserving each sector's palette. */
+html { scroll-behavior: smooth; }
+body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+.font-arabic { font-family: 'Tajawal', 'IBM Plex Sans Arabic', 'Cairo', Tahoma, system-ui, sans-serif; }
+img { max-width: 100%; }
+section { scroll-margin-top: 92px; }
+a, button { -webkit-tap-highlight-color: transparent; }
+button:disabled { cursor: not-allowed; }
+@media (min-width: 768px) {
+  .group:hover { will-change: transform; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

@@ -1,3 +1,4 @@
+import { SectorPhoto } from '@/components/shared/SectorPhoto';
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -46,6 +47,10 @@ export default function PortfolioCaseDetailPage({
           <span className="text-[#0F0F10] font-bold truncate max-w-[200px]">{project.title}</span>
         </div>
 
+        <figure className="space-y-2">
+          <SectorPhoto sector="portfolio" secondary className="h-60 sm:h-[400px] w-full rounded-[2rem]" alt="Creative architectural workspace reference photograph" />
+          <figcaption className="text-xs text-[#737068]">{isAr ? 'صورة مرجعية للمزاج البصري، وليست توثيقًا للمشروع' : 'Editorial design reference, not documentation of this project'}</figcaption>
+        </figure>
         <CaseStudyDetailClient locale={locale} project={project} />
       </div>
     </div>
