@@ -85,7 +85,7 @@ try {
     'real-estate/properties/listing-01','real-estate/developments/dawn-gardens','real-estate/journal/article-01',
     'dental/services/service-01','dental/team/clinician-01','dental/patient-guide/article-01',
     'ecommerce/products/product-01','ecommerce/collections/apparel','ecommerce/journal/article-01',
-    'portfolio/services/service-01','portfolio/work/case-01','portfolio/journal/article-01',
+    'portfolio/services/brand-identity','portfolio/work/case-01','portfolio/journal/article-01',
     'restaurant/menu/dish-01','restaurant/locations/branch-1','restaurant/journal/article-01',
     'academy/courses/course-01','academy/instructors/instructor-01','academy/resources/article-01',
     'academy/learn/course-01/lesson-01-01','academy/quiz/lesson-01-01',

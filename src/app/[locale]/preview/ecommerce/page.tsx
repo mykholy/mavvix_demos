@@ -220,6 +220,29 @@ export default function EcommerceStorefrontPage({
         </div>
       </section>
 
+
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="noria-guide-heading">
+        <div className="border-t border-[#E7DED4] pt-10">
+          <div className="max-w-xl space-y-2">
+            <span className="text-[#A48776] tracking-[.2em] uppercase font-mono text-xs">{isAr ? 'اختيارات مدروسة' : 'THE ATELIER GUIDE'}</span>
+            <h2 id="noria-guide-heading" className="font-serif text-3xl sm:text-4xl text-[#1A1715] font-bold">{isAr ? 'تفاصيل صغيرة تصنع تجربة أفضل' : 'A little more confidence in every choice'}</h2>
+            <p className="text-sm leading-7 text-[#695E57]">{isAr ? 'معلومات واضحة تساعدك على اختيار المقاس والعناية بالأقمشة وفهم خطوات الشحن والاستبدال.' : 'Explore fit guidance, fabric care, and the delivery and exchange information that helps you choose with confidence.'}</p>
+          </div>
+          <div className="mt-8 grid md:grid-cols-3 gap-5">
+            {[
+              {no:'01',ar:'دليل المقاسات',en:'Find your fit',arText:'قارن القياسات المناسبة لكل تصميم قبل اختيار اللون والمقاس.',enText:'Understand fit differences and review measurements before choosing a size.',to:'help'},
+              {no:'02',ar:'التوصيل والاستبدال',en:'Delivery & exchanges',arText:'راجع مناطق التوصيل والمصاريف والأحكام الموضحة قبل تأكيد الطلب.',enText:'Review available delivery regions, charges and exchange conditions before checkout.',to:'help'},
+              {no:'03',ar:'العناية بالكتان',en:'Care that lasts',arText:'تعرّف على طرق غسل الأنسجة الطبيعية وتجفيفها وتخزينها.',enText:'Learn the basics of laundering, drying and storing natural textiles.',to:'story'},
+            ].map((item) => (
+              <Link key={item.no} href={`/${locale}/preview/ecommerce/${item.to}`} className="group bg-white border border-[#EBE5DF] rounded-3xl p-7 min-h-[230px] flex flex-col justify-between hover:border-[#C89B8C] hover:-translate-y-1 hover:shadow-md transition-all">
+                <div><span className="font-mono text-sm text-[#B49584]">{item.no}</span><h3 className="font-serif text-xl text-[#1A1715] font-bold mt-5">{isAr ? item.ar : item.en}</h3><p className="text-sm text-[#695E57] leading-7 mt-3">{isAr ? item.arText : item.enText}</p></div>
+                <div className="pt-5 flex justify-between items-center text-[#9D7965] border-t border-[#F1ECE6] text-xs font-bold mt-4">{isAr ? 'اعرف المزيد' : 'Explore the guide'} <Arrow className="w-4 h-4" /></div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Style Journal Teaser */}
       {articles.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

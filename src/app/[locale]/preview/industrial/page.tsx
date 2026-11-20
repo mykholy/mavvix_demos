@@ -313,6 +313,25 @@ export default function IndustrialHomePage({ params }: Props) {
         </div>
       </section>
 
+
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="ferroline-rfq-heading">
+        <div className="grid lg:grid-cols-12 gap-8 border border-[#DADFE4] rounded-3xl bg-[#F0F3F5] p-7 sm:p-12">
+          <div className="lg:col-span-5">
+            <span className="font-mono text-xs uppercase tracking-widest text-[#A77E30]">{isAr ? 'دورة طلب التوريد' : 'B2B PROCUREMENT WORKFLOW'}</span>
+            <h2 id="ferroline-rfq-heading" className="font-bold text-2xl sm:text-4xl text-[#12243C] mt-3">{isAr ? 'من كود المنتج إلى طلب عرض سعر واضح' : 'A more precise RFQ starts with the specifications.'}</h2>
+            <p className="text-sm leading-7 text-[#526474] mt-4">{isAr ? 'جهّز قائمة متعددة البنود مع الكميات ومعايير التعبئة المطلوبة قبل إرسال استفسار التوريد.' : 'Create a multi-item request, review minimum quantities and pack sizes, then provide shipping requirements for an accurate procurement discussion.'}</p>
+            <Link href={`/${locale}/preview/industrial/rfq`} className="inline-flex items-center gap-3 bg-[#12243C] hover:bg-[#1C3553] text-white rounded-xl font-bold px-6 py-3 text-sm mt-6 transition-colors">{isAr ? 'افتح سلة طلب التسعير' : 'Start a quotation request'} <Arrow className="w-4 h-4" /></Link>
+          </div>
+          <div className="lg:col-span-7 grid sm:grid-cols-3 gap-4">
+            {[
+              {n:'01',ar:'حدّد المواصفات',en:'Select specifications',arD:'اختر الكود والمادة والمقاسات الملائمة.',enD:'Select SKU, material and dimensions.'},
+              {n:'02',ar:'راجع قواعد التعبئة',en:'Check quantity rules',arD:'تحقق من الحد الأدنى ومضاعفات العبوات.',enD:'Validate MOQ and packaging multiples.'},
+              {n:'03',ar:'سجّل طلبك',en:'Submit your RFQ',arD:'أضف معلومات الشركة والتوصيل ليُراجع الطلب.',enD:'Provide buyer and destination details for review.'},
+            ].map(step => <div key={step.n} className="bg-white rounded-2xl border border-[#E0E4E7] p-6"><span className="text-amber-600 font-mono text-sm">{step.n}</span><h3 className="text-[#12243C] font-bold text-base mt-8">{isAr ? step.ar : step.en}</h3><p className="text-[#627080] text-sm mt-3 leading-6">{isAr ? step.arD : step.enD}</p></div>)}
+          </div>
+        </div>
+      </section>
+
       {/* Technical Library / Articles Preview */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-8 pb-4 border-b border-stone-300">
