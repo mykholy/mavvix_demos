@@ -92,7 +92,7 @@ export default function EcommerceLayout({
                     : 'Mavvix crafts high-converting boutique ecommerce stores with robust variant inventory, promotional pricing engines, and flawless checkout UX.'}
                 </p>
                 <a
-                  href={process.env.NEXT_PUBLIC_MAVVIX_SALES_URL || 'https://mavvix.com/contact'}
+                  href={process.env.NEXT_PUBLIC_MAVVIX_SALES_URL || (isAr ? 'https://mavvix.com/ar/contact' : 'https://mavvix.com/en/contact')}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#C89B8C] hover:bg-[#B88777] text-[#1A1715] text-xs font-bold transition-colors"

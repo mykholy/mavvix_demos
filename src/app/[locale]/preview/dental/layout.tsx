@@ -146,7 +146,7 @@ export default function DentalLayout({
                   : 'Mavvix builds bespoke, privacy-compliant digital clinic platforms that earn patient trust and drive real consultations.'}
               </p>
               <a
-                href={process.env.NEXT_PUBLIC_MAVVIX_SALES_URL || 'https://mavvix.com/contact'}
+                href={process.env.NEXT_PUBLIC_MAVVIX_SALES_URL || (isAr ? 'https://mavvix.com/ar/contact' : 'https://mavvix.com/en/contact')}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#2C5251] hover:bg-[#3D6967] text-white text-xs font-medium transition-colors"
