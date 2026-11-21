@@ -3,7 +3,7 @@
 **Scope:** Eight bilingual interactive commercial concepts, private repository `mykholy/mavvix_demos`, feature branch `feat/premium-production-hardening-20261120`.
 
 ## Important classification
-**Technical presentation candidate ≠ live client website.** Every vertical contains purpose-built routes, six homepage sections, forms and persistent concept flows. These features can support sales demonstrations. A site is **not eligible for handoff as a real operating business** until the real business owner supplies and approves its identity, imagery, pricing, factual claims, legal obligations and integrations.
+**Technical presentation candidate ≠ live client website.** Every vertical contains purpose-built routes, at least eight source-level homepage sections including bespoke domain editorial and FAQ sections, verified Mavvix contact widgets on all inner pages, and persistent industry-specific lead flows. These features can support sales demonstrations. A site is **not eligible for handoff as a real operating business** until the real business owner supplies and approves its identity, imagery, pricing, factual claims, legal obligations and integrations.
 
 ## Evidence from executed CI
 - Full clean npm install, schema migration and seed: PASS.
@@ -48,7 +48,7 @@ Flagship cases, service dossiers, project brief, journal, About and Now now have
 Dish categories, item detail, custom options, order summary, branch pages, reservation requests, journal and FAQ are implemented. Both order and table-request APIs can persist records, but **no kitchen/POS or reservation provider is connected**. The seed uses generic ingredient examples for numerous dishes; allergies and labels must be approved by the food operator. Menus, food photos, hours and kitchen operations need owner verification.
 
 ### 8. Academy
-The course catalogue, course detail, learning paths, instructor pages, textual lesson player, scored quiz, persisted guest progress, resources and enrollment requests work structurally. **60 lessons currently derive from repeated generic transcript templates**, so a mere page count cannot qualify this as a finished training product. Require an author-approved lesson-by-lesson syllabus, actual exercises and answers, course assets, real instructor bios and proper non-accredited certificate disclosures until credentials are verified.
+The course catalogue, course detail, learning paths, instructor pages, textual lesson player, scored quiz, persisted guest progress, resources and enrollment requests work structurally. **60 distinct subject-specific bilingual lessons with separate titles, extended explanations and applied exercises** now seed from an authored curriculum file across 12 programs. A professional training product still requires independent academic review, full instructional assets, real instructor credentials, final quiz validation and certification/tuition approval. Require an author-approved lesson-by-lesson syllabus, actual exercises and answers, course assets, real instructor bios and proper non-accredited certificate disclosures until credentials are verified.
 
 ## Mandatory production handoff gates
 1. **Identity/content evidence:** real company name/registration, logo ownership, licensed location/contact, permitted public claims and complete AR+EN copy approved by the client.
@@ -61,3 +61,10 @@ The course catalogue, course detail, learning paths, instructor pages, textual l
 8. **Business acceptance:** owner signs off assets, text, journeys, pricing, messages, emergency contact and publication permissions; only then mark the specific site Client Handoff Approved.
 
 **Verdict as of this audit:** Eight strong, testable **commercial concept websites** on a private PR; **not eight production-operational client websites**. Keep PR Draft until these gates are met.
+
+## 21 November conversion improvements
+- The official Mavvix phone and WhatsApp **01062015302** are now exposed consistently through a fixed desktop/mobile contact dock in every sector layout and industry-prefilled WhatsApp deep links. Business enquiry entry pages link to the verified localized Mavvix contact site.
+- Every industry homepage contains two additional sector-specific content sections, and distracting top notices have been replaced by a premium bilingual utility bar with deep-path language switching.
+- Production smoke checks assert the exact WhatsApp/call URLs in both AR and EN; 60 Academy lesson plans have a machine-checkable content-quality gate.
+- Localized descriptions and open-graph metadata now describe the website-development experience, not falsely verified real operators. Ads must promote **Mavvix building similar websites**.
+- The documented route/form and Next.js build pass do not replace live browser visual regression, verified photography-to-product matching, consent/Pixel testing or real client-content acceptance.
