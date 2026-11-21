@@ -117,7 +117,7 @@ try {
       const html=await (await get(url)).text();
       assert.ok(html.includes('wa.me/201062015302'), 'Verified WhatsApp contact missing: '+url);
       assert.ok(html.includes('tel:+201062015302'), 'Verified click-to-call missing: '+url);
-      assert.ok(html.includes('CONTACT') || html.includes('تواصل') || html.includes('موقع'), 'Floating conversion UI absent: '+url);
+      assert.ok(html.includes('data-mavvix-contact-dock'), 'Floating conversion UI absent: '+url);
     }
   }
   console.log('PASS: 8/8 industry sites include actual Mavvix WhatsApp and call conversion links in AR/EN');
