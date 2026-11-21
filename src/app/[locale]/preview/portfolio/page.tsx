@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { SectorDepth } from '@/components/shared/SectorDepth';
 import { SectorPhoto } from '@/components/shared/SectorPhoto';
 import { getSectorHeroStyle } from '@/lib/media/sector-images';
@@ -7,10 +8,14 @@ import { Locale } from '@/lib/i18n/config';
 import { getProjects, getPortfolioServices, getEditorialPosts } from '@/lib/db/repositories';
 import { ArrowUpRight, ArrowRight, ArrowLeft, Sparkles, Layers, Sliders, PenTool, CheckCircle2 } from 'lucide-react';
 
-export const metadata = {
-  title: 'Salma Hassan Studio | Creative Direction & Design Systems',
-  description: 'Independent design direction practice. Brand architectures, editorial digital platforms, and modular systems.'
-};
+
+
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  const ar = params.locale === 'ar';
+  const title = ar ? "موقع استوديو إبداعي | خدمات ودراسات حالة | تصميم مافكس" : "Creative Studio Portfolio | Case Studies & Services | Mavvix";
+  const description = ar ? "تجربة بورتفوليو بتفاصيل خدمات واستراتيجية تصميم ودراسات حالة ونموذج موجز مشروع واضح." : "Editorial creative studio portfolio with detailed case studies, service dossiers, process and a structured project brief.";
+  return { title, description, openGraph: {title, description, locale: ar ? 'ar_EG' : 'en_US', type: 'website'}, twitter: {card:'summary_large_image',title,description} };
+}
 
 export default function PortfolioHomePage({
   params: { locale }

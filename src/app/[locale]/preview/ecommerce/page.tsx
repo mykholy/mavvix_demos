@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { SectorDepth } from '@/components/shared/SectorDepth';
 import { SectorPhoto } from '@/components/shared/SectorPhoto';
 import { getSectorHeroStyle } from '@/lib/media/sector-images';
@@ -8,10 +9,14 @@ import { getCatalogItems, getEcommerceCollections, getEditorialPosts } from '@/l
 import ProductCard from './ProductCard';
 import { Sparkles, ArrowRight, ArrowLeft, ShieldCheck, HeartHandshake, Leaf, Scissors } from 'lucide-react';
 
-export const metadata = {
-  title: 'Noria Atelier | Contemporary Egyptian Natural Fiber Fashion',
-  description: 'Timeless garments crafted from natural linen and sustainable fibers. Discover curated everyday apparel, dresses, and artisan sets.'
-};
+
+
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  const ar = params.locale === 'ar';
+  const title = ar ? "متجر إلكتروني راقٍ | مجموعات ومنتجات وتسوق | تصميم مافكس" : "Premium Ecommerce Website | Fashion Storefront | Mavvix";
+  const description = ar ? "تصميم متجر بأقسام متخصصة وVariants وسلة وتسعير شحن وطلبات محمية وتجربة موبايل مصممة للبيع." : "A premium boutique storefront with collections, product options, cart, delivery estimates and private order receipts.";
+  return { title, description, openGraph: {title, description, locale: ar ? 'ar_EG' : 'en_US', type: 'website'}, twitter: {card:'summary_large_image',title,description} };
+}
 
 export default function EcommerceStorefrontPage({
   params: { locale }

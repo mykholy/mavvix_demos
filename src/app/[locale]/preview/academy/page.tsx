@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { SectorDepth } from '@/components/shared/SectorDepth';
 import { SectorPhoto } from '@/components/shared/SectorPhoto';
 import { getSectorHeroStyle } from '@/lib/media/sector-images';
@@ -5,6 +6,13 @@ import React from 'react';
 import Link from 'next/link';
 import { getAcademyCourses, getAcademyTracks, getAcademyInstructors, getEditorialPosts } from '@/lib/db/repositories';
 import type { Locale } from '@/lib/i18n/config';
+
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  const ar = params.locale === 'ar';
+  const title = ar ? "منصة تعليمية احترافية | دورات ودروس واختبارات | مافكس" : "Learning Platform | Courses, Lessons & Quizzes | Mavvix";
+  const description = ar ? "تجربة منصة تعليمية بمسارات ودورات ودروس متخصصة واختبارات وتقدم محفوظ وطلبات التحاق." : "Education platform with courses, subject-specific lessons, scored quizzes, persisted progress and enrollment enquiries.";
+  return { title, description, openGraph: {title, description, locale: ar ? 'ar_EG' : 'en_US', type: 'website'}, twitter: {card:'summary_large_image',title,description} };
+}
 
 export default async function AcademyHomePage({
   params,

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { SectorDepth } from '@/components/shared/SectorDepth';
 import { SectorPhoto } from '@/components/shared/SectorPhoto';
 import { getSectorHeroStyle } from '@/lib/media/sector-images';
@@ -5,6 +6,13 @@ import React from 'react';
 import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
 import { getRestaurantDishes, getRestaurantBranches, getEditorialPosts } from '@/lib/db/repositories';
+
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  const ar = params.locale === 'ar';
+  const title = ar ? "موقع مطعم ومنيو إلكتروني | تفاصيل الأطباق والحجز | مافكس" : "Restaurant Website | Menu, Dining & Table Requests | Mavvix";
+  const description = ar ? "تجربة موقع مطعم متخصصة: منيو بأقسام، أطباق وإضافات، طلبات، فروع وطلب حجز طاولة." : "A restaurant website with categorized dishes, modifiers, order review, branch information and table enquiries.";
+  return { title, description, openGraph: {title, description, locale: ar ? 'ar_EG' : 'en_US', type: 'website'}, twitter: {card:'summary_large_image',title,description} };
+}
 
 export default function RestaurantHomePage({
   params,
