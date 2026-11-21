@@ -159,11 +159,11 @@ export default function DentalLayout({
 
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/60">
             <p>
-              © {new Date().getFullYear()} Lumen Dental Studio. Fictional Showcase Website. Built with Next.js & SQLite.
+              © {new Date().getFullYear()} Lumen Dental Studio — website experience by Mavvix. Clinician profiles require licensing verification.
             </p>
             <div className="flex items-center gap-6">
               <Link href={`/${locale}/preview/dental/patient-guide`} className="hover:text-white transition-colors">
-                {isAr ? 'سياسة الخصوصية التوضيحية' : 'Sample Privacy Policy'}
+                {isAr ? 'معلومات الخصوصية' : 'Privacy information'}
               </Link>
               <Link href={`/${locale}/showcase`} className="text-[#7AC7A5] hover:underline">
                 {isAr ? 'معرض مافيكس للنماذج' : 'Mavvix Showcase'}

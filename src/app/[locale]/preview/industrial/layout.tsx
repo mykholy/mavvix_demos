@@ -153,7 +153,7 @@ export default function IndustrialLayout({ children, params }: Props) {
           </div>
 
           <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500">
-            <p>© {new Date().getFullYear()} FERROLINE Industries. Synthetic data for demonstrative purposes.</p>
+            <p>© {new Date().getFullYear()} Ferroline — industrial website experience by Mavvix. Verify all product specifications with the supplier.</p>
             <p>Built for Mavvix Studio.</p>
           </div>
         </div>

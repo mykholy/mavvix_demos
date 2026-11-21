@@ -138,7 +138,7 @@ export default function RealEstateLayout({ children, params }: Props) {
                 </li>
                 <li>
                   <Link href={`/${locale}/preview/real-estate/viewing`} className="hover:text-white">
-                    {isAr ? 'حجز موعد معاينة توضيحي' : 'Viewing Enquiry'}
+                    {isAr ? 'طلب معاينة' : 'Viewing Enquiry'}
                   </Link>
                 </li>
                 <li>
@@ -152,7 +152,7 @@ export default function RealEstateLayout({ children, params }: Props) {
           </div>
 
           <div className="pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-stone-500">
-            <p>© {new Date().getFullYear()} Meridian Residences. Simulated concept data for evaluation.</p>
+            <p>© {new Date().getFullYear()} Meridian Residences — property website experience by Mavvix. Listings require seller verification.</p>
             <p>Designed and engineered for Mavvix Studio.</p>
           </div>
         </div>

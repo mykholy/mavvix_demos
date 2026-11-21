@@ -151,7 +151,7 @@ export default function ConstructionLayout({ children, params }: Props) {
           </div>
 
           <div className="pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-stone-500">
-            <p>© {new Date().getFullYear()} ATLAS Structures. All concept projects and records are demonstrative.</p>
+            <p>© {new Date().getFullYear()} Atlas Structures — design experience by Mavvix. Project examples are illustrative, not confirmed delivered contracts.</p>
             <p>Designed and built for Mavvix Studio.</p>
           </div>
         </div>
