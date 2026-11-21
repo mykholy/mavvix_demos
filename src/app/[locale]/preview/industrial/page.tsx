@@ -75,7 +75,7 @@ export default function IndustrialHomePage({ params }: Props) {
               <p className="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
                 {isAr
                   ? 'دليل صناعي متكامل يربط كل منتج بكود الـ SKU الدقيق، درجات الصلب المعتمدة، الحد الأدنى للطلب (MOQ)، وسلة تسعير متعددة البنود للتصدير والتصنيع.'
-                  : 'Certified manufacturing supply catalogue connecting exact SKU codes, DIN/ASTM compliance, packaging multiples, and instant multi-line RFQ generation.'}
+                  : 'Explore technical SKU attributes, industrial material grades, pack multiples, and a structured multi-line RFQ. Confirm compliance with the chosen supplier.'}
               </p>
 
               <div className="pt-4 flex flex-wrap items-center gap-4">
@@ -299,7 +299,7 @@ export default function IndustrialHomePage({ params }: Props) {
               <span className="text-amber-400 font-mono font-bold text-xs">PROCESS 02</span>
               <h4 className="text-sm font-bold text-white">{isAr ? 'القطع بالليزر وCNC' : 'CNC Laser Cutting'}</h4>
               <p className="text-slate-400 leading-relaxed">
-                {isAr ? 'قص ألواح الصلب حتى سمك 30 مم بدقة تفاوت لا تتعدى ±0.1 مم.' : 'High-power fiber laser profiling handling up to 30mm thick alloy plates.'}
+                {isAr ? 'تحديد حدود سمك القص والسماحية الفنية طبقًا لمعدات المورد ومتطلبات الرسم التنفيذي.' : 'Specify laser cutting thickness and tolerances with the real supplier and approved fabrication drawing.'}
               </p>
             </div>
 
@@ -307,15 +307,15 @@ export default function IndustrialHomePage({ params }: Props) {
               <span className="text-amber-400 font-mono font-bold text-xs">PROCESS 03</span>
               <h4 className="text-sm font-bold text-white">{isAr ? 'الجلفنة بالغمس الساخن' : 'Hot-Dip Galvanizing'}</h4>
               <p className="text-slate-400 leading-relaxed">
-                {isAr ? 'حماية من التآكل بمطابقة معايير ASTM A123 للبيئات البحرية والصناعية.' : 'ASTM A123 compliant zinc immersion protecting against severe corrosion.'}
+                {isAr ? 'يمكن طلب الجلفنة بالغمس الساخن وفق المواصفة المناسبة بشرط إثبات المطابقة من المورد.' : 'Hot-dip galvanizing can be specified with the applicable standard and documented supplier conformity.'}
               </p>
             </div>
 
             <div className="bg-slate-900 p-5 rounded-xl border border-slate-800 space-y-2">
               <span className="text-amber-400 font-mono font-bold text-xs">PROCESS 04</span>
-              <h4 className="text-sm font-bold text-white">{isAr ? 'مختبر فحص الجودة المعتمد' : 'QA Testing Lab'}</h4>
+              <h4 className="text-sm font-bold text-white">{isAr ? 'إجراءات فحص الجودة' : 'Material Inspection & Testing'}</h4>
               <p className="text-slate-400 leading-relaxed">
-                {isAr ? 'فحص الشد، اختبار الصدمة، والمطياف الضوئي لتحليل التركيب الكيميائي.' : 'Full tensile yield analysis, spectrometer composition, and ultrasonic testing.'}
+                {isAr ? 'اختيار اختبارات الشد والتركيب الكيميائي حسب درجة الخام ومتطلبات المشروع.' : 'Request material testing and traceability documentation appropriate to the purchase order.'}
               </p>
             </div>
           </div>
