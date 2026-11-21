@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readdirSync, readFileSync, existsSync, writeFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
+import { getLessonPlan, authoredLessonCount } from './academy-curriculum.mjs';
 
 const root = join(process.cwd(), 'src', 'app', '[locale]', 'preview');
 const required = {
@@ -25,6 +26,9 @@ for (const [sector, paths] of Object.entries(required)) {
   const layoutFile = join(dir, 'layout.tsx');
   assert.ok(existsSync(homeFile) && existsSync(layoutFile), 'Missing home/layout: ' + sector);
   const home = readFileSync(homeFile, 'utf8');
+  const layout = readFileSync(layoutFile, 'utf8');
+  assert.match(layout, /<ContactDock\b/, sector + ' missing persistent WhatsApp and phone CTA');
+  assert.match(home, /<SectorDepth\b/, sector + ' missing industry-specific editorial and FAQ journeys');
   const sections = (home.match(/<section\b/g) || []).length;
   assert.ok(sections >= 6, sector + ' needs at least 6 meaningful homepage sections (found ' + sections + ')');
   assert.match(home, /<h1\b/, sector + ' missing main H1');
@@ -45,7 +49,21 @@ for (const [sector, paths] of Object.entries(required)) {
     handoff: 'owner data & operational integrations pending',
   });
 }
+const tracks=Array.from({length:12},(_,i)=>'course-'+String(i+1).padStart(2,'0'));
+const names=new Set();
+for(const course of tracks){
+ for(let i=1;i<=5;i++){
+  const lesson=getLessonPlan(course,i);
+  assert.ok(lesson.transcriptAr.length>=350 && lesson.transcriptEn.length>=400,'Too little teaching content: '+course+'/'+i);
+  assert.ok(lesson.exerciseAr.length>90 && lesson.exerciseEn.length>90,'Weak exercise: '+course+'/'+i);
+  assert.ok(!names.has(lesson.titleEn), 'Duplicated lesson: '+lesson.titleEn);
+  names.add(lesson.titleEn);
+ }
+}
+assert.equal(authoredLessonCount,60);
+assert.equal(names.size,60);
 console.table(results);
+console.log('PASS: 60 distinct real topic-based AR/EN Academy lesson plans with exercises');
 assert.equal(results.length, 8, 'All eight sectors must exist');
 writeFileSync('handoff-audit-results.json', JSON.stringify({scanned_at:new Date().toISOString(),results},null,2)+'\n');
 console.log('PASS: complete source-level route/section/media/localization structure for all 8 sectors');

@@ -110,6 +110,18 @@ try {
   assert.deepEqual(errors, [], 'Pages missing from the bilingual site route matrix');
   console.log('PASS: ' + paths.length + ' bilingual static/detail site journeys return 200');
 
+
+  for (const locale of ['ar','en']) {
+    for (const sector of Object.keys(sectorRoutes)) {
+      const url='/' + locale + '/preview/' + sector;
+      const html=await (await get(url)).text();
+      assert.ok(html.includes('wa.me/201062015302'), 'Verified WhatsApp contact missing: '+url);
+      assert.ok(html.includes('tel:+201062015302'), 'Verified click-to-call missing: '+url);
+      assert.ok(html.includes('CONTACT') || html.includes('تواصل') || html.includes('موقع'), 'Floating conversion UI absent: '+url);
+    }
+  }
+  console.log('PASS: 8/8 industry sites include actual Mavvix WhatsApp and call conversion links in AR/EN');
+
   const examples = [
     ['construction', 'construction_quote', { sector:'residential', projectStage:'planning', services:['fit-out','mep'], areaM2:200,
       timeline:'next_quarter', budgetBand:'scoping', clientName:'QA Contact', clientContact:'qa@example.invalid' },
