@@ -13,9 +13,10 @@ export function ContactDock({ sector, locale }:{sector:SectorName;locale:'ar'|'e
  const contact=ar?MAVVIX_CONTACT.contactAr:MAVVIX_CONTACT.contactEn;
  function track(event:'whatsapp_click'|'phone_click'|'contact_click'){
   try {
-   const w=window as Window & {dataLayer?:Array<Record<string,unknown>>;gtag?:(...args:unknown[])=>void};
+   const w=window as Window & {dataLayer?:Array<Record<string,unknown>>;gtag?:(...args:unknown[])=>void;fbq?:(...args:unknown[])=>void};
    w.dataLayer?.push({event,sector,placement:'floating_contact',owner:'Mavvix'});
    w.gtag?.('event',event,{event_category:'lead',sector,placement:'floating_contact'});
+   if(event==='whatsapp_click'||event==='phone_click')w.fbq?.('track','Contact',{content_name:sector,contact_method:event});
   }catch{}
  }
  const common='inline-flex items-center justify-center gap-2 min-h-12 rounded-2xl px-4 py-3 text-sm font-bold transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300';
@@ -32,7 +33,7 @@ export function ContactDock({ sector, locale }:{sector:SectorName;locale:'ar'|'e
     </a>
   </div>
   <div className="hidden md:flex flex-col items-end gap-3">
-   {expanded&&<div className="w-72 rounded-3xl bg-white text-slate-900 shadow-2xl ring-1 ring-slate-200 p-5 space-y-4">
+   {expanded&&<div id={`mavvix-dock-options-${sector}`} className="w-72 rounded-3xl bg-white text-slate-900 shadow-2xl ring-1 ring-slate-200 p-5 space-y-4">
     <div><p className="text-lg font-extrabold">{ar?'تواصل مباشرةً مع مافكس':'Talk directly to Mavvix'}</p>
     <p className="text-sm leading-6 text-slate-600 mt-1">{ar?'هنساعدك تحدد مواصفات ومراحل تنفيذ موقع لنشاطك.':'Discuss the scope, design and rollout of your business website.'}</p></div>
     <a href={wa} target="_blank" rel="noopener noreferrer" onClick={()=>track('whatsapp_click')} className={common+' bg-[#11774e] text-white w-full'}><MessageCircle size={19}/>{ar?'تواصل واتساب':'WhatsApp'}</a>
@@ -41,7 +42,7 @@ export function ContactDock({ sector, locale }:{sector:SectorName;locale:'ar'|'e
      {ar?'اطلب عرض سعر مكتوب':'Request a proposal'}<ArrowUpRight size={16}/>
     </a>
    </div>}
-   <button type="button" aria-expanded={expanded} aria-controls="mavvix-dock-options" onClick={()=>setExpanded(v=>!v)}
+   <button type="button" aria-expanded={expanded} aria-controls={`mavvix-dock-options-${sector}`} onClick={()=>setExpanded(v=>!v)}
      className={common+' rounded-full min-h-14 px-6 bg-[#1667F5] text-white shadow-xl hover:bg-[#1052BF]'}>
      {expanded?<X size={20}/>:<MessageCircle size={20}/>}
      {expanded?(ar?'إغلاق':'Close'):(ar?'عايز موقع زي ده؟':'Need a site like this?')}
