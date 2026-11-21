@@ -1,3 +1,4 @@
+import { ContactDock } from '@/components/shared/ContactDock';
 import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import Link from 'next/link';
 import { locales, type Locale } from '@/lib/i18n/config';
@@ -157,6 +158,8 @@ export default function IndustrialLayout({ children, params }: Props) {
           </div>
         </div>
       </footer>
+      <div className="h-20 md:hidden" aria-hidden="true" />
+      <ContactDock locale={locale} sector="industrial" />
     </div>
   );
 }
