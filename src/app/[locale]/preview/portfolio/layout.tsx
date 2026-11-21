@@ -1,3 +1,4 @@
+import { ContactDock } from '@/components/shared/ContactDock';
 import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import React from 'react';
 import Link from 'next/link';
@@ -191,6 +192,8 @@ export default function PortfolioLayout({
           </div>
         </div>
       </footer>
+      <div className="h-20 md:hidden" aria-hidden="true" />
+      <ContactDock locale={locale} sector="portfolio" />
     </div>
   );
 }

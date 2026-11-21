@@ -1,3 +1,4 @@
+import { ContactDock } from '@/components/shared/ContactDock';
 import React from 'react';
 import Link from 'next/link';
 import { AcademyHeader } from './AcademyHeader';
@@ -175,6 +176,8 @@ export default async function AcademyLayout({
           </div>
         </div>
       </footer>
+      <div className="h-20 md:hidden" aria-hidden="true" />
+      <ContactDock locale={locale as 'ar' | 'en'} sector="academy" />
     </div>
   );
 }

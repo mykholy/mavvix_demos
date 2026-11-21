@@ -1,3 +1,4 @@
+import { ContactDock } from '@/components/shared/ContactDock';
 import React from 'react';
 import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
@@ -192,6 +193,8 @@ export default function RestaurantLayout({
             </div>
           </div>
         </footer>
+      <div className="h-20 md:hidden" aria-hidden="true" />
+      <ContactDock locale={locale} sector="restaurant" />
       </div>
     </OrderProvider>
   );
