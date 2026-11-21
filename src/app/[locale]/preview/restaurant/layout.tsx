@@ -1,3 +1,4 @@
+import { SectorUtilityBar } from '@/components/shared/SectorUtilityBar';
 import { ContactDock } from '@/components/shared/ContactDock';
 import React from 'react';
 import Link from 'next/link';
@@ -19,37 +20,8 @@ export default function RestaurantLayout({
   return (
     <OrderProvider>
       <div className="min-h-screen flex flex-col bg-[#FAF3E6] text-[#321F18] font-sans selection:bg-[#BA5C34] selection:text-white">
-        {/* Top Concept Demo Bar */}
-        <div className="bg-[#321F18] text-[#FAF3E6] text-xs py-2 px-4 border-b border-[#321F18]/20">
-          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-            <div className="flex items-center gap-2 text-center sm:text-start">
-              <span className="inline-block w-2 h-2 rounded-full bg-[#BA5C34] animate-pulse" />
-              <span>
-                {isAr
-                  ? 'عرض توضيحي توضيحي من مافيكس — نموذج تفاعلي لمطعم شرقي ذكي، لا يتصل بمطابخ حقيقية أو عمليات دفع فعلية.'
-                  : 'Saffron Table — Modern Dining Experience. No real kitchen order or financial transaction.'}
-              </span>
-            </div>
-            <div className="flex items-center gap-4 text-[11px]">
-              <Link
-                href={`/${locale}/showcase`}
-                className="underline hover:text-[#BA5C34] transition-colors"
-              >
-                {isAr ? 'العودة لمعرض مافيكس' : 'Back to Showcase'}
-              </Link>
-              <a
-                href={mavvixSalesUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="font-medium text-[#BA5C34] hover:underline"
-              >
-                {isAr ? 'طلب منصة لمطعمك' : 'Build Your Restaurant Platform'}
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Header */}
+        <SectorUtilityBar sector="restaurant" locale={locale} />
+      {/* Header */}
         <RestaurantHeader locale={locale} />
 
         {/* Main Content */}

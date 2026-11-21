@@ -1,3 +1,4 @@
+import { SectorUtilityBar } from '@/components/shared/SectorUtilityBar';
 import { ContactDock } from '@/components/shared/ContactDock';
 import React from 'react';
 import Link from 'next/link';
@@ -15,28 +16,7 @@ export default async function AcademyLayout({
 
   return (
     <div className="min-h-screen flex flex-col bg-[#F5F7FF] text-[#192A48] font-sans antialiased selection:bg-[#EF6A55] selection:text-white">
-      {/* Top Demo Simulation Banner */}
-      <div className="bg-[#192A48] text-[#F5F7FF] text-xs py-2 px-4 border-b border-[#192A48]/20">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-start">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#EF6A55] animate-pulse" />
-            <span>
-              {isAr
-                ? 'تصميم تصوري لأكاديمية تعليمية متقدمة — نوفا للتعلّم بواسطة Mavvix (بيانات تفاعلية، اختبارات مقيَّمة، وتقدم محفوظ)'
-                : 'Nova Learning — Study with Purpose (Scored Quizzes & SQLite Progress Persistence)'}
-            </span>
-          </div>
-          <div className="flex items-center gap-4">
-            <Link
-              href={`/${locale}/showcase`}
-              className="text-[#EF6A55] hover:underline font-medium text-xs inline-flex items-center gap-1"
-            >
-              <span>{isAr ? '← العودة لمعرض النماذج' : '← Back to Showcase'}</span>
-            </Link>
-          </div>
-        </div>
-      </div>
-
+      <SectorUtilityBar sector="academy" locale={locale as 'ar' | 'en'} />
       {/* Main Header */}
       <AcademyHeader locale={locale as 'ar' | 'en'} />
 
