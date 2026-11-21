@@ -1,3 +1,4 @@
+import { SectorDepth } from '@/components/shared/SectorDepth';
 import { SectorPhoto } from '@/components/shared/SectorPhoto';
 import { getSectorHeroStyle } from '@/lib/media/sector-images';
 import Link from 'next/link';
@@ -350,6 +351,7 @@ export default function RealEstateHomePage({ params }: Props) {
           </div>
         </div>
       </section>
+      <SectorDepth sector="real-estate" locale={locale} />
     </div>
   );
 }

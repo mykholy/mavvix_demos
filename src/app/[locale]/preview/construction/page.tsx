@@ -1,3 +1,4 @@
+import { SectorDepth } from '@/components/shared/SectorDepth';
 import { SectorPhoto } from '@/components/shared/SectorPhoto';
 import { getSectorHeroStyle } from '@/lib/media/sector-images';
 import Link from 'next/link';
@@ -424,6 +425,7 @@ export default function ConstructionHomePage({ params }: Props) {
           </Link>
         </div>
       </section>
+      <SectorDepth sector="construction" locale={locale} />
     </div>
   );
 }

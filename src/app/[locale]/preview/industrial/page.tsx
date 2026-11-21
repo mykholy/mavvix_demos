@@ -1,3 +1,4 @@
+import { SectorDepth } from '@/components/shared/SectorDepth';
 import { SectorPhoto } from '@/components/shared/SectorPhoto';
 import { getSectorHeroStyle } from '@/lib/media/sector-images';
 import Link from 'next/link';
@@ -382,6 +383,7 @@ export default function IndustrialHomePage({ params }: Props) {
           ))}
         </div>
       </section>
+      <SectorDepth sector="industrial" locale={locale} />
     </div>
   );
 }
