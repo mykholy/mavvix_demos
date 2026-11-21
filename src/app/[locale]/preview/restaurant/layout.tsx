@@ -15,7 +15,7 @@ export default function RestaurantLayout({
 }) {
   const { locale } = params;
   const isAr = locale === 'ar';
-  const mavvixSalesUrl = process.env.NEXT_PUBLIC_MAVVIX_SALES_URL || 'https://mavvix.com/contact';
+  const mavvixSalesUrl = process.env.NEXT_PUBLIC_MAVVIX_SALES_URL || (isAr ? 'https://mavvix.com/ar/contact' : 'https://mavvix.com/en/contact');
 
   return (
     <OrderProvider>

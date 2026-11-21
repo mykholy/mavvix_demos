@@ -40,7 +40,7 @@ export function MavvixHeader({ locale }: Props) {
             <span>{locale === 'ar' ? 'نماذج الأعمال' : 'Our Work'}</span>
           </Link>
           <Link
-            href="https://mavvix.com/contact"
+            href={locale === 'ar' ? 'https://mavvix.com/ar/contact' : 'https://mavvix.com/en/contact'}
             className="text-sm font-medium text-slate-300 hover:text-white transition-colors flex items-center gap-1.5"
           >
             <ShieldCheck className="w-4 h-4 text-amber-400" />
