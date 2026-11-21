@@ -389,7 +389,7 @@ export default async function AcademyHomePage({
           ))}
         </div>
       </section>
-      <SectorDepth sector="academy" locale={locale} />
+      <SectorDepth sector="academy" locale={locale as 'ar' | 'en'} />
     </div>
   );
 }
