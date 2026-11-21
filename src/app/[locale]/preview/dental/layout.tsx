@@ -1,3 +1,4 @@
+import { SectorUtilityBar } from '@/components/shared/SectorUtilityBar';
 import { ContactDock } from '@/components/shared/ContactDock';
 import React from 'react';
 import Link from 'next/link';
@@ -15,30 +16,7 @@ export default function DentalLayout({
 
   return (
     <div className="min-h-screen flex flex-col bg-[#F7FAF9] text-[#193A39] font-sans antialiased selection:bg-[#193A39] selection:text-white">
-      {/* Top Clinical & Concept Notice Bar */}
-      <div className="bg-[#193A39] text-[#EDF5F2] text-xs py-2 px-4 border-b border-[#2C5251]">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#7AC7A5] animate-pulse" />
-            <span className="font-medium">
-              {isAr ? 'لومِن لطب الأسنان — تصميم تصوري استعراضي بواسطة مافيكس' : 'Lumen Dental — Designed by Mavvix Studio'}
-            </span>
-            <span className="hidden sm:inline text-white/50">•</span>
-            <span className="hidden sm:inline text-white/80">
-              {isAr ? 'لا يقدم هذا الموقع تشخيصاً طبياً أو حجوزات فعلية' : 'Informational only — No real medical bookings or diagnostics'}
-            </span>
-          </div>
-          <div className="flex items-center gap-4 text-xs font-medium">
-            <Link href={`/${locale}/showcase`} className="text-[#7AC7A5] hover:underline flex items-center gap-1">
-              {isAr ? '← العودة لمعرض النماذج' : '← Back to Showcase'}
-            </Link>
-            <Link href={`/${isAr ? 'en' : 'ar'}/preview/dental`} className="text-white/80 hover:text-white uppercase font-mono tracking-wider">
-              {isAr ? 'English' : 'العربية'}
-            </Link>
-          </div>
-        </div>
-      </div>
-
+      <SectorUtilityBar sector="dental" locale={locale} />
       {/* Main Clinic Header */}
       <header className="sticky top-0 z-40 bg-[#FFFFFF]/90 backdrop-blur-md border-b border-[#E0EBE7] shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">

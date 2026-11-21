@@ -1,3 +1,4 @@
+import { SectorUtilityBar } from '@/components/shared/SectorUtilityBar';
 import { ContactDock } from '@/components/shared/ContactDock';
 import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import React from 'react';
@@ -17,30 +18,7 @@ export default function PortfolioLayout({
 
   return (
     <div className="min-h-screen flex flex-col bg-[#F6F5F2] text-[#0F0F10] font-sans antialiased selection:bg-[#CCFF00] selection:text-[#0F0F10]">
-      {/* Top Concept Notice Bar */}
-      <div className="bg-[#0F0F10] text-[#E5E3DD] text-xs py-2 px-4 border-b border-[#242426]">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#CCFF00] animate-pulse" />
-            <span className="font-mono text-[11px] uppercase tracking-wider">
-              {isAr ? 'سلمى حسن ستوديو — نموذج تفاعلي لمحفظة أعمال استشارية بواسطة مافيكس' : 'Salma Hassan Studio — Designed by Mavvix Studio'}
-            </span>
-            <span className="hidden sm:inline text-white/30">•</span>
-            <span className="hidden sm:inline text-white/60 text-[11px]">
-              {isAr ? 'حالات دراسية وسيناريوهات توضيحية خيالية' : 'Simulated case studies & project briefs'}
-            </span>
-          </div>
-          <div className="flex items-center gap-4 text-xs font-mono">
-            <Link href={`/${locale}/showcase`} className="text-[#CCFF00] hover:underline flex items-center gap-1">
-              {isAr ? '← معرض مافيكس' : '← Mavvix Showcase'}
-            </Link>
-            <Link href={`/${isAr ? 'en' : 'ar'}/preview/portfolio`} className="text-white/70 hover:text-white uppercase tracking-wider">
-              {isAr ? 'English' : 'العربية'}
-            </Link>
-          </div>
-        </div>
-      </div>
-
+      <SectorUtilityBar sector="portfolio" locale={locale} />
       {/* Swiss Editorial Header */}
       <header className="sticky top-0 z-40 bg-[#F6F5F2]/95 backdrop-blur-md border-b border-[#E2E0D8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">

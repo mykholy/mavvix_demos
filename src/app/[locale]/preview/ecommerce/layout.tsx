@@ -1,3 +1,4 @@
+import { SectorUtilityBar } from '@/components/shared/SectorUtilityBar';
 import { ContactDock } from '@/components/shared/ContactDock';
 import React from 'react';
 import Link from 'next/link';
@@ -19,31 +20,8 @@ export default function EcommerceLayout({
   return (
     <CartProvider>
       <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-[#1A1715] font-sans antialiased selection:bg-[#1A1715] selection:text-[#FAF8F5]">
-        {/* Top Concept Banner */}
-        <div className="bg-[#1A1715] text-[#EFEAE4] text-xs py-2 px-4 border-b border-[#2C2723]">
-          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#C89B8C] animate-pulse" />
-              <span className="font-medium">
-                {isAr ? 'نوريا أتيليه — نموذج متجر إلكتروني توضيحي بواسطة مافيكس' : 'Noria Atelier — Designed by Mavvix Studio'}
-              </span>
-              <span className="hidden sm:inline text-white/40">•</span>
-              <span className="hidden sm:inline text-white/70">
-                {isAr ? 'جميع المنتجات ومسار الدفع بالدفع عند الاستلام توضيحية دون أي مدفوعات فعلية' : 'Preview COD journey — No actual payment processed'}
-              </span>
-            </div>
-            <div className="flex items-center gap-4 text-xs font-medium">
-              <Link href={`/${locale}/showcase`} className="text-[#C89B8C] hover:underline flex items-center gap-1">
-                {isAr ? '← معرض مافيكس' : '← Mavvix Showcase'}
-              </Link>
-              <Link href={`/${isAr ? 'en' : 'ar'}/preview/ecommerce`} className="text-white/70 hover:text-white uppercase font-mono tracking-wider">
-                {isAr ? 'English' : 'العربية'}
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Dynamic Header */}
+        <SectorUtilityBar sector="ecommerce" locale={locale} />
+      {/* Dynamic Header */}
         <EcommerceHeader locale={locale} />
 
         {/* Main Body */}
