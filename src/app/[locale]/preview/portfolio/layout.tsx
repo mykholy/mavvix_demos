@@ -101,7 +101,7 @@ export default function PortfolioLayout({
                 <span>
                   {isAr
                     ? 'شخصية استشارية تمثيلية لعرض إمكانيات مافيكس البرمجية للمحافظ الإبداعية.'
-                    : 'Fictional illustrative consultant persona created for Mavvix commercial platform showcase.'}
+                    : 'Creative studio experience developed by Mavvix; case studies represent design narratives.'}
                 </span>
               </div>
             </div>
@@ -157,7 +157,7 @@ export default function PortfolioLayout({
 
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-white/50">
             <p>
-              © {new Date().getFullYear()} Salma Hassan Studio. Concept portfolio by Mavvix.
+              © {new Date().getFullYear()} Salma Hassan Studio — editorial portfolio experience by Mavvix.
             </p>
             <div className="flex items-center gap-6">
               <Link href={`/${locale}/preview/portfolio/about`} className="hover:text-white transition-colors">

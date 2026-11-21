@@ -43,8 +43,8 @@ export default async function AcademyLayout({
                   : 'An applied professional academy emphasizing hands-on project labs, architectural rigor, and verifiable production competencies without superficial credentialism.'}
               </p>
               <div className="pt-2 text-xs text-white/50 space-y-1">
-                <p>{isAr ? '📍 القاهرة الجديدة، التجمع الخامس — مركز الابتكار التكنولوجي' : '📍 New Cairo, Fifth Settlement — Technology Innovation Hub'}</p>
-                <p>{isAr ? '⏱️ ساعات الدعم التعليمي: الأحد إلى الخميس، ٩ ص - ٦ م' : '⏱️ Academic Support: Sun to Thu, 9:00 AM – 6:00 PM'}</p>
+                <p>{isAr ? 'تطوير مواقع التعليم: مافكس للبرمجيات — 01062015302' : 'Education websites by Mavvix — 01062015302'}</p>
+                <p>{isAr ? 'راسل فريق مافكس لمعرفة نطاق ومدة التنفيذ' : 'Ask Mavvix about delivery scope and timeline'}</p>
               </div>
             </div>
 
@@ -125,7 +125,7 @@ export default async function AcademyLayout({
                 href={`/${locale}/preview/academy/learn/course-01/lesson-01-01`}
                 className="block text-center px-4 py-2.5 rounded-lg bg-[#5F67B5] hover:bg-[#4E56A0] text-white text-xs font-semibold transition-all shadow"
               >
-                {isAr ? 'ابدأ درس توضيحي واختبار ⚡' : 'Explore Lesson & Quiz ⚡'}
+                {isAr ? 'ابدأ درس واختبار ⚡' : 'Explore Lesson & Quiz ⚡'}
               </Link>
               <Link
                 href={`/${locale}/preview/academy/enrollment-interest`}
@@ -143,8 +143,8 @@ export default async function AcademyLayout({
                 {isAr ? 'معلومات الاستخدام: ' : 'Important Information: '}
               </span>
               {isAr
-                ? 'أكاديمية نوفا للتعلّم هي موقع توضيحي متكامل طُوّر بواسطة Mavvix لعرض الإمكانيات البرمجية والتعليمية. كافة الشهادات والاعتمادات المعروضة هي محاكاة تعليمية غير معتمدة من أي جهة حكومية أو أكاديمية. لا يتم تحصيل رسوم حقيقية.'
-                : 'Nova Learning is an applied commercial concept website developed by Mavvix to demonstrate modern educational architectures. All certifications and syllabus metrics are simulated and non-accredited. No real tuition fees are collected.'}
+                ? 'تجربة منصة تعليمية صممتها Mavvix. المناهج والمدربون والشهادات تحتاج اعتمادًا من الجهة المشغّلة قبل إطلاق خدمة تعليمية رسمية. لا يتم تحصيل أي رسوم من الموقع.'
+                : 'Education platform experience by Mavvix. Curricula, instructors and certificates require approval from the real training operator before an accredited offering. No tuition fees are collected here.'}
             </div>
             <div className="flex items-center gap-3">
               <span className="text-white/40">© 2026 Mavvix Studio</span>

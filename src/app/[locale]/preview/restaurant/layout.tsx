@@ -78,7 +78,7 @@ export default function RestaurantLayout({
                   </li>
                   <li>
                     <Link href={`/${locale}/preview/restaurant/reserve`} className="hover:text-white transition-colors">
-                      {isAr ? 'حجز طاولة توضيحي' : 'Table Reservation'}
+                      {isAr ? 'طلب حجز طاولة' : 'Table Reservation'}
                     </Link>
                   </li>
                   <li>
@@ -97,7 +97,7 @@ export default function RestaurantLayout({
               {/* Branches */}
               <div>
                 <h4 className="text-xs uppercase tracking-widest text-[#BA5C34] font-bold mb-4">
-                  {isAr ? 'الفروع التوضيحية' : 'Concept Branches'}
+                  {isAr ? 'الفروع والمناطق' : 'Dining locations'}
                 </h4>
                 <ul className="space-y-3 text-xs text-white/80">
                   <li>
@@ -151,7 +151,7 @@ export default function RestaurantLayout({
             {/* Bottom Bar */}
             <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 gap-4">
               <p>
-                © 2026 SAFFRON TABLE. {isAr ? 'مفهوم رقمي مصمم ومطور بواسطة' : 'Concept design by'}{' '}
+                © 2026 SAFFRON TABLE. {isAr ? 'تجربة موقع مطعم صممتها' : 'Design by'}{' '}
                 <a href={mavvixSalesUrl} target="_blank" rel="noreferrer" className="text-[#BA5C34] hover:underline">
                   Mavvix
                 </a>.

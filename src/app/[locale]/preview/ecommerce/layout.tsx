@@ -47,8 +47,8 @@ export default function EcommerceLayout({
                   <AlertTriangle className="w-4 h-4 text-[#D8B4A6] flex-shrink-0 mt-0.5" />
                   <span>
                     {isAr
-                      ? 'هذا متجر توضيحي متكامل طوّرته مافيكس. المنتجات والطلبات محاكاة تقنية برمجية.'
-                      : 'Interactive commercial demonstrator engineered by Mavvix. All products and orders are simulated.'}
+                      ? 'تجربة متجر صممتها مافكس؛ يمكن تنفيذ نفس الوظائف لنشاطك بالمنتجات والأسعار الفعلية.'
+                      : 'Storefront experience built by Mavvix; real sales require approved products, inventory and fulfilment.'}
                   </span>
                 </div>
               </div>
@@ -74,7 +74,7 @@ export default function EcommerceLayout({
                 </h3>
                 <ul className="space-y-2 text-xs text-white/80">
                   <li><Link href={`/${locale}/preview/ecommerce/help`} className="hover:text-white transition-colors">{isAr ? 'مناطق الشحن والرسوم' : 'Shipping Zones & Fees'}</Link></li>
-                  <li><Link href={`/${locale}/preview/ecommerce/help`} className="hover:text-white transition-colors">{isAr ? 'سياسة الاستبدال التوضيحية' : 'Returns & Exchange Policy'}</Link></li>
+                  <li><Link href={`/${locale}/preview/ecommerce/help`} className="hover:text-white transition-colors">{isAr ? 'سياسة الاستبدال والعناية' : 'Returns & Exchange Policy'}</Link></li>
                   <li><Link href={`/${locale}/preview/ecommerce/help`} className="hover:text-white transition-colors">{isAr ? 'دليل المقاسات والعناية' : 'Size Guide & Fabric Care'}</Link></li>
                   <li><Link href={`/${locale}/preview/ecommerce/story`} className="hover:text-white transition-colors">{isAr ? 'حرفية النسيج الطبيعي' : 'Artisan Craftsmanship'}</Link></li>
                   <li><Link href={`/${locale}/preview/ecommerce/journal`} className="hover:text-white transition-colors">{isAr ? 'مجلة الأسلوب' : 'Style Journal'}</Link></li>
@@ -105,7 +105,7 @@ export default function EcommerceLayout({
 
             <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
               <p>
-                © {new Date().getFullYear()} Noria Atelier. Creative portfolio concept; not a live retailer. Powered by Next.js & SQLite.
+                © {new Date().getFullYear()} Noria Atelier — store design by Mavvix. No financial payment is collected through this experience.
               </p>
               <div className="flex items-center gap-6">
                 <Link href={`/${locale}/preview/ecommerce/help`} className="hover:text-white transition-colors">
