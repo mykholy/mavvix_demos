@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { SectorDepth } from '@/components/shared/SectorDepth';
 import { SectorPhoto } from '@/components/shared/SectorPhoto';
 import { getSectorHeroStyle } from '@/lib/media/sector-images';
@@ -21,6 +22,13 @@ import {
 
 interface Props {
   params: { locale: Locale };
+}
+
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  const ar = params.locale === 'ar';
+  const title = ar ? "موقع عقارات احترافي | وحدات ومقارنات ومعاينات | مافكس" : "Real Estate Website | Property Listings & Viewings | Mavvix";
+  const description = ar ? "استكشف تجربة موقع عقارات بها مجمعات سكنية وفلاتر وحدات ومقارنة مواصفات ونموذج طلب معاينة." : "Explore property listings, development dossiers, unit comparison, buyer FAQs and structured viewing enquiries.";
+  return { title, description, openGraph: {title, description, locale: ar ? 'ar_EG' : 'en_US', type: 'website'}, twitter: {card:'summary_large_image',title,description} };
 }
 
 export default function RealEstateHomePage({ params }: Props) {

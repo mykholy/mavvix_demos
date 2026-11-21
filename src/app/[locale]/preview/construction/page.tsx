@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { SectorDepth } from '@/components/shared/SectorDepth';
 import { SectorPhoto } from '@/components/shared/SectorPhoto';
 import { getSectorHeroStyle } from '@/lib/media/sector-images';
@@ -20,6 +21,13 @@ import {
 
 interface Props {
   params: { locale: Locale };
+}
+
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  const ar = params.locale === 'ar';
+  const title = ar ? "موقع مقاولات احترافي | مشروعات وخدمات وطلب مقايسة | مافكس" : "Construction Website Experience | Projects, Services & Quotes | Mavvix";
+  const description = ar ? "استكشف رحلة موقع شركة مقاولات متكامل: الخدمات الهندسية، تفاصيل المشروعات، نطاق العمل وطلب مقايسة إلكتروني منظم." : "Explore an industry-focused construction website with service dossiers, project details and a structured tender quotation flow.";
+  return { title, description, openGraph: {title, description, locale: ar ? 'ar_EG' : 'en_US', type: 'website'}, twitter: {card:'summary_large_image',title,description} };
 }
 
 export default function ConstructionHomePage({ params }: Props) {

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { SectorDepth } from '@/components/shared/SectorDepth';
 import { SectorPhoto } from '@/components/shared/SectorPhoto';
 import { getSectorHeroStyle } from '@/lib/media/sector-images';
@@ -11,10 +12,14 @@ import {
   ChevronRight, ArrowRight, ArrowLeft, VolumeX, Eye, Smile, HelpCircle
 } from 'lucide-react';
 
-export const metadata = {
-  title: 'Lumen Dental Studio | Gentle Clinical Dentistry & Consultations',
-  description: 'Evidence-based, calm specialist dental care. Pediatric, preventative, and restorative consultations in Cairo and Giza.'
-};
+
+
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  const ar = params.locale === 'ar';
+  const title = ar ? "موقع عيادات أسنان | خدمات وإرشادات ومواعيد | مافكس" : "Dental Clinic Website | Services, Patient Guide & Appointments | Mavvix";
+  const description = ar ? "موقع متخصص للعيادات يعرض الخدمات وإرشادات الزيارة الأولى ونماذج طلب الموعد، صُمم بواسطة مافكس." : "A specialist dental website experience with service information, first-visit guidance and appointment requests, crafted by Mavvix.";
+  return { title, description, openGraph: {title, description, locale: ar ? 'ar_EG' : 'en_US', type: 'website'}, twitter: {card:'summary_large_image',title,description} };
+}
 
 export default function DentalHomePage({
   params: { locale }
