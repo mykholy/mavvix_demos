@@ -317,20 +317,16 @@ export default function DentalHomePage({
         </div>
       </section>
 
-      {/* Commercial Demo Separation Disclaimer */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-6 rounded-2xl bg-amber-50/70 border border-amber-200 text-amber-900 text-xs flex items-start gap-3">
-          <CheckCircle2 className="w-5 h-5 text-amber-700 flex-shrink-0 mt-0.5" />
-          <div className="space-y-1">
-            <h4 className="font-bold">
-              {isAr ? 'إشعار الشفافية ونموذج العرض التجاري (Mavvix Concept Demo)' : 'Mavvix Commercial Concept Transparency'}
-            </h4>
-            <p className="text-amber-800 leading-relaxed">
-              {isAr
-                ? 'عيادة لومِن لطب الأسنان هي نموذج افتراضي مخصص لإبراز قدرات شركة مافيكس في تصميم وبناء منصات طبية متقدمة. لا توجد تعاملات مالية أو حجوزات علاجية فعلية من خلال هذا الموقع.'
-                : 'Lumen Dental Studio is a demonstration concept developed by Mavvix to showcase modern healthcare platform engineering. No clinical appointments or transactions are binding.'}
-            </p>
+        <div className="rounded-[2rem] bg-[#193A39] text-[#EDF5F2] px-7 py-10 sm:px-12 sm:py-14 flex flex-col lg:flex-row gap-7 items-start lg:items-center justify-between shadow-xl">
+          <div className="max-w-2xl">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#7AC7A5]">{isAr ? 'لأصحاب العيادات والمراكز الطبية' : 'FOR CLINIC & PRACTICE OWNERS'}</p>
+            <h2 className="font-serif font-bold text-2xl sm:text-4xl mt-3">{isAr ? 'موقع يشرح خدمات عيادتك ويسهّل طلب المواعيد' : 'Your practice deserves a clearer digital patient journey'}</h2>
+            <p className="text-sm leading-7 text-white/70 mt-3">{isAr ? 'تقدم مافكس تصميم صفحات خدمات وتخصصات وأطباء وإرشادات ونظام استفسارات قابل للربط بتقويم العيادة الحقيقي.' : 'Mavvix builds clinic websites with clear services, practitioner profiles, first-visit guidance and an appointment flow that can be integrated with your actual scheduling system.'}</p>
           </div>
+          <a href={isAr ? 'https://mavvix.com/ar/contact' : 'https://mavvix.com/en/contact'} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 shrink-0 rounded-full bg-[#7AC7A5] text-[#193A39] px-7 py-4 text-sm font-bold hover:bg-[#97E8C5] transition-colors">
+            {isAr ? 'اطلب تنفيذ موقع لعيادتك' : 'Discuss your clinic website'} <Arrow className="w-4 h-4" />
+          </a>
         </div>
       </section>
       <SectorDepth sector="dental" locale={locale} />
