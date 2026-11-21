@@ -1,3 +1,4 @@
+import { SectorDepth } from '@/components/shared/SectorDepth';
 import { SectorPhoto } from '@/components/shared/SectorPhoto';
 import { getSectorHeroStyle } from '@/lib/media/sector-images';
 import React from 'react';
@@ -292,6 +293,7 @@ export default function EcommerceStorefrontPage({
           </div>
         </section>
       )}
+      <SectorDepth sector="ecommerce" locale={locale} />
     </div>
   );
 }

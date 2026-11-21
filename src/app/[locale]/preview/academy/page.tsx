@@ -1,3 +1,4 @@
+import { SectorDepth } from '@/components/shared/SectorDepth';
 import { SectorPhoto } from '@/components/shared/SectorPhoto';
 import { getSectorHeroStyle } from '@/lib/media/sector-images';
 import React from 'react';
@@ -388,6 +389,7 @@ export default async function AcademyHomePage({
           ))}
         </div>
       </section>
+      <SectorDepth sector="academy" locale={locale} />
     </div>
   );
 }
