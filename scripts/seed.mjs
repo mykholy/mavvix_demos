@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import bcrypt from 'bcryptjs';
+import { getLessonPlan, authoredLessonCount } from './academy-curriculum.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -1102,11 +1103,14 @@ for (const c of seedData.academy.courses) {
 }
 
 // Seed all 60 lessons from seedData
+if (authoredLessonCount !== 60 || seedData.academy.lessons.length !== authoredLessonCount) {
+  throw new Error('Lesson authoring completeness gate: 60 distinct subject plans required.');
+}
 for (const les of seedData.academy.lessons) {
   const isPreview = les.preview_enabled ? 1 : 0;
   const modIdx = Math.ceil(les.sequence / 2) || 1;
   const lesIdx = les.sequence || 1;
-
+  const plan = getLessonPlan(les.course_id, lesIdx);
   upsertLesson.run(
     les.id,
     les.course_id,
@@ -1116,16 +1120,16 @@ for (const les of seedData.academy.lessons) {
     les.minutes || 20,
     isPreview,
     JSON.stringify({
-      title_ar: les.title.ar,
-      title_en: les.title.en,
+      title_ar: plan.titleAr,
+      title_en: plan.titleEn,
       sequence: les.sequence,
       preview: Boolean(isPreview),
-      summary_ar: `الوحدة ${modIdx} — الدرس ${lesIdx}: المبادئ التطبيقية والممارسة العملية المباشرة.`,
-      summary_en: `Module ${modIdx} — Lesson ${lesIdx}: Applied architectural principles and structured lab execution.`,
-      transcript_ar: `في هذا الدرس نتناول المفاهيم الجوهرية والمنهجية المتبعة لبناء أساس احترافي متين. نناقش الركائز المعيارية للمجال، وأهم الأخطاء الشائعة وكيفية تجنبها عند بدء التطبيق العملي. يبدأ التطبيق العملي بفهم المشكلة وتحديد المتطلبات بدقة قبل كتابة أي سطر برمجي أو تنفيذ أي رسم تخطيطي. كما نستعرض حالات عملية واقعية توضح الفارق بين الممارسات السريعة الهشة والحلول الهندسية المتينة التي تصمد في بيئات الإنتاج الحقيقية وتتيح التوسع السلس دون ديون تقنية مكلفة.`,
-      transcript_en: `In this applied lesson, we break down core principles and methodological foundations for professional mastery. We explore standard architectural patterns, key pitfalls, and practical execution frameworks. Real-world execution begins with precise requirement analysis and diagnostic rigor before writing code or assembling visual assets. We examine enterprise case studies illustrating the critical difference between fragile quick fixes and enduring production-grade solutions designed for long-term scalability.`,
-      exercise_ar: les.exercise_direction || 'قم بتنفيذ التمرين العملي باتباع الخطوات المشروحة ومقارنة النتيجة بالمثال المرجعي.',
-      exercise_en: les.exercise_direction || 'Execute the hands-on lab following the outlined steps and verify against reference artifacts.'
+      summary_ar: plan.summaryAr,
+      summary_en: plan.summaryEn,
+      transcript_ar: plan.transcriptAr,
+      transcript_en: plan.transcriptEn,
+      exercise_ar: plan.exerciseAr,
+      exercise_en: plan.exerciseEn,
     })
   );
 }
