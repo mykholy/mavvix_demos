@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
+import { getDentalPhoto } from '@/lib/media/sector-images';
 import { LocalizedDentalService } from '@/lib/db/repositories';
 import { Search, Sparkles, Shield, Heart, Smile, ArrowRight, ArrowLeft, AlertCircle, Calendar } from 'lucide-react';
 
@@ -104,8 +105,21 @@ export default function DentalServicesClient({ locale, services }: Props) {
           {filtered.map(s => (
             <div
               key={s.id}
-              className="bg-white rounded-2xl border border-[#E0EBE7] p-6 hover:shadow-md hover:border-[#7AC7A5] transition-all flex flex-col justify-between"
+              className="bg-white rounded-2xl border border-[#E0EBE7] overflow-hidden hover:shadow-xl hover:border-[#7AC7A5] transition-all duration-300 flex flex-col justify-between group"
             >
+              <div className="relative h-44 w-full overflow-hidden bg-emerald-950/10">
+                <img
+                  src={getDentalPhoto(s.slug || s.id)}
+                  alt={s.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#193A39]/60 via-transparent to-transparent" />
+                <span className="absolute bottom-2.5 start-2.5 text-[11px] font-bold text-white px-2.5 py-0.5 rounded-full bg-[#193A39]/70 backdrop-blur-md uppercase tracking-wider">
+                  {s.category}
+                </span>
+              </div>
+              <div className="p-6 flex-1 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
                   <span className="text-[11px] font-semibold uppercase tracking-wider text-[#2C5251] bg-[#EDF5F2] px-2.5 py-0.5 rounded-md">
@@ -151,6 +165,7 @@ export default function DentalServicesClient({ locale, services }: Props) {
                   <span>{isAr ? 'طلب موعد' : 'Request'}</span>
                 </Link>
               </div>
+            </div>
             </div>
           ))}
         </div>

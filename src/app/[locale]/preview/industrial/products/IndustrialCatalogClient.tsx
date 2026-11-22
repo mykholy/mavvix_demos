@@ -4,6 +4,7 @@ import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import type { LocalizedCatalogItem } from '@/lib/db/repositories';
 import type { Locale } from '@/lib/i18n/config';
+import { getIndustrialPhoto } from '@/lib/media/sector-images';
 import {
   Search,
   Filter,
@@ -238,8 +239,21 @@ export function IndustrialCatalogClient({ products, locale, initialCategory, ini
           {filteredProducts.map((p) => (
             <div
               key={p.id}
-              className="bg-white border border-stone-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group"
+              className="bg-white border border-stone-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
             >
+              <div className="relative h-44 w-full overflow-hidden bg-stone-100">
+                <img
+                  src={getIndustrialPhoto(p.sku || p.id)}
+                  alt={p.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <span className="absolute bottom-2.5 start-2.5 text-xs font-mono font-bold text-white px-2.5 py-0.5 rounded-full bg-black/50 backdrop-blur-md">
+                  {p.sku}
+                </span>
+              </div>
+              <div className="p-6 flex-1 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between text-xs font-mono mb-2">
                   <span className="font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
@@ -272,6 +286,7 @@ export function IndustrialCatalogClient({ products, locale, initialCategory, ini
                 </Link>
               </div>
             </div>
+          </div>
           ))}
         </div>
       )}

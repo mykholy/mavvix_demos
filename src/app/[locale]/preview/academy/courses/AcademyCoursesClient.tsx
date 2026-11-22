@@ -4,6 +4,7 @@ import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import type { LocalizedCourse } from '@/lib/db/repositories';
+import { getCoursePhoto } from '@/lib/media/sector-images';
 
 interface Props {
   initialCourses: LocalizedCourse[];
@@ -230,8 +231,21 @@ export function AcademyCoursesClient({ initialCourses, locale }: Props) {
             return (
               <div
                 key={course.slug}
-                className="bg-white rounded-2xl border border-[#192A48]/10 hover:border-[#5F67B5] p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+                className="bg-white rounded-2xl border border-[#192A48]/10 hover:border-[#5F67B5] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
               >
+                <Link href={`/${locale}/preview/academy/courses/${course.slug}`} className="relative h-48 w-full block overflow-hidden bg-slate-900">
+                  <img
+                    src={getCoursePhoto(course.slug || course.id)}
+                    alt={course.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/80 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 start-3 text-[11px] font-bold text-white px-2.5 py-1 rounded-full bg-[#4F46E5]/90 backdrop-blur-md">
+                    {course.track.toUpperCase()}
+                  </span>
+                </Link>
+                <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div className="space-y-4">
                   {/* Top Track & Level */}
                   <div className="flex items-center justify-between gap-2 text-xs">
@@ -292,6 +306,7 @@ export function AcademyCoursesClient({ initialCourses, locale }: Props) {
                     {isAr ? 'تسجيل الرغبة في الالتحاق بهذا المنهج ←' : 'Register Enrollment Interest →'}
                   </Link>
                 </div>
+              </div>
               </div>
             );
           })}

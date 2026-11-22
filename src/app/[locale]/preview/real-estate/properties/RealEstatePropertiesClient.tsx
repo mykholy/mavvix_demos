@@ -4,6 +4,7 @@ import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import type { LocalizedPropertyUnit } from '@/lib/db/repositories';
 import type { Locale } from '@/lib/i18n/config';
+import { getPropertyPhoto } from '@/lib/media/sector-images';
 import {
   Filter,
   RotateCcw,
@@ -234,8 +235,20 @@ export function RealEstatePropertiesClient({ units, locale, initialType, initial
             return (
               <div
                 key={u.id}
-                className="bg-white border border-stone-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between group"
+                className="bg-white border border-stone-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
               >
+                <div className="relative h-52 w-full overflow-hidden bg-stone-100">
+                  <img
+                    src={getPropertyPhoto(u.slug || u.id)}
+                    alt={u.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 start-3 text-xs font-bold text-white px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/20">
+                    {u.area_m2} m² • {u.unit_type}
+                  </span>
+                </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between text-xs font-mono mb-3 text-stone-400">
                     <span className="bg-stone-100 text-[#25312D] px-2 py-0.5 rounded font-bold uppercase text-[11px]">

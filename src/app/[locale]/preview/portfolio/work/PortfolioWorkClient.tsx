@@ -4,6 +4,7 @@ import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Locale } from '@/lib/i18n/config';
+import { getPortfolioPhoto } from '@/lib/media/sector-images';
 import { LocalizedProject } from '@/lib/db/repositories';
 import { LayoutGrid, List, ArrowUpRight, X, ArrowRight, ArrowLeft } from 'lucide-react';
 
@@ -178,13 +179,22 @@ export default function PortfolioWorkClient({ locale, projects }: Props) {
                   <span>{p.attributes?.year || '2025'}</span>
                 </div>
 
-                <div className="aspect-[16/10] rounded-2xl bg-gradient-to-br from-[#EDEBE4] to-[#DAD6CA] border border-[#DDD9CE] p-5 flex flex-col justify-between relative overflow-hidden group-hover:scale-[1.01] transition-transform">
-                  <span className="font-mono text-[11px] text-[#737068] uppercase">
-                    Case #{String(idx + 1).padStart(2, '0')}
-                  </span>
-                  <span className="font-serif text-2xl font-bold text-[#0F0F10] line-clamp-2">
-                    {p.title}
-                  </span>
+                <div className="aspect-[16/10] rounded-2xl bg-stone-100 border border-[#DDD9CE] relative overflow-hidden group-hover:scale-[1.01] transition-transform">
+                  <img
+                    src={getPortfolioPhoto(p.slug || p.id)}
+                    alt={p.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                  <div className="absolute inset-0 p-5 flex flex-col justify-between">
+                    <span className="font-mono text-[11px] text-white/90 uppercase tracking-wider">
+                      Case #{String(idx + 1).padStart(2, '0')}
+                    </span>
+                    <span className="font-serif text-xl sm:text-2xl font-bold text-white line-clamp-2 drop-shadow-md">
+                      {p.title}
+                    </span>
+                  </div>
                 </div>
 
                 <p className="text-xs text-[#57544C] line-clamp-3 leading-relaxed">

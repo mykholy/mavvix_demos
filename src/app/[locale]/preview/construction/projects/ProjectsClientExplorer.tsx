@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import type { LocalizedProject } from '@/lib/db/repositories';
 import type { Locale } from '@/lib/i18n/config';
+import { getConstructionPhoto } from '@/lib/media/sector-images';
 import {
   Filter,
   RotateCcw,
@@ -206,9 +207,21 @@ export function ProjectsClientExplorer({ projects, locale, initialSector, initia
             {filteredProjects.map((p) => (
               <div
                 key={p.id}
-                className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between group"
+                className="bg-white border border-stone-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
               >
-                <div className="p-6">
+                <div className="relative h-52 w-full overflow-hidden bg-stone-100">
+                  <img
+                    src={getConstructionPhoto(p.slug || p.id)}
+                    alt={p.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 start-3 text-xs font-bold text-white px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/20">
+                    {p.city} • {p.area_m2} m²
+                  </span>
+                </div>
+                <div className="p-6 flex-1 flex flex-col justify-between">
                   <div className="flex items-center justify-between text-xs mb-3 text-stone-500 font-mono">
                     <span className="bg-stone-100 text-[#162327] px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider">
                       {p.project_type}

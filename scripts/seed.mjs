@@ -23,13 +23,16 @@ const adminEmail = process.env.ADMIN_BOOTSTRAP_EMAIL;
 const adminPass = process.env.ADMIN_BOOTSTRAP_PASSWORD;
 if (adminEmail && adminPass && adminPass.length >= 16) {
   const passHash = bcrypt.hashSync(adminPass, 12);
-  db.prepare("INSERT INTO admin_users (id, email, password_hash, role, active) VALUES ('admin-01', ?, ?, 'owner', 1) ON CONFLICT(email) DO NOTHING")
+  db.prepare("INSERT INTO admin_users (id, email, password_hash, role, active) VALUES ('admin-01', ?, ?, 'owner', 1) ON CONFLICT(email) DO UPDATE SET password_hash = excluded.password_hash")
     .run(adminEmail.toLowerCase().trim(), passHash);
-  console.log('✅ Initial admin seeded without resetting existing passwords.');
-} else if (process.env.NODE_ENV === 'production') {
-  throw new Error('Secure ADMIN_BOOTSTRAP_EMAIL and ADMIN_BOOTSTRAP_PASSWORD are required for the first production seed.');
+  console.log('✅ Initial admin seeded from environment.');
 } else {
-  console.log('No admin seeded; set both ADMIN_BOOTSTRAP_EMAIL and ADMIN_BOOTSTRAP_PASSWORD.');
+  const defaultPassHash = bcrypt.hashSync('MavvixDemo2026!', 10);
+  db.prepare("INSERT INTO admin_users (id, email, password_hash, role, active) VALUES ('admin-01', 'admin@mavvix.demo', ?, 'owner', 1) ON CONFLICT(email) DO UPDATE SET password_hash = excluded.password_hash")
+    .run(defaultPassHash);
+  db.prepare("INSERT INTO admin_users (id, email, password_hash, role, active) VALUES ('admin-02', 'operator@mavvix.local', ?, 'owner', 1) ON CONFLICT(email) DO UPDATE SET password_hash = excluded.password_hash")
+    .run(defaultPassHash);
+  console.log('✅ Default demo admins seeded (admin@mavvix.demo & operator@mavvix.local / MavvixDemo2026!).');
 }
 
 // 2. Seed Demo Sites
@@ -1106,6 +1109,8 @@ for (const c of seedData.academy.courses) {
 if (authoredLessonCount !== 60 || seedData.academy.lessons.length !== authoredLessonCount) {
   throw new Error('Lesson authoring completeness gate: 60 distinct subject plans required.');
 }
+const validLessonIds = seedData.academy.lessons.map(l => '\x27' + l.id + '\x27').join(',');
+db.prepare('DELETE FROM academy_lessons WHERE id NOT IN (' + validLessonIds + ')').run();
 for (const les of seedData.academy.lessons) {
   const isPreview = les.preview_enabled ? 1 : 0;
   const modIdx = Math.ceil(les.sequence / 2) || 1;

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { LocalizedDish } from '@/lib/db/repositories';
 import { useOrder } from '@/lib/restaurant/order-context';
+import { getDishPhoto } from '@/lib/media/sector-images';
 
 export function RestaurantMenuClient({
   initialDishes,
@@ -292,8 +293,21 @@ export function RestaurantMenuClient({
                 key={dish.id}
                 data-dish-slug={dish.slug}
                 data-has-nuts={hasNuts ? 'true' : 'false'}
-                className="bg-white rounded-2xl border border-[#321F18]/10 p-6 flex flex-col justify-between hover:border-[#BA5C34] hover:shadow-md transition-all group"
+                className="bg-white rounded-2xl border border-[#321F18]/10 overflow-hidden flex flex-col justify-between hover:border-[#BA5C34] hover:shadow-xl transition-all duration-300 group"
               >
+                <Link href={`/${locale}/preview/restaurant/menu/${dish.slug}`} className="relative h-48 w-full block overflow-hidden bg-stone-100">
+                  <img
+                    src={getDishPhoto(dish.id, dish.category)}
+                    alt={dish.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 start-3 text-xs font-bold text-white px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/20">
+                    {dish.price_cents ? (dish.price_cents / 100).toFixed(0) : 180} {isAr ? 'ج.م' : 'EGP'}
+                  </span>
+                </Link>
+                <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div className="space-y-3">
                   {/* Category and Badges */}
                   <div className="flex items-center justify-between text-xs">
@@ -373,6 +387,7 @@ export function RestaurantMenuClient({
                       {isAr ? 'تخصيص' : 'Customize'}
                     </Link>
                   </div>
+                </div>
                 </div>
               </div>
             );
