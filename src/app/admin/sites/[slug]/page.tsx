@@ -11,6 +11,7 @@ import {
   getRestaurantDishes,
   getAcademyCourses,
 } from '@/lib/db/repositories';
+import { getSitePages, getPageByRouteKey } from '@/lib/db/cms';
 import { SiteDashboardClient } from './SiteDashboardClient';
 
 const SECTOR_ROUTES_MAP: Record<string, string[]> = {
@@ -171,6 +172,8 @@ export default function SiteDetailPage({
   }
 
   const siteRoutes = SECTOR_ROUTES_MAP[slug] || ['', '/about', '/contact'];
+  const initialPages = getSitePages(slug);
+  const initialHomeSections = getPageByRouteKey(slug, '/')?.sections || [];
 
   return (
     <SiteDashboardClient
@@ -179,6 +182,8 @@ export default function SiteDetailPage({
       sectorItems={sectorItems}
       routes={siteRoutes}
       adminUser={admin}
+      initialPages={initialPages}
+      initialHomeSections={initialHomeSections}
     />
   );
 }
