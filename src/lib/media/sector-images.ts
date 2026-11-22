@@ -16,12 +16,12 @@ const photo = (id: string, width = 1600, q = 82) =>
 // Verified high-resolution sector hero & secondary imagery
 export const SECTOR_IMAGES: Record<Sector, readonly [string, string]> = {
   construction: [
-    photo('photo-1541888946425-d0fbb18615f8'), // Modern structural architectural concrete & steel
+    photo('photo-1504307651254-35680f356dfd'), // Modern structural architectural concrete & steel
     photo('photo-1503387762-592deb58ef4e'), // Architectural blueprints and construction framing
   ],
   industrial: [
     photo('photo-1581092160607-ee22621dd758'), // Industrial robotic automation arm
-    photo('photo-1581092335397-9583fe92d232'), // Stainless steel valves & manufacturing plant
+    photo('photo-1565043589221-1a6fd9ae45c7'), // Industrial factory machinery & manufacturing plant
   ],
   'real-estate': [
     photo('photo-1600596542815-ffad4c1539a9'), // Luxury modern architectural villa with pool
@@ -149,7 +149,7 @@ export const CONSTRUCTION_PHOTOS = [
   photo('photo-1486406146926-c627a92ad1ab', 900), // Modern glass skyscraper
   photo('photo-1513694203232-719a280e022f', 900), // Post-tensioned concrete bridge
   photo('photo-1503387762-592deb58ef4e', 900), // Scaffolding and engineering plans
-  photo('photo-1541888946425-d0fbb18615f8', 900), // Timber sustainable pavilion
+  photo('photo-1487958449943-2429e8be8625', 900), // Timber sustainable pavilion and architectural facade
   photo('photo-1590381105924-c72589b9ef3f', 900), // Tower crane over sunset skyline
   photo('photo-1541971875076-8f970d573be6', 900), // Structural steel beam welding
 ];
@@ -164,8 +164,8 @@ export function getConstructionPhoto(seed: string | number): string {
 // Industrial Catalog Photography
 export const INDUSTRIAL_PHOTOS = [
   photo('photo-1581092160607-ee22621dd758', 800), // Robotic milling arm
-  photo('photo-1581092335397-9583fe92d232', 800), // Stainless steel valves & pipes
-  photo('photo-1504917599217-d4dc5ebe6122', 800), // Metallurgy spark forge
+  photo('photo-1565043589221-1a6fd9ae45c7', 800), // Precision CNC metal manufacturing
+  photo('photo-1581092162384-8987c1d64718', 800), // Industrial engineer quality inspection
   photo('photo-1581092580497-e0d23cbdf1dc', 800), // Laser optical measurement
   photo('photo-1581091226825-a6a2a5aee158', 800), // Heavy duty gear assembly
   photo('photo-1581092795360-fd1ca04f0952', 800), // Precision hydraulic pressure gauges
