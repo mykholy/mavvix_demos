@@ -839,3 +839,4 @@ export function deleteDomainItem(siteSlug: string, itemId: string) {
   execute(`DELETE FROM localized_content WHERE site_id = ? AND owner_id = ?`, [site.id, itemId]);
   return true;
 }
+
