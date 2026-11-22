@@ -1,3 +1,7 @@
+import type { Metadata } from 'next';
+import { SectorDepth } from '@/components/shared/SectorDepth';
+import { SectorPhoto } from '@/components/shared/SectorPhoto';
+import { getSectorHeroStyle } from '@/lib/media/sector-images';
 import React from 'react';
 import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
@@ -5,10 +9,14 @@ import { getCatalogItems, getEcommerceCollections, getEditorialPosts } from '@/l
 import ProductCard from './ProductCard';
 import { Sparkles, ArrowRight, ArrowLeft, ShieldCheck, HeartHandshake, Leaf, Scissors } from 'lucide-react';
 
-export const metadata = {
-  title: 'Noria Atelier | Contemporary Egyptian Natural Fiber Fashion',
-  description: 'Timeless garments crafted from natural linen and sustainable fibers. Discover curated everyday apparel, dresses, and artisan sets.'
-};
+
+
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  const ar = params.locale === 'ar';
+  const title = ar ? "متجر إلكتروني راقٍ | مجموعات ومنتجات وتسوق | تصميم مافكس" : "Premium Ecommerce Website | Fashion Storefront | Mavvix";
+  const description = ar ? "تصميم متجر بأقسام متخصصة وVariants وسلة وتسعير شحن وطلبات محمية وتجربة موبايل مصممة للبيع." : "A premium boutique storefront with collections, product options, cart, delivery estimates and private order receipts.";
+  return { title, description, openGraph: {title, description, locale: ar ? 'ar_EG' : 'en_US', type: 'website'}, twitter: {card:'summary_large_image',title,description} };
+}
 
 export default function EcommerceStorefrontPage({
   params: { locale }
@@ -27,7 +35,7 @@ export default function EcommerceStorefrontPage({
   return (
     <div className="space-y-16 sm:space-y-24 pb-20">
       {/* Campaign Editorial Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#F2ECE4] via-[#F7F2EC] to-[#FAF8F5] pt-12 sm:pt-20 pb-16 sm:pb-24 border-b border-[#E8E1D9]">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#F2ECE4] via-[#F7F2EC] to-[#FAF8F5] pt-12 sm:pt-20 pb-16 sm:pb-24 border-b border-[#E8E1D9]" style={getSectorHeroStyle('ecommerce')}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content */}
@@ -111,6 +119,16 @@ export default function EcommerceStorefrontPage({
           </div>
         </div>
       </section>
+      <figure className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8 sm:my-12">
+        <div className="grid grid-cols-12 gap-3 sm:gap-5 rounded-[2rem] overflow-hidden shadow-[0_20px_65px_rgba(0,0,0,0.12)] bg-white p-2 sm:p-3">
+          <SectorPhoto sector="ecommerce" secondary alt="" className="col-span-8 h-52 sm:h-[340px] rounded-[1.5rem]" />
+          <SectorPhoto sector="ecommerce" alt="" className="col-span-4 h-52 sm:h-[340px] rounded-[1.5rem]" />
+        </div>
+        <figcaption className="text-[11px] mt-3 opacity-60 text-center px-4">
+          {isAr ? 'صور فوتوغرافية مرجعية لاتجاه التصميم، وليست توثيقًا لمشروعات أو منشآت هذه العلامة' : 'Licensed editorial art direction — not documentation of this brand’s real facilities or work'}
+        </figcaption>
+      </figure>
+
 
       {/* Category Overview Grid (4 Collections) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -208,6 +226,29 @@ export default function EcommerceStorefrontPage({
         </div>
       </section>
 
+
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="noria-guide-heading">
+        <div className="border-t border-[#E7DED4] pt-10">
+          <div className="max-w-xl space-y-2">
+            <span className="text-[#A48776] tracking-[.2em] uppercase font-mono text-xs">{isAr ? 'اختيارات مدروسة' : 'THE ATELIER GUIDE'}</span>
+            <h2 id="noria-guide-heading" className="font-serif text-3xl sm:text-4xl text-[#1A1715] font-bold">{isAr ? 'تفاصيل صغيرة تصنع تجربة أفضل' : 'A little more confidence in every choice'}</h2>
+            <p className="text-sm leading-7 text-[#695E57]">{isAr ? 'معلومات واضحة تساعدك على اختيار المقاس والعناية بالأقمشة وفهم خطوات الشحن والاستبدال.' : 'Explore fit guidance, fabric care, and the delivery and exchange information that helps you choose with confidence.'}</p>
+          </div>
+          <div className="mt-8 grid md:grid-cols-3 gap-5">
+            {[
+              {no:'01',ar:'دليل المقاسات',en:'Find your fit',arText:'قارن القياسات المناسبة لكل تصميم قبل اختيار اللون والمقاس.',enText:'Understand fit differences and review measurements before choosing a size.',to:'help'},
+              {no:'02',ar:'التوصيل والاستبدال',en:'Delivery & exchanges',arText:'راجع مناطق التوصيل والمصاريف والأحكام الموضحة قبل تأكيد الطلب.',enText:'Review available delivery regions, charges and exchange conditions before checkout.',to:'help'},
+              {no:'03',ar:'العناية بالكتان',en:'Care that lasts',arText:'تعرّف على طرق غسل الأنسجة الطبيعية وتجفيفها وتخزينها.',enText:'Learn the basics of laundering, drying and storing natural textiles.',to:'story'},
+            ].map((item) => (
+              <Link key={item.no} href={`/${locale}/preview/ecommerce/${item.to}`} className="group bg-white border border-[#EBE5DF] rounded-3xl p-7 min-h-[230px] flex flex-col justify-between hover:border-[#C89B8C] hover:-translate-y-1 hover:shadow-md transition-all">
+                <div><span className="font-mono text-sm text-[#B49584]">{item.no}</span><h3 className="font-serif text-xl text-[#1A1715] font-bold mt-5">{isAr ? item.ar : item.en}</h3><p className="text-sm text-[#695E57] leading-7 mt-3">{isAr ? item.arText : item.enText}</p></div>
+                <div className="pt-5 flex justify-between items-center text-[#9D7965] border-t border-[#F1ECE6] text-xs font-bold mt-4">{isAr ? 'اعرف المزيد' : 'Explore the guide'} <Arrow className="w-4 h-4" /></div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Style Journal Teaser */}
       {articles.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -257,6 +298,7 @@ export default function EcommerceStorefrontPage({
           </div>
         </section>
       )}
+      <SectorDepth sector="ecommerce" locale={locale} />
     </div>
   );
 }

@@ -1,12 +1,15 @@
 import { NextResponse } from 'next/server';
 import { verifyCredentials, createAdminSession } from '@/lib/security/auth';
+import { checkRateLimit, getRequestIdentity } from '@/lib/security/rate-limit';
 
 export async function POST(request: Request) {
   try {
+    const rate = checkRateLimit('login:' + getRequestIdentity(request), 5, 10 * 60_000);
+    if (!rate.allowed) return NextResponse.json({ error: 'Please retry later' }, { status: 429, headers: { 'Retry-After': String(rate.retryAfter) } });
     const body = await request.json();
     const { email, password } = body;
 
-    if (!email || !password) {
+    if (typeof email !== 'string' || typeof password !== 'string' || !email || !password || email.length > 254 || password.length > 200) {
       return NextResponse.json({ error: 'Email and password required' }, { status: 400 });
     }
 
@@ -34,7 +37,7 @@ export async function POST(request: Request) {
 
     return response;
   } catch (error: any) {
-    return NextResponse.json({ error: error.message || 'Internal server error' }, { status: 500 });
+    return NextResponse.json({ error: 'Authentication temporarily unavailable' }, { status: 500 });
   }
 }
 

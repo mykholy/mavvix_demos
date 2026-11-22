@@ -1,7 +1,18 @@
+import type { Metadata } from 'next';
+import { SectorDepth } from '@/components/shared/SectorDepth';
+import { SectorPhoto } from '@/components/shared/SectorPhoto';
+import { getSectorHeroStyle } from '@/lib/media/sector-images';
 import React from 'react';
 import Link from 'next/link';
 import { getAcademyCourses, getAcademyTracks, getAcademyInstructors, getEditorialPosts } from '@/lib/db/repositories';
 import type { Locale } from '@/lib/i18n/config';
+
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  const ar = params.locale === 'ar';
+  const title = ar ? "منصة تعليمية احترافية | دورات ودروس واختبارات | مافكس" : "Learning Platform | Courses, Lessons & Quizzes | Mavvix";
+  const description = ar ? "تجربة منصة تعليمية بمسارات ودورات ودروس متخصصة واختبارات وتقدم محفوظ وطلبات التحاق." : "Education platform with courses, subject-specific lessons, scored quizzes, persisted progress and enrollment enquiries.";
+  return { title, description, openGraph: {title, description, locale: ar ? 'ar_EG' : 'en_US', type: 'website'}, twitter: {card:'summary_large_image',title,description} };
+}
 
 export default async function AcademyHomePage({
   params,
@@ -25,7 +36,7 @@ export default async function AcademyHomePage({
   return (
     <div className="space-y-20 pb-16">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#192A48]/5 via-[#F5F7FF] to-[#F5F7FF] pt-16 pb-20 border-b border-[#192A48]/10">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#192A48]/5 via-[#F5F7FF] to-[#F5F7FF] pt-16 pb-20 border-b border-[#192A48]/10" style={getSectorHeroStyle('academy')}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#192A48]/10 text-[#192A48] text-xs font-semibold">
@@ -100,6 +111,16 @@ export default async function AcademyHomePage({
           </div>
         </div>
       </section>
+      <figure className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8 sm:my-12">
+        <div className="grid grid-cols-12 gap-3 sm:gap-5 rounded-[2rem] overflow-hidden shadow-[0_20px_65px_rgba(0,0,0,0.12)] bg-white p-2 sm:p-3">
+          <SectorPhoto sector="academy" secondary alt="" className="col-span-8 h-52 sm:h-[340px] rounded-[1.5rem]" />
+          <SectorPhoto sector="academy" alt="" className="col-span-4 h-52 sm:h-[340px] rounded-[1.5rem]" />
+        </div>
+        <figcaption className="text-[11px] mt-3 opacity-60 text-center px-4">
+          {isAr ? 'صور فوتوغرافية مرجعية لاتجاه التصميم، وليست توثيقًا لمشروعات أو منشآت هذه العلامة' : 'Licensed editorial art direction — not documentation of this brand’s real facilities or work'}
+        </figcaption>
+      </figure>
+
 
       {/* 4 Career Tracks Overview */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -376,6 +397,7 @@ export default async function AcademyHomePage({
           ))}
         </div>
       </section>
+      <SectorDepth sector="academy" locale={locale as 'ar' | 'en'} />
     </div>
   );
 }

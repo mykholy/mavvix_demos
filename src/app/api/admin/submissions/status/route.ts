@@ -12,13 +12,15 @@ export async function POST(request: Request) {
     if (!admin) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
+    if (!['owner', 'editor'].includes(admin.role)) return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
 
     const { id, status } = await request.json();
-    if (!id || !status) {
+    if (typeof id !== 'string' || id.length > 100 || !['simulated','reviewed','archived','rejected'].includes(status)) {
       return NextResponse.json({ error: 'id and status required' }, { status: 400 });
     }
 
-    updateSubmissionStatus(id, status);
+    const result = updateSubmissionStatus(id, status);
+    if (!result.changes) return NextResponse.json({ error: 'Submission not found' }, { status: 404 });
     return NextResponse.json({ success: true });
   } catch (error: any) {
     return NextResponse.json({ error: error.message || 'Error updating status' }, { status: 500 });

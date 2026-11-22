@@ -28,15 +28,15 @@ export default function RealEstateDevelopmentDetailPage({ params }: Props) {
     notFound();
   }
 
-  const units = getPropertyUnits(locale).slice(0, 3);
+  const units = getPropertyUnits(locale).filter(unit => unit.development_id === development.id).slice(0, 3);
 
   const amenities = [
-    { title: isAr ? 'النادي الصحي والرياضي الخاص' : 'Private Resident Clubhouse & Spa' },
-    { title: isAr ? 'ممرات الركض والدراجات وسط الحدائق' : 'Dedicated Green Jogging & Cycle Corridors' },
-    { title: isAr ? 'حمامات سباحة ممتدة للأفق (Infinity Pools)' : 'Cascading Heated Infinity Pools' },
-    { title: isAr ? 'مواقف سيارات سفلية مجهزة بشواحن EV' : 'Underground Parking with EV Stations' },
-    { title: isAr ? 'أمن وحراسة ذكية وبوابات دخول إلكترونية' : '24/7 Smart Biometric Perimeter Security' },
-    { title: isAr ? 'منطقة خدمات ومطاعم كونسيرج' : 'Concierge Dining & Retail Plaza' },
+    { title: isAr ? 'توفر نادٍ رياضي أو صحي' : 'Confirm available clubhouse and gym' },
+    { title: isAr ? 'مسارات المشي والدراجات' : 'Walking and cycle routes' },
+    { title: isAr ? 'توفر حمامات سباحة بالمشروع' : 'Availability of swimming pools' },
+    { title: isAr ? 'مواقف السيارات وشواحن المركبات' : 'Parking and EV charging provisions' },
+    { title: isAr ? 'إجراءات الأمن والتحكم بالدخول' : 'Security and access-control arrangements' },
+    { title: isAr ? 'الخدمات والمطاعم القريبة' : 'Onsite or nearby shops and dining' },
   ];
 
   return (
@@ -115,7 +115,7 @@ export default function RealEstateDevelopmentDetailPage({ params }: Props) {
             COMMUNITY INFRASTRUCTURE
           </span>
           <h2 className="text-2xl font-black text-[#25312D] font-serif">
-            {isAr ? 'المرافق وخدمات المجتمع السكني' : 'Masterplan Amenities & Lifestyle Facilities'}
+            {isAr ? 'مرافق وخدمات يُنصح بمراجعتها' : 'Development Amenities to Verify'}
           </h2>
         </div>
 

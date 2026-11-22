@@ -1,3 +1,5 @@
+import { SectorPhoto } from '@/components/shared/SectorPhoto';
+import { SECTOR_IMAGES } from '@/lib/media/sector-images';
 import Link from 'next/link';
 import { MavvixHeader } from '@/components/shared/MavvixHeader';
 import { MavvixFooter } from '@/components/shared/MavvixFooter';
@@ -207,21 +209,21 @@ export default function ShowcasePage({ params }: Props) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-start">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-6">
             <Sparkles className="w-4 h-4 text-cyan-400" />
-            <span>{isAr ? 'مصنع النماذج التفاعلية V2 • إنتاج احترافي' : 'Interactive Demo Factory V2 • Production Grade'}</span>
+            <span>{isAr ? 'تجارب رقمية متخصصة من مافيكس' : 'Digital Experience Portfolio • Crafted by Mavvix'}</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight max-w-4xl leading-tight">
             {isAr ? (
               <>مواقع أعمال حقيقية متكاملة، <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">وليست مجرد واجهات ثابتة</span></>
             ) : (
-              <>Full-Stack Commercial Demos, <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Not Dead Prototypes</span></>
+              <>Digital Experiences, <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Not Dead Prototypes</span></>
             )}
           </h1>
 
           <p className="mt-6 text-slate-300 text-base sm:text-xl max-w-3xl leading-relaxed">
             {isAr
-              ? 'ثمانية قطاعات تجارية متكاملة؛ كل موقع يتميز بهوية بصرية مخصصة، ومسارات فرعية متعددة، وقاعدة بيانات SQLite حقيقية، ولوحة تحكم لإدارة المحتوى والطلبات.'
-              : 'Eight comprehensive industry business websites. Each demo features bespoke visual art direction, 10+ deep routes, persistent SQLite database state, and protected Content Studio.'}
+              ? 'ثمانية مواقع متخصصة؛ كل موقع يتميز بهوية بصرية مخصصة، ومسارات فرعية متعددة، وقاعدة بيانات SQLite حقيقية، ولوحة تحكم لإدارة المحتوى والطلبات.'
+              : 'Eight meticulously crafted industry websites. Each demo features bespoke visual art direction, 10+ deep routes, persistent SQLite database state, and protected Content Studio.'}
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs sm:text-sm">
@@ -267,7 +269,8 @@ export default function ShowcasePage({ params }: Props) {
                 key={d.slug}
                 className="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden group"
               >
-                {/* Demo Card Header */}
+                <SectorPhoto sector={d.slug as keyof typeof SECTOR_IMAGES} alt="" className="h-52 w-full" />
+                {/* Sector Overview */}
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
                   <div>
                     <div className="flex items-start justify-between gap-4 mb-4">
@@ -332,7 +335,7 @@ export default function ShowcasePage({ params }: Props) {
                       className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-white transition-all shadow-sm shrink-0"
                       style={{ backgroundColor: d.color }}
                     >
-                      <span>{isAr ? 'تصفح الموقع' : 'Launch Demo'}</span>
+                      <span>{isAr ? 'تصفح الموقع' : 'Explore Website'}</span>
                       <ArrowUpRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -357,7 +360,7 @@ export default function ShowcasePage({ params }: Props) {
             <p className="text-slate-400 text-sm max-w-2xl">
               {isAr
                 ? 'لوحة إدارة فعلية تتيح تعديل المحتوى ثنائي اللغة، ومراجعة طلبات عروض الأسعار والمواعيد، وسجل التدقيق لجميع القطاعات.'
-                : 'Protected operator interface to edit bilingual articles and projects, review simulated RFQ and appointment queues, and inspect audit logs.'}
+                : 'Explore the architecture, bilingual content management, interactive flows, and industry-specific layouts behind each experience.'}
             </p>
           </div>
           <Link

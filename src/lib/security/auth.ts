@@ -61,7 +61,7 @@ export function verifySessionToken(rawToken: string): AdminUser | null {
     `SELECT u.id, u.email, u.role, u.active 
      FROM admin_sessions s
      JOIN admin_users u ON u.id = s.admin_id
-     WHERE s.token_hash = ? AND s.expires_at > CURRENT_TIMESTAMP AND u.active = 1`,
+     WHERE s.token_hash = ? AND datetime(s.expires_at) > datetime('now') AND u.active = 1`,
     [tokenHash]
   );
 

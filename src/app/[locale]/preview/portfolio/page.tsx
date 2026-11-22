@@ -1,13 +1,21 @@
+import type { Metadata } from 'next';
+import { SectorDepth } from '@/components/shared/SectorDepth';
+import { SectorPhoto } from '@/components/shared/SectorPhoto';
+import { getSectorHeroStyle } from '@/lib/media/sector-images';
 import React from 'react';
 import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
 import { getProjects, getPortfolioServices, getEditorialPosts } from '@/lib/db/repositories';
 import { ArrowUpRight, ArrowRight, ArrowLeft, Sparkles, Layers, Sliders, PenTool, CheckCircle2 } from 'lucide-react';
 
-export const metadata = {
-  title: 'Salma Hassan Studio | Creative Direction & Design Systems',
-  description: 'Independent design direction practice. Brand architectures, editorial digital platforms, and modular systems.'
-};
+
+
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  const ar = params.locale === 'ar';
+  const title = ar ? "موقع استوديو إبداعي | خدمات ودراسات حالة | تصميم مافكس" : "Creative Studio Portfolio | Case Studies & Services | Mavvix";
+  const description = ar ? "تجربة بورتفوليو بتفاصيل خدمات واستراتيجية تصميم ودراسات حالة ونموذج موجز مشروع واضح." : "Editorial creative studio portfolio with detailed case studies, service dossiers, process and a structured project brief.";
+  return { title, description, openGraph: {title, description, locale: ar ? 'ar_EG' : 'en_US', type: 'website'}, twitter: {card:'summary_large_image',title,description} };
+}
 
 export default function PortfolioHomePage({
   params: { locale }
@@ -26,7 +34,7 @@ export default function PortfolioHomePage({
   return (
     <div className="space-y-16 sm:space-y-24 pb-20">
       {/* Swiss Editorial Hero */}
-      <section className="pt-12 sm:pt-20 pb-16 sm:pb-24 border-b border-[#E2E0D8]">
+      <section className="pt-12 sm:pt-20 pb-16 sm:pb-24 border-b border-[#E2E0D8]" style={getSectorHeroStyle('portfolio')}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-[#737068]">
             <span className="px-3 py-1 rounded-full bg-[#EAE8E1] border border-[#DDD9CE] text-[#0F0F10] uppercase tracking-widest">
@@ -69,6 +77,16 @@ export default function PortfolioHomePage({
           </div>
         </div>
       </section>
+      <figure className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8 sm:my-12">
+        <div className="grid grid-cols-12 gap-3 sm:gap-5 rounded-[2rem] overflow-hidden shadow-[0_20px_65px_rgba(0,0,0,0.12)] bg-white p-2 sm:p-3">
+          <SectorPhoto sector="portfolio" secondary alt="" className="col-span-8 h-52 sm:h-[340px] rounded-[1.5rem]" />
+          <SectorPhoto sector="portfolio" alt="" className="col-span-4 h-52 sm:h-[340px] rounded-[1.5rem]" />
+        </div>
+        <figcaption className="text-[11px] mt-3 opacity-60 text-center px-4">
+          {isAr ? 'صور فوتوغرافية مرجعية لاتجاه التصميم، وليست توثيقًا لمشروعات أو منشآت هذه العلامة' : 'Licensed editorial art direction — not documentation of this brand’s real facilities or work'}
+        </figcaption>
+      </figure>
+
 
       {/* Flagship Case Studies */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
@@ -198,6 +216,46 @@ export default function PortfolioHomePage({
         </div>
       </section>
 
+
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="salma-method-heading">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 lg:items-end border-t border-[#D8D4C9] pt-10">
+          <div className="lg:w-1/2">
+            <span className="font-mono text-[11px] text-[#737068] uppercase tracking-[.24em]">{isAr ? 'منهجية العمل' : 'THE PRACTICE / HOW WE WORK'}</span>
+            <h2 id="salma-method-heading" className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-[#0F0F10] mt-4">{isAr ? 'قرار تصميمي واضح. مخرج قابل للاستخدام.' : 'Rigorous thinking. Beautiful execution.'}</h2>
+          </div>
+          <p className="lg:w-1/2 text-sm sm:text-base text-[#57544C] leading-8">{isAr ? 'نبدأ بفهم سياق العلامة ومشكلتها، ونتدرج من الاستراتيجية إلى التطبيق مع نقاط مراجعة واضحة؛ حتى يصبح التصميم أداة عمل وليس مجرد عرض بصري.' : 'Every engagement moves from business context and research to a considered direction, a usable system and handover-ready assets. Each stage has an explicit review point.'}</p>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-9">
+          {[
+            {no:'01',ar:'الاكتشاف',en:'Discover',arBody:'مقابلة أولية، مراجعة المنافسين، أهداف قابلة للقياس.',enBody:'Business objectives, interviews and competitive audit.'},
+            {no:'02',ar:'تحديد الاتجاه',en:'Define',arBody:'ملخص المتطلبات، النبرة، معايير القبول والقيود.',enBody:'Creative brief, design principles and acceptance criteria.'},
+            {no:'03',ar:'البناء والتجربة',en:'Design & Validate',arBody:'نماذج عالية الدقة وتقييم الوصول وسهولة الاستخدام.',enBody:'High-fidelity prototypes, accessibility and usability feedback.'},
+            {no:'04',ar:'التسليم والتطوير',en:'Deliver & Evolve',arBody:'ملفات المصدر، الدليل، وتوثيق القرارات ونقاط الصيانة.',enBody:'Source files, guidelines, decision records and maintenance notes.'},
+          ].map((step,index) => (
+            <article key={step.no} className={`rounded-3xl border border-[#E2E0D8] p-6 sm:p-7 transition-colors ${index === 2 ? 'bg-[#0F0F10] text-white' : 'bg-white text-[#0F0F10] hover:bg-[#EAE8E1]'}`}>
+              <span className={`font-mono text-xs ${index === 2 ? 'text-[#CCFF00]' : 'text-[#737068]'}`}>{step.no} / 04</span>
+              <h3 className="font-serif text-xl sm:text-2xl font-bold mt-9 mb-3">{isAr ? step.ar : step.en}</h3>
+              <p className={`text-sm leading-7 ${index === 2 ? 'text-white/65' : 'text-[#737068]'}`}>{isAr ? step.arBody : step.enBody}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="salma-brief-heading">
+        <div className="relative overflow-hidden rounded-[2rem] bg-[#CCFF00] p-8 sm:p-12 lg:p-16 text-[#0F0F10]">
+          <div className="absolute -right-12 -top-12 w-56 h-56 rounded-full border-[42px] border-[#0F0F10]/10 pointer-events-none" aria-hidden="true" />
+          <div className="relative grid lg:grid-cols-12 gap-10 items-end">
+            <div className="lg:col-span-8 space-y-4">
+              <span className="font-mono text-xs font-bold tracking-widest">{isAr ? 'لنبنِ موجزًا واضحًا' : 'YOUR PROJECT STARTS WITH A BETTER BRIEF'}</span>
+              <h2 id="salma-brief-heading" className="font-serif text-3xl sm:text-5xl font-bold max-w-2xl">{isAr ? 'من فكرة مبعثرة إلى نطاق يمكن الاتفاق عليه' : 'From open questions to an actionable project.'}</h2>
+              <p className="text-sm leading-7 max-w-xl">{isAr ? 'شارك نوع مشروعك والنتيجة المطلوبة والمواعيد المناسبة؛ سيساعدك النموذج على ترتيب المعلومات قبل النقاش.' : 'Outline your business challenge, desired outcomes, timing and constraints in a structured project brief.'}</p>
+            </div>
+            <Link href={`/${locale}/preview/portfolio/contact`} className="lg:col-span-4 inline-flex justify-between items-center gap-4 bg-[#0F0F10] hover:bg-[#272727] text-white rounded-full px-6 py-4 text-sm font-bold transition-colors">
+              {isAr ? 'ابدأ كتابة موجز المشروع' : 'Create your project brief'} <ArrowUpRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Perspective / Journal Highlight */}
       {articles.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -228,6 +286,7 @@ export default function PortfolioHomePage({
           </div>
         </section>
       )}
+      <SectorDepth sector="portfolio" locale={locale} />
     </div>
   );
 }

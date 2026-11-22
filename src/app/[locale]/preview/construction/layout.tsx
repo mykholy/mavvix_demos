@@ -1,3 +1,5 @@
+import { ContactDock } from '@/components/shared/ContactDock';
+import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import Link from 'next/link';
 import { locales, type Locale } from '@/lib/i18n/config';
 import {
@@ -66,6 +68,7 @@ export default function ConstructionLayout({ children, params }: Props) {
               </Link>
             ))}
           </nav>
+          <MobileSectorNav links={navLinks} />
 
           <div className="flex items-center gap-3">
             <Link
@@ -103,7 +106,7 @@ export default function ConstructionLayout({ children, params }: Props) {
                   : 'Bespoke contracting and engineering firm specializing in commercial fit-outs, residential structural construction, and rigorous turnkey delivery.'}
               </p>
               <div className="inline-block bg-stone-900 border border-stone-800 rounded px-3 py-1.5 text-[11px] text-amber-400/90 font-mono">
-                Concept Website by Mavvix Software • Simulated Contracting Demo
+                Digital Experience by Mavvix Studio
               </div>
             </div>
 
@@ -139,7 +142,7 @@ export default function ConstructionLayout({ children, params }: Props) {
                 </li>
                 <li>
                   <Link href={`/${locale}/showcase`} className="text-cyan-400 hover:underline flex items-center gap-1 mt-4">
-                    <span>{isAr ? 'العودة لمعرض Mavvix' : 'Mavvix Demo Showcase'}</span>
+                    <span>{isAr ? 'العودة لمعرض Mavvix' : 'Mavvix Showcase'}</span>
                     <ExternalLink className="w-3 h-3" />
                   </Link>
                 </li>
@@ -148,11 +151,13 @@ export default function ConstructionLayout({ children, params }: Props) {
           </div>
 
           <div className="pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-stone-500">
-            <p>© {new Date().getFullYear()} ATLAS Structures. All concept projects and records are demonstrative.</p>
-            <p>Designed and built for Mavvix Demo Factory V2.</p>
+            <p>© {new Date().getFullYear()} Atlas Structures — design experience by Mavvix. Project examples are illustrative, not confirmed delivered contracts.</p>
+            <p>Designed and built for Mavvix Studio.</p>
           </div>
         </div>
       </footer>
+      <div className="h-20 md:hidden" aria-hidden="true" />
+      <ContactDock locale={locale} sector="construction" />
     </div>
   );
 }

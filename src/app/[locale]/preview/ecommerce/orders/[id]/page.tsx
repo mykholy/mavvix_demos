@@ -1,4 +1,5 @@
 import React from 'react';
+import crypto from 'node:crypto';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Locale } from '@/lib/i18n/config';
@@ -20,15 +21,19 @@ export async function generateMetadata({
 }
 
 export default function EcommerceOrderReceiptPage({
-  params: { locale, id }
+  params: { locale, id }, searchParams
 }: {
-  params: { locale: Locale; id: string }
+  params: { locale: Locale; id: string }; searchParams: { access?: string }
 }) {
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;
 
   const order = getSubmissionById(id);
-  if (!order || order.site_slug !== 'ecommerce') {
+  const access = searchParams.access || '';
+  const hash = crypto.createHash('sha256').update(access).digest('hex');
+  const expected = order?.guest_token_hash || '';
+  const authorized = access.length === 64 && expected.length === 64 && crypto.timingSafeEqual(Buffer.from(hash), Buffer.from(expected));
+  if (!order || order.site_slug !== 'ecommerce' || !authorized) {
     notFound();
   }
 

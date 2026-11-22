@@ -7,8 +7,8 @@ import { Lock, Mail, AlertCircle, ArrowRight, ShieldCheck } from 'lucide-react';
 
 export default function AdminLoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState('admin@mavvix.demo');
-  const [password, setPassword] = useState('MavvixDemo2026!Studio');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -120,14 +120,7 @@ export default function AdminLoginPage() {
             </button>
           </form>
 
-          <div className="mt-6 pt-6 border-t border-slate-800 text-center">
-            <p className="text-[11px] text-slate-400">
-              Configured Bootstrap Credentials for Demo:
-            </p>
-            <p className="text-[11px] font-mono text-cyan-300 mt-1">
-              admin@mavvix.demo / MavvixDemo2026!Studio
-            </p>
-          </div>
+
         </div>
       </div>
     </div>

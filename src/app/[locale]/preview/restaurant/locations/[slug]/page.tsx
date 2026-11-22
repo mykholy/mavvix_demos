@@ -94,7 +94,7 @@ export default function RestaurantBranchDetailPage({
         <div className="space-y-4 pt-6 border-t border-[#321F18]/10">
           <div className="flex items-center justify-between">
             <h2 className="font-serif text-lg font-bold text-[#321F18]">
-              {isAr ? 'أوقات الجلسات التجريبية المتاحة اليوم' : 'Sample Table Service Windows Today'}
+              {isAr ? 'نوافذ أوقات الحجز المقترحة' : 'Illustrative Seating Windows'}
             </h2>
             <span className="text-xs text-[#8B8B52]">
               {branchSlots.length} {isAr ? 'نوافذ وقت' : 'slots'}
@@ -131,8 +131,8 @@ export default function RestaurantBranchDetailPage({
             </h3>
             <p className="text-xs text-white/70">
               {isAr
-                ? 'اختر عدد الضيوف، الموعد المناسب، والتفضيلات الخاصة في نموذج الحجز التجريبي.'
-                : 'Select your party size and preferred dining slot in our interactive demonstration form.'}
+                ? 'اختر عدد الضيوف والموعد المفضل ثم انتظر تأكيد الجهة المسؤولة.'
+                : 'Select your party size and preferred time. This request is not a confirmed reservation.'}
             </p>
           </div>
 

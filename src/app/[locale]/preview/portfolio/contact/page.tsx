@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Locale } from '@/lib/i18n/config';
 import { getPortfolioServices, getProjects } from '@/lib/db/repositories';
 import ProjectBriefIntakeWizard from './ProjectBriefIntakeWizard';
@@ -34,11 +34,11 @@ export default function PortfolioContactPage({
           </p>
         </div>
 
-        <ProjectBriefIntakeWizard
+        <Suspense fallback={<div className="min-h-80 animate-pulse rounded-2xl bg-[#F6F5F2]" />}><ProjectBriefIntakeWizard
           locale={locale}
           services={services}
           cases={cases}
-        />
+        /></Suspense>
       </div>
     </div>
   );

@@ -1,3 +1,5 @@
+import { SectorUtilityBar } from '@/components/shared/SectorUtilityBar';
+import { ContactDock } from '@/components/shared/ContactDock';
 import React from 'react';
 import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
@@ -13,42 +15,13 @@ export default function RestaurantLayout({
 }) {
   const { locale } = params;
   const isAr = locale === 'ar';
-  const mavvixSalesUrl = process.env.NEXT_PUBLIC_MAVVIX_SALES_URL || 'https://mavvix.com/contact';
+  const mavvixSalesUrl = process.env.NEXT_PUBLIC_MAVVIX_SALES_URL || (isAr ? 'https://mavvix.com/ar/contact' : 'https://mavvix.com/en/contact');
 
   return (
     <OrderProvider>
       <div className="min-h-screen flex flex-col bg-[#FAF3E6] text-[#321F18] font-sans selection:bg-[#BA5C34] selection:text-white">
-        {/* Top Concept Demo Bar */}
-        <div className="bg-[#321F18] text-[#FAF3E6] text-xs py-2 px-4 border-b border-[#321F18]/20">
-          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-            <div className="flex items-center gap-2 text-center sm:text-start">
-              <span className="inline-block w-2 h-2 rounded-full bg-[#BA5C34] animate-pulse" />
-              <span>
-                {isAr
-                  ? 'عرض توضيحي تجريبي من مافيكس — نموذج تفاعلي لمطعم شرقي ذكي، لا يتصل بمطابخ حقيقية أو عمليات دفع فعلية.'
-                  : 'Mavvix Concept Demo — Interactive smart restaurant model. No real kitchen order or financial transaction.'}
-              </span>
-            </div>
-            <div className="flex items-center gap-4 text-[11px]">
-              <Link
-                href={`/${locale}/showcase`}
-                className="underline hover:text-[#BA5C34] transition-colors"
-              >
-                {isAr ? 'العودة لمعرض مافيكس' : 'Back to Showcase'}
-              </Link>
-              <a
-                href={mavvixSalesUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="font-medium text-[#BA5C34] hover:underline"
-              >
-                {isAr ? 'طلب منصة لمطعمك' : 'Build Your Restaurant Platform'}
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Header */}
+        <SectorUtilityBar sector="restaurant" locale={locale} />
+      {/* Header */}
         <RestaurantHeader locale={locale} />
 
         {/* Main Content */}
@@ -105,7 +78,7 @@ export default function RestaurantLayout({
                   </li>
                   <li>
                     <Link href={`/${locale}/preview/restaurant/reserve`} className="hover:text-white transition-colors">
-                      {isAr ? 'حجز طاولة تجريبي' : 'Table Reservation'}
+                      {isAr ? 'طلب حجز طاولة' : 'Table Reservation'}
                     </Link>
                   </li>
                   <li>
@@ -124,7 +97,7 @@ export default function RestaurantLayout({
               {/* Branches */}
               <div>
                 <h4 className="text-xs uppercase tracking-widest text-[#BA5C34] font-bold mb-4">
-                  {isAr ? 'الفروع التوضيحية' : 'Concept Branches'}
+                  {isAr ? 'الفروع والمناطق' : 'Dining locations'}
                 </h4>
                 <ul className="space-y-3 text-xs text-white/80">
                   <li>
@@ -178,13 +151,13 @@ export default function RestaurantLayout({
             {/* Bottom Bar */}
             <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 gap-4">
               <p>
-                © 2026 SAFFRON TABLE. {isAr ? 'مفهوم رقمي مصمم ومطور بواسطة' : 'Concept demo engineered by'}{' '}
+                © 2026 SAFFRON TABLE. {isAr ? 'تجربة موقع مطعم صممتها' : 'Design by'}{' '}
                 <a href={mavvixSalesUrl} target="_blank" rel="noreferrer" className="text-[#BA5C34] hover:underline">
                   Mavvix
                 </a>.
               </p>
               <div className="flex items-center gap-6">
-                <span>{isAr ? 'تجربة تفاعلية آمنة (بدون دفع فعلي)' : 'Safe Interactive Demo (No Real Payments)'}</span>
+                <span>{isAr ? 'تجربة تفاعلية آمنة (بدون دفع فعلي)' : 'Online Menu (No Payments Collected)'}</span>
                 <Link href={`/${locale}/showcase`} className="hover:text-white transition-colors">
                   {isAr ? 'المعرض الرئيسي' : 'Main Showcase'}
                 </Link>
@@ -192,6 +165,8 @@ export default function RestaurantLayout({
             </div>
           </div>
         </footer>
+      <div className="h-20 md:hidden" aria-hidden="true" />
+      <ContactDock locale={locale} sector="restaurant" />
       </div>
     </OrderProvider>
   );

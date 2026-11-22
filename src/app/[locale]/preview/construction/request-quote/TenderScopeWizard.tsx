@@ -38,8 +38,8 @@ export function TenderScopeWizard({ locale, initialRef, initialService, initialA
   const [areaM2, setAreaM2] = useState<number>(initialArea ? parseInt(initialArea, 10) : 450);
   const [timeline, setTimeline] = useState('3_months');
   const [budgetBand, setBudgetBand] = useState('medium');
-  const [clientName, setClientName] = useState('Demo Enterprise Client');
-  const [clientContact, setClientContact] = useState('client@example.com');
+  const [clientName, setClientName] = useState('');
+  const [clientContact, setClientContact] = useState('');
   const [projectNotes, setProjectNotes] = useState('Requires acoustic isolation and strict milestone delivery.');
 
   const [submitting, setSubmitting] = useState(false);

@@ -1,3 +1,5 @@
+import { SectorUtilityBar } from '@/components/shared/SectorUtilityBar';
+import { ContactDock } from '@/components/shared/ContactDock';
 import React from 'react';
 import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
@@ -14,30 +16,7 @@ export default function DentalLayout({
 
   return (
     <div className="min-h-screen flex flex-col bg-[#F7FAF9] text-[#193A39] font-sans antialiased selection:bg-[#193A39] selection:text-white">
-      {/* Top Clinical & Concept Notice Bar */}
-      <div className="bg-[#193A39] text-[#EDF5F2] text-xs py-2 px-4 border-b border-[#2C5251]">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#7AC7A5] animate-pulse" />
-            <span className="font-medium">
-              {isAr ? 'لومِن لطب الأسنان — نموذج تجريبي استعراضي بواسطة مافيكس' : 'Lumen Dental — Interactive Commercial Concept Demo by Mavvix'}
-            </span>
-            <span className="hidden sm:inline text-white/50">•</span>
-            <span className="hidden sm:inline text-white/80">
-              {isAr ? 'لا يقدم هذا الموقع تشخيصاً طبياً أو حجوزات فعلية' : 'Informational only — No real medical bookings or diagnostics'}
-            </span>
-          </div>
-          <div className="flex items-center gap-4 text-xs font-medium">
-            <Link href={`/${locale}/showcase`} className="text-[#7AC7A5] hover:underline flex items-center gap-1">
-              {isAr ? '← العودة لمعرض النماذج' : '← Back to Showcase'}
-            </Link>
-            <Link href={`/${isAr ? 'en' : 'ar'}/preview/dental`} className="text-white/80 hover:text-white uppercase font-mono tracking-wider">
-              {isAr ? 'English' : 'العربية'}
-            </Link>
-          </div>
-        </div>
-      </div>
-
+      <SectorUtilityBar sector="dental" locale={locale} />
       {/* Main Clinic Header */}
       <header className="sticky top-0 z-40 bg-[#FFFFFF]/90 backdrop-blur-md border-b border-[#E0EBE7] shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
@@ -122,7 +101,7 @@ export default function DentalLayout({
                 <AlertTriangle className="w-4 h-4 text-[#E29D52] flex-shrink-0 mt-0.5" />
                 <span>
                   {isAr
-                    ? 'هذا موقع نموذجي تفاعلي صممته شركة مافيكس. جميع الأسماء والأطباء تمثيلية استعراضية.'
+                    ? 'هذا موقع عرض تفاعلي صممته شركة مافيكس. جميع الأسماء والأطباء تمثيلية استعراضية.'
                     : 'Interactive commercial concept demo engineered by Mavvix. All clinician profiles and facilities are simulated.'}
                 </span>
               </div>
@@ -167,7 +146,7 @@ export default function DentalLayout({
                   : 'Mavvix builds bespoke, privacy-compliant digital clinic platforms that earn patient trust and drive real consultations.'}
               </p>
               <a
-                href={process.env.NEXT_PUBLIC_MAVVIX_SALES_URL || 'https://mavvix.com/contact'}
+                href={process.env.NEXT_PUBLIC_MAVVIX_SALES_URL || (isAr ? 'https://mavvix.com/ar/contact' : 'https://mavvix.com/en/contact')}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#2C5251] hover:bg-[#3D6967] text-white text-xs font-medium transition-colors"
@@ -180,11 +159,11 @@ export default function DentalLayout({
 
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/60">
             <p>
-              © {new Date().getFullYear()} Lumen Dental Studio. Fictional Showcase Website. Built with Next.js & SQLite.
+              © {new Date().getFullYear()} Lumen Dental Studio — website experience by Mavvix. Clinician profiles require licensing verification.
             </p>
             <div className="flex items-center gap-6">
               <Link href={`/${locale}/preview/dental/patient-guide`} className="hover:text-white transition-colors">
-                {isAr ? 'سياسة الخصوصية التوضيحية' : 'Sample Privacy Policy'}
+                {isAr ? 'معلومات الخصوصية' : 'Privacy information'}
               </Link>
               <Link href={`/${locale}/showcase`} className="text-[#7AC7A5] hover:underline">
                 {isAr ? 'معرض مافيكس للنماذج' : 'Mavvix Showcase'}
@@ -193,6 +172,8 @@ export default function DentalLayout({
           </div>
         </div>
       </footer>
+      <div className="h-20 md:hidden" aria-hidden="true" />
+      <ContactDock locale={locale} sector="dental" />
     </div>
   );
 }

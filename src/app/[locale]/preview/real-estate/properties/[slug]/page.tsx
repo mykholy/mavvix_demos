@@ -1,3 +1,4 @@
+import { SectorPhoto } from '@/components/shared/SectorPhoto';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getPropertyUnitBySlug, getPropertyUnits } from '@/lib/db/repositories';
@@ -61,6 +62,10 @@ export default function RealEstatePropertyDetailPage({ params }: Props) {
         </Link>
       </div>
 
+      <figure className="space-y-2">
+        <SectorPhoto sector="real-estate" secondary className="h-64 sm:h-[420px] w-full rounded-[2rem]" alt="Architectural interior editorial photograph" />
+        <figcaption className="text-xs text-stone-500">{isAr ? 'صورة معمارية إلهامية، وليست صورة الوحدة المعروضة' : 'Architectural inspiration photography, not the listed residence'}</figcaption>
+      </figure>
       {/* Main Header & Specs */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         <div className="lg:col-span-8 space-y-4">

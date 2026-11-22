@@ -1,5 +1,7 @@
 'use client';
 
+import { getProductEditorialPhoto } from '@/lib/media/sector-images';
+
 import React from 'react';
 import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
@@ -69,14 +71,13 @@ export default function ProductCard({ locale, product }: Props) {
 
         {/* Product Image Representation */}
         <Link href={`/${locale}/preview/ecommerce/products/${product.slug}`} className="block relative aspect-[4/5] rounded-xl bg-gradient-to-b from-[#F7F3EE] to-[#EBE4DC] overflow-hidden mb-4 flex items-center justify-center border border-[#ECE5DD]">
-          <div className="text-center p-4">
-            <span className="font-serif text-3xl font-light text-[#A8988C] block mb-1 group-hover:scale-105 transition-transform duration-300">
-              {product.title.slice(0, 2)}
-            </span>
-            <span className="text-[11px] font-mono text-[#8C7D73]">
-              {product.sku}
-            </span>
-          </div>
+          <img src={getProductEditorialPhoto(product.slug)}
+            alt={isAr ? 'صورة أزياء مرجعية لتنسيق المجموعة' : 'Editorial fashion styling reference'}
+            loading="lazy" decoding="async"
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <span className="absolute bottom-3 left-3 rtl:left-auto rtl:right-3 rounded-full bg-white/85 backdrop-blur px-2 py-1 text-[10px] text-[#695E57]">
+            {isAr ? 'تصوير إلهامي' : 'Editorial styling'}
+          </span>
 
           {/* Sold out overlay */}
           {isAllSoldOut && (

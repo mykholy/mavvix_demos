@@ -1,5 +1,7 @@
 'use client';
 
+import { getProductEditorialPhoto } from '@/lib/media/sector-images';
+
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
@@ -98,13 +100,12 @@ export default function ProductDetailClient({
             <span className="text-xs font-mono uppercase tracking-widest text-[#8C7D73] absolute top-6 left-6 rtl:left-auto rtl:right-6">
               {images[activeImageIdx].label}
             </span>
-            <span className="font-serif text-6xl font-light text-[#1A1715] mb-2">
-              {product.title.slice(0, 2)}
+            <img src={getProductEditorialPhoto(product.slug + '-' + activeImageIdx)}
+              alt={isAr ? 'لقطة إلهامية لتنسيق الأزياء وليست صورة المنتج الفعلي' : 'Editorial fashion inspiration; not an exact product photograph'}
+              loading="eager" className="absolute inset-0 w-full h-full object-cover" />
+            <span className="absolute bottom-5 left-5 rtl:left-auto rtl:right-5 rounded-full bg-white/90 px-3 py-1.5 text-xs font-semibold text-[#1A1715] backdrop-blur">
+              {isAr ? 'إلهام بصري للمجموعة' : 'Editorial collection styling'}
             </span>
-            <span className="text-xs font-mono text-[#8C7D73]">
-              {activeVariant?.code || product.sku}
-            </span>
-
             {isSoldOut && (
               <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px] flex items-center justify-center">
                 <span className="px-4 py-2 rounded-full bg-white text-[#1A1715] font-bold text-xs uppercase tracking-widest shadow-lg">
@@ -126,8 +127,8 @@ export default function ProductDetailClient({
                     : 'border-[#E0D8D0] bg-[#F8F5F1] opacity-70 hover:opacity-100'
                 }`}
               >
-                <span className="font-serif text-lg font-bold text-[#1A1715]">{img.code}</span>
-                <span className="text-[10px] text-[#8C7D73] line-clamp-1">{img.label}</span>
+                <img src={getProductEditorialPhoto(product.slug + '-' + idx)} alt="" loading="lazy" className="h-full w-full object-cover rounded-xl" />
+                <span className="sr-only">{img.label}</span>
               </button>
             ))}
           </div>

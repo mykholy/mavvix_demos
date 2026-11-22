@@ -103,14 +103,15 @@ export default function AppointmentRequestWizard({
             preferredWindow,
             guestName: contactName,
             guestPhone: contactPhone,
-            guestEmail: contactEmail || 'demo-guest@mavvix.test',
+            guestEmail: contactEmail.trim(),
             generalNote: generalNote.trim()
           },
           lines: [
             {
-              item_id: currentServiceObj?.id || 'svc-01',
-              title: currentServiceObj?.title || 'Dental Consultation',
+              source_type: 'dental_service',
+              source_id: currentServiceObj?.id || 'svc-01',
               quantity: 1,
+              snapshot: { title: currentServiceObj?.title || 'Dental Consultation' },
               unit_price_cents: currentServiceObj?.base_price_cents || 45000,
               total_price_cents: currentServiceObj?.base_price_cents || 45000
             }

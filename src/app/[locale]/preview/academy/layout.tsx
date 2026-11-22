@@ -1,3 +1,5 @@
+import { SectorUtilityBar } from '@/components/shared/SectorUtilityBar';
+import { ContactDock } from '@/components/shared/ContactDock';
 import React from 'react';
 import Link from 'next/link';
 import { AcademyHeader } from './AcademyHeader';
@@ -14,28 +16,7 @@ export default async function AcademyLayout({
 
   return (
     <div className="min-h-screen flex flex-col bg-[#F5F7FF] text-[#192A48] font-sans antialiased selection:bg-[#EF6A55] selection:text-white">
-      {/* Top Demo Simulation Banner */}
-      <div className="bg-[#192A48] text-[#F5F7FF] text-xs py-2 px-4 border-b border-[#192A48]/20">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-start">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#EF6A55] animate-pulse" />
-            <span>
-              {isAr
-                ? 'نموذج تجريبي لأكاديمية تعليمية متقدمة — نوفا للتعلّم بواسطة Mavvix (بيانات تفاعلية، اختبارات مقيَّمة، وتقدم محفوظ)'
-                : 'Interactive Academy Concept Demo — Nova Learning by Mavvix (Scored Quizzes & SQLite Progress Persistence)'}
-            </span>
-          </div>
-          <div className="flex items-center gap-4">
-            <Link
-              href={`/${locale}/showcase`}
-              className="text-[#EF6A55] hover:underline font-medium text-xs inline-flex items-center gap-1"
-            >
-              <span>{isAr ? '← العودة لمعرض النماذج' : '← Back to Showcase'}</span>
-            </Link>
-          </div>
-        </div>
-      </div>
-
+      <SectorUtilityBar sector="academy" locale={locale as 'ar' | 'en'} />
       {/* Main Header */}
       <AcademyHeader locale={locale as 'ar' | 'en'} />
 
@@ -62,8 +43,8 @@ export default async function AcademyLayout({
                   : 'An applied professional academy emphasizing hands-on project labs, architectural rigor, and verifiable production competencies without superficial credentialism.'}
               </p>
               <div className="pt-2 text-xs text-white/50 space-y-1">
-                <p>{isAr ? '📍 القاهرة الجديدة، التجمع الخامس — مركز الابتكار التكنولوجي' : '📍 New Cairo, Fifth Settlement — Technology Innovation Hub'}</p>
-                <p>{isAr ? '⏱️ ساعات الدعم التعليمي: الأحد إلى الخميس، ٩ ص - ٦ م' : '⏱️ Academic Support: Sun to Thu, 9:00 AM – 6:00 PM'}</p>
+                <p>{isAr ? 'تطوير مواقع التعليم: مافكس للبرمجيات — 01062015302' : 'Education websites by Mavvix — 01062015302'}</p>
+                <p>{isAr ? 'راسل فريق مافكس لمعرفة نطاق ومدة التنفيذ' : 'Ask Mavvix about delivery scope and timeline'}</p>
               </div>
             </div>
 
@@ -133,7 +114,7 @@ export default async function AcademyLayout({
             {/* Col 5: Direct Action */}
             <div className="space-y-4">
               <h3 className="text-xs uppercase font-semibold text-[#EF6A55] tracking-wider">
-                {isAr ? 'تجربة تفاعلية فورية' : 'Interactive Demo'}
+                {isAr ? 'تجربة تفاعلية فورية' : 'Explore Learning'}
               </h3>
               <p className="text-xs text-white/60 leading-relaxed">
                 {isAr
@@ -144,7 +125,7 @@ export default async function AcademyLayout({
                 href={`/${locale}/preview/academy/learn/course-01/lesson-01-01`}
                 className="block text-center px-4 py-2.5 rounded-lg bg-[#5F67B5] hover:bg-[#4E56A0] text-white text-xs font-semibold transition-all shadow"
               >
-                {isAr ? 'ابدأ درس تجريبي واختبار ⚡' : 'Start Demo Lesson & Quiz ⚡'}
+                {isAr ? 'ابدأ درس واختبار ⚡' : 'Explore Lesson & Quiz ⚡'}
               </Link>
               <Link
                 href={`/${locale}/preview/academy/enrollment-interest`}
@@ -159,14 +140,14 @@ export default async function AcademyLayout({
           <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/50">
             <div className="max-w-2xl text-center md:text-start leading-relaxed">
               <span className="font-semibold text-white/70">
-                {isAr ? 'إخلاء مسؤولية تجريبي: ' : 'Ethical Demo Disclosure: '}
+                {isAr ? 'معلومات الاستخدام: ' : 'Important Information: '}
               </span>
               {isAr
-                ? 'أكاديمية نوفا للتعلّم هي موقع تجريبي متكامل طُوّر بواسطة Mavvix لعرض الإمكانيات البرمجية والتعليمية. كافة الشهادات والاعتمادات المعروضة هي محاكاة تعليمية غير معتمدة من أي جهة حكومية أو أكاديمية. لا يتم تحصيل رسوم حقيقية.'
-                : 'Nova Learning is an applied commercial concept website developed by Mavvix to demonstrate modern educational architectures. All certifications and syllabus metrics are simulated and non-accredited. No real tuition fees are collected.'}
+                ? 'تجربة منصة تعليمية صممتها Mavvix. المناهج والمدربون والشهادات تحتاج اعتمادًا من الجهة المشغّلة قبل إطلاق خدمة تعليمية رسمية. لا يتم تحصيل أي رسوم من الموقع.'
+                : 'Education platform experience by Mavvix. Curricula, instructors and certificates require approval from the real training operator before an accredited offering. No tuition fees are collected here.'}
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-white/40">© 2026 Mavvix Demo Factory V2</span>
+              <span className="text-white/40">© 2026 Mavvix Studio</span>
               <span className="w-1.5 h-1.5 rounded-full bg-white/20" />
               <Link href={`/${locale}/showcase`} className="text-[#EF6A55] hover:underline">
                 Mavvix Showcase
@@ -175,6 +156,8 @@ export default async function AcademyLayout({
           </div>
         </div>
       </footer>
+      <div className="h-20 md:hidden" aria-hidden="true" />
+      <ContactDock locale={locale as 'ar' | 'en'} sector="academy" />
     </div>
   );
 }

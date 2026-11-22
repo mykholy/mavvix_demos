@@ -1,3 +1,7 @@
+import type { Metadata } from 'next';
+import { SectorDepth } from '@/components/shared/SectorDepth';
+import { SectorPhoto } from '@/components/shared/SectorPhoto';
+import { getSectorHeroStyle } from '@/lib/media/sector-images';
 import Link from 'next/link';
 import { getCatalogItems, getEditorialPosts } from '@/lib/db/repositories';
 import type { Locale } from '@/lib/i18n/config';
@@ -19,25 +23,38 @@ interface Props {
   params: { locale: Locale };
 }
 
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  const ar = params.locale === 'ar';
+  const title = ar ? "موقع توريدات صناعية | كتالوج ومقارنة وRFQ | مافكس" : "Industrial Supply Website | Technical Catalogue & RFQ | Mavvix";
+  const description = ar ? "موقع توريدات متخصص يعرض مواصفات المنتجات الصناعية ومقارنتها وتجهيز طلب عروض أسعار متعدد البنود." : "Technical B2B catalogue with material specifications, product comparison and a multi-item procurement quotation journey.";
+  return { title, description, openGraph: {title, description, locale: ar ? 'ar_EG' : 'en_US', type: 'website'}, twitter: {card:'summary_large_image',title,description} };
+}
+
 export default function IndustrialHomePage({ params }: Props) {
   const { locale } = params;
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;
 
-  const products = getCatalogItems('industrial', locale).slice(0, 6);
+  const catalog = getCatalogItems('industrial', locale);
+  const products = catalog.slice(0, 6);
   const articles = getEditorialPosts('industrial', locale).slice(0, 3);
 
   const categories = [
-    { id: 'profiles', title: isAr ? 'قطاعات وهياكل الصلب' : 'Structural Steel Profiles', count: '12 SKUs' },
-    { id: 'fasteners', title: isAr ? 'وصلات ومثبتات عالية الشد' : 'High-Tensile Fasteners', count: '8 SKUs' },
-    { id: 'piping', title: isAr ? 'أنابيب ووصلات الضغط العالي' : 'Industrial Pressure Piping', count: '6 SKUs' },
-    { id: 'sheets', title: isAr ? 'ألواح ولفائف مسحوبة على البارد' : 'Cold-Rolled Steel Sheets', count: '6 SKUs' },
-  ];
+    { id: 'profiles', title: isAr ? 'قطاعات معدنية' : 'Industrial Profiles' },
+    { id: 'tubes', title: isAr ? 'أنابيب معدنية' : 'Metal Tubes' },
+    { id: 'sheets', title: isAr ? 'ألواح ولفائف' : 'Sheets & Plates' },
+    { id: 'fittings', title: isAr ? 'وصلات وتجهيزات' : 'Fittings' },
+    { id: 'fasteners', title: isAr ? 'مثبتات ميكانيكية' : 'Fasteners' },
+    { id: 'pipes', title: isAr ? 'مواسير صناعية' : 'Industrial Pipes' },
+  ].map(category => ({
+    ...category,
+    count: `${catalog.filter(product => product.item_type === category.id).length} SKUs`,
+  }));
 
   return (
     <div className="space-y-16 pb-20">
       {/* Hero Section */}
-      <section className="bg-[#12243C] text-white pt-16 pb-20 border-b border-slate-800">
+      <section className="bg-[#12243C] text-white pt-16 pb-20 border-b border-slate-800" style={getSectorHeroStyle('industrial')}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content */}
@@ -58,7 +75,7 @@ export default function IndustrialHomePage({ params }: Props) {
               <p className="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
                 {isAr
                   ? 'دليل صناعي متكامل يربط كل منتج بكود الـ SKU الدقيق، درجات الصلب المعتمدة، الحد الأدنى للطلب (MOQ)، وسلة تسعير متعددة البنود للتصدير والتصنيع.'
-                  : 'Certified manufacturing supply catalogue connecting exact SKU codes, DIN/ASTM compliance, packaging multiples, and instant multi-line RFQ generation.'}
+                  : 'Explore technical SKU attributes, industrial material grades, pack multiples, and a structured multi-line RFQ. Confirm compliance with the chosen supplier.'}
               </p>
 
               <div className="pt-4 flex flex-wrap items-center gap-4">
@@ -126,6 +143,16 @@ export default function IndustrialHomePage({ params }: Props) {
           </div>
         </div>
       </section>
+      <figure className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8 sm:my-12">
+        <div className="grid grid-cols-12 gap-3 sm:gap-5 rounded-[2rem] overflow-hidden shadow-[0_20px_65px_rgba(0,0,0,0.12)] bg-white p-2 sm:p-3">
+          <SectorPhoto sector="industrial" secondary alt="" className="col-span-8 h-52 sm:h-[340px] rounded-[1.5rem]" />
+          <SectorPhoto sector="industrial" alt="" className="col-span-4 h-52 sm:h-[340px] rounded-[1.5rem]" />
+        </div>
+        <figcaption className="text-[11px] mt-3 opacity-60 text-center px-4">
+          {isAr ? 'صور فوتوغرافية مرجعية لاتجاه التصميم، وليست توثيقًا لمشروعات أو منشآت هذه العلامة' : 'Licensed editorial art direction — not documentation of this brand’s real facilities or work'}
+        </figcaption>
+      </figure>
+
 
       {/* Product Categories Quick Rails */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -255,7 +282,7 @@ export default function IndustrialHomePage({ params }: Props) {
               PRECISION MANUFACTURING
             </span>
             <h2 className="text-2xl sm:text-3xl font-black tracking-tight">
-              {isAr ? 'قدرات التصنيع والتشكيل الميكانيكي' : 'Certified Manufacturing Capabilities'}
+              {isAr ? 'أساليب التصنيع ونقاط فحص الجودة' : 'Manufacturing Methods & Quality Considerations'}
             </h2>
           </div>
 
@@ -272,7 +299,7 @@ export default function IndustrialHomePage({ params }: Props) {
               <span className="text-amber-400 font-mono font-bold text-xs">PROCESS 02</span>
               <h4 className="text-sm font-bold text-white">{isAr ? 'القطع بالليزر وCNC' : 'CNC Laser Cutting'}</h4>
               <p className="text-slate-400 leading-relaxed">
-                {isAr ? 'قص ألواح الصلب حتى سمك 30 مم بدقة تفاوت لا تتعدى ±0.1 مم.' : 'High-power fiber laser profiling handling up to 30mm thick alloy plates.'}
+                {isAr ? 'تحديد حدود سمك القص والسماحية الفنية طبقًا لمعدات المورد ومتطلبات الرسم التنفيذي.' : 'Specify laser cutting thickness and tolerances with the real supplier and approved fabrication drawing.'}
               </p>
             </div>
 
@@ -280,17 +307,36 @@ export default function IndustrialHomePage({ params }: Props) {
               <span className="text-amber-400 font-mono font-bold text-xs">PROCESS 03</span>
               <h4 className="text-sm font-bold text-white">{isAr ? 'الجلفنة بالغمس الساخن' : 'Hot-Dip Galvanizing'}</h4>
               <p className="text-slate-400 leading-relaxed">
-                {isAr ? 'حماية من التآكل بمطابقة معايير ASTM A123 للبيئات البحرية والصناعية.' : 'ASTM A123 compliant zinc immersion protecting against severe corrosion.'}
+                {isAr ? 'يمكن طلب الجلفنة بالغمس الساخن وفق المواصفة المناسبة بشرط إثبات المطابقة من المورد.' : 'Hot-dip galvanizing can be specified with the applicable standard and documented supplier conformity.'}
               </p>
             </div>
 
             <div className="bg-slate-900 p-5 rounded-xl border border-slate-800 space-y-2">
               <span className="text-amber-400 font-mono font-bold text-xs">PROCESS 04</span>
-              <h4 className="text-sm font-bold text-white">{isAr ? 'مختبر فحص الجودة المعتمد' : 'QA Testing Lab'}</h4>
+              <h4 className="text-sm font-bold text-white">{isAr ? 'إجراءات فحص الجودة' : 'Material Inspection & Testing'}</h4>
               <p className="text-slate-400 leading-relaxed">
-                {isAr ? 'فحص الشد، اختبار الصدمة، والمطياف الضوئي لتحليل التركيب الكيميائي.' : 'Full tensile yield analysis, spectrometer composition, and ultrasonic testing.'}
+                {isAr ? 'اختيار اختبارات الشد والتركيب الكيميائي حسب درجة الخام ومتطلبات المشروع.' : 'Request material testing and traceability documentation appropriate to the purchase order.'}
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="ferroline-rfq-heading">
+        <div className="grid lg:grid-cols-12 gap-8 border border-[#DADFE4] rounded-3xl bg-[#F0F3F5] p-7 sm:p-12">
+          <div className="lg:col-span-5">
+            <span className="font-mono text-xs uppercase tracking-widest text-[#A77E30]">{isAr ? 'دورة طلب التوريد' : 'B2B PROCUREMENT WORKFLOW'}</span>
+            <h2 id="ferroline-rfq-heading" className="font-bold text-2xl sm:text-4xl text-[#12243C] mt-3">{isAr ? 'من كود المنتج إلى طلب عرض سعر واضح' : 'A more precise RFQ starts with the specifications.'}</h2>
+            <p className="text-sm leading-7 text-[#526474] mt-4">{isAr ? 'جهّز قائمة متعددة البنود مع الكميات ومعايير التعبئة المطلوبة قبل إرسال استفسار التوريد.' : 'Create a multi-item request, review minimum quantities and pack sizes, then provide shipping requirements for an accurate procurement discussion.'}</p>
+            <Link href={`/${locale}/preview/industrial/rfq`} className="inline-flex items-center gap-3 bg-[#12243C] hover:bg-[#1C3553] text-white rounded-xl font-bold px-6 py-3 text-sm mt-6 transition-colors">{isAr ? 'افتح سلة طلب التسعير' : 'Start a quotation request'} <Arrow className="w-4 h-4" /></Link>
+          </div>
+          <div className="lg:col-span-7 grid sm:grid-cols-3 gap-4">
+            {[
+              {n:'01',ar:'حدّد المواصفات',en:'Select specifications',arD:'اختر الكود والمادة والمقاسات الملائمة.',enD:'Select SKU, material and dimensions.'},
+              {n:'02',ar:'راجع قواعد التعبئة',en:'Check quantity rules',arD:'تحقق من الحد الأدنى ومضاعفات العبوات.',enD:'Validate MOQ and packaging multiples.'},
+              {n:'03',ar:'سجّل طلبك',en:'Submit your RFQ',arD:'أضف معلومات الشركة والتوصيل ليُراجع الطلب.',enD:'Provide buyer and destination details for review.'},
+            ].map(step => <div key={step.n} className="bg-white rounded-2xl border border-[#E0E4E7] p-6"><span className="text-amber-600 font-mono text-sm">{step.n}</span><h3 className="text-[#12243C] font-bold text-base mt-8">{isAr ? step.ar : step.en}</h3><p className="text-[#627080] text-sm mt-3 leading-6">{isAr ? step.arD : step.enD}</p></div>)}
           </div>
         </div>
       </section>
@@ -345,6 +391,7 @@ export default function IndustrialHomePage({ params }: Props) {
           ))}
         </div>
       </section>
+      <SectorDepth sector="industrial" locale={locale} />
     </div>
   );
 }

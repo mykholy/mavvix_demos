@@ -34,9 +34,9 @@ export function ViewingRequestWizard({ allUnits, locale, initialUnitSlug }: Prop
   const [preferredDay, setPreferredDay] = useState('tuesday');
   const [preferredTime, setPreferredTime] = useState('afternoon_2pm');
   const [viewingMode, setViewingMode] = useState<'in_person' | 'live_video'>('in_person');
-  const [clientName, setClientName] = useState('Sarah Mansour');
-  const [clientEmail, setClientEmail] = useState('sarah.mansour@example.com');
-  const [clientPhone, setClientPhone] = useState('+20 100 123 4567');
+  const [clientName, setClientName] = useState('');
+  const [clientEmail, setClientEmail] = useState('');
+  const [clientPhone, setClientPhone] = useState('');
   const [notes, setNotes] = useState('Interested in garden views and cash vs installment options.');
 
   const [submitting, setSubmitting] = useState(false);

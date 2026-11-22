@@ -34,7 +34,7 @@ export default function ProjectBriefIntakeWizard({
   const [selectedServiceSlug, setSelectedServiceSlug] = useState(prefillService || services[0]?.slug || 'brand-identity');
   const [referencedCaseSlug, setReferencedCaseSlug] = useState(prefillCase);
   const [projectGoal, setProjectGoal] = useState('');
-  const [timelineWindow, setTimelineWindow] = useState('q3-2025');
+  const [timelineWindow, setTimelineWindow] = useState('q1-2027');
   const [budgetBand, setBudgetBand] = useState('growth');
 
   // Contact info
@@ -64,8 +64,8 @@ export default function ProjectBriefIntakeWizard({
 
   const timelineWindows = [
     { id: 'immediate', label: isAr ? 'البدء الفوري (خلال شهر)' : 'Immediate (Within 4 weeks)' },
-    { id: 'q3-2025', label: isAr ? 'الربع الثالث 2025' : 'Q3 2025 Window' },
-    { id: 'q4-2025', label: isAr ? 'الربع الرابع 2025' : 'Q4 2025 Planning' },
+    { id: 'q1-2027', label: isAr ? 'الربع الأول 2027' : 'Q1 2027 Window' },
+    { id: 'q2-2027', label: isAr ? 'الربع الثاني 2027' : 'Q2 2027 Planning' },
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {

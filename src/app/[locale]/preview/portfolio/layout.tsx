@@ -1,3 +1,6 @@
+import { SectorUtilityBar } from '@/components/shared/SectorUtilityBar';
+import { ContactDock } from '@/components/shared/ContactDock';
+import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import React from 'react';
 import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
@@ -15,30 +18,7 @@ export default function PortfolioLayout({
 
   return (
     <div className="min-h-screen flex flex-col bg-[#F6F5F2] text-[#0F0F10] font-sans antialiased selection:bg-[#CCFF00] selection:text-[#0F0F10]">
-      {/* Top Concept Notice Bar */}
-      <div className="bg-[#0F0F10] text-[#E5E3DD] text-xs py-2 px-4 border-b border-[#242426]">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#CCFF00] animate-pulse" />
-            <span className="font-mono text-[11px] uppercase tracking-wider">
-              {isAr ? 'سلمى حسن ستوديو — نموذج تفاعلي لمحفظة أعمال استشارية بواسطة مافيكس' : 'Salma Hassan Studio — Interactive Creative Practice Demo by Mavvix'}
-            </span>
-            <span className="hidden sm:inline text-white/30">•</span>
-            <span className="hidden sm:inline text-white/60 text-[11px]">
-              {isAr ? 'حالات دراسية وسيناريوهات توضيحية خيالية' : 'Simulated case studies & project briefs'}
-            </span>
-          </div>
-          <div className="flex items-center gap-4 text-xs font-mono">
-            <Link href={`/${locale}/showcase`} className="text-[#CCFF00] hover:underline flex items-center gap-1">
-              {isAr ? '← معرض مافيكس' : '← Mavvix Showcase'}
-            </Link>
-            <Link href={`/${isAr ? 'en' : 'ar'}/preview/portfolio`} className="text-white/70 hover:text-white uppercase tracking-wider">
-              {isAr ? 'English' : 'العربية'}
-            </Link>
-          </div>
-        </div>
-      </div>
-
+      <SectorUtilityBar sector="portfolio" locale={locale} />
       {/* Swiss Editorial Header */}
       <header className="sticky top-0 z-40 bg-[#F6F5F2]/95 backdrop-blur-md border-b border-[#E2E0D8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
@@ -77,6 +57,13 @@ export default function PortfolioLayout({
             </Link>
           </nav>
 
+          <MobileSectorNav tone="light" breakpoint="md" links={[
+            { href: `/${locale}/preview/portfolio/work`, label: isAr ? 'الأعمال' : 'Work' },
+            { href: `/${locale}/preview/portfolio/services`, label: isAr ? 'الخدمات' : 'Services' },
+            { href: `/${locale}/preview/portfolio/about`, label: isAr ? 'عن الاستوديو' : 'About' },
+            { href: `/${locale}/preview/portfolio/journal`, label: isAr ? 'المقالات' : 'Journal' },
+            { href: `/${locale}/preview/portfolio/contact`, label: isAr ? 'تواصل' : 'Contact' },
+          ]} />
           {/* Action CTA */}
           <div className="flex items-center gap-3">
             <Link
@@ -114,7 +101,7 @@ export default function PortfolioLayout({
                 <span>
                   {isAr
                     ? 'شخصية استشارية تمثيلية لعرض إمكانيات مافيكس البرمجية للمحافظ الإبداعية.'
-                    : 'Fictional illustrative consultant persona created for Mavvix commercial platform showcase.'}
+                    : 'Creative studio experience developed by Mavvix; case studies represent design narratives.'}
                 </span>
               </div>
             </div>
@@ -157,7 +144,7 @@ export default function PortfolioLayout({
                   : 'Mavvix builds Swiss-editorial digital portfolios with deep case narrative architectures and qualified project brief intakes.'}
               </p>
               <a
-                href={process.env.NEXT_PUBLIC_MAVVIX_SALES_URL || 'https://mavvix.com/contact'}
+                href={process.env.NEXT_PUBLIC_MAVVIX_SALES_URL || (isAr ? 'https://mavvix.com/ar/contact' : 'https://mavvix.com/en/contact')}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#CCFF00] hover:bg-[#B8E600] text-[#0F0F10] text-xs font-mono font-bold transition-colors"
@@ -170,7 +157,7 @@ export default function PortfolioLayout({
 
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-white/50">
             <p>
-              © {new Date().getFullYear()} Salma Hassan Studio. Concept Portfolio Demo by Mavvix.
+              © {new Date().getFullYear()} Salma Hassan Studio — editorial portfolio experience by Mavvix.
             </p>
             <div className="flex items-center gap-6">
               <Link href={`/${locale}/preview/portfolio/about`} className="hover:text-white transition-colors">
@@ -183,6 +170,8 @@ export default function PortfolioLayout({
           </div>
         </div>
       </footer>
+      <div className="h-20 md:hidden" aria-hidden="true" />
+      <ContactDock locale={locale} sector="portfolio" />
     </div>
   );
 }

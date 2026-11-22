@@ -1,3 +1,7 @@
+import type { Metadata } from 'next';
+import { SectorDepth } from '@/components/shared/SectorDepth';
+import { SectorPhoto } from '@/components/shared/SectorPhoto';
+import { getSectorHeroStyle } from '@/lib/media/sector-images';
 import Link from 'next/link';
 import { getProjects, getEditorialPosts } from '@/lib/db/repositories';
 import type { Locale } from '@/lib/i18n/config';
@@ -17,6 +21,13 @@ import {
 
 interface Props {
   params: { locale: Locale };
+}
+
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  const ar = params.locale === 'ar';
+  const title = ar ? "موقع مقاولات احترافي | مشروعات وخدمات وطلب مقايسة | مافكس" : "Construction Website Experience | Projects, Services & Quotes | Mavvix";
+  const description = ar ? "استكشف رحلة موقع شركة مقاولات متكامل: الخدمات الهندسية، تفاصيل المشروعات، نطاق العمل وطلب مقايسة إلكتروني منظم." : "Explore an industry-focused construction website with service dossiers, project details and a structured tender quotation flow.";
+  return { title, description, openGraph: {title, description, locale: ar ? 'ar_EG' : 'en_US', type: 'website'}, twitter: {card:'summary_large_image',title,description} };
 }
 
 export default function ConstructionHomePage({ params }: Props) {
@@ -61,7 +72,7 @@ export default function ConstructionHomePage({ params }: Props) {
   return (
     <div className="space-y-20 pb-20">
       {/* Hero Section */}
-      <section className="relative bg-[#162327] text-white pt-16 pb-24 border-b border-stone-800 overflow-hidden">
+      <section className="relative bg-[#162327] text-white pt-16 pb-24 border-b border-stone-800 overflow-hidden" style={getSectorHeroStyle('construction')}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left/Right Asymmetric Column */}
@@ -147,6 +158,16 @@ export default function ConstructionHomePage({ params }: Props) {
           </div>
         </div>
       </section>
+      <figure className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8 sm:my-12">
+        <div className="grid grid-cols-12 gap-3 sm:gap-5 rounded-[2rem] overflow-hidden shadow-[0_20px_65px_rgba(0,0,0,0.12)] bg-white p-2 sm:p-3">
+          <SectorPhoto sector="construction" secondary alt="" className="col-span-8 h-52 sm:h-[340px] rounded-[1.5rem]" />
+          <SectorPhoto sector="construction" alt="" className="col-span-4 h-52 sm:h-[340px] rounded-[1.5rem]" />
+        </div>
+        <figcaption className="text-[11px] mt-3 opacity-60 text-center px-4">
+          {isAr ? 'صور فوتوغرافية مرجعية لاتجاه التصميم، وليست توثيقًا لمشروعات أو منشآت هذه العلامة' : 'Licensed editorial art direction — not documentation of this brand’s real facilities or work'}
+        </figcaption>
+      </figure>
+
 
       {/* Signature Pillar 01: Core Service Pathways */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -412,6 +433,7 @@ export default function ConstructionHomePage({ params }: Props) {
           </Link>
         </div>
       </section>
+      <SectorDepth sector="construction" locale={locale} />
     </div>
   );
 }

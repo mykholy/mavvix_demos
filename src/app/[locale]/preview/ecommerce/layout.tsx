@@ -1,3 +1,5 @@
+import { SectorUtilityBar } from '@/components/shared/SectorUtilityBar';
+import { ContactDock } from '@/components/shared/ContactDock';
 import React from 'react';
 import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
@@ -18,31 +20,8 @@ export default function EcommerceLayout({
   return (
     <CartProvider>
       <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-[#1A1715] font-sans antialiased selection:bg-[#1A1715] selection:text-[#FAF8F5]">
-        {/* Top Concept Banner */}
-        <div className="bg-[#1A1715] text-[#EFEAE4] text-xs py-2 px-4 border-b border-[#2C2723]">
-          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#C89B8C] animate-pulse" />
-              <span className="font-medium">
-                {isAr ? 'نوريا أتيليه — نموذج متجر إلكتروني تجريبي بواسطة مافيكس' : 'Noria Atelier — Interactive Commercial Ecommerce Demo by Mavvix'}
-              </span>
-              <span className="hidden sm:inline text-white/40">•</span>
-              <span className="hidden sm:inline text-white/70">
-                {isAr ? 'جميع المنتجات ومسار الدفع بالدفع عند الاستلام تجريبية دون أي مدفوعات فعلية' : 'Simulated COD checkout — No actual payment processed'}
-              </span>
-            </div>
-            <div className="flex items-center gap-4 text-xs font-medium">
-              <Link href={`/${locale}/showcase`} className="text-[#C89B8C] hover:underline flex items-center gap-1">
-                {isAr ? '← معرض مافيكس' : '← Mavvix Showcase'}
-              </Link>
-              <Link href={`/${isAr ? 'en' : 'ar'}/preview/ecommerce`} className="text-white/70 hover:text-white uppercase font-mono tracking-wider">
-                {isAr ? 'English' : 'العربية'}
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Dynamic Header */}
+        <SectorUtilityBar sector="ecommerce" locale={locale} />
+      {/* Dynamic Header */}
         <EcommerceHeader locale={locale} />
 
         {/* Main Body */}
@@ -68,8 +47,8 @@ export default function EcommerceLayout({
                   <AlertTriangle className="w-4 h-4 text-[#D8B4A6] flex-shrink-0 mt-0.5" />
                   <span>
                     {isAr
-                      ? 'هذا متجر تجريبي متكامل طوّرته مافيكس. المنتجات والطلبات محاكاة تقنية برمجية.'
-                      : 'Interactive commercial demonstrator engineered by Mavvix. All products and orders are simulated.'}
+                      ? 'تجربة متجر صممتها مافكس؛ يمكن تنفيذ نفس الوظائف لنشاطك بالمنتجات والأسعار الفعلية.'
+                      : 'Storefront experience built by Mavvix; real sales require approved products, inventory and fulfilment.'}
                   </span>
                 </div>
               </div>
@@ -95,7 +74,7 @@ export default function EcommerceLayout({
                 </h3>
                 <ul className="space-y-2 text-xs text-white/80">
                   <li><Link href={`/${locale}/preview/ecommerce/help`} className="hover:text-white transition-colors">{isAr ? 'مناطق الشحن والرسوم' : 'Shipping Zones & Fees'}</Link></li>
-                  <li><Link href={`/${locale}/preview/ecommerce/help`} className="hover:text-white transition-colors">{isAr ? 'سياسة الاستبدال التجريبية' : 'Returns & Exchange Policy'}</Link></li>
+                  <li><Link href={`/${locale}/preview/ecommerce/help`} className="hover:text-white transition-colors">{isAr ? 'سياسة الاستبدال والعناية' : 'Returns & Exchange Policy'}</Link></li>
                   <li><Link href={`/${locale}/preview/ecommerce/help`} className="hover:text-white transition-colors">{isAr ? 'دليل المقاسات والعناية' : 'Size Guide & Fabric Care'}</Link></li>
                   <li><Link href={`/${locale}/preview/ecommerce/story`} className="hover:text-white transition-colors">{isAr ? 'حرفية النسيج الطبيعي' : 'Artisan Craftsmanship'}</Link></li>
                   <li><Link href={`/${locale}/preview/ecommerce/journal`} className="hover:text-white transition-colors">{isAr ? 'مجلة الأسلوب' : 'Style Journal'}</Link></li>
@@ -113,7 +92,7 @@ export default function EcommerceLayout({
                     : 'Mavvix crafts high-converting boutique ecommerce stores with robust variant inventory, promotional pricing engines, and flawless checkout UX.'}
                 </p>
                 <a
-                  href={process.env.NEXT_PUBLIC_MAVVIX_SALES_URL || 'https://mavvix.com/contact'}
+                  href={process.env.NEXT_PUBLIC_MAVVIX_SALES_URL || (isAr ? 'https://mavvix.com/ar/contact' : 'https://mavvix.com/en/contact')}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#C89B8C] hover:bg-[#B88777] text-[#1A1715] text-xs font-bold transition-colors"
@@ -126,11 +105,11 @@ export default function EcommerceLayout({
 
             <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
               <p>
-                © {new Date().getFullYear()} Noria Atelier. Fictional Commercial Concept Demo. Powered by Next.js & SQLite.
+                © {new Date().getFullYear()} Noria Atelier — store design by Mavvix. No financial payment is collected through this experience.
               </p>
               <div className="flex items-center gap-6">
                 <Link href={`/${locale}/preview/ecommerce/help`} className="hover:text-white transition-colors">
-                  {isAr ? 'شروط العرض التجريبي' : 'Demo Terms & Policies'}
+                  {isAr ? 'شروط العرض التوضيحي' : 'Site Information & Policies'}
                 </Link>
                 <Link href={`/${locale}/showcase`} className="text-[#C89B8C] hover:underline">
                   {isAr ? 'معرض نماذج مافيكس' : 'Mavvix Showcase'}
@@ -139,6 +118,8 @@ export default function EcommerceLayout({
             </div>
           </div>
         </footer>
+      <div className="h-20 md:hidden" aria-hidden="true" />
+      <ContactDock locale={locale} sector="ecommerce" />
       </div>
     </CartProvider>
   );

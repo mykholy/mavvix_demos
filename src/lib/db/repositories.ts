@@ -1,5 +1,5 @@
 import crypto from 'node:crypto';
-import { query, queryOne, execute } from './index';
+import { query, queryOne, execute, getDb } from './index';
 import type { Locale } from '../i18n/config';
 
 export interface SiteRecord {
@@ -260,6 +260,18 @@ export function getCatalogItems(siteSlug: string, locale: Locale, category?: str
   sql += ` ORDER BY i.id ASC`;
 
   const rows = query<any>(sql, params);
+  const variantRows = query<any>(
+    "SELECT v.id, v.item_id, v.code, v.attributes_json, v.stock_qty, v.min_qty, v.pack_multiple, v.price_cents FROM catalog_variants v JOIN catalog_items i ON i.id = v.item_id JOIN demo_sites s ON s.id = i.site_id WHERE s.slug = ? AND i.status = 'published' AND v.active = 1",
+    [siteSlug]
+  );
+  const variantsByItem = new Map<string, any[]>();
+  for (const v of variantRows) {
+    const current = variantsByItem.get(v.item_id) || [];
+    current.push({ id: v.id, code: v.code, stock_qty: v.stock_qty, min_qty: v.min_qty,
+      pack_multiple: v.pack_multiple, price_cents: v.price_cents,
+      attributes: JSON.parse(v.attributes_json || '{}') });
+    variantsByItem.set(v.item_id, current);
+  }
   return rows.map(r => ({
     id: r.id,
     sku: r.sku,
@@ -273,6 +285,7 @@ export function getCatalogItems(siteSlug: string, locale: Locale, category?: str
     body: JSON.parse(r.body_json || '{}'),
     seo_title: r.seo_title || '',
     seo_description: r.seo_description || '',
+    variants: variantsByItem.get(r.id) || [],
   }));
 }
 
@@ -892,15 +905,15 @@ export function getRestaurantTimeSlots(branchId?: string): any[] {
   return query<any>(sql, params);
 }
 
-export function verifyRestaurantSlotAvailable(slotId: string): boolean {
-  const sql = `
-    SELECT status
-    FROM demo_time_slots
-    WHERE site_id = 'site-restaurant' AND id = ?
-  `;
-  const row = queryOne<{ status: string }>(sql, [slotId]);
-  if (!row) return true; // If slot not strictly tracked by ID, default allow
-  return row.status === 'available';
+export function verifyRestaurantSlotAvailable(slotId: string, date?: string): boolean {
+  const slot = queryOne<{ status: string; capacity: number }>(
+    "SELECT status, capacity FROM demo_time_slots WHERE site_id = 'site-restaurant' AND id = ?", [slotId]
+  );
+  if (!slot || slot.status !== 'available') return false;
+  const reserved = queryOne<{ count: number }>(
+    "SELECT COUNT(*) as count FROM demo_submissions WHERE site_id = 'site-restaurant' AND flow_type = 'restaurant_table' AND status IN ('simulated','reviewed') AND json_extract(payload_json, '$.slotId') = ? AND (? IS NULL OR json_extract(payload_json, '$.date') = ?)", [slotId, date || null, date || null]
+  );
+  return (reserved?.count || 0) < slot.capacity;
 }
 
 // Academy Courses & Lessons
@@ -1222,28 +1235,37 @@ export function saveGuestProgress(
   status: 'in_progress' | 'completed',
   score?: number
 ) {
-  const hash = crypto.createHash('sha256').update(guestToken || 'default-guest').digest('hex');
-  const id = `prog_${hash.slice(0, 8)}_${itemType}_${itemId}`;
-  const sql = `
-    INSERT INTO demo_guest_progress (id, site_id, guest_token_hash, item_type, item_id, status, score, updated_at)
-    VALUES (?, 'site-academy', ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
-    ON CONFLICT(site_id, guest_token_hash, item_type, item_id) DO UPDATE SET
-      status = excluded.status,
-      score = excluded.score,
-      updated_at = CURRENT_TIMESTAMP
-  `;
-  execute(sql, [id, hash, itemType, itemId, status, score ?? null]);
-  return { id, itemType, itemId, status, score };
+  const hash = crypto.createHash('sha256').update(guestToken).digest('hex');
+  const lesson = queryOne<{ id: string }>(
+    itemType === 'quiz' ? 'SELECT id FROM academy_lessons WHERE slug = ?' : 'SELECT id FROM academy_lessons WHERE id = ? OR slug = ?',
+    itemType === 'quiz' ? [itemId] : [itemId, itemId]
+  );
+  if (!lesson) throw new Error('Lesson not found');
+  if (itemType === 'quiz') {
+    if (!Number.isInteger(score) || (score as number) < 0 || (score as number) > 100) throw new Error('Score must be between 0 and 100');
+    execute(
+      "INSERT INTO demo_guest_progress (guest_token_hash, lesson_id, completed, quiz_score) VALUES (?, ?, 0, ?) ON CONFLICT(guest_token_hash, lesson_id) DO UPDATE SET quiz_score = excluded.quiz_score, updated_at = CURRENT_TIMESTAMP",
+      [hash, lesson.id, score]
+    );
+  } else {
+    execute(
+      "INSERT INTO demo_guest_progress (guest_token_hash, lesson_id, completed) VALUES (?, ?, ?) ON CONFLICT(guest_token_hash, lesson_id) DO UPDATE SET completed = excluded.completed, updated_at = CURRENT_TIMESTAMP",
+      [hash, lesson.id, status === 'completed' ? 1 : 0]
+    );
+  }
+  return { itemType, itemId, status, score: score ?? null };
 }
 
 export function getGuestProgress(guestToken: string) {
-  const hash = crypto.createHash('sha256').update(guestToken || 'default-guest').digest('hex');
-  const sql = `
-    SELECT item_type, item_id, status, score, updated_at
-    FROM demo_guest_progress
-    WHERE site_id = 'site-academy' AND guest_token_hash = ?
-  `;
-  return query<any>(sql, [hash]);
+  const hash = crypto.createHash('sha256').update(guestToken).digest('hex');
+  const rows = query<any>(
+    "SELECT p.lesson_id, p.completed, p.quiz_score, p.updated_at, l.slug FROM demo_guest_progress p JOIN academy_lessons l ON l.id = p.lesson_id WHERE p.guest_token_hash = ?",
+    [hash]
+  );
+  return rows.flatMap((r: any) => [
+    ...(r.completed ? [{ item_type: 'lesson', item_id: r.lesson_id, status: 'completed', score: null, updated_at: r.updated_at }] : []),
+    ...(r.quiz_score !== null ? [{ item_type: 'quiz', item_id: r.slug, status: 'completed', score: r.quiz_score, updated_at: r.updated_at }] : []),
+  ]);
 }
 
 // Editorial Posts (Articles)
@@ -1295,33 +1317,34 @@ export function getEditorialPostBySlug(siteSlug: string, slug: string, locale: L
 }
 
 // Submissions (Persistent SQLite state for quotes, RFQs, viewings, appointments, orders)
-export function createSubmission(siteSlug: string, flowType: string, payload: any, lines: any[] = []): { id: string; refNumber: string } {
+export function createSubmission(siteSlug: string, flowType: string, payload: any, lines: any[] = []): { id: string; refNumber: string; accessToken: string } {
   const site = getSiteBySlug(siteSlug);
-  if (!site) throw new Error(`Site not found: ${siteSlug}`);
-
-  const subId = 'sub_' + crypto.randomUUID();
-  const refNumber = `MVX-${siteSlug.slice(0, 3).toUpperCase()}-${Math.floor(100000 + Math.random() * 900000)}`;
+  if (!site) throw new Error('Site not found');
+  const id = 'sub_' + crypto.randomUUID();
+  const refNumber = 'MVX-' + siteSlug.slice(0, 3).toUpperCase() + '-' + crypto.randomBytes(5).toString('hex').toUpperCase();
+  const accessToken = crypto.randomBytes(32).toString('hex');
+  const tokenHash = crypto.createHash('sha256').update(accessToken).digest('hex');
   const fullPayload = { ...payload, refNumber, submittedAt: new Date().toISOString() };
-
-  execute(
-    `INSERT INTO demo_submissions (id, site_id, flow_type, status, payload_json) VALUES (?, ?, ?, 'simulated', ?)`,
-    [subId, site.id, flowType, JSON.stringify(fullPayload)]
-  );
-
-  for (const line of lines) {
-    const lineId = 'line_' + crypto.randomUUID();
+  const db = getDb();
+  db.exec('BEGIN IMMEDIATE');
+  try {
     execute(
-      `INSERT INTO demo_submission_lines (id, submission_id, source_type, source_id, variant_id, quantity, unit_price_cents, modifiers_json, snapshot_json)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-      [
-        lineId, subId, line.source_type || 'item', line.source_id,
-        line.variant_id || null, line.quantity || 1, line.unit_price_cents || 0,
-        JSON.stringify(line.modifiers || []), JSON.stringify(line.snapshot || {})
-      ]
+      "INSERT INTO demo_submissions (id, site_id, flow_type, status, payload_json, guest_token_hash) VALUES (?, ?, ?, 'simulated', ?, ?)",
+      [id, site.id, flowType, JSON.stringify(fullPayload), tokenHash]
     );
+    for (const line of lines) {
+      execute(
+        "INSERT INTO demo_submission_lines (id, submission_id, source_type, source_id, variant_id, quantity, unit_price_cents, modifiers_json, snapshot_json) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        ['line_' + crypto.randomUUID(), id, line.source_type || 'item', line.source_id, line.variant_id || null,
+          line.quantity, line.unit_price_cents ?? 0, JSON.stringify(line.modifiers || []), JSON.stringify(line.snapshot || {})]
+      );
+    }
+    db.exec('COMMIT');
+  } catch (error) {
+    db.exec('ROLLBACK');
+    throw error;
   }
-
-  return { id: subId, refNumber };
+  return { id, refNumber, accessToken };
 }
 
 export function getSubmissions(siteSlug?: string) {
@@ -1350,7 +1373,7 @@ export function getSubmissions(siteSlug?: string) {
 
 export function getSubmissionById(id: string) {
   const sql = `
-    SELECT sub.id, sub.flow_type, sub.status, sub.payload_json, sub.created_at, s.slug as site_slug, s.name_ar, s.name_en
+    SELECT sub.id, sub.flow_type, sub.status, sub.guest_token_hash, sub.payload_json, sub.created_at, s.slug as site_slug, s.name_ar, s.name_en
     FROM demo_submissions sub
     JOIN demo_sites s ON s.id = sub.site_id
     WHERE sub.id = ?

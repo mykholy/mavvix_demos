@@ -13,18 +13,21 @@ export async function POST(request: Request) {
     if (!admin) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
+    if (!['owner', 'editor'].includes(admin.role)) return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
 
     const { id, siteId, ownerType, ownerId, locale, title, summary, bodyJson } = await request.json();
     if (!id || !title) {
       return NextResponse.json({ error: 'id and title required' }, { status: 400 });
     }
 
-    execute(
+    const update = execute(
       `UPDATE localized_content 
        SET title = ?, summary = ?, body_json = ?
        WHERE id = ?`,
       [title, summary || '', JSON.stringify(bodyJson || {}), id]
     );
+
+    if (!update.changes) return NextResponse.json({ error: 'Content not found' }, { status: 404 });
 
     // Record in audit log
     const auditId = 'aud_' + crypto.randomUUID();

@@ -1,0 +1,37 @@
+name: Verify Mavvix Source & Builds
+on:
+  pull_request:
+  push:
+    branches:
+      - 'feat/premium-production-hardening-20261120'
+jobs:
+  clean-install:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SQLITE_DB_PATH: ./data/mavvix-demo.sqlite
+      ADMIN_BOOTSTRAP_EMAIL: qa-operator@mavvix.invalid
+      ADMIN_BOOTSTRAP_PASSWORD: ci-test-only-password-2026-strong
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Migrate fresh SQLite
+        run: npm run db:migrate
+      - name: Seed fresh SQLite
+        run: npm run db:seed
+      - name: Sector structure & handoff audit
+        run: npm run qa:handoff
+      - name: Run unit tests
+        run: npm run test:unit
+      - name: TypeScript contract
+        run: npm run typecheck
+      - name: Next.js production build
+        run: npm run build
+      - name: HTTP smoke — public routes, DB writes, protected routes
+        run: node scripts/smoke.mjs

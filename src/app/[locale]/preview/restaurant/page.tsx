@@ -1,7 +1,18 @@
+import type { Metadata } from 'next';
+import { SectorDepth } from '@/components/shared/SectorDepth';
+import { SectorPhoto } from '@/components/shared/SectorPhoto';
+import { getSectorHeroStyle } from '@/lib/media/sector-images';
 import React from 'react';
 import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
 import { getRestaurantDishes, getRestaurantBranches, getEditorialPosts } from '@/lib/db/repositories';
+
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  const ar = params.locale === 'ar';
+  const title = ar ? "موقع مطعم ومنيو إلكتروني | تفاصيل الأطباق والحجز | مافكس" : "Restaurant Website | Menu, Dining & Table Requests | Mavvix";
+  const description = ar ? "تجربة موقع مطعم متخصصة: منيو بأقسام، أطباق وإضافات، طلبات، فروع وطلب حجز طاولة." : "A restaurant website with categorized dishes, modifiers, order review, branch information and table enquiries.";
+  return { title, description, openGraph: {title, description, locale: ar ? 'ar_EG' : 'en_US', type: 'website'}, twitter: {card:'summary_large_image',title,description} };
+}
 
 export default function RestaurantHomePage({
   params,
@@ -30,7 +41,7 @@ export default function RestaurantHomePage({
   return (
     <div className="space-y-24">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#FAF3E6] via-[#F4EADB] to-[#FAF3E6] py-16 md:py-24 border-b border-[#321F18]/10">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#FAF3E6] via-[#F4EADB] to-[#FAF3E6] py-16 md:py-24 border-b border-[#321F18]/10" style={getSectorHeroStyle('restaurant')}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content */}
@@ -144,6 +155,16 @@ export default function RestaurantHomePage({
           </div>
         </div>
       </section>
+      <figure className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8 sm:my-12">
+        <div className="grid grid-cols-12 gap-3 sm:gap-5 rounded-[2rem] overflow-hidden shadow-[0_20px_65px_rgba(0,0,0,0.12)] bg-white p-2 sm:p-3">
+          <SectorPhoto sector="restaurant" secondary alt="" className="col-span-8 h-52 sm:h-[340px] rounded-[1.5rem]" />
+          <SectorPhoto sector="restaurant" alt="" className="col-span-4 h-52 sm:h-[340px] rounded-[1.5rem]" />
+        </div>
+        <figcaption className="text-[11px] mt-3 opacity-60 text-center px-4">
+          {isAr ? 'صور فوتوغرافية مرجعية لاتجاه التصميم، وليست توثيقًا لمشروعات أو منشآت هذه العلامة' : 'Licensed editorial art direction — not documentation of this brand’s real facilities or work'}
+        </figcaption>
+      </figure>
+
 
       {/* Menu Categories Bar */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -449,6 +470,7 @@ export default function RestaurantHomePage({
           ))}
         </div>
       </section>
+      <SectorDepth sector="restaurant" locale={locale} />
     </div>
   );
 }

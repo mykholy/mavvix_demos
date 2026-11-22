@@ -42,12 +42,12 @@ export default function EcommerceHelpPage({
           <ShieldAlert className="w-5 h-5 text-[#C97825] flex-shrink-0 mt-0.5" />
           <div className="space-y-1">
             <h4 className="font-bold text-[#945617]">
-              {isAr ? 'إشعار توضيحي لسياسات العرض التجاري' : 'Demonstration Policies Notice'}
+              {isAr ? 'سياسات الشراء مهمة قبل إتمام أي طلب' : 'Review Policies Before Ordering'}
             </h4>
             <p className="leading-relaxed">
               {isAr
-                ? 'السياسات والشروط المذكورة أدناه هي نماذج تمثيلية استعراضية معدة كجزء من منصة مافيكس للمتاجر الإلكترونية ولا تمثل شروط تجارة فعلية ملزمة.'
-                : 'All shipping fees, timelines, and exchange terms listed on this page are illustrative scenario fixtures engineered for the Mavvix ecommerce platform demonstration.'}
+                ? 'اعرف رسوم الشحن وإجراءات العناية بالمنتجات، مع ضرورة مراجعة شروط البيع والاستبدال المعتمدة من المتجر الفعلي قبل الشراء.'
+                : 'Review the delivery and garment-care guidance. Actual retail charges, dispatch times and exchange terms must be confirmed by the operating retailer before a purchase.'}
             </p>
           </div>
         </div>

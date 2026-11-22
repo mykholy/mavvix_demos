@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Locale } from '@/lib/i18n/config';
 import { getProjects } from '@/lib/db/repositories';
 import PortfolioWorkClient from './PortfolioWorkClient';
@@ -33,7 +33,7 @@ export default function PortfolioWorkPage({
           </p>
         </div>
 
-        <PortfolioWorkClient locale={locale} projects={projects} />
+        <Suspense fallback={<div className="h-80 animate-pulse rounded-3xl bg-stone-100" />}><PortfolioWorkClient locale={locale} projects={projects} /></Suspense>
       </div>
     </div>
   );

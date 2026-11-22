@@ -34,9 +34,9 @@ describe('08 — Academy (Nova Learning / نوفا للتعلم) Unit Tests', ()
     assert.deepEqual(statuses, ['published'], 'All 12 courses must have published status');
   });
 
-  test('Exactly 72 lessons seeded in academy_lessons with preview enabled flags', () => {
+  test('Exactly 60 lessons seeded in academy_lessons with preview enabled flags', () => {
     const count = db.prepare("SELECT count(1) as c FROM academy_lessons").get().c;
-    assert.equal(count, 72, 'Must have exactly 72 seeded lessons (6 per course across 12 courses)');
+    assert.equal(count, 60, 'Must have exactly 60 source-seeded lessons (5 per course across 12 courses)');
 
     const previewCount = db.prepare("SELECT count(1) as c FROM academy_lessons WHERE preview_enabled = 1").get().c;
     assert.ok(previewCount >= 12, 'Must have at least 12 preview-enabled lessons across the curriculum');

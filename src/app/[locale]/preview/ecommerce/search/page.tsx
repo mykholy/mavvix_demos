@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Locale } from '@/lib/i18n/config';
 import { getCatalogItems } from '@/lib/db/repositories';
 import EcommerceSearchClient from './EcommerceSearchClient';
@@ -33,7 +33,7 @@ export default function EcommerceSearchPage({
           </p>
         </div>
 
-        <EcommerceSearchClient locale={locale} products={products} />
+        <Suspense fallback={<div className="h-80 animate-pulse rounded-3xl bg-stone-100" />}><EcommerceSearchClient locale={locale} products={products} /></Suspense>
       </div>
     </div>
   );

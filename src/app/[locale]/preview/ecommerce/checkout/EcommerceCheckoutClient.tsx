@@ -34,7 +34,7 @@ export default function EcommerceCheckoutClient({ locale }: Props) {
   const [recipientEmail, setRecipientEmail] = useState('');
   const [streetAddress, setStreetAddress] = useState('');
   const [notes, setNotes] = useState('');
-  const [agreeTerms, setAgreeTerms] = useState(true);
+  const [agreeTerms, setAgreeTerms] = useState(false);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -93,7 +93,7 @@ export default function EcommerceCheckoutClient({ locale }: Props) {
           payload: {
             recipientName,
             recipientPhone,
-            recipientEmail: recipientEmail || 'customer.demo@mavvix.test',
+            recipientEmail: recipientEmail.trim(),
             shippingZone,
             streetAddress,
             notes,
@@ -113,7 +113,7 @@ export default function EcommerceCheckoutClient({ locale }: Props) {
 
       // Clear cart and redirect to order receipt
       clearCart();
-      router.push(`/${locale}/preview/ecommerce/orders/${data.submissionId}`);
+      router.push(`/${locale}/preview/ecommerce/orders/${data.submissionId}?access=${encodeURIComponent(data.receiptToken)}`);
     } catch (err: any) {
       setErrorMessage(err.message || 'An error occurred during checkout');
     } finally {
