@@ -15,8 +15,13 @@ export default function IndustryRequestsPage({searchParams}:{searchParams:{secto
  const rows=db.prepare(`SELECT id,ref_number,vertical_slug,flow_type,guest_name,guest_phone,
   payload_json,utm_json,staff_notes,status,created_at,expires_at FROM portfolio_requests
   WHERE (? = '' OR vertical_slug = ?) ORDER BY created_at DESC LIMIT 300`).all(sector,sector) as Array<Record<string,unknown>>;
- const requests=rows.map(r=>({...r,payload:JSON.parse(String(r.payload_json||'{}')),
-   utm:JSON.parse(String(r.utm_json||'{}')),payload_json:undefined,utm_json:undefined}));
+ const requests=rows.map(r=>({
+   id:String(r.id),ref_number:String(r.ref_number),vertical_slug:String(r.vertical_slug),
+   flow_type:String(r.flow_type),guest_name:String(r.guest_name),guest_phone:String(r.guest_phone),
+   status:String(r.status),created_at:String(r.created_at),staff_notes:String(r.staff_notes||''),
+   payload:JSON.parse(String(r.payload_json||'{}')) as Record<string,unknown>,
+   utm:JSON.parse(String(r.utm_json||'{}')) as Record<string,unknown>,
+  }));
  return <div className="space-y-7">
   <div className="flex flex-wrap gap-5 items-center justify-between">
    <div><h1 className="font-bold text-2xl text-white flex gap-2 items-center"><Inbox className="text-[#FB6935]"/> Industry enquiries</h1>
