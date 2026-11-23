@@ -17,7 +17,7 @@ export function VeloraAppointmentForm({locale,initialService=''}:{locale:Locale;
  const [duration,setDuration]=useState<number>(selectedInitial.durations[0]);
  const [staff,setStaff]=useState('any');
  const [date,setDate]=useState('');
- const [window,setWindow]=useState('flexible');
+ const [preferredWindow,setPreferredWindow]=useState('flexible');
  const [region,setRegion]=useState('Cairo');
  const [occasion,setOccasion]=useState('everyday');
  const [name,setName]=useState('');
@@ -40,7 +40,7 @@ export function VeloraAppointmentForm({locale,initialService=''}:{locale:Locale;
    if(!key.current)key.current=crypto.randomUUID();
    const params=new URLSearchParams(window.location.search);
    const body={flowType:'salon_appointment_interest',clientRequestId:key.current,serviceSlug,
-    durationMinutes:duration,staffPreference:staff,preferredDate:date,preferredWindow:window,region,occasion,
+    durationMinutes:duration,staffPreference:staff,preferredDate:date,preferredWindow:preferredWindow,region,occasion,
     guestName:name,guestPhone:phone,consent,honeypot:'',
     utm:{source:params.get('utm_source')||'',medium:params.get('utm_medium')||'',campaign:params.get('utm_campaign')||''}};
    const response=await fetch('/api/portfolio/salon-spa',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
@@ -73,7 +73,7 @@ export function VeloraAppointmentForm({locale,initialService=''}:{locale:Locale;
     <label className={field}>{ar?'02 / مدة الخدمة (تقريبية)':'02 / Estimated duration'}<select className={input} value={duration} onChange={e=>setDuration(Number(e.target.value))}>{service.durations.map(m=><option value={m} key={m}>{m} {ar?'دقيقة':'minutes'}</option>)}</select></label>
     <label className={field}>{ar?'03 / تفضيل التخصص':'03 / Professional speciality preference'}<select className={input} value={staff} onChange={e=>setStaff(e.target.value)}>{EXPERTS.filter(([v])=>v==='any'||v===expected).map(([v,arText,en])=><option key={v} value={v}>{ar?arText:en}</option>)}</select></label>
     <label className={field}>{ar?'04 / اليوم المفضل':'04 / Preferred date'}<input type="date" min={minDate} max={maxDate} required className={input} value={date} onChange={e=>setDate(e.target.value)}/></label>
-    <label className={field}>{ar?'05 / الفترة المناسبة':'05 / Time window'}<select className={input} value={window} onChange={e=>setWindow(e.target.value)}>{WINDOWS.map(([v,arText,en])=><option key={v} value={v}>{ar?arText:en}</option>)}</select></label>
+    <label className={field}>{ar?'05 / الفترة المناسبة':'05 / Time window'}<select className={input} value={preferredWindow} onChange={e=>setPreferredWindow(e.target.value)}>{WINDOWS.map(([v,arText,en])=><option key={v} value={v}>{ar?arText:en}</option>)}</select></label>
     <label className={field}>{ar?'06 / المنطقة العامة':'06 / General service region'}<select className={input} value={region} onChange={e=>setRegion(e.target.value)}>{['Cairo','Giza','Alexandria','Riyadh','Jeddah','Other'].map(v=><option key={v}>{v}</option>)}</select></label>
     <label className={field}>{ar?'07 / طبيعة المناسبة':'07 / Reason for the visit'}<select className={input} value={occasion} onChange={e=>setOccasion(e.target.value)}>{OCCASIONS.map(([v,arText,en])=><option key={v} value={v}>{ar?arText:en}</option>)}</select></label>
     <label className={field}>{ar?'اسم للتواصل':'Contact name'}<input required minLength={2} maxLength={110} autoComplete="name" className={input} value={name} onChange={e=>setName(e.target.value)}/></label>
