@@ -39,6 +39,21 @@ test('home maintenance has eight industry dossiers, three buyer guides and five 
  }
 });
 
+test('salon spa is an original bilingual beauty service implementation, not a generic cloning placeholder',()=>{
+ const v=JSON.parse(fs.readFileSync(path.join(root,'data/verticals/salon-spa.json'),'utf8'));
+ assert.equal(v.services.length,10);
+ assert.equal(v.articles.length,3);
+ assert.equal(v.faq.length,5);
+ assert.equal(new Set(v.services.map(s=>s.slug)).size,10);
+ for(const s of v.services){
+  assert.ok(s.body.ar.length>150 && s.body.en.length>150);
+  assert.ok(s.durations.length>=2 && s.durations.every(n=>Number.isInteger(n)));
+  assert.equal(s.questions.ar.length,3);
+ }
+ const names=v.services.map(s=>s.title.en.toLowerCase());
+ assert.equal(new Set(names).size,10);
+});
+
 test('additive schema upgrades on existing legacy database without dropping its records',()=>{
  const db=new DatabaseSync(':memory:');
  try {
