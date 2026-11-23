@@ -5,6 +5,7 @@ import { MavvixHeader } from '@/components/shared/MavvixHeader';
 import { MavvixFooter } from '@/components/shared/MavvixFooter';
 import { ContactDock } from '@/components/shared/ContactDock';
 import type { Locale } from '@/lib/i18n/config';
+import type { Metadata } from 'next';
 import {
   Building2,
   Factory,
@@ -259,6 +260,25 @@ const demos = [
     features:['Class-Level Selector','Pending-only Trial Request','Training Knowledge Journal']
   }
 ];
+
+/** Preview examples are not operating businesses. Canonicals become indexable only
+ * after the owner configures the verified PUBLIC portfolio origin. */
+export function generateMetadata({params:{locale}}:{params:{locale:Locale}}):Metadata {
+ const ar=locale==='ar';
+ const originValue=process.env.NEXT_PUBLIC_MAVVIX_SHOWCASE_ORIGIN || '';
+ let origin='';
+ try {const url=new URL(originValue);if(url.protocol==='https:')origin=url.origin;}catch{}
+ const verifiedIndex=Boolean(origin)&&process.env.MAVVIX_INDEX_SHOWCASE==='true';
+ const title=ar?`نماذج مواقع احترافية لقطاعات مختلفة | مافكس — ${demos.length} تجربة`:`Premium Industry Website Portfolio | Mavvix — ${demos.length} Experiences`;
+ const description=ar?'استعرض مواقع قطاعات متعددة بالعربي والإنجليزي وتجارب تفاعلية لنماذج خدمات وحجوزات ومتاجر، وتواصل مع مافكس لتنفيذ موقع بهوية نشاطك الحقيقية.':'Explore bespoke bilingual industry website experiences by Mavvix, including service enquiry, retail and scheduling concepts. Commission an original site tailored to your real business.';
+ return {
+  title,description,
+  robots:{index:verifiedIndex,follow:verifiedIndex},
+  alternates:origin?{canonical:`${origin}/${locale}/showcase`,languages:{ar:`${origin}/ar/showcase`,en:`${origin}/en/showcase`}}:undefined,
+  openGraph:{title,description,type:'website',siteName:'Mavvix Software',locale:ar?'ar_EG':'en_US',url:origin?`${origin}/${locale}/showcase`:undefined},
+  twitter:{card:'summary_large_image',title,description}
+ };
+}
 
 export default function ShowcasePage({ params }: Props) {
   const { locale } = params;
