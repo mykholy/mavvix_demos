@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import type { Locale } from '@/lib/i18n/config';
 import { FORMA,FORMA_IMAGES,formaPath,formaText } from '@/lib/verticals/interiors-kitchens/data';
-import { ArrowUpRight,ArrowLeft,ArrowRight,Ruler,PenTool,Layers,Grid2X2,DoorOpen,BookOpen,Palette,CheckCircle2,MoveHorizontal,Route,ShieldCheck,Draw,Lightbulb,Maximize2,BoxSelect,LayoutGrid,Leaf } from 'lucide-react';
+import { ArrowUpRight,ArrowLeft,ArrowRight,Ruler,PenTool,BookOpen } from 'lucide-react';
 
 export function generateMetadata({params:{locale}}:{params:{locale:Locale}}):Metadata{
  const ar=locale==='ar';const title=ar?'تصميم موقع شركة مطابخ وديكور حسب المقاس | Forma Atelier من مافكس':'Kitchen & Interior Design Website | Forma Atelier by Mavvix';
