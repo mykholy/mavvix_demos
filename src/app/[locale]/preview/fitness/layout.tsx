@@ -15,7 +15,7 @@ export default function FitnessLayout({children,params:{locale}}:{children:React
   {href:pulsePath(locale,'first-visit'),label:ar?'أول زيارة':'First Visit'},
   {href:pulsePath(locale,'journal'),label:ar?'دليل التدريب':'Journal'},
  ];
- return <div className="pulse-shell bg-[#F2F2ED] text-[#141421] min-h-screen selection:bg-[#E0FE61] selection:text-[#141421]">
+ return <div lang={locale} dir={ar?'rtl':'ltr'} className="pulse-shell bg-[#F2F2ED] text-[#141421] min-h-screen selection:bg-[#E0FE61] selection:text-[#141421]">
    <div className="bg-[#141421] text-[#E0FE61] text-[11px] px-4 py-2 text-center font-bold">{ar?'تجربة موقع نادي رياضي من مافكس — لا توجد حصص أو عضويات مؤكدة':'Mavvix gym website concept — no actual classes, coaches or memberships are confirmed'}</div>
    <header className="bg-[#F2F2ED]/95 backdrop-blur-xl sticky z-40 top-0 border-b border-[#C8C7D1]">
     <div className="max-w-7xl mx-auto px-4 sm:px-8 h-[80px] flex items-center justify-between gap-4">
