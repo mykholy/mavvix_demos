@@ -14,6 +14,7 @@ import {
   Palette,
   UtensilsCrossed,
   GraduationCap,
+  Wrench,
   ArrowUpRight,
   ShieldCheck,
   CheckCircle2,
@@ -193,7 +194,25 @@ const demos = [
       { ar: 'مشغل درس تفاعلي متكامل مع اختبار فوري متعدد الخيارات', en: 'Fully functioning preview lesson with interactive quiz' },
       { ar: 'تسجيل نسبة الإنجاز والدرجة في SQLite وطلب الالتحاق', en: 'Persisted quiz score progress & enrollment interest' }
     ],
-    features: ['Interactive Lesson Player', 'Scored Knowledge Quiz', 'Persistent Progress Tracker']
+    features: ['Interactive Lesson Player', 'Scored Knowledge Quiz', 'Persistent Progress Tracker'],
+  {
+    number: '09',
+    slug: 'auto-service',
+    name: { ar: 'تورك جراج — موقع مراكز صيانة السيارات', en: 'Torque Garage — Automotive Service Experience' },
+    sector: { ar: 'صيانة سيارات وفحص وتشخيص', en: 'Automotive Service & Inspection' },
+    icon: Wrench,
+    color: '#FB6935',
+    bgColor: 'bg-orange-50',
+    borderColor: 'border-orange-200',
+    routesCount: 13,
+    tagline: { ar: 'افهم العلامة، اختار الخدمة، وسجّل طلب فحص واضح', en: 'Understand the symptom, select the service and save a structured inspection request.' },
+    journeys: [
+      { ar: 'ثمانية ملفات فنية لخدمات الصيانة', en: 'Eight authored technical service dossiers' },
+      { ar: 'تحديد الماركة والموديل ومؤشر العطل', en: 'Vehicle make, model, warning category and service selection' },
+      { ar: 'طلب محفوظ برقم مرجعي وينتظر تأكيد المشغّل', en: 'Persistent request reference with no false appointment confirmation' }
+    ],
+    features: ['Diagnostic Field Notes', 'Car Model Enquiry', 'Validated Request Workflow']
+  }
   }
 ];
 
