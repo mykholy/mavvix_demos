@@ -194,7 +194,8 @@ const demos = [
       { ar: 'مشغل درس تفاعلي متكامل مع اختبار فوري متعدد الخيارات', en: 'Fully functioning preview lesson with interactive quiz' },
       { ar: 'تسجيل نسبة الإنجاز والدرجة في SQLite وطلب الالتحاق', en: 'Persisted quiz score progress & enrollment interest' }
     ],
-    features: ['Interactive Lesson Player', 'Scored Knowledge Quiz', 'Persistent Progress Tracker'],
+    features: ['Interactive Lesson Player', 'Scored Knowledge Quiz', 'Persistent Progress Tracker']
+  },
   {
     number: '09',
     slug: 'auto-service',
@@ -212,7 +213,6 @@ const demos = [
       { ar: 'طلب محفوظ برقم مرجعي وينتظر تأكيد المشغّل', en: 'Persistent request reference with no false appointment confirmation' }
     ],
     features: ['Diagnostic Field Notes', 'Car Model Enquiry', 'Validated Request Workflow']
-  }
   }
 ];
 
