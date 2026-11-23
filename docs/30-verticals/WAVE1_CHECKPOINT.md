@@ -54,3 +54,9 @@ This section supersedes the earlier **2 in progress / 20 planned** counts above;
 - `package.json` still pins `next` and `eslint-config-next` to **14.2.24**. Upgrade both and regenerate the lockfile together, then prove full regressions on the exact upgraded commit. Do not edit only the manifest.
 - **Next planned Wave 1 sector:** `interiors-kitchens`, followed by `nursery`; Wave 2 and Wave 3 remain planned. Before release, independently verify media source/rights, responsive visual crops, RTL, axe findings, SQLite/admin authorization, credential rotation and patched framework security.
 - This checkpoint is documentation only. No new code, local test execution, merge, deployment or advertising is claimed in this refresh.
+
+## Incremental QA checkpoint — 2026-11-24 01:54 EET
+- Registry inspected on feature branch: 8 original `live`, **7 `in_progress`** (`auto-service`, `home-maintenance`, `salon-spa`, `fitness`, `sports-venues`, `furniture`, `interiors-kitchens`), **15 `planned`**. The next planned Wave 1 sector is `nursery`. In-progress does not mean released.
+- Strengthened `scripts/verify-vertical-registry.mjs` with explicit bilingual brand metadata uniqueness and prevention of starting Wave 2/3 while earlier-wave sectors remain planned. This gate is already invoked by `npm run test:unit`.
+- On previous SHA `68d067e`, [visual QA 45284110669](https://github.com/mykholy/mavvix_demos/actions/runs/45284110669) succeeded, but [Source & Builds 45284110594](https://github.com/mykholy/mavvix_demos/actions/runs/45284110594) was **cancelled**, not passed. Neither proves the new code passed. No local tests were run in this checkpoint.
+- Next.js and eslint-config-next remain pinned to 14.2.24; patch upgrade plus lockfile, media rights, security and screenshot signoff remain blocking. No merge/deploy/ads authorized.
