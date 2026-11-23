@@ -9,6 +9,7 @@ export function seedPortfolioVerticals(db, rootDir=process.cwd()) {
   const files=[
     {filename:'auto-service.json',slug:'auto-service',ar:'تورك جراج — صيانة السيارات',en:'Torque Garage · Automotive'},
     {filename:'home-maintenance.json',slug:'home-maintenance',ar:'فكسورا — صيانة المنازل والتكييف',en:'Fixora Care · Home Maintenance'},
+    {filename:'salon-spa.json',slug:'salon-spa',ar:'فيلورا بيوتي — خدمات تجميل وعناية',en:'Velora Beauty · Salon & Spa'},
   ];
   const addSite=db.prepare(`INSERT INTO portfolio_verticals(slug,name_ar,name_en,wave,published)
  VALUES (?,?,?,?,?) ON CONFLICT(slug) DO UPDATE SET
