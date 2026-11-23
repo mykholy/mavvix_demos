@@ -71,7 +71,7 @@ export default function AdminDashboardPage() {
             استوديو إدارة المحتوى والمنصات الرقمية
           </h1>
           <p className="mt-1 text-slate-400 text-xs sm:text-sm max-w-2xl">
-            إدارة متكاملة لكل موقع من المواقع الثمانية مع لوحة تحكم مستقلة، وتتبع استفسارات العملاء المحفوظة محليًا في SQLite.
+            إدارة المواقع الثمانية السابقة، ومراجعة استفسارات القطاعات الجديدة في قائمة منفصلة محمية بالصلاحيات.
           </p>
         </div>
 
@@ -84,6 +84,7 @@ export default function AdminDashboardPage() {
             <ExternalLink className="w-4 h-4" />
             <span>معاينة معرض المواقع</span>
           </Link>
+          <Link href="/admin/portfolio-requests" className="bg-[#FB6935] hover:bg-[#FF865E] text-[#161A20] text-xs font-bold px-4 py-2.5 rounded-xl flex items-center gap-2"><Inbox size={15}/><span>طلبات القطاعات الجديدة</span></Link>
           <Link
             href="/admin/submissions"
             className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-slate-950 text-xs font-bold px-4 py-2.5 rounded-xl shadow-lg shadow-amber-500/20 transition-all flex items-center gap-2"
