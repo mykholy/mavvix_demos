@@ -66,5 +66,21 @@ console.table(results);
 console.log('PASS: 60 distinct real topic-based AR/EN Academy lesson plans with exercises');
 assert.equal(results.length, 8, 'All eight sectors must exist');
 writeFileSync('handoff-audit-results.json', JSON.stringify({scanned_at:new Date().toISOString(),results},null,2)+'\n');
+
+const automotiveDir=join(root,'auto-service');
+const automotiveHome=readFileSync(join(automotiveDir,'page.tsx'),'utf8');
+const automotiveLayout=readFileSync(join(automotiveDir,'layout.tsx'),'utf8');
+assert.ok((automotiveHome.match(/<section\\b/g)||[]).length>=9,'Auto-service must have 9 substantial homepage sections');
+assert.ok((automotiveHome.match(/data-sector-specific=/g)||[]).length>=4,'Auto-service needs 4 unique industry sections');
+assert.match(automotiveLayout,/<ContactDock\\b/,'Every auto-service page needs commercial contact CTA');
+const automotivePaths=['services','services/[slug]','booking','resources','resources/[slug]','[section]'];
+for(const route of automotivePaths){
+ assert.ok(existsSync(join(automotiveDir,route,'page.tsx')),'Missing Auto-service route: '+route);
+}
+const roster=readFileSync(join(process.cwd(),'src/lib/verticals/registry.ts'),'utf8');
+assert.equal((roster.match(/"slug":/g)||[]).length,30,'Registry must contain 30 declared sectors');
+assert.equal((roster.match(/"status": "live"/g)||[]).length,8,'Only the original eight sectors are marked live until Gate 1 approval');
+console.log('PASS: all 8 legacy sectors preserved + deep automotive Wave 1 routes and 30-sector planned roster');
+
 console.log('PASS: complete source-level route/section/media/localization structure for all 8 sectors');
 console.log('NOTE: structural checks and HTTP smoke tests do NOT validate client business identity, licensed media provenance, UX screenshots or operational fulfilment.');
