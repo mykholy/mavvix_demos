@@ -205,7 +205,7 @@ export const VERTICALS = [
     "en": "Sports venues",
     "wave": 1,
     "accent": "#E6A04A",
-    "status": "planned"
+    "status": "in_progress"
   },
   {
     "slug": "furniture",
