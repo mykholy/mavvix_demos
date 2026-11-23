@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit",
     "db:migrate": "node scripts/migrate.mjs",
     "db:seed": "node scripts/seed.mjs",
-    "test:unit": "node --test --test-concurrency=1 tests/unit/*.test.mjs",
+    "test:unit": "node scripts/verify-vertical-registry.mjs && node --test --test-concurrency=1 tests/unit/*.test.mjs",
     "test:e2e": "playwright test",
     "test:a11y": "node tests/a11y-check.mjs",
     "qa:handoff": "node scripts/handoff-audit.mjs",
