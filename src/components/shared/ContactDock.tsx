@@ -37,6 +37,7 @@ const DEMOS_LIST = [
   { slug: 'auto-service', nameAr: 'تورك جراج / صيانة سيارات', nameEn: 'Torque Garage · Auto service', icon: Wrench, color: '#FB6935' },
   { slug: 'home-maintenance', nameAr: 'فكسورا كير / صيانة منزلية', nameEn: 'Fixora · Home maintenance', icon: Home, color: '#F7B347' },
   { slug: 'salon-spa', nameAr: 'فيلورا بيوتي / صالون وسبا', nameEn: 'Velora Beauty · Salon & Spa', icon: HeartPulse, color: '#9B6070' },
+  { slug: 'fitness', nameAr: 'بالس ديستريكت / جيم ولياقة', nameEn: 'Pulse District · Fitness Club', icon: Wrench, color: '#8E6BFF' },
 ];
 
 export function ContactDock({
@@ -295,7 +296,7 @@ export function ContactDock({
           </span>
 
           <span className="hidden sm:inline-flex items-center text-[10px] bg-white/20 text-white font-mono px-2 py-0.5 rounded-full font-bold">
-            11 EXPERIENCES
+            12 EXPERIENCES
           </span>
         </button>
       </div>
