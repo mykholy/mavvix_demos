@@ -12,6 +12,7 @@ export function seedPortfolioVerticals(db, rootDir=process.cwd()) {
     {filename:'salon-spa.json',slug:'salon-spa',ar:'فيلورا بيوتي — خدمات تجميل وعناية',en:'Velora Beauty · Salon & Spa'},
     {filename:'sports-venues.json',slug:'sports-venues',ar:'أرينا كورتس — ملاعب كرة وبادل',en:'Arena Courts · Football & Padel'},
     {filename:'furniture.json',slug:'furniture',ar:'أوكلين ليفينج — أثاث حسب الطلب',en:'Oakline Living · Furniture Design'},
+    {filename:'interiors-kitchens.json',slug:'interiors-kitchens',ar:'فورما — تصميم مطابخ ودريسنج',en:'Forma Atelier · Kitchen and Interiors'} ,
     {filename:'fitness.json',slug:'fitness',ar:'بالس ديستريكت — تدريبات قوة ولياقة',en:'Pulse District · Fitness Club'},
   ];
   const addSite=db.prepare(`INSERT INTO portfolio_verticals(slug,name_ar,name_en,wave,published)
