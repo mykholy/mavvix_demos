@@ -97,7 +97,7 @@ export const VERTICALS = [
     "en": "Fitness clubs",
     "wave": 1,
     "accent": "#8F63FF",
-    "status": "planned"
+    "status": "in_progress"
   },
   {
     "slug": "salon-spa",
