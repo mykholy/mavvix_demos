@@ -193,3 +193,10 @@ button:disabled {
 .oakline-shell[lang="en"] { font-family:'Plus Jakarta Sans',system-ui,sans-serif; }
 .oakline-shell[lang="en"] .oakline-display { font-family:'DM Serif Display',Georgia,serif; font-weight:400; letter-spacing:-.025em; }
 .oakline-shell[lang="ar"] .oakline-display { font-family:'IBM Plex Sans Arabic','Cairo',sans-serif; font-weight:700; letter-spacing:0; line-height:1.3; }
+
+/* Forma Atelier: tailored architectural typography; never inherited from furniture product pages. */
+.forma-shell[lang="en"] { font-family:'Plus Jakarta Sans',system-ui,sans-serif; }
+.forma-shell[lang="ar"] { font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif; }
+.forma-shell[lang="en"] .forma-display { font-family:'DM Serif Display',Georgia,serif; font-weight:400; letter-spacing:-.025em; }
+.forma-shell[lang="ar"] .forma-display { font-family:'Tajawal',sans-serif; font-weight:800; letter-spacing:0; line-height:1.25; }
+.forma-shell { overflow-x:clip; }
