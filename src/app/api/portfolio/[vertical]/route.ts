@@ -1,3 +1,4 @@
+import { handleSalonAppointment } from '@/server/portfolio/salon-spa';
 import { handleHomeMaintenance } from '@/server/portfolio/home-maintenance';
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
@@ -30,6 +31,7 @@ function failure(code:string,status=422){return NextResponse.json({success:false
 
 export async function POST(req:Request,{params}:{params:{vertical:string}}){
  if(params.vertical==='home-maintenance')return handleHomeMaintenance(req);
+ if(params.vertical==='salon-spa')return handleSalonAppointment(req);
  if(params.vertical!=='auto-service')return failure('UNKNOWN_VERTICAL',404);
  const rate=checkRateLimit('portfolio:auto-service:'+getRequestIdentity(req),6,60_000);
  if(!rate.allowed)return NextResponse.json({success:false,code:'RATE_LIMIT'},{status:429,headers:{'Retry-After':String(rate.retryAfter)}});
