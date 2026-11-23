@@ -254,7 +254,7 @@ export function ContactDock({
             type="button"
             onClick={scrollToTop}
             aria-label={ar ? 'الصعود للأعلى' : 'Scroll to top'}
-            className="w-11 h-11 rounded-full bg-slate-900/90 hover:bg-slate-800 text-white shadow-xl backdrop-blur-md border border-slate-700 flex items-center justify-center transition-all active:scale-95 hover:scale-105"
+            className="hidden sm:flex w-11 h-11 rounded-full bg-slate-900/90 hover:bg-slate-800 text-white shadow-xl backdrop-blur-md border border-slate-700 flex items-center justify-center transition-all active:scale-95 hover:scale-105"
           >
             <ChevronUp className="w-5 h-5" />
           </button>
@@ -264,9 +264,10 @@ export function ContactDock({
         <button
           type="button"
           aria-expanded={expanded}
+          aria-label={expanded ? (ar ? 'إغلاق خيارات التواصل' : 'Close contact options') : (ar ? 'المزيد من خيارات التواصل' : 'More contact options')}
           aria-controls={`mavvix-dock-options-${sector}`}
           onClick={() => setExpanded((v) => !v)}
-          className={`relative group flex items-center gap-2.5 min-h-12 px-4 py-2.5 rounded-full text-white font-bold text-xs sm:text-sm shadow-2xl transition-all duration-300 active:scale-95 ${
+          className={`relative group flex items-center gap-2.5 min-h-12 min-w-12 px-3 sm:px-4 py-2.5 rounded-full text-white font-bold text-xs sm:text-sm shadow-2xl transition-all duration-300 active:scale-95 ${
             expanded
               ? 'bg-slate-900 ring-2 ring-slate-700'
               : 'bg-gradient-to-r from-mavvix-blue via-blue-600 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 ring-2 ring-blue-400/30 shadow-blue-500/25'
@@ -285,14 +286,14 @@ export function ContactDock({
             </div>
           )}
 
-          <span className="font-arabic font-extrabold tracking-wide">
+          <span className="hidden sm:inline font-arabic font-extrabold tracking-wide">
             {expanded
               ? (ar ? 'إغلاق القائمة' : 'Close Menu')
               : (ar ? 'عايز موقع لشركتك؟' : 'Need a site like this?')}
           </span>
 
           <span className="hidden sm:inline-flex items-center text-[10px] bg-white/20 text-white font-mono px-2 py-0.5 rounded-full font-bold">
-            8 DEMOS
+            9 EXPERIENCES
           </span>
         </button>
       </div>
