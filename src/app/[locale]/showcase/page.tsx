@@ -239,7 +239,7 @@ export default function ShowcasePage({ params }: Props) {
   const isAr = locale === 'ar';
 
   return (
-    <div className="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+    <div className="mavvix-showcase bg-slate-50 text-slate-900 min-h-screen flex flex-col">
       {/* Commercial Announcement Bar */}
       <div className="bg-gradient-to-r from-blue-700 via-indigo-600 to-cyan-600 text-white text-xs sm:text-sm font-semibold py-2.5 px-4 text-center">
         <div className="max-w-7xl mx-auto flex items-center justify-center gap-2 flex-wrap">
