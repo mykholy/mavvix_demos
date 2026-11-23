@@ -40,6 +40,7 @@ const DEMOS_LIST = [
   { slug: 'salon-spa', nameAr: 'فيلورا بيوتي / صالون وسبا', nameEn: 'Velora Beauty · Salon & Spa', icon: HeartPulse, color: '#9B6070' },
   { slug: 'fitness', nameAr: 'بالس ديستريكت / جيم ولياقة', nameEn: 'Pulse District · Fitness Club', icon: Wrench, color: '#8E6BFF' },
   { slug: 'sports-venues', nameAr: 'أرينا كورتس / ملاعب', nameEn: 'Arena Courts · Sports Venues', icon: Trophy, color: '#F0B044' },
+  { slug: 'furniture', nameAr: 'أوكلين ليفينج / أثاث', nameEn: 'Oakline Living · Furniture', icon: Home, color: '#BA9062' },
 ];
 
 export function ContactDock({
@@ -298,7 +299,7 @@ export function ContactDock({
           </span>
 
           <span className="hidden sm:inline-flex items-center text-[10px] bg-white/20 text-white font-mono px-2 py-0.5 rounded-full font-bold">
-            13 EXPERIENCES
+            14 EXPERIENCES
           </span>
         </button>
       </div>
