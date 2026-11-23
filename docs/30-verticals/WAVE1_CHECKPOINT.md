@@ -43,3 +43,14 @@ Wave 3: skin-clinic, diagnostics-lab, boutique-hotel, solar-energy, recruitment,
 
 ## Release rules
 Every further sector must pass clean migration+seed, unit, typecheck, build, route and workflow smoke, mobile/desktop and AR/EN UI review, data/security permissions, and image provenance. Do not mark planned sites completed, merge PR #2, deploy, buy ads or tell any consumer a hypothetical service is live.
+
+## Verified progress refresh — 2026-11-23 23:57 EET
+
+This section supersedes the earlier **2 in progress / 20 planned** counts above; those earlier paragraphs describe the initial checkpoint, not the current registry.
+
+- Read current PR #2 metadata: **open, draft, not merged**, head `f17784fb1f801088be8e440c16df8bb78419909f`, base `main`. PR body and this older checkpoint are stale; do not treat their counts as current.
+- Read the current `src/lib/verticals/registry.ts`: **8 original live, 6 additional in_progress, 16 planned**. The six are `auto-service`, `home-maintenance`, `salon-spa`, `fitness`, `sports-venues`, `furniture`. Registry status does **not** mean production readiness.
+- GitHub Actions on the exact head `f17784fb1f801088be8e440c16df8bb78419909f`: [Source & Builds 45264321501](https://github.com/mykholy/mavvix_demos/actions/runs/45264321501) **completed/success** and [Real Browser & Visual QA 45264321907](https://github.com/mykholy/mavvix_demos/actions/runs/45264321907) **completed/success**. These are workflow conclusions, not a manual inspection of screenshots or a license/security sign-off.
+- `package.json` still pins `next` and `eslint-config-next` to **14.2.24**. Upgrade both and regenerate the lockfile together, then prove full regressions on the exact upgraded commit. Do not edit only the manifest.
+- **Next planned Wave 1 sector:** `interiors-kitchens`, followed by `nursery`; Wave 2 and Wave 3 remain planned. Before release, independently verify media source/rights, responsive visual crops, RTL, axe findings, SQLite/admin authorization, credential rotation and patched framework security.
+- This checkpoint is documentation only. No new code, local test execution, merge, deployment or advertising is claimed in this refresh.
