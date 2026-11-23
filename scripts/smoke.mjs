@@ -226,6 +226,43 @@ try {
   assert.equal(againResult.duplicate,true);
   console.log('PASS: 30 bilingual Fixora routes, stored home service request and replay-safe reference');
 
+
+  // Salon is a fundamentally different cosmetic-service request, never a real confirmed booking.
+  const salonRoutes=['','services','services/shape-cut','services/classic-manicure','journal',
+   'journal/choosing-treatment','rituals','packages','specialists','gallery','about','process','contact','questions','booking'];
+  for(const locale of ['ar','en']){
+    for(const route of salonRoutes){
+      const path='/'+locale+'/preview/salon-spa'+(route?'/'+route:'');
+      const response=await get(path);
+      assert.equal(response.status,200,'Velora salon route failed: '+path);
+      const html=await response.text();
+      assert.ok(html.includes('data-mavvix-contact-dock'),'Mavvix sales dock absent on '+path);
+    }
+  }
+  const salonDate=new Date(Date.now()+2*86400000).toISOString().slice(0,10);
+  const salonBody={flowType:'salon_appointment_interest',clientRequestId:'33333333-3333-4333-8333-333333333333',
+    serviceSlug:'classic-manicure',durationMinutes:45,staffPreference:'nail-artist',
+    preferredDate:salonDate,preferredWindow:'afternoon',region:'Cairo',occasion:'self-care',
+    guestName:'QA Salon Enquiry',guestPhone:'01000000000',consent:true,honeypot:'',
+    utm:{source:'qa',medium:'visual',campaign:'velora-wave1'}};
+  const salonNoConsent=await post('/api/portfolio/salon-spa',{...salonBody,consent:false});
+  assert.equal(salonNoConsent.status,400,'Salon must reject nonconsensual intake');
+  const salonBadDuration=await post('/api/portfolio/salon-spa',{...salonBody,durationMinutes:120});
+  assert.equal(salonBadDuration.status,400,'Salon must use actual allowed service duration');
+  const salonBadSpecialist=await post('/api/portfolio/salon-spa',{...salonBody,staffPreference:'hair-stylist'});
+  assert.equal(salonBadSpecialist.status,400,'Salon speciality is subject to chosen service');
+  const salonSaved=await post('/api/portfolio/salon-spa',salonBody);
+  const salonResult=await salonSaved.json();
+  assert.equal(salonSaved.status,201,'Salon request must persist: '+JSON.stringify(salonResult));
+  assert.ok(/^MVX-VLR-[A-F0-9]+$/.test(salonResult.refNumber));
+  assert.equal(salonResult.status,'pending_operator_confirmation');
+  const salonRepeat=await post('/api/portfolio/salon-spa',salonBody);
+  const salonDuplicate=await salonRepeat.json();
+  assert.equal(salonRepeat.status,200,'Repeated salon UUID must not duplicate a record');
+  assert.equal(salonDuplicate.refNumber,salonResult.refNumber);
+  assert.equal(salonDuplicate.duplicate,true);
+  console.log('PASS: 30 bilingual Velora pages + valid pending-only salon request, idempotency and strict validation');
+
   console.log('PASS: auth guard, flow validation, Academy SQLite progress, trusted ecommerce price, private receipt');
 } catch (error) {
   console.error(error);
