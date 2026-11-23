@@ -157,6 +157,43 @@ try {
   assert.equal(reserved.status,200,'Restaurant table request failed: '+JSON.stringify(reservation));
   console.log('PASS: 8 distinct sector business enquiry journeys persist and produce references');
 
+
+  // Wave 1 first sector. Test every substantive AR/EN page and detail route.
+  const automotiveRoutes=['','services','services/brakes','services/oil-filters','resources',
+    'resources/warning-lights','diagnostics','packages','car-brands','locations','process','about','contact','booking'];
+  for(const locale of ['ar','en']){
+    for(const route of automotiveRoutes){
+      const url='/'+locale+'/preview/auto-service'+(route?'/'+route:'');
+      const response=await get(url);
+      assert.equal(response.status,200,'Auto-service site route failed: '+url);
+      const html=await response.text();
+      assert.ok(html.includes('data-mavvix-contact-dock'),'Auto-service sales dock missing: '+url);
+    }
+  }
+  const automotiveBody={flowType:'auto_service_request',clientRequestId:'11111111-1111-4111-8111-111111111112',
+    guestName:'QA Automotive',guestPhone:'01000000000',make:'Toyota',model:'Corolla',year:2023,
+    serviceSlug:'brakes',category:'safety',preferredDate:'',preferredWindow:'flexible',region:'Cairo',
+    consent:true,honeypot:'',utm:{source:'qa',medium:'integration',campaign:'auto-service'}};
+  const fakeSector=await post('/api/portfolio/fitness',automotiveBody);
+  assert.equal(fakeSector.status,404,'Other sectors must not impersonate an implemented auto-service workflow');
+  const invalidAuto=await post('/api/portfolio/auto-service',{...automotiveBody,consent:false});
+  assert.equal(invalidAuto.status,400,'Nonconsensual auto request must be rejected');
+  const autoResp=await post('/api/portfolio/auto-service',automotiveBody);
+  const autoResult=await autoResp.json();
+  assert.equal(autoResp.status,201,'Auto-service intake failed: '+JSON.stringify(autoResult));
+  assert.ok(/^MVX-AS-[A-F0-9]+$/.test(autoResult.refNumber));
+  assert.equal(autoResult.status,'pending_operator_confirmation');
+  const duplicateAuto=await post('/api/portfolio/auto-service',automotiveBody);
+  const duplicateBody=await duplicateAuto.json();
+  assert.equal(duplicateAuto.status,200);
+  assert.equal(duplicateBody.refNumber,autoResult.refNumber);
+  assert.equal(duplicateBody.duplicate,true);
+  const unauthedPortfolioUpdate=await post('/api/admin/portfolio-requests/status',{
+    id:'psr_123',status:'qualified',notes:'Not authorized'
+  });
+  assert.equal(unauthedPortfolioUpdate.status,401,'Protected industry lead mutation must reject guests');
+  console.log('PASS: 28 bilingual auto-service journeys + 1 persisted idempotent inspection request and admin auth');
+
   console.log('PASS: auth guard, flow validation, Academy SQLite progress, trusted ecommerce price, private receipt');
 } catch (error) {
   console.error(error);
