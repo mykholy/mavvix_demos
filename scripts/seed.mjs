@@ -1,3 +1,4 @@
+import { seedPortfolioVerticals } from './seed-portfolio.mjs';
 import { DatabaseSync } from 'node:sqlite';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -1582,5 +1583,6 @@ for (const a of richAcademyArticles) {
 }
 
 
+seedPortfolioVerticals(db, rootDir);
 console.log('🎉 Full database seeding completed successfully!');
 db.close();
