@@ -31,7 +31,7 @@ const materials=[
  {name:'oak',ar:'خشب أو مظهر أوك',en:'Oak look',arBody:'تأكد إذا الخامة خشب طبيعي أم قشرة أو لوح هندسي، لأن الاسم الشائع وحده لا يكفي.',enBody:'Ask whether this means solid timber, veneer or engineered board; the aesthetic label alone is insufficient.'},
  {name:'walnut',ar:'مظهر جوز',en:'Walnut look',arBody:'درجات الخشب قد تختلف بين العينات والصورة والدفعات؛ اطلب عينة صالحة للاعتماد.',enBody:'Visual tone varies across physical samples and photos. Request a real finish sample for approval.'},
  {name:'engineered',ar:'ألواح هندسية',en:'Engineered panels',arBody:'اطلب توضيح التركيب والسماكة والحواف ومواضع الاستخدام الفعلي.',enBody:'Clarify construction, surface treatment, edge banding and where the board will be installed.'},
- {name:'linen',ar:'تنجيد بملمس الكتان',en:'Linen-style upholstery',arBody:'قابلية التنظيف والتحمل تعتمد على المنتج الفعلي وتعليماته وليس اسم القماش فقط.',enBody:'Cleaning and durability depend on the actual fabric and maker's instructions, not a generic label.'},
+ {name:'linen',ar:'تنجيد بملمس الكتان',en:'Linen-style upholstery',arBody:'قابلية التنظيف والتحمل تعتمد على المنتج الفعلي وتعليماته وليس اسم القماش فقط.',enBody:'Cleaning and durability depend on the actual fabric and maker’s instructions, not a generic label.'},
  {name:'velvet',ar:'مخمل',en:'Velvet touch',arBody:'الملمس واللمعان واتجاه الوبر يغيروا الإحساس؛ اتأكد من العينة ومراعاة الاستخدام.',enBody:'Texture, pile direction and sheen affect the finish. Check the actual selected sample.'},
  {name:'boucle',ar:'بوكليه',en:'Bouclé texture',arBody:'ملمس العقد يضيف إحساسًا مميزًا لكن متطلبات العناية تختلف من منتج لآخر.',enBody:'Looped texture adds character but practical cleaning and wear vary by product.'},
 ];
