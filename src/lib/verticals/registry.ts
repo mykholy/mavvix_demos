@@ -232,7 +232,7 @@ export const VERTICALS = [
     "en": "Home maintenance",
     "wave": 1,
     "accent": "#F7B347",
-    "status": "planned"
+    "status": "in_progress"
   },
   {
     "slug": "solar-energy",
