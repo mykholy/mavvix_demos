@@ -428,8 +428,8 @@ export default function ShowcasePage({ params }: Props) {
 
                     <Link
                       href={`/${locale}/preview/${d.slug}`}
-                      className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-white transition-all shadow-sm shrink-0"
-                      style={{ backgroundColor: d.color }}
+                      className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-white bg-[#08132D] hover:bg-[#17345D] transition-all shadow-sm shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2"
+                      style={{ borderBottom: `3px solid ${d.color}` }}
                     >
                       <span>{isAr ? 'تصفح الموقع' : 'Explore Website'}</span>
                       <ArrowUpRight className="w-4 h-4" />
