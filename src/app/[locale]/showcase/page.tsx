@@ -213,6 +213,24 @@ const demos = [
       { ar: 'طلب محفوظ برقم مرجعي وينتظر تأكيد المشغّل', en: 'Persistent request reference with no false appointment confirmation' }
     ],
     features: ['Diagnostic Field Notes', 'Car Model Enquiry', 'Validated Request Workflow']
+
+  },
+  {
+    number:'10',
+    slug:'home-maintenance',
+    name:{ar:'فكسورا كير — موقع شركات الصيانة والتكييف',en:'Fixora Care — Home Maintenance Website'},
+    sector:{ar:'صيانة منزلية وتكييف وسباكة وكهرباء',en:'Home Services, AC, Plumbing & Electrical'},
+    icon:Wrench,
+    color:'#F7B347',
+    bgColor:'bg-blue-50',
+    borderColor:'border-blue-200',
+    routesCount:14,
+    tagline:{ar:'اختار مشكلة البيت وخطوات المعاينة في تجربة منظمة وآمنة',en:'Choose the issue and explore a safe, structured service request journey'},
+    journeys:[
+      {ar:'8 ملفات خدمات صيانة متخصصة بالتفاصيل',en:'Eight authored home-repair service dossiers'},
+      {ar:'نموذج 3 مراحل: المشكلة، المنطقة، وسيلة التواصل',en:'Three-step issue, coverage and contact enquiry'},
+      {ar:'حفظ الطلب برقم مرجعي دون ادعاء إرسال فني',en:'Persisted request with no false technician dispatch'}],
+    features:['Safety-first Service Triage','Three-step Intake','Operator Confirmation Required']
   }
 ];
 
@@ -316,7 +334,7 @@ export default function ShowcasePage({ params }: Props) {
             </p>
           </div>
           <div className="text-xs font-semibold px-3 py-1.5 rounded bg-slate-100 text-slate-700 border border-slate-300 w-fit">
-            9 {isAr ? 'تجارب قابلة للاستكشاف، بينها موقع صيانة قيد الاختبار' : 'Browsable experiences, including an automotive site under QA'}
+            10 {isAr ? 'تجارب قابلة للاستكشاف، بما فيها مواقع جديدة قيد الاختبار' : 'Browsable industry experiences, with new sites under QA'}
           </div>
         </div>
 
@@ -330,6 +348,8 @@ export default function ShowcasePage({ params }: Props) {
               >
                 {d.slug==='auto-service'
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#161A20]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Mechanic_repairing_car_engine.jpg/1280px-Mechanic_repairing_car_engine.jpg" loading="lazy" decoding="async" className="h-full w-full object-cover" alt={isAr?'صورة تحريرية لميكانيكي يفحص محرك سيارة':'Editorial photo of a mechanic examining a car engine'}/></div>
+                  : d.slug==='home-maintenance'
+                  ? <div className="relative h-52 w-full overflow-hidden bg-[#EEF7FC]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/AirConditioner.jpg/1280px-AirConditioner.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'صورة تحريرية لمكيف هواء':'CC0 editorial air conditioning photo'} /></div>
                   : <SectorPhoto sector={d.slug as keyof typeof SECTOR_IMAGES} alt="" className="h-52 w-full" />}
                 {/* Sector Overview */}
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
