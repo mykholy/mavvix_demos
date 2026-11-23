@@ -84,7 +84,7 @@ try{
      await page.addScriptTag({path:axePath});
      const axe=await page.evaluate(async()=>window.axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}}));
      entry.a11y=axe.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.length,summary:v.nodes.slice(0,24).map(x=>({selector:x.target.join(' '),failureSummary:x.failureSummary}))}));
-     if(entry.a11y.some(x=>x.impact==='critical'||x.impact==='serious'))entry.issues.push('Axe serious/critical: '+entry.a11y.filter(x=>['critical','serious'].includes(x.impact)).map(x=>x.id).join(','));
+     if(entry.a11y.length)entry.issues.push('Axe WCAG violations: '+entry.a11y.map(x=>x.id+' ('+x.impact+', '+x.nodes+' nodes)').join(', '));
      const png=locale+'-'+sector+(subpath?'-'+subpath.replaceAll('/','-'):'-home')+'-'+viewport.name+'.png';
      await page.screenshot({path:path.join(out,png),fullPage:true,animations:'disabled',timeout:25000});
      entry.screenshot=png;
