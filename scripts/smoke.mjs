@@ -296,6 +296,38 @@ try {
   assert.equal(fitDuplicate.duplicate,true);
   console.log('PASS: 30 bilingual gym routes and strictly validated persisted idempotent trial enquiry');
 
+
+  // Arena is not live inventory: sport/team validation plus persisted pending-only court request.
+  const arenaRoutes=['','courts','courts/football-five','courts/padel-doubles','book','sports',
+   'schedule','pricing','leagues','coaches','process','about','contact','journal','journal/before-booking'];
+  for(const locale of ['ar','en']){
+    for(const route of arenaRoutes){
+      const url='/'+locale+'/preview/sports-venues'+(route?'/'+route:'');
+      const response=await get(url);
+      assert.equal(response.status,200,'Arena court route unavailable: '+url);
+      const html=await response.text();
+      assert.ok(html.includes('data-mavvix-contact-dock'),'Missing Mavvix conversion dock: '+url);
+    }
+  }
+  const arenaDate=new Date(Date.now()+2*86400000).toISOString().slice(0,10);
+  const arenaBody={flowType:'sports_venue_request',clientRequestId:'55555555-5555-4555-8555-555555555555',
+    serviceSlug:'padel-doubles',sport:'padel',players:4,durationMinutes:90,
+    preferredDate:arenaDate,preferredStart:'18:30',region:'Cairo',sessionType:'friendly',
+    guestName:'QA Venue Visitor',guestPhone:'01000000000',consent:true,honeypot:'',
+    utm:{source:'qa',medium:'integration',campaign:'arena-courts'}};
+  assert.equal((await post('/api/portfolio/sports-venues',{...arenaBody,consent:false})).status,400,'Court consent is required');
+  assert.equal((await post('/api/portfolio/sports-venues',{...arenaBody,players:14})).status,400,'Padel doubles cannot have 14 players');
+  assert.equal((await post('/api/portfolio/sports-venues',{...arenaBody,sport:'football'})).status,400,'Sport must match exact court format');
+  const arenaResponse=await post('/api/portfolio/sports-venues',arenaBody),arenaResult=await arenaResponse.json();
+  assert.equal(arenaResponse.status,201,'Arena court request failed: '+JSON.stringify(arenaResult));
+  assert.match(arenaResult.refNumber,/^MVX-ARN-[A-F0-9]+$/);
+  assert.equal(arenaResult.status,'pending_operator_confirmation');
+  const arenaAgain=await post('/api/portfolio/sports-venues',arenaBody),arenaDupe=await arenaAgain.json();
+  assert.equal(arenaAgain.status,200,'Idempotent Arena request must not create a second row');
+  assert.equal(arenaDupe.refNumber,arenaResult.refNumber);
+  assert.equal(arenaDupe.duplicate,true);
+  console.log('PASS: 30 bilingual Arena court routes and strict, persisted, nonbinding booking preference');
+
   console.log('PASS: auth guard, flow validation, Academy SQLite progress, trusted ecommerce price, private receipt');
 } catch (error) {
   console.error(error);
