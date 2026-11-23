@@ -109,5 +109,17 @@ console.log('PASS: bespoke Fixora 12-section homepage, deep pages, 8 services, n
 
 console.log('PASS: all 8 legacy sectors preserved + deep automotive Wave 1 routes and 30-sector planned roster');
 
+
+const fitnessRoot=join(root,'fitness');
+const fitnessHomepage=readFileSync(join(fitnessRoot,'page.tsx'),'utf8');
+const fitnessFrame=readFileSync(join(fitnessRoot,'layout.tsx'),'utf8');
+assert.ok((fitnessHomepage.match(/<section\b/g)||[]).length>=9,'Gym needs 9 real homepage sections');
+assert.ok((fitnessHomepage.match(/data-sector-specific=/g)||[]).length>=4,'Gym needs 4 domain-only sections');
+assert.match(fitnessFrame,/<ContactDock\b/);
+assert.match(fitnessFrame,/pulse-shell/);
+for(const route of ['classes','classes/[slug]','trial','journal','journal/[slug]','[section]'])
+ assert.ok(existsSync(join(fitnessRoot,route,'page.tsx')),'Missing Pulse route '+route);
+console.log('PASS: authored Pulse homepage with unique type system, program routes and real enquiry');
+
 console.log('PASS: complete source-level route/section/media/localization structure for all 8 sectors');
 console.log('NOTE: structural checks and HTTP smoke tests do NOT validate client business identity, licensed media provenance, UX screenshots or operational fulfilment.');
