@@ -22,7 +22,7 @@ import {
   UtensilsCrossed,
   GraduationCap,
 } from 'lucide-react';
-import { MAVVIX_CONTACT, SECTOR_LABELS, type SectorName } from '@/lib/business/mavvix-contact';
+import { MAVVIX_CONTACT, SECTOR_LABELS, type PortfolioSectorName } from '@/lib/business/mavvix-contact';
 
 const DEMOS_LIST = [
   { slug: 'construction', nameAr: 'أطلس للمقاولات', nameEn: 'Atlas Contracting', icon: Building2, color: '#D26A3B' },
@@ -39,7 +39,7 @@ export function ContactDock({
   sector,
   locale = 'ar',
 }: {
-  sector: SectorName;
+  sector: PortfolioSectorName;
   locale: 'ar' | 'en';
 }) {
   const [expanded, setExpanded] = useState(false);
