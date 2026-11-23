@@ -1,3 +1,4 @@
+import { applyPortfolioMigrations } from './apply-portfolio-migrations.mjs';
 import { DatabaseSync } from 'node:sqlite';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -19,6 +20,8 @@ const schemaSql = fs.readFileSync(path.join(rootDir, '05_ENGINEERING', 'sqlite_s
 
 const db = new DatabaseSync(dbPath);
 db.exec(schemaSql);
+const added = applyPortfolioMigrations(db, rootDir);
+console.log('Portfolio additive schema versions:', added.length ? added.join(', ') : 'up-to-date');
 console.log('✅ SQLite Schema migrations applied successfully!');
 db.close();
 

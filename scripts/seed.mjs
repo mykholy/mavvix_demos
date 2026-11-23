@@ -27,12 +27,7 @@ if (adminEmail && adminPass && adminPass.length >= 16) {
     .run(adminEmail.toLowerCase().trim(), passHash);
   console.log('✅ Initial admin seeded from environment.');
 } else {
-  const defaultPassHash = bcrypt.hashSync('MavvixDemo2026!', 10);
-  db.prepare("INSERT INTO admin_users (id, email, password_hash, role, active) VALUES ('admin-01', 'admin@mavvix.demo', ?, 'owner', 1) ON CONFLICT(email) DO UPDATE SET password_hash = excluded.password_hash")
-    .run(defaultPassHash);
-  db.prepare("INSERT INTO admin_users (id, email, password_hash, role, active) VALUES ('admin-02', 'operator@mavvix.local', ?, 'owner', 1) ON CONFLICT(email) DO UPDATE SET password_hash = excluded.password_hash")
-    .run(defaultPassHash);
-  console.log('✅ Default demo admins seeded (admin@mavvix.demo & operator@mavvix.local / MavvixDemo2026!).');
+  console.log('No admin bootstrap credentials configured: no default admin account will be created.');
 }
 
 // 2. Seed Demo Sites
