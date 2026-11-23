@@ -263,6 +263,37 @@ try {
   assert.equal(salonDuplicate.duplicate,true);
   console.log('PASS: 30 bilingual Velora pages + valid pending-only salon request, idempotency and strict validation');
 
+
+  // Fourth distinct Wave 1 site. Verify localized gym content and persisted consented visitor state.
+  const fitnessRoutes=['','classes','classes/foundations','classes/mobility-reset','trial','journal',
+   'journal/starting-with-strength','memberships','schedule','coaching','first-visit','locations','process','about','contact'];
+  for(const locale of ['ar','en']){
+    for(const route of fitnessRoutes){
+      const url='/'+locale+'/preview/fitness'+(route?'/'+route:'');
+      const response=await get(url);
+      assert.equal(response.status,200,'Pulse fitness route missing '+url);
+      const html=await response.text();
+      assert.ok(html.includes('data-mavvix-contact-dock'),'Pulse Mavvix CTA absent on '+url);
+    }
+  }
+  const fitPayload={flowType:'fitness_trial_interest',clientRequestId:'44444444-4444-4444-8444-444444444444',
+    serviceSlug:'foundations',level:'beginner',goal:'strength_skill',requestType:'trial',preferredDate:'',
+    preferredWindow:'flexible',daysPerWeek:3,region:'Cairo',guestName:'QA Fitness',
+    guestPhone:'01000000000',consent:true,honeypot:'',
+    utm:{source:'qa',medium:'integration',campaign:'pulse-fitness'}};
+  assert.equal((await post('/api/portfolio/fitness',{...fitPayload,consent:false})).status,400,'Gym requires user consent');
+  assert.equal((await post('/api/portfolio/fitness',{...fitPayload,level:'intermediate'})).status,400,'Gym must enforce class-level compatibility');
+  assert.equal((await post('/api/portfolio/fitness',{...fitPayload,serviceSlug:'fake-class'})).status,400,'Unregistered gym class rejected');
+  const fitResp=await post('/api/portfolio/fitness',fitPayload),fitResult=await fitResp.json();
+  assert.equal(fitResp.status,201,'Pulse request failed: '+JSON.stringify(fitResult));
+  assert.match(fitResult.refNumber,/^MVX-PUL-[A-F0-9]+$/);
+  assert.equal(fitResult.status,'pending_operator_confirmation');
+  const fitAgain=await post('/api/portfolio/fitness',fitPayload),fitDuplicate=await fitAgain.json();
+  assert.equal(fitAgain.status,200);
+  assert.equal(fitDuplicate.refNumber,fitResult.refNumber);
+  assert.equal(fitDuplicate.duplicate,true);
+  console.log('PASS: 30 bilingual gym routes and strictly validated persisted idempotent trial enquiry');
+
   console.log('PASS: auth guard, flow validation, Academy SQLite progress, trusted ecommerce price, private receipt');
 } catch (error) {
   console.error(error);
