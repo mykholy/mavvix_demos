@@ -106,7 +106,7 @@ export const VERTICALS = [
     "en": "Salons and spas",
     "wave": 1,
     "accent": "#E0A8A5",
-    "status": "planned"
+    "status": "in_progress"
   },
   {
     "slug": "skin-clinic",
