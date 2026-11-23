@@ -1,0 +1,356 @@
+{
+  "slug": "home-maintenance",
+  "brand": "Fixora Care",
+  "classification": "Mavvix editorial concept, not an operating home repair or emergency dispatch service.",
+  "services": [
+    {
+      "slug": "ac-maintenance",
+      "category": "ac",
+      "rank": 1,
+      "title": {
+        "ar": "صيانة وتشخيص التكييف",
+        "en": "Air conditioner servicing"
+      },
+      "summary": {
+        "ar": "فحص تدفق الهواء والفلاتر والتبريد قبل الاتفاق على أي شحن.",
+        "en": "Evaluate airflow, filtration and cooling before deciding on refrigerant work."
+      },
+      "body": {
+        "ar": "ضعف تبريد التكييف قد يكون سببه اتساخ الفلاتر أو انسداد صرف التكثيف أو عطل كهربائي أو تسريب. يجب فصل التغذية الكهربائية قبل أي تدخل فني، ويجب أن يتولى فحص وسيط التبريد مختص مؤهل. طلب الخدمة يبدأ بالعلامات العامة ووحدة الجهاز ومكانه وليس بتشخيص عشوائي.",
+        "en": "Reduced cooling can result from blocked filters, condensate drainage problems, electrical faults or a refrigerant leak. Electrical work and refrigerant handling require qualified personnel. The first service step should capture symptoms and equipment type rather than assume a gas recharge is always needed."
+      },
+      "checklist": {
+        "ar": [
+          "وصف العطل بدون استنتاج السبب",
+          "التأكد من متطلبات السلامة قبل أي تدخل",
+          "طلب توضيح نطاق العمل والمواد والتكلفة"
+        ],
+        "en": [
+          "Describe the symptom rather than guessing the cause",
+          "Identify immediate safety concerns before intervention",
+          "Request scope, material and fee clarity before authorization"
+        ]
+      }
+    },
+    {
+      "slug": "ac-installation",
+      "category": "ac",
+      "rank": 2,
+      "title": {
+        "ar": "تركيب ونقل وحدات التكييف",
+        "en": "AC installation and relocation"
+      },
+      "summary": {
+        "ar": "اختيار موقع الوحدة ومسار المواسير والصرف والحمل الكهربائي.",
+        "en": "Plan indoor/outdoor unit positions, routing, drainage and electrical loads."
+      },
+      "body": {
+        "ar": "نجاح تركيب التكييف يرتبط بموقع الوحدتين الداخلية والخارجية ومسافة المواسير وميل الصرف والتثبيت والتغذية الكهربائية. تختلف المتطلبات حسب قدرة الجهاز ودليل الشركة. لا تفترض أن أي حائط أو مصدر كهرباء مناسب من غير تقييم الموقع.",
+        "en": "A reliable installation requires correctly placed indoor and outdoor units, proper drain slope, supported brackets, cable sizing and manufacturer-specific clearances. Suitability cannot be confirmed from a general website form without inspecting the installation conditions."
+      },
+      "checklist": {
+        "ar": [
+          "وصف العطل بدون استنتاج السبب",
+          "التأكد من متطلبات السلامة قبل أي تدخل",
+          "طلب توضيح نطاق العمل والمواد والتكلفة"
+        ],
+        "en": [
+          "Describe the symptom rather than guessing the cause",
+          "Identify immediate safety concerns before intervention",
+          "Request scope, material and fee clarity before authorization"
+        ]
+      }
+    },
+    {
+      "slug": "water-leaks",
+      "category": "plumbing",
+      "rank": 3,
+      "title": {
+        "ar": "فحص تسريب المياه",
+        "en": "Water leakage assessment"
+      },
+      "summary": {
+        "ar": "تحديد مصدر الرطوبة والتسريب ودرجة الاستعجال الآمنة.",
+        "en": "Describe leakage location, visible signs and urgency without exposing private home data."
+      },
+      "body": {
+        "ar": "التسريب قد يظهر أسفل الحوض أو في الجدار أو عند محابس الوصلات، وقد يحتاج إيقاف مصدر المياه لحماية المكان عند وجود خطر. البلل قرب التوصيلات الكهربائية خطير ويتطلب تجنب الاقتراب واستدعاء متخصص. لا تبدأ بتكسير الحائط قبل توثيق الموقع وإجراء الفحص المناسب.",
+        "en": "Leaks may be visible at fixtures, concealed behind walls or caused by condensation. Where safe, isolate water supply to limit damage. Water near electrical systems poses a hazard and should be handled by professionals. A planned assessment should avoid destructive work before a reasoned diagnosis."
+      },
+      "checklist": {
+        "ar": [
+          "وصف العطل بدون استنتاج السبب",
+          "التأكد من متطلبات السلامة قبل أي تدخل",
+          "طلب توضيح نطاق العمل والمواد والتكلفة"
+        ],
+        "en": [
+          "Describe the symptom rather than guessing the cause",
+          "Identify immediate safety concerns before intervention",
+          "Request scope, material and fee clarity before authorization"
+        ]
+      }
+    },
+    {
+      "slug": "blocked-drain",
+      "category": "plumbing",
+      "rank": 4,
+      "title": {
+        "ar": "مشاكل الصرف والانسداد",
+        "en": "Blocked drains"
+      },
+      "summary": {
+        "ar": "تحديد مكان الانسداد وما إذا كان يتكرر أو يؤثر في أكثر من مخرج.",
+        "en": "Understand whether drainage blocks one fixture or several, and avoid unsafe chemical mixing."
+      },
+      "body": {
+        "ar": "انسداد الصرف المتكرر قد يشير إلى مشكلة موضعية أو في خط مشترك. يلزم تحديد الأجهزة المتأثرة وطبيعة الارتداد والروائح. تجنب خلط المنظفات والمواد الكيميائية لتجنب أبخرة خطيرة؛ الفني يختار طريقة الفحص والمعالجة حسب نوع المواسير.",
+        "en": "A recurring blockage may affect a single trap or a shared drain. Record which fixtures back up and whether odors or leaks accompany the issue. Never combine drain cleaners or household chemicals; professional assessment should guide any mechanical or chemical intervention."
+      },
+      "checklist": {
+        "ar": [
+          "وصف العطل بدون استنتاج السبب",
+          "التأكد من متطلبات السلامة قبل أي تدخل",
+          "طلب توضيح نطاق العمل والمواد والتكلفة"
+        ],
+        "en": [
+          "Describe the symptom rather than guessing the cause",
+          "Identify immediate safety concerns before intervention",
+          "Request scope, material and fee clarity before authorization"
+        ]
+      }
+    },
+    {
+      "slug": "electrical-safety",
+      "category": "electrical",
+      "rank": 5,
+      "title": {
+        "ar": "مراجعة كهرباء المنازل",
+        "en": "Residential electrical safety review"
+      },
+      "summary": {
+        "ar": "مراجعة أعطال القواطع والتوصيلات بواسطة فني مؤهل.",
+        "en": "A qualified electrician should evaluate breaker trips and wiring issues."
+      },
+      "body": {
+        "ar": "فصل القاطع المتكرر أو سخونة المقابس أو رائحة احتراق علامات تستدعي الحذر. لا تُعد توصيل الأسلاك ولا تفتح لوحة توزيع إذا لم تكن مؤهلاً. نموذج الاستفسار يسجل نوع المشكلة وتواترها، أما تشخيصها وتنفيذها فيحتاجان فنيًا مرخصًا حيث يلزم.",
+        "en": "Repeated breaker trips, hot sockets and burning odors need safety-first handling. Never open distribution boards or perform wiring repairs without appropriate competence. An enquiry form can capture basic observations but must not instruct electrical DIY work."
+      },
+      "checklist": {
+        "ar": [
+          "وصف العطل بدون استنتاج السبب",
+          "التأكد من متطلبات السلامة قبل أي تدخل",
+          "طلب توضيح نطاق العمل والمواد والتكلفة"
+        ],
+        "en": [
+          "Describe the symptom rather than guessing the cause",
+          "Identify immediate safety concerns before intervention",
+          "Request scope, material and fee clarity before authorization"
+        ]
+      }
+    },
+    {
+      "slug": "lighting-fixtures",
+      "category": "electrical",
+      "rank": 6,
+      "title": {
+        "ar": "صيانة الإضاءة والمفاتيح",
+        "en": "Lighting and switch repairs"
+      },
+      "summary": {
+        "ar": "اختيار نوع التركيبات وحالة التشغيل قبل طلب الفحص.",
+        "en": "Classify lighting fixtures, switches and malfunction patterns before inspection."
+      },
+      "body": {
+        "ar": "قد تتعلق مشكلة الإضاءة بالمصباح أو المفتاح أو الدائرة أو التحميل. يمكن وصف هل العطل في غرفة واحدة أو أكثر وهل هناك وميض أو فصل متكرر. فحص التوصيلات نفسها يتطلب عزل الكهرباء بأمان وأدوات مناسبة من شخص متخصص.",
+        "en": "Lighting faults may arise from luminaires, switches, power circuits or load issues. Report whether the fault occurs in one room or several and whether flickering or repeated trips are involved. Wiring work requires professional isolation and testing."
+      },
+      "checklist": {
+        "ar": [
+          "وصف العطل بدون استنتاج السبب",
+          "التأكد من متطلبات السلامة قبل أي تدخل",
+          "طلب توضيح نطاق العمل والمواد والتكلفة"
+        ],
+        "en": [
+          "Describe the symptom rather than guessing the cause",
+          "Identify immediate safety concerns before intervention",
+          "Request scope, material and fee clarity before authorization"
+        ]
+      }
+    },
+    {
+      "slug": "water-heaters",
+      "category": "appliances",
+      "rank": 7,
+      "title": {
+        "ar": "فحص سخانات المياه",
+        "en": "Water heater servicing"
+      },
+      "summary": {
+        "ar": "تمييز أعطال السخانات الكهربائية والغاز ومتى تطلب مساعدة عاجلة.",
+        "en": "Differentiate appliance type and warning signs, especially around gas and electricity."
+      },
+      "body": {
+        "ar": "أعطال السخان الكهربائي قد تتعلق بالتسخين أو الحماية أو توصيلات الماء. إذا اشتبهت في تسريب غاز، ابتعد عن مصدر الخطر واتصل بخدمة الطوارئ المحلية المختصة ولا تشغل مفاتيح أو أجهزة بالقرب من التسريب. لا تستخدم نصائح موقع لإصلاح الغاز بنفسك.",
+        "en": "Electric and gas water heaters have different safety requirements. Suspected gas leaks require leaving the danger area and contacting qualified local emergency services; do not operate switches or attempt DIY gas repair. An online enquiry should not solicit sensitive home access details."
+      },
+      "checklist": {
+        "ar": [
+          "وصف العطل بدون استنتاج السبب",
+          "التأكد من متطلبات السلامة قبل أي تدخل",
+          "طلب توضيح نطاق العمل والمواد والتكلفة"
+        ],
+        "en": [
+          "Describe the symptom rather than guessing the cause",
+          "Identify immediate safety concerns before intervention",
+          "Request scope, material and fee clarity before authorization"
+        ]
+      }
+    },
+    {
+      "slug": "doors-carpentry",
+      "category": "carpentry",
+      "rank": 8,
+      "title": {
+        "ar": "أبواب وأقفال ونجارة",
+        "en": "Door and carpentry repairs"
+      },
+      "summary": {
+        "ar": "فحص المفصلات والحلق والقفل وتحديد إمكان الإصلاح.",
+        "en": "Inspect alignment, hinges and hardware before recommending replacement."
+      },
+      "body": {
+        "ar": "قبل تغيير باب كامل، يتم مراجعة اعوجاج الضلفة وحالة الحلق والمفصلات والكالون وتثبيت المسامير. إصلاح المشكلات يعتمد على نوع الباب والخشب ومكان التلف. لا ترسل صور مفاتيح أو أكواد دخول أو بيانات أمنية حساسة عبر الفورم العام.",
+        "en": "Before replacing an entire door, inspect leaf alignment, frame integrity, hinges, strike plates and lock hardware. Repair suitability depends on materials and damage location. Never share key photos, access codes or sensitive home security details in a public enquiry."
+      },
+      "checklist": {
+        "ar": [
+          "وصف العطل بدون استنتاج السبب",
+          "التأكد من متطلبات السلامة قبل أي تدخل",
+          "طلب توضيح نطاق العمل والمواد والتكلفة"
+        ],
+        "en": [
+          "Describe the symptom rather than guessing the cause",
+          "Identify immediate safety concerns before intervention",
+          "Request scope, material and fee clarity before authorization"
+        ]
+      }
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "ar": "هل الفني هيجيلك بعد إرسال الطلب مباشرة؟",
+        "en": "Does submitting send a technician immediately?"
+      },
+      "a": {
+        "ar": "لا، الطلب هنا تجربة تقنية فقط؛ تحديد فني وموعد يتطلب جهة صيانة فعلية.",
+        "en": "No. This is a software experience; dispatch and timing require a real licensed operator."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل ممكن أعرف السعر من غير كشف؟",
+        "en": "Can you quote an exact price without assessment?"
+      },
+      "a": {
+        "ar": "الأعمال تختلف حسب حالة المكان ونوع الجهاز والقطع المطلوبة؛ أي تقدير مبكر غير ملزم.",
+        "en": "Final costs depend on conditions, equipment and parts; early estimates are nonbinding."
+      }
+    },
+    {
+      "q": {
+        "ar": "إيه اللي أعمله لو في تسريب ماء قرب كهرباء؟",
+        "en": "What if water is leaking near electrical equipment?"
+      },
+      "a": {
+        "ar": "تجنب الاقتراب واستعن بمختص مؤهل ولا تحاول لمس توصيلات مبتلة.",
+        "en": "Avoid the hazard and contact appropriately qualified help; do not touch wet electrical components."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل يتم طلب العنوان والشقة؟",
+        "en": "Will the form ask for my exact home address?"
+      },
+      "a": {
+        "ar": "لا، النموذج يسأل عن المنطقة بشكل عام فقط، ولا يطلب رموز دخول.",
+        "en": "No, the example form collects a broad district only, not home address or access codes."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل يمكن حجز زيارة صيانة متكررة؟",
+        "en": "Can I request recurring maintenance?"
+      },
+      "a": {
+        "ar": "يمكن اختيار تفضيل الزيارة الدورية، لكنه لا ينشئ اشتراكًا ملزمًا بدون شركة مشغلة.",
+        "en": "You may indicate recurring preference; no subscription is activated without a real provider."
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slug": "air-conditioner-prepare",
+      "title": {
+        "ar": "تحضير التكييف قبل الصيف: جدول مراجعة عملي",
+        "en": "Preparing an AC unit for summer: a practical checklist"
+      },
+      "summary": {
+        "ar": "راجع الفلاتر والسلوك العام وأعراض الصرف، واترك أعمال الكهرباء والتبريد للمختصين.",
+        "en": "Observe filter condition, drainage and cooling behavior; leave electrical and refrigerant work to qualified technicians."
+      },
+      "body": {
+        "ar": "قبل بداية الموسم، لاحظ أداء التكييف مع درجات حرارة مختلفة، وما إذا كان هناك تسريب ظاهر أو صوت غير معتاد. يُفضّل تنظيف الفلاتر وفق تعليمات الشركة، وعدم التدخل في الوحدات الكهربائية أو خطوط وسيط التبريد دون مؤهلات. سجّل موديل الجهاز وتاريخ الصيانة السابقة لتسهيل تقييم الفني. تكفي هذه المعلومات لتحديد نطاق المكالمة، لكنها لا تثبت سبب العطل.",
+        "en": "Before peak demand, record cooling behavior, unusual sound and signs of condensate drainage problems. Follow the manufacturer’s basic filter-care instructions and avoid electrical or refrigerant interventions without qualified support. Keep the unit model and previous maintenance records available. This preparation supports a better assessment but cannot establish a diagnosis."
+      }
+    },
+    {
+      "slug": "plumbing-triage",
+      "title": {
+        "ar": "التسريب أم التكثيف؟ أسئلة مهمة قبل طلب السباك",
+        "en": "Water leak or condensation? Questions before requesting plumbing help"
+      },
+      "summary": {
+        "ar": "تحديد مكان البلل ومتى يظهر يقلل تخمين السبب، مع الحذر قرب الكهرباء.",
+        "en": "Locating moisture and when it appears helps distinguish possible causes while keeping electrical hazards in mind."
+      },
+      "body": {
+        "ar": "تتجمع المياه في أماكن مختلفة لأسباب متعددة، منها وصلات المواسير أو صرف الأجهزة أو التكثيف. سجّل ما إذا كانت المياه تظهر مع فتح الصنبور أو تشغيل جهاز معين أو بشكل مستمر. لا تقترب من أجهزة كهربائية مبتلة. التوثيق العام للعرض مفيد للفني؛ لكن لا ترسل صورًا تكشف بيانات شخصية أو عنوان شقتك من خلال نموذج تجريبي.",
+        "en": "Moisture near a sink, wall or appliance may originate from supply pipes, drains, equipment or condensation. Note whether water appears only when a tap or appliance is running. Water close to electrical hardware must be treated cautiously. Share general observations, not private home-access details, and let an appropriate professional confirm the source."
+      }
+    },
+    {
+      "slug": "scope-of-work",
+      "title": {
+        "ar": "فاتورة صيانة واضحة: إيه لازم يكون مكتوب؟",
+        "en": "A clear home repair work order: what should it include?"
+      },
+      "summary": {
+        "ar": "حدد زيارة الكشف والقطع والأعمال والضمان المتفق عليه كتابةً.",
+        "en": "Distinguish diagnostic visit fees, parts, labor and explicitly agreed after-service terms."
+      },
+      "body": {
+        "ar": "قبل الموافقة على الإصلاح، اطلب توضيح المقابل المالي للكشف وكيف تُحسب العمالة والخامات وما الذي يتغير لو ظهرت مشكلة أخرى. ينبغي فصل الأعمال الضرورية عن المقترحات الاختيارية، مع تسجيل ما تم فعليًا عند التسليم. لا تعتمد على رقم تقديري عام كأنه سعر نهائي لنفس المشكلة في كل منزل، لأن طبيعة المكان والأجهزة وحالة المواسير تختلف.",
+        "en": "Before authorizing work, clarify whether there is a separate inspection fee, what is included in labor and materials, and how approval is sought if the scope changes. Separate essential work from optional recommendations. Final records should identify what was actually completed. A general site price should not be presented as a binding cost for every home or appliance."
+      }
+    }
+  ],
+  "options": {
+    "regions": [
+      "Cairo",
+      "Giza",
+      "Alexandria",
+      "Other Egypt"
+    ],
+    "urgency": [
+      "routine",
+      "priority",
+      "urgent"
+    ],
+    "visitType": [
+      "inspection",
+      "one_time",
+      "recurring"
+    ]
+  }
+}
