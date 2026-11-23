@@ -82,7 +82,7 @@ try{
      if(entry.images.length)entry.issues.push('Broken image(s): '+entry.images.map(x=>x.src).join(' | '));
      await page.addScriptTag({path:axePath});
      const axe=await page.evaluate(async()=>window.axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}}));
-     entry.a11y=axe.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.length,summary:v.nodes.slice(0,2).map(x=>x.target.join(' '))}));
+     entry.a11y=axe.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.length,summary:v.nodes.slice(0,24).map(x=>({selector:x.target.join(' '),failureSummary:x.failureSummary}))}));
      if(entry.a11y.some(x=>x.impact==='critical'||x.impact==='serious'))entry.issues.push('Axe serious/critical: '+entry.a11y.filter(x=>['critical','serious'].includes(x.impact)).map(x=>x.id).join(','));
      const png=locale+'-'+sector+(subpath?'-'+subpath.replaceAll('/','-'):'-home')+'-'+viewport.name+'.png';
      await page.screenshot({path:path.join(out,png),fullPage:true,animations:'disabled',timeout:25000});
