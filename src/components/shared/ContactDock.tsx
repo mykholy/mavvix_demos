@@ -22,6 +22,7 @@ import {
   UtensilsCrossed,
   GraduationCap,
   Wrench,
+  Trophy,
 } from 'lucide-react';
 import { MAVVIX_CONTACT, SECTOR_LABELS, type PortfolioSectorName } from '@/lib/business/mavvix-contact';
 
@@ -38,6 +39,7 @@ const DEMOS_LIST = [
   { slug: 'home-maintenance', nameAr: 'فكسورا كير / صيانة منزلية', nameEn: 'Fixora · Home maintenance', icon: Home, color: '#F7B347' },
   { slug: 'salon-spa', nameAr: 'فيلورا بيوتي / صالون وسبا', nameEn: 'Velora Beauty · Salon & Spa', icon: HeartPulse, color: '#9B6070' },
   { slug: 'fitness', nameAr: 'بالس ديستريكت / جيم ولياقة', nameEn: 'Pulse District · Fitness Club', icon: Wrench, color: '#8E6BFF' },
+  { slug: 'sports-venues', nameAr: 'أرينا كورتس / ملاعب', nameEn: 'Arena Courts · Sports Venues', icon: Trophy, color: '#F0B044' },
 ];
 
 export function ContactDock({
@@ -296,7 +298,7 @@ export function ContactDock({
           </span>
 
           <span className="hidden sm:inline-flex items-center text-[10px] bg-white/20 text-white font-mono px-2 py-0.5 rounded-full font-bold">
-            12 EXPERIENCES
+            13 EXPERIENCES
           </span>
         </button>
       </div>
