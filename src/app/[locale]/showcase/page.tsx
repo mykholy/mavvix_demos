@@ -244,6 +244,19 @@ const demos = [
       {ar:'استفسار محفوظ مع رقم مرجعي دون ادعاء تأكيد حجز',en:'Persisted pending-only appointment reference with consent and validation'}
     ],
     features:['Speciality-aware Intake','Beauty Editorial Journal','Pending-only Booking Flow']
+  },
+  {
+    number:'12',slug:'fitness',
+    name:{ar:'بالس ديستريكت — موقع جيم وحصص لياقة',en:'Pulse District — Premium Fitness Club Website'},
+    sector:{ar:'جيم وعضويات وحصص تدريب جماعي',en:'Fitness, Membership & Group Classes'},
+    icon:Wrench,color:'#8E6BFF',bgColor:'bg-violet-50',borderColor:'border-violet-200',routesCount:15,
+    tagline:{ar:'حصص رياضية موضحة بالمستويات وطلب تجربة محفوظ بدون عضوية وهمية',en:'Kinetic fitness site with authored class guides and honest pending-only trial'},
+    journeys:[
+      {ar:'تصفح 9 حصص للقوة واللياقة والحركة حسب المستوى',en:'Nine original programs with experience-level selection'},
+      {ar:'جدول توضيحي ومقارنة عضوية ومعلومات بداية التدريب',en:'Illustrative weekly timetable, memberships and first-visit preparation'},
+      {ar:'استفسار محفوظ بمعرّف فريد وموافقة صريحة دون حجوزات وهمية',en:'Persisted class/trial enquiry with validation, consent and idempotency'}
+    ],
+    features:['Class-Level Selector','Pending-only Trial Request','Training Knowledge Journal']
   }
 ];
 
@@ -347,7 +360,7 @@ export default function ShowcasePage({ params }: Props) {
             </p>
           </div>
           <div className="text-xs font-semibold px-3 py-1.5 rounded bg-slate-100 text-slate-700 border border-slate-300 w-fit">
-            11 {isAr ? 'تجربة قطاعية، مع مواقع جديدة قيد الاختبار البصري' : 'Industry experiences, including newly built sites under visual QA'}
+            12 {isAr ? 'تجربة قطاعية، مع مواقع جديدة قيد الاختبار البصري' : 'Industry experiences, including newly built sites under visual QA'}
           </div>
         </div>
 
@@ -365,6 +378,8 @@ export default function ShowcasePage({ params }: Props) {
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#EEF7FC]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/AirConditioner.jpg/1280px-AirConditioner.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'صورة تحريرية لمكيف هواء':'CC0 editorial air conditioning photo'} /></div>
                   : d.slug==='salon-spa'
                   ? <div className="relative h-52 bg-[#E9D9D8] overflow-hidden"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Getting_her_nails_painted_%28Unsplash%29.jpg/1280px-Getting_her_nails_painted_%28Unsplash%29.jpg" className="w-full h-full object-cover" alt={isAr?'صورة تحريرية للعناية بالأظافر':'CC0 editorial manicure photography'}/></div>
+                  : d.slug==='fitness'
+                  ? <div className="relative h-52 w-full overflow-hidden bg-[#141421]"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Fitness_Center_Equipment.jpg" alt={isAr?'أجهزة رياضية حقيقية من صورة CC0 تحريرية':'CC0 editorial photo of fitness equipment at an unrelated gym'} className="w-full h-full object-cover"/></div>
                   : <SectorPhoto sector={d.slug as keyof typeof SECTOR_IMAGES} alt="" className="h-52 w-full" />}
                 {/* Sector Overview */}
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
