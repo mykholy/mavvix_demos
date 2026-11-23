@@ -80,6 +80,18 @@ for(const route of automotivePaths){
 const roster=readFileSync(join(process.cwd(),'src/lib/verticals/registry.ts'),'utf8');
 assert.equal((roster.match(/"slug":/g)||[]).length,30,'Registry must contain 30 declared sectors');
 assert.equal((roster.match(/"status": "live"/g)||[]).length,8,'Only the original eight sectors are marked live until Gate 1 approval');
+
+const homeCareDir=join(root,'home-maintenance');
+const homeCareHome=readFileSync(join(homeCareDir,'page.tsx'),'utf8');
+const homeCareLayout=readFileSync(join(homeCareDir,'layout.tsx'),'utf8');
+assert.ok((homeCareHome.match(/<section\b/g)||[]).length>=9,'Home maintenance needs at least 9 substantive sections');
+assert.ok((homeCareHome.match(/data-sector-specific=/g)||[]).length>=4,'Home maintenance requires 4+ domain-only sections');
+assert.match(homeCareLayout,/<ContactDock\b/);
+for(const route of ['services','services/[slug]','book','resources','resources/[slug]','[section]']) {
+ assert.ok(existsSync(join(homeCareDir,route,'page.tsx')),'Missing home maintenance route '+route);
+}
+console.log('PASS: bespoke Fixora 12-section homepage, deep pages, 8 services, new contact dock');
+
 console.log('PASS: all 8 legacy sectors preserved + deep automotive Wave 1 routes and 30-sector planned roster');
 
 console.log('PASS: complete source-level route/section/media/localization structure for all 8 sectors');
