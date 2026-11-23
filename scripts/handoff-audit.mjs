@@ -70,9 +70,9 @@ writeFileSync('handoff-audit-results.json', JSON.stringify({scanned_at:new Date(
 const automotiveDir=join(root,'auto-service');
 const automotiveHome=readFileSync(join(automotiveDir,'page.tsx'),'utf8');
 const automotiveLayout=readFileSync(join(automotiveDir,'layout.tsx'),'utf8');
-assert.ok((automotiveHome.match(/<section\\b/g)||[]).length>=9,'Auto-service must have 9 substantial homepage sections');
+assert.ok((automotiveHome.match(/<section\b/g)||[]).length>=9,'Auto-service must have 9 substantial homepage sections');
 assert.ok((automotiveHome.match(/data-sector-specific=/g)||[]).length>=4,'Auto-service needs 4 unique industry sections');
-assert.match(automotiveLayout,/<ContactDock\\b/,'Every auto-service page needs commercial contact CTA');
+assert.match(automotiveLayout,/<ContactDock\b/,'Every auto-service page needs commercial contact CTA');
 const automotivePaths=['services','services/[slug]','booking','resources','resources/[slug]','[section]'];
 for(const route of automotivePaths){
  assert.ok(existsSync(join(automotiveDir,route,'page.tsx')),'Missing Auto-service route: '+route);
