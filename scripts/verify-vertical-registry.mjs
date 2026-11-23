@@ -29,6 +29,23 @@ for(const entry of entries){
  if(entry.wave===0)assert.equal(entry.status,'live','Original concept removed: '+entry.slug);
  if(entry.wave>0)assert.notEqual(entry.status,'live','Do not mark a new concept live without release evidence: '+entry.slug);
 }
+// Guard against accidentally skipping an unfinished wave when advancing the factory.
+for (const wave of [2, 3]) {
+ const active = entries.some(e => e.wave === wave && e.status === 'in_progress');
+ if (active) {
+  const unfinishedEarlier = entries.filter(e => e.wave > 0 && e.wave < wave && e.status === 'planned');
+  assert.equal(unfinishedEarlier.length, 0,
+   'Cannot start wave '+wave+' while earlier sectors remain planned: '+unfinishedEarlier.map(e => e.slug).join(', '));
+ }
+}
+// Prevent placeholder records with missing identity from entering the catalogue.
+const metadata = [...registry.matchAll(/"slug":\s*"([^"]+)"\s*,\s*"brand":\s*"([^"]+)"\s*,\s*"ar":\s*"([^"]+)"\s*,\s*"en":\s*"([^"]+)"/g)];
+assert.equal(metadata.length, 30, 'Each sector requires an explicit brand and bilingual labels');
+for (const match of metadata) {
+ for (const value of match.slice(2)) assert.ok(value.trim().length >= 2, 'Missing identity metadata for '+match[1]);
+}
+assert.equal(new Set(metadata.map(m => m[2].trim().toLowerCase())).size, 30, 'Duplicate sector brand');
+
 const counts=Object.fromEntries(['live','in_progress','planned'].map(s=>[s,entries.filter(e=>e.status===s).length]));
 console.log('Registry contract PASS:',JSON.stringify(counts));
 
