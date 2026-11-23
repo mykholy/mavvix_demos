@@ -21,7 +21,8 @@ import {
   CheckCircle2,
   Sparkles,
   Layers,
-  Database
+  Database,
+  Trophy
 } from 'lucide-react';
 
 interface Props {
@@ -258,6 +259,19 @@ const demos = [
       {ar:'استفسار محفوظ بمعرّف فريد وموافقة صريحة دون حجوزات وهمية',en:'Persisted class/trial enquiry with validation, consent and idempotency'}
     ],
     features:['Class-Level Selector','Pending-only Trial Request','Training Knowledge Journal']
+  },
+  {
+    number:'13',slug:'sports-venues',
+    name:{ar:'أرينا كورتس — موقع ملاعب كرة وبادل',en:'Arena Courts — Football & Padel Venue Website'},
+    sector:{ar:'حجز ملاعب وصيغ اللعب',en:'Football & Padel Sports Venues'},
+    icon:Trophy,color:'#F0B044',bgColor:'bg-emerald-50',borderColor:'border-emerald-200',routesCount:16,
+    tagline:{ar:'ملعبك وقواعد اللعب وتفضيل الموعد، بدون حجز مؤكد',en:'Sport-format guides, team-size selection and transparent pending-only court requests'},
+    journeys:[
+      {ar:'ثمانية ملفات صيغ اللعب للخماسي والسباعي والبادل',en:'Eight independently authored football and padel format dossiers'},
+      {ar:'اختيار العدد والوقت والمدة وفق قواعد كل صيغة',en:'Team count, requested time and allowable duration validation'},
+      {ar:'رقم مرجعي محفوظ حتى يؤكد المشغّل الحقيقي',en:'Persisted booking-preference reference, never a fake reservation'}
+    ],
+    features:['Sport-aware Team Size','No Fake Availability','Owner-confirmed Booking Only']
   }
 ];
 
@@ -400,6 +414,8 @@ export default function ShowcasePage({ params }: Props) {
                   ? <div className="relative h-52 bg-[#E9D9D8] overflow-hidden"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Getting_her_nails_painted_%28Unsplash%29.jpg/1280px-Getting_her_nails_painted_%28Unsplash%29.jpg" className="w-full h-full object-cover" alt={isAr?'صورة تحريرية للعناية بالأظافر':'CC0 editorial manicure photography'}/></div>
                   : d.slug==='fitness'
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#141421]"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Fitness_Center_Equipment.jpg" alt={isAr?'أجهزة رياضية حقيقية من صورة CC0 تحريرية':'CC0 editorial photo of fitness equipment at an unrelated gym'} className="w-full h-full object-cover"/></div>
+                  : d.slug==='sports-venues'
+                  ? <div className="relative h-52 w-full overflow-hidden bg-[#102B26]"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Pexels-jonathan-petersson-399187.jpg/1280px-Pexels-jonathan-petersson-399187.jpg" alt={isAr?'صورة تحريرية حقيقية لملعب ليلي':'CC0 real floodlit football pitch editorial photo'} className="w-full h-full object-cover"/></div>
                   : <SectorPhoto sector={d.slug as keyof typeof SECTOR_IMAGES} alt="" className="h-52 w-full" />}
                 {/* Sector Overview */}
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
