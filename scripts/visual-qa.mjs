@@ -30,6 +30,7 @@ async function ready(){
 const cases=[
  ['auto-service',''],['auto-service','services'],['auto-service','services/brakes'],['auto-service','booking'],
  ['home-maintenance',''],['home-maintenance','services'],['home-maintenance','services/ac-maintenance'],['home-maintenance','book'],
+ ['salon-spa',''],['salon-spa','services'],['salon-spa','services/classic-manicure'],['salon-spa','booking'],['salon-spa','journal/choosing-treatment'],
  ['showcase','']
 ];
 const viewports=[{name:'mobile-360',width:360,height:780},{name:'mobile-390',width:390,height:844},
