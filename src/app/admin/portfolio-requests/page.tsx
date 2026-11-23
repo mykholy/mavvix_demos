@@ -27,7 +27,7 @@ export default function IndustryRequestsPage({searchParams}:{searchParams:{secto
    <div><h1 className="font-bold text-2xl text-white flex gap-2 items-center"><Inbox className="text-[#FB6935]"/> Industry enquiries</h1>
     <p className="text-sm text-slate-400 mt-2">Authenticated showcase queue. Requests are not real bookings; customer contact details require consent and retention review.</p>
    </div>
-   <a href="/api/admin/portfolio-requests/export" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm font-semibold"><Download size={17}/> Export CSV (authorized)</a>
+   {admin.role!=='viewer'&&<a href="/api/admin/portfolio-requests/export" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm font-semibold"><Download size={17}/> Export CSV (authorized)</a>}
   </div>
   <IndustryRequestQueue requests={requests} canEdit={admin.role==='owner'||admin.role==='editor'}/>
  </div>;
