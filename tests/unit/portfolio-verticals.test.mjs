@@ -54,6 +54,19 @@ test('salon spa is an original bilingual beauty service implementation, not a ge
  assert.equal(new Set(names).size,10);
 });
 
+test('Pulse gym has nine independently authored bilingual training class dossiers',()=>{
+ const v=JSON.parse(fs.readFileSync(path.join(root,'data/verticals/fitness.json'),'utf8'));
+ assert.equal(v.services.length,9);
+ assert.equal(v.articles.length,3);
+ assert.equal(v.faq.length,5);
+ assert.equal(new Set(v.services.map(c=>c.slug)).size,9);
+ for(const s of v.services){
+  assert.ok(s.body.ar.length>150 && s.body.en.length>150,'Class too shallow: '+s.slug);
+  assert.equal(s.checklist.ar.length,3);
+  assert.ok(s.levels.every(level=>v.levels.includes(level)));
+  assert.ok(s.durations.every(n=>n>=30 && n<=60));
+ }
+});
 test('additive schema upgrades on existing legacy database without dropping its records',()=>{
  const db=new DatabaseSync(':memory:');
  try {
