@@ -176,3 +176,6 @@ button:disabled {
 .pulse-shell[lang="en"]{font-family:'Plus Jakarta Sans',system-ui,sans-serif !important;}
 .pulse-shell .pulse-display{font-family:'Barlow Condensed','Arial Narrow',sans-serif !important;font-weight:900;letter-spacing:-.03em;}
 .pulse-shell[lang="ar"] .pulse-display{font-family:'Alexandria','Cairo',sans-serif !important;letter-spacing:0 !important;line-height:1.2;}
+
+/* Chromium 360px RTL audit: no body element exceeded the viewport; clip decorative pseudo-element bleed only within Pulse. */
+.pulse-shell { overflow-x: clip; max-width: 100%; }
