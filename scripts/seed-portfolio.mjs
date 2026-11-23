@@ -6,7 +6,10 @@ import path from 'node:path';
  * The site is a sales showcase; brand and services are editorial, not a live workshop.
  */
 export function seedPortfolioVerticals(db, rootDir=process.cwd()) {
-  const files=['auto-service.json'];
+  const files=[
+    {filename:'auto-service.json',slug:'auto-service',ar:'تورك جراج — صيانة السيارات',en:'Torque Garage · Automotive'},
+    {filename:'home-maintenance.json',slug:'home-maintenance',ar:'فكسورا — صيانة المنازل والتكييف',en:'Fixora Care · Home Maintenance'},
+  ];
   const addSite=db.prepare(`INSERT INTO portfolio_verticals(slug,name_ar,name_en,wave,published)
  VALUES (?,?,?,?,?) ON CONFLICT(slug) DO UPDATE SET
  name_ar=excluded.name_ar,name_en=excluded.name_en,wave=excluded.wave`);
@@ -15,10 +18,11 @@ export function seedPortfolioVerticals(db, rootDir=process.cwd()) {
  category=excluded.category,content_json=excluded.content_json,active=1`);
   db.exec('BEGIN IMMEDIATE');
   try {
-    for(const filename of files){
-      const source=JSON.parse(fs.readFileSync(path.join(rootDir,'data','verticals',filename),'utf8'));
-      if(!source.slug || source.services.length<8) throw new Error('Incomplete sector content: '+filename);
-      addSite.run(source.slug,'تورك جراج — تجربة موقع صيانة سيارات','Torque Garage · Mavvix concept',1,1);
+    for(const definition of files){
+      const source=JSON.parse(fs.readFileSync(path.join(rootDir,'data','verticals',definition.filename),'utf8'));
+      if(source.slug!==definition.slug)throw new Error('Sector slug mismatch: '+definition.filename);
+      if(!source.slug || source.services.length<8) throw new Error('Incomplete sector content: '+definition.filename);
+      addSite.run(source.slug,definition.ar,definition.en,1,1);
       for(const service of source.services) {
         addService.run('portfolio:'+source.slug+':'+service.slug,source.slug,service.slug,service.category,JSON.stringify(service));
       }
