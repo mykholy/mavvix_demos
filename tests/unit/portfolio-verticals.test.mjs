@@ -25,6 +25,20 @@ test('auto-service includes distinct authored bilingual service dossiers and buy
   assert.equal(service.whatToCheck.ar.length,3);
  }
 });
+test('home maintenance has eight industry dossiers, three buyer guides and five FAQs',()=>{
+ const content=JSON.parse(fs.readFileSync(path.join(root,'data/verticals/home-maintenance.json'),'utf8'));
+ assert.equal(content.slug,'home-maintenance');
+ assert.equal(content.services.length,8);
+ assert.equal(content.articles.length,3);
+ assert.equal(content.faq.length,5);
+ assert.equal(new Set(content.services.map(s=>s.slug)).size,8);
+ for(const service of content.services){
+  assert.ok(service.body.ar.length>140&&service.body.en.length>140);
+  assert.equal(service.checklist.ar.length,3);
+  assert.equal(service.checklist.en.length,3);
+ }
+});
+
 test('additive schema upgrades on existing legacy database without dropping its records',()=>{
  const db=new DatabaseSync(':memory:');
  try {
