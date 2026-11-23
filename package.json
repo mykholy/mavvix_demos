@@ -13,7 +13,8 @@
     "test:unit": "node --test --test-concurrency=1 tests/unit/*.test.mjs",
     "test:e2e": "playwright test",
     "test:a11y": "node tests/a11y-check.mjs",
-    "qa:handoff": "node scripts/handoff-audit.mjs"
+    "qa:handoff": "node scripts/handoff-audit.mjs",
+    "test:registry": "node scripts/verify-vertical-registry.mjs"
   },
   "dependencies": {
     "next": "14.2.24",
