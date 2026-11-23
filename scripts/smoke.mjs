@@ -299,7 +299,7 @@ try {
 
   // Arena is not live inventory: sport/team validation plus persisted pending-only court request.
   const arenaRoutes=['','courts','courts/football-five','courts/padel-doubles','book','sports',
-   'schedule','pricing','leagues','coaches','process','about','contact','journal','journal/before-booking'];
+   'schedule','pricing','leagues','coaches','process','about','contact','journal','journal/venue-questions'];
   for(const locale of ['ar','en']){
     for(const route of arenaRoutes){
       const url='/'+locale+'/preview/sports-venues'+(route?'/'+route:'');
