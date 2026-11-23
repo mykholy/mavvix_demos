@@ -214,7 +214,7 @@ export const VERTICALS = [
     "en": "Furniture",
     "wave": 1,
     "accent": "#C89B65",
-    "status": "planned"
+    "status": "in_progress"
   },
   {
     "slug": "interiors-kitchens",
