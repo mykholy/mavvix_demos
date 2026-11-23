@@ -316,7 +316,7 @@ export default function ShowcasePage({ params }: Props) {
             </p>
           </div>
           <div className="text-xs font-semibold px-3 py-1.5 rounded bg-slate-100 text-slate-700 border border-slate-300 w-fit">
-            8 / 8 {isAr ? 'نماذج جاهزة ومعتمدة' : 'Demos Ready & Verified'}
+            9 {isAr ? 'تجارب قابلة للاستكشاف، بينها موقع صيانة قيد الاختبار' : 'Browsable experiences, including an automotive site under QA'}
           </div>
         </div>
 
@@ -328,7 +328,9 @@ export default function ShowcasePage({ params }: Props) {
                 key={d.slug}
                 className="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden group"
               >
-                <SectorPhoto sector={d.slug as keyof typeof SECTOR_IMAGES} alt="" className="h-52 w-full" />
+                {d.slug==='auto-service'
+                  ? <div className="relative h-52 w-full overflow-hidden bg-[#161A20]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Mechanic_repairing_car_engine.jpg/1280px-Mechanic_repairing_car_engine.jpg" loading="lazy" decoding="async" className="h-full w-full object-cover" alt={isAr?'صورة تحريرية لميكانيكي يفحص محرك سيارة':'Editorial photo of a mechanic examining a car engine'}/></div>
+                  : <SectorPhoto sector={d.slug as keyof typeof SECTOR_IMAGES} alt="" className="h-52 w-full" />}
                 {/* Sector Overview */}
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
                   <div>
