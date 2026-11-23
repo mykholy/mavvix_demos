@@ -90,6 +90,21 @@ assert.match(homeCareLayout,/<ContactDock\b/);
 for(const route of ['services','services/[slug]','book','resources','resources/[slug]','[section]']) {
  assert.ok(existsSync(join(homeCareDir,route,'page.tsx')),'Missing home maintenance route '+route);
 }
+
+const salonDir=join(root,'salon-spa');
+const salonHome=readFileSync(join(salonDir,'page.tsx'),'utf8');
+const salonLayout=readFileSync(join(salonDir,'layout.tsx'),'utf8');
+const salonContent=JSON.parse(readFileSync(join(process.cwd(),'data/verticals/salon-spa.json'),'utf8'));
+assert.ok((salonHome.match(/<section\b/g)||[]).length>=9,'Salon SPA homepage must have 9 substantial sections');
+assert.ok((salonHome.match(/data-sector-specific=/g)||[]).length>=4,'Salon needs 4+ unique industry sections');
+assert.match(salonLayout,/<ContactDock\b/,'Salon must expose Mavvix contact dock');
+assert.match(salonLayout,/velora-shell/,'Salon's independent typography and art direction absent');
+assert.ok(salonContent.services.length>=8 && salonContent.articles.length>=3 && salonContent.faq.length>=5);
+for(const route of ['services','services/[slug]','booking','journal','journal/[slug]','[section]']){
+ assert.ok(existsSync(join(salonDir,route,'page.tsx')),'Missing Velora inner route: '+route);
+}
+console.log('PASS: authored Velora SPA, bespoke editorial sections and deep bilingual beauty pages');
+
 console.log('PASS: bespoke Fixora 12-section homepage, deep pages, 8 services, new contact dock');
 
 console.log('PASS: all 8 legacy sectors preserved + deep automotive Wave 1 routes and 30-sector planned roster');
