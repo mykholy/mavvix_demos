@@ -31,7 +31,7 @@ export default function AutoServiceLayout({children,params:{locale}}:{children:R
      {nav.map(x=><Link key={x.href} href={x.href} className="hover:text-[#FB6935] transition-colors">{x.label}</Link>)}
     </nav>
     <div className="flex items-center gap-2">
-     <Link href={autoPath(locale,'booking')} className="inline-flex items-center justify-center gap-2 bg-[#FB6935] text-[#161A20] rounded-lg font-black text-xs h-11 w-11 sm:h-auto sm:w-auto px-2 sm:px-5 py-2 sm:py-3 hover:bg-[#FF855E]">
+     <Link href={autoPath(locale,'booking')} aria-label={ar ? 'طلب فحص سيارة' : 'Request vehicle inspection'} className="inline-flex items-center justify-center gap-2 bg-[#FB6935] text-[#161A20] rounded-lg font-black text-xs h-11 w-11 sm:h-auto sm:w-auto px-2 sm:px-5 py-2 sm:py-3 hover:bg-[#FF855E]">
       <span className="hidden sm:inline">{ar?'طلب فحص سيارة':'Request inspection'}</span><Arrow size={17}/>
      </Link>
      <MobileSectorNav links={nav}/>
