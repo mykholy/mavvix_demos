@@ -15,7 +15,7 @@ export default function HomeMaintenanceLayout({children,params:{locale}}:{childr
   {href:maintenancePath(locale,'coverage'),label:ar?'التغطية':'Service coverage'},
   {href:maintenancePath(locale,'resources'),label:ar?'دليل المنزل':'Guides'},
  ];
- return <div className="min-h-screen bg-[#F7FAFD] text-[#174E78] selection:bg-[#F7B347] selection:text-[#174E78]">
+ return <div className="fixora-shell min-h-screen bg-[#F7FAFD] text-[#174E78] selection:bg-[#F7B347] selection:text-[#174E78]">
   <div className="px-4 py-2 bg-[#F7B347] font-bold text-xs text-center text-[#174E78]">
    {ar?'تصميم مافكس لتجربة مواقع شركات الصيانة — طلبات المعاينة لا تساوي زيارة مؤكدة':'A Mavvix home-service website experience — enquiries never confirm a real visit'}
   </div>
