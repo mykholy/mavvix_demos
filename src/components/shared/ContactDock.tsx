@@ -21,6 +21,7 @@ import {
   Palette,
   UtensilsCrossed,
   GraduationCap,
+  Wrench,
 } from 'lucide-react';
 import { MAVVIX_CONTACT, SECTOR_LABELS, type PortfolioSectorName } from '@/lib/business/mavvix-contact';
 
@@ -33,6 +34,7 @@ const DEMOS_LIST = [
   { slug: 'portfolio', nameAr: 'سلمى حسن ستوديو', nameEn: 'Salma Hassan Studio', icon: Palette, color: '#3B82F6' },
   { slug: 'restaurant', nameAr: 'سفرة زعفران', nameEn: 'Saffron Table', icon: UtensilsCrossed, color: '#C65D23' },
   { slug: 'academy', nameAr: 'نوفا للتعلم', nameEn: 'Nova Learning', icon: GraduationCap, color: '#4F46E5' },
+  { slug: 'auto-service', nameAr: 'تورك جراج / صيانة سيارات', nameEn: 'Torque Garage · Auto service', icon: Wrench, color: '#FB6935' },
 ];
 
 export function ContactDock({
@@ -154,8 +156,8 @@ export function ContactDock({
           {/* Quick Demo Switcher Grid (All 8 Demos) */}
           <div className="space-y-2">
             <div className="flex items-center justify-between text-[11px] font-bold text-slate-400 uppercase tracking-wider">
-              <span>{ar ? 'الانتقال السريع للديموز (8 قطاعات):' : 'Switch Sector Demo (8 Sectors):'}</span>
-              <span className="text-cyan-400 font-mono text-[10px]">ALL LIVE</span>
+              <span>{ar ? 'الانتقال السريع بين المواقع المنفذة:' : 'Browse completed industry sites:'}</span>
+              <span className="text-cyan-400 font-mono text-[10px]">LIVE EXAMPLES</span>
             </div>
 
             <div className="grid grid-cols-2 gap-1.5 max-h-48 overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-slate-700">
