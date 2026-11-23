@@ -15,24 +15,24 @@ export default function AutoServiceLayout({children,params:{locale}}:{children:R
   {href:autoPath(locale,'resources'),label:ar?'الدليل':'Field notes'},
   {href:autoPath(locale,'process'),label:ar?'خطوات الفحص':'Process'},
  ];
- return <div className="min-h-screen bg-[#F3F0E9] text-[#161A20] selection:bg-[#FB6935] selection:text-white">
+ return <div className="torque-shell min-h-screen bg-[#F3F0E9] text-[#161A20] selection:bg-[#FB6935] selection:text-white">
   <div className="bg-[#FB6935] text-[#161A20] text-[11px] sm:text-xs text-center px-4 py-2 font-bold">
    {ar?'تجربة تصميم موقع صيانة احترافي من مافكس — لطلب موقع مشابه استخدم زر التواصل':'A Mavvix automotive website design experience — request a similar website using the contact dock'}
   </div>
   <header className="sticky top-0 z-40 bg-[#161A20]/95 backdrop-blur-xl border-b border-white/10 text-white">
    <div className="max-w-7xl mx-auto px-4 sm:px-7 h-[76px] flex items-center justify-between gap-3">
     <Link href={autoPath(locale)} aria-label={ar?'الرئيسية':'Homepage'} className="flex items-center gap-3 shrink-0 group">
-     <span className="w-11 h-11 bg-[#FB6935] text-black rounded-lg grid place-items-center transform -skew-x-6"><Wrench size={22}/></span>
-     <span><b className="text-lg sm:text-xl leading-none block tracking-[.12em] font-black italic">TORQUE<span className="text-[#FB6935]">/</span>GARAGE</b>
-       <small className="text-[10px] uppercase tracking-[.18em] text-white/50">{ar?'تجربة رقمية لقطاع صيانة السيارات':'AUTOMOTIVE SERVICE EXPERIENCE'}</small>
+     <span className="w-9 h-9 sm:w-11 sm:h-11 bg-[#FB6935] text-black rounded-lg grid place-items-center transform -skew-x-6"><Wrench size={22}/></span>
+     <span><b className="text-sm sm:text-xl leading-none block tracking-[.04em] sm:tracking-[.12em] font-black italic">TORQUE<span className="text-[#FB6935]">/</span>GARAGE</b>
+       <small className="hidden sm:block text-[10px] uppercase tracking-[.18em] text-white/50">{ar?'تجربة رقمية لقطاع صيانة السيارات':'AUTOMOTIVE SERVICE EXPERIENCE'}</small>
      </span>
     </Link>
     <nav aria-label={ar?'تصفح الموقع':'Main navigation'} className="hidden xl:flex items-center gap-5 text-xs font-bold text-white/70">
      {nav.map(x=><Link key={x.href} href={x.href} className="hover:text-[#FB6935] transition-colors">{x.label}</Link>)}
     </nav>
     <div className="flex items-center gap-2">
-     <Link href={autoPath(locale,'booking')} className="inline-flex items-center gap-2 bg-[#FB6935] text-[#161A20] rounded-lg font-black text-xs px-3 sm:px-5 py-3 hover:bg-[#FF855E]">
-      <span>{ar?'طلب فحص سيارة':'Request inspection'}</span><Arrow size={15}/>
+     <Link href={autoPath(locale,'booking')} className="inline-flex items-center justify-center gap-2 bg-[#FB6935] text-[#161A20] rounded-lg font-black text-xs h-11 w-11 sm:h-auto sm:w-auto px-2 sm:px-5 py-2 sm:py-3 hover:bg-[#FF855E]">
+      <span className="hidden sm:inline">{ar?'طلب فحص سيارة':'Request inspection'}</span><Arrow size={17}/>
      </Link>
      <MobileSectorNav links={nav}/>
     </div>
