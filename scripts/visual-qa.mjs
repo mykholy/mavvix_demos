@@ -31,6 +31,7 @@ const cases=[
  ['auto-service',''],['auto-service','services'],['auto-service','services/brakes'],['auto-service','booking'],
  ['home-maintenance',''],['home-maintenance','services'],['home-maintenance','services/ac-maintenance'],['home-maintenance','book'],
  ['salon-spa',''],['salon-spa','services'],['salon-spa','services/classic-manicure'],['salon-spa','booking'],['salon-spa','journal/choosing-treatment'],
+ ['fitness',''],['fitness','classes'],['fitness','classes/foundations'],['fitness','trial'],['fitness','journal/starting-with-strength'],
  ['showcase','']
 ];
 const viewports=[{name:'mobile-360',width:360,height:780},{name:'mobile-390',width:390,height:844},
