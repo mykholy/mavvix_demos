@@ -64,6 +64,11 @@ try{
       })));
       return {
        viewport:innerWidth,scrollWidth:document.documentElement.scrollWidth,
+       overflowingElements:[...document.querySelectorAll('body *')].filter(el=>{
+         const r=el.getBoundingClientRect();
+         return r.width>0 && (r.right>innerWidth+4 || r.left< -4);
+       }).slice(0,14).map(el=>({tag:el.tagName,classes:String(el.className?.baseVal||el.className||'').slice(0,160),
+         text:(el.textContent||'').trim().slice(0,70),rect:{left:Math.round(el.getBoundingClientRect().left),right:Math.round(el.getBoundingClientRect().right)}})),
        title:document.title,description:document.querySelector('meta[name=description]')?.content,
        h1:document.querySelectorAll('h1').length,
        direction:document.querySelector('main')?.closest('[dir]')?.getAttribute('dir')||document.documentElement.dir,
@@ -75,7 +80,7 @@ try{
       };
      });
      entry.images=pre.brokenImages;
-     if(pre.scrollWidth>viewport.width+5)entry.issues.push('Horizontal overflow: '+pre.scrollWidth+'/'+viewport.width);
+     if(pre.scrollWidth>viewport.width+5)entry.issues.push('Horizontal overflow: '+pre.scrollWidth+'/'+viewport.width+' | offenders: '+JSON.stringify(pre.overflowingElements));
      if(pre.direction!==(locale==='ar'?'rtl':'ltr'))entry.issues.push('Incorrect direction: '+pre.direction);
      if(pre.h1!==1)entry.issues.push('Expected one H1, got '+pre.h1);
      if(!pre.title||pre.title.length<14||!pre.description)entry.issues.push('Missing meaningful title/description');
