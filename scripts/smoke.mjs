@@ -194,6 +194,38 @@ try {
   assert.equal(unauthedPortfolioUpdate.status,401,'Protected industry lead mutation must reject guests');
   console.log('PASS: 28 bilingual auto-service journeys + 1 persisted idempotent inspection request and admin auth');
 
+
+  // Distinct second industry route family, with actual persisted pending-only service enquiry.
+  const homeCareRoutes=['','services','services/ac-maintenance','services/water-leaks','resources',
+   'resources/air-conditioner-prepare','ac','plumbing','electrical','coverage','pricing-guide','process','about','contact','book'];
+  for(const locale of ['ar','en']){
+    for(const route of homeCareRoutes){
+      const path='/'+locale+'/preview/home-maintenance'+(route?'/'+route:'');
+      const response=await get(path);
+      assert.equal(response.status,200,'Home maintenance route failed: '+path);
+      const html=await response.text();
+      assert.ok(html.includes('data-mavvix-contact-dock'),'Mavvix sales dock missing: '+path);
+    }
+  }
+  const hmData={flowType:'home_maintenance_request',clientRequestId:'22222222-2222-4222-8222-222222222222',
+    serviceSlug:'ac-maintenance',issue:'poor_performance',urgency:'routine',region:'Cairo',
+    visitType:'inspection',preferredDate:'',preferredWindow:'flexible',propertyType:'apartment',
+    guestName:'QA Maintenance',guestPhone:'01000000000',consent:true,honeypot:'',
+    utm:{source:'qa',medium:'integration',campaign:'home-maintenance'}};
+  const failedConsent=await post('/api/portfolio/home-maintenance',{...hmData,consent:false});
+  assert.equal(failedConsent.status,400,'Home maintenance requires explicit consent');
+  const homeResponse=await post('/api/portfolio/home-maintenance',hmData);
+  const homeBody=await homeResponse.json();
+  assert.equal(homeResponse.status,201,'Home maintenance request could not persist: '+JSON.stringify(homeBody));
+  assert.ok(/^MVX-HM-[A-F0-9]+$/.test(homeBody.refNumber));
+  assert.equal(homeBody.status,'pending_operator_confirmation');
+  const again=await post('/api/portfolio/home-maintenance',hmData);
+  const againResult=await again.json();
+  assert.equal(again.status,200,'Idempotent repeat must be accepted');
+  assert.equal(againResult.refNumber,homeBody.refNumber);
+  assert.equal(againResult.duplicate,true);
+  console.log('PASS: 30 bilingual Fixora routes, stored home service request and replay-safe reference');
+
   console.log('PASS: auth guard, flow validation, Academy SQLite progress, trusted ecommerce price, private receipt');
 } catch (error) {
   console.error(error);
