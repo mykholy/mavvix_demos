@@ -39,7 +39,8 @@
           "Is this a time preference rather than a confirmed booking?",
           "Are venue access and equipment terms confirmed by the operator?"
         ]
-      }
+      },
+      "category": "football"
     },
     {
       "slug": "football-seven",
@@ -77,7 +78,8 @@
           "Is this a time preference rather than a confirmed booking?",
           "Are venue access and equipment terms confirmed by the operator?"
         ]
-      }
+      },
+      "category": "football"
     },
     {
       "slug": "football-training",
@@ -115,7 +117,8 @@
           "Is this a time preference rather than a confirmed booking?",
           "Are venue access and equipment terms confirmed by the operator?"
         ]
-      }
+      },
+      "category": "football"
     },
     {
       "slug": "football-night",
@@ -153,7 +156,8 @@
           "Is this a time preference rather than a confirmed booking?",
           "Are venue access and equipment terms confirmed by the operator?"
         ]
-      }
+      },
+      "category": "football"
     },
     {
       "slug": "padel-doubles",
@@ -191,7 +195,8 @@
           "Is this a time preference rather than a confirmed booking?",
           "Are venue access and equipment terms confirmed by the operator?"
         ]
-      }
+      },
+      "category": "padel"
     },
     {
       "slug": "padel-intro",
@@ -229,7 +234,8 @@
           "Is this a time preference rather than a confirmed booking?",
           "Are venue access and equipment terms confirmed by the operator?"
         ]
-      }
+      },
+      "category": "padel"
     },
     {
       "slug": "padel-social",
@@ -267,7 +273,8 @@
           "Is this a time preference rather than a confirmed booking?",
           "Are venue access and equipment terms confirmed by the operator?"
         ]
-      }
+      },
+      "category": "padel"
     },
     {
       "slug": "padel-skills",
@@ -305,7 +312,8 @@
           "Is this a time preference rather than a confirmed booking?",
           "Are venue access and equipment terms confirmed by the operator?"
         ]
-      }
+      },
+      "category": "padel"
     }
   ],
   "articles": [
