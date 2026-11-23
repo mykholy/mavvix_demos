@@ -223,7 +223,7 @@ export const VERTICALS = [
     "en": "Interior design",
     "wave": 1,
     "accent": "#B9866B",
-    "status": "planned"
+    "status": "in_progress"
   },
   {
     "slug": "home-maintenance",
