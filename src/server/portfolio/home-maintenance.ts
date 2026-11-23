@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { getDb } from '@/lib/db';
 import { checkRateLimit, getRequestIdentity } from '@/lib/security/rate-limit';
-import content from '../../../../data/verticals/home-maintenance.json';
+import content from '../../../data/verticals/home-maintenance.json';
 
 const bounded=z.string().trim();
 const schema=z.object({
