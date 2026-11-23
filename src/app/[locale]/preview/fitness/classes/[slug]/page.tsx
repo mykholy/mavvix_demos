@@ -1,0 +1,19 @@
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
+import type { Locale } from '@/lib/i18n/config';
+import { PULSE,pulseClass,pulsePath } from '@/lib/verticals/fitness/data';
+import { ArrowUpRight,Clock3,ShieldCheck,Activity,Dumbbell,CheckCircle2 } from 'lucide-react';
+export function generateStaticParams(){return PULSE.services.map(s=>({slug:s.slug}));}
+export function generateMetadata({params:{locale,slug}}:{params:{locale:Locale;slug:string}}):Metadata{
+ const s=pulseClass(slug);return s?{title:s.title[locale]+' | Pulse District by Mavvix',description:s.summary[locale],robots:{index:false}}:{};
+}
+export default function PulseClassDetail({params:{locale,slug}}:{params:{locale:Locale;slug:string}}){
+ const s=pulseClass(slug);if(!s)notFound();const ar=locale==='ar';
+ return <div><section className="bg-[#141421] text-white"><div className="max-w-7xl px-5 sm:px-8 mx-auto py-14 sm:py-24"><nav className="text-xs text-[#D3D1E4]"><Link href={pulsePath(locale)}>{ar?'الرئيسية':'Home'}</Link> / <Link href={pulsePath(locale,'classes')}>{ar?'الحصص':'Classes'}</Link> / {s.title[locale]}</nav><p className="font-mono font-black text-[#E0FE61] text-xs tracking-widest mt-14">PULSE / PROGRAM FILE {String(s.rank).padStart(2,'0')}</p><h1 className="pulse-display text-5xl sm:text-7xl font-black mt-6 uppercase leading-tight">{s.title[locale]}</h1><p className="text-[#E7E5F1] text-lg max-w-3xl leading-9 mt-7">{s.summary[locale]}</p><div className="flex flex-wrap mt-8 gap-5 text-xs font-black text-[#E0FE61]"><span className="inline-flex gap-2 items-center"><Clock3 size={17}/>{s.durations.join(' / ')} MIN · {ar?'تقديري':'ILLUSTRATIVE'}</span><span>{s.levels.join(' / ')}</span></div></div></section>
+  <section className="max-w-7xl mx-auto px-5 sm:px-8 py-20 grid lg:grid-cols-[.5fr_1fr] gap-10"><div><Activity size={36} className="text-[#5B38C3]"/><h2 className="pulse-display text-4xl mt-5">{ar?'الهدف الفعلي من النشاط':'WHAT THIS CLASS PRACTICES'}</h2></div><p className="leading-[2.1] text-base sm:text-lg text-[#3E3C50]">{s.body[locale]}</p></section>
+  <section className="bg-white py-20"><div className="max-w-7xl mx-auto px-5 sm:px-8"><h2 className="pulse-display text-4xl">{ar?'قبل ما تختار: ثلاث نقاط مهمة':'THREE THINGS TO CHECK FIRST'}</h2><div className="grid md:grid-cols-3 gap-4 mt-9">{s.checklist[locale].map((q,i)=><div key={i} className="border-2 border-[#DAD8E3] bg-[#F4F3F8] p-7"><span className="text-[#5B38C3] text-xs font-mono font-bold">0{i+1}</span><CheckCircle2 size={28} className="text-[#5B38C3] mt-7"/><p className="mt-5 text-sm font-black leading-8">{q}</p></div>)}</div></div></section>
+  <section className="py-16 max-w-7xl mx-auto px-5 sm:px-8 grid md:grid-cols-[auto_1fr] gap-6"><ShieldCheck size={36} className="text-[#5B38C3]"/><div><h2 className="font-black text-xl">{ar?'المحتوى تعريفي مش تدريب فردي':'An informative class dossier, not a training prescription'}</h2><p className="mt-4 text-sm leading-9 max-w-4xl text-[#3E3C50]">{ar?'الجدول والتخصص والمعدات والمدة يجب تأكيدهم من مشغل النادي الحقيقي. لا يتم علاج إصابة أو تقديم تقييم صحي عبر هذه الصفحة.':'An actual club must confirm timetable, staff, equipment, price and eligibility. No clinical assessment, rehab service or personalized training advice is provided here.'}</p></div></section>
+  <section className="bg-[#E0FE61] py-16"><div className="max-w-7xl mx-auto px-5 sm:px-8 flex flex-wrap gap-8 justify-between items-center"><h2 className="pulse-display text-3xl sm:text-4xl">{ar?'ابدأ باستفسار منظم':'PREPARE A CLEAR CLASS ENQUIRY.'}</h2><Link href={pulsePath(locale,'trial')+'?class='+s.slug} className="bg-[#141421] text-[#E0FE61] px-8 py-5 inline-flex gap-3 text-sm font-black">{ar?'اختار الحصة':'START A REQUEST'}<ArrowUpRight size={18}/></Link></div></section>
+ </div>;
+}
