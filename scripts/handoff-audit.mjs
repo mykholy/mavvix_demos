@@ -98,7 +98,7 @@ const salonContent=JSON.parse(readFileSync(join(process.cwd(),'data/verticals/sa
 assert.ok((salonHome.match(/<section\b/g)||[]).length>=9,'Salon SPA homepage must have 9 substantial sections');
 assert.ok((salonHome.match(/data-sector-specific=/g)||[]).length>=4,'Salon needs 4+ unique industry sections');
 assert.match(salonLayout,/<ContactDock\b/,'Salon must expose Mavvix contact dock');
-assert.match(salonLayout,/velora-shell/,'Salon's independent typography and art direction absent');
+assert.match(salonLayout,/velora-shell/,"Salon independent typography and art direction absent");
 assert.ok(salonContent.services.length>=8 && salonContent.articles.length>=3 && salonContent.faq.length>=5);
 for(const route of ['services','services/[slug]','booking','journal','journal/[slug]','[section]']){
  assert.ok(existsSync(join(salonDir,route,'page.tsx')),'Missing Velora inner route: '+route);
