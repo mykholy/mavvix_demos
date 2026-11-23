@@ -35,6 +35,7 @@ const DEMOS_LIST = [
   { slug: 'restaurant', nameAr: 'سفرة زعفران', nameEn: 'Saffron Table', icon: UtensilsCrossed, color: '#C65D23' },
   { slug: 'academy', nameAr: 'نوفا للتعلم', nameEn: 'Nova Learning', icon: GraduationCap, color: '#4F46E5' },
   { slug: 'auto-service', nameAr: 'تورك جراج / صيانة سيارات', nameEn: 'Torque Garage · Auto service', icon: Wrench, color: '#FB6935' },
+  { slug: 'home-maintenance', nameAr: 'فكسورا كير / صيانة منزلية', nameEn: 'Fixora · Home maintenance', icon: Home, color: '#F7B347' },
 ];
 
 export function ContactDock({
@@ -293,7 +294,7 @@ export function ContactDock({
           </span>
 
           <span className="hidden sm:inline-flex items-center text-[10px] bg-white/20 text-white font-mono px-2 py-0.5 rounded-full font-bold">
-            9 EXPERIENCES
+            10 EXPERIENCES
           </span>
         </button>
       </div>
