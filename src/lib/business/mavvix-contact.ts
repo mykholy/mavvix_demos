@@ -9,4 +9,4 @@ export type SectorName = 'construction'|'industrial'|'real-estate'|'dental'|'eco
 /** New conversion dock supports all thirty catalogued industries. */
 export type PortfolioSectorName = VerticalSlug;
 export const SECTOR_LABELS: Record<PortfolioSectorName,{ar:string;en:string}> =
- Object.fromEntries(VERTICALS.map(v=>[v.slug,{ar:'موقع متخصص في '+v.ar,en:'a website for '+v.en}])) as Record<SectorName,{ar:string;en:string}>;
+ Object.fromEntries(VERTICALS.map(v=>[v.slug,{ar:'موقع متخصص في '+v.ar,en:'a website for '+v.en}])) as Record<PortfolioSectorName,{ar:string;en:string}>;
