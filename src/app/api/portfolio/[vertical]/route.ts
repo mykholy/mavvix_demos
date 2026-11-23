@@ -1,3 +1,4 @@
+import { handleArenaRequest } from '@/server/portfolio/sports-venues';
 import { handleFitnessRequest } from '@/server/portfolio/fitness';
 import { handleSalonAppointment } from '@/server/portfolio/salon-spa';
 import { handleHomeMaintenance } from '@/server/portfolio/home-maintenance';
@@ -31,6 +32,7 @@ const schema=z.object({
 function failure(code:string,status=422){return NextResponse.json({success:false,code,message:code},{status});}
 
 export async function POST(req:Request,{params}:{params:{vertical:string}}){
+ if(params.vertical==='sports-venues')return handleArenaRequest(req);
  if(params.vertical==='home-maintenance')return handleHomeMaintenance(req);
  if(params.vertical==='salon-spa')return handleSalonAppointment(req);
  if(params.vertical==='fitness')return handleFitnessRequest(req);
