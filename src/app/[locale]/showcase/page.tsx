@@ -231,6 +231,19 @@ const demos = [
       {ar:'نموذج 3 مراحل: المشكلة، المنطقة، وسيلة التواصل',en:'Three-step issue, coverage and contact enquiry'},
       {ar:'حفظ الطلب برقم مرجعي دون ادعاء إرسال فني',en:'Persisted request with no false technician dispatch'}],
     features:['Safety-first Service Triage','Three-step Intake','Operator Confirmation Required']
+  },
+  {
+    number:'11',slug:'salon-spa',
+    name:{ar:'فيلورا بيوتي — موقع صالونات تجميل',en:'Velora Beauty — Premium Salon & Spa Website'},
+    sector:{ar:'تجميل وعناية بالشعر والأظافر',en:'Salon, Hair & Nail Care'},
+    icon:HeartPulse,color:'#9B6070',bgColor:'bg-rose-50',borderColor:'border-rose-200',routesCount:16,
+    tagline:{ar:'قائمة عناية أنيقة ومجال للتخصص وتفضيلات المواعيد بلا وعود وهمية',en:'Editorial beauty stories, detailed service dossiers and honest appointment preferences'},
+    journeys:[
+      {ar:'10 خدمات محددة مع المدة والأسئلة والخطوات',en:'Ten original bilingual service dossiers and indicative durations'},
+      {ar:'تصفية قائمة الخدمات بالأنواع وشرح تخصص كل مجال',en:'Beauty-service category explorer and role-specific guidance'},
+      {ar:'استفسار محفوظ مع رقم مرجعي دون ادعاء تأكيد حجز',en:'Persisted pending-only appointment reference with consent and validation'}
+    ],
+    features:['Speciality-aware Intake','Beauty Editorial Journal','Pending-only Booking Flow']
   }
 ];
 
@@ -334,7 +347,7 @@ export default function ShowcasePage({ params }: Props) {
             </p>
           </div>
           <div className="text-xs font-semibold px-3 py-1.5 rounded bg-slate-100 text-slate-700 border border-slate-300 w-fit">
-            10 {isAr ? 'تجارب قابلة للاستكشاف، بما فيها مواقع جديدة قيد الاختبار' : 'Browsable industry experiences, with new sites under QA'}
+            11 {isAr ? 'تجربة قطاعية، مع مواقع جديدة قيد الاختبار البصري' : 'Industry experiences, including newly built sites under visual QA'}
           </div>
         </div>
 
@@ -350,6 +363,8 @@ export default function ShowcasePage({ params }: Props) {
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#161A20]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Mechanic_repairing_car_engine.jpg/1280px-Mechanic_repairing_car_engine.jpg" loading="lazy" decoding="async" className="h-full w-full object-cover" alt={isAr?'صورة تحريرية لميكانيكي يفحص محرك سيارة':'Editorial photo of a mechanic examining a car engine'}/></div>
                   : d.slug==='home-maintenance'
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#EEF7FC]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/AirConditioner.jpg/1280px-AirConditioner.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'صورة تحريرية لمكيف هواء':'CC0 editorial air conditioning photo'} /></div>
+                  : d.slug==='salon-spa'
+                  ? <div className="relative h-52 bg-[#E9D9D8] overflow-hidden"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Getting_her_nails_painted_%28Unsplash%29.jpg/1280px-Getting_her_nails_painted_%28Unsplash%29.jpg" className="w-full h-full object-cover" alt={isAr?'صورة تحريرية للعناية بالأظافر':'CC0 editorial manicure photography'}/></div>
                   : <SectorPhoto sector={d.slug as keyof typeof SECTOR_IMAGES} alt="" className="h-52 w-full" />}
                 {/* Sector Overview */}
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
