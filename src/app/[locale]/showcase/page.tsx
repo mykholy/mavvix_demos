@@ -431,7 +431,7 @@ export default function ShowcasePage({ params }: Props) {
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#102B26]"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Pexels-jonathan-petersson-399187.jpg/1280px-Pexels-jonathan-petersson-399187.jpg" alt={isAr?'صورة تحريرية حقيقية لملعب ليلي':'CC0 real floodlit football pitch editorial photo'} className="w-full h-full object-cover"/></div>
                   : d.slug==='furniture'
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#EDE3D4]"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Living_room_%28Unsplash%29.jpg/1280px-Living_room_%28Unsplash%29.jpg" alt={isAr?'صورة CC0 حقيقية لصالون بكنبة زرقاء':'CC0 editorial blue sofa living room'} className="h-full w-full object-cover"/></div>
-                  : <SectorPhoto sector={d.slug as keyof typeof SECTOR_IMAGES} alt="" className="h-52 w-full" />
+                  : <SectorPhoto sector={d.slug as keyof typeof SECTOR_IMAGES} alt="" className="h-52 w-full" />}
                 {/* Sector Overview */}
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
                   <div>
