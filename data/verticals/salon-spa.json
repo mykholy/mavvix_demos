@@ -1,0 +1,456 @@
+{
+  "slug": "salon-spa",
+  "brand": "Velora Beauty",
+  "classification": "Illustrative commercial website by Mavvix; no operating salon, staff, live stock or confirmed appointments.",
+  "services": [
+    {
+      "slug": "shape-cut",
+      "rank": 1,
+      "category": "hair",
+      "title": {
+        "ar": "قص وتشكيل الشعر",
+        "en": "Precision cut & shape"
+      },
+      "durations": [
+        45,
+        60
+      ],
+      "summary": {
+        "ar": "تحديد القصة حسب كثافة الشعر وطبيعته وأسلوب العناية اليومي؛ ابدئي بالاستشارة لا بالصورة وحدها.",
+        "en": "A considered cut starts with hair texture, growth pattern, upkeep and daily routine rather than copying a picture without context."
+      },
+      "body": {
+        "ar": "قبل اختيار القصة، ناقشي طبيعة الشعر واستجابته للرطوبة ووقت التصفيف المتاح يوميًا. توضح الاستشارة الفرق بين قصة تحتاج صيانة مستمرة وقصة يسهل العناية بها، وتحدد الوقت المتوقع وأي خدمة إضافية بشكل منفصل. صور المرجع تساعد في توصيل الفكرة لكنها لا تضمن نتيجة مطابقة، لأن كثافة الشعر وملمسه وطوله تختلف.",
+        "en": "A thoughtful consultation maps hair texture, density, maintenance tolerance and face-framing goals. Ask about the frequency of trims, home styling steps and whether the desired result involves heat styling. Inspiration photographs communicate mood but cannot guarantee an identical outcome because hair type, density and natural movement vary."
+      },
+      "questions": {
+        "ar": [
+          "هل اخترتِ الشكل أو الصورة المرجعية كمثال فقط؟",
+          "هل يناسبك وقت الخدمة التقديري أم تحتاجين تنسيقًا؟",
+          "هل تعرفين المنتجات والخطوات الفعلية لدى الصالون؟"
+        ],
+        "en": [
+          "Is any reference photo only inspiration rather than a guaranteed result?",
+          "Does the estimated duration suit your plan?",
+          "Has the actual operator confirmed products and process?"
+        ]
+      }
+    },
+    {
+      "slug": "studio-blowout",
+      "rank": 2,
+      "category": "hair",
+      "title": {
+        "ar": "تصفيف الشعر بالهواء",
+        "en": "Blow-dry & finish"
+      },
+      "durations": [
+        30,
+        45,
+        60
+      ],
+      "summary": {
+        "ar": "تجهيز الشعر وتجفيفه وتحديد درجة التصفيف المطلوبة، مع مراعاة طبيعته.",
+        "en": "Prepping and styling hair with an appropriate finish, mindful of texture and the time available."
+      },
+      "body": {
+        "ar": "يعتمد التصفيف المناسب على طول الشعر وكثافته وطريقة تجفيفه والنتيجة المطلوبة، سواء حجم طبيعي أو ملمس أملس أو تموجات ناعمة. من المهم وصف نوع التصفيف وتاريخ المعالجات السابقة للفريق الحقيقي. الحرارة المفرطة قد تضر الشعر، لذلك تُحدد الأداة وطريقة العمل بناءً على الحالة الفردية.",
+        "en": "A blowout is a process, not merely a hairdryer session. The desired volume, smoothness and hold depend on length, texture and prior treatment. Discuss what looks natural on the client and how much heat is appropriate. Session length is only an indicative planning range until the operator checks the actual hair and workflow."
+      },
+      "questions": {
+        "ar": [
+          "هل اخترتِ الشكل أو الصورة المرجعية كمثال فقط؟",
+          "هل يناسبك وقت الخدمة التقديري أم تحتاجين تنسيقًا؟",
+          "هل تعرفين المنتجات والخطوات الفعلية لدى الصالون؟"
+        ],
+        "en": [
+          "Is any reference photo only inspiration rather than a guaranteed result?",
+          "Does the estimated duration suit your plan?",
+          "Has the actual operator confirmed products and process?"
+        ]
+      }
+    },
+    {
+      "slug": "color-consult",
+      "rank": 3,
+      "category": "hair",
+      "title": {
+        "ar": "استشارة اللون والتدرجات",
+        "en": "Hair colour consultation"
+      },
+      "durations": [
+        45,
+        60,
+        90
+      ],
+      "summary": {
+        "ar": "مراجعة اللون الحالي وتاريخ الصبغات والنتيجة المتوقعة قبل تحديد طريقة التنفيذ.",
+        "en": "Review existing colour, previous processes and the desired shade before planning a colour service."
+      },
+      "body": {
+        "ar": "لون الشعر النهائي يتأثر باللون الأساسي وتاريخ الصبغات ومدى تفتيح الشعر واستجابته. اختيار درجة من صورة لا يثبت إمكانية الحصول عليها في جلسة واحدة، وقد يلزم اختبار حساسية أو توافق وفق تعليمات المنتجات والمعايير المعتمدة. هذه صفحة تعليمية لإعداد الاستفسار وليست نصيحة طبية أو وعدًا بنتيجة لون.",
+        "en": "Colour planning starts with a reliable history of previous dye and lightening, present colour and realistic maintenance. A reference image cannot establish whether one session is sufficient or appropriate. Qualified staff follow product instructions and relevant safety practices, and the actual process requires an in-person conversation rather than an online guarantee."
+      },
+      "questions": {
+        "ar": [
+          "هل اخترتِ الشكل أو الصورة المرجعية كمثال فقط؟",
+          "هل يناسبك وقت الخدمة التقديري أم تحتاجين تنسيقًا؟",
+          "هل تعرفين المنتجات والخطوات الفعلية لدى الصالون؟"
+        ],
+        "en": [
+          "Is any reference photo only inspiration rather than a guaranteed result?",
+          "Does the estimated duration suit your plan?",
+          "Has the actual operator confirmed products and process?"
+        ]
+      }
+    },
+    {
+      "slug": "shine-ritual",
+      "rank": 4,
+      "category": "hair",
+      "title": {
+        "ar": "طقوس لمعان وترطيب الشعر",
+        "en": "Conditioning & shine ritual"
+      },
+      "durations": [
+        45,
+        60,
+        75
+      ],
+      "summary": {
+        "ar": "خدمة تجميلية للعناية بمظهر الشعر ولمعانه، لا علاجًا لحالات فروة الرأس.",
+        "en": "Cosmetic care for visible softness and shine, not treatment of scalp conditions."
+      },
+      "body": {
+        "ar": "جلسة العناية بالشعر تختلف حسب ملمس الشعر وطريقة استخدام المنتجات. توضيح نوع الشعر والنتيجة المطلوبة يساعد في اختيار خدمة مناسبة للمظهر النهائي. المنتجات التجميلية لا تمثل علاجًا لتساقط الشعر أو أمراض الفروة، ولا ينبغي استخدام وصف تسويقي بديلًا عن فحص طبي عند وجود أعراض غير معتادة.",
+        "en": "This cosmetic ritual focuses on the look and feel of hair rather than disease treatment. Product selection and handling depend on hair type and service goals. It should never be marketed as fixing medical hair loss or scalp disorders. An operator should publish actual product ingredients and any applicable safety notes."
+      },
+      "questions": {
+        "ar": [
+          "هل اخترتِ الشكل أو الصورة المرجعية كمثال فقط؟",
+          "هل يناسبك وقت الخدمة التقديري أم تحتاجين تنسيقًا؟",
+          "هل تعرفين المنتجات والخطوات الفعلية لدى الصالون؟"
+        ],
+        "en": [
+          "Is any reference photo only inspiration rather than a guaranteed result?",
+          "Does the estimated duration suit your plan?",
+          "Has the actual operator confirmed products and process?"
+        ]
+      }
+    },
+    {
+      "slug": "classic-manicure",
+      "rank": 5,
+      "category": "nails",
+      "title": {
+        "ar": "مانيكير كلاسيكي",
+        "en": "Classic manicure"
+      },
+      "durations": [
+        30,
+        45
+      ],
+      "summary": {
+        "ar": "تحضير الأظافر وشكل الأطراف والعناية بمظهرها، واختيار إنهاء يناسب المناسبة.",
+        "en": "Shape and finish the nails with clean preparation and a style that suits the occasion."
+      },
+      "body": {
+        "ar": "الميزة في المانيكير الكلاسيكي هي تحديد شكل الأظافر والإنهاء المطلوب والعناية المريحة باليدين. على الصالون الحقيقي توضيح أدوات النظافة والمنتجات المستخدمة والتعامل مع أي تهيج ظاهر بالحدود المهنية المناسبة. لا تُجرى إجراءات علاجية أو تشخيصات طبية داخل نموذج تجميلي.",
+        "en": "A manicure brief should identify preferred nail shape, polish finish and how much upkeep the client wants. A real salon must manage tool hygiene, product suitability and professional limits. A beauty booking website must not offer diagnosis or treatment of infections or skin conditions."
+      },
+      "questions": {
+        "ar": [
+          "هل اخترتِ الشكل أو الصورة المرجعية كمثال فقط؟",
+          "هل يناسبك وقت الخدمة التقديري أم تحتاجين تنسيقًا؟",
+          "هل تعرفين المنتجات والخطوات الفعلية لدى الصالون؟"
+        ],
+        "en": [
+          "Is any reference photo only inspiration rather than a guaranteed result?",
+          "Does the estimated duration suit your plan?",
+          "Has the actual operator confirmed products and process?"
+        ]
+      }
+    },
+    {
+      "slug": "gel-polish",
+      "rank": 6,
+      "category": "nails",
+      "title": {
+        "ar": "طلاء جل للأظافر",
+        "en": "Gel polish finish"
+      },
+      "durations": [
+        45,
+        60,
+        75
+      ],
+      "summary": {
+        "ar": "تنسيق اللون مع التحضير المناسب وكيفية الإزالة لاحقًا وفق تعليمات المنتج.",
+        "en": "Consider shade, preparation, expected upkeep and safe product-led removal."
+      },
+      "body": {
+        "ar": "طلاء الجل يحتاج معرفة حالة الظفر والتحضير الملائم وفترات العناية المناسبة مع تجنب العنف في إزالة الطلاء. التجربة التعريفية تعرض طريقة اختيار الخدمة والمدة؛ المنتجات الفعلية والمتطلبات الخاصة بالتطبيق والإزالة تُؤكد من الصالون ولا تُختزل في وعد بطول ثبات محدد.",
+        "en": "Gel polish involves product-specific preparation, a controlled application process and a considered removal plan. Duration and maintenance depend on nail condition, product choice and daily activity. Avoid blanket durability promises and follow the actual manufacturer’s instructions."
+      },
+      "questions": {
+        "ar": [
+          "هل اخترتِ الشكل أو الصورة المرجعية كمثال فقط؟",
+          "هل يناسبك وقت الخدمة التقديري أم تحتاجين تنسيقًا؟",
+          "هل تعرفين المنتجات والخطوات الفعلية لدى الصالون؟"
+        ],
+        "en": [
+          "Is any reference photo only inspiration rather than a guaranteed result?",
+          "Does the estimated duration suit your plan?",
+          "Has the actual operator confirmed products and process?"
+        ]
+      }
+    },
+    {
+      "slug": "foot-care",
+      "rank": 7,
+      "category": "nails",
+      "title": {
+        "ar": "باديكير وعناية بالقدمين",
+        "en": "Pedicure & foot care"
+      },
+      "durations": [
+        45,
+        60,
+        75
+      ],
+      "summary": {
+        "ar": "جلسة تجميلية لتهذيب الأظافر وترطيب المظهر، دون ادعاء علاج مشكلات طبية.",
+        "en": "A cosmetic grooming and finish session; never a substitute for medical foot care."
+      },
+      "body": {
+        "ar": "تتضمن الخدمة التجميلية اختيار العناية المريحة وشكل الظفر والإنهاء المرغوب. يجب ألا يَعِد الموقع بمعالجة مشكلات طبية أو إجراءات تخص القدم السكرية أو الجروح. أي ملاحظة غير عادية تحتاج تقييمًا مناسبًا من مختص، وتبقى خيارات الحجز مرتبطة بجاهزية الفريق الحقيقي.",
+        "en": "Pedicure services focus on grooming and aesthetic presentation. They are not clinical foot care and should not offer treatment for wounds, nail infections or diabetes-related foot problems. A legitimate operator should disclose service exclusions and sanitation methods."
+      },
+      "questions": {
+        "ar": [
+          "هل اخترتِ الشكل أو الصورة المرجعية كمثال فقط؟",
+          "هل يناسبك وقت الخدمة التقديري أم تحتاجين تنسيقًا؟",
+          "هل تعرفين المنتجات والخطوات الفعلية لدى الصالون؟"
+        ],
+        "en": [
+          "Is any reference photo only inspiration rather than a guaranteed result?",
+          "Does the estimated duration suit your plan?",
+          "Has the actual operator confirmed products and process?"
+        ]
+      }
+    },
+    {
+      "slug": "aroma-retreat",
+      "rank": 8,
+      "category": "rituals",
+      "title": {
+        "ar": "طقس استرخاء عطري",
+        "en": "Aromatic relaxation ritual"
+      },
+      "durations": [
+        60,
+        75,
+        90
+      ],
+      "summary": {
+        "ar": "جلسة هدوء وعناية غير طبية تعتمد على التجربة الحسية والراحة الشخصية.",
+        "en": "A nonclinical sensory relaxation experience with optional cosmetic products."
+      },
+      "body": {
+        "ar": "تبدأ تجربة الاسترخاء بتحديد التفضيلات الحسية مثل الهدوء وشدة الروائح والنطاق التجميلي للخدمة. ما يقدمه مشغّل السبا الفعلي من منتجات أو جلسات يحتاج معلومات معتمدة، ولا يجوز تحويل فكرة العناية إلى ادعاء طبي بتخفيف مرض أو علاج ألم. المواعيد هنا أمثلة تنظيمية وليست حجوزات مؤكدة.",
+        "en": "A relaxation ritual emphasizes personal comfort, scent preferences and atmosphere. It is not clinical physiotherapy or an illness treatment. The real operator needs to approve the products, actual techniques, staff credentials where relevant and booking rules before such a service can be sold."
+      },
+      "questions": {
+        "ar": [
+          "هل اخترتِ الشكل أو الصورة المرجعية كمثال فقط؟",
+          "هل يناسبك وقت الخدمة التقديري أم تحتاجين تنسيقًا؟",
+          "هل تعرفين المنتجات والخطوات الفعلية لدى الصالون؟"
+        ],
+        "en": [
+          "Is any reference photo only inspiration rather than a guaranteed result?",
+          "Does the estimated duration suit your plan?",
+          "Has the actual operator confirmed products and process?"
+        ]
+      }
+    },
+    {
+      "slug": "occasion-styling",
+      "rank": 9,
+      "category": "occasion",
+      "title": {
+        "ar": "تجهيز الشعر للمناسبات",
+        "en": "Occasion hair styling"
+      },
+      "durations": [
+        60,
+        90,
+        120
+      ],
+      "summary": {
+        "ar": "تحضير تصفيف مناسب للمناسبة ووقت الانتقال والتغييرات المطلوبة قبل اليوم الأساسي.",
+        "en": "Plan an occasion finish around preparation, timing, accessories and realistic references."
+      },
+      "body": {
+        "ar": "التحضير للمناسبة يختلف عن جلسة يومية لأنه يرتبط بوقت التواجد، وتثبيت التصفيف، والإكسسوارات والملابس والتجربة المسبقة عند الحاجة. يجب تنسيق مدة الخدمة مع الجدول الحقيقي للمناسبة بدل افتراض مدة موحدة. لا تُعرض صور نتائج لعملاء دون إذنهم.",
+        "en": "Event styling requires a clear getting-ready schedule, garment considerations, accessories and time for any agreed rehearsal. Hairstyles are chosen with hair density, climate and the desired aesthetic in mind. No actual bridal client photographs or outcome claims should be published without permission."
+      },
+      "questions": {
+        "ar": [
+          "هل اخترتِ الشكل أو الصورة المرجعية كمثال فقط؟",
+          "هل يناسبك وقت الخدمة التقديري أم تحتاجين تنسيقًا؟",
+          "هل تعرفين المنتجات والخطوات الفعلية لدى الصالون؟"
+        ],
+        "en": [
+          "Is any reference photo only inspiration rather than a guaranteed result?",
+          "Does the estimated duration suit your plan?",
+          "Has the actual operator confirmed products and process?"
+        ]
+      }
+    },
+    {
+      "slug": "brow-finish",
+      "rank": 10,
+      "category": "face",
+      "title": {
+        "ar": "تهذيب ورسم الحواجب",
+        "en": "Brow shaping & finish"
+      },
+      "durations": [
+        20,
+        30,
+        45
+      ],
+      "summary": {
+        "ar": "تحديد شكل الحواجب والإنهاء التجميلي حسب التفضيل والحدود المهنية.",
+        "en": "Choose brow shape and simple grooming finish based on personal preference."
+      },
+      "body": {
+        "ar": "التنسيق التجميلي للحواجب يهدف للمظهر المتوازن دون ادعاء علاج مشكلة بالجلد. قد تختلف طرق التهذيب وإجراءات العناية حسب أدوات الصالون الحقيقي وطبيعة الجلد، ولذلك يجب اعتماد الخدمات الفعلية والتعليمات من الجهة المشغلة. لا توجد نتائج تجميلية مضمونة من طلب إلكتروني.",
+        "en": "Brow grooming is a cosmetic shaping decision, not a medical treatment. Threading, waxing or alternative methods have different operator requirements and comfort considerations. The actual business must approve its techniques, aftercare and consent wording."
+      },
+      "questions": {
+        "ar": [
+          "هل اخترتِ الشكل أو الصورة المرجعية كمثال فقط؟",
+          "هل يناسبك وقت الخدمة التقديري أم تحتاجين تنسيقًا؟",
+          "هل تعرفين المنتجات والخطوات الفعلية لدى الصالون؟"
+        ],
+        "en": [
+          "Is any reference photo only inspiration rather than a guaranteed result?",
+          "Does the estimated duration suit your plan?",
+          "Has the actual operator confirmed products and process?"
+        ]
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slug": "choosing-treatment",
+      "title": {
+        "ar": "قبل اختيار جلسة الجمال: الفرق بين الخدمة والنتيجة",
+        "en": "Choosing a beauty service: understand the scope, not the promise"
+      },
+      "summary": {
+        "ar": "أسئلة تساعدك تفرقي بين قصة وتصفيف وعناية تجميلية بدون وعود غير واقعية.",
+        "en": "Separate a cut, a styling finish and cosmetic conditioning without relying on impossible result guarantees."
+      },
+      "body": {
+        "ar": "قبل حجز خدمة للشعر أو الأظافر، حددي النتيجة التي تريدينها والوقت المتاح والمنتجات التي تفضلين تجنبها. قد يتشابه اسمان لخدمتين بينما يختلف نطاق الخطوات الفعلية بين الصالونات. طلبك المكتوب يجب أن يفرق بين الاستشارة والتطبيق، ويحدد إن كانت مدة الجلسة تشمل التحضير والتجفيف والإزالة أم لا. السعر النهائي لا يثبت من صورة، والمدة تحتاج اعتماد المشغل. لا تستخدمي صور العملاء الأخرى بوصفها وعدًا بأن كل شخص سيحصل على نتيجة مطابقة.",
+        "en": "Before choosing a hair or nail service, define your aesthetic goal, available time and preferences for products or finish. Similar menu names can represent different workflows across salons. A service brief should distinguish consultation from treatment and make clear whether preparation, drying and removal are included in the estimated duration. A reference photograph is useful for communicating an idea but is not evidence that an identical outcome is achievable or guaranteed. A verified salon must approve products, prices and appointment length."
+      }
+    },
+    {
+      "slug": "nail-finish-care",
+      "title": {
+        "ar": "اختيار مانيكير مناسب وطريقة التفكير في الإزالة",
+        "en": "Choosing a nail finish and planning for removal"
+      },
+      "summary": {
+        "ar": "المانيكير العادي والجل يختلفان في طريقة التطبيق والعناية وما يحدث بعد الجلسة.",
+        "en": "Classic and gel finishes involve different application and aftercare considerations."
+      },
+      "body": {
+        "ar": "اختيار الخدمة يبدأ بشكل الظفر وطول الأظافر واللون وطريقة العناية التي تناسب يومك. يجب أن يوضح الصالون إن كانت الإزالة أو التحضير جزءًا من الجلسة أو يتم حجزها بصورة مستقلة، وما الخطوات المناسبة للمنتج الذي يستخدمه فعليًا. إزالة الطلاء بعنف قد تؤذي الظفر؛ لذلك لا يكفي اعتماد وصف عام غير مرتبط بنوع المنتج. هذه المعلومات تجميلية وليست وصفة لعلاج أي إصابة أو عدوى.",
+        "en": "Nail finish selection should consider natural nail shape, desired colour, intended wear and the client's maintenance preferences. Ask whether removal of a previous product is included or separately booked, and which manufacturer instructions apply. Forceful removal can be harmful, and a generic appointment page should not substitute for an operator's specific product policy. This is cosmetic service education, not medical advice."
+      }
+    },
+    {
+      "slug": "occasion-timeline",
+      "title": {
+        "ar": "جدول تجهيز المناسبة: احسبي الوقت من النهاية للبداية",
+        "en": "A better getting-ready timeline for a special occasion"
+      },
+      "summary": {
+        "ar": "خلي توقيت الشعر والمكياج والإكسسوارات والتنقل واضح قبل يوم المناسبة.",
+        "en": "Coordinate styling, accessories, travel and last-minute adjustments with enough buffer."
+      },
+      "body": {
+        "ar": "عند التجهيز لمناسبة كبيرة، ابدئي بوقت الوصول المطلوب ثم اخصمي وقت التنقل وتغيير الملابس والتصوير ووقت التصفيف المناسب. إذا كان المظهر يحتاج تجربة مسبقة أو إكسسوارات خاصة، يجب الاتفاق عليها مع الفريق الحقيقي. لا تعتمدي على مدة موحدة لكل أنواع الشعر؛ اختلاف الطول والكثافة وطبيعة التصفيف يؤثر في الجدول. نموذج الموقع يساعدك تذكرين تفضيلك للمدة، لكنه لا يثبت توافر متخصص أو حجز وقت حقيقي.",
+        "en": "For an occasion, work backwards from the time you need to leave. Allow room for travel, dressing, accessories and any planned photography. Discuss rehearsal requirements or special attachments directly with the actual stylist. Hair length, texture and the desired finish affect preparation time, so no single published duration can promise a conflict-free day. A website request can record preferences but cannot confirm a real professional or appointment slot without a connected booking system."
+      }
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "ar": "هل اختيار التاريخ يؤكد الحجز؟",
+        "en": "Does selecting a date confirm the appointment?"
+      },
+      "a": {
+        "ar": "لا. هذا نموذج تفاعلي من مافكس، والحجز الحقيقي يحتاج جدول مشغّل الصالون.",
+        "en": "No. This is a Mavvix concept. Only an actual operator calendar can confirm a slot."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل مدد الخدمات وأسعارها نهائية؟",
+        "en": "Are durations and prices final?"
+      },
+      "a": {
+        "ar": "المدد أمثلة لتنظيم الطلب؛ لا توجد أسعار فعلية دون اعتماد الصالون.",
+        "en": "Durations are illustrative; actual timing and fees require the salon owner to approve them."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل لازم أختار متخصص بالاسم؟",
+        "en": "Can I choose a named professional?"
+      },
+      "a": {
+        "ar": "اختيار التخصص فقط متاح هنا لأننا لا نعرض موظفين حقيقيين غير موثقين.",
+        "en": "Only a specialization preference is shown, because no real team profiles are claimed."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل يمكن حجز أكتر من خدمة؟",
+        "en": "May I request multiple services?"
+      },
+      "a": {
+        "ar": "يمكن توضيح رغبة الدمج في استفسار واحد، لكن توافر التتابع يحتاج موافقة المشغّل.",
+        "en": "You can specify a combined preference; the real operator must confirm sequencing and availability."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل في فروع أو صور عميلات حقيقيات؟",
+        "en": "Are there operating branches or customer transformations?"
+      },
+      "a": {
+        "ar": "لا. الصور تحريرية مرخصة وليست صور عميلات أو فروع تخص علامة Velora.",
+        "en": "No. Licensed editorial photography does not show a Velora salon, actual clients or transformations."
+      }
+    }
+  ],
+  "preferences": [
+    "any",
+    "hair-stylist",
+    "nail-artist",
+    "wellness-specialist"
+  ],
+  "windows": [
+    "morning",
+    "afternoon",
+    "evening",
+    "flexible"
+  ]
+}
