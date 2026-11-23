@@ -1,0 +1,350 @@
+{
+  "slug": "auto-service",
+  "brand": "Torque Garage",
+  "classification": "Mavvix illustrated automotive website experience; not an operating repair facility.",
+  "services": [
+    {
+      "slug": "inspection",
+      "category": "diagnostics",
+      "rank": 1,
+      "title": {
+        "ar": "فحص تشخيصي مبدئي",
+        "en": "Initial diagnostic assessment"
+      },
+      "summary": {
+        "ar": "مراجعة مؤشرات التحذير وسلوك السيارة قبل تحديد فحص مناسب.",
+        "en": "Review warning indicators and driving behavior before deciding which checks are appropriate."
+      },
+      "body": {
+        "ar": "تبدأ الرحلة بتسجيل الأعراض العامة ووقت ظهورها، وتحديد ما إذا كانت القيادة آمنة. يُنصح بعدم قيادة السيارة عند وجود لمبة ضغط الزيت أو ارتفاع شديد في الحرارة. الفحص الإلكتروني يمكن أن يساعد، لكنه ليس بديلاً عن الفحص الميكانيكي المدروس.",
+        "en": "Begin with an observation log, when the behavior started, and whether the vehicle appears safe to drive. Diagnostic trouble codes identify systems for investigation; they do not guarantee a specific failed part. A technician should check mechanical and electrical evidence before proposing parts."
+      },
+      "whatToCheck": {
+        "ar": [
+          "وصف الأعراض وطريقة ظهورها",
+          "الفحص المناسب قبل الموافقة على قطع الغيار",
+          "توضيح الأعمال والبدائل قبل الإصلاح"
+        ],
+        "en": [
+          "Describe symptoms and when they appear",
+          "Confirm appropriate tests before replacing parts",
+          "Request itemized scope and alternatives before repair"
+        ]
+      }
+    },
+    {
+      "slug": "oil-filters",
+      "category": "preventive",
+      "rank": 2,
+      "title": {
+        "ar": "الزيوت والفلاتر",
+        "en": "Oil and filter service"
+      },
+      "summary": {
+        "ar": "اختيار مواصفة الزيت وفترة تغييره حسب دليل السيارة.",
+        "en": "Match oil grade and service intervals to the owner's manual."
+      },
+      "body": {
+        "ar": "حدد سنة السيارة وطراز المحرك ومواصفة اللزوجة وتاريخ آخر صيانة. لا يُنصح باستخدام زيت مختلف لمجرد أنه متاح في الورشة؛ المواصفة الصحيحة والمستوى المناسب أهم من العلامة التجارية.",
+        "en": "Check the manufacturer's oil specification, viscosity, engine variant and last service record. Replacement intervals vary by engine, driving conditions and manufacturer instructions. Do not choose oil or replacement frequency from a generic promise."
+      },
+      "whatToCheck": {
+        "ar": [
+          "وصف الأعراض وطريقة ظهورها",
+          "الفحص المناسب قبل الموافقة على قطع الغيار",
+          "توضيح الأعمال والبدائل قبل الإصلاح"
+        ],
+        "en": [
+          "Describe symptoms and when they appear",
+          "Confirm appropriate tests before replacing parts",
+          "Request itemized scope and alternatives before repair"
+        ]
+      }
+    },
+    {
+      "slug": "brakes",
+      "category": "safety",
+      "rank": 3,
+      "title": {
+        "ar": "فحص الفرامل",
+        "en": "Brake system inspection"
+      },
+      "summary": {
+        "ar": "تقييم أصوات الفرامل والبدال والاهتزاز قبل أي تغيير قطع.",
+        "en": "Assess noise, pedal feel and vibration before replacing components."
+      },
+      "body": {
+        "ar": "سلامة الفرامل تعتمد على فحص سمك التيل وحالة الأقراص والسوائل ومجموعة الهيدروليك. الصوت وحده لا يحدد سبب المشكلة؛ لا تؤجل الفحص عند ضعف الاستجابة أو تغير إحساس البدال.",
+        "en": "Brake performance should be assessed across pads, discs, fluid and hydraulic components. Squealing, pulling or pedal softness have multiple causes, and a visual inspection plus road-safe checks is necessary before quoting replacements."
+      },
+      "whatToCheck": {
+        "ar": [
+          "وصف الأعراض وطريقة ظهورها",
+          "الفحص المناسب قبل الموافقة على قطع الغيار",
+          "توضيح الأعمال والبدائل قبل الإصلاح"
+        ],
+        "en": [
+          "Describe symptoms and when they appear",
+          "Confirm appropriate tests before replacing parts",
+          "Request itemized scope and alternatives before repair"
+        ]
+      }
+    },
+    {
+      "slug": "suspension",
+      "category": "safety",
+      "rank": 4,
+      "title": {
+        "ar": "العفشة والتوجيه",
+        "en": "Suspension and steering"
+      },
+      "summary": {
+        "ar": "فحص الثبات والاهتزازات والصوت عند المطبات.",
+        "en": "Investigate stability, vibration and bumps-related noises."
+      },
+      "body": {
+        "ar": "عند وجود خبطة أو عدم ثبات، سجّل سرعة ظهور المشكلة وحالة الطريق والاتجاه، ثم يتم فحص المساعدين والجلب والمقصات والإطارات. تغيير قطع بدون تشخيص قد يضيف تكلفة دون علاج العيب.",
+        "en": "Capture whether noise appears over bumps, under braking or during turning. Steering play, bushings, dampers and tires may contribute. Parts selection requires an inspection, not an assumption from the sound."
+      },
+      "whatToCheck": {
+        "ar": [
+          "وصف الأعراض وطريقة ظهورها",
+          "الفحص المناسب قبل الموافقة على قطع الغيار",
+          "توضيح الأعمال والبدائل قبل الإصلاح"
+        ],
+        "en": [
+          "Describe symptoms and when they appear",
+          "Confirm appropriate tests before replacing parts",
+          "Request itemized scope and alternatives before repair"
+        ]
+      }
+    },
+    {
+      "slug": "ac-cooling",
+      "category": "comfort",
+      "rank": 5,
+      "title": {
+        "ar": "تكييف السيارة",
+        "en": "Vehicle air conditioning"
+      },
+      "summary": {
+        "ar": "فحص التبريد والهواء والروائح والتسريب بطريقة منهجية.",
+        "en": "Review cabin cooling, airflow, odor and leakage symptoms."
+      },
+      "body": {
+        "ar": "ضعف التكييف قد يرتبط بالفلتر أو المروحة أو تسريب في الدائرة أو عطل كهربائي. مجرد إعادة شحن الغاز بدون اختبار تسريب قد لا يحل المشكلة، بل يخفي السبب مؤقتًا.",
+        "en": "Low cooling may involve an airflow restriction, pressure imbalance, electrical fault or refrigerant leak. Adding refrigerant without investigating the root cause is not a dependable service decision."
+      },
+      "whatToCheck": {
+        "ar": [
+          "وصف الأعراض وطريقة ظهورها",
+          "الفحص المناسب قبل الموافقة على قطع الغيار",
+          "توضيح الأعمال والبدائل قبل الإصلاح"
+        ],
+        "en": [
+          "Describe symptoms and when they appear",
+          "Confirm appropriate tests before replacing parts",
+          "Request itemized scope and alternatives before repair"
+        ]
+      }
+    },
+    {
+      "slug": "engine-cooling",
+      "category": "safety",
+      "rank": 6,
+      "title": {
+        "ar": "دورة التبريد",
+        "en": "Engine cooling system"
+      },
+      "summary": {
+        "ar": "مراجعة الحرارة والسائل والخراطيم والمراوح.",
+        "en": "Inspect temperature behavior, coolant and cooling-system components."
+      },
+      "body": {
+        "ar": "ارتفاع حرارة المحرك يستدعي التوقف الآمن وعدم فتح غطاء دورة التبريد وهي ساخنة. يبدأ الفحص بمراقبة فقد السائل والتسريب والمروحة والحساسات، مع مراعاة نوع سائل التبريد المعتمد.",
+        "en": "An overheating engine requires a safe stop; never open a pressurized hot cooling system. Inspection should consider leaks, coolant level, fan operation and sensors before recommending component changes."
+      },
+      "whatToCheck": {
+        "ar": [
+          "وصف الأعراض وطريقة ظهورها",
+          "الفحص المناسب قبل الموافقة على قطع الغيار",
+          "توضيح الأعمال والبدائل قبل الإصلاح"
+        ],
+        "en": [
+          "Describe symptoms and when they appear",
+          "Confirm appropriate tests before replacing parts",
+          "Request itemized scope and alternatives before repair"
+        ]
+      }
+    },
+    {
+      "slug": "battery-electrical",
+      "category": "electrical",
+      "rank": 7,
+      "title": {
+        "ar": "بطارية وكهرباء",
+        "en": "Battery and electrical"
+      },
+      "summary": {
+        "ar": "اختبار البطارية والشحن واستهلاك الكهرباء بدل الاستبدال العشوائي.",
+        "en": "Check battery condition, charging and parasitic drain before replacement."
+      },
+      "body": {
+        "ar": "صعوبة التشغيل لا تعني دائمًا تلف البطارية. قد تكون المشكلة في الدينامو أو التوصيلات أو سحب كهربائي أثناء التوقف. الاختبار الصحيح يميز بين أسباب متشابهة ويقلل تغيير القطع دون ضرورة.",
+        "en": "Slow starting can arise from battery condition, alternator output, terminals or parasitic drains. A structured test should establish which subsystem fails before replacing a battery."
+      },
+      "whatToCheck": {
+        "ar": [
+          "وصف الأعراض وطريقة ظهورها",
+          "الفحص المناسب قبل الموافقة على قطع الغيار",
+          "توضيح الأعمال والبدائل قبل الإصلاح"
+        ],
+        "en": [
+          "Describe symptoms and when they appear",
+          "Confirm appropriate tests before replacing parts",
+          "Request itemized scope and alternatives before repair"
+        ]
+      }
+    },
+    {
+      "slug": "pre-purchase",
+      "category": "inspection",
+      "rank": 8,
+      "title": {
+        "ar": "فحص قبل الشراء",
+        "en": "Pre-purchase vehicle check"
+      },
+      "summary": {
+        "ar": "نقاط فحص حالة السيارة قبل اتخاذ قرار الشراء.",
+        "en": "Independent check areas to consider before a purchase decision."
+      },
+      "body": {
+        "ar": "يُفضّل فحص الهيكل والطلاء والعفشة والمحرك والفرامل وأجهزة الأمان وسجلات الصيانة إن وجدت. لا يُغني الفحص عن التحقق من مستندات الملكية والحوادث والإجراءات القانونية.",
+        "en": "Consider mechanical condition, structural signs, brake and tire wear, safety systems and available history. A mechanical inspection cannot replace legal ownership and paperwork checks."
+      },
+      "whatToCheck": {
+        "ar": [
+          "وصف الأعراض وطريقة ظهورها",
+          "الفحص المناسب قبل الموافقة على قطع الغيار",
+          "توضيح الأعمال والبدائل قبل الإصلاح"
+        ],
+        "en": [
+          "Describe symptoms and when they appear",
+          "Confirm appropriate tests before replacing parts",
+          "Request itemized scope and alternatives before repair"
+        ]
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slug": "warning-lights",
+      "title": {
+        "ar": "لمبات التحذير: إمتى توقف العربية وإمتى تطلب فحص؟",
+        "en": "Warning lights: when to stop and when to request an inspection"
+      },
+      "summary": {
+        "ar": "مش كل لمبة تحذير معناها نفس الخطورة؛ فرّق بين طلب فحص قريب وحالة تحتاج التوقف الآمن.",
+        "en": "Not every warning lamp has the same urgency. Separate routine diagnosis from situations requiring a safe stop."
+      },
+      "body": {
+        "ar": "لمبة ضغط الزيت وتحذير الحرارة المرتفعة قد يشيران إلى خطر على المحرك. عندما تظهر رسالة خطورة أو فقدان واضح في الفرامل، الأفضل التوقف في مكان آمن ومراجعة دليل السيارة قبل القيادة. في الحالات الأخرى، سجّل وقت ظهور اللمبة والأعراض المصاحبة، ولا تعتمد على مسح رمز الخطأ وحده دون تحديد السبب. هذا دليل تثقيفي عام وليس تشخيصًا لسيارتك.",
+        "en": "A low oil-pressure warning or severe overheating can indicate the need to stop safely. Brake-system warnings also require careful attention. Other dashboard indicators may warrant prompt diagnosis, but the urgency depends on manufacturer instructions and the observed behavior. Note the light, driving conditions and symptoms; clearing a code does not repair its cause. This is general education rather than vehicle-specific advice."
+      }
+    },
+    {
+      "slug": "maintenance-record",
+      "title": {
+        "ar": "إزاي تحتفظ بسجل صيانة يفيدك ويقلل التخمين؟",
+        "en": "How to keep a maintenance history that reduces guesswork"
+      },
+      "summary": {
+        "ar": "سجل التاريخ والعداد ونوع الزيت والمواصفة والأجزاء المستبدلة والملاحظات؛ مش الفاتورة بس.",
+        "en": "Record dates, mileage, oil specification, replaced components and recurring symptoms rather than keeping only invoices."
+      },
+      "body": {
+        "ar": "كل صيانة لازم تتسجل بتاريخها وقراءة عدادها ومواصفات المواد المستخدمة واسم العمل المنفذ وسبب التغيير. الاحتفاظ بصور الفواتير يسهّل مقارنة الأعمال وتحديد تكرار الأعطال. عند تغيير ورشة الصيانة، سجل واضح يوفر وقت الفحص ويمكّن الفني من فهم المشكلة دون البدء من الصفر. لا تُشارك أرقام الشاسيه أو بياناتك الحساسة عبر نموذج عام.",
+        "en": "A useful service log includes the service date, odometer reading, precise fluid specification, parts, labor scope and the reason for intervention. Photograph receipts and record recurring symptoms. A clear history supports better diagnostics when the car changes owners or workshops. Keep vehicle identification and personal documents out of public enquiry forms."
+      }
+    },
+    {
+      "slug": "before-inspection",
+      "title": {
+        "ar": "قبل زيارة مركز الصيانة: جهّز المعلومات دي",
+        "en": "Before a workshop visit: prepare a clear service brief"
+      },
+      "summary": {
+        "ar": "الطراز والسنة ووقت ظهور العطل وظروف القيادة أهم من وصف المشكلة بكلمة واحدة.",
+        "en": "Make, model, year and the conditions under which a problem occurs help technicians triage a request."
+      },
+      "body": {
+        "ar": "لو العطل بيظهر في السرعات البطيئة فقط أو مع تشغيل التكييف أو في طرق معينة، اكتب ملاحظتك بوضوح. افصل بين ما تشعر به وما تعتقد أنه السبب؛ مثلاً 'اهتزاز عند الفرملة' أفضل من 'المساعدين بايظين'. جهّز صيانة سابقة إن وجدت وحدد درجة الاستعجال بأمان. ملء الطلب يساعد على ترتيب المكالمة، لكنه لا يشكّل حجزًا مؤكدًا أو تشخيصًا.",
+        "en": "Record what happens, when it began, whether it changes with speed, braking, road conditions or air conditioning, and any recent repairs. Distinguish an observation such as vibration under braking from a guessed cause. A structured request makes the follow-up conversation more useful but is not a confirmed appointment or diagnosis."
+      }
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "ar": "هل حجز الصيانة هنا مؤكد؟",
+        "en": "Is a request a confirmed booking?"
+      },
+      "a": {
+        "ar": "لا. الطلب يتم تسجيله فقط لحين تأكيد الجهة المشغلة الفعلية.",
+        "en": "No. This is a saved request; a real operating workshop must explicitly confirm any appointment."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل السعر بيظهر قبل الكشف؟",
+        "en": "Do I receive a repair quote before inspection?"
+      },
+      "a": {
+        "ar": "يجب تحديد نطاق الفحص أولًا؛ تكلفة الإصلاح تعتمد على الحالة وقطع الغيار وموافقة العميل.",
+        "en": "A final repair quote depends on inspection results, parts and an agreed scope."
+      }
+    },
+    {
+      "q": {
+        "ar": "أقدر أطلب كشف كمبيوتر؟",
+        "en": "Can I ask for OBD scanning?"
+      },
+      "a": {
+        "ar": "نعم كفئة استفسار، لكن الكود مش دليل منفرد على الجزء التالف.",
+        "en": "You can request a diagnostic assessment, but trouble codes alone don't identify a guaranteed part failure."
+      }
+    },
+    {
+      "q": {
+        "ar": "إيه العلامات اللي تحتاج توقف آمن؟",
+        "en": "Which symptoms warrant a safe stop?"
+      },
+      "a": {
+        "ar": "ارتفاع الحرارة الشديد أو تحذيرات ضغط الزيت أو فقدان الفرامل تستدعي عدم المجازفة بالقيادة.",
+        "en": "Severe overheating, oil-pressure warnings or brake failure indications call for a safe stop and appropriate help."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل عندكم مراكز حقيقية وفنيين؟",
+        "en": "Are these real workshop branches?"
+      },
+      "a": {
+        "ar": "الموقع تجربة تصميم من مافكس؛ أسماء وفروع مقدمي الخدمة لا تمثل ورشة تعمل حاليًا.",
+        "en": "This is a Mavvix website-design experience, not a real operating workshop or licensed technician roster."
+      }
+    }
+  ],
+  "brands": [
+    "Toyota",
+    "Hyundai",
+    "Kia",
+    "Nissan",
+    "Chevrolet",
+    "MG"
+  ],
+  "modelNote": {
+    "ar": "الموديلات قائمة مبدئية؛ الشركة المنفذة ستضبطها وفق السيارات التي تخدمها فعليًا.",
+    "en": "The supported makes/models must be configured by the actual workshop operator."
+  }
+}
