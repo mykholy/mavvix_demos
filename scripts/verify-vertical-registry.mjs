@@ -31,3 +31,27 @@ for(const entry of entries){
 }
 const counts=Object.fromEntries(['live','in_progress','planned'].map(s=>[s,entries.filter(e=>e.status===s).length]));
 console.log('Registry contract PASS:',JSON.stringify(counts));
+
+/**
+ * Dependency integrity gate: prevent manifest-only framework upgrades.
+ * npm ci will additionally validate the complete transitive lock graph.
+ */
+const manifest=JSON.parse(fs.readFileSync('package.json','utf8'));
+const lock=JSON.parse(fs.readFileSync('package-lock.json','utf8'));
+assert.equal(lock.lockfileVersion,3,'Expected npm lockfile v3');
+assert.equal(lock.name,manifest.name,'Lockfile package name mismatch');
+for(const group of ['dependencies','devDependencies']){
+ for(const [name,range] of Object.entries(manifest[group]||{})){
+  assert.equal(lock.packages?.['']?.[group]?.[name],range,
+   'Manifest/lockfile mismatch for '+name+'; regenerate package-lock.json with npm install');
+ }
+}
+for(const name of ['next','eslint-config-next']){
+ const declared=manifest.dependencies?.[name]??manifest.devDependencies?.[name];
+ assert.ok(declared,'Missing framework dependency '+name);
+ assert.equal(lock.packages?.['node_modules/'+name]?.version,declared,
+  'Installed '+name+' lock version must match exact manifest pin');
+}
+assert.equal(manifest.dependencies.next,manifest.devDependencies['eslint-config-next'],
+ 'Next.js and eslint-config-next must be pinned to the same version');
+console.log('Framework lockfile contract PASS:',manifest.dependencies.next);
