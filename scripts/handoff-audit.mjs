@@ -121,5 +121,19 @@ for(const route of ['classes','classes/[slug]','trial','journal','journal/[slug]
  assert.ok(existsSync(join(fitnessRoot,route,'page.tsx')),'Missing Pulse route '+route);
 console.log('PASS: authored Pulse homepage with unique type system, program routes and real enquiry');
 
+
+const arenaRoot=join(root,'sports-venues');
+const arenaHome=readFileSync(join(arenaRoot,'page.tsx'),'utf8');
+const arenaLayout=readFileSync(join(arenaRoot,'layout.tsx'),'utf8');
+const arenaContent=JSON.parse(readFileSync(join(process.cwd(),'data/verticals/sports-venues.json'),'utf8'));
+assert.ok((arenaHome.match(/<section\b/g)||[]).length>=9,'Sports-venues requires nine substantial home sections');
+assert.ok((arenaHome.match(/data-sector-specific=/g)||[]).length>=4,'Sports-venues requires four industry-specific sections');
+assert.match(arenaLayout,/<ContactDock\b/,'Arena requires Mavvix commercial contact');
+assert.match(arenaLayout,/arena-shell/,'Arena bespoke identity wrapper missing');
+assert.equal(arenaContent.services.length,8);
+for(const route of ['courts','courts/[slug]','book','journal','journal/[slug]','[section]'])
+ assert.ok(existsSync(join(arenaRoot,route,'page.tsx')),'Arena inner family missing: '+route);
+console.log('PASS: bespoke floodlit Arena site with eight sport-format details and pending-only court request');
+
 console.log('PASS: complete source-level route/section/media/localization structure for all 8 sectors');
 console.log('NOTE: structural checks and HTTP smoke tests do NOT validate client business identity, licensed media provenance, UX screenshots or operational fulfilment.');
