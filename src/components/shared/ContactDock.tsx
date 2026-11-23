@@ -237,6 +237,18 @@ export function ContactDock({
 
       {/* Floating Action Trigger Button / Hub Pill */}
       <div className="flex items-center gap-2">
+        {/* Persistent one-tap conversion controls; not hidden behind the expanded hub. */}
+        <a href={wa} target="_blank" rel="noopener noreferrer" onClick={() => track('whatsapp_click')}
+           className="sm:hidden flex items-center justify-center gap-2 min-h-12 rounded-full bg-[#16864F] text-white px-4 py-3 text-xs font-bold shadow-xl"
+           aria-label={ar ? 'واتساب مافكس لتنفيذ موقع مشابه' : 'WhatsApp Mavvix to commission a website'}>
+          <MessageCircle size={19} aria-hidden="true" />
+          <span>{ar ? 'عايز موقع زي ده' : 'Build my site'}</span>
+        </a>
+        <a href={`tel:${MAVVIX_CONTACT.phoneE164}`} onClick={() => track('phone_click')}
+           className="sm:hidden grid place-items-center min-w-12 min-h-12 rounded-full bg-slate-900 text-white shadow-xl"
+           aria-label={ar ? 'اتصال مباشر بمافكس' : 'Call Mavvix directly'}>
+          <Phone size={19} aria-hidden="true" />
+        </a>
         {showScrollTop && (
           <button
             type="button"
