@@ -161,3 +161,13 @@ button:disabled {
 .fixora-shell [class~="text-[#7692A8]"]{color:#3D657A !important;}
 .fixora-shell [class~="text-[#89A3B4]"]{color:#47697F !important;}
 .mavvix-showcase .bg-white .text-slate-400 {color:#475569 !important;}
+
+/* Browser-verified WCAG 2.1 AA repair set. Targets the exact failed elements from
+ * 2026-11-23 Chromium/axe report, without altering decorative brand accents. */
+.torque-shell .bg-white [class~="text-[#FB6935]"] { color:#9F3D19 !important; }
+.torque-shell [class~="text-[#E15A29]"] { color:#993719 !important; }
+.fixora-shell [class~="text-white/65"] { color:#F3F6FA !important; }
+.fixora-shell footer [class~="text-white/50"] { color:#E0E8EF !important; }
+.velora-shell [class~="text-[#987381]"] { color:#674954 !important; }
+.velora-shell [class~="text-[#A36D79]"].font-mono { color:#714250 !important; }
+.mavvix-showcase footer .text-slate-500 { color:#CBD5E1 !important; }
