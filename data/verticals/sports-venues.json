@@ -1,0 +1,434 @@
+{
+  "slug": "sports-venues",
+  "brand": "Arena Courts",
+  "classification": "Mavvix editorial concept only. No real court inventory, staff, prices or confirmed bookings.",
+  "services": [
+    {
+      "slug": "football-five",
+      "sport": "football",
+      "players": 10,
+      "durations": [
+        60,
+        90
+      ],
+      "ar": "كرة قدم خماسية",
+      "en": "Five-a-side football",
+      "arBody": "مباراة خماسية من فريقين، خمسة لاعبين لكل فريق بما فيهم الحارس في الصيغة المعتادة. المهم قبل طلب الملعب توثيق عدد المشاركين، طبيعة الأرضية المطلوبة، وقت البداية والنهاية، وهل قواعد المكان تسمح بالتغييرات. نموذج Arena يسجل التفضيل فقط؛ ولا يعني وجود ملعب مخصص أو إنارة معتمدة.",
+      "enBody": "A conventional five-a-side match uses two groups of five, including goalkeepers. Before selecting a venue, determine whether the playing surface and substitution rules are appropriate, and confirm the length of the session. The Arena website records a preference but does not claim a certified pitch or a real calendar slot.",
+      "rank": 1,
+      "title": {
+        "ar": "كرة قدم خماسية",
+        "en": "Five-a-side football"
+      },
+      "summary": {
+        "ar": "مباراة خماسية من فريقين، خمسة لاعبين لكل فريق بما فيهم الحارس في الصيغة المعتادة. المهم …",
+        "en": "A conventional five-a-side match uses two groups of five, including goalkeepers. Before selecting a venue, d…"
+      },
+      "body": {
+        "ar": "مباراة خماسية من فريقين، خمسة لاعبين لكل فريق بما فيهم الحارس في الصيغة المعتادة. المهم قبل طلب الملعب توثيق عدد المشاركين، طبيعة الأرضية المطلوبة، وقت البداية والنهاية، وهل قواعد المكان تسمح بالتغييرات. نموذج Arena يسجل التفضيل فقط؛ ولا يعني وجود ملعب مخصص أو إنارة معتمدة.",
+        "en": "A conventional five-a-side match uses two groups of five, including goalkeepers. Before selecting a venue, determine whether the playing surface and substitution rules are appropriate, and confirm the length of the session. The Arena website records a preference but does not claim a certified pitch or a real calendar slot."
+      },
+      "questions": {
+        "ar": [
+          "هل عدد اللاعبين مناسب للصيغة المختارة؟",
+          "هل المدة والوقت تفضيل وليست حجزًا مؤكدًا؟",
+          "هل سياسة الملاعب والأدوات معتمدة من المشغّل؟"
+        ],
+        "en": [
+          "Is the group size appropriate for the format?",
+          "Is this a time preference rather than a confirmed booking?",
+          "Are venue access and equipment terms confirmed by the operator?"
+        ]
+      }
+    },
+    {
+      "slug": "football-seven",
+      "sport": "football",
+      "players": 14,
+      "durations": [
+        90,
+        120
+      ],
+      "ar": "كرة قدم سباعية",
+      "en": "Seven-a-side football",
+      "arBody": "السباعي يجمع فريقين من سبعة لاعبين، ولذلك يختلف عن الخماسي في تنظيم العدد والمساحة المناسبة. اختيار التوقيت يحتاج تنسيق جميع المشاركين ومراجعة شروط دخول الملعب والتغييرات والإلغاء قبل الدفع. التفاصيل الهندسية للملاعب الحقيقية لا يمكن اعتمادها دون بيانات المالك.",
+      "enBody": "Seven-a-side football uses two teams of seven before substitutes. A sensible venue request identifies the group size, preferred start time and the actual facility rules on substitutions and cancellation. Court dimensions, materials and lighting cannot be asserted without information verified by the operating owner.",
+      "rank": 2,
+      "title": {
+        "ar": "كرة قدم سباعية",
+        "en": "Seven-a-side football"
+      },
+      "summary": {
+        "ar": "السباعي يجمع فريقين من سبعة لاعبين، ولذلك يختلف عن الخماسي في تنظيم العدد والمساحة المنا…",
+        "en": "Seven-a-side football uses two teams of seven before substitutes. A sensible venue request identifies the gr…"
+      },
+      "body": {
+        "ar": "السباعي يجمع فريقين من سبعة لاعبين، ولذلك يختلف عن الخماسي في تنظيم العدد والمساحة المناسبة. اختيار التوقيت يحتاج تنسيق جميع المشاركين ومراجعة شروط دخول الملعب والتغييرات والإلغاء قبل الدفع. التفاصيل الهندسية للملاعب الحقيقية لا يمكن اعتمادها دون بيانات المالك.",
+        "en": "Seven-a-side football uses two teams of seven before substitutes. A sensible venue request identifies the group size, preferred start time and the actual facility rules on substitutions and cancellation. Court dimensions, materials and lighting cannot be asserted without information verified by the operating owner."
+      },
+      "questions": {
+        "ar": [
+          "هل عدد اللاعبين مناسب للصيغة المختارة؟",
+          "هل المدة والوقت تفضيل وليست حجزًا مؤكدًا؟",
+          "هل سياسة الملاعب والأدوات معتمدة من المشغّل؟"
+        ],
+        "en": [
+          "Is the group size appropriate for the format?",
+          "Is this a time preference rather than a confirmed booking?",
+          "Are venue access and equipment terms confirmed by the operator?"
+        ]
+      }
+    },
+    {
+      "slug": "football-training",
+      "sport": "football",
+      "players": 10,
+      "durations": [
+        60,
+        90
+      ],
+      "ar": "تدريب مهارات كرة القدم",
+      "en": "Football technique session",
+      "arBody": "الجلسة التدريبية تركز على الإحماء والسيطرة والتمرير والانتقال، ولا تساوي مباراة تنافسية في متطلبات الحضور والتجهيز. وجود مدرب مؤهل أو أدوات تدريب خاصة لا يفترضه الموقع، بل يحتاج إثباتًا من صاحب النشاط. يمكن طلب مساحة للتمارين مع تحديد الصيغة والوقت المناسب.",
+      "enBody": "A technique session emphasizes warm-up, control, passing and coordinated movement rather than match results. A real coaching service requires verified instructors, safe equipment and operator-approved session rules. This website demonstrates how a user can describe an intended training session without inventing a named coach.",
+      "rank": 3,
+      "title": {
+        "ar": "تدريب مهارات كرة القدم",
+        "en": "Football technique session"
+      },
+      "summary": {
+        "ar": "الجلسة التدريبية تركز على الإحماء والسيطرة والتمرير والانتقال، ولا تساوي مباراة تنافسية …",
+        "en": "A technique session emphasizes warm-up, control, passing and coordinated movement rather than match results.…"
+      },
+      "body": {
+        "ar": "الجلسة التدريبية تركز على الإحماء والسيطرة والتمرير والانتقال، ولا تساوي مباراة تنافسية في متطلبات الحضور والتجهيز. وجود مدرب مؤهل أو أدوات تدريب خاصة لا يفترضه الموقع، بل يحتاج إثباتًا من صاحب النشاط. يمكن طلب مساحة للتمارين مع تحديد الصيغة والوقت المناسب.",
+        "en": "A technique session emphasizes warm-up, control, passing and coordinated movement rather than match results. A real coaching service requires verified instructors, safe equipment and operator-approved session rules. This website demonstrates how a user can describe an intended training session without inventing a named coach."
+      },
+      "questions": {
+        "ar": [
+          "هل عدد اللاعبين مناسب للصيغة المختارة؟",
+          "هل المدة والوقت تفضيل وليست حجزًا مؤكدًا؟",
+          "هل سياسة الملاعب والأدوات معتمدة من المشغّل؟"
+        ],
+        "en": [
+          "Is the group size appropriate for the format?",
+          "Is this a time preference rather than a confirmed booking?",
+          "Are venue access and equipment terms confirmed by the operator?"
+        ]
+      }
+    },
+    {
+      "slug": "football-night",
+      "sport": "football",
+      "players": 10,
+      "durations": [
+        60,
+        90
+      ],
+      "ar": "مباراة مسائية تحت الإنارة",
+      "en": "Evening football session",
+      "arBody": "المباريات المسائية تحتاج التحقق من كفاية الإضاءة الحقيقية ووقت تشغيل المكان، مع مراعاة الدخول والخروج ومواعيد الجيران. صور الملاعب المضاءة مصدر تحريري ولا تثبت أن Arena يملك ملاعب بالفعل. الطلب يوضح الرغبة في اللعب ليلًا وعلى المشغّل الحقيقي تأكيد التفاصيل.",
+      "enBody": "Night football depends on verified venue lighting, operating hours and safe access. Atmospheric editorial photography is not evidence that Arena owns illuminated courts. The request flow simply records an evening time preference, which only an actual venue operator can confirm before players travel.",
+      "rank": 4,
+      "title": {
+        "ar": "مباراة مسائية تحت الإنارة",
+        "en": "Evening football session"
+      },
+      "summary": {
+        "ar": "المباريات المسائية تحتاج التحقق من كفاية الإضاءة الحقيقية ووقت تشغيل المكان، مع مراعاة ا…",
+        "en": "Night football depends on verified venue lighting, operating hours and safe access. Atmospheric editorial ph…"
+      },
+      "body": {
+        "ar": "المباريات المسائية تحتاج التحقق من كفاية الإضاءة الحقيقية ووقت تشغيل المكان، مع مراعاة الدخول والخروج ومواعيد الجيران. صور الملاعب المضاءة مصدر تحريري ولا تثبت أن Arena يملك ملاعب بالفعل. الطلب يوضح الرغبة في اللعب ليلًا وعلى المشغّل الحقيقي تأكيد التفاصيل.",
+        "en": "Night football depends on verified venue lighting, operating hours and safe access. Atmospheric editorial photography is not evidence that Arena owns illuminated courts. The request flow simply records an evening time preference, which only an actual venue operator can confirm before players travel."
+      },
+      "questions": {
+        "ar": [
+          "هل عدد اللاعبين مناسب للصيغة المختارة؟",
+          "هل المدة والوقت تفضيل وليست حجزًا مؤكدًا؟",
+          "هل سياسة الملاعب والأدوات معتمدة من المشغّل؟"
+        ],
+        "en": [
+          "Is the group size appropriate for the format?",
+          "Is this a time preference rather than a confirmed booking?",
+          "Are venue access and equipment terms confirmed by the operator?"
+        ]
+      }
+    },
+    {
+      "slug": "padel-doubles",
+      "sport": "padel",
+      "players": 4,
+      "durations": [
+        60,
+        90
+      ],
+      "ar": "بادل زوجي لأربعة لاعبين",
+      "en": "Padel doubles match",
+      "arBody": "البادل الزوجي يجمع فريقين من لاعبين اثنين، وبذلك يكون العدد الأساسي أربعة. ينصح قبل ترتيب الزيارة بالتأكد من وجود المضارب والكرات أو سياسة تأجيرها ومن نوع الحذاء المقبول. الوقت المحدد في الفورم تفضيل وليس خانة مضمونة في جدول ملعب قائم.",
+      "enBody": "Standard doubles padel is played by two teams of two, making four players. Before visiting a real venue, confirm rackets, balls, footwear rules and actual court access. The website stores a preferred hour and indicative session length, not a live reservation or guaranteed equipment supply.",
+      "rank": 5,
+      "title": {
+        "ar": "بادل زوجي لأربعة لاعبين",
+        "en": "Padel doubles match"
+      },
+      "summary": {
+        "ar": "البادل الزوجي يجمع فريقين من لاعبين اثنين، وبذلك يكون العدد الأساسي أربعة. ينصح قبل ترتي…",
+        "en": "Standard doubles padel is played by two teams of two, making four players. Before visiting a real venue, con…"
+      },
+      "body": {
+        "ar": "البادل الزوجي يجمع فريقين من لاعبين اثنين، وبذلك يكون العدد الأساسي أربعة. ينصح قبل ترتيب الزيارة بالتأكد من وجود المضارب والكرات أو سياسة تأجيرها ومن نوع الحذاء المقبول. الوقت المحدد في الفورم تفضيل وليس خانة مضمونة في جدول ملعب قائم.",
+        "en": "Standard doubles padel is played by two teams of two, making four players. Before visiting a real venue, confirm rackets, balls, footwear rules and actual court access. The website stores a preferred hour and indicative session length, not a live reservation or guaranteed equipment supply."
+      },
+      "questions": {
+        "ar": [
+          "هل عدد اللاعبين مناسب للصيغة المختارة؟",
+          "هل المدة والوقت تفضيل وليست حجزًا مؤكدًا؟",
+          "هل سياسة الملاعب والأدوات معتمدة من المشغّل؟"
+        ],
+        "en": [
+          "Is the group size appropriate for the format?",
+          "Is this a time preference rather than a confirmed booking?",
+          "Are venue access and equipment terms confirmed by the operator?"
+        ]
+      }
+    },
+    {
+      "slug": "padel-intro",
+      "sport": "padel",
+      "players": 4,
+      "durations": [
+        60,
+        90
+      ],
+      "ar": "جلسة بادل للمبتدئين",
+      "en": "Padel introduction",
+      "arBody": "اللاعب الجديد يحتاج فهم القواعد الأساسية، احتساب النقاط، الارتداد من الجدران والتفاهم مع الشريك. وقد تتطلب الجلسة مدربًا متخصصًا لكن لا يجوز اختلاق أسماء أو شهادات للمدربين في موقع تجريبي. يتم اختيار العدد والمدة فقط إلى أن يحدد المشغّل تفاصيل الخدمة.",
+      "enBody": "Beginners benefit from basic scoring, wall rebounds, safe movement and partner positioning. A professionally instructed session requires a real coach and owner-approved credentials, none of which should be fabricated for a portfolio. The example can record interest in a four-player introductory format without promising instruction.",
+      "rank": 6,
+      "title": {
+        "ar": "جلسة بادل للمبتدئين",
+        "en": "Padel introduction"
+      },
+      "summary": {
+        "ar": "اللاعب الجديد يحتاج فهم القواعد الأساسية، احتساب النقاط، الارتداد من الجدران والتفاهم مع…",
+        "en": "Beginners benefit from basic scoring, wall rebounds, safe movement and partner positioning. A professionally…"
+      },
+      "body": {
+        "ar": "اللاعب الجديد يحتاج فهم القواعد الأساسية، احتساب النقاط، الارتداد من الجدران والتفاهم مع الشريك. وقد تتطلب الجلسة مدربًا متخصصًا لكن لا يجوز اختلاق أسماء أو شهادات للمدربين في موقع تجريبي. يتم اختيار العدد والمدة فقط إلى أن يحدد المشغّل تفاصيل الخدمة.",
+        "en": "Beginners benefit from basic scoring, wall rebounds, safe movement and partner positioning. A professionally instructed session requires a real coach and owner-approved credentials, none of which should be fabricated for a portfolio. The example can record interest in a four-player introductory format without promising instruction."
+      },
+      "questions": {
+        "ar": [
+          "هل عدد اللاعبين مناسب للصيغة المختارة؟",
+          "هل المدة والوقت تفضيل وليست حجزًا مؤكدًا؟",
+          "هل سياسة الملاعب والأدوات معتمدة من المشغّل؟"
+        ],
+        "en": [
+          "Is the group size appropriate for the format?",
+          "Is this a time preference rather than a confirmed booking?",
+          "Are venue access and equipment terms confirmed by the operator?"
+        ]
+      }
+    },
+    {
+      "slug": "padel-social",
+      "sport": "padel",
+      "players": 4,
+      "durations": [
+        90,
+        120
+      ],
+      "ar": "جلسة بادل اجتماعية",
+      "en": "Social padel game",
+      "arBody": "مباراة بادل للأصدقاء تحتاج ترتيب أربعة مشاركين والاتفاق على مدة اللعب والمعدات، مع التحقق من سياسات الإلغاء والتأخير. يمكن أن تكون التجربة أطول من جلسة قصيرة ولكن ذلك لا يعني أن الوقت متاح بالفعل. لا يوجد دوري حقيقي أو تقييم لاعبين داخل هذا الموقع التصوري.",
+      "enBody": "A friendly padel game needs four coordinated players, practical equipment planning and a clearly agreed time. Different operators have different cancellation and lateness rules. This editorial website does not offer an operating league, player rankings or an independently verified schedule.",
+      "rank": 7,
+      "title": {
+        "ar": "جلسة بادل اجتماعية",
+        "en": "Social padel game"
+      },
+      "summary": {
+        "ar": "مباراة بادل للأصدقاء تحتاج ترتيب أربعة مشاركين والاتفاق على مدة اللعب والمعدات، مع التحق…",
+        "en": "A friendly padel game needs four coordinated players, practical equipment planning and a clearly agreed time…"
+      },
+      "body": {
+        "ar": "مباراة بادل للأصدقاء تحتاج ترتيب أربعة مشاركين والاتفاق على مدة اللعب والمعدات، مع التحقق من سياسات الإلغاء والتأخير. يمكن أن تكون التجربة أطول من جلسة قصيرة ولكن ذلك لا يعني أن الوقت متاح بالفعل. لا يوجد دوري حقيقي أو تقييم لاعبين داخل هذا الموقع التصوري.",
+        "en": "A friendly padel game needs four coordinated players, practical equipment planning and a clearly agreed time. Different operators have different cancellation and lateness rules. This editorial website does not offer an operating league, player rankings or an independently verified schedule."
+      },
+      "questions": {
+        "ar": [
+          "هل عدد اللاعبين مناسب للصيغة المختارة؟",
+          "هل المدة والوقت تفضيل وليست حجزًا مؤكدًا؟",
+          "هل سياسة الملاعب والأدوات معتمدة من المشغّل؟"
+        ],
+        "en": [
+          "Is the group size appropriate for the format?",
+          "Is this a time preference rather than a confirmed booking?",
+          "Are venue access and equipment terms confirmed by the operator?"
+        ]
+      }
+    },
+    {
+      "slug": "padel-skills",
+      "sport": "padel",
+      "players": 4,
+      "durations": [
+        60,
+        90
+      ],
+      "ar": "تمارين تمركز ومهارات البادل",
+      "en": "Padel skills drills",
+      "arBody": "جلسة مهارات تركز على الوقوف الصحيح والتواصل مع الشريك واستخدام الجدران والضربات الأساسية بصورة تدريجية. الموقع لا يجمع بيانات إصابات أو معلومات صحية، ولا يدّعي وجود مدرب أو برنامج تدريب نشط. طلب المستخدم يحدد طبيعة النشاط وموعدًا مفضلًا فقط.",
+      "enBody": "Technique-focused practice can explore positioning, rebounds, partner communication and controlled rallies. Any actual training plan needs the operator to confirm facilities and qualified support. This sample does not ask for injury or medical information and never represents a real coaching program.",
+      "rank": 8,
+      "title": {
+        "ar": "تمارين تمركز ومهارات البادل",
+        "en": "Padel skills drills"
+      },
+      "summary": {
+        "ar": "جلسة مهارات تركز على الوقوف الصحيح والتواصل مع الشريك واستخدام الجدران والضربات الأساسية…",
+        "en": "Technique-focused practice can explore positioning, rebounds, partner communication and controlled rallies. …"
+      },
+      "body": {
+        "ar": "جلسة مهارات تركز على الوقوف الصحيح والتواصل مع الشريك واستخدام الجدران والضربات الأساسية بصورة تدريجية. الموقع لا يجمع بيانات إصابات أو معلومات صحية، ولا يدّعي وجود مدرب أو برنامج تدريب نشط. طلب المستخدم يحدد طبيعة النشاط وموعدًا مفضلًا فقط.",
+        "en": "Technique-focused practice can explore positioning, rebounds, partner communication and controlled rallies. Any actual training plan needs the operator to confirm facilities and qualified support. This sample does not ask for injury or medical information and never represents a real coaching program."
+      },
+      "questions": {
+        "ar": [
+          "هل عدد اللاعبين مناسب للصيغة المختارة؟",
+          "هل المدة والوقت تفضيل وليست حجزًا مؤكدًا؟",
+          "هل سياسة الملاعب والأدوات معتمدة من المشغّل؟"
+        ],
+        "en": [
+          "Is the group size appropriate for the format?",
+          "Is this a time preference rather than a confirmed booking?",
+          "Are venue access and equipment terms confirmed by the operator?"
+        ]
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slug": "venue-questions",
+      "title": {
+        "ar": "أسئلة مهمة قبل حجز ملعب",
+        "en": "Essential questions before booking a court"
+      },
+      "body": {
+        "ar": "اسأل عن نوع أرضية الملعب وصيغة اللعبة والعدد المناسب للوقت المحدد. تأكد من الإضاءة في الملاعب الليلية والأدوات المتاحة وسياسات الإلغاء ورسوم التأخير قبل دفع أي مبلغ. صور موقع مستقل لا تثبت مواصفات الملعب الذي تختاره، لذلك يجب الرجوع للمشغل الحقيقي للتحقق من الجودة والتوقيت.",
+        "en": "Clarify the sport format, permitted group size, surface type, opening hours and any floodlighting requirements. Ask about equipment, changing facilities, late arrival and cancellation terms. A photographic website concept cannot verify these facts for a real venue, so direct confirmation matters before payment."
+      },
+      "summary": {
+        "ar": "اسأل عن نوع أرضية الملعب وصيغة اللعبة والعدد المناسب للوقت المحدد. تأكد من الإضاءة في الملاعب الليلية وال…",
+        "en": "Clarify the sport format, permitted group size, surface type, opening hours and any floodlighting requirements. Ask abou…"
+      }
+    },
+    {
+      "slug": "team-setup",
+      "title": {
+        "ar": "ترتيب فريق خماسي أو سباعي",
+        "en": "Organizing five- and seven-a-side teams"
+      },
+      "body": {
+        "ar": "عند تنظيم خماسي تقليدي يحتاج الفريقان عشرة لاعبين أساسيين، بينما السباعي يحتاج أربعة عشر لاعبًا قبل احتساب البدلاء. لا تعتبر سعة ملعب مجهول معتمدة بمجرد ظهوره في القائمة. نسّق الحضور والزي والأحذية المناسبة ومواعيد الدخول والخروج مع المنشأة الحقيقية وراجع قواعد الاستبدال.",
+        "en": "Conventional five-a-side uses ten starters while seven-a-side uses fourteen. Substitute counts and facility size vary, so a conceptual court card is not an assurance of operating capacity. Coordinate actual arrivals, footwear, permitted substitutions and the venue’s stated start and end times."
+      },
+      "summary": {
+        "ar": "عند تنظيم خماسي تقليدي يحتاج الفريقان عشرة لاعبين أساسيين، بينما السباعي يحتاج أربعة عشر لاعبًا قبل احتسا…",
+        "en": "Conventional five-a-side uses ten starters while seven-a-side uses fourteen. Substitute counts and facility size vary, s…"
+      }
+    },
+    {
+      "slug": "first-padel",
+      "title": {
+        "ar": "دليل أول مباراة بادل",
+        "en": "Your first doubles padel game"
+      },
+      "body": {
+        "ar": "البادل الزوجي يجمع أربعة لاعبين في فريقين. من المفيد الاستفسار عن المضارب والكرات والقواعد الأساسية وسطح الملعب ومتطلبات الأحذية. اختيار مدة 60 أو 90 دقيقة مجرد تفضيل عام؛ لا يثبت وجود مدرب أو ملعب متاح أو خدمات إضافية. المالك الفعلي يؤكد كل ذلك قبل الزيارة.",
+        "en": "Doubles padel involves four players in two teams. Check whether rackets and balls are available, which footwear is permitted, and what the venue’s real booking duration is. A 60- or 90-minute preference on a portfolio site does not guarantee free court time, training or equipment."
+      },
+      "summary": {
+        "ar": "البادل الزوجي يجمع أربعة لاعبين في فريقين. من المفيد الاستفسار عن المضارب والكرات والقواعد الأساسية وسطح …",
+        "en": "Doubles padel involves four players in two teams. Check whether rackets and balls are available, which footwear is permi…"
+      }
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "ar": "هل الوقت مؤكد؟",
+        "en": "Is the requested hour confirmed?"
+      },
+      "a": {
+        "ar": "لا، مجرد تفضيل يحتاج موافقة مشغل حقيقي.",
+        "en": "No; only a real venue operator can confirm time."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل ده ملعب Arena فعلي؟",
+        "en": "Is Arena an operating venue?"
+      },
+      "a": {
+        "ar": "لا، تجربة تصميم مواقع من مافكس.",
+        "en": "No, an editorial Mavvix website concept."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل سعر الحجز نهائي؟",
+        "en": "Is the final price shown?"
+      },
+      "a": {
+        "ar": "لا نعرض سعرًا غير موثق أو ندفع عربونًا.",
+        "en": "No unverified prices or deposits are processed."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل البادل يحتاج 4 لاعبين؟",
+        "en": "Does padel doubles use four players?"
+      },
+      "a": {
+        "ar": "نعم، الزوجي المعتاد مجموعتان كل واحدة لاعبان.",
+        "en": "Yes, standard doubles involves two pairs."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل هناك مدربون أو دوريات حقيقية؟",
+        "en": "Are real coaches or leagues provided?"
+      },
+      "a": {
+        "ar": "لا ندّعي توافر مشغلين أو مدربين أو دوريات.",
+        "en": "No invented coaches, leagues or operating venue claims."
+      }
+    }
+  ],
+  "sports": [
+    "football",
+    "padel"
+  ],
+  "windows": [
+    "17:00",
+    "18:30",
+    "20:00",
+    "21:30"
+  ],
+  "regions": [
+    "Cairo",
+    "Giza",
+    "Alexandria",
+    "Riyadh",
+    "Jeddah",
+    "Other"
+  ],
+  "sessionTypes": [
+    "casual",
+    "training",
+    "friendly",
+    "league_interest"
+  ]
+}
