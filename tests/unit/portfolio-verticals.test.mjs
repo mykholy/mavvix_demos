@@ -67,6 +67,22 @@ test('Pulse gym has nine independently authored bilingual training class dossier
   assert.ok(s.durations.every(n=>n>=30 && n<=60));
  }
 });
+test('Arena sports venue has eight factual team-aware court formats and original field notes',()=>{
+ const v=JSON.parse(fs.readFileSync(path.join(root,'data/verticals/sports-venues.json'),'utf8'));
+ assert.equal(v.slug,'sports-venues');
+ assert.equal(v.services.length,8);
+ assert.equal(v.articles.length,3);
+ assert.equal(v.faq.length,5);
+ assert.equal(new Set(v.services.map(x=>x.slug)).size,8);
+ for(const court of v.services){
+  assert.ok(court.body.ar.length>150&&court.body.en.length>160,'Shallow court format: '+court.slug);
+  assert.equal(court.category,court.sport);
+  assert.ok(court.durations.length>=2);
+  if(court.sport==='padel')assert.equal(court.players,4);
+  else assert.ok([10,14].includes(court.players));
+ }
+});
+
 test('additive schema upgrades on existing legacy database without dropping its records',()=>{
  const db=new DatabaseSync(':memory:');
  try {
