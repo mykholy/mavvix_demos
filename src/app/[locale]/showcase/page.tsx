@@ -272,6 +272,19 @@ const demos = [
       {ar:'رقم مرجعي محفوظ حتى يؤكد المشغّل الحقيقي',en:'Persisted booking-preference reference, never a fake reservation'}
     ],
     features:['Sport-aware Team Size','No Fake Availability','Owner-confirmed Booking Only']
+  },
+  {
+    number:'14',slug:'furniture',
+    name:{ar:'أوكلين ليفينج — أثاث حسب المقاس',en:'Oakline Living — Bespoke Furniture Website'},
+    sector:{ar:'أثاث غرف ومعارض وتفصيل حسب الطلب',en:'Furniture, Room Planning & Custom Quotes'},
+    icon:Home,color:'#BA9062',bgColor:'bg-amber-50',borderColor:'border-amber-200',routesCount:18,
+    tagline:{ar:'كتالوج خامات ومقاسات وسلة تسعير متعددة القطع محفوظة',en:'Room-first furniture dossiers and multi-item material/dimension quote basket'},
+    journeys:[
+      {ar:'10 قطع مفصلة تشمل الغرف والخامات والأبعاد',en:'Ten original room-specific furniture design dossiers'},
+      {ar:'اختيار خامة وتشطيب وثلاثة أبعاد لكل قطعة',en:'Compatible material, finish and full dimension selection per item'},
+      {ar:'سلة تصل 6 قطع برقم مرجعي دون سعر مختلق',en:'Saved six-item RFQ with nonbinding reference, no fake stock or price'}
+    ],
+    features:['Material/Finish Validation','Multi-piece RFQ Basket','No Invented Inventory']
   }
 ];
 
@@ -416,7 +429,9 @@ export default function ShowcasePage({ params }: Props) {
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#141421]"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Fitness_Center_Equipment.jpg" alt={isAr?'أجهزة رياضية حقيقية من صورة CC0 تحريرية':'CC0 editorial photo of fitness equipment at an unrelated gym'} className="w-full h-full object-cover"/></div>
                   : d.slug==='sports-venues'
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#102B26]"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Pexels-jonathan-petersson-399187.jpg/1280px-Pexels-jonathan-petersson-399187.jpg" alt={isAr?'صورة تحريرية حقيقية لملعب ليلي':'CC0 real floodlit football pitch editorial photo'} className="w-full h-full object-cover"/></div>
-                  : <SectorPhoto sector={d.slug as keyof typeof SECTOR_IMAGES} alt="" className="h-52 w-full" />}
+                  : d.slug==='furniture'
+                  ? <div className="relative h-52 w-full overflow-hidden bg-[#EDE3D4]"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Living_room_%28Unsplash%29.jpg/1280px-Living_room_%28Unsplash%29.jpg" alt={isAr?'صورة CC0 حقيقية لصالون بكنبة زرقاء':'CC0 editorial blue sofa living room'} className="h-full w-full object-cover"/></div>
+                  : <SectorPhoto sector={d.slug as keyof typeof SECTOR_IMAGES} alt="" className="h-52 w-full" />
                 {/* Sector Overview */}
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
                   <div>
