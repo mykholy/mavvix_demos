@@ -1,0 +1,42 @@
+{
+  "vertical": "salon-spa",
+  "checked_on": "2026-11-23",
+  "editorial_only": true,
+  "owner_operated_business_verified": false,
+  "assets": [
+    {
+      "id": "velora-editorial-manicure",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Getting_her_nails_painted_(Unsplash).jpg",
+      "artist": "Kris Atomic",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "original_dimensions": "5616x3744",
+      "remote": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Getting_her_nails_painted_%28Unsplash%29.jpg/1280px-Getting_her_nails_painted_%28Unsplash%29.jpg",
+      "verified_source_license": true,
+      "verified_remote_image_fetch": false,
+      "local_path": null,
+      "alt_ar": "صورة تحريرية للعناية بالأظافر ولا تتبع صالون Velora",
+      "alt_en": "Editorial nail painting photo, unrelated to Velora clients"
+    },
+    {
+      "id": "velora-salon-interior",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Hair_salon_-_Arlington,_MA.jpg",
+      "artist": "Daderot",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "original_dimensions": "4032x2268",
+      "remote": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Hair_salon_-_Arlington%2C_MA.jpg/1280px-Hair_salon_-_Arlington%2C_MA.jpg",
+      "verified_source_license": true,
+      "verified_remote_image_fetch": false,
+      "local_path": null,
+      "alt_ar": "صورة تحريرية لصالون مستقل في أرلينغتون لا يمثل فرع Velora",
+      "alt_en": "Editorial real unrelated salon interior in Arlington, not a Velora branch"
+    }
+  ],
+  "production_blockers": [
+    "Verify current image URL and thumbnail load in Chromium; use local licensed files or corrected direct paths if failed",
+    "Test crop and accessibility on mobile and desktop",
+    "Replace editorial photos with client-approved originals for actual deployments",
+    "Never describe photos as client results or Velora staff"
+  ]
+}
