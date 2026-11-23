@@ -10,8 +10,9 @@ const SLOTS=[['flexible','مرن','Flexible'],['morning','صباحًا','Morning
 export function PulseTrialForm({locale,defaultClass=''}:{locale:Locale;defaultClass?:string}){
  const ar=locale==='ar';
  const first=PULSE.services.find(x=>x.slug===defaultClass)||PULSE.services[0];
- const [level,setLevel]=useState<(typeof EXPERIENCE)[number][0]>('beginner');
- const [serviceSlug,setServiceSlug]=useState(PULSE.services.find(s=>s.levels.includes('beginner'))?.slug||first.slug);
+ const initialLevel=(first.levels.includes('beginner')?'beginner':first.levels[0]) as (typeof EXPERIENCE)[number][0];
+ const [level,setLevel]=useState<(typeof EXPERIENCE)[number][0]>(initialLevel);
+ const [serviceSlug,setServiceSlug]=useState(first.slug);
  const [goal,setGoal]=useState('general_fitness'),[requestType,setRequestType]=useState('trial'),[daysPerWeek,setDaysPerWeek]=useState(3);
  const [preferredDate,setPreferredDate]=useState(''),[preferredWindow,setPreferredWindow]=useState('flexible');
  const [region,setRegion]=useState('Cairo'),[guestName,setGuestName]=useState(''),[guestPhone,setGuestPhone]=useState(''),[consent,setConsent]=useState(false);
