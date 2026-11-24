@@ -142,7 +142,7 @@ export const VERTICALS = [
     "en": "Veterinary clinics",
     "wave": 2,
     "accent": "#F3B98E",
-    "status": "planned"
+    "status": "in_progress"
   },
   {
     "slug": "nursery",
