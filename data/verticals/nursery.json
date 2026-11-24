@@ -1,0 +1,293 @@
+{
+  "slug": "nursery",
+  "brand": "BloomSteps",
+  "classification": "Mavvix website concept; no operating nursery or real enrollment capacity.",
+  "services": [
+    {
+      "slug": "little-explorers",
+      "category": "age",
+      "ageBand": "1-2",
+      "rank": 1,
+      "title": {
+        "ar": "المستكشفون الصغار",
+        "en": "Little explorers"
+      },
+      "summary": {
+        "ar": "لعب حسي بإشراف وروتين هادئ يناسب الانتقال من المنزل إلى بيئة جديدة.",
+        "en": "A gentle transition into a new environment with supervised sensory play and familiar routines."
+      },
+      "body": {
+        "ar": "التركيز على العلاقة الآمنة مع مقدم الرعاية والإشارات اليومية المألوفة. يمكن أن تشمل الأمثلة القصص القصيرة والحركة الحرة والأشياء المناسبة للعمر، مع مراعاة النوم والطعام وفق تعليمات الأسرة وسياسات المشغل. أي قبول فعلي لهذه الفئة يخضع للترخيص والموارد المتاحة.",
+        "en": "The emphasis is on responsive relationships and predictable transitions. Short stories, simple movement and age-appropriate sensory materials can be planned around an individual routine. A real operator must confirm supervision, rest and meal policies, licensing and capacity."
+      }
+    },
+    {
+      "slug": "curious-toddlers",
+      "category": "age",
+      "ageBand": "2-3",
+      "rank": 2,
+      "title": {
+        "ar": "خطوات الفضول",
+        "en": "Curious toddlers"
+      },
+      "summary": {
+        "ar": "فرص للاختيار والاستكشاف والتعبير بالكلمات والحركة من خلال اللعب.",
+        "en": "Choice, exploration, language and movement within play-based activities."
+      },
+      "body": {
+        "ar": "الأطفال في هذه المرحلة يستكشفون الروابط بين الأشياء والأفعال. تتضمن التجربة أمثلة للفرز حسب اللون، أغاني بسيطة، ترتيب الأدوات والمشاركة التدريجية في اللعب الجماعي. لا تُستخدم مهام موحدة كاختبار لقدرات الطفل أو وعد بتطور محدد.",
+        "en": "At this stage, play can connect everyday objects, words and actions. Sorting, songs, putting materials away and gentle group participation are examples, not assessments or guaranteed developmental outcomes."
+      }
+    },
+    {
+      "slug": "ready-for-school",
+      "category": "age",
+      "ageBand": "3-5",
+      "rank": 3,
+      "title": {
+        "ar": "خطوات نحو المدرسة",
+        "en": "Growing independence"
+      },
+      "summary": {
+        "ar": "قصص وحوار وعدّ محسوس وتعاون في أنشطة صغيرة قبل الانتقال إلى المدرسة.",
+        "en": "Storytelling, conversation, hands-on counting and small-group collaboration before school."
+      },
+      "body": {
+        "ar": "تقدم أمثلة الأنشطة فرصًا للاستقلال في ترتيب المكان، الاستماع للقصة، استعمال الألوان والأشكال والتعاون. لا يعني ذلك منهجًا معتمدًا أو ضمان جاهزية كل طفل. يجب أن يراجع مشغّل الحضانة العمر المقبول والبرنامج الفعلي وطرق متابعة التقدم.",
+        "en": "Examples include tidying up, listening to stories, recognizing shapes and cooperating on simple tasks. These ideas do not represent accredited instruction or guaranteed readiness. Actual age eligibility, curriculum and progress methods require operator approval."
+      }
+    },
+    {
+      "slug": "story-language",
+      "category": "curriculum",
+      "ageBand": "all",
+      "rank": 4,
+      "title": {
+        "ar": "حكايات وكلمات",
+        "en": "Stories & language"
+      },
+      "summary": {
+        "ar": "حوار وكتب مصورة وأغاني تشجع التعبير والاستماع بدون اختبارات رسمية.",
+        "en": "Picture books, conversation and songs create opportunities for expression and listening."
+      },
+      "body": {
+        "ar": "تتيح قراءة قصة قصيرة مع أسئلة مفتوحة فرصة للطفل للتعبير بطريقته. قد يختار الطفل صورة أو يحكي حدثًا أو يشارك أغنية. يكيّف المعلم الفعلي طول النشاط واللغة وفق المجموعة، ويستخدم الملاحظات لفهم الاهتمامات وليس لتصنيف الأطفال.",
+        "en": "A short story with open questions gives children room to express themselves. They might point to a picture, retell an event or join a song. Actual educators adjust activity length and language to the group rather than turning participation into a ranking."
+      }
+    },
+    {
+      "slug": "sensory-discovery",
+      "category": "curriculum",
+      "ageBand": "all",
+      "rank": 5,
+      "title": {
+        "ar": "مختبر الحواس",
+        "en": "Sensory discovery"
+      },
+      "summary": {
+        "ar": "خامات آمنة مناسبة للعمر لاستكشاف اللون والملمس والحجم تحت الإشراف.",
+        "en": "Age-appropriate supervised materials for noticing texture, color and size."
+      },
+      "body": {
+        "ar": "يبدأ التخطيط باختيار أدوات لا تحتوي على أجزاء خطرة على العمر المقصود، وبمراجعة النظافة والمتابعة. اللعب الحسي فرصة للاستكشاف لا بديل عن الرعاية المتخصصة. لا تُجمع بيانات حساسية أو تشخيص طبي في نموذج زيارة عام.",
+        "en": "Planning begins with safe age-appropriate objects, hygiene and close supervision. Sensory play offers exploration, not clinical treatment. Allergy or medical information must be handled privately through the real nursery's approved procedure, never this public enquiry."
+      }
+    },
+    {
+      "slug": "art-expression",
+      "category": "curriculum",
+      "ageBand": "all",
+      "rank": 6,
+      "title": {
+        "ar": "ألوان وتعبير",
+        "en": "Creative studio"
+      },
+      "summary": {
+        "ar": "أعمال فنية مفتوحة النتيجة تعطي مساحة للاختيار والتجريب.",
+        "en": "Open-ended creative activities leave room for choice and exploration."
+      },
+      "body": {
+        "ar": "يمكن استخدام الرسم بالألوان المناسبة للعمر أو ترتيب أشكال ورقية كبيرة تحت الإشراف. الهدف أن يختار الطفل كيف يعبّر، وليس أن ينتج كل الأطفال الرسم نفسه. يحدد المشغل الخامات الفعلية وسياسة النظافة والإشراف المناسبة.",
+        "en": "Age-appropriate drawing or large paper shapes can offer creative choices under supervision. The emphasis is expression rather than identical finished projects. The actual operator determines approved materials, supervision and cleaning policies."
+      }
+    },
+    {
+      "slug": "movement-play",
+      "category": "curriculum",
+      "ageBand": "all",
+      "rank": 7,
+      "title": {
+        "ar": "حركة ولعب جماعي",
+        "en": "Movement & togetherness"
+      },
+      "summary": {
+        "ar": "أنشطة حركة ولعب تساعد على تجربة المساحة والمشاركة بالطرق الملائمة.",
+        "en": "Movement and group play adapted to the available space and age range."
+      },
+      "body": {
+        "ar": "تحتاج الحركة إلى مساحة آمنة ومراقبة مناسبة. يمكن اختيار ألعاب إيقاعية أو حركة بسيطة وتناوب الأدوار مع مراعاة راحة الطفل. لا يصح أن يثبت الموقع توافر ملعب أو نسب إشراف أو تجهيزات بدون اعتماد الجهة المشغلة.",
+        "en": "Movement needs a suitable supervised space. Rhythmic play, simple movement or turn-taking can be adapted to comfort and age. The site cannot assert a real playground, staffing ratio or physical equipment unless the operator verifies it."
+      }
+    },
+    {
+      "slug": "practical-life",
+      "category": "curriculum",
+      "ageBand": "all",
+      "rank": 8,
+      "title": {
+        "ar": "مهارات الحياة اليومية",
+        "en": "Everyday independence"
+      },
+      "summary": {
+        "ar": "خطوات بسيطة مثل ترتيب الخامات والاختيار والمشاركة في الروتين.",
+        "en": "Simple opportunities to choose, put things away and join daily routines."
+      },
+      "body": {
+        "ar": "يمكن توفير اختيارات مناسبة للعمر وإشراك الطفل في ترتيب الأدوات والتجهيز للنشاط التالي. يظل دور البالغ الإشراف والمساعدة وعدم فرض توقعات موحدة. تُعرض الأمثلة كفلسفة تعليمية عامة وليست ادعاء تطبيق برنامج مونتيسوري معتمد.",
+        "en": "Age-appropriate choices and putting materials away can support participation in daily routines. Adults guide and supervise without expecting identical progress. These are general ideas for play-based learning, not a claim of Montessori certification."
+      }
+    }
+  ],
+  "ageBands": [
+    {
+      "id": "1-2",
+      "ar": "من سنة إلى أقل من سنتين",
+      "en": "1–under 2 years"
+    },
+    {
+      "id": "2-3",
+      "ar": "من سنتين إلى أقل من 3 سنوات",
+      "en": "2–under 3 years"
+    },
+    {
+      "id": "3-5",
+      "ar": "من 3 إلى أقل من 5 سنوات",
+      "en": "3–under 5 years"
+    }
+  ],
+  "routine": [
+    {
+      "ar": "استقبال وتهيئة",
+      "en": "Arrival and settling",
+      "descAr": "اتصال هادئ بالأسرة وانتقال تدريجي للنشاط.",
+      "descEn": "A calm handover and time to settle into activities."
+    },
+    {
+      "ar": "اختيار ولعب",
+      "en": "Choice and play",
+      "descAr": "استكشاف خامات وأنشطة مناسبة للعمر بإشراف.",
+      "descEn": "Supervised exploration using age-appropriate materials."
+    },
+    {
+      "ar": "قصة وحركة",
+      "en": "Story and movement",
+      "descAr": "لغة وتفاعل وحركة وفق المجموعة.",
+      "descEn": "Language, interaction and movement adapted to the group."
+    },
+    {
+      "ar": "راحة وتواصل الأسرة",
+      "en": "Rest and family handover",
+      "descAr": "تحدد الراحة والطعام والتسليم وفق سياسة المشغل.",
+      "descEn": "Rest, meals and collection follow the actual operator’s policy."
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "ar": "هل الطلب يعني قبول طفلي؟",
+        "en": "Does an enquiry reserve a nursery place?"
+      },
+      "a": {
+        "ar": "لا. الطلب محفوظ لتوضيح تجربة الموقع، ولا توجد أماكن أو قبول مؤكد.",
+        "en": "No. The saved request illustrates the website; no actual place or admission is confirmed."
+      }
+    },
+    {
+      "q": {
+        "ar": "لماذا لا أكتب اسم الطفل؟",
+        "en": "Why is the child's name not requested?"
+      },
+      "a": {
+        "ar": "مرحلة الاستفسار تحتاج الفئة العمرية فقط ووسيلة تواصل ولي الأمر. المستندات والبيانات الخاصة لا تدخل هذا النموذج.",
+        "en": "An initial enquiry needs only an age band and guardian contact. Private records do not belong in this form."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل الفئات العمرية نهائية؟",
+        "en": "Are age bands confirmed admission rules?"
+      },
+      "a": {
+        "ar": "هي أمثلة لتنظيم الموقع، والقبول الفعلي يعتمد على ترخيص الجهة المشغلة والبرنامج المتاح.",
+        "en": "They are illustrative categories. Real eligibility depends on the operator's licence and programme."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل تطبقون منهجًا معتمدًا؟",
+        "en": "Is an accredited curriculum offered?"
+      },
+      "a": {
+        "ar": "لا توجد حضانة فعلية باسم BloomSteps. المحتوى أمثلة تعليمية عامة وليس اعتمادًا لمنهج.",
+        "en": "BloomSteps is not an operating nursery. The programme descriptions illustrate educational ideas, not accredited provision."
+      }
+    },
+    {
+      "q": {
+        "ar": "كيف أتحقق من الأمان؟",
+        "en": "How can I check safeguarding?"
+      },
+      "a": {
+        "ar": "اطلب من الحضانة الحقيقية توضيح الترخيص والإشراف والتسليم وإجراءات الطوارئ والنظافة وحماية الصور.",
+        "en": "Ask the actual nursery to explain licensing, supervision, collection, emergencies, hygiene and photography permissions."
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slug": "first-nursery-visit",
+      "title": {
+        "ar": "أسئلة مهمة في أول زيارة للحضانة",
+        "en": "Questions for your first nursery visit"
+      },
+      "summary": {
+        "ar": "انظر للروتين والتواصل والإشراف وليس الديكور فقط.",
+        "en": "Look beyond decor to routine, communication and supervision."
+      },
+      "body": {
+        "ar": "ابدأ بسؤال الجهة المشغلة عن ترخيصها والفئة العمرية المناسبة. أثناء الزيارة راقب ترتيب الخامات ومداخل المكان وإجراءات التسليم. اسأل كيف تتواصل الإدارة مع الأسرة وكيف تتعامل مع المواقف الطارئة، وما الذي يحدث عند غياب أحد العاملين. اطلب الاطلاع على السياسات الفعلية بدل الاعتماد على صور الموقع أو عبارات عامة.",
+        "en": "Begin with the actual nursery’s licence and age eligibility. On a tour, ask how materials are arranged, entrances managed and authorized collection verified. Discuss parent communication, emergency procedures and coverage when staff are absent. Request written policies rather than relying on online photographs or broad marketing claims."
+      }
+    },
+    {
+      "slug": "settling-in-routines",
+      "title": {
+        "ar": "الانتقال للحضانة: فهم الروتين التدريجي",
+        "en": "Understanding a gentle nursery transition"
+      },
+      "summary": {
+        "ar": "اتفق مع فريق الحضانة على خطوات الاستقبال والتواصل والراحة.",
+        "en": "Discuss settling-in, family communication and rest routines."
+      },
+      "body": {
+        "ar": "الانتقال إلى بيئة جديدة يختلف من طفل إلى آخر. يمكن الاتفاق مع فريق الرعاية على طقوس استقبال مألوفة وتواصل واضح مع الأسرة وخطة مناسبة لليوم الأول. اسأل عن طريقة التعامل مع الانفصال والراحة والطعام، وتجنب مقارنة الطفل بأطفال آخرين أو فرض مدة محددة للتأقلم. لا تقدم هذه الصفحة وعدًا تربويًا أو تشخيصًا.",
+        "en": "Each child responds differently to a new setting. Discuss a familiar arrival ritual, a communication channel and an appropriate first-day plan with the actual caregivers. Ask how they handle separation, rest and meals. Avoid comparing children or treating adjustment as a fixed deadline. This is general preparation, not clinical or developmental advice."
+      }
+    },
+    {
+      "slug": "privacy-and-pickup",
+      "title": {
+        "ar": "حماية خصوصية الطفل وسياسة الاستلام",
+        "en": "Child privacy and authorized collection"
+      },
+      "summary": {
+        "ar": "اعرف متى تُطلب البيانات ومن يملك حق الاطلاع عليها.",
+        "en": "Understand why information is collected and who can access it."
+      },
+      "body": {
+        "ar": "الاستفسار الأول لا يحتاج الاسم الكامل للطفل أو صورًا أو سجلًا صحيًا. عند التسجيل الفعلي ينبغي أن يشرح المشغل سبب كل مستند، ومدة الاحتفاظ به، ومن يستطيع الاطلاع عليه. اسأل عن سياسة تصوير الأطفال وموافقة ولي الأمر، وكيف تتحقق الإدارة من الشخص المصرح له بالاستلام. لا ترسل مستندات أو معلومات خاصة عبر نموذج تجريبي.",
+        "en": "An initial enquiry does not require a child's full identity, photo or medical history. During actual enrollment, the operator should explain why each record is needed, retention and authorized access. Ask how photography permissions and collection authorization are handled. Never upload identity documents or private records to an example website."
+      }
+    }
+  ]
+}
