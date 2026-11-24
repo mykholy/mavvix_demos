@@ -15,6 +15,7 @@ export function seedPortfolioVerticals(db, rootDir=process.cwd()) {
     {filename:'furniture.json',slug:'furniture',ar:'أوكلين ليفينج — أثاث حسب الطلب',en:'Oakline Living · Furniture Design'},
     {filename:'interiors-kitchens.json',slug:'interiors-kitchens',ar:'فورما — تصميم مطابخ ودريسنج',en:'Forma Atelier · Kitchen and Interiors'} ,
     {filename:'fitness.json',slug:'fitness',ar:'بالس ديستريكت — تدريبات قوة ولياقة',en:'Pulse District · Fitness Club'},
+    {filename:'car-detailing.json',slug:'car-detailing',ar:'جلوس باي — غسيل وتلميع وحماية السيارات',en:'GlossBay · Car Detailing',wave:2},
   ];
   const addSite=db.prepare(`INSERT INTO portfolio_verticals(slug,name_ar,name_en,wave,published)
  VALUES (?,?,?,?,?) ON CONFLICT(slug) DO UPDATE SET
@@ -28,7 +29,7 @@ export function seedPortfolioVerticals(db, rootDir=process.cwd()) {
       const source=JSON.parse(fs.readFileSync(path.join(rootDir,'data','verticals',definition.filename),'utf8'));
       if(source.slug!==definition.slug)throw new Error('Sector slug mismatch: '+definition.filename);
       if(!source.slug || source.services.length<8) throw new Error('Incomplete sector content: '+definition.filename);
-      addSite.run(source.slug,definition.ar,definition.en,1,1);
+      addSite.run(source.slug,definition.ar,definition.en,definition.wave||1,1);
       for(const service of source.services) {
         addService.run('portfolio:'+source.slug+':'+service.slug,source.slug,service.slug,service.category,JSON.stringify(service));
       }
