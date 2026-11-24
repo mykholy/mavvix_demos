@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Readex+Pro:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap');
@@ -221,3 +222,10 @@ button:disabled {
 .motion-shell[lang="ar"]{font-family:'Readex Pro','Tajawal',sans-serif;}
 .motion-shell[lang="ar"] .motion-display{font-family:'Readex Pro','Tajawal',sans-serif;font-weight:700;letter-spacing:0;line-height:1.23;}
 .motion-shell{overflow-x:clip;}
+
+/* PawWell: lighthearted veterinary care editorial styling; distinct from BloomSteps' classroom styling. */
+.pawwell-shell[lang="en"]{font-family:'Quicksand','Nunito',system-ui,sans-serif;}
+.pawwell-shell[lang="en"] .paw-display{font-family:'Quicksand','Nunito',sans-serif;font-weight:700;letter-spacing:-.035em;}
+.pawwell-shell[lang="ar"]{font-family:'Readex Pro','Tajawal',sans-serif;}
+.pawwell-shell[lang="ar"] .paw-display{font-family:'Readex Pro','Tajawal',sans-serif;font-weight:700;letter-spacing:0;line-height:1.28;}
+.pawwell-shell{overflow-x:clip;}
