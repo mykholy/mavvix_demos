@@ -1,0 +1,471 @@
+{
+  "slug": "physiotherapy",
+  "brand": "Motion Lab",
+  "classification": "Mavvix healthcare website design concept; not an operating physiotherapy clinic, medical appointment or licensed therapy provider.",
+  "services": [
+    {
+      "slug": "initial-movement-assessment",
+      "rank": 1,
+      "category": "assessment",
+      "title": {
+        "ar": "تقييم حركة أولي",
+        "en": "Initial movement assessment"
+      },
+      "durations": [
+        45,
+        60
+      ],
+      "summary": {
+        "ar": "فهم أهداف الحركة والنشاط اليومي قبل بناء برنامج مناسب من مشغّل طبي مؤهل.",
+        "en": "Clarify functional goals and movement context before a qualified provider creates any program."
+      },
+      "body": {
+        "ar": "في أول زيارة حقيقية للعلاج الطبيعي، قد يجمع المتخصص معلومات أساسية عن الوظائف اليومية ويحدد خطوات التقييم والفحص وفق الحاجة والضوابط المهنية. الموقع التوضيحي لا يشخص أي مشكلة ولا يقرر عدد الجلسات، لكنه يشرح للزائر ما الذي يستفسر عنه وما الذي ينبغي توقعه من الفريق الحقيقي. لا ترسل تقارير طبية أو صور أشعة أو وصفًا تفصيليًا للأعراض إلى نموذج معرض الأعمال.",
+        "en": "A real physiotherapy first visit may begin with a discussion of everyday function, professional assessment and shared goals. The actual practitioner decides which examination or referral is appropriate. This portfolio experience does not diagnose conditions, prescribe exercises, estimate the number of visits or ask visitors to upload medical records. Its purpose is to demonstrate a well-structured first-appointment enquiry."
+      },
+      "questions": {
+        "ar": [
+          "ما هدف الحركة الوظيفي الذي تحب مناقشته مع أخصائي؟",
+          "هل الخدمات والمختصون والمواعيد معتمدون من الجهة المشغلة؟",
+          "هل تُجمع المعلومات السريرية داخل نظام محمي، وليس نموذجًا عامًا؟"
+        ],
+        "en": [
+          "What broad functional goal will you discuss with a qualified professional?",
+          "Are staff credentials, service availability and visit times verified by the real operator?",
+          "Are clinical records kept in an authorized secure system rather than a public enquiry form?"
+        ]
+      }
+    },
+    {
+      "slug": "back-neck-function",
+      "rank": 2,
+      "category": "mobility",
+      "title": {
+        "ar": "الحركة اليومية للظهر والرقبة",
+        "en": "Everyday back and neck movement"
+      },
+      "durations": [
+        30,
+        45,
+        60
+      ],
+      "summary": {
+        "ar": "فهم سياق الجلوس والانتقال والنشاط اليومي مع توجيه الاختيار لمتخصص عند الحاجة.",
+        "en": "A function-focused discussion of everyday sitting, movement and activity with clinician-led decisions."
+      },
+      "body": {
+        "ar": "قد ترتبط صعوبات الحركة اليومية بعوامل كثيرة لا يمكن استنتاجها من صفحة إلكترونية أو إجابات بسيطة. يحتاج التخطيط الجيد إلى اختصاصي مرخص يراجع الشخص والسياق الوظيفي والأهداف المناسبة، وربما يوصي بتقييم طبي آخر. يقدم الموقع شرحًا للمسار الممكن من الاستفسار إلى التقييم، لا تمارين علاجية مخصصة ولا علاجًا مضمونًا لألم الظهر أو الرقبة.",
+        "en": "Everyday back and neck movement involves a complex combination of activities, habits and individual circumstances. A qualified clinician assesses suitability and may recommend other medical evaluation. The website explains how a client could request a function-oriented assessment and prepare general logistical preferences, but it cannot prescribe exercises, confirm a diagnosis or promise pain relief."
+      },
+      "questions": {
+        "ar": [
+          "ما هدف الحركة الوظيفي الذي تحب مناقشته مع أخصائي؟",
+          "هل الخدمات والمختصون والمواعيد معتمدون من الجهة المشغلة؟",
+          "هل تُجمع المعلومات السريرية داخل نظام محمي، وليس نموذجًا عامًا؟"
+        ],
+        "en": [
+          "What broad functional goal will you discuss with a qualified professional?",
+          "Are staff credentials, service availability and visit times verified by the real operator?",
+          "Are clinical records kept in an authorized secure system rather than a public enquiry form?"
+        ]
+      }
+    },
+    {
+      "slug": "sports-return-planning",
+      "rank": 3,
+      "category": "sports",
+      "title": {
+        "ar": "تخطيط العودة للنشاط الرياضي",
+        "en": "Sport return-to-activity planning"
+      },
+      "durations": [
+        45,
+        60,
+        75
+      ],
+      "summary": {
+        "ar": "تنسيق أهداف العودة التدريجية للنشاط مع فريق تأهيل حقيقي بدل وعود بمواعيد تعافٍ ثابتة.",
+        "en": "A staged discussion of returning to activity with actual clinical oversight, not a guaranteed timeline."
+      },
+      "body": {
+        "ar": "العودة إلى الرياضة بعد إصابة أو انقطاع تحتاج تقييمًا فرديًا لمستوى الحركة والتحمل ومتطلبات الرياضة واعتبارات السلامة، ويقررها المتخصص بناءً على الحالة الحقيقية. لا يقدم هذا الموقع اختبارات أهلية رياضية افتراضية ولا يَعِد بتاريخ محدد للعودة للملاعب. يمكن للزائر فقط اختيار نوع المسار الذي يرغب في الاستفسار بشأنه.",
+        "en": "Returning to sport after an injury or a prolonged break is an individualized process. Physical demands differ across running, football, racket sports and strength activity. A qualified rehabilitation team must assess safety and readiness. This concept presents a pathway for asking about sports rehabilitation, not a return-to-play clearance, treatment plan or guaranteed recovery timeline."
+      },
+      "questions": {
+        "ar": [
+          "ما هدف الحركة الوظيفي الذي تحب مناقشته مع أخصائي؟",
+          "هل الخدمات والمختصون والمواعيد معتمدون من الجهة المشغلة؟",
+          "هل تُجمع المعلومات السريرية داخل نظام محمي، وليس نموذجًا عامًا؟"
+        ],
+        "en": [
+          "What broad functional goal will you discuss with a qualified professional?",
+          "Are staff credentials, service availability and visit times verified by the real operator?",
+          "Are clinical records kept in an authorized secure system rather than a public enquiry form?"
+        ]
+      }
+    },
+    {
+      "slug": "knee-joint-function",
+      "rank": 4,
+      "category": "mobility",
+      "title": {
+        "ar": "وظائف الركبة والمفاصل",
+        "en": "Knee and joint function"
+      },
+      "durations": [
+        30,
+        45,
+        60
+      ],
+      "summary": {
+        "ar": "التعامل مع أهداف المشي والجلوس والسلالم بوصفها أنشطة تحتاج تقييمًا مهنيًا لا تشخيصًا ذاتيًا.",
+        "en": "Frame goals around daily functions such as walking or stairs, leaving assessment to licensed practitioners."
+      },
+      "body": {
+        "ar": "الحركة في المفاصل مرتبطة بعوامل متعددة مثل التحمل والقوة والوظائف اليومية، ولا يمكن تحديد سبب أي صعوبة من سؤال عام في نموذج. يعرض الموقع المعلومات التعليمية التي قد يحتاج الزائر معرفتها عند اختيار خدمة تقييم الحركة، مع توضيح أهمية وجود برنامج مناسب مبني على فحص حقيقي وتفويض الطبيب أو المعالج المختص عند الحاجة.",
+        "en": "Joint movement and daily activities such as walking or stairs may change for many different reasons. A public portfolio form should not ask the visitor to diagnose a knee problem or report confidential symptoms. The site describes a possible assessment-first service and leaves exercise selection, rehabilitation decisions and referral needs to qualified professionals."
+      },
+      "questions": {
+        "ar": [
+          "ما هدف الحركة الوظيفي الذي تحب مناقشته مع أخصائي؟",
+          "هل الخدمات والمختصون والمواعيد معتمدون من الجهة المشغلة؟",
+          "هل تُجمع المعلومات السريرية داخل نظام محمي، وليس نموذجًا عامًا؟"
+        ],
+        "en": [
+          "What broad functional goal will you discuss with a qualified professional?",
+          "Are staff credentials, service availability and visit times verified by the real operator?",
+          "Are clinical records kept in an authorized secure system rather than a public enquiry form?"
+        ]
+      }
+    },
+    {
+      "slug": "shoulder-arm-mobility",
+      "rank": 5,
+      "category": "mobility",
+      "title": {
+        "ar": "حركة الكتف والذراع",
+        "en": "Shoulder and arm mobility"
+      },
+      "durations": [
+        30,
+        45,
+        60
+      ],
+      "summary": {
+        "ar": "عرض أهداف الحركة الوظيفية والأنشطة اليومية دون ادعاء تحديد سبب أي محدودية عن بعد.",
+        "en": "Explore functional goals for reaching and daily tasks without remote diagnosis."
+      },
+      "body": {
+        "ar": "يستخدم الإنسان الكتف والذراع في أنشطة متكررة مثل الوصول للأشياء والعمل والرياضة. لو احتاج شخص مساعدة مهنية، يحدد المعالج الفحوص المناسبة ونطاق العمل بحسب الحالة بعد التقييم المباشر. لا يمكن للموقع أن يعد باستعادة مدى حركة معين أو يوصف حركات شخصية من دون مراجعة سريرية، ولذلك يقتصر نموذج الاستفسار على نوع الخدمة ورغبة التواصل.",
+        "en": "Shoulder and arm function supports reaching, lifting and work tasks, but reduced movement has many potential explanations. A real assessment may examine functional demands and individual factors. This example website cannot choose personalized exercises, promise a specific range-of-motion improvement or replace a clinician-led evaluation."
+      },
+      "questions": {
+        "ar": [
+          "ما هدف الحركة الوظيفي الذي تحب مناقشته مع أخصائي؟",
+          "هل الخدمات والمختصون والمواعيد معتمدون من الجهة المشغلة؟",
+          "هل تُجمع المعلومات السريرية داخل نظام محمي، وليس نموذجًا عامًا؟"
+        ],
+        "en": [
+          "What broad functional goal will you discuss with a qualified professional?",
+          "Are staff credentials, service availability and visit times verified by the real operator?",
+          "Are clinical records kept in an authorized secure system rather than a public enquiry form?"
+        ]
+      }
+    },
+    {
+      "slug": "post-procedure-coordination",
+      "rank": 6,
+      "category": "recovery",
+      "title": {
+        "ar": "متابعة التأهيل بعد الإجراءات الطبية",
+        "en": "Post-procedure rehabilitation coordination"
+      },
+      "durations": [
+        45,
+        60,
+        75
+      ],
+      "summary": {
+        "ar": "استفسار تنظيمي عن برامج تأهيل لا تبدأ إلا بتوصية وموافقة الفريق الطبي المعالج.",
+        "en": "Logistics for clinician-authorized rehabilitation plans after a medical procedure."
+      },
+      "body": {
+        "ar": "قد تحتاج بعض الحالات إلى تنسيق بين الطبيب المعالج واختصاصي العلاج الطبيعي لتحديد متى يبدأ النشاط وما الممنوعات وحدود الحركة والتحميل. لا يملك موقع ترويجي افتراضي معلومات عن جراحة أي شخص ولا يجوز أن يفترض نوع التدخل أو يدعو إلى تمارين عامة بعده. سيتم استبدال هذه الصفحة بنص معتمد من صاحب المركز الحقيقي حسب تخصصاته والضوابط القانونية.",
+        "en": "Post-procedure rehabilitation may require coordination between the treating doctor and a licensed physiotherapist, including precautions, load limits and timing. A sample website has no access to surgery details and must not recommend general exercises after a procedure. A real operator should publish clinically reviewed information approved for its actual scope."
+      },
+      "questions": {
+        "ar": [
+          "ما هدف الحركة الوظيفي الذي تحب مناقشته مع أخصائي؟",
+          "هل الخدمات والمختصون والمواعيد معتمدون من الجهة المشغلة؟",
+          "هل تُجمع المعلومات السريرية داخل نظام محمي، وليس نموذجًا عامًا؟"
+        ],
+        "en": [
+          "What broad functional goal will you discuss with a qualified professional?",
+          "Are staff credentials, service availability and visit times verified by the real operator?",
+          "Are clinical records kept in an authorized secure system rather than a public enquiry form?"
+        ]
+      }
+    },
+    {
+      "slug": "balance-and-mobility",
+      "rank": 7,
+      "category": "functional",
+      "title": {
+        "ar": "التوازن والحركة الوظيفية",
+        "en": "Balance and functional mobility"
+      },
+      "durations": [
+        45,
+        60,
+        75
+      ],
+      "summary": {
+        "ar": "توضيح كيف يناقش مركز متخصص الأهداف اليومية والبيئة والسلامة قبل وضع مسار فردي.",
+        "en": "Clarify how a real care team can discuss everyday mobility goals and safety needs."
+      },
+      "body": {
+        "ar": "التوازن أثناء المشي والتحرك في المنزل أو مكان العمل يحتاج اهتمامًا بالبيئة والمساعدة المناسبة، لكن سبب أي صعوبة قد يختلف بين الأشخاص. يجب ألا يستبدل الموقع التقييم السريري أو يعطي ضمانًا بمنع السقوط. في سياق موقع عميل فعلي تُعرض برامج الحركة فقط بعد مراجعة اختصاصيين وبيان حدود الخدمات ومتى يلزم طلب تقييم طبي عاجل.",
+        "en": "Balance and safe movement involve environmental factors, daily activities and individual capability. A legitimate provider may assess function and recommend relevant safety support, but a website cannot establish the cause of difficulty or guarantee that falls will be prevented. The example keeps the enquiry administrative and non-diagnostic."
+      },
+      "questions": {
+        "ar": [
+          "ما هدف الحركة الوظيفي الذي تحب مناقشته مع أخصائي؟",
+          "هل الخدمات والمختصون والمواعيد معتمدون من الجهة المشغلة؟",
+          "هل تُجمع المعلومات السريرية داخل نظام محمي، وليس نموذجًا عامًا؟"
+        ],
+        "en": [
+          "What broad functional goal will you discuss with a qualified professional?",
+          "Are staff credentials, service availability and visit times verified by the real operator?",
+          "Are clinical records kept in an authorized secure system rather than a public enquiry form?"
+        ]
+      }
+    },
+    {
+      "slug": "workplace-movement",
+      "rank": 8,
+      "category": "functional",
+      "title": {
+        "ar": "التنقل والعمل والبيئة المكتبية",
+        "en": "Workplace movement and ergonomics"
+      },
+      "durations": [
+        30,
+        45,
+        60
+      ],
+      "summary": {
+        "ar": "تقييم عام لاحتياجات الحركة أثناء العمل مع ترك الملاحظة السريرية والخطط للأخصائي.",
+        "en": "Explore movement needs around desks and work tasks while leaving clinical decisions to professionals."
+      },
+      "body": {
+        "ar": "قد تتضمن تجربة موقع متخصص محتوى توضيحيًا عن تنويع الأنشطة ومراجعة بيئة العمل وطرح أسئلة للاستشارة حول الوظائف اليومية، لكن لا يمكن إثبات أن تعديل الكرسي أو تغيير وضعية معينة سيعالج حالة طبية. يمنع هذا النموذج جمع بيانات حساسة تخص جهة العمل أو الصحة، ويترك القرار العلاجي للجهة المشغلة الحقيقية.",
+        "en": "Workplace movement content can explain why tasks, working conditions and general activity patterns might matter to a professional consultation. It should not imply that a specific desk position treats a medical condition. The live clinic would need to approve any advice, while the public enquiry collects only broad service and location preferences."
+      },
+      "questions": {
+        "ar": [
+          "ما هدف الحركة الوظيفي الذي تحب مناقشته مع أخصائي؟",
+          "هل الخدمات والمختصون والمواعيد معتمدون من الجهة المشغلة؟",
+          "هل تُجمع المعلومات السريرية داخل نظام محمي، وليس نموذجًا عامًا؟"
+        ],
+        "en": [
+          "What broad functional goal will you discuss with a qualified professional?",
+          "Are staff credentials, service availability and visit times verified by the real operator?",
+          "Are clinical records kept in an authorized secure system rather than a public enquiry form?"
+        ]
+      }
+    },
+    {
+      "slug": "home-program-discussion",
+      "rank": 9,
+      "category": "functional",
+      "title": {
+        "ar": "مناقشة برنامج حركة منزلي",
+        "en": "Home exercise program consultation"
+      },
+      "durations": [
+        30,
+        45,
+        60
+      ],
+      "summary": {
+        "ar": "استفسار عن كيفية متابعة خطة معتمدة من المعالج المختص بدل توليد وصفات تمارين آلية.",
+        "en": "Discuss practical follow-up for a program prescribed by an actual professional, never automated prescriptions."
+      },
+      "body": {
+        "ar": "التعليمات المنزلية في العلاج الطبيعي يجب أن تكون ملائمة لما تم تقييمه عمليًا وتشرح حدود الجهد وطريقة المتابعة ومتى يجب الرجوع للمتخصص. هذا الموقع لا يولد تمارين شخصية ولا يحفظ فيديوهات المرضى أو يطلب بيانات تشخيص، بل يقدم مسار تواصل تنظيمي لتسليم خطة موثقة عند وجود مركز حقيقي وطاقم مؤهل.",
+        "en": "Home exercise plans should be individualized, reviewed for suitability and monitored by an actual qualified clinician. The website does not generate personalized exercises or store clinical videos or test results. Its role is to show how a real practice could organize follow-up communication for an approved plan."
+      },
+      "questions": {
+        "ar": [
+          "ما هدف الحركة الوظيفي الذي تحب مناقشته مع أخصائي؟",
+          "هل الخدمات والمختصون والمواعيد معتمدون من الجهة المشغلة؟",
+          "هل تُجمع المعلومات السريرية داخل نظام محمي، وليس نموذجًا عامًا؟"
+        ],
+        "en": [
+          "What broad functional goal will you discuss with a qualified professional?",
+          "Are staff credentials, service availability and visit times verified by the real operator?",
+          "Are clinical records kept in an authorized secure system rather than a public enquiry form?"
+        ]
+      }
+    },
+    {
+      "slug": "movement-education",
+      "rank": 10,
+      "category": "education",
+      "title": {
+        "ar": "جلسة تعليم حركة وظيفية",
+        "en": "Functional movement education"
+      },
+      "durations": [
+        30,
+        45,
+        60
+      ],
+      "summary": {
+        "ar": "توضيح أساسيات فهم الحركة والبرنامج وكيفية متابعة الأهداف مع أخصائي حقيقي.",
+        "en": "An educational conversation about functional goals and reviewing an approved movement program."
+      },
+      "body": {
+        "ar": "من المفيد أن يفهم المراجع لماذا يتابع مركز متخصص أهدافًا وظيفية واضحة وكيف يتم توثيق القرارات بعد التقييم، لكن أي مواد تعليمية عامة لا تصلح لتشخيص مرض أو وصف تدخل علاجي. لا يقدم هذا النموذج نسب تحسن أو تجارب نجاح لمرضى غير موجودين، ويمكن لصاحب المركز الفعلي مراجعة هذا النوع من المحتوى قبل النشر.",
+        "en": "Movement education can explain why clear functional goals and documented follow-up are useful, but general information cannot replace diagnosis or professional assessment. This concept does not claim recovery percentages, real patient outcomes or clinical approvals. Any future provider must review and approve material before publication."
+      },
+      "questions": {
+        "ar": [
+          "ما هدف الحركة الوظيفي الذي تحب مناقشته مع أخصائي؟",
+          "هل الخدمات والمختصون والمواعيد معتمدون من الجهة المشغلة؟",
+          "هل تُجمع المعلومات السريرية داخل نظام محمي، وليس نموذجًا عامًا؟"
+        ],
+        "en": [
+          "What broad functional goal will you discuss with a qualified professional?",
+          "Are staff credentials, service availability and visit times verified by the real operator?",
+          "Are clinical records kept in an authorized secure system rather than a public enquiry form?"
+        ]
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slug": "first-appointment",
+      "title": {
+        "ar": "الزيارة الأولى للعلاج الطبيعي: إيه اللي تعرفه قبل الحجز؟",
+        "en": "Your first physiotherapy visit: useful expectations"
+      },
+      "summary": {
+        "ar": "فرق بين طلب التواصل، وتقييم الاختصاصي، وتأكيد برنامج مناسب.",
+        "en": "Separate a first-visit enquiry from professional examination and an individualized plan."
+      },
+      "body": {
+        "ar": "الزيارة الأولى لأي مركز علاج طبيعي حقيقي قد تبدأ بتوضيح الأهداف الوظيفية اليومية ومناقشة الظروف العامة ثم تقييم اختصاصي مرخص وفق الأنظمة المحلية. ما يحدث عمليًا يعتمد على حالة الفرد وتخصص المؤسسة وضرورة الإحالة الطبية أو الفحوص الأخرى عند الحاجة. من المهم سؤال المركز عن الترخيص، وأسماء المختصين الحقيقية، ورسوم التقييم، والخصوصية، وما إذا كانت الجلسة تتضمن تقييمًا فقط أم تدخلًا محددًا. لا ينبغي إرسال سجلات طبية أو صور أشعة إلى نموذج عام هدفه تجربة موقع برمجي، ولا يعني اختيار يوم مفضل حجزًا مؤكدًا.",
+        "en": "An actual initial physiotherapy appointment may include a discussion of functional goals, professional examination and an agreed approach to follow-up. Its exact content depends on the clinic's scope and the individual's circumstances. Useful administrative questions include verified practitioner credentials, assessment fees, privacy arrangements and whether a referral may be necessary. Avoid placing medical histories or investigation images into a public website portfolio form. An enquiry or preferred date is not a confirmed clinical appointment."
+      }
+    },
+    {
+      "slug": "goals-over-guarantees",
+      "title": {
+        "ar": "ليه أهداف الحركة أوضح من وعود التعافي السريع؟",
+        "en": "Functional goals matter more than recovery promises"
+      },
+      "summary": {
+        "ar": "أهداف ملموسة قابلة للمراجعة أفضل من نسب شفاء أو تواريخ غير موثقة.",
+        "en": "Discuss realistic functional goals with clinicians instead of purchasing a recovery guarantee."
+      },
+      "body": {
+        "ar": "قد يركز الأشخاص عند طلب التأهيل على العودة لنشاط معين أو القدرة على القيام بمهام يومية بسهولة أكبر. هذه الأهداف تساعد في فتح حوار مع المتخصص حول ما يجب تقييمه، لكنها لا تعني أن النتيجة أو توقيتها مضمونان. تختلف القرارات بحسب الحالة والتقييم والظروف، ولا يصح أن تعرض شركة مواقع نتائج مرضى مزيفة أو تعتمد شعارًا مثل 'شفاء مضمون'. في موقع مركز حقيقي، يحتاج وصف البرامج إلى مراجعة الفريق الطبي والالتزام بالأنظمة المهنية والإعلانية السارية.",
+        "en": "People may seek rehabilitation because they want to return to an activity, resume a familiar task or improve confidence in daily movement. Such goals can inform a consultation, but they do not establish an outcome, recovery timeline or appropriate exercise prescription. Published claims must be supported by the real service provider and clinical evidence. A design showcase must never invent patient testimonials, clinician certifications or promises of guaranteed recovery."
+      }
+    },
+    {
+      "slug": "movement-followup",
+      "title": {
+        "ar": "متابعة برنامج حركة: أسئلة تنظيمية مهمة",
+        "en": "Following up on a movement plan: administrative essentials"
+      },
+      "summary": {
+        "ar": "كيف يناقش العميل خطوات المتابعة والخصوصية والمواعيد مع الجهة المعالجة؟",
+        "en": "Prepare questions about follow-up logistics, privacy and clinician-approved instructions."
+      },
+      "body": {
+        "ar": "تحديد مواعيد المراجعة أو طريقة التواصل مع الفريق المعالج يجب أن يعتمد على برنامج تم وضعه فعلًا بعد تقييم مناسب. عند الاتفاق مع مركز متخصص، يمكن سؤال فريق الاستقبال عن وقت الزيارة، وسياسة التأجيل، ووسائل التواصل الآمنة، وكيفية الحصول على تعليمات مكتوبة معتمدة. لا يطلب هذا الموقع نسخًا من التقارير أو ملفات الحالات، ولا يقدم تدريبًا علاجيًا عن بعد بدون ترخيص أو موافقة جهة مؤهلة. الهدف تجنب الخلط بين صفحة معلومات عامة ونظام سجلات مرضى محمي.",
+        "en": "Follow-up timing and instructions should emerge from an actual clinical assessment. Practical questions for the real provider include cancellation policies, approved communication channels, written instructions and what happens when a planned visit cannot take place. A portfolio site should not solicit treatment records or function as a telehealth platform without suitable legal and clinical safeguards. Its first-contact experience remains administrative and non-diagnostic."
+      }
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "ar": "هل أقدر أحدد عدد الجلسات من الموقع؟",
+        "en": "Does this site determine the number of sessions?"
+      },
+      "a": {
+        "ar": "لا، العدد والخطة يحددهما اختصاصي حقيقي بعد التقييم.",
+        "en": "No, only a qualified provider can decide on an appropriate plan after assessment."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل اختيار الموعد يعني الحجز؟",
+        "en": "Is my appointment confirmed when I pick a date?"
+      },
+      "a": {
+        "ar": "لا، هذا طلب اهتمام تجريبي لا يخص مركزًا يعمل فعليًا.",
+        "en": "No, this is a saved sample enquiry, not an operating clinic's booked slot."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل يتم طلب تقارير أو أشعة؟",
+        "en": "Do you need scans or medical records?"
+      },
+      "a": {
+        "ar": "لا ترسل أي بيانات صحية أو مستندات عبر هذا النموذج العام.",
+        "en": "Never submit clinical records, test results or sensitive health information to this portfolio form."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل الأخصائيون المعروضون مرخصون؟",
+        "en": "Are the displayed professionals licensed?"
+      },
+      "a": {
+        "ar": "الموقع لا يعرض أسماء معالجين حقيقيين أو يدّعي اعتمادات مهنية.",
+        "en": "No named clinicians or professional credentials are presented in this fictional design."
+      }
+    },
+    {
+      "q": {
+        "ar": "ماذا أفعل في طوارئ صحية؟",
+        "en": "What should I do in a medical emergency?"
+      },
+      "a": {
+        "ar": "هذا الموقع لا يوفر نصيحة طبية أو خدمة طوارئ؛ اطلب مساعدة طبية عاجلة محليًا.",
+        "en": "This concept is not emergency medical care. Use appropriate local emergency medical services."
+      }
+    }
+  ],
+  "intake": {
+    "visitTypes": [
+      "first-assessment",
+      "follow-up-interest"
+    ],
+    "goalTypes": [
+      "daily-movement",
+      "sport-readiness",
+      "workplace-function",
+      "general-education"
+    ],
+    "regions": [
+      "Cairo",
+      "Giza",
+      "Alexandria",
+      "Riyadh",
+      "Jeddah",
+      "Other"
+    ],
+    "windows": [
+      "morning",
+      "afternoon",
+      "evening",
+      "flexible"
+    ]
+  }
+}
