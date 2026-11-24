@@ -392,7 +392,40 @@ try {
   assert.equal(bloomAgain.status,200);assert.equal(bloomDuplicate.refNumber,bloomReceipt.refNumber);assert.equal(bloomDuplicate.duplicate,true);
   console.log('PASS: '+2*bloomRoutes.length+' localized nursery routes, guardian-only persisted request and privacy validation');
 
-  console.log('PASS: auth guard, flow validation, Academy SQLite progress, trusted ecommerce price, private receipt');
+
+  const glossRoutes=['','packages','packages/studio-wash','packages/interior-detail','packages/ceramic-protection',
+   'quote','journal','journal/coating-vs-ppf','journal/before-detail',
+   'detailing','ceramic','gallery','fleet','process','about','contact','faq'];
+  for(const locale of ['ar','en'])for(const route of glossRoutes){
+   const url='/'+locale+'/preview/car-detailing'+(route?'/'+route:'');
+   const response=await get(url);
+   assert.equal(response.status,200,'GlossBay route failed: '+url);
+   const html=await response.text();
+   assert.ok(html.includes('data-mavvix-contact-dock'),'Missing Mavvix contact dock on GlossBay '+url);
+  }
+  const quoteDate=new Date(Date.now()+3*86400000).toISOString().slice(0,10);
+  const glossReq={flowType:'car_detailing_quote_request',clientRequestId:'99999999-9999-4999-8999-999999999999',
+   vehicleSize:'sedan',treatment:'ceramic-protection',addons:['trunk','wheels'],
+   condition:'new-vehicle',requestedDate:quoteDate,requestedWindow:'flexible',
+   city:'Giza',guestName:'QA Detailing',guestPhone:'01000000000',consent:true,honeypot:'',
+   utm:{source:'qa',medium:'integration',campaign:'car-detailing'}};
+  assert.equal((await post('/api/portfolio/car-detailing',{...glossReq,consent:false})).status,400,'GlossBay rejects requests without consent');
+  assert.equal((await post('/api/portfolio/car-detailing',{...glossReq,vehicleSize:'truck-100'})).status,400,'GlossBay rejects invented vehicle size');
+  assert.equal((await post('/api/portfolio/car-detailing',{...glossReq,addons:['trunk','trunk']})).status,400,'GlossBay blocks duplicate add-ons');
+  assert.equal((await post('/api/portfolio/car-detailing',{...glossReq,treatment:'not-real'})).status,400,'GlossBay validates authored treatment');
+  const glossSaved=await post('/api/portfolio/car-detailing',glossReq);
+  const glossReceipt=await glossSaved.json();
+  assert.equal(glossSaved.status,201,'GlossBay request persistence failed: '+JSON.stringify(glossReceipt));
+  assert.match(glossReceipt.refNumber,/^MVX-GB-[A-F0-9]+$/);
+  assert.equal(glossReceipt.status,'pending_operator_confirmation');
+  const glossAgain=await post('/api/portfolio/car-detailing',glossReq);
+  const glossDuplicate=await glossAgain.json();
+  assert.equal(glossAgain.status,200);
+  assert.equal(glossDuplicate.duplicate,true);
+  assert.equal(glossDuplicate.refNumber,glossReceipt.refNumber);
+  console.log('PASS: '+(glossRoutes.length*2)+' bilingual GlossBay routes and idempotent vehicle-size/add-on quote with strict negatives');
+
+   console.log('PASS: auth guard, flow validation, Academy SQLite progress, trusted ecommerce price, private receipt');
 } catch (error) {
   console.error(error);
   console.error('Server tail:', output.slice(-5000));
