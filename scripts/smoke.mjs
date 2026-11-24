@@ -457,6 +457,41 @@ try {
   assert.equal(motionReplay.refNumber,motionReceipt.refNumber);
   console.log('PASS: 34 bilingual Motion Lab routes, no-PHI form rejection and saved idempotent pending enquiry');
 
+
+  // PawWell: pet-species-aware request and explicit no-medical-history safety policy.
+  const pawRoutes=['','pets','services','services/wellness-visit','services/vaccination-review',
+    'request','guides','guides/pet-first-visit','prevention','team','emergencies',
+    'process','about','contact','questions','care-plan'];
+  for(const locale of ['ar','en'])for(const route of pawRoutes){
+    const url='/'+locale+'/preview/veterinary'+(route?'/'+route:'');
+    const response=await get(url);
+    assert.equal(response.status,200,'PawWell route failed: '+url);
+    assert.ok((await response.text()).includes('data-mavvix-contact-dock'),'Missing Mavvix dock on '+url);
+  }
+  const vetDate=new Date(Date.now()+4*86400000).toISOString().slice(0,10);
+  const vetReq={flowType:'veterinary_visit_interest',clientRequestId:'55555555-5555-4555-8555-555555555555',
+    species:'dog',ageBand:'adult',serviceSlug:'wellness-visit',visitPreference:'clinic',
+    preferredDate:vetDate,preferredWindow:'flexible',region:'Cairo',
+    guestName:'QA Pet Guardian',guestPhone:'01000000000',consent:true,honeypot:'',
+    utm:{source:'qa',medium:'integration',campaign:'veterinary'}};
+  assert.equal((await post('/api/portfolio/veterinary',{...vetReq,consent:false})).status,400,
+    'Veterinary intake without consent must be rejected');
+  assert.equal((await post('/api/portfolio/veterinary',{...vetReq,species:'bird',serviceSlug:'puppy-kitten-visit'})).status,400,
+    'Veterinary intake must reject species-service mismatches');
+  assert.equal((await post('/api/portfolio/veterinary',{...vetReq,medicalHistory:'DO NOT COLLECT'})).status,400,
+    'Veterinary public enquiry must not collect medical history');
+  const response=await post('/api/portfolio/veterinary',vetReq);
+  const result=await response.json();
+  assert.equal(response.status,201,'PawWell enquiry not saved: '+JSON.stringify(result));
+  assert.match(result.refNumber,/^MVX-VET-[A-F0-9]+$/);
+  assert.equal(result.status,'pending_operator_confirmation');
+  const duplicate=await post('/api/portfolio/veterinary',vetReq);
+  const second=await duplicate.json();
+  assert.equal(duplicate.status,200);
+  assert.equal(second.duplicate,true);
+  assert.equal(second.refNumber,result.refNumber);
+  console.log('PASS: 32 bilingual PawWell routes, strict pet-species validation and idempotent pending visit receipt');
+
   console.log('PASS: auth guard, flow validation, Academy SQLite progress, trusted ecommerce price, private receipt');
 } catch (error) {
   console.error(error);
