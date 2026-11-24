@@ -38,6 +38,8 @@ const cases=[
  ['nursery',''],['nursery','age-groups'],['nursery','programs/curious-toddlers'],['nursery','curriculum'],['nursery','safety'],['nursery','gallery'],['nursery','admissions'],['nursery','journal/first-nursery-visit'],
  ['car-detailing',''],['car-detailing','packages'],['car-detailing','packages/ceramic-protection'],
  ['car-detailing','quote'],['car-detailing','journal/coating-vs-ppf'],['car-detailing','gallery'],
+ ['physiotherapy',''],['physiotherapy','services'],['physiotherapy','services/initial-movement-assessment'],
+ ['physiotherapy','appointment'],['physiotherapy','journal/first-appointment'],['physiotherapy','privacy'],
  ['showcase','']
 ];
 const viewports=[{name:'mobile-360',width:360,height:780},{name:'mobile-390',width:390,height:844},
