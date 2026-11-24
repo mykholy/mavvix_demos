@@ -285,6 +285,19 @@ const demos = [
       {ar:'سلة تصل 6 قطع برقم مرجعي دون سعر مختلق',en:'Saved six-item RFQ with nonbinding reference, no fake stock or price'}
     ],
     features:['Material/Finish Validation','Multi-piece RFQ Basket','No Invented Inventory']
+  },
+  {
+    number:'15',slug:'interiors-kitchens',
+    name:{ar:'فورما أتيليه — مطابخ وتصميم داخلي',en:'Forma Atelier — Kitchen & Interior Design'},
+    sector:{ar:'مطابخ وديكور وتخطيط مساحات',en:'Kitchen Design & Interior Planning'},
+    icon:Palette,color:'#B9866B',bgColor:'bg-stone-50',borderColor:'border-stone-200',routesCount:25,
+    tagline:{ar:'من تخطيط المطبخ والخامات إلى طلب تصميم بمقاسات استرشادية',en:'Architectural layout planning, materials and a measured design brief'},
+    journeys:[
+      {ar:'تخطيطات حرف L وU ومتوازي وجزيرة',en:'L, U, galley and island layout guidance'},
+      {ar:'اختيار الخامات وأسطح العمل والميزانية',en:'Finish, countertop and budget preferences'},
+      {ar:'طلب تصميم محفوظ دون سعر أو تصنيع مؤكد',en:'Validated persisted design brief without binding price'}
+    ],
+    features:['Layout-aware Wall Measurements','Material Selection','Nonbinding Design Brief']
   }
 ];
 
@@ -431,6 +444,8 @@ export default function ShowcasePage({ params }: Props) {
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#102B26]"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Pexels-jonathan-petersson-399187.jpg/1280px-Pexels-jonathan-petersson-399187.jpg" alt={isAr?'صورة تحريرية حقيقية لملعب ليلي':'CC0 real floodlit football pitch editorial photo'} className="w-full h-full object-cover"/></div>
                   : d.slug==='furniture'
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#EDE3D4]"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Living_room_%28Unsplash%29.jpg/1280px-Living_room_%28Unsplash%29.jpg" alt={isAr?'صورة CC0 حقيقية لصالون بكنبة زرقاء':'CC0 editorial blue sofa living room'} className="h-full w-full object-cover"/></div>
+                  : d.slug==='interiors-kitchens'
+                  ? <div className="relative h-52 w-full overflow-hidden bg-[#F4F0EA]"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Kitchen_Design.jpg/960px-Kitchen_Design.jpg" alt={isAr?'صورة تحريرية لتصميم مطبخ':'Editorial kitchen design photograph'} className="h-full w-full object-cover"/></div>
                   : <SectorPhoto sector={d.slug as keyof typeof SECTOR_IMAGES} alt="" className="h-52 w-full" />}
                 {/* Sector Overview */}
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">

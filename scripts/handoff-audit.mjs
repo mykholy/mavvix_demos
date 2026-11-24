@@ -137,3 +137,15 @@ console.log('PASS: bespoke floodlit Arena site with eight sport-format details a
 
 console.log('PASS: complete source-level route/section/media/localization structure for all 8 sectors');
 console.log('NOTE: structural checks and HTTP smoke tests do NOT validate client business identity, licensed media provenance, UX screenshots or operational fulfilment.');
+
+// Enforce completed source structure for both latest Wave 1 sectors.
+for(const [slug,shell,listing,intake] of [['furniture','oakline-shell','collections','quote'],['interiors-kitchens','forma-shell','services','consultation']]) {
+ const dir=join(root,slug),home=readFileSync(join(dir,'page.tsx'),'utf8'),layout=readFileSync(join(dir,'layout.tsx'),'utf8');
+ const data=JSON.parse(readFileSync(join(process.cwd(),'data/verticals',slug+'.json'),'utf8'));
+ assert.ok((home.match(/<section\b/g)||[]).length>=9,slug+' homepage needs nine substantive sections');
+ assert.ok((home.match(/data-sector-specific=/g)||[]).length>=4,slug+' needs four bespoke sections');
+ assert.ok(layout.includes(shell)&&layout.includes('<ContactDock'),slug+' identity/contact wrapper');
+ assert.ok(data.services.length>=8&&data.articles.length>=3&&data.faq.length>=5,slug+' domain content incomplete');
+ for(const route of [listing,listing+'/[slug]',intake,'journal','journal/[slug]','[section]'])assert.ok(existsSync(join(dir,route,'page.tsx')),slug+' missing '+route);
+ console.log('PASS: '+slug+' structural homepage, content and route-family gate');
+}

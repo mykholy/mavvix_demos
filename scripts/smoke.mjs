@@ -328,6 +328,51 @@ try {
   assert.equal(arenaDupe.duplicate,true);
   console.log('PASS: 30 bilingual Arena court routes and strict, persisted, nonbinding booking preference');
 
+  // Oakline and Forma: every actual detail route, not only the home page.
+  const oakRoutes=['','collections','quote','journal','rooms','materials','measurement-guide','projects','gallery','process','about','contact',
+    ...['modular-sofa','accent-armchair','oak-coffee-table','storage-console','platform-bed','wardrobe-front','dining-table','bench-seating','writing-desk','open-bookshelf'].map(s=>'collections/'+s),
+    ...['measuring-a-room','fabric-and-wood','delivery-access'].map(s=>'journal/'+s)];
+  const formaRoutes=['','services','consultation','journal','layouts','materials','measurement','process','gallery','finishes','about','contact','faq',
+    ...['l-shaped','u-shaped','galley','island','wardrobes','vanity','pantry','countertops','lighting'].map(s=>'services/'+s),
+    ...['measure-before-design','finishes-matter','layout-decision'].map(s=>'journal/'+s)];
+  for(const locale of ['ar','en']){
+    for(const [sector,routes] of [['furniture',oakRoutes],['interiors-kitchens',formaRoutes]]){
+      for(const route of routes){
+        const url='/'+locale+'/preview/'+sector+(route?'/'+route:'');
+        const response=await get(url);
+        assert.equal(response.status,200,'Missing industry route '+url);
+        assert.ok((await response.text()).includes('data-mavvix-contact-dock'),'Missing conversion dock '+url);
+      }
+      const missing=await get('/'+locale+'/preview/'+sector+'/not-a-real-section');
+      assert.equal(missing.status,404,'Unknown topic must return 404');
+    }
+  }
+  const oakBody={flowType:'furniture_custom_quote_request',clientRequestId:'66666666-6666-4666-8666-666666666666',
+    items:[{serviceSlug:'modular-sofa',room:'living',material:'linen',finish:'sand',widthMm:2400,depthMm:950,heightMm:850,quantity:2},
+      {serviceSlug:'oak-coffee-table',room:'living',material:'oak',finish:'natural',widthMm:1000,depthMm:600,heightMm:450,quantity:1}],
+    deliveryZone:'Cairo',designStage:'measurements_ready',guestName:'QA Furniture',guestPhone:'01000000000',consent:true,honeypot:''};
+  assert.equal((await post('/api/portfolio/furniture',{...oakBody,items:[{...oakBody.items[0],material:'oak'}]})).status,400,'Reject incompatible upholstery');
+  assert.equal((await post('/api/portfolio/furniture',{...oakBody,items:[{...oakBody.items[0],widthMm:4900}]})).status,400,'Reject out-of-range dimensions');
+  const oakSaved=await post('/api/portfolio/furniture',oakBody),oakReceipt=await oakSaved.json();
+  assert.equal(oakSaved.status,201,JSON.stringify(oakReceipt));
+  assert.match(oakReceipt.refNumber,/^MVX-OAK-[A-F0-9]+$/);
+  assert.equal(oakReceipt.status,'pending_operator_confirmation');
+  const oakRepeat=await post('/api/portfolio/furniture',oakBody),oakDupe=await oakRepeat.json();
+  assert.equal(oakRepeat.status,200);assert.equal(oakDupe.refNumber,oakReceipt.refNumber);assert.equal(oakDupe.duplicate,true);
+  const formaBody={flowType:'interior_design_brief',clientRequestId:'77777777-7777-4777-8777-777777777777',
+    serviceSlug:'l-shaped',layout:'L',wallLengthsCm:[320,260],floorAreaSqm:12,finish:'matte',countertop:'quartz',
+    budgetBand:'quotation-needed',timeline:'1-3-months',area:'Cairo',guestName:'QA Kitchen',guestPhone:'01000000000',consent:true,honeypot:''};
+  assert.equal((await post('/api/portfolio/interiors-kitchens',{...formaBody,consent:false})).status,400,'Consent required');
+  assert.equal((await post('/api/portfolio/interiors-kitchens',{...formaBody,wallLengthsCm:[320]})).status,400,'Wall count must match layout');
+  assert.equal((await post('/api/portfolio/interiors-kitchens',{...formaBody,wallLengthsCm:[50,260]})).status,400,'Reject invalid measurements');
+  const formaSaved=await post('/api/portfolio/interiors-kitchens',formaBody),formaReceipt=await formaSaved.json();
+  assert.equal(formaSaved.status,201,JSON.stringify(formaReceipt));
+  assert.match(formaReceipt.refNumber,/^MVX-FRM-[A-F0-9]+$/);
+  assert.equal(formaReceipt.status,'pending_operator_confirmation');
+  const formaRepeat=await post('/api/portfolio/interiors-kitchens',formaBody),formaDupe=await formaRepeat.json();
+  assert.equal(formaRepeat.status,200);assert.equal(formaDupe.refNumber,formaReceipt.refNumber);assert.equal(formaDupe.duplicate,true);
+  console.log('PASS: '+(2*(oakRoutes.length+formaRoutes.length))+' localized Oakline/Forma pages, two saved requests, invalid configurations and idempotency');
+
   console.log('PASS: auth guard, flow validation, Academy SQLite progress, trusted ecommerce price, private receipt');
 } catch (error) {
   console.error(error);

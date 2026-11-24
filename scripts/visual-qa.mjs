@@ -33,6 +33,8 @@ const cases=[
  ['salon-spa',''],['salon-spa','services'],['salon-spa','services/classic-manicure'],['salon-spa','booking'],['salon-spa','journal/choosing-treatment'],
  ['fitness',''],['fitness','classes'],['fitness','classes/foundations'],['fitness','trial'],['fitness','journal/starting-with-strength'],
  ['sports-venues',''],['sports-venues','courts'],['sports-venues','courts/padel-doubles'],['sports-venues','book'],['sports-venues','schedule'],
+ ['furniture',''],['furniture','collections'],['furniture','collections/modular-sofa'],['furniture','quote'],['furniture','gallery'],['furniture','journal/measuring-a-room'],
+ ['interiors-kitchens',''],['interiors-kitchens','services'],['interiors-kitchens','services/l-shaped'],['interiors-kitchens','consultation'],['interiors-kitchens','layouts'],['interiors-kitchens','gallery'],['interiors-kitchens','journal/measure-before-design'],
  ['showcase','']
 ];
 const viewports=[{name:'mobile-360',width:360,height:780},{name:'mobile-390',width:390,height:844},
