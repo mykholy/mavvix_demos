@@ -212,3 +212,17 @@ assert.equal(legalData.faq.length,5);
 for(const path of ['practices','practices/[slug]','consultation','insights','insights/[slug]','[section]'])
  assert.ok(existsSync(join(legalDir,path,'page.tsx')),'Lexora route missing: '+path);
 console.log('PASS: Lexora law firm distinct editorial homepage, 8 legal dossiers, 3 guides, strict no-confidential-facts intake');
+
+const accountingDir=join(root,'accounting');
+const accountingHome=readFileSync(join(accountingDir,'page.tsx'),'utf8');
+const accountingLayout=readFileSync(join(accountingDir,'layout.tsx'),'utf8');
+const ledgerData=JSON.parse(readFileSync(join(process.cwd(),'data/verticals/accounting.json'),'utf8'));
+assert.ok((accountingHome.match(/<section\b/g)||[]).length>=9,'LedgerPoint requires nine substantial homepage sections');
+assert.ok((accountingHome.match(/data-sector-specific=/g)||[]).length>=4,'LedgerPoint must have four accounting-only sections');
+assert.match(accountingLayout,/ledger-shell/);
+assert.match(accountingLayout,/<ContactDock/);
+assert.equal(ledgerData.services.length,8);assert.equal(ledgerData.articles.length,3);assert.equal(ledgerData.faq.length,5);
+for(const route of ['services','services/[slug]','quote','resources','resources/[slug]','[section]']){
+ assert.ok(existsSync(join(accountingDir,route,'page.tsx')),'Missing LedgerPoint route family: '+route);
+}
+console.log('PASS: unique LedgerPoint 11-section accounting website, 8 services, 3 guides and privacy-safe scope form');
