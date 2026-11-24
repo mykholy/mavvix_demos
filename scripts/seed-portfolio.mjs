@@ -18,6 +18,7 @@ export function seedPortfolioVerticals(db, rootDir=process.cwd()) {
     {filename:'car-detailing.json',slug:'car-detailing',ar:'جلوس باي — غسيل وتلميع وحماية السيارات',en:'GlossBay · Car Detailing',wave:2},
     {filename:'physiotherapy.json',slug:'physiotherapy',ar:'موشن لاب — العلاج الطبيعي والحركة الوظيفية',en:'Motion Lab · Physiotherapy',wave:2},
     {filename:'veterinary.json',slug:'veterinary',ar:'بوويل — رعاية الحيوانات الأليفة',en:'PawWell · Veterinary Clinic Website',wave:2},
+    {filename:'law-firm.json',slug:'law-firm',ar:'ليكسورا كاونسل — واجهة خدمات قانونية',en:'Lexora Counsel · Legal Practice Website',wave:2},
   ];
   const addSite=db.prepare(`INSERT INTO portfolio_verticals(slug,name_ar,name_en,wave,published)
  VALUES (?,?,?,?,?) ON CONFLICT(slug) DO UPDATE SET
