@@ -60,3 +60,9 @@ This section supersedes the earlier **2 in progress / 20 planned** counts above;
 - Strengthened `scripts/verify-vertical-registry.mjs` with explicit bilingual brand metadata uniqueness and prevention of starting Wave 2/3 while earlier-wave sectors remain planned. This gate is already invoked by `npm run test:unit`.
 - On previous SHA `68d067e`, [visual QA 45284110669](https://github.com/mykholy/mavvix_demos/actions/runs/45284110669) succeeded, but [Source & Builds 45284110594](https://github.com/mykholy/mavvix_demos/actions/runs/45284110594) was **cancelled**, not passed. Neither proves the new code passed. No local tests were run in this checkpoint.
 - Next.js and eslint-config-next remain pinned to 14.2.24; patch upgrade plus lockfile, media rights, security and screenshot signoff remain blocking. No merge/deploy/ads authorized.
+
+## QA refresh — 2026-11-24
+- PR #2 remains draft, unmerged; 18 implemented roots (8 original, 10 in progress), 12 planned. Next sector: veterinary.
+- On cfe0c860220b7d6ca762a71d8ff08eb775c012b5, Source & Builds [45368858750](https://github.com/mykholy/mavvix_demos/actions/runs/45368858750) succeeded; Visual QA [45368858850](https://github.com/mykholy/mavvix_demos/actions/runs/45368858850) failed four AR/EN mobile/desktop physiotherapy privacy checks. Job 138357580204 identified foreground #246B52 on #B7E3C9, ratio 4.49:1. No furniture failure appeared in the filtered failure logs.
+- Commit 65e4c8dc44bce20af06e9a914ba382c3e1b56141 darkens the shared topic CTA label to #1B503E. Exact-head CI and screenshot review still required; no test success claimed for this fix.
+- Next.js upgrade with regenerated lockfile, security, media rights and remaining sectors remain blocking. No merge, deployment or ads.
