@@ -1,3 +1,4 @@
+import { MAVVIX_CONTACT } from '@/lib/business/mavvix-contact';
 import { SectorPhoto } from '@/components/shared/SectorPhoto';
 import { SECTOR_IMAGES } from '@/lib/media/sector-images';
 import Link from 'next/link';
@@ -350,6 +351,19 @@ const demos = [
       {ar:'تقديم استفسار زيارة محفوظ برقم مرجعي دون طبيب أو موعد وهمي',en:'Idempotent pending visit request without invented clinicians'}
     ],
     features:['Pet-Species-Aware Care Explorer','Emergency Safety Boundary','Persistent Visit Enquiry']
+  },
+  {
+    number:'20',slug:'law-firm',
+    name:{ar:'ليكسورا كاونسل — موقع مكاتب المحاماة',en:'Lexora Counsel — Law Firm Website Experience'},
+    sector:{ar:'المحاماة والخدمات القانونية للشركات',en:'Legal Practice, Contracts & Governance'},
+    icon:ShieldCheck,color:'#B79B6A',bgColor:'bg-amber-50',borderColor:'border-amber-200',routesCount:24,
+    tagline:{ar:'مجالات قانونية متخصصة مع استفسار أولي يحمي السرية',en:'Eight authored legal practice areas with a privacy-minimal initial enquiry'},
+    journeys:[
+      {ar:'8 ملفات مجالات قانونية مفصلة و3 مقالات مستقلة',en:'Eight substantive law practice dossiers and three bilingual original insights'},
+      {ar:'تحديد نوع الخدمة والدولة والعميل دون جمع تفاصيل قضية',en:'Jurisdiction, practice and client category selection without confidential case data'},
+      {ar:'استفسار محفوظ برقم مرجعي دون ادعاء محامٍ أو موعد مؤكد',en:'Consented pending-only request with no invented legal representation'}
+    ],
+    features:['Privacy-First Legal Intake','Jurisdiction-Aware Service Taxonomy','Idempotent Enquiry Receipt']
   }
 ];
 
@@ -386,11 +400,11 @@ export default function ShowcasePage({ params }: Props) {
           </span>
           <span>
             {isAr
-              ? 'احصل على موقع رقمي متكامل لشركتك خلال 48 ساعة بواسطة Mavvix — جاهز للمبيعات والحملات الإعلانية'
-              : 'Get a production-grade commercial platform for your business in 48 hours by Mavvix — ad campaign ready'}
+              ? 'استعرض مواقع متخصصّة لمجالات مختلفة، واطلب تنفيذ موقع يناسب نشاطك وميزانيتك'
+              : 'Explore custom industry website experiences and discuss a project for your business with Mavvix'}
           </span>
           <a
-            href="https://wa.me/201017799042?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%85%D8%A7%D9%81%D9%83%D8%B3%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D9%85%D9%88%D9%82%D8%B9%20%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A%20%D9%84%D8%B4%D8%B1%D9%83%D8%AA%D9%8A%20%D8%AE%D9%84%D8%A7%D9%84%2048%20%D8%B3%D8%A7%D8%B9%D8%A9"
+            href={`https://wa.me/${MAVVIX_CONTACT.whatsappNumber}?text=${encodeURIComponent(isAr?'أهلًا مافكس، عايز موقع احترافي لنشاطي بعد ما شوفت معرض المواقع.':'Hello Mavvix, I want a bespoke business website after browsing your industry portfolio.')}`}
             target="_blank"
             rel="noopener noreferrer"
             className="underline hover:text-cyan-200 font-bold ml-1"
@@ -419,13 +433,13 @@ export default function ShowcasePage({ params }: Props) {
 
           <p className="mt-6 text-slate-300 text-base sm:text-xl max-w-3xl leading-relaxed">
             {isAr
-              ? 'ثمانية مواقع متخصصة؛ كل موقع يتميز بهوية بصرية مخصصة، ومسارات فرعية متعددة، وقاعدة بيانات SQLite حقيقية، ولوحة تحكم لإدارة المحتوى والطلبات.'
-              : 'Eight meticulously crafted industry websites. Each demo features bespoke visual art direction, 10+ deep routes, persistent SQLite database state, and protected Content Studio.'}
+              ? 'مجموعة مواقع متخصصة تختلف في التصميم والخدمات وطريقة استقبال الاستفسارات. جميعها أمثلة لما يمكن لمافكس تطويره لنشاطك، وليست شركات تشغيلية قائمة.'
+              : 'Explore bespoke Arabic/English industry web experiences with specialized service journeys, realistic editorial content and saved requests. These are Mavvix portfolio concepts, not operating businesses.'}
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center sm:justify-start gap-3 mb-6">
             <a
-              href="https://wa.me/201017799042?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%85%D8%A7%D9%81%D9%83%D8%B3%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D9%85%D9%88%D9%82%D8%B9%20%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A%20%D9%84%D8%B4%D8%B1%D9%83%D8%AA%D9%8A"
+              href={`https://wa.me/${MAVVIX_CONTACT.whatsappNumber}?text=${encodeURIComponent(isAr?'أهلًا مافكس، عايز موقع احترافي لنشاطي بعد ما شوفت معرض المواقع.':'Hello Mavvix, I want a bespoke business website after browsing your industry portfolio.')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-slate-950 font-bold px-6 py-3 rounded-xl text-sm transition-all shadow-lg shadow-emerald-950/20 active:scale-95"
@@ -448,7 +462,7 @@ export default function ShowcasePage({ params }: Props) {
             </div>
             <div className="flex items-center gap-2 bg-slate-800/80 border border-slate-700 px-3.5 py-2 rounded-lg text-slate-200">
               <Layers className="w-4 h-4 text-blue-400" />
-              <span>{isAr ? '91 مسارًا تفاعليًا عربي/إنجليزي' : '91 Bilingual Route Patterns'}</span>
+              <span>{isAr ? 'محتوى ومسارات تفصيلية بالعربي والإنجليزي' : 'Bilingual Industry Journeys'}</span>
             </div>
             <div className="flex items-center gap-2 bg-slate-800/80 border border-slate-700 px-3.5 py-2 rounded-lg text-slate-200">
               <ShieldCheck className="w-4 h-4 text-amber-400" />
@@ -463,7 +477,7 @@ export default function ShowcasePage({ params }: Props) {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 pb-6 border-b border-slate-200 gap-4">
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
-              {isAr ? 'استكشف نماذج القطاعات الثمانية' : 'Explore All Eight Sector Demos'}
+              {isAr ? 'استكشف مواقع القطاعات المختلفة' : 'Explore Industry Website Experiences'}
             </h2>
             <p className="mt-2 text-slate-600 text-sm">
               {isAr
@@ -506,6 +520,8 @@ export default function ShowcasePage({ params }: Props) {
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#E5F2E9]"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Rehabilitaci%C3%B3n_fisioterapia.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover object-center" alt={isAr?'صورة تحريرية لمجال العلاج الطبيعي، ليست من مركز موشن لاب':'CC BY 4.0 editorial physiotherapy image; not Motion Lab staff or patients'}/></div>
                   : d.slug==='veterinary'
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#E8EFE5]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Veterinary_Office_with_dog.JPG/1280px-Veterinary_Office_with_dog.JPG" loading="lazy" decoding="async" className="h-full w-full object-cover" alt={isAr?'صورة حقيقية مرخصة لكلب في عيادة بيطرية مستقلة، ليست PawWell':'Real CC0 editorial dog photograph in an unrelated veterinary clinic'}/></div>
+                  : d.slug==='law-firm'
+                  ? <div className="relative h-52 bg-[#D6CAB8] overflow-hidden"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Canadian_law_books_%2831460630695%29.jpg/1280px-Canadian_law_books_%2831460630695%29.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'كتب قانونية حقيقية من كندا، صورة عامة مرخصة لا تتبع Lexora':'CC0 editorial Canadian law books, not an operating Lexora office'}/></div>
                   : <SectorPhoto sector={d.slug as keyof typeof SECTOR_IMAGES} alt="" className="h-52 w-full" />}
                 {/* Sector Overview */}
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
