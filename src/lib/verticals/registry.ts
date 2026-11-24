@@ -151,7 +151,7 @@ export const VERTICALS = [
     "en": "Nurseries",
     "wave": 1,
     "accent": "#F5C04E",
-    "status": "planned"
+    "status": "in_progress"
   },
   {
     "slug": "law-firm",

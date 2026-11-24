@@ -7,6 +7,7 @@ import path from 'node:path';
  */
 export function seedPortfolioVerticals(db, rootDir=process.cwd()) {
   const files=[
+    {filename:'nursery.json',slug:'nursery',ar:'بلوم ستيبس — حضانة ورياض أطفال',en:'BloomSteps · Early Years'},
     {filename:'auto-service.json',slug:'auto-service',ar:'تورك جراج — صيانة السيارات',en:'Torque Garage · Automotive'},
     {filename:'home-maintenance.json',slug:'home-maintenance',ar:'فكسورا — صيانة المنازل والتكييف',en:'Fixora Care · Home Maintenance'},
     {filename:'salon-spa.json',slug:'salon-spa',ar:'فيلورا بيوتي — خدمات تجميل وعناية',en:'Velora Beauty · Salon & Spa'},

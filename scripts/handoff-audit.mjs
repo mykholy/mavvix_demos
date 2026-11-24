@@ -149,3 +149,11 @@ for(const [slug,shell,listing,intake] of [['furniture','oakline-shell','collecti
  for(const route of [listing,listing+'/[slug]',intake,'journal','journal/[slug]','[section]'])assert.ok(existsSync(join(dir,route,'page.tsx')),slug+' missing '+route);
  console.log('PASS: '+slug+' structural homepage, content and route-family gate');
 }
+
+const bloomRoot=join(root,'nursery'),bloomHome=readFileSync(join(bloomRoot,'page.tsx'),'utf8'),bloomLayout=readFileSync(join(bloomRoot,'layout.tsx'),'utf8');
+const bloomData=JSON.parse(readFileSync(join(process.cwd(),'data/verticals/nursery.json'),'utf8'));
+assert.ok((bloomHome.match(/<section\b/g)||[]).length>=9 && (bloomHome.match(/data-sector-specific=/g)||[]).length>=4);
+assert.ok(bloomLayout.includes('bloom-shell')&&bloomLayout.includes('<ContactDock'));
+assert.equal(bloomData.services.length,8);assert.equal(bloomData.articles.length,3);assert.equal(bloomData.faq.length,5);
+for(const route of ['admissions','[section]','programs/[slug]','journal/[slug]'])assert.ok(existsSync(join(bloomRoot,route,'page.tsx')), 'Missing BloomSteps route '+route);
+console.log('PASS: BloomSteps bespoke early-years identity, age-band dossiers and private guardian request source structure');

@@ -373,6 +373,25 @@ try {
   assert.equal(formaRepeat.status,200);assert.equal(formaDupe.refNumber,formaReceipt.refNumber);assert.equal(formaDupe.duplicate,true);
   console.log('PASS: '+(2*(oakRoutes.length+formaRoutes.length))+' localized Oakline/Forma pages, two saved requests, invalid configurations and idempotency');
 
+  const bloomRoutes=['','age-groups','curriculum','daily-routine','safety','gallery','admissions','journal','about','process','contact','faq',
+   ...['little-explorers','curious-toddlers','ready-for-school','story-language','sensory-discovery','art-expression','movement-play','practical-life'].map(s=>'programs/'+s),
+   ...['first-nursery-visit','settling-in-routines','privacy-and-pickup'].map(s=>'journal/'+s)];
+  for(const locale of ['ar','en'])for(const route of bloomRoutes){
+   const url='/'+locale+'/preview/nursery'+(route?'/'+route:'');const response=await get(url);
+   assert.equal(response.status,200,'BloomSteps route missing '+url);assert.ok((await response.text()).includes('data-mavvix-contact-dock'),'Missing BloomSteps contact dock');
+  }
+  const bloomBody={flowType:'nursery_visit_interest',clientRequestId:'88888888-8888-4888-8888-888888888888',ageBand:'2-3',serviceSlug:'curious-toddlers',
+   requestType:'visit',region:'Cairo',preferredDate:'',preferredWindow:'flexible',guestName:'QA Guardian',guestPhone:'01000000000',consent:true,honeypot:''};
+  assert.equal((await post('/api/portfolio/nursery',{...bloomBody,childName:'Forbidden test field'})).status,400,'Reject child identifying fields');
+  assert.equal((await post('/api/portfolio/nursery',{...bloomBody,ageBand:'1-2'})).status,400,'Reject mismatched age group');
+  assert.equal((await post('/api/portfolio/nursery',{...bloomBody,consent:false})).status,400,'Guardian consent required');
+  const bloomSaved=await post('/api/portfolio/nursery',bloomBody),bloomReceipt=await bloomSaved.json();
+  assert.equal(bloomSaved.status,201,JSON.stringify(bloomReceipt));assert.match(bloomReceipt.refNumber,/^MVX-BLM-[A-F0-9]+$/);
+  assert.equal(bloomReceipt.status,'pending_operator_confirmation');
+  const bloomAgain=await post('/api/portfolio/nursery',bloomBody),bloomDuplicate=await bloomAgain.json();
+  assert.equal(bloomAgain.status,200);assert.equal(bloomDuplicate.refNumber,bloomReceipt.refNumber);assert.equal(bloomDuplicate.duplicate,true);
+  console.log('PASS: '+2*bloomRoutes.length+' localized nursery routes, guardian-only persisted request and privacy validation');
+
   console.log('PASS: auth guard, flow validation, Academy SQLite progress, trusted ecommerce price, private receipt');
 } catch (error) {
   console.error(error);
