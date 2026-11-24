@@ -40,6 +40,8 @@ const cases=[
  ['car-detailing','quote'],['car-detailing','journal/coating-vs-ppf'],['car-detailing','gallery'],
  ['physiotherapy',''],['physiotherapy','services'],['physiotherapy','services/initial-movement-assessment'],
  ['physiotherapy','appointment'],['physiotherapy','journal/first-appointment'],['physiotherapy','privacy'],
+ ['veterinary',''],['veterinary','services'],['veterinary','services/wellness-visit'],['veterinary','request'],
+ ['veterinary','pets'],['veterinary','guides/pet-first-visit'],['veterinary','emergencies'],
  ['showcase','']
 ];
 const viewports=[{name:'mobile-360',width:360,height:780},{name:'mobile-390',width:390,height:844},
