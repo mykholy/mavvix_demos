@@ -182,3 +182,18 @@ for(const route of ['services','services/[slug]','appointment','journal','journa
  assert.ok(existsSync(join(motionDir,route,'page.tsx')),'Missing Motion Lab route family: '+route);
 }
 console.log('PASS: unique Motion Lab 12-section home, 10 rehab dossiers, 10 inner topics and privacy-first form');
+
+
+const pawDir=join(root,'veterinary'),pawHome=readFileSync(join(pawDir,'page.tsx'),'utf8');
+const pawLayout=readFileSync(join(pawDir,'layout.tsx'),'utf8');
+const pawData=JSON.parse(readFileSync(join(process.cwd(),'data/verticals/veterinary.json'),'utf8'));
+assert.ok((pawHome.match(/<section\b/g)||[]).length>=9,'PawWell must provide 9+ unique homepage sections');
+assert.ok((pawHome.match(/data-sector-specific=/g)||[]).length>=4,'PawWell requires four veterinary-only homepage sections');
+assert.ok(pawLayout.includes('pawwell-shell')&&pawLayout.includes('<ContactDock'),'PawWell identity and Mavvix lead dock missing');
+assert.equal(pawData.services.length,8);
+assert.equal(pawData.articles.length,3);
+assert.equal(pawData.faq.length,5);
+for(const route of ['services','services/[slug]','pets','request','guides','guides/[slug]','[section]']){
+ assert.ok(existsSync(join(pawDir,route,'page.tsx')),'PawWell route family missing: '+route);
+}
+console.log('PASS: PawWell 12-sector home and seven families, 8 veterinary dossiers, 3 resources and species-aware enquiry');
