@@ -28,6 +28,7 @@ async function ready(){
  throw Error('Next server did not start: '+serverLog.slice(-2000));
 }
 const cases=[
+ ['law-firm',''],['law-firm','practices'],['law-firm','practices/commercial-contracts'],['law-firm','consultation'],['law-firm','insights/engagement-boundaries'],
  ['auto-service',''],['auto-service','services'],['auto-service','services/brakes'],['auto-service','booking'],
  ['home-maintenance',''],['home-maintenance','services'],['home-maintenance','services/ac-maintenance'],['home-maintenance','book'],
  ['salon-spa',''],['salon-spa','services'],['salon-spa','services/classic-manicure'],['salon-spa','booking'],['salon-spa','journal/choosing-treatment'],
