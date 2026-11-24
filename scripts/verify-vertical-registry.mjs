@@ -46,6 +46,22 @@ for (const match of metadata) {
 }
 assert.equal(new Set(metadata.map(m => m[2].trim().toLowerCase())).size, 30, 'Duplicate sector brand');
 
+// Structural parity: the public curated gallery and Mavvix sector switcher must never
+// omit implemented sites or promote a placeholder, as happened with BloomSteps.
+const implemented=entries.filter(e=>e.status!=='planned').map(e=>e.slug).sort();
+for(const [label,file] of [['Showcase','src/app/[locale]/showcase/page.tsx'],
+                            ['ContactDock','src/components/shared/ContactDock.tsx']]){
+ const source=fs.readFileSync(file,'utf8');
+ const sectorSlugs=[...source.matchAll(/\bslug:\s*['"]([a-z0-9-]+)['"]/g)].map(x=>x[1]).sort();
+ assert.equal(sectorSlugs.length,new Set(sectorSlugs).size,label+' has repeated sector card');
+ assert.deepEqual(sectorSlugs,implemented,label+' is missing an implemented sector or advertising unbuilt concepts');
+}
+for(const entry of entries.filter(e=>e.status==='in_progress')){
+ const route='src/app/[locale]/preview/'+entry.slug+'/page.tsx';
+ assert.ok(fs.existsSync(route),'In-progress sector has no actual homepage source: '+entry.slug);
+}
+console.log('Portfolio parity PASS:',implemented.length,'real route families listed across Gallery and ContactDock');
+
 const counts=Object.fromEntries(['live','in_progress','planned'].map(s=>[s,entries.filter(e=>e.status===s).length]));
 console.log('Registry contract PASS:',JSON.stringify(counts));
 
