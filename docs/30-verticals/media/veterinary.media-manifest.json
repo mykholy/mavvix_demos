@@ -1,0 +1,26 @@
+{
+  "vertical": "veterinary",
+  "reviewed_on": "2026-11-24",
+  "images": [
+    {
+      "id": "vet-office-shih-tzu",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Veterinary_Office_with_dog.JPG",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Veterinary_Office_with_dog.JPG/1280px-Veterinary_Office_with_dog.JPG",
+      "creator": "MarkBuckawicki",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "original_dimensions": "2048x1536",
+      "preview_dimensions": "1280x960",
+      "source_page_verified": true,
+      "preview_access_verified": true,
+      "local_asset": false,
+      "description": "A real Shih Tzu on a table at a real unrelated veterinary office; purely editorial. Do not imply this is the PawWell hospital or a Mavvix client.",
+      "attribution": "MarkBuckawicki / Wikimedia Commons / CC0"
+    }
+  ],
+  "release_blockers": [
+    "Crop/quality review on 360px and desktop",
+    "Self-host optimized media asset if appropriate and permitted",
+    "Real operator replacement photo before commissioned launch"
+  ]
+}
