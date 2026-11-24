@@ -521,6 +521,37 @@ try {
   assert.equal(repeatedResult.refNumber,lexResult.refNumber);
   console.log('PASS: 30 Lexora bilingual routes, confidentiality-only strict intake and idempotent saved reference');
 
+
+  const ledgerRoutes=['','services','services/bookkeeping','services/bank-reconciliation','quote','resources','resources/monthly-close','industries','reporting','compliance','reconciliation','process','about','contact','questions'];
+  for(const lang of ['ar','en']){
+    for(const tail of ledgerRoutes){
+      const url='/'+lang+'/preview/accounting'+(tail?'/'+tail:'');
+      const res=await get(url);
+      assert.equal(res.status,200,'LedgerPoint route failed '+url);
+      assert.ok((await res.text()).includes('data-mavvix-contact-dock'),'LedgerPoint sales dock missing '+url);
+    }
+  }
+  const accountingRequest={
+    flowType:'accounting_scope_request',clientRequestId:'77777777-7777-4777-8777-777777777777',
+    serviceSlug:'bookkeeping',country:'egypt',entityType:'sme',volumeBand:'50-200',
+    cadence:'monthly',existingSystem:'spreadsheets',
+    guestName:'QA Accounting',guestPhone:'01000000000',consent:true,honeypot:'',
+    utm:{source:'qa',medium:'integration',campaign:'ledgerpoint'}
+  };
+  assert.equal((await post('/api/portfolio/accounting',{...accountingRequest,consent:false})).status,400);
+  assert.equal((await post('/api/portfolio/accounting',{...accountingRequest,taxId:'PRIVATE'})).status,400);
+  const savedLedger=await post('/api/portfolio/accounting',accountingRequest);
+  const savedLedgerBody=await savedLedger.json();
+  assert.equal(savedLedger.status,201,'LedgerPoint request persistence '+JSON.stringify(savedLedgerBody));
+  assert.match(savedLedgerBody.refNumber,/^MVX-LED-[A-F0-9]+$/);
+  assert.equal(savedLedgerBody.status,'pending_operator_confirmation');
+  const sameLedger=await post('/api/portfolio/accounting',accountingRequest);
+  const sameLedgerBody=await sameLedger.json();
+  assert.equal(sameLedger.status,200);
+  assert.equal(sameLedgerBody.duplicate,true);
+  assert.equal(sameLedgerBody.refNumber,savedLedgerBody.refNumber);
+  console.log('PASS: 30 LedgerPoint bilingual routes and idempotent consented accounting scope receipt');
+
   console.log('PASS: auth guard, flow validation, Academy SQLite progress, trusted ecommerce price, private receipt');
 } catch (error) {
   console.error(error);
