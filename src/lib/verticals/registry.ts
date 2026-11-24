@@ -124,7 +124,7 @@ export const VERTICALS = [
     "en": "Physiotherapy",
     "wave": 2,
     "accent": "#79C9C1",
-    "status": "planned"
+    "status": "in_progress"
   },
   {
     "slug": "diagnostics-lab",
