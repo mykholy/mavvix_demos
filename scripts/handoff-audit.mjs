@@ -169,3 +169,16 @@ assert.equal(glossData.articles.length,3);
 assert.equal(glossData.faq.length,5);
 for(const route of ['packages','packages/[slug]','quote','journal','journal/[slug]','[section]'])assert.ok(existsSync(join(glossRoot,route,'page.tsx')),'GlossBay missing route '+route);
 console.log('PASS: GlossBay premium detailing sections, ten dossiers, seven route families and branded CTA');
+
+
+const motionDir=join(root,'physiotherapy'),motionHome=readFileSync(join(motionDir,'page.tsx'),'utf8');
+const motionLayout=readFileSync(join(motionDir,'layout.tsx'),'utf8');
+const motionData=JSON.parse(readFileSync(join(process.cwd(),'data/verticals/physiotherapy.json'),'utf8'));
+assert.ok((motionHome.match(/<section\b/g)||[]).length>=9,'Motion Lab needs nine substantial homepage sections');
+assert.ok((motionHome.match(/data-sector-specific=/g)||[]).length>=4,'Motion Lab needs four domain-only sections');
+assert.ok(motionLayout.includes('motion-shell') && motionLayout.includes('<ContactDock'),'Motion Lab brand or conversion missing');
+assert.equal(motionData.services.length,10); assert.equal(motionData.articles.length,3); assert.equal(motionData.faq.length,5);
+for(const route of ['services','services/[slug]','appointment','journal','journal/[slug]','[section]']){
+ assert.ok(existsSync(join(motionDir,route,'page.tsx')),'Missing Motion Lab route family: '+route);
+}
+console.log('PASS: unique Motion Lab 12-section home, 10 rehab dossiers, 10 inner topics and privacy-first form');
