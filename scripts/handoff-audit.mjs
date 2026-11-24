@@ -157,3 +157,15 @@ assert.ok(bloomLayout.includes('bloom-shell')&&bloomLayout.includes('<ContactDoc
 assert.equal(bloomData.services.length,8);assert.equal(bloomData.articles.length,3);assert.equal(bloomData.faq.length,5);
 for(const route of ['admissions','[section]','programs/[slug]','journal/[slug]'])assert.ok(existsSync(join(bloomRoot,route,'page.tsx')), 'Missing BloomSteps route '+route);
 console.log('PASS: BloomSteps bespoke early-years identity, age-band dossiers and private guardian request source structure');
+
+
+const glossRoot=join(root,'car-detailing'),glossHome=readFileSync(join(glossRoot,'page.tsx'),'utf8'),glossLayout=readFileSync(join(glossRoot,'layout.tsx'),'utf8');
+const glossData=JSON.parse(readFileSync(join(process.cwd(),'data/verticals/car-detailing.json'),'utf8'));
+assert.ok((glossHome.match(/<section\b/g)||[]).length>=9,'GlossBay needs nine substantial homepage sections');
+assert.ok((glossHome.match(/data-sector-specific=/g)||[]).length>=4,'GlossBay needs four distinct detailing-only sections');
+assert.ok(glossLayout.includes('gloss-shell')&&glossLayout.includes('<ContactDock'),'GlossBay unique identity/contact missing');
+assert.equal(glossData.services.length,10);
+assert.equal(glossData.articles.length,3);
+assert.equal(glossData.faq.length,5);
+for(const route of ['packages','packages/[slug]','quote','journal','journal/[slug]','[section]'])assert.ok(existsSync(join(glossRoot,route,'page.tsx')),'GlossBay missing route '+route);
+console.log('PASS: GlossBay premium detailing sections, ten dossiers, seven route families and branded CTA');
