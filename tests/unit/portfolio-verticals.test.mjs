@@ -83,6 +83,21 @@ test('Arena sports venue has eight factual team-aware court formats and original
  }
 });
 
+test('GlossBay data has ten original bilingual detailing dossiers with valid add-ons and vehicle sizes',()=>{
+ const s=JSON.parse(fs.readFileSync(path.join(root,'data/verticals/car-detailing.json'),'utf8'));
+ assert.equal(s.slug,'car-detailing');
+ assert.equal(s.services.length,10);
+ assert.equal(s.articles.length,3);
+ assert.equal(s.faq.length,5);
+ assert.equal(new Set(s.services.map(x=>x.slug)).size,10);
+ assert.equal(new Set(s.addons.map(x=>x.slug)).size,4);
+ assert.equal(new Set(s.vehicleSizes.map(x=>x.slug)).size,4);
+ for(const x of s.services){
+  assert.ok(x.body.ar.length>140 && x.body.en.length>140,'Incomplete bilingual material: '+x.slug);
+  assert.ok(x.durations.length>=2 && x.checks.ar.length>=3 && x.checks.en.length>=3);
+ }
+});
+
 test('additive schema upgrades on existing legacy database without dropping its records',()=>{
  const db=new DatabaseSync(':memory:');
  try {
