@@ -1,0 +1,28 @@
+{
+  "vertical": "law-firm",
+  "brand": "Lexora Counsel",
+  "checked_on": "2026-11-24",
+  "editorial_only": true,
+  "owner_facility_verified": false,
+  "assets": [
+    {
+      "id": "legal-book-records",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Canadian_law_books_(31460630695).jpg",
+      "artist": "David Whelan",
+      "license": "CC0 1.0 Universal",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_details": "Real 2016 photograph of Canadian law reports. Wikimedia Commons verified FlickreviewR 2017-04-14",
+      "dimensions": "2211x1727",
+      "preview_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Canadian_law_books_%2831460630695%29.jpg/1280px-Canadian_law_books_%2831460630695%29.jpg",
+      "local_path": null,
+      "verified_source_license": true,
+      "verified_remote_image_fetch": false,
+      "notice": "This photo depicts Canadian legal books. Not an Egyptian/Saudi law office or Lexora premises, staff, clients or files."
+    }
+  ],
+  "blockers": [
+    "Chromium test must verify thumbnail loads at multiple widths; source page and license verified separately",
+    "No legal-client or lawyer imagery supplied; actual firm must provide verified photos and credentials",
+    "Self-host optimized approved imagery before public business launch"
+  ]
+}
