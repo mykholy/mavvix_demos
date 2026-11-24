@@ -98,6 +98,21 @@ test('GlossBay data has ten original bilingual detailing dossiers with valid add
  }
 });
 
+test('Motion Lab has ten original bilingual rehabilitation dossiers and a no-PHI user-facing form',()=>{
+ const content=JSON.parse(fs.readFileSync(path.join(root,'data/verticals/physiotherapy.json'),'utf8'));
+ assert.equal(content.services.length,10);
+ assert.equal(content.articles.length,3);
+ assert.equal(content.faq.length,5);
+ assert.equal(new Set(content.services.map(s=>s.slug)).size,10);
+ for(const service of content.services){
+  assert.ok(service.body.ar.length>140&&service.body.en.length>140);
+  assert.equal(service.questions.ar.length,3);
+  assert.equal(service.questions.en.length,3);
+ }
+ const form=fs.readFileSync(path.join(root,'src/app/[locale]/preview/physiotherapy/appointment/MotionAssessmentForm.tsx'),'utf8');
+ assert.ok(!form.includes('medicalHistory:')&&!form.includes('diagnosis:')&&!form.includes('medicalRecords:'));
+});
+
 test('additive schema upgrades on existing legacy database without dropping its records',()=>{
  const db=new DatabaseSync(':memory:');
  try {
