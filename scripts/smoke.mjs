@@ -492,6 +492,35 @@ try {
   assert.equal(second.refNumber,result.refNumber);
   console.log('PASS: 32 bilingual PawWell routes, strict pet-species validation and idempotent pending visit receipt');
 
+
+  // Lexora Counsel: legal intake must not collect privileged case material.
+  const lexoraRoutes=['','practices','practices/corporate-governance','practices/commercial-contracts','consultation',
+    'insights','insights/engagement-boundaries','industries','approach','team','confidentiality','about','contact','questions','jurisdictions'];
+  for(const locale of ['ar','en'])for(const route of lexoraRoutes){
+   const path='/'+locale+'/preview/law-firm'+(route?'/'+route:'');
+   const response=await get(path);
+   assert.equal(response.status,200,'Lexora route failed '+path);
+   assert.ok((await response.text()).includes('data-mavvix-contact-dock'),'Missing Lexora contact dock on '+path);
+  }
+  const lexReq={flowType:'legal_consultation_interest',clientRequestId:'66666666-6666-4666-8666-666666666666',
+   practiceSlug:'commercial-contracts',jurisdiction:'egypt',clientType:'business',
+   contactChannel:'phone',preferredWindow:'flexible',guestName:'QA Corporate',
+   guestPhone:'01000000000',consent:true,honeypot:'',utm:{source:'qa',medium:'integration',campaign:'law-firm'}};
+  assert.equal((await post('/api/portfolio/law-firm',{...lexReq,consent:false})).status,400,'Legal request without consent must be rejected');
+  assert.equal((await post('/api/portfolio/law-firm',{...lexReq,caseDescription:'PRIVATE CASE DETAILS'})).status,400,'Do not accept legal case facts in public form');
+  assert.equal((await post('/api/portfolio/law-firm',{...lexReq,adverseParty:'PRIVATE NAME'})).status,400,'Do not accept adverse-party identities');
+  const lexResponse=await post('/api/portfolio/law-firm',lexReq);
+  const lexResult=await lexResponse.json();
+  assert.equal(lexResponse.status,201,'Law firm intake failed: '+JSON.stringify(lexResult));
+  assert.match(lexResult.refNumber,/^MVX-LEX-[A-F0-9]+$/);
+  assert.equal(lexResult.status,'pending_operator_confirmation');
+  const repeated=await post('/api/portfolio/law-firm',lexReq);
+  const repeatedResult=await repeated.json();
+  assert.equal(repeated.status,200);
+  assert.equal(repeatedResult.duplicate,true);
+  assert.equal(repeatedResult.refNumber,lexResult.refNumber);
+  console.log('PASS: 30 Lexora bilingual routes, confidentiality-only strict intake and idempotent saved reference');
+
   console.log('PASS: auth guard, flow validation, Academy SQLite progress, trusted ecommerce price, private receipt');
 } catch (error) {
   console.error(error);
