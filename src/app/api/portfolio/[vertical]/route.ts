@@ -1,3 +1,4 @@
+import { handleVeterinaryVisit } from '@/server/portfolio/veterinary';
 import { handlePhysiotherapyInterest } from '@/server/portfolio/physiotherapy';
 import { handleCarDetailingQuote } from '@/server/portfolio/car-detailing';
 import {handleNurseryVisit} from '@/server/portfolio/nursery';
@@ -39,6 +40,7 @@ function failure(code:string,status=422){return NextResponse.json({success:false
 export async function POST(req:Request,{params}:{params:{vertical:string}}){
  if(params.vertical==='car-detailing')return handleCarDetailingQuote(req);
  if(params.vertical==='physiotherapy')return handlePhysiotherapyInterest(req);
+ if(params.vertical==='veterinary')return handleVeterinaryVisit(req);
  if(params.vertical==='nursery')return handleNurseryVisit(req);
  if(params.vertical==='interiors-kitchens')return handleFormaBrief(req);
  if(params.vertical==='furniture')return handleFurnitureQuote(req);
