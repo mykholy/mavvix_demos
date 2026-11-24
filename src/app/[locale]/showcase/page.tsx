@@ -324,6 +324,19 @@ const demos = [
       {ar:'حفظ استفسار برقم مرجعي بدون سعر وهمي أو حجز مؤكد',en:'Consent-based persisted request with no fabricated quote or appointment'}
     ],
     features:['Vehicle-size Service Scope','Paint Protection Education','Idempotent Quote Request']
+  },
+  {
+    number:'18',slug:'physiotherapy',
+    name:{ar:'موشن لاب — موقع العلاج الطبيعي والتأهيل',en:'Motion Lab — Premium Physiotherapy Website'},
+    sector:{ar:'التقييم الوظيفي والتأهيل والحركة',en:'Functional Movement & Physiotherapy'},
+    icon:HeartPulse,color:'#79C9C1',bgColor:'bg-emerald-50',borderColor:'border-emerald-200',routesCount:27,
+    tagline:{ar:'استشارات أولية منظمة، خصوصية صحية، ومعلومات تأهيل متخصصة',en:'Clinician-aware first-visit enquiry, health privacy and original movement education'},
+    journeys:[
+      {ar:'10 ملفات تأهيل تعليمية عربية وإنجليزية بدون تشخيص أو وعود شفاء',en:'Ten bilingual rehabilitation service dossiers without diagnoses or recovery promises'},
+      {ar:'زيارة أولى وتفضيلات عامة من غير تقارير أو بيانات طبية',en:'Privacy-first initial enquiry with no medical uploads or sensitive health records'},
+      {ar:'طلب محفوظ برقم مرجعي من غير ادعاء وجود مركز أو معالج حقيقي',en:'Idempotent pending reference with no invented clinician, slot or medical outcome'}
+    ],
+    features:['Privacy-Minimal Assessment Enquiry','Movement Education','Qualified Operator Confirmation']
   }
 ];
 
@@ -476,6 +489,8 @@ export default function ShowcasePage({ params }: Props) {
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#FFF5DA]"><img src="https://upload.wikimedia.org/wikipedia/commons/7/71/Montessorishelves.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'مواد تعليمية حقيقية من فصل مونتيسوري مستقل، لا يمثل حضانة بلوم ستيبس':'Real editorial Montessori learning materials in an unrelated classroom'}/></div>
                   : d.slug==='car-detailing'
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#071424]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Exterior_Car_detailing.png/1280px-Exterior_Car_detailing.png" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'صورة مرخصة حقيقية لسيارة خلال عمل ديتيلنج':'Genuine CC0 editorial car-detailing photograph'}/></div>
+                  : d.slug==='physiotherapy'
+                  ? <div className="relative h-52 w-full overflow-hidden bg-[#E5F2E9]"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Rehabilitaci%C3%B3n_fisioterapia.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover object-center" alt={isAr?'صورة تحريرية لمجال العلاج الطبيعي، ليست من مركز موشن لاب':'CC BY 4.0 editorial physiotherapy image; not Motion Lab staff or patients'}/></div>
                   : <SectorPhoto sector={d.slug as keyof typeof SECTOR_IMAGES} alt="" className="h-52 w-full" />}
                 {/* Sector Overview */}
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
