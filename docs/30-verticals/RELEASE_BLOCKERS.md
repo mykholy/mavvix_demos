@@ -1,15 +1,18 @@
 # Release blockers & current truth — 2026-11-24
 
-## What is actually in the repository
-- Wave 0: 8 existing vertical websites.
-- Wave 1: all 8 additional industries implemented with persisted request flows. These currently have registry status `in_progress` pending release/business verification.
-- Wave 2: `car-detailing` (GlossBay) is now authored and wired for API/database and storefront. **Do not count as QA-complete until CI on its final commit is green.**
-- Remaining after the GlossBay code addition: 13 planned sector implementations (7 other Wave 2, 6 Wave 3); total 17 structurally represented designs and 13 unbuilt.
-- Open PR #2 remains Draft, **not merged**. Latest tested CI before GlossBay: `c957a36` passed 50 unit tests, 532 generated pages, extended route/flow smoke and Chromium screenshots.
+## Verified GitHub snapshot at 2026-11-24
+- Main branch is still `1ae79d8c29861c28a3f5ad450c2712a99e4a8361`. Draft PR [#2](https://github.com/mykholy/mavvix_demos/pull/2) is open and **not merged**; current feature head at audit `cf285ee009d1289abf7599464037272243facfbb` (subsequent fix commits may advance it).
+- The actual Git tree contains **18 industry homepage directories** and the typed registry contains exactly **8 `live` original sites, 10 `in_progress` added sites and 12 `planned` sites**. Counts below supersede all historical 17/13, 8/2/20 and stale descriptions in other checkpoint documents.
+- **Eight original sites:** construction, industrial, real-estate, dental, ecommerce, portfolio, restaurant, academy.
+- **Ten additional source implementations, pending release gates:** auto-service, home-maintenance, salon-spa, fitness, sports-venues, furniture, interiors-kitchens, nursery, car-detailing, physiotherapy.
+- **Twelve not implemented:** veterinary, law-firm, accounting, travel-agency, events, logistics (Wave 2) plus skin-clinic, diagnostics-lab, boutique-hotel, solar-energy, recruitment, wholesale (Wave 3).
+- GitHub Actions on source SHA `cf285ee`: [Source & Builds 45340391309](https://github.com/mykholy/mavvix_demos/actions/runs/45340391309) **success**; [Real Browser & Visual QA 45340391405](https://github.com/mykholy/mavvix_demos/actions/runs/45340391405) **failure** for: color contrast on AR/EN physiotherapy privacy mobile/desktop; missing image on EN furniture gallery mobile/desktop. No release signoff.
+- A replacement CC0 editorial living-room image URL was committed to `src/lib/verticals/furniture/data.ts` at SHA `1d966025`, and actionable a11y failure selectors were added to `scripts/visual-qa.mjs` at SHA `f57ab962`. Both need passing CI/browser evidence on their exact head before they are accepted.
+- The historical top-of-PR title and older `WAVE1_CHECKPOINT.md` contain earlier counts and are not an authoritative latest-status source.
 
 ## Hard gates before merging, exposing real leads, or publishing ads
-1. Finish GlossBay 17th tests; fix typecheck, build, smoke and visual/a11y failures and run on exact latest SHA.
-2. Implement and test the remaining 13 original sector experiences. Never mark planned content built or render fake showcase placeholders.
+1. Close exact-current Chromium/axe/furniture-image failures and rerun complete CI, then manually inspect screenshots for all ten new industry verticals.
+2. Implement and test the remaining **12** original sector experiences (6 Wave 2, 6 Wave 3). Never mark planned content built or render fake showcase placeholders.
 3. Migrate Next.js 14.2.24 to a supported patched release; update `next` and `eslint-config-next` with a freshly generated npm lockfile and match React 19/App Router asynchronous request APIs where required. Use codemod, migrate Next 16 `middleware`→`proxy`, update `next lint` script, and rerun the complete suite. Do not only change package.json.
 4. Rotate any credentials historically committed to Git and coordinate history cleanup; test admin/read/write permissions, CSRF origin, consent, retention/deletion and rate limiting behind a trusted proxy.
 5. Verify original source and rights of every external photo, whether thumbnail renders and remains expressive on mobile. **No media manifests were found for furniture and interiors-kitchens** in the last inspected Git tree; generate proper evidence or replace unsafe/unlicensed photos. Never infer real showroom ownership from a Commons image.
