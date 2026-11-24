@@ -1,0 +1,27 @@
+{
+  "vertical": "furniture",
+  "checked_on": "2026-11-24",
+  "purpose": "Document actual licensing and origin of already-used Oakline editorial showroom photography; not actual products for sale",
+  "assets": [
+    {
+      "id": "oakline-living-room-unsplash",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Living_room_(Unsplash).jpg",
+      "author": "Jarosław Ceborski",
+      "date_created": "2017-05-03",
+      "license": "CC0 1.0 Universal",
+      "license_page": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "used_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Living_room_%28Unsplash%29.jpg/1280px-Living_room_%28Unsplash%29.jpg",
+      "source_verified": "Wikimedia Commons first-party page checked 2026-11-24",
+      "license_verified": true,
+      "hero_subject": "Editorial living room with furnishings, unrelated to Oakline or any client order",
+      "verified_direct_image_url": false,
+      "downloaded_and_optimized": false
+    }
+  ],
+  "open_issues": [
+    "Audit every additional image URL used in product and room detail pages before production",
+    "Browser must confirm this particular 1280px thumbnail, crop and accessibility",
+    "Never claim furniture is available to purchase or source image depicts Oakline inventory",
+    "Replace with owner-authorized product photography and actual dimensions at commercial handoff"
+  ]
+}
