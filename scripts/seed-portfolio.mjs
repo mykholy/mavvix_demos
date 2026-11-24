@@ -19,6 +19,7 @@ export function seedPortfolioVerticals(db, rootDir=process.cwd()) {
     {filename:'physiotherapy.json',slug:'physiotherapy',ar:'موشن لاب — العلاج الطبيعي والحركة الوظيفية',en:'Motion Lab · Physiotherapy',wave:2},
     {filename:'veterinary.json',slug:'veterinary',ar:'بوويل — رعاية الحيوانات الأليفة',en:'PawWell · Veterinary Clinic Website',wave:2},
     {filename:'law-firm.json',slug:'law-firm',ar:'ليكسورا كاونسل — واجهة خدمات قانونية',en:'Lexora Counsel · Legal Practice Website',wave:2},
+    {filename:'accounting.json',slug:'accounting',ar:'ليدجر بوينت — خدمات محاسبية للشركات',en:'LedgerPoint · Accounting Services',wave:2},
   ];
   const addSite=db.prepare(`INSERT INTO portfolio_verticals(slug,name_ar,name_en,wave,published)
  VALUES (?,?,?,?,?) ON CONFLICT(slug) DO UPDATE SET
