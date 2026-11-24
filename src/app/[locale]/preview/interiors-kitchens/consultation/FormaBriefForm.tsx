@@ -59,8 +59,8 @@ export function FormaBriefForm({locale,initial='l-shaped'}:{locale:Locale;initia
    <h2 className="forma-display text-3xl sm:text-4xl mt-4">{ar?'خلّينا نرسم أول تصور':'Start with an honest room brief'}</h2>
    <p className="text-[#65534B] text-sm leading-8 mt-4">{ar?'دي خطوة استكشافية، مش رسم معتمد للتصنيع أو حساب سعر.':'This is only a preliminary brief, not a measured production plan or binding quote.'}</p>
   </div>
-  <div><label className={field}>{ar?'المجال أو نوع المشروع':'Design scope'}</label>
-   <select className={input} value={serviceSlug} onChange={e=>setServiceSlug(e.target.value)}>{FORMA.services.map(s=><option key={s.slug} value={s.slug}>{formaText(s.title,locale)}</option>)}</select>
+  <div><label htmlFor="forma-design-scope" className={field}>{ar?'المجال أو نوع المشروع':'Design scope'}</label>
+   <select id="forma-design-scope" className={input} value={serviceSlug} onChange={e=>setServiceSlug(e.target.value)}>{FORMA.services.map(s=><option key={s.slug} value={s.slug}>{formaText(s.title,locale)}</option>)}</select>
   </div>
   <fieldset><legend className={field}>{ar?'شكل المساحة المفضل':'Initial layout idea'}</legend>
    <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 mt-3">{FORMA.layouts.map(l=><button key={l} type="button" onClick={()=>layoutChange(l)} aria-pressed={layout===l}

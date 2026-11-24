@@ -29,7 +29,7 @@ export default function FormaLayout({children,params:{locale}}:{children:React.R
      {menu.map(m=><Link href={m.href} key={m.href} className="hover:text-[#9C603F] focus-visible:underline">{m.label}</Link>)}
     </nav>
     <div className="flex items-center gap-2">
-     <Link href={formaPath(locale,'consultation')} className="min-w-11 h-11 flex items-center justify-center gap-2 rounded-none bg-[#6C3538] text-white px-3 sm:px-5 text-xs font-extrabold">
+     <Link href={formaPath(locale,'consultation')} aria-label={ar?'طلب استشارة تصميم':'Request a design consultation'} className="min-w-11 h-11 flex items-center justify-center gap-2 rounded-none bg-[#6C3538] text-white px-3 sm:px-5 text-xs font-extrabold">
       <PenTool size={17}/><span className="hidden sm:inline">{ar?'اطلب استشارة تصميم':'Design brief'}</span>
      </Link>
      <MobileSectorNav links={[...menu,{href:formaPath(locale,'consultation'),label:ar?'اطلب استشارة':'Design brief'}]}/>

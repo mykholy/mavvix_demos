@@ -9,5 +9,5 @@ export const oakText=(copy:{ar:string;en:string},locale:Locale)=>copy[locale];
 export const OAK_PHOTOS={
  room:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Living_room_%28Unsplash%29.jpg/1280px-Living_room_%28Unsplash%29.jpg',
  sofa:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Couch-furniture-living-room-sofa_%2824300293356%29.jpg/1280px-Couch-furniture-living-room-sofa_%2824300293356%29.jpg',
- vignette:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Furnished_living_room._%28Unsplash%29.jpg/768px-Furnished_living_room._%28Unsplash%29.jpg',
+ vignette:'https://upload.wikimedia.org/wikipedia/commons/b/b3/Furnished_living_room._%28Unsplash%29.jpg',
 } as const;
