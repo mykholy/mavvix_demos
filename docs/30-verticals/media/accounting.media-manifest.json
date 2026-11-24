@@ -1,0 +1,32 @@
+{
+  "vertical": "accounting",
+  "brand": "LedgerPoint",
+  "checked_on": "2026-11-24",
+  "editorial_only": true,
+  "licensed_accountancy_firm_verified": false,
+  "assets": [
+    {
+      "id": "desk-calculator-real-photograph",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Desktop_with_laptop_and_calculator_(Unsplash).jpg",
+      "source_original": "https://unsplash.com/photos/U_5BNLNfPn4",
+      "author": "Oliver Thomas Klein (metadata on source older file revision; current Commons file summary says Anonymous Unknown author)",
+      "license": "Creative Commons CC0 1.0 Universal, pre-June-5-2017 Unsplash publication",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "photographed": "2016-10-03",
+      "dimensions": "4032x3024",
+      "remote": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Desktop_with_laptop_and_calculator_%28Unsplash%29.jpg/1280px-Desktop_with_laptop_and_calculator_%28Unsplash%29.jpg",
+      "verified_source_license": true,
+      "verified_thumbnail_bytes": false,
+      "local_path": null,
+      "editorial_only": true,
+      "alt_en": "Real licensed photograph of laptop, calculator and an office desk, not belonging to LedgerPoint clients",
+      "alt_ar": "صورة حقيقية مرخصة لمكتب عليه لابتوب وآلة حاسبة لا تخص أي عميل لدى LedgerPoint"
+    }
+  ],
+  "limits": [
+    "Not an operating CPA firm or an actual audited report",
+    "Browser screenshot and thumbnail load QA required before marketing",
+    "Staff, regulatory credentials and accounting clients must be supplied by real operator",
+    "Self-host licensed image before public campaign; remote Commons CDN subject to cache limits"
+  ]
+}
