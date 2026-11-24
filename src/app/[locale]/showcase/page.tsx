@@ -364,6 +364,19 @@ const demos = [
       {ar:'استفسار محفوظ برقم مرجعي دون ادعاء محامٍ أو موعد مؤكد',en:'Consented pending-only request with no invented legal representation'}
     ],
     features:['Privacy-First Legal Intake','Jurisdiction-Aware Service Taxonomy','Idempotent Enquiry Receipt']
+  },
+  {
+    number:'21',slug:'accounting',
+    name:{ar:'ليدجر بوينت — موقع مكاتب المحاسبة',en:'LedgerPoint — Accounting Services Website'},
+    sector:{ar:'مسك دفاتر وتسويات وتقارير للشركات',en:'Bookkeeping, Reconciliation & Business Reporting'},
+    icon:Database,color:'#50C2C3',bgColor:'bg-teal-50',borderColor:'border-teal-200',routesCount:22,
+    tagline:{ar:'نطاق خدمة محاسبية واضح ونموذج استفسار بدون جمع بيانات مالية حساسة',en:'Transparent accounting scopes and privacy-minimal business enquiries'},
+    journeys:[
+      {ar:'8 ملفات خدمات متخصصة وتسويات وتقارير وإعداد سجلات',en:'Eight original accounting service dossiers and three authored explainers'},
+      {ar:'تحديد الدولة ونوع المنشأة وحجم المعاملات في فئات عامة',en:'Select jurisdiction, entity, invoice-volume band and existing system'},
+      {ar:'استفسار محفوظ برقم مرجعي دون وعود مراجعة أو تسعير وهمي',en:'Idempotent pending-only scope request without invented audit credentials'}
+    ],
+    features:['Accounting Scope Explorer','Reconciliation Education','Minimal-PII Quote Flow']
   }
 ];
 
@@ -522,6 +535,8 @@ export default function ShowcasePage({ params }: Props) {
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#E8EFE5]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Veterinary_Office_with_dog.JPG/1280px-Veterinary_Office_with_dog.JPG" loading="lazy" decoding="async" className="h-full w-full object-cover" alt={isAr?'صورة حقيقية مرخصة لكلب في عيادة بيطرية مستقلة، ليست PawWell':'Real CC0 editorial dog photograph in an unrelated veterinary clinic'}/></div>
                   : d.slug==='law-firm'
                   ? <div className="relative h-52 bg-[#D6CAB8] overflow-hidden"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Canadian_law_books_%2831460630695%29.jpg/1280px-Canadian_law_books_%2831460630695%29.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'كتب قانونية حقيقية من كندا، صورة عامة مرخصة لا تتبع Lexora':'CC0 editorial Canadian law books, not an operating Lexora office'}/></div>
+                  : d.slug==='accounting'
+                  ? <div className="relative h-52 bg-[#D7E3DF] overflow-hidden"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Desktop_with_laptop_and_calculator_%28Unsplash%29.jpg/1280px-Desktop_with_laptop_and_calculator_%28Unsplash%29.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'صورة مرخصة حقيقية لمكتب عليه آلة حاسبة ولابتوب لا يتبع LedgerPoint':'Real CC0 editorial office calculator photo unrelated to LedgerPoint clients'}/></div>
                   : <SectorPhoto sector={d.slug as keyof typeof SECTOR_IMAGES} alt="" className="h-52 w-full" />}
                 {/* Sector Overview */}
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
