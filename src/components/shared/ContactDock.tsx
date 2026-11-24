@@ -17,6 +17,7 @@ import {
   Factory,
   Home,
   HeartPulse,
+  Activity,
   ShoppingBag,
   Palette,
   UtensilsCrossed,
@@ -45,6 +46,7 @@ const DEMOS_LIST = [
   { slug: 'interiors-kitchens', nameAr: 'فورما / مطابخ وتصميم داخلي', nameEn: 'Forma Atelier · Kitchen & Interiors', icon: Palette, color: '#B9866B' },
   { slug: 'nursery', nameAr: 'بلوم ستيبس / حضانات', nameEn: 'BloomSteps · Nursery & Preschool', icon: GraduationCap, color: '#F5C04E' },
   { slug: 'car-detailing', nameAr: 'جلوس باي / ديتيلنج السيارات', nameEn: 'GlossBay · Car detailing', icon: Droplets, color: '#4CCBF4' },
+  { slug: 'physiotherapy', nameAr: 'موشن لاب / علاج طبيعي', nameEn: 'Motion Lab · Physiotherapy', icon: Activity, color: '#79C9C1' },
 ];
 
 export function ContactDock({
@@ -303,7 +305,7 @@ export function ContactDock({
           </span>
 
           <span className="hidden sm:inline-flex items-center text-[10px] bg-white/20 text-white font-mono px-2 py-0.5 rounded-full font-bold">
-            17 EXPERIENCES
+            18 EXPERIENCES
           </span>
         </button>
       </div>
