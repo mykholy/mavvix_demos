@@ -152,3 +152,14 @@ test('law firm includes eight independent bilingual dossiers, private-safe intak
  assert.ok(api.includes('.strict()'));
  assert.ok(!api.includes('caseDescription:')&&!api.includes('adverseParty:')&&!api.includes('documentUpload:'));
 });
+
+test('LedgerPoint authored content and secure intake',()=>{
+ const v=JSON.parse(fs.readFileSync(path.join(root,'data/verticals/accounting.json'),'utf8'));
+ assert.equal(v.services.length,8);
+ assert.equal(v.articles.length,3);
+ assert.equal(v.faq.length,5);
+ assert.equal(new Set(v.services.map(x=>x.slug)).size,8);
+ for(const entry of v.services){assert.ok(entry.body.ar.length>150&&entry.body.en.length>150);}
+ const api=fs.readFileSync(path.join(root,'src/server/portfolio/accounting.ts'),'utf8');
+ assert.ok(api.includes('.strict()'));
+});
