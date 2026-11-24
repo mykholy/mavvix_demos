@@ -88,7 +88,7 @@ export const VERTICALS = [
     "en": "Car detailing",
     "wave": 2,
     "accent": "#4CCBF4",
-    "status": "planned"
+    "status": "in_progress"
   },
   {
     "slug": "fitness",
