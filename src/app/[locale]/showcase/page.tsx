@@ -337,6 +337,19 @@ const demos = [
       {ar:'طلب محفوظ برقم مرجعي من غير ادعاء وجود مركز أو معالج حقيقي',en:'Idempotent pending reference with no invented clinician, slot or medical outcome'}
     ],
     features:['Privacy-Minimal Assessment Enquiry','Movement Education','Qualified Operator Confirmation']
+  },
+  {
+    number:'19',slug:'veterinary',
+    name:{ar:'بوويل — تجربة موقع عيادة بيطرية',en:'PawWell — Veterinary Clinic Website Experience'},
+    sector:{ar:'رعاية الحيوانات الأليفة والزيارة البيطرية',en:'Pet Wellness & Veterinary Care'},
+    icon:HeartPulse,color:'#F3B98E',bgColor:'bg-emerald-50',borderColor:'border-emerald-200',routesCount:16,
+    tagline:{ar:'رعاية تبدأ بفهم نوع الحيوان والعمر والزيارة المناسبة',en:'Pet-first care journeys, original service guides and nonbinding visit preferences'},
+    journeys:[
+      {ar:'8 ملفات رعاية متخصصة ومقالات توعوية',en:'Eight original pet-care dossiers and three authored guides'},
+      {ar:'دليل تفاعلي يفلتر حسب نوع الحيوان',en:'Species-aware interactive service explorer'},
+      {ar:'تقديم استفسار زيارة محفوظ برقم مرجعي دون طبيب أو موعد وهمي',en:'Idempotent pending visit request without invented clinicians'}
+    ],
+    features:['Pet-Species-Aware Care Explorer','Emergency Safety Boundary','Persistent Visit Enquiry']
   }
 ];
 
@@ -491,6 +504,8 @@ export default function ShowcasePage({ params }: Props) {
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#071424]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Exterior_Car_detailing.png/1280px-Exterior_Car_detailing.png" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'صورة مرخصة حقيقية لسيارة خلال عمل ديتيلنج':'Genuine CC0 editorial car-detailing photograph'}/></div>
                   : d.slug==='physiotherapy'
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#E5F2E9]"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Rehabilitaci%C3%B3n_fisioterapia.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover object-center" alt={isAr?'صورة تحريرية لمجال العلاج الطبيعي، ليست من مركز موشن لاب':'CC BY 4.0 editorial physiotherapy image; not Motion Lab staff or patients'}/></div>
+                  : d.slug==='veterinary'
+                  ? <div className="relative h-52 w-full overflow-hidden bg-[#E8EFE5]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Veterinary_Office_with_dog.JPG/1280px-Veterinary_Office_with_dog.JPG" loading="lazy" decoding="async" className="h-full w-full object-cover" alt={isAr?'صورة حقيقية مرخصة لكلب في عيادة بيطرية مستقلة، ليست PawWell':'Real CC0 editorial dog photograph in an unrelated veterinary clinic'}/></div>
                   : <SectorPhoto sector={d.slug as keyof typeof SECTOR_IMAGES} alt="" className="h-52 w-full" />}
                 {/* Sector Overview */}
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
