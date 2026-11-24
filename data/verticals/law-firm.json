@@ -1,0 +1,360 @@
+{
+  "slug": "law-firm",
+  "brand": "Lexora Counsel",
+  "classification": "Mavvix website editorial experience, not a licensed legal practice or representation service.",
+  "services": [
+    {
+      "slug": "corporate-governance",
+      "rank": 1,
+      "category": "corporate",
+      "title": {
+        "ar": "تأسيس الشركات والحوكمة",
+        "en": "Company formation & governance"
+      },
+      "summary": {
+        "ar": "مراجعة نوع الكيان، صلاحيات الإدارة ومحاضر القرارات ضمن نطاق قانوني محدد.",
+        "en": "Explore entity structure, decision-making powers and governance documents within a clearly defined jurisdiction."
+      },
+      "body": {
+        "ar": "الاختيار بين أنواع الشركات يحتاج فهم عدد الشركاء وطبيعة النشاط ونطاق المسؤولية وطريقة اتخاذ القرارات. المستندات والمتطلبات تختلف بحسب الدولة والهيئة والنشاط؛ لذلك لا يصلح الاعتماد على قائمة موحدة باعتبارها رأيًا قانونيًا نهائيًا. الاستشارة الحقيقية تبدأ بتحديد الولاية القضائية ونوع المنشأة وهدف صاحب المشروع، ثم يتولى محامٍ مرخص مراجعة التفاصيل والوثائق خارج هذا النموذج العام.",
+        "en": "Entity structure influences liability, decision rights, governance and recordkeeping. Jurisdiction, industry and ownership can change the process significantly; a generic checklist cannot replace current local rules. A real qualified practitioner would first confirm the relevant jurisdiction and commercial objectives, then review confidential documents through an approved, secure channel—not an unrestricted demo form."
+      },
+      "reviewPoints": {
+        "ar": [
+          "تحديد الدولة والجهة المختصة",
+          "تأكيد نطاق خدمة المحامي المرخص",
+          "فصل البيانات السرية عن الاستفسار العام"
+        ],
+        "en": [
+          "Establish the jurisdiction and relevant decision-maker",
+          "Confirm the qualified professional and agreed scope",
+          "Keep confidential details outside a public enquiry"
+        ]
+      }
+    },
+    {
+      "slug": "commercial-contracts",
+      "rank": 2,
+      "category": "corporate",
+      "title": {
+        "ar": "العقود التجارية ومراجعة البنود",
+        "en": "Commercial contracts & negotiation"
+      },
+      "summary": {
+        "ar": "فهم الالتزامات والتسليم والإنهاء وآليات حل النزاع قبل التوقيع.",
+        "en": "Clarify scope, deliverables, change requests, termination and dispute routes before signing."
+      },
+      "body": {
+        "ar": "يتعامل العقد الواضح مع نطاق الخدمة والمقابل المالي والتسليم والضمانات وحدود المسؤولية وسرية المعلومات وآليات الإنهاء أو حل الخلافات. قد يتغير التفسير والأثر القانوني من دولة لأخرى. لذلك يوضح الموقع عناصر النقاش على مستوى عام فقط، ولا يجمع نصوص العقود أو بيانات الطرف الآخر أو بنودًا سرية في استمارة الاستفسار.",
+        "en": "A useful commercial agreement makes scope, payment, deliverables, warranties, liability allocation, confidentiality, termination and disputes understandable. Their legal effects vary by jurisdiction and transaction. This website provides an educational overview only; confidential clauses, counterparties and full agreements must never be pasted into a public showcase enquiry."
+      },
+      "reviewPoints": {
+        "ar": [
+          "تحديد الدولة والجهة المختصة",
+          "تأكيد نطاق خدمة المحامي المرخص",
+          "فصل البيانات السرية عن الاستفسار العام"
+        ],
+        "en": [
+          "Establish the jurisdiction and relevant decision-maker",
+          "Confirm the qualified professional and agreed scope",
+          "Keep confidential details outside a public enquiry"
+        ]
+      }
+    },
+    {
+      "slug": "employment-relations",
+      "rank": 3,
+      "category": "people",
+      "title": {
+        "ar": "علاقات العمل والالتزام الوظيفي",
+        "en": "Employment and workplace matters"
+      },
+      "summary": {
+        "ar": "تفريق الإرشاد العام عن مراجعة السياسات والعقود والحقوق المحلية.",
+        "en": "Separate general workplace guidance from a qualified review of employment obligations."
+      },
+      "body": {
+        "ar": "تشمل علاقات العمل سياسات التوظيف والعقود والتغييرات التنظيمية والإجازات وإنهاء العلاقة. يجب مراجعة الأحكام وفق الدولة والقطاع والعقد والحقائق الفعلية، ولا يمكن حسم حق أو مهلة نظامية من صفحة تعريفية. عند وجود مواعيد اعتراض أو دعوى يُنصح بالتواصل مع مهني مؤهل فورًا دون إرسال وقائع سرية إلى نموذج عرض.",
+        "en": "Employment relationships involve policy, contract terms, organizational changes, leave, termination and dispute procedures. Rights and deadlines differ across jurisdictions and circumstances. A public site must not give definitive time limits or outcomes based on generic copy. For an imminent filing or appeal deadline, seek a qualified local legal professional promptly instead of relying on an example form."
+      },
+      "reviewPoints": {
+        "ar": [
+          "تحديد الدولة والجهة المختصة",
+          "تأكيد نطاق خدمة المحامي المرخص",
+          "فصل البيانات السرية عن الاستفسار العام"
+        ],
+        "en": [
+          "Establish the jurisdiction and relevant decision-maker",
+          "Confirm the qualified professional and agreed scope",
+          "Keep confidential details outside a public enquiry"
+        ]
+      }
+    },
+    {
+      "slug": "commercial-disputes",
+      "rank": 4,
+      "category": "disputes",
+      "title": {
+        "ar": "النزاعات التجارية والتحكيم",
+        "en": "Commercial disputes and arbitration"
+      },
+      "summary": {
+        "ar": "تحديد نوع المسار القضائي أو التفاوضي يحتاج مراجعة محامٍ مختص.",
+        "en": "Understand broad dispute resolution pathways without predicting a court or arbitration result."
+      },
+      "body": {
+        "ar": "قبل اختيار التفاوض أو الوساطة أو التقاضي أو التحكيم، تهم طبيعة العلاقة التعاقدية ونطاق الاختصاص وإجراءات الإخطار ووجود شرط تحكيم صالح. تحديد المسار المناسب يتطلب مراجعة وثائق وأطراف ومواعيد من مختص؛ لا نطلب هذه المعلومات السرية عبر الموقع، ولا نعرض أحكامًا أو نجاحات غير موثقة.",
+        "en": "Negotiation, mediation, litigation and arbitration may be available depending on the agreement, jurisdiction and procedural requirements. The right route cannot be chosen without professional assessment of documents, parties and potential deadlines. This concept avoids soliciting confidential facts, naming adverse parties or implying a guaranteed litigation or arbitration outcome."
+      },
+      "reviewPoints": {
+        "ar": [
+          "تحديد الدولة والجهة المختصة",
+          "تأكيد نطاق خدمة المحامي المرخص",
+          "فصل البيانات السرية عن الاستفسار العام"
+        ],
+        "en": [
+          "Establish the jurisdiction and relevant decision-maker",
+          "Confirm the qualified professional and agreed scope",
+          "Keep confidential details outside a public enquiry"
+        ]
+      }
+    },
+    {
+      "slug": "intellectual-property",
+      "rank": 5,
+      "category": "innovation",
+      "title": {
+        "ar": "العلامات التجارية والملكية الفكرية",
+        "en": "Trademarks and intellectual property"
+      },
+      "summary": {
+        "ar": "من البحث الأولي عن العلامة إلى مراجعة الاستخدام والحقوق المحتملة.",
+        "en": "From preliminary brand research to careful review of ownership and permitted use."
+      },
+      "body": {
+        "ar": "قبل الاعتماد على علامة تجارية أو شعار يجب فهم طبيعة النشاط والفئات والأراضي التي يرغب صاحب العمل في الحماية داخلها. لا يمكن افتراض أن مجرد ظهور اسم غير مستخدم يثبت قابليته للتسجيل، كما تختلف إجراءات الاعتراض والحماية حسب الدولة. يمكن للموقع تقديم مسار معلوماتي، لكن البحث القانوني والتقديم ومتابعة الاعتراض من عمل متخصص معتمد.",
+        "en": "Brand protection starts with the intended goods and services, ownership, target territories and appropriate clearance work. The absence of an obvious match is not proof of registrability; rights and procedures differ by country. An actual qualified advisor must examine the details, make filings where permitted and manage official correspondence through approved channels."
+      },
+      "reviewPoints": {
+        "ar": [
+          "تحديد الدولة والجهة المختصة",
+          "تأكيد نطاق خدمة المحامي المرخص",
+          "فصل البيانات السرية عن الاستفسار العام"
+        ],
+        "en": [
+          "Establish the jurisdiction and relevant decision-maker",
+          "Confirm the qualified professional and agreed scope",
+          "Keep confidential details outside a public enquiry"
+        ]
+      }
+    },
+    {
+      "slug": "real-estate-transactions",
+      "rank": 6,
+      "category": "assets",
+      "title": {
+        "ar": "العقود والتصرفات العقارية",
+        "en": "Property transactions & contract review"
+      },
+      "summary": {
+        "ar": "فصل فحص المستندات والملكية والمخاطر التعاقدية عن التسويق العقاري.",
+        "en": "Distinguish property documentation and title verification from a property sales listing."
+      },
+      "body": {
+        "ar": "تختلف مخاطر شراء العقارات أو تأجيرها بحسب نظام التسجيل وعقود الملكية وشروط الدفع والتسليم والقيود التنظيمية. التعامل مع مستندات ملكية أو توكيلات لا يتم في نموذج عام، بل من خلال عملية آمنة مع محامٍ مرخص بعد تحديد الدولة. صفحة العرض لا تؤكد صحة سند ملكية أو نفاذ عقد أو سلامة أي مشروع عقاري.",
+        "en": "Property decisions can depend on registry status, title chain, payment milestones, permitted use and local procedures. Confidential deeds, identification and powers of attorney require secure handling by a qualified professional after scope agreement. This showcase does not verify ownership, validate transactions or promise title clearance for any specific property."
+      },
+      "reviewPoints": {
+        "ar": [
+          "تحديد الدولة والجهة المختصة",
+          "تأكيد نطاق خدمة المحامي المرخص",
+          "فصل البيانات السرية عن الاستفسار العام"
+        ],
+        "en": [
+          "Establish the jurisdiction and relevant decision-maker",
+          "Confirm the qualified professional and agreed scope",
+          "Keep confidential details outside a public enquiry"
+        ]
+      }
+    },
+    {
+      "slug": "succession-planning",
+      "rank": 7,
+      "category": "assets",
+      "title": {
+        "ar": "ترتيب الأصول والتخطيط للتعاقب",
+        "en": "Family-asset and succession planning"
+      },
+      "summary": {
+        "ar": "فهم الأهداف والأطراف العامة مع حماية البيانات العائلية والشخصية.",
+        "en": "Frame succession objectives at a high level without collecting family identities or assets."
+      },
+      "body": {
+        "ar": "ترتيب الأصول أو نقل ملكية الأعمال أو التخطيط للتعاقب يتطلب مراعاة قوانين محلية وحقوق أطراف متعددة وطبيعة الموجودات. لا يصح اختزال الموضوع في إجابة موحدة أو حساب أنصبة من معلومات ناقصة، ولا تُطلب أسماء الورثة أو تفاصيل الأصول أو الهوية في هذا الموقع. يتم تحويل الحالات الفعلية إلى محامٍ مختص مرخص خارج التجربة.",
+        "en": "Succession matters may involve multiple parties, assets, jurisdictions and statutory rights. No general article can allocate entitlements or make a will effective. The example request asks only for a broad service category; names of family members, inheritance shares, financial schedules and identity documents belong in a secure, real professional engagement."
+      },
+      "reviewPoints": {
+        "ar": [
+          "تحديد الدولة والجهة المختصة",
+          "تأكيد نطاق خدمة المحامي المرخص",
+          "فصل البيانات السرية عن الاستفسار العام"
+        ],
+        "en": [
+          "Establish the jurisdiction and relevant decision-maker",
+          "Confirm the qualified professional and agreed scope",
+          "Keep confidential details outside a public enquiry"
+        ]
+      }
+    },
+    {
+      "slug": "cross-border",
+      "rank": 8,
+      "category": "international",
+      "title": {
+        "ar": "الاستشارات التجارية العابرة للحدود",
+        "en": "Cross-border business advisory"
+      },
+      "summary": {
+        "ar": "تحديد الأنشطة والدول المقصودة وما يلزم مراجعته مع مستشار محلي مختص.",
+        "en": "Clarify target territories and business models before seeking locally qualified advice."
+      },
+      "body": {
+        "ar": "قد تؤثر دولة التأسيس ودولة ممارسة النشاط ومكان العملاء وطبيعة الأموال أو البيانات في الالتزامات القانونية والتنظيمية. لا يكفي تطبيق قواعد دولة على أخرى، ولا ينبغي إيهام العميل أن نشاطًا ما مسموح دائمًا عبر الحدود. البداية هي تحديد السؤال التجاري ونطاق الدول، ثم تنسيق المحامين المؤهلين وفق الأنظمة السارية.",
+        "en": "Cross-border operations can raise company, employment, tax, data protection and regulatory questions across multiple legal systems. No single jurisdiction's rule should be casually applied to another. An actual engagement should determine the countries, operator obligations and relevant specialist counsel before giving transaction-specific recommendations."
+      },
+      "reviewPoints": {
+        "ar": [
+          "تحديد الدولة والجهة المختصة",
+          "تأكيد نطاق خدمة المحامي المرخص",
+          "فصل البيانات السرية عن الاستفسار العام"
+        ],
+        "en": [
+          "Establish the jurisdiction and relevant decision-maker",
+          "Confirm the qualified professional and agreed scope",
+          "Keep confidential details outside a public enquiry"
+        ]
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slug": "engagement-boundaries",
+      "title": {
+        "ar": "قبل طلب استشارة قانونية: ما الذي لا ينبغي إرساله في نموذج عام؟",
+        "en": "Before a legal consultation: what not to send through a public form"
+      },
+      "summary": {
+        "ar": "الهدف من الطلب الأولي تحديد مجال الخدمة فقط، وليس سرد وقائع القضية أو إرسال المستندات.",
+        "en": "The first contact should identify a practice area—not disclose a dispute or upload confidential documents."
+      },
+      "body": {
+        "ar": "ابدأ بنوع النشاط والولاية القضائية والهدف العام من التواصل. لا تكتب اسم الخصم أو الطرف المقابل ولا رقم القضية أو كلمات مرور أو نسخ عقد أو مستند هوية أو تفاصيل مرتبطة بموعد قانوني. مجرد إرسال الاستفسار إلى موقع إلكتروني لا ينشئ علاقة محامٍ وموكل ولا يضمن سرية مهنية أو أن المكتب سيقبل العمل. عندما تكون هناك مهلة عاجلة يجب الاستعانة بمحامٍ حقيقي مؤهل وعدم انتظار الرد على تجربة إلكترونية.",
+        "en": "A first-contact form should record the practice category, relevant country and preferred contact method only. Never paste adverse-party names, contract language, case IDs, passwords, identification or impending deadlines into a public portfolio form. Submitting a message does not establish legal representation or privilege, and an example website does not undertake to act. Seek locally qualified help promptly when a legal deadline may be imminent."
+      }
+    },
+    {
+      "slug": "contracts-scope",
+      "title": {
+        "ar": "قبل توقيع عقد تجاري: أسئلة تساعد على توضيح نطاق العمل",
+        "en": "Before signing a commercial agreement: questions that clarify scope"
+      },
+      "summary": {
+        "ar": "راجع معنى الالتزامات والنطاق والدفعات والتغيير والإنهاء دون افتراض حكم قانوني موحد.",
+        "en": "Consider scope, payment, change control and termination without presuming identical law everywhere."
+      },
+      "body": {
+        "ar": "تحتاج اتفاقيات الخدمات والتوريد إلى وصف واضح لما يتم تسليمه وكيفية القبول وما الذي يحدث لو تغيرت المتطلبات أو توقفت العلاقة. راجع طريقة الدفع ومسار الموافقة على التغيير والالتزامات اللاحقة، لكن لا تعتمد على قائمة موقع للتأكد من صحة العقد أو نفاذ بند معين. التفسير والحل الفعلي يعتمدان على الدولة والوقائع وينبغي مراجعتهما مع مختص. لا ترسل العقود الحساسة عبر هذا النموذج.",
+        "en": "A commercial contract should describe deliverables, acceptance, fees, change requests, responsibility and termination. A website can explain why these topics matter; it cannot determine whether a clause is enforceable under a specific legal system. A qualified professional should review the actual agreement, surrounding facts and dispute clauses through a secure process, never through the example intake form."
+      }
+    },
+    {
+      "slug": "corporate-governance-checklist",
+      "title": {
+        "ar": "حوكمة الشركات الناشئة: قرارات مفيدة قبل إطلاق النشاط",
+        "en": "Early-stage governance: decisions worth documenting"
+      },
+      "summary": {
+        "ar": "حدد صلاحيات التوقيع وآلية الاعتماد والسجلات وفق نظام الشركة الفعلي.",
+        "en": "Consider signatory authority, approvals and proper recordkeeping within the right legal entity."
+      },
+      "body": {
+        "ar": "عند تنظيم شركة صغيرة أو متوسطة، من المفيد تحديد من يملك الصلاحية على العقود والدفعات وما السجلات اللازمة للقرارات وما يحدث عند اختلاف الشركاء. لا يوجد قالب واحد لكل شركات مصر والسعودية؛ المتطلبات تختلف تبعًا للشكل القانوني والنشاط والأنظمة الحالية. هذا مقال تمهيدي لا يقدم قائمة التزامات ملزمة أو مواعيد امتثال محددة، ولا يغني عن مستشار مؤهل.",
+        "en": "For a smaller business, role clarity, signing authority, major-transaction approvals and meeting records can make decision-making more predictable. The applicable corporate duties and forms depend on jurisdiction, legal entity and industry. This introduction is not a statutory compliance calendar or legal advice; a properly qualified local advisor should validate the actual company's requirements."
+      }
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "ar": "هل إرسال نموذج التواصل يعتبر توكيلًا للمكتب؟",
+        "en": "Does submitting create an attorney-client relationship?"
+      },
+      "a": {
+        "ar": "لا. هذه تجربة تصميم شركة Mavvix وليست مكتب محاماة مرخصًا أو قبول تمثيل قانوني.",
+        "en": "No. This is a Mavvix website concept, not a law firm engagement or acceptance of representation."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل أرسل رقم القضية أو العقود للنموذج؟",
+        "en": "Can I attach case numbers or contracts here?"
+      },
+      "a": {
+        "ar": "لا. النموذج لا يجمع ملفات أو أسماء خصوم أو تفاصيل قضايا أو مستندات سرية.",
+        "en": "No. Do not submit documents, adverse-party identities, case facts or confidential information."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل يمكن الاعتماد على المقالات في قضية حقيقية؟",
+        "en": "Are the articles advice I can rely on for a real matter?"
+      },
+      "a": {
+        "ar": "لا. المحتوى تثقيفي عام، وتختلف الأنظمة والتفاصيل باختلاف الدولة والوقائع.",
+        "en": "No. The content is general education, not jurisdiction-specific legal advice."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل الموعد أو الأتعاب مؤكدة؟",
+        "en": "Is a meeting or fee quote confirmed?"
+      },
+      "a": {
+        "ar": "لا. لا يوجد جدول محامين حقيقيين أو مقابل مالي أو موعد مؤكد.",
+        "en": "No. There is no operator calendar, professional fee quote or confirmed meeting."
+      }
+    },
+    {
+      "q": {
+        "ar": "ماذا أفعل عند وجود مهلة قانونية عاجلة؟",
+        "en": "What if I face an urgent legal deadline?"
+      },
+      "a": {
+        "ar": "تواصل فورًا مع محامٍ مرخص داخل الولاية القضائية المناسبة؛ لا تنتظر رد هذا الموقع.",
+        "en": "Contact an appropriately qualified local lawyer promptly; do not rely on this sample website."
+      }
+    }
+  ],
+  "jurisdictions": [
+    "egypt",
+    "saudi-arabia",
+    "other"
+  ],
+  "clientTypes": [
+    "individual",
+    "business",
+    "startup",
+    "nonprofit"
+  ],
+  "contactChannels": [
+    "phone",
+    "email",
+    "whatsapp"
+  ],
+  "timeWindows": [
+    "morning",
+    "afternoon",
+    "evening",
+    "flexible"
+  ]
+}
