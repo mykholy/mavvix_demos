@@ -3,7 +3,7 @@ import type { Locale } from '@/lib/i18n/config';
 import { PAWWELL,pawPath } from '@/lib/verticals/veterinary/data';
 import { PawPrint,Dog,Cat,Rabbit,Bird,ArrowUpRight,CheckCircle2,Heart } from 'lucide-react';
 export default function PawPets({params:{locale},searchParams}:{params:{locale:Locale};searchParams:{species?:string}}){
- const ar=locale==='ar',species=PAWWELL.species.some(x=>x.id===searchParams.species)?searchParams.species:'dog';
+ const ar=locale==='ar',requestedSpecies=searchParams.species??'',species=PAWWELL.species.some(x=>x.id===requestedSpecies)?requestedSpecies:'dog';
  const relevant=PAWWELL.services.filter(s=>s.species.includes(species));const selected=PAWWELL.species.find(x=>x.id===species);
  return <div className="max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
   <p className="text-[#915736] font-extrabold text-xs tracking-widest">PET FAMILIES / PERSONAL CARE</p><h1 className="paw-display text-4xl sm:text-6xl font-black mt-5">{ar?'رحلة مناسبة لكل صديق':'Know your companion before choosing care'}</h1>
