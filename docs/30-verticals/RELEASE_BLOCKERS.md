@@ -26,3 +26,7 @@
 
 ## Release rule
 **Do not merge Draft PR #2, deploy, advertise, or invent client results while any blockers remain.** A green Next build demonstrates software regression health, not commercial or legal launch readiness. Mavvix portfolios sell what Mavvix can build; enquiries never impersonate active service providers.
+
+## Exact-head QA refresh — 2026-11-24 19:54 EET
+- On `f04c8d8fb778e4ab41d2f95614bfd40db8722f72`, [Source & Builds 45446646665](https://github.com/mykholy/mavvix_demos/actions/runs/45446646665) and [Real Browser & Visual QA 45446646448](https://github.com/mykholy/mavvix_demos/actions/runs/45446646448) both completed successfully. This supersedes the pending automated visual status above; manual screenshot and media signoff remain open.
+- PR #2 remains open/draft/unmerged; 19 implemented, 11 planned. Next: law-firm (Lexora). Main baseline remains unchanged. No framework upgrade, manual visual review, merge or deployment is claimed by this documentation checkpoint.
