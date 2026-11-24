@@ -3,7 +3,7 @@ import type { Locale } from '@/lib/i18n/config';
 import { PAWWELL,pawPath } from '@/lib/verticals/veterinary/data';
 import { PawPrint,ArrowUpRight,CheckCircle2,Stethoscope } from 'lucide-react';
 export default function PawServices({params:{locale},searchParams}:{params:{locale:Locale};searchParams:{species?:string}}){
- const ar=locale==='ar';const species=PAWWELL.species.some(p=>p.id===searchParams.species)?searchParams.species:'all';
+ const ar=locale==='ar';const requestedSpecies=searchParams.species??'';const species=PAWWELL.species.some(p=>p.id===requestedSpecies)?requestedSpecies:'all';
  const list=PAWWELL.services.filter(s=>species==='all'||s.species.includes(species));
  return <div className="max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
   <div className="grid lg:grid-cols-[1fr_.75fr] gap-10 items-end">
