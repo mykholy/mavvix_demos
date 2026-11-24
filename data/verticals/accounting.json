@@ -1,0 +1,367 @@
+{
+  "slug": "accounting",
+  "brand": "LedgerPoint",
+  "classification": "Mavvix editorial accounting services website concept, not a licensed firm; no tax advice or certified audit service.",
+  "services": [
+    {
+      "slug": "bookkeeping",
+      "rank": 1,
+      "category": "operations",
+      "title": {
+        "ar": "مسك الدفاتر وتسجيل العمليات",
+        "en": "Monthly bookkeeping"
+      },
+      "summary": {
+        "ar": "تجميع المستندات وتصنيف المعاملات ومطابقة دليل الحسابات دون ادعاء تولي خدمة فعلية.",
+        "en": "Organize source records, categorize transactions and maintain a consistent chart of accounts without claiming actual delivery."
+      },
+      "body": {
+        "ar": "عندما تتراكم فواتير الشراء والمبيعات والمصروفات، يبدأ العمل الحقيقي بتحديد مصدر كل مستند وكيفية اعتماده ومن المسؤول عن تسجيله ومراجعته. يمكن تصميم عملية تسجيل شهرية واضحة وفصل المعاملات غير المكتملة إلى قائمة استثناءات، لكن جودة البيانات النهائية تعتمد على المستندات والإجراءات الفعلية والمهنيين المؤهلين. لا تطلب هذه التجربة رفع فواتير العملاء أو كشوف الحساب أو أي بيانات مالية سرية.",
+        "en": "Bookkeeping starts with the sources of transactions, the agreed chart of accounts, cut-off procedures and a clear review responsibility. Missing invoices or unexplained balances need an exception queue, not an invented clean set of books. A real operator should agree on deliverables, source access and controls. This public example never collects invoices, ledgers or confidential account data."
+      },
+      "checkpoints": {
+        "ar": [
+          "ما المستندات المتاحة وما الناقص؟",
+          "من يراجع النتائج ومن يعتمد التغييرات؟",
+          "كيف يتم تسليم التقارير مع حماية البيانات؟"
+        ],
+        "en": [
+          "Which source records are available or missing?",
+          "Who reviews results and approves changes?",
+          "How are reports delivered with proper access control?"
+        ]
+      }
+    },
+    {
+      "slug": "bank-reconciliation",
+      "rank": 2,
+      "category": "controls",
+      "title": {
+        "ar": "التسويات البنكية",
+        "en": "Bank reconciliation"
+      },
+      "summary": {
+        "ar": "مقارنة الأرصدة المحاسبية والمصرفية ورصد الفروقات ضمن دورة مراجعة منظمة.",
+        "en": "Reconcile cash records to bank statements while documenting timing differences and exceptions."
+      },
+      "body": {
+        "ar": "تسوية البنك ليست مجرد مقارنة رقمين. يجب تحديد تاريخ القطع والحركات التي لم تظهر بعد والتحويلات والرسوم والأخطاء المحتملة، ثم توثيق الفروقات والمعالجة المعتمدة. الوصول إلى كشوف الحساب البنكي عمل تشغيلي حساس لا يتم من خلال نموذج تسويق عام. مدة المراجعة تعتمد على عدد الحسابات والحركات وجودة السجلات.",
+        "en": "A bank reconciliation compares a defined ledger balance with independent bank evidence at a specified date. Timing differences, fees, missing entries and duplicate postings need documented resolution. Reviewing source statements requires an actual contracted service with secure handling; a marketing intake should ask about volume bands, not the bank balance or account number."
+      },
+      "checkpoints": {
+        "ar": [
+          "ما المستندات المتاحة وما الناقص؟",
+          "من يراجع النتائج ومن يعتمد التغييرات؟",
+          "كيف يتم تسليم التقارير مع حماية البيانات؟"
+        ],
+        "en": [
+          "Which source records are available or missing?",
+          "Who reviews results and approves changes?",
+          "How are reports delivered with proper access control?"
+        ]
+      }
+    },
+    {
+      "slug": "management-reports",
+      "rank": 3,
+      "category": "insights",
+      "title": {
+        "ar": "التقارير الإدارية الشهرية",
+        "en": "Monthly management reporting"
+      },
+      "summary": {
+        "ar": "تقارير مفهومة عن الاتجاهات والمصروفات والمستحقات مع تعريف المؤشرات قبل تفسيرها.",
+        "en": "Prepare readable monthly management reports with clear definitions for key business figures."
+      },
+      "body": {
+        "ar": "تبدأ التقارير الجيدة من اتفاق على ما يريد صاحب المشروع معرفته، مثل اتجاه الإيرادات أو بنود التكاليف أو الذمم أو التدفقات. يجب توضيح طريقة احتساب كل رقم وما إذا كان مبنيًا على بيانات مكتملة أو تقديرية. الرسوم البيانية وحدها لا تثبت صحة البيانات. الموقع يعرض منهجية التقارير، لا نتائج مالية تخص عملاء متخيلين.",
+        "en": "Useful management reporting begins with a business question and reliable definitions: revenue recognition, cost categories, working capital and receivables. Charts depend on correctly classified records and clearly noted limitations. A real accounting team should agree on reporting cadence and data availability before promising a dashboard or implying historical business results."
+      },
+      "checkpoints": {
+        "ar": [
+          "ما المستندات المتاحة وما الناقص؟",
+          "من يراجع النتائج ومن يعتمد التغييرات؟",
+          "كيف يتم تسليم التقارير مع حماية البيانات؟"
+        ],
+        "en": [
+          "Which source records are available or missing?",
+          "Who reviews results and approves changes?",
+          "How are reports delivered with proper access control?"
+        ]
+      }
+    },
+    {
+      "slug": "payroll-records",
+      "rank": 4,
+      "category": "operations",
+      "title": {
+        "ar": "سجلات الرواتب والتسويات",
+        "en": "Payroll accounting support"
+      },
+      "summary": {
+        "ar": "تنظيم سجلات الاستحقاق والخصومات والتسويات تحت ضوابط الوصول والسرية.",
+        "en": "Plan payroll records and reconciliations with strict privacy and role-controlled access."
+      },
+      "body": {
+        "ar": "تحتاج دورة الرواتب إلى قائمة مسؤولة عن الاعتماد والتغييرات والتسوية مع القيود المحاسبية، وقد تختلف المتطلبات النظامية بين الدول. لا يمكن الاعتماد على وصف موقع لتحديد حقوق الموظفين أو التزام ضريبي معين. بيانات الموظفين والرواتب والهوية الخاصة لا تُرفع إلى نموذج الاستفسار، ولا تُنشر أرقام أو أمثلة تبدو تخص موظفين فعليين.",
+        "en": "A payroll accounting process records approved inputs, changes, cut-offs, postings and reconciliation to payroll liabilities. Local employment and tax rules differ; an example website cannot determine specific entitlements. Employee identifiers, salaries and personal details require a separately authorized, secure operator system and never belong in a showcase lead form."
+      },
+      "checkpoints": {
+        "ar": [
+          "ما المستندات المتاحة وما الناقص؟",
+          "من يراجع النتائج ومن يعتمد التغييرات؟",
+          "كيف يتم تسليم التقارير مع حماية البيانات؟"
+        ],
+        "en": [
+          "Which source records are available or missing?",
+          "Who reviews results and approves changes?",
+          "How are reports delivered with proper access control?"
+        ]
+      }
+    },
+    {
+      "slug": "tax-readiness",
+      "rank": 5,
+      "category": "compliance",
+      "title": {
+        "ar": "تجهيز ملفات الضرائب والالتزامات",
+        "en": "Tax document readiness"
+      },
+      "summary": {
+        "ar": "تحديد نوع الالتزام والملفات المطلوبة بعد التحقق من النشاط والبلد مع مختص معتمد.",
+        "en": "Scope tax preparation support only after confirming jurisdiction, registration and authorized practitioner."
+      },
+      "body": {
+        "ar": "تختلف إقرارات ضريبة الدخل والقيمة المضافة والاستقطاعات والزكاة وغيرها وفق نوع المكلف والدولة والأنظمة السارية. لا ينبغي عرض موعد أو نسبة على أنها عامة لكل الأنشطة. يساعد الموقع في تحديد فئة استفسار عامة وتحضير مراجعة المستندات مع مهني مؤهل، من دون استقبال أرقام التسجيل الضريبي أو الإقرارات أو أدلة السداد في نموذج علني.",
+        "en": "Tax and zakat obligations vary by taxpayer, activity, country and current law. Do not assume one rate, reporting period or filing deadline applies universally. A genuine engagement should confirm registrations, records and the professional's authority in the applicable jurisdiction. The public contact form collects only broad scope and volume bands."
+      },
+      "checkpoints": {
+        "ar": [
+          "ما المستندات المتاحة وما الناقص؟",
+          "من يراجع النتائج ومن يعتمد التغييرات؟",
+          "كيف يتم تسليم التقارير مع حماية البيانات؟"
+        ],
+        "en": [
+          "Which source records are available or missing?",
+          "Who reviews results and approves changes?",
+          "How are reports delivered with proper access control?"
+        ]
+      }
+    },
+    {
+      "slug": "e-invoicing",
+      "rank": 6,
+      "category": "systems",
+      "title": {
+        "ar": "التهيئة للفواتير الإلكترونية",
+        "en": "E-invoicing readiness"
+      },
+      "summary": {
+        "ar": "مراجعة تدفق إصدار الفواتير وحقول البيانات والربط التقني قبل أي التزام محدد.",
+        "en": "Assess invoicing workflows and integration responsibilities before promising regulatory compliance."
+      },
+      "body": {
+        "ar": "الجاهزية للفوترة الإلكترونية تبدأ بتحديد النظام المستخدم وتدفق الإصدار والإلغاء والحفظ والمسؤولية عن تصحيح الأخطاء. تختلف المتطلبات والربط حسب البلد ونوع المنشأة والمراحل التنظيمية الحالية. تصميم الموقع يمكنه عرض مسار مراجعة أو طلب استشارة، لكنه لا يثبت تكاملًا فعليًا مع منظومة الضرائب أو هيئة تنظيمية.",
+        "en": "E-invoicing readiness involves workflow ownership, invoice data completeness, error handling, retention and integration to the required system. Country and current phase matter, and a public page should not claim regulator certification or completed integration. A real project needs a qualified implementation scope and security review."
+      },
+      "checkpoints": {
+        "ar": [
+          "ما المستندات المتاحة وما الناقص؟",
+          "من يراجع النتائج ومن يعتمد التغييرات؟",
+          "كيف يتم تسليم التقارير مع حماية البيانات؟"
+        ],
+        "en": [
+          "Which source records are available or missing?",
+          "Who reviews results and approves changes?",
+          "How are reports delivered with proper access control?"
+        ]
+      }
+    },
+    {
+      "slug": "startup-books",
+      "rank": 7,
+      "category": "setup",
+      "title": {
+        "ar": "تهيئة الحسابات للشركات الجديدة",
+        "en": "New business accounting setup"
+      },
+      "summary": {
+        "ar": "اختيار دليل الحسابات والعمليات الأولية ومسؤوليات الاعتماد لتسهيل نمو السجلات.",
+        "en": "Establish basic ledger structures, approvals and operating records for a new venture."
+      },
+      "body": {
+        "ar": "عند بدء شركة جديدة، يساعد اختيار دليل الحسابات المناسب وربط المستندات بأنواع المعاملات على بناء دورة شهرية قابلة للمراجعة. ينبغي الاتفاق على صلاحيات اعتماد المصروفات وإثبات التسويات وحفظ السجلات، مع مراعاة الدولة ونوع المنشأة. مجرد إنشاء النظام المحاسبي لا يعني أن هناك مراجعة قانونية أو تقريرًا ماليًا معتمدًا.",
+        "en": "An early-stage business needs a fit-for-purpose account structure, clear approvals, source document retention and ownership of monthly reconciliation. Different legal entities and jurisdictions bring different reporting obligations. Configuring a ledger does not create audited statements or a legal compliance opinion."
+      },
+      "checkpoints": {
+        "ar": [
+          "ما المستندات المتاحة وما الناقص؟",
+          "من يراجع النتائج ومن يعتمد التغييرات؟",
+          "كيف يتم تسليم التقارير مع حماية البيانات؟"
+        ],
+        "en": [
+          "Which source records are available or missing?",
+          "Who reviews results and approves changes?",
+          "How are reports delivered with proper access control?"
+        ]
+      }
+    },
+    {
+      "slug": "audit-readiness",
+      "rank": 8,
+      "category": "controls",
+      "title": {
+        "ar": "ملفات المراجعة والرقابة الداخلية",
+        "en": "Audit readiness & controls"
+      },
+      "summary": {
+        "ar": "ترتيب الأدلة والتسويات وسجلات الاعتماد لتمكين مراجعة خارجية مستقلة عند الحاجة.",
+        "en": "Organize reconciliations, supporting records and approval trails for potential independent review."
+      },
+      "body": {
+        "ar": "الاستعداد للمراجعة قد يشمل جداول الأرصدة والتسويات وأدلة المعاملات والسياسات والضوابط، لكن ذلك ليس رأيًا من مراجع خارجي أو شهادة تدقيق. الاستقلال المهني والترخيص وتوقيع القوائم أعمال تخضع لضوابط محلية وتحتاج جهة معتمدة. لا يعرض هذا الموقع تقارير موقعة أو مراجعات فعلية.",
+        "en": "Audit preparation means having traceable source records, reconciliation schedules and reviewable internal controls. It is not equivalent to performing independent assurance, issuing an opinion or signing audited accounts. Those services have licensing and independence requirements that must be verified with a genuine authorized firm."
+      },
+      "checkpoints": {
+        "ar": [
+          "ما المستندات المتاحة وما الناقص؟",
+          "من يراجع النتائج ومن يعتمد التغييرات؟",
+          "كيف يتم تسليم التقارير مع حماية البيانات؟"
+        ],
+        "en": [
+          "Which source records are available or missing?",
+          "Who reviews results and approves changes?",
+          "How are reports delivered with proper access control?"
+        ]
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slug": "monthly-close",
+      "title": {
+        "ar": "إقفال شهري أفضل: قائمة أسئلة قبل إعداد التقرير",
+        "en": "Better month-end close: questions before the report"
+      },
+      "summary": {
+        "ar": "التسوية والمراجعة والاعتماد تسبق لوحة الأرقام النهائية.",
+        "en": "Reconciliation, exception review and approval should precede dashboards."
+      },
+      "body": {
+        "ar": "يبدأ الإقفال المحاسبي بجمع المستندات وإثبات العمليات الخاصة بالفترة وتسجيل التسويات ومراجعة البنود غير المعتادة. يساعد تحديد مسؤول لكل خطوة وقائمة استثناءات واضحة على تخفيض الاعتماد على ذاكرة موظف واحد. عندما تكون السجلات ناقصة يجب توضيح حدود التقرير بدل عرض أرقام مؤكدة ظاهريًا. هذه معلومات تنظيمية عامة وليست تقريرًا محاسبيًا معتمدًا أو رأيًا مراجعيًا.",
+        "en": "An orderly month-end close requires a cut-off for source records, transaction entry, reconciliation, exception review and documented approval. Assigning responsibility to each stage makes follow-up easier. If records are missing, management reports should describe limitations instead of presenting unsupported precision. This article is general business education, not a certified accounting report."
+      }
+    },
+    {
+      "slug": "choosing-accounting-service",
+      "title": {
+        "ar": "إزاي تحدد نطاق خدمة المحاسب قبل مقارنة الأسعار؟",
+        "en": "Define accounting scope before comparing service quotes"
+      },
+      "summary": {
+        "ar": "عدد المعاملات والحسابات والتقارير المطلوبة أهم من باقة عامة غير واضحة.",
+        "en": "Transaction volume, banking complexity and expected reports matter more than a vague flat-price package."
+      },
+      "body": {
+        "ar": "قبل طلب عرض سعر، حدد ما إذا كنت تحتاج مسك دفاتر يوميًا أو مراجعة شهرية أو تقارير إدارية أو خدمات رواتب أو استشارة ضريبية. اذكر نطاق عدد الفواتير والجهات المستخدمة للنظام والمواعيد المرغوبة دون الإفصاح عن إيرادات أو رواتب خاصة. تكلفة الخدمة الفعلية تتأثر بنوعية السجلات والبلد والمهن المطلوبة وليس مجرد عدد المستندات. احرص على توثيق ما يتضمنه العرض وما هو خارج نطاقه.",
+        "en": "Before comparing quotes, define whether the need is transaction entry, reconciliations, management reporting, payroll records or tax review. Share a broad invoice-volume band and existing accounting tool, but not confidential revenue or employee details. Fees depend on record quality, jurisdiction and specialist responsibilities. A real proposal should clearly identify inclusions, exclusions and approval points."
+      }
+    },
+    {
+      "slug": "accounting-vs-audit",
+      "title": {
+        "ar": "مسك الدفاتر ليس مراجعة مستقلة: الفرق المهم لرواد الأعمال",
+        "en": "Bookkeeping is not an independent audit: an important distinction"
+      },
+      "summary": {
+        "ar": "التسجيل وإعداد التقارير والمراجعة المستقلة أدوار مختلفة لها شروط.",
+        "en": "Recording transactions and independent assurance involve different duties and qualifications."
+      },
+      "body": {
+        "ar": "قد تستخدم الشركة محاسبًا لتسجيل العمليات وإعداد تقارير الإدارة، لكنها تحتاج في بعض الحالات إلى مراجع مستقل مرخص لإبداء رأي في قوائم مالية. يختلف الإلزام وشروط الاستقلال والترخيص حسب الولاية القضائية ونوع المنشأة. لا يصح وضع كلمة «مدقق معتمد» على موقع تجريبي أو اعتبار تقارير داخلية شهادة خارجية. يمكن عرض خدمات تنظيم الملفات والاستعداد للمراجعة مع توضيح الحدود المهنية.",
+        "en": "An internal or outsourced bookkeeper can organize transactions and prepare reports, but an independent audit is a separate professional engagement that may require a licensed practitioner and independence safeguards. Requirements vary by jurisdiction, size and entity type. The marketing concept should never imply an audit opinion, authorized signature or real professional registration without verifying those claims."
+      }
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "ar": "هل الموقع يقدم محاسبة أو مراجعة فعلية؟",
+        "en": "Does this website provide real bookkeeping or audit work?"
+      },
+      "a": {
+        "ar": "لا، LedgerPoint هوية عرض من Mavvix؛ العقود الفعلية تحتاج مكتبًا ومهنيين معتمدين.",
+        "en": "No. LedgerPoint is a Mavvix website concept; actual services require an appropriately qualified operator."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل أرسل كشوف البنك والإقرارات هنا؟",
+        "en": "Can I upload bank statements or tax records here?"
+      },
+      "a": {
+        "ar": "لا. يُطلب نطاق العمل وعدد العمليات التقريبي فقط، ولا يتم جمع ملفات مالية خاصة.",
+        "en": "No. The example asks only for general scope and volume bands, not financial documents."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل الأسعار محسوبة تلقائيًا؟",
+        "en": "Are fees automatically calculated?"
+      },
+      "a": {
+        "ar": "لا. السعر يحتاج مراجعة طبيعة النشاط والدولة وحالة السجلات ونطاق العمل.",
+        "en": "No. Pricing requires a real review of sector, jurisdiction, records and professional scope."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل يدعم مصر والسعودية؟",
+        "en": "Does it support Egypt and Saudi Arabia?"
+      },
+      "a": {
+        "ar": "التجربة تعرض الاختيار بين الدولتين، لكن لا تقدم رأيًا ضريبيًا موحدًا أو إقرارًا معتمدًا.",
+        "en": "The enquiry covers both as context; it does not provide a universal tax opinion or filing service."
+      }
+    },
+    {
+      "q": {
+        "ar": "إيه الفرق بين خدمة الحسابات والمراجعة؟",
+        "en": "What's the difference between bookkeeping and independent audit?"
+      },
+      "a": {
+        "ar": "مسك الدفاتر تنظيم وتسجيل، والمراجعة المستقلة عمل مهني آخر قد يتطلب ترخيصًا.",
+        "en": "Bookkeeping records transactions; independent assurance is a distinct regulated professional service."
+      }
+    }
+  ],
+  "countries": [
+    "egypt",
+    "saudi-arabia",
+    "other"
+  ],
+  "entityTypes": [
+    "sole-proprietor",
+    "startup",
+    "sme",
+    "professional-services",
+    "other"
+  ],
+  "volumeBands": [
+    "under-50",
+    "50-200",
+    "201-1000",
+    "over-1000"
+  ],
+  "cadence": [
+    "one-time",
+    "monthly",
+    "quarterly"
+  ],
+  "systems": [
+    "spreadsheets",
+    "accounting-platform",
+    "erp",
+    "not-started"
+  ]
+}
