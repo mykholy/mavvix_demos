@@ -298,6 +298,19 @@ const demos = [
       {ar:'طلب تصميم محفوظ دون سعر أو تصنيع مؤكد',en:'Validated persisted design brief without binding price'}
     ],
     features:['Layout-aware Wall Measurements','Material Selection','Nonbinding Design Brief']
+  },
+  {
+    number:'17',slug:'car-detailing',
+    name:{ar:'جلوس باي — موقع عناية وتلميع السيارات',en:'GlossBay — Premium Car Detailing Website'},
+    sector:{ar:'ديتيلنج وتنظيف وحماية السيارات',en:'Automotive Detailing, Cleaning & Paint Protection'},
+    icon:Wrench,color:'#4CCBF4',bgColor:'bg-cyan-50',borderColor:'border-cyan-200',routesCount:26,
+    tagline:{ar:'اختيار حجم السيارة وتفاصيل التلميع والإضافات مع طلب عرض غير ملزم',en:'Vehicle-size selector, treatment dossiers and a nonbinding quote enquiry builder'},
+    journeys:[
+      {ar:'10 خدمات تفصيلية تشمل الداخلية والطلاء وPPF والسيراميك',en:'Ten substantive wash, cabin, correction and protection dossiers'},
+      {ar:'تحديد حجم العربية والإضافات وحالة السطح وتاريخ مفضل',en:'Select vehicle size, treatment, add-ons, surface condition and preferred day'},
+      {ar:'حفظ استفسار برقم مرجعي بدون سعر وهمي أو حجز مؤكد',en:'Consent-based persisted request with no fabricated quote or appointment'}
+    ],
+    features:['Vehicle-size Service Scope','Paint Protection Education','Idempotent Quote Request']
   }
 ];
 
@@ -446,6 +459,8 @@ export default function ShowcasePage({ params }: Props) {
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#EDE3D4]"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Living_room_%28Unsplash%29.jpg/1280px-Living_room_%28Unsplash%29.jpg" alt={isAr?'صورة CC0 حقيقية لصالون بكنبة زرقاء':'CC0 editorial blue sofa living room'} className="h-full w-full object-cover"/></div>
                   : d.slug==='interiors-kitchens'
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#F4F0EA]"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Kitchen_Design.jpg/960px-Kitchen_Design.jpg" alt={isAr?'صورة تحريرية لتصميم مطبخ':'Editorial kitchen design photograph'} className="h-full w-full object-cover"/></div>
+                  : d.slug==='car-detailing'
+                  ? <div className="relative h-52 w-full overflow-hidden bg-[#071424]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Exterior_Car_detailing.png/1280px-Exterior_Car_detailing.png" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'صورة مرخصة حقيقية لسيارة خلال عمل ديتيلنج':'Genuine CC0 editorial car-detailing photograph'}/></div>
                   : <SectorPhoto sector={d.slug as keyof typeof SECTOR_IMAGES} alt="" className="h-52 w-full" />}
                 {/* Sector Overview */}
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
