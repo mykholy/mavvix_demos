@@ -174,7 +174,7 @@ try {
     guestName:'QA Automotive',guestPhone:'01000000000',make:'Toyota',model:'Corolla',year:2023,
     serviceSlug:'brakes',category:'safety',preferredDate:'',preferredWindow:'flexible',region:'Cairo',
     consent:true,honeypot:'',utm:{source:'qa',medium:'integration',campaign:'auto-service'}};
-  const incompleteSector=await post('/api/portfolio/physiotherapy',automotiveBody);
+  const incompleteSector=await post('/api/portfolio/veterinary',automotiveBody);
   assert.equal(incompleteSector.status,404,'Unimplemented sectors must never impersonate a live flow');
   const crossSector=await post('/api/portfolio/fitness',automotiveBody);
   assert.equal(crossSector.status,400,'A fitness API must reject automotive cross-sector payloads');
@@ -426,7 +426,38 @@ try {
   assert.equal(glossDuplicate.refNumber,glossReceipt.refNumber);
   console.log('PASS: '+(glossRoutes.length*2)+' bilingual GlossBay routes and idempotent vehicle-size/add-on quote with strict negatives');
 
-   console.log('PASS: auth guard, flow validation, Academy SQLite progress, trusted ecommerce price, private receipt');
+ 
+  const motionRoutes=['','services','services/initial-movement-assessment','services/sports-return-planning','appointment',
+    'journal','journal/first-appointment','first-visit','mobility','sports','programmes',
+    'team','process','privacy','about','contact','questions'];
+  for(const locale of ['ar','en'])for(const route of motionRoutes){
+    const url='/'+locale+'/preview/physiotherapy'+(route?'/'+route:'');
+    const response=await get(url);
+    assert.equal(response.status,200,'Motion Lab route failed: '+url);
+    assert.ok((await response.text()).includes('data-mavvix-contact-dock'),'Missing Mavvix contact dock on '+url);
+  }
+  const motionDate=new Date(Date.now()+3*86400000).toISOString().slice(0,10);
+  const motionReq={flowType:'physiotherapy_assessment_interest',clientRequestId:'11111111-1111-4111-8111-222222222222',
+    serviceSlug:'initial-movement-assessment',visitType:'first-assessment',goalType:'daily-movement',
+    preferredDate:motionDate,preferredWindow:'flexible',region:'Cairo',guestName:'QA Movement',
+    guestPhone:'01000000000',consent:true,honeypot:'',utm:{source:'qa',medium:'integration',campaign:'physiotherapy'}};
+  assert.equal((await post('/api/portfolio/physiotherapy',{...motionReq,consent:false})).status,400,
+    'Motion Lab enforces explicit contact consent');
+  assert.equal((await post('/api/portfolio/physiotherapy',{...motionReq,medicalHistory:'FORBIDDEN SENSITIVE DATA'})).status,400,
+    'Motion Lab must reject clinical information');
+  const motionSaved=await post('/api/portfolio/physiotherapy',motionReq);
+  const motionReceipt=await motionSaved.json();
+  assert.equal(motionSaved.status,201,'Motion Lab intake not saved: '+JSON.stringify(motionReceipt));
+  assert.match(motionReceipt.refNumber,/^MVX-ML-[A-F0-9]+$/);
+  assert.equal(motionReceipt.status,'pending_operator_confirmation');
+  const motionAgain=await post('/api/portfolio/physiotherapy',motionReq);
+  const motionReplay=await motionAgain.json();
+  assert.equal(motionAgain.status,200);
+  assert.equal(motionReplay.duplicate,true);
+  assert.equal(motionReplay.refNumber,motionReceipt.refNumber);
+  console.log('PASS: 34 bilingual Motion Lab routes, no-PHI form rejection and saved idempotent pending enquiry');
+
+  console.log('PASS: auth guard, flow validation, Academy SQLite progress, trusted ecommerce price, private receipt');
 } catch (error) {
   console.error(error);
   console.error('Server tail:', output.slice(-5000));
