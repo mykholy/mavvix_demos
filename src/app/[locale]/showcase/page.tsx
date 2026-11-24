@@ -300,6 +300,19 @@ const demos = [
     features:['Layout-aware Wall Measurements','Material Selection','Nonbinding Design Brief']
   },
   {
+    number:'16',slug:'nursery',
+    name:{ar:'بلوم ستيبس — موقع حضانات ورياض أطفال',en:'BloomSteps — Premium Nursery & Early Years Website'},
+    sector:{ar:'رياض أطفال وبرامج تعلم باللعب',en:'Nursery, Preschool & Early Years'},
+    icon:GraduationCap,color:'#F5C04E',bgColor:'bg-amber-50',borderColor:'border-amber-200',routesCount:23,
+    tagline:{ar:'الفئات العمرية والتعلم باللعب وطلب زيارة بموافقة ولي الأمر',en:'Age-led learning, safety-first storytelling and a guardian-only visit request'},
+    journeys:[
+      {ar:'8 ملفات برامج وتخصصات للطفولة المبكرة',en:'Eight original early-years program and activity dossiers'},
+      {ar:'معلومات سلامة وروتين اليوم والعناية بالخصوصية',en:'Safeguarding, learning rhythm and child-privacy guidance'},
+      {ar:'طلب زيارة محفوظ لولي الأمر دون بيانات شخصية عن الأطفال',en:'Consented guardian-only saved visit request with no child-identifiable details'}
+    ],
+    features:['Age-Band Guided Programs','Guardian Privacy-First Intake','Nonbinding Visit Request']
+  },
+  {
     number:'17',slug:'car-detailing',
     name:{ar:'جلوس باي — موقع عناية وتلميع السيارات',en:'GlossBay — Premium Car Detailing Website'},
     sector:{ar:'ديتيلنج وتنظيف وحماية السيارات',en:'Automotive Detailing, Cleaning & Paint Protection'},
@@ -459,6 +472,8 @@ export default function ShowcasePage({ params }: Props) {
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#EDE3D4]"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Living_room_%28Unsplash%29.jpg/1280px-Living_room_%28Unsplash%29.jpg" alt={isAr?'صورة CC0 حقيقية لصالون بكنبة زرقاء':'CC0 editorial blue sofa living room'} className="h-full w-full object-cover"/></div>
                   : d.slug==='interiors-kitchens'
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#F4F0EA]"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Kitchen_Design.jpg/960px-Kitchen_Design.jpg" alt={isAr?'صورة تحريرية لتصميم مطبخ':'Editorial kitchen design photograph'} className="h-full w-full object-cover"/></div>
+                  : d.slug==='nursery'
+                  ? <div className="relative h-52 w-full overflow-hidden bg-[#FFF5DA]"><img src="https://upload.wikimedia.org/wikipedia/commons/7/71/Montessorishelves.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'مواد تعليمية حقيقية من فصل مونتيسوري مستقل، لا يمثل حضانة بلوم ستيبس':'Real editorial Montessori learning materials in an unrelated classroom'}/></div>
                   : d.slug==='car-detailing'
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#071424]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Exterior_Car_detailing.png/1280px-Exterior_Car_detailing.png" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'صورة مرخصة حقيقية لسيارة خلال عمل ديتيلنج':'Genuine CC0 editorial car-detailing photograph'}/></div>
                   : <SectorPhoto sector={d.slug as keyof typeof SECTOR_IMAGES} alt="" className="h-52 w-full" />}
