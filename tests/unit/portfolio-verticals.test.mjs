@@ -137,3 +137,18 @@ test('demo seed has no fixed fallback admin password',()=>{
  assert.ok(!seed.includes("bcrypt.hashSync('MavvixDemo2026!'"));
  assert.ok(!seed.includes("'operator@mavvix.local', ?"));
 });
+
+test('law firm includes eight independent bilingual dossiers, private-safe intake and meaningful guides',()=>{
+ const data=JSON.parse(fs.readFileSync(path.join(root,'data/verticals/law-firm.json'),'utf8'));
+ assert.equal(data.services.length,8);
+ assert.equal(new Set(data.services.map(s=>s.slug)).size,8);
+ assert.equal(data.articles.length,3);
+ assert.equal(data.faq.length,5);
+ for(const s of data.services){
+  assert.ok(s.body.ar.length>160 && s.body.en.length>160);
+  assert.equal(s.reviewPoints.ar.length,3);
+ }
+ const api=fs.readFileSync(path.join(root,'src/server/portfolio/law-firm.ts'),'utf8');
+ assert.ok(api.includes('.strict()'));
+ assert.ok(!api.includes('caseDescription:')&&!api.includes('adverseParty:')&&!api.includes('documentUpload:'));
+});
