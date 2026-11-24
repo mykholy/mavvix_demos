@@ -43,6 +43,7 @@ const DEMOS_LIST = [
   { slug: 'sports-venues', nameAr: 'أرينا كورتس / ملاعب', nameEn: 'Arena Courts · Sports Venues', icon: Trophy, color: '#F0B044' },
   { slug: 'furniture', nameAr: 'أوكلين ليفينج / أثاث', nameEn: 'Oakline Living · Furniture', icon: Home, color: '#BA9062' },
   { slug: 'interiors-kitchens', nameAr: 'فورما / مطابخ وتصميم داخلي', nameEn: 'Forma Atelier · Kitchen & Interiors', icon: Palette, color: '#B9866B' },
+  { slug: 'nursery', nameAr: 'بلوم ستيبس / حضانات', nameEn: 'BloomSteps · Nursery & Preschool', icon: GraduationCap, color: '#F5C04E' },
   { slug: 'car-detailing', nameAr: 'جلوس باي / ديتيلنج السيارات', nameEn: 'GlossBay · Car detailing', icon: Droplets, color: '#4CCBF4' },
 ];
 
