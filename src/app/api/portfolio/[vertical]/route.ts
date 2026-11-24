@@ -1,3 +1,4 @@
+import { handleLegalEnquiry } from '@/server/portfolio/law-firm';
 import { handleVeterinaryVisit } from '@/server/portfolio/veterinary';
 import { handlePhysiotherapyInterest } from '@/server/portfolio/physiotherapy';
 import { handleCarDetailingQuote } from '@/server/portfolio/car-detailing';
@@ -41,6 +42,7 @@ export async function POST(req:Request,{params}:{params:{vertical:string}}){
  if(params.vertical==='car-detailing')return handleCarDetailingQuote(req);
  if(params.vertical==='physiotherapy')return handlePhysiotherapyInterest(req);
  if(params.vertical==='veterinary')return handleVeterinaryVisit(req);
+ if(params.vertical==='law-firm')return handleLegalEnquiry(req);
  if(params.vertical==='nursery')return handleNurseryVisit(req);
  if(params.vertical==='interiors-kitchens')return handleFormaBrief(req);
  if(params.vertical==='furniture')return handleFurnitureQuote(req);
