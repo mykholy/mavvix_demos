@@ -1,0 +1,435 @@
+{
+  "slug": "veterinary",
+  "brand": "PawWell",
+  "classification": "Illustrative bilingual veterinary website experience by Mavvix; not an operating veterinary clinic, emergency line or pet healthcare provider.",
+  "species": [
+    {
+      "id": "dog",
+      "ar": "كلاب",
+      "en": "Dogs"
+    },
+    {
+      "id": "cat",
+      "ar": "قطط",
+      "en": "Cats"
+    },
+    {
+      "id": "rabbit",
+      "ar": "أرانب",
+      "en": "Rabbits"
+    },
+    {
+      "id": "bird",
+      "ar": "طيور",
+      "en": "Birds"
+    },
+    {
+      "id": "other",
+      "ar": "حيوانات أخرى",
+      "en": "Other pets"
+    }
+  ],
+  "ageBands": [
+    {
+      "id": "young",
+      "ar": "صغير / حديث الولادة",
+      "en": "Young"
+    },
+    {
+      "id": "adult",
+      "ar": "بالغ",
+      "en": "Adult"
+    },
+    {
+      "id": "senior",
+      "ar": "متقدم في السن",
+      "en": "Senior"
+    },
+    {
+      "id": "unknown",
+      "ar": "غير معروف",
+      "en": "Unknown"
+    }
+  ],
+  "services": [
+    {
+      "slug": "wellness-visit",
+      "rank": 1,
+      "category": "wellness",
+      "species": [
+        "dog",
+        "cat",
+        "rabbit",
+        "bird",
+        "other"
+      ],
+      "title": {
+        "ar": "زيارة متابعة عامة",
+        "en": "Routine wellness assessment"
+      },
+      "summary": {
+        "ar": "سؤال شامل عن صحة الحيوان وتغيرات سلوكه والعادات اليومية قبل موعد الفحص الفعلي.",
+        "en": "A structured preventive visit discussion covering daily habits and changes before a qualified clinician assesses the pet."
+      },
+      "body": {
+        "ar": "في المتابعة الدورية يحتاج الطبيب البيطري الفعلي إلى فحص الحيوان نفسه والتحدث مع صاحبه حول النمو والأكل والنشاط والتغيرات التي ظهرت مؤخرًا. الموقع يساعد في اختيار نوع الزيارة وتجهيز الأسئلة فقط، ولا يحدد صحة الحيوان أو الحاجة لعلاج. يمكن لصاحب الحيوان الاحتفاظ بسجل التطعيمات والمتابعات وإحضاره للعيادة الحقيقية.",
+        "en": "Routine wellness is best evaluated through an in-person veterinarian and a conversation with the animal guardian about appetite, activity, weight trends and behavior. A branded clinic website can explain which records and general observations to prepare. It cannot determine whether an animal is well or prescribe treatment merely from a category selected online."
+      },
+      "checklist": {
+        "ar": [
+          "حدد نوع الحيوان والفئة العمرية بشكل عام",
+          "جهز الأسئلة وسجل الزيارات السابقة معك للعيادة الحقيقية",
+          "أكّد مع الطبيب الفعلي الإجراءات والمواعيد والتكلفة"
+        ],
+        "en": [
+          "Identify the pet species and general age band",
+          "Bring appropriate previous-visit records to the real veterinarian",
+          "Confirm actual procedure, clinician availability, fees and timing"
+        ]
+      }
+    },
+    {
+      "slug": "vaccination-review",
+      "rank": 2,
+      "category": "prevention",
+      "species": [
+        "dog",
+        "cat",
+        "rabbit",
+        "other"
+      ],
+      "title": {
+        "ar": "مراجعة التطعيمات",
+        "en": "Vaccination and prevention review"
+      },
+      "summary": {
+        "ar": "مراجعة سجل التطعيم والسن ونمط المعيشة وتحديد ما يناقشه المالك مع الطبيب.",
+        "en": "Prepare a vaccine-history discussion informed by species, age band and local veterinary guidance."
+      },
+      "body": {
+        "ar": "جداول التطعيم تختلف باختلاف النوع والعمر والحالة والبلد وطبيعة التعرض للمخاطر. الأفضل مراجعة سجل الجرعات المكتوب عند الطبيب بدل اعتماد جدول موحد من الإنترنت. يمنح الموقع مساحة لاختيار مراجعة وقائية كسبب زيارة، لكنه لا يقدم موعد جرعة أو يقرر لقاحًا مناسبًا بذاته.",
+        "en": "Vaccination guidance depends on species, region, age and individual clinical risk. A written vaccine record is more useful than assuming one schedule suits every pet. This service category helps a guardian request a professional review of preventive needs; it is not a vaccination reminder guaranteed by a working medical system."
+      },
+      "checklist": {
+        "ar": [
+          "حدد نوع الحيوان والفئة العمرية بشكل عام",
+          "جهز الأسئلة وسجل الزيارات السابقة معك للعيادة الحقيقية",
+          "أكّد مع الطبيب الفعلي الإجراءات والمواعيد والتكلفة"
+        ],
+        "en": [
+          "Identify the pet species and general age band",
+          "Bring appropriate previous-visit records to the real veterinarian",
+          "Confirm actual procedure, clinician availability, fees and timing"
+        ]
+      }
+    },
+    {
+      "slug": "puppy-kitten-visit",
+      "rank": 3,
+      "category": "young",
+      "species": [
+        "dog",
+        "cat"
+      ],
+      "title": {
+        "ar": "زيارة الجراء والقطط الصغيرة",
+        "en": "Puppy and kitten first visit"
+      },
+      "summary": {
+        "ar": "خطوة تعريفية للتغذية والعادات والوقاية في المراحل الأولى دون تقديم وصفة علاجية.",
+        "en": "A gentle first-visit orientation for young dogs and cats, without online clinical advice."
+      },
+      "body": {
+        "ar": "تكون الأسابيع والأشهر الأولى مليئة بأسئلة الغذاء والتنشئة الاجتماعية والرعاية الوقائية. يمكن لصاحب الحيوان تجهيز عمر تقريبي وطبيعة غذائه وسجل الزيارات السابقة للطبيب البيطري الحقيقي. اختيار هذه الخدمة لا يعني تقديم تطعيم أو فحص الآن، ولا يحل محل التقييم المباشر.",
+        "en": "Early pet visits may cover developmental observations, feeding routines, preventive care and safe socialization advice from a qualified veterinarian. The website can guide owners to gather a general age band and any prior visit records. Real clinical decisions require an actual examination and service provider."
+      },
+      "checklist": {
+        "ar": [
+          "حدد نوع الحيوان والفئة العمرية بشكل عام",
+          "جهز الأسئلة وسجل الزيارات السابقة معك للعيادة الحقيقية",
+          "أكّد مع الطبيب الفعلي الإجراءات والمواعيد والتكلفة"
+        ],
+        "en": [
+          "Identify the pet species and general age band",
+          "Bring appropriate previous-visit records to the real veterinarian",
+          "Confirm actual procedure, clinician availability, fees and timing"
+        ]
+      }
+    },
+    {
+      "slug": "senior-pet-care",
+      "rank": 4,
+      "category": "wellness",
+      "species": [
+        "dog",
+        "cat",
+        "rabbit",
+        "other"
+      ],
+      "title": {
+        "ar": "متابعة الحيوانات الكبيرة",
+        "en": "Senior pet quality-of-life review"
+      },
+      "summary": {
+        "ar": "مناقشة تغيرات الحركة والشهية والراحة وتأثير السن مع مختص.",
+        "en": "Discuss age-related changes in comfort, mobility and behavior with a veterinarian."
+      },
+      "body": {
+        "ar": "الحيوانات المتقدمة في السن قد تظهر عليها تغيرات تدريجية في النشاط أو الحركة أو النوم أو الشهية، وهي معلومات تفيد الطبيب عند التقييم الفعلي. لا ينبغي التعامل مع الأعراض الجديدة باعتبارها طبيعية لمجرد السن؛ فالفحص المهني مهم لتحديد السبب وخيارات الدعم المناسبة.",
+        "en": "Older animals may have changes in activity, mobility, appetite or sleep. Owners can note what has changed and over what time period, but should not dismiss new symptoms as normal aging. A veterinarian can assess actual health needs and discuss appropriate options with the guardian."
+      },
+      "checklist": {
+        "ar": [
+          "حدد نوع الحيوان والفئة العمرية بشكل عام",
+          "جهز الأسئلة وسجل الزيارات السابقة معك للعيادة الحقيقية",
+          "أكّد مع الطبيب الفعلي الإجراءات والمواعيد والتكلفة"
+        ],
+        "en": [
+          "Identify the pet species and general age band",
+          "Bring appropriate previous-visit records to the real veterinarian",
+          "Confirm actual procedure, clinician availability, fees and timing"
+        ]
+      }
+    },
+    {
+      "slug": "dental-check",
+      "rank": 5,
+      "category": "diagnostics",
+      "species": [
+        "dog",
+        "cat",
+        "rabbit",
+        "other"
+      ],
+      "title": {
+        "ar": "تقييم صحة الفم والأسنان",
+        "en": "Oral and dental health check"
+      },
+      "summary": {
+        "ar": "تجهيز أسئلة حول المضغ ورائحة الفم والعادات اليومية قبل الفحص البيطري.",
+        "en": "A veterinary oral-health discussion about eating behavior, mouth comfort and dental concerns."
+      },
+      "body": {
+        "ar": "ملاحظة رائحة فم غير معتادة أو تغير في المضغ أو صعوبة الأكل قد تستدعي تقييمًا بيطريًا. لا تحاول تنظيفًا عميقًا أو إجراءات فموية مؤلمة بدون متخصص. من المفيد تحضير ملاحظات عامة حول سلوك الحيوان، لكن تحديد تشخيص أو إجراء أو تخدير يحتاج عيادة فعلية.",
+        "en": "Dental disease and oral discomfort need professional veterinary evaluation, particularly when a pet changes eating habits or has difficulty chewing. The purpose of the web dossier is to explain how to prepare questions and what clinical services may involve, without recommending unsupervised invasive home procedures."
+      },
+      "checklist": {
+        "ar": [
+          "حدد نوع الحيوان والفئة العمرية بشكل عام",
+          "جهز الأسئلة وسجل الزيارات السابقة معك للعيادة الحقيقية",
+          "أكّد مع الطبيب الفعلي الإجراءات والمواعيد والتكلفة"
+        ],
+        "en": [
+          "Identify the pet species and general age band",
+          "Bring appropriate previous-visit records to the real veterinarian",
+          "Confirm actual procedure, clinician availability, fees and timing"
+        ]
+      }
+    },
+    {
+      "slug": "nutrition-consult",
+      "rank": 6,
+      "category": "prevention",
+      "species": [
+        "dog",
+        "cat",
+        "rabbit",
+        "bird",
+        "other"
+      ],
+      "title": {
+        "ar": "مراجعة التغذية والوزن",
+        "en": "Nutrition and weight discussion"
+      },
+      "summary": {
+        "ar": "الحصول على توصية مهنية تلائم النوع والنشاط بدل الاعتماد على حمية عامة.",
+        "en": "Plan a species-appropriate nutrition discussion with a licensed practitioner."
+      },
+      "body": {
+        "ar": "تختلف الاحتياجات الغذائية بين الأنواع وأعمار الحيوان ومستوى نشاطه؛ لذلك لا يصح أن يضع نموذج إلكتروني نظامًا غذائيًا علاجيًا للحيوان. يمكن للمالك تجهيز أسماء الأغذية الحالية وتغيرات الوزن التي لاحظها، ليقيم الطبيب المناسب ما إن كانت هناك حاجة لتغيير طريقة الإطعام.",
+        "en": "Nutrition requirements vary by species, life stage and activity. A general online form should not prescribe diets or supplements, especially for animals with unknown clinical needs. A real veterinary visit can help guardians review feeding routines, product labels and observed weight changes safely."
+      },
+      "checklist": {
+        "ar": [
+          "حدد نوع الحيوان والفئة العمرية بشكل عام",
+          "جهز الأسئلة وسجل الزيارات السابقة معك للعيادة الحقيقية",
+          "أكّد مع الطبيب الفعلي الإجراءات والمواعيد والتكلفة"
+        ],
+        "en": [
+          "Identify the pet species and general age band",
+          "Bring appropriate previous-visit records to the real veterinarian",
+          "Confirm actual procedure, clinician availability, fees and timing"
+        ]
+      }
+    },
+    {
+      "slug": "skin-coat",
+      "rank": 7,
+      "category": "diagnostics",
+      "species": [
+        "dog",
+        "cat",
+        "rabbit",
+        "other"
+      ],
+      "title": {
+        "ar": "مراجعة الجلد والفراء",
+        "en": "Skin and coat concern review"
+      },
+      "summary": {
+        "ar": "وصف تغيرات ملمس الفراء أو الحكة بشكل عام قبل تقييم متخصص.",
+        "en": "Prepare a veterinary discussion about scratching, coat changes and visible irritation."
+      },
+      "body": {
+        "ar": "الحكة أو تغير الفراء قد يكون له أكثر من سبب، ولا يكفي تصوير العرض أو قراءة وصفة عامة لتحديد العلاج المناسب. لا تجمع هذه التجربة صورًا طبية أو تفاصيل صحية حساسة؛ الطبيب الفعلي وحده يقرر ما إذا كان يلزم فحص إضافي أو رعاية معينة.",
+        "en": "Scratching, hair loss and coat changes can have many underlying causes. A web page must avoid asserting a diagnosis or advising medication without examination. Instead, it can explain to the pet guardian that a veterinarian should evaluate symptoms and decide whether further assessment is warranted."
+      },
+      "checklist": {
+        "ar": [
+          "حدد نوع الحيوان والفئة العمرية بشكل عام",
+          "جهز الأسئلة وسجل الزيارات السابقة معك للعيادة الحقيقية",
+          "أكّد مع الطبيب الفعلي الإجراءات والمواعيد والتكلفة"
+        ],
+        "en": [
+          "Identify the pet species and general age band",
+          "Bring appropriate previous-visit records to the real veterinarian",
+          "Confirm actual procedure, clinician availability, fees and timing"
+        ]
+      }
+    },
+    {
+      "slug": "grooming-prep",
+      "rank": 8,
+      "category": "grooming",
+      "species": [
+        "dog",
+        "cat",
+        "rabbit",
+        "other"
+      ],
+      "title": {
+        "ar": "تنسيق العناية والنظافة",
+        "en": "Grooming preparation and hygiene"
+      },
+      "summary": {
+        "ar": "فهم حدود العناية التجميلية والتنسيق مع الطبيب عند وجود علامات مرضية.",
+        "en": "Understand nonmedical grooming scope and when a veterinary assessment may be needed."
+      },
+      "body": {
+        "ar": "تنظيف الفراء وتقليم الأظافر وخدمات النظافة تختلف حسب نوع الحيوان وحجمه وطباعه. ينبغي التأكد من خطوات العناية المتاحة لدى مقدم الخدمة الحقيقي وما إذا كانت مناسبة للحيوان. عند وجود جرح أو ألم أو احمرار شديد، يحتاج الحيوان لفحص بيطري بدل الاكتفاء بجلسة تجميلية.",
+        "en": "Grooming helps maintain a comfortable coat and hygiene, but methods and suitability depend on the pet's species, temperament and condition. Only an actual operator can confirm services, staff and safe handling. Visible injuries, severe irritation or pain should prompt appropriate veterinary assessment rather than a cosmetic-only appointment."
+      },
+      "checklist": {
+        "ar": [
+          "حدد نوع الحيوان والفئة العمرية بشكل عام",
+          "جهز الأسئلة وسجل الزيارات السابقة معك للعيادة الحقيقية",
+          "أكّد مع الطبيب الفعلي الإجراءات والمواعيد والتكلفة"
+        ],
+        "en": [
+          "Identify the pet species and general age band",
+          "Bring appropriate previous-visit records to the real veterinarian",
+          "Confirm actual procedure, clinician availability, fees and timing"
+        ]
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slug": "pet-first-visit",
+      "title": {
+        "ar": "أول زيارة بيطرية: أسئلة تخلي التواصل أوضح",
+        "en": "Preparing for a first veterinary visit"
+      },
+      "summary": {
+        "ar": "ازاي تختار سبب الزيارة وتحضر سجل الحيوان من غير تشخيص من الإنترنت.",
+        "en": "Prepare records and questions for an actual veterinarian, without trying to self-diagnose online."
+      },
+      "body": {
+        "ar": "تبدأ أول زيارة بفهم احتياجات الحيوان وعاداته اليومية، مثل الغذاء والنشاط وتغير السلوك وأي زيارات سابقة. تجهيز هذه المعلومات يساعد الطبيب في الفحص المباشر، لكنه لا يغني عنه. من الأفضل التأكد من عنوان العيادة الحقيقي وأوقات عملها ومتطلبات النقل المناسبة لنوع الحيوان قبل الخروج. النماذج التجريبية لا تؤكد موعدًا ولا توفر استشارة طبية.",
+        "en": "A first visit is more productive when the guardian has a general understanding of feeding, activity, recent behavioral changes and any documented prior care. Ask the actual clinic about safe transport, what documents to bring and how the examination is conducted. A website form is an administrative preference, not a clinical consultation or confirmed appointment."
+      }
+    },
+    {
+      "slug": "preventive-plan",
+      "title": {
+        "ar": "الرعاية الوقائية تختلف من حيوان لحيوان",
+        "en": "Preventive care is not one universal schedule"
+      },
+      "summary": {
+        "ar": "التطعيمات والعناية بالأسنان والغذاء تحتاج تقييم حسب النوع والسن والبيئة.",
+        "en": "Vaccines, oral care and nutrition depend on species, life stage, environment and the individual animal."
+      },
+      "body": {
+        "ar": "عندما يبحث صاحب الحيوان عن التطعيمات أو الرعاية الوقائية قد يجد جداول عامة، لكنها لا تعوض توصية الطبيب البيطري بناءً على النوع والمرحلة العمرية وتاريخ الرعاية والبيئة المحلية. من المفيد جمع السجلات الورقية ومناقشة أي تغير في نمط الحياة أو الوزن. لا توجد جرعات أو مواعيد لقاحات أو توصيات دوائية مخصصة من خلال هذه الصفحة.",
+        "en": "Preventive priorities vary by species, age, living conditions and prior care history. Generic online schedules may be incomplete or inappropriate for a specific pet. Prepare the animal’s known records and discuss vaccination, dental and nutrition questions with an actual professional who can assess local and individual circumstances."
+      }
+    },
+    {
+      "slug": "emergency-signs",
+      "title": {
+        "ar": "متى تكون الحالة البيطرية عاجلة؟",
+        "en": "When a pet needs urgent veterinary help"
+      },
+      "summary": {
+        "ar": "صعوبة التنفس أو التشنجات أو النزف الشديد أسباب لطلب مساعدة حقيقية فورًا.",
+        "en": "Recognize serious red flags and contact an operating emergency veterinarian instead of waiting for a website reply."
+      },
+      "body": {
+        "ar": "صعوبة التنفس الشديدة أو النزيف المستمر أو التشنجات أو الاشتباه في ابتلاع مادة سامة أو عدم القدرة على التبول علامات قد تستلزم مساعدة بيطرية عاجلة. لا تضع تفاصيل الحالة في طلب تجريبي وتنتظر الرد، ولا تستخدم علاجًا أو جرعة من معلومات عامة. ابحث عن أقرب طبيب أو مركز طوارئ بيطري فعلي يمكنه استقبال الحالة الآن واتبع إرشاداته.",
+        "en": "Severe breathing difficulty, ongoing bleeding, seizures, suspected poisoning or inability to urinate can require urgent veterinary care. Do not rely on this showcase enquiry or use online dosing instructions. Contact an actual nearby veterinary emergency provider who can assess and accept the case immediately."
+      }
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "ar": "هل طلب PawWell بيأكد موعد فعلي؟",
+        "en": "Does PawWell confirm a real appointment?"
+      },
+      "a": {
+        "ar": "لا، دي تجربة تقنية من مافكس. العيادة الحقيقية لازم تؤكد أي موعد عند تشغيل الموقع لصالحها.",
+        "en": "No. This is a Mavvix portfolio flow; only a real clinic may confirm a veterinary appointment."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل بقدر أختار الطبيب بالاسم؟",
+        "en": "Can I choose a named vet?"
+      },
+      "a": {
+        "ar": "لا نعرض أسماء أو مؤهلات أطباء غير موثقة. تقدر تختار نوع الزيارة فقط.",
+        "en": "No fictional clinicians or credentials appear; choose the type of visit to request information."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل في خدمة طوارئ 24 ساعة؟",
+        "en": "Is this a 24-hour emergency service?"
+      },
+      "a": {
+        "ar": "لا، النموذج مش خدمة طوارئ. عند أعراض خطيرة اتواصل مع مركز بيطري فعلي فورًا.",
+        "en": "No. The website is not an emergency line. Seek an actual veterinary emergency provider for serious symptoms."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل كل الخدمات متاحة لكل أنواع الحيوانات؟",
+        "en": "Are services available for every species?"
+      },
+      "a": {
+        "ar": "تظهر الخيارات الاسترشادية حسب نوع الحيوان، ويعتمد التنفيذ على التخصص الفعلي للمركز.",
+        "en": "The sample filters by species; actual availability depends on the real clinic's qualified team."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل لازم أرفع صورة أو تاريخ مرضي؟",
+        "en": "Do I need to upload pet medical history or photos?"
+      },
+      "a": {
+        "ar": "لا، النموذج يحتاج بيانات بسيطة عن نوع الحيوان وسبب الزيارة وتواصل ولي الأمر فقط.",
+        "en": "No. The public showcase asks only for general pet category, visit preference and guardian contact details."
+      }
+    }
+  ]
+}
