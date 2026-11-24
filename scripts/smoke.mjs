@@ -174,7 +174,7 @@ try {
     guestName:'QA Automotive',guestPhone:'01000000000',make:'Toyota',model:'Corolla',year:2023,
     serviceSlug:'brakes',category:'safety',preferredDate:'',preferredWindow:'flexible',region:'Cairo',
     consent:true,honeypot:'',utm:{source:'qa',medium:'integration',campaign:'auto-service'}};
-  const incompleteSector=await post('/api/portfolio/veterinary',automotiveBody);
+  const incompleteSector=await post('/api/portfolio/law-firm',automotiveBody);
   assert.equal(incompleteSector.status,404,'Unimplemented sectors must never impersonate a live flow');
   const crossSector=await post('/api/portfolio/fitness',automotiveBody);
   assert.equal(crossSector.status,400,'A fitness API must reject automotive cross-sector payloads');
