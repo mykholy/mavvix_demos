@@ -1,3 +1,4 @@
+import { handleCarDetailingQuote } from '@/server/portfolio/car-detailing';
 import {handleNurseryVisit} from '@/server/portfolio/nursery';
 import { handleFormaBrief } from '@/server/portfolio/interiors-kitchens';
 import { handleFurnitureQuote } from '@/server/portfolio/furniture';
@@ -35,6 +36,7 @@ const schema=z.object({
 function failure(code:string,status=422){return NextResponse.json({success:false,code,message:code},{status});}
 
 export async function POST(req:Request,{params}:{params:{vertical:string}}){
+ if(params.vertical==='car-detailing')return handleCarDetailingQuote(req);
  if(params.vertical==='nursery')return handleNurseryVisit(req);
  if(params.vertical==='interiors-kitchens')return handleFormaBrief(req);
  if(params.vertical==='furniture')return handleFurnitureQuote(req);
