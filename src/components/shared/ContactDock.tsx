@@ -47,6 +47,7 @@ const DEMOS_LIST = [
   { slug: 'nursery', nameAr: 'بلوم ستيبس / حضانات', nameEn: 'BloomSteps · Nursery & Preschool', icon: GraduationCap, color: '#F5C04E' },
   { slug: 'car-detailing', nameAr: 'جلوس باي / ديتيلنج السيارات', nameEn: 'GlossBay · Car detailing', icon: Droplets, color: '#4CCBF4' },
   { slug: 'physiotherapy', nameAr: 'موشن لاب / علاج طبيعي', nameEn: 'Motion Lab · Physiotherapy', icon: Activity, color: '#79C9C1' },
+  { slug: 'veterinary', nameAr: 'بوويل / عيادات بيطرية', nameEn: 'PawWell · Veterinary', icon: HeartPulse, color: '#F3B98E' },
 ];
 
 export function ContactDock({
