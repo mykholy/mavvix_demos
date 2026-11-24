@@ -197,3 +197,18 @@ for(const route of ['services','services/[slug]','pets','request','guides','guid
  assert.ok(existsSync(join(pawDir,route,'page.tsx')),'PawWell route family missing: '+route);
 }
 console.log('PASS: PawWell 12-sector home and seven families, 8 veterinary dossiers, 3 resources and species-aware enquiry');
+
+
+const legalDir=join(root,'law-firm');
+const legalHome=readFileSync(join(legalDir,'page.tsx'),'utf8');
+const legalLayout=readFileSync(join(legalDir,'layout.tsx'),'utf8');
+const legalData=JSON.parse(readFileSync(join(process.cwd(),'data/verticals/law-firm.json'),'utf8'));
+assert.ok((legalHome.match(/<section\b/g)||[]).length>=9,'Lexora requires at least nine substantial sections');
+assert.ok((legalHome.match(/data-sector-specific=/g)||[]).length>=4,'Lexora requires four legal-only features');
+assert.ok(legalLayout.includes('lexora-shell')&&legalLayout.includes('<ContactDock'),'Lexora requires its own branding + lead CTA');
+assert.equal(legalData.services.length,8);
+assert.equal(legalData.articles.length,3);
+assert.equal(legalData.faq.length,5);
+for(const path of ['practices','practices/[slug]','consultation','insights','insights/[slug]','[section]'])
+ assert.ok(existsSync(join(legalDir,path,'page.tsx')),'Lexora route missing: '+path);
+console.log('PASS: Lexora law firm distinct editorial homepage, 8 legal dossiers, 3 guides, strict no-confidential-facts intake');
