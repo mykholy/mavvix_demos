@@ -16,6 +16,7 @@ export function seedPortfolioVerticals(db, rootDir=process.cwd()) {
     {filename:'interiors-kitchens.json',slug:'interiors-kitchens',ar:'فورما — تصميم مطابخ ودريسنج',en:'Forma Atelier · Kitchen and Interiors'} ,
     {filename:'fitness.json',slug:'fitness',ar:'بالس ديستريكت — تدريبات قوة ولياقة',en:'Pulse District · Fitness Club'},
     {filename:'car-detailing.json',slug:'car-detailing',ar:'جلوس باي — غسيل وتلميع وحماية السيارات',en:'GlossBay · Car Detailing',wave:2},
+    {filename:'physiotherapy.json',slug:'physiotherapy',ar:'موشن لاب — العلاج الطبيعي والحركة الوظيفية',en:'Motion Lab · Physiotherapy',wave:2},
   ];
   const addSite=db.prepare(`INSERT INTO portfolio_verticals(slug,name_ar,name_en,wave,published)
  VALUES (?,?,?,?,?) ON CONFLICT(slug) DO UPDATE SET
