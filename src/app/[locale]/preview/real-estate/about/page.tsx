@@ -12,10 +12,11 @@ import {
 } from 'lucide-react';
 
 interface Props {
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }
 
-export default function RealEstateAboutPage({ params }: Props) {
+export default async function RealEstateAboutPage(props: Props) {
+  const params = await props.params;
   const { locale } = params;
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;

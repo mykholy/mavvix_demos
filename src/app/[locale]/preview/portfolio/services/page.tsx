@@ -9,11 +9,17 @@ export const metadata = {
   description: 'Structured creative direction, brand identity architectures, design systems, and fractional design advisory.'
 };
 
-export default function PortfolioServicesPage({
-  params: { locale }
-}: {
-  params: { locale: Locale }
-}) {
+export default async function PortfolioServicesPage(
+  props: {
+    params: Promise<{ locale: Locale }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;
   const services = getPortfolioServices(locale);

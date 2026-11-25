@@ -6,11 +6,25 @@ import { AUTO_SERVICE, findAutoService, autoPath, localized } from '@/lib/vertic
 import type { Locale } from '@/lib/i18n/config';
 
 export function generateStaticParams(){return AUTO_SERVICE.services.map(s=>({slug:s.slug}));}
-export function generateMetadata({params:{locale,slug}}:{params:{locale:Locale;slug:string}}):Metadata {
+export async function generateMetadata(props:{params: Promise<{locale:Locale;slug:string}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const s=findAutoService(slug);if(!s)return {};
  return {title:s.title[locale]+' | Torque Garage · Mavvix',description:s.summary[locale]};
 }
-export default function AutoServiceDetail({params:{locale,slug}}:{params:{locale:Locale;slug:string}}){
+export default async function AutoServiceDetail(props:{params: Promise<{locale:Locale;slug:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const s=findAutoService(slug);if(!s)notFound();const ar=locale==='ar';
  return <div><section className="bg-[#161A20] text-white"><div className="max-w-7xl mx-auto px-5 sm:px-8 pt-12 pb-20">
   <nav className="text-xs text-white/50 mb-16"><Link href={autoPath(locale)} className="hover:text-white">{ar?'الرئيسية':'Home'}</Link> / <Link href={autoPath(locale,'services')} className="hover:text-white">{ar?'الخدمات':'Services'}</Link> / <span className="text-[#FB6935]">{s.title[locale]}</span></nav>

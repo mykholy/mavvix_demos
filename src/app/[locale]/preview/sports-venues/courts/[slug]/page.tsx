@@ -5,10 +5,24 @@ import type { Locale } from '@/lib/i18n/config';
 import { ARENA,arenaFormat,arenaPath } from '@/lib/verticals/sports-venues/data';
 import { ArrowUpRight,Users,Clock3,CheckCircle2,AlertTriangle,Trophy } from 'lucide-react';
 export function generateStaticParams(){return ARENA.services.map(s=>({slug:s.slug}));}
-export function generateMetadata({params:{locale,slug}}:{params:{locale:Locale;slug:string}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale;slug:string}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const c=arenaFormat(slug);return c?{title:c.title[locale]+' | Arena Courts Mavvix',description:c.summary[locale],robots:{index:false}}:{};
 }
-export default function ArenaFormatDetail({params:{locale,slug}}:{params:{locale:Locale;slug:string}}){
+export default async function ArenaFormatDetail(props:{params: Promise<{locale:Locale;slug:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const c=arenaFormat(slug);if(!c)notFound();const ar=locale==='ar';
  return <div><section className="bg-[#102B26] text-white py-14 sm:py-24"><div className="max-w-7xl mx-auto px-5 sm:px-8">
   <nav className="text-xs text-[#C6D8C8]"><Link href={arenaPath(locale)}>{ar?'الرئيسية':'Home'}</Link> / <Link href={arenaPath(locale,'courts')}>{ar?'الملاعب':'Courts'}</Link> / {c.title[locale]}</nav>

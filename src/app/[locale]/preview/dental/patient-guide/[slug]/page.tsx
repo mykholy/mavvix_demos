@@ -9,11 +9,18 @@ import {
   CheckCircle2, Clock, Share2, BookOpen
 } from 'lucide-react';
 
-export async function generateMetadata({
-  params: { locale, slug }
-}: {
-  params: { locale: Locale; slug: string }
-}) {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ locale: Locale; slug: string }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale,
+    slug
+  } = params;
+
   const post = getEditorialPostBySlug('dental', slug, locale);
   if (!post) return { title: 'Article Not Found' };
   return {
@@ -22,11 +29,18 @@ export async function generateMetadata({
   };
 }
 
-export default function DentalArticleDetailPage({
-  params: { locale, slug }
-}: {
-  params: { locale: Locale; slug: string }
-}) {
+export default async function DentalArticleDetailPage(
+  props: {
+    params: Promise<{ locale: Locale; slug: string }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale,
+    slug
+  } = params;
+
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;
 

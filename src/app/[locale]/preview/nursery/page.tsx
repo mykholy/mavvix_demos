@@ -2,7 +2,13 @@ import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { BLOOM,BLOOM_PHOTOS,bloomPath } from '@/lib/verticals/nursery/data';
 import { ArrowUpRight,Flower2,BookOpen,HandHeart,Shapes,ShieldCheck,Sun,CalendarDays,Heart,CheckCircle2 } from 'lucide-react';
-export default function BloomHome({params:{locale}}:{params:{locale:Locale}}){
+export default async function BloomHome(props:{params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';const ages=BLOOM.services.filter(p=>p.category==='age');const photo=BLOOM_PHOTOS[0];
  return <div>
  <section data-sector-specific="bloom-learning-hero" className="relative overflow-hidden bg-[#FFF9EE]"><div className="max-w-7xl mx-auto px-5 sm:px-8 pt-14 pb-20 sm:pt-24 grid lg:grid-cols-[1fr_.85fr] gap-12 items-center">

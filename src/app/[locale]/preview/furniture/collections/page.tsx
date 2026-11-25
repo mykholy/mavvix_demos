@@ -3,7 +3,16 @@ import type { Locale } from '@/lib/i18n/config';
 import { OAKLINE,oakPath,oakText } from '@/lib/verticals/furniture/data';
 import { Armchair,Ruler,ArrowUpRight,Layers } from 'lucide-react';
 const rooms=[{id:'all',ar:'كل الغرف',en:'All rooms'},{id:'living',ar:'المعيشة',en:'Living'},{id:'bedroom',ar:'النوم',en:'Bedroom'},{id:'dining',ar:'السفرة',en:'Dining'},{id:'workspace',ar:'العمل',en:'Workspace'}];
-export default function OaklineCollections({params:{locale},searchParams}:{params:{locale:Locale};searchParams:{room?:string}}){
+export default async function OaklineCollections(
+ props:{params: Promise<{locale:Locale}>;searchParams: Promise<{room?:string}>}
+) {
+ const searchParams = await props.searchParams;
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';const room=rooms.some(r=>r.id===searchParams.room)?searchParams.room:'all';
  const items=OAKLINE.services.filter(p=>room==='all'||p.room===room);
  return <div><section className="bg-[#E7DCCC] py-16 sm:py-24"><div className="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[.95fr_.6fr] gap-10 items-end"><div><p className="text-[#775638] text-xs tracking-widest font-bold">OAKLINE / DESIGN DOSSIERS</p><h1 className="oakline-display text-4xl sm:text-7xl leading-tight mt-6">{ar?'قطع بخصوصية كل غرفة':'FURNITURE PIECES WITH REAL PURPOSE'}</h1></div><p className="text-base leading-9 text-[#634D37]">{ar?'كتالوج توضيحي بعشر قطع، لكل واحدة قياسات ومواد مسموحة ضمن نموذج التسعير وليس منتجات للبيع الآن.':'Ten authored furnishing ideas with a different brief, allowable material choices and illustrative dimension ranges. No live sale or production claim.'}</p></div></section>

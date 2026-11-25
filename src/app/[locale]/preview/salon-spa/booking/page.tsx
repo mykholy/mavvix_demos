@@ -3,7 +3,16 @@ import type { Locale } from '@/lib/i18n/config';
 import { VELORA, veloraPath } from '@/lib/verticals/salon-spa/data';
 import { VeloraAppointmentForm } from './VeloraAppointmentForm';
 import { Flower2, CalendarDays, CheckCircle2 } from 'lucide-react';
-export default function VeloraBooking({params:{locale},searchParams}:{params:{locale:Locale};searchParams:{service?:string}}){
+export default async function VeloraBooking(
+ props:{params: Promise<{locale:Locale}>;searchParams: Promise<{service?:string}>}
+) {
+ const searchParams = await props.searchParams;
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';const initial=VELORA.services.some(s=>s.slug===searchParams.service)?searchParams.service:'';
  return <div className="bg-[#FBF8F4]"><div className="max-w-7xl mx-auto px-5 sm:px-8 py-12 sm:py-20 grid lg:grid-cols-[.72fr_1.28fr] gap-12 lg:gap-16 items-start">
   <aside className="lg:sticky lg:top-32"><p className="uppercase tracking-[.22em] text-[#865463] font-bold text-xs">THE BOOKING EDIT</p>

@@ -5,10 +5,24 @@ import type { Locale } from '@/lib/i18n/config';
 import { OAKLINE,oakGuide,oakPath } from '@/lib/verticals/furniture/data';
 import { BookOpen,ArrowUpRight,Ruler } from 'lucide-react';
 export function generateStaticParams(){return OAKLINE.articles.map(a=>({slug:a.slug}));}
-export function generateMetadata({params:{locale,slug}}:{params:{locale:Locale;slug:string}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale;slug:string}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const g=oakGuide(slug);return g?{title:g.title[locale]+' | Oakline Living',description:g.summary[locale],robots:{index:false}}:{};
 }
-export default function OaklineArticle({params:{locale,slug}}:{params:{locale:Locale;slug:string}}){
+export default async function OaklineArticle(props:{params: Promise<{locale:Locale;slug:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const a=oakGuide(slug);if(!a)notFound();const ar=locale==='ar';
  return <div className="max-w-5xl mx-auto px-5 sm:px-8 py-16 sm:py-24"><nav className="text-xs text-[#73583B]"><Link href={oakPath(locale)}>{ar?'الرئيسية':'Home'}</Link> / <Link href={oakPath(locale,'journal')}>{ar?'المجلة':'Journal'}</Link></nav>
   <header className="mt-14 pb-12 border-b-2 border-[#AA8A60]"><p className="text-xs text-[#806044] tracking-widest font-bold">OAKLINE / INTERIOR FIELD NOTES</p><h1 className="oakline-display text-4xl sm:text-6xl leading-tight mt-6">{a.title[locale]}</h1><p className="text-[#68533F] leading-9 text-lg mt-8">{a.summary[locale]}</p></header>

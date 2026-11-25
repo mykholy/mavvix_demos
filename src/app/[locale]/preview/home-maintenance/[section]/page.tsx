@@ -29,11 +29,25 @@ const characteristics:Record<'ac'|'plumbing'|'electrical',{intro:{ar:string;en:s
  questions:[{ar:'هل العطل بيحصل في غرفة واحدة؟',en:'Does it affect one room or several?'},{ar:'هل القاطع بيفصل عند تشغيل جهاز بعينه؟',en:'Is a breaker trip linked to one appliance?'},{ar:'هل توجد سخونة أو رائحة غير معتادة؟',en:'Is there unusual heat or odor?'}]},
 };
 export function generateStaticParams(){return routes.map(section=>({section}));}
-export function generateMetadata({params:{locale,section}}:{params:{locale:Locale;section:string}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale;section:string}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
  if(!routes.includes(section as Topic))return {};
  return {title:headings[section as Topic][locale]+' | Fixora Care',description:locale==='ar'?'محتوى توجيهي متخصص للصيانة المنزلية، وتقديم طلب معاينة غير مؤكد من تصميم مافكس.':'Detailed home maintenance buyer guidance and pending-only service request experience by Mavvix.'};
 }
-export default function HomeMaintenanceTopic({params:{locale,section}}:{params:{locale:Locale;section:string}}){
+export default async function HomeMaintenanceTopic(props:{params: Promise<{locale:Locale;section:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
  if(!routes.includes(section as Topic))notFound();
  const topic=section as Topic,ar=locale==='ar';
  const categories=(['ac','plumbing','electrical'] as const).includes(topic as 'ac'|'plumbing'|'electrical')?characteristics[topic as 'ac'|'plumbing'|'electrical']:null;

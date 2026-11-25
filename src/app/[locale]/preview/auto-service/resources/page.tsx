@@ -3,7 +3,13 @@ import { BookOpen, ArrowUpRight } from 'lucide-react';
 import { AUTO_SERVICE, autoPath, localized } from '@/lib/verticals/auto-service/data';
 import type { Locale } from '@/lib/i18n/config';
 
-export default function AutoResources({params:{locale}}:{params:{locale:Locale}}){
+export default async function AutoResources(props:{params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';
  return <div className="max-w-7xl mx-auto px-5 sm:px-8 py-20">
   <p className="text-[#D5552C] text-xs tracking-widest font-extrabold">TORQUE / FIELD NOTES</p>

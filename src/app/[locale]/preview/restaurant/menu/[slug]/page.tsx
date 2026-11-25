@@ -5,11 +5,12 @@ import { Locale } from '@/lib/i18n/config';
 import { getRestaurantDishBySlug } from '@/lib/db/repositories';
 import { DishDetailClient } from './DishDetailClient';
 
-export default function DishDetailPage({
-  params,
-}: {
-  params: { locale: Locale; slug: string };
-}) {
+export default async function DishDetailPage(
+  props: {
+    params: Promise<{ locale: Locale; slug: string }>;
+  }
+) {
+  const params = await props.params;
   const { locale, slug } = params;
   const dish = getRestaurantDishBySlug(slug, locale);
 

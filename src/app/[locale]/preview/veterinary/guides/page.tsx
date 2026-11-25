@@ -2,7 +2,13 @@ import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { PAWWELL,pawPath } from '@/lib/verticals/veterinary/data';
 import { BookOpen, ArrowUpRight, Heart, PawPrint, ShieldCheck } from 'lucide-react';
-export default function PawGuides({params:{locale}}:{params:{locale:Locale}}){
+export default async function PawGuides(props:{params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';
  return <div className="max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
   <p className="text-[#915736] font-black text-xs tracking-widest">THE PAW PARENT LIBRARY</p>

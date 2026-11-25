@@ -5,10 +5,24 @@ import type { Locale } from '@/lib/i18n/config';
 import { LEXORA,lexoraPath,lexoraService } from '@/lib/verticals/law-firm/data';
 import { ArrowUpRight,Scale,ShieldCheck,LockKeyhole,CheckCircle2 } from 'lucide-react';
 export function generateStaticParams(){return LEXORA.services.map(s=>({slug:s.slug}));}
-export function generateMetadata({params:{locale,slug}}:{params:{locale:Locale;slug:string}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale;slug:string}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const s=lexoraService(slug);return s?{title:s.title[locale]+' | Lexora Counsel',description:s.summary[locale],robots:{index:false}}:{};
 }
-export default function LexoraPracticeDetail({params:{locale,slug}}:{params:{locale:Locale;slug:string}}){
+export default async function LexoraPracticeDetail(props:{params: Promise<{locale:Locale;slug:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const s=lexoraService(slug);if(!s)notFound();const ar=locale==='ar';
  return <div><section className="bg-[#251D34] text-white py-12 sm:py-24"><div className="max-w-7xl mx-auto px-5 sm:px-8">
    <nav className="text-xs text-[#D5BDD3]"><Link href={lexoraPath(locale)}>{ar?'الرئيسية':'Home'}</Link> / <Link href={lexoraPath(locale,'practices')}>{ar?'المجالات':'Practice areas'}</Link> / <span className="text-[#E4CA91]">{s.title[locale]}</span></nav>

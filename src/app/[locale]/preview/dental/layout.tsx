@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { SectorUtilityBar } from '@/components/shared/SectorUtilityBar';
 import { ContactDock } from '@/components/shared/ContactDock';
 import React from 'react';
@@ -5,13 +6,21 @@ import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
 import { Stethoscope, Calendar, MapPin, Phone, Shield, Clock, HelpCircle, HeartHandshake, Sparkles, ChevronRight, AlertTriangle } from 'lucide-react';
 
-export default function DentalLayout({
-  children,
-  params: { locale },
-}: {
-  children: React.ReactNode;
-  params: { locale: Locale };
-}) {
+export default async function DentalLayout(
+  props: {
+    children: React.ReactNode;
+    params: Promise<{ locale: string }>;
+  }
+) {
+  const params = await props.params;
+
+  const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
+
+  const {
+    children
+  } = props;
+
   const isAr = locale === 'ar';
 
   return (

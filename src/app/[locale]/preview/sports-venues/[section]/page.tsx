@@ -18,7 +18,14 @@ const titles:Record<ArenaPage,{ar:string;en:string}>={
  contact:{ar:'موقع ملاعب يليق بنشاطك من مافكس',en:'A venue website worth showing your real players'}
 };
 export function generateStaticParams(){return pages.map(section=>({section}));}
-export function generateMetadata({params:{locale,section}}:{params:{locale:Locale;section:string}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale;section:string}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
  const page=titles[section as ArenaPage];return page?{title:page[locale]+' | Arena Courts',description:locale==='ar'?'تجربة تصميم موقع ملاعب كرة وبادل من مافكس مع محتوى حقيقي وطلبات بانتظار تأكيد المشغّل.':'A sports venue website concept from Mavvix with truthful sport format explanations and nonbinding request forms.',robots:{index:false,follow:false}}:{};
 }
 const process=[
@@ -33,7 +40,14 @@ const pricing=[
  {ar:'معدات اختيارية',en:'Optional equipment',bodyAr:'اسأل إن كانت الكرات أو مضارب البادل أو الملابس متاحة وبكم.',bodyEn:'Ask whether balls, rackets or additional equipment are actually provided and their costs.'},
  {ar:'الدفع عند مشغل حقيقي',en:'Real operator payment',bodyAr:'الموقع لا يقبل عربونًا أو يخصم مبلغًا؛ أي دفع يحتاج مزودًا معتمدًا.',bodyEn:'This sample takes no deposits or payments. A real business requires a lawful checkout setup.'},
 ];
-export default function ArenaInfo({params:{locale,section}}:{params:{locale:Locale;section:string}}){
+export default async function ArenaInfo(props:{params: Promise<{locale:Locale;section:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
  if(!pages.includes(section as ArenaPage))notFound();
  const topic=section as ArenaPage,ar=locale==='ar';
  const h=(x:string)=><h2 className="arena-display text-3xl sm:text-5xl font-black">{x}</h2>;

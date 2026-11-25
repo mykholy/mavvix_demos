@@ -3,7 +3,16 @@ import type { Locale } from '@/lib/i18n/config';
 import { GLOSSBAY,glossPath } from '@/lib/verticals/car-detailing/data';
 import { GlossQuoteForm } from './GlossQuoteForm';
 import { CarFront,ShieldCheck,Layers3 } from 'lucide-react';
-export default function GlossQuotePage({params:{locale},searchParams}:{params:{locale:Locale};searchParams:{service?:string}}){
+export default async function GlossQuotePage(
+ props:{params: Promise<{locale:Locale}>;searchParams: Promise<{service?:string}>}
+) {
+ const searchParams = await props.searchParams;
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar',initial=GLOSSBAY.services.some(s=>s.slug===searchParams.service)?searchParams.service:'';
  return <div className="bg-[#E7F4F9]"><div className="max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-24 grid lg:grid-cols-[.68fr_1fr] gap-12">
  <div className="lg:sticky lg:top-32 self-start"><p className="font-mono text-[#09627E] text-xs font-black tracking-widest">GLOSSBAY / VEHICLE SCOPE BUILDER</p>

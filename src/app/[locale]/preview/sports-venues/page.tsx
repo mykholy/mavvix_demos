@@ -4,13 +4,25 @@ import type { Locale } from '@/lib/i18n/config';
 import { ARENA,ARENA_PHOTOS,arenaPath,arenaText } from '@/lib/verticals/sports-venues/data';
 import { ArrowUpRight,ArrowRight,ArrowLeft,Trophy,Goal,Users,Clock3,CalendarClock,ShieldCheck,Flag,BookOpen,CheckCircle2,ScanLine,MapPin,Target,Sun,Lightbulb,AlertTriangle } from 'lucide-react';
 
-export function generateMetadata({params:{locale}}:{params:{locale:Locale}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';
  const title=ar?'تصميم موقع حجز ملاعب كرة وبادل | Arena Courts من مافكس':'Football & Padel Venue Website Design | Arena Courts by Mavvix';
  const description=ar?'تجربة موقع ملاعب رياضية ببطاقات أنواع ملاعب ودليل الفرق ووقت مفضل وطلب غير مؤكد محفوظ برقم مرجعي، وتصميم عربي وإنجليزي مميز.':'A distinctive football and padel website with real sport-format guides, court request preferences and a structured pending-only enquiry by Mavvix.';
  return {title,description,openGraph:{title,description,type:'website'},robots:{index:false,follow:false}};
 }
-export default function ArenaHome({params:{locale}}:{params:{locale:Locale}}){
+export default async function ArenaHome(props:{params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';const Arrow=ar?ArrowLeft:ArrowRight;
  const football=ARENA.services.filter(s=>s.sport==='football'),padel=ARENA.services.filter(s=>s.sport==='padel');
  const scenarios=[

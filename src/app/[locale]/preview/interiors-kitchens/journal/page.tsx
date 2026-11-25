@@ -2,7 +2,13 @@ import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { FORMA,formaPath,formaText } from '@/lib/verticals/interiors-kitchens/data';
 import { BookOpen,ArrowUpRight } from 'lucide-react';
-export default function FormaJournal({params:{locale}}:{params:{locale:Locale}}){
+export default async function FormaJournal(props:{params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';
  return <div className="max-w-7xl mx-auto px-5 sm:px-8 py-20"><p className="font-mono text-xs text-[#793D40]">FORMA / SPACE NOTES</p>
   <h1 className="forma-display text-4xl sm:text-6xl mt-6">{ar?'ملاحظات قبل طلب تصميم':'Kitchen decisions explained before the quote'}</h1>

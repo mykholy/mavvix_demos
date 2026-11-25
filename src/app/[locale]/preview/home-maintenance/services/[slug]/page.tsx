@@ -6,10 +6,24 @@ import { HOME_CARE,careService,maintenancePath } from '@/lib/verticals/home-main
 import type { Locale } from '@/lib/i18n/config';
 
 export function generateStaticParams(){return HOME_CARE.services.map(s=>({slug:s.slug}));}
-export function generateMetadata({params:{slug,locale}}:{params:{slug:string;locale:Locale}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{slug:string;locale:Locale}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  slug,
+  locale
+ } = params;
+
  const item=careService(slug);return item?{title:item.title[locale]+' | Fixora Care',description:item.summary[locale]}:{};
 }
-export default function HomeServiceDetail({params:{locale,slug}}:{params:{locale:Locale;slug:string}}){
+export default async function HomeServiceDetail(props:{params: Promise<{locale:Locale;slug:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const s=careService(slug);if(!s)notFound();const ar=locale==='ar';
  return <div><section className="bg-[#ECF4FA] py-16 sm:py-24"><div className="max-w-7xl mx-auto px-5 sm:px-8">
   <nav className="text-xs text-[#7692A8]"><Link href={maintenancePath(locale)}>{ar?'الرئيسية':'Home'}</Link> / <Link href={maintenancePath(locale,'services')}>{ar?'الخدمات':'Services'}</Link> / {s.title[locale]}</nav>

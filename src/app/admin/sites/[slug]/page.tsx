@@ -124,12 +124,13 @@ const SECTOR_ROUTES_MAP: Record<string, string[]> = {
   ],
 };
 
-export default function SiteDetailPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const cookieStore = cookies();
+export default async function SiteDetailPage(
+  props: {
+    params: Promise<{ slug: string }>;
+  }
+) {
+  const params = await props.params;
+  const cookieStore = await cookies();
   const token = cookieStore.get('mavvix_admin_session')?.value;
   const admin = token ? verifySessionToken(token) : null;
 

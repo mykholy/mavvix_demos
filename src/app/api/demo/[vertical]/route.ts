@@ -18,17 +18,18 @@ const lineSchema = z.object({
   quantity: z.coerce.number().int().positive().max(10000),
   unit_price_cents: z.coerce.number().int().nonnegative().optional(),
   modifiers: z.array(z.object({ type: z.string().max(30).optional(), label: z.string().max(160).optional() }).passthrough()).max(20).optional(),
-  snapshot: z.record(z.unknown()).optional(),
+  snapshot: z.record(z.string(), z.unknown()).optional(),
 });
 const bodySchema = z.object({
   flowType: z.string().min(1).max(80),
-  payload: z.record(z.unknown()),
+  payload: z.record(z.string(), z.unknown()),
   lines: z.array(lineSchema).max(30).default([]),
 });
 const reject = (code: string, message: string, status = 422) => NextResponse.json({ error: message, code }, { status });
 const cents = (x: number) => Number.isFinite(x) && Number.isSafeInteger(x) && x >= 0 && x <= 100000000000;
 
-export async function POST(request: Request, { params }: { params: { vertical: string } }) {
+export async function POST(request: Request, props: { params: Promise<{ vertical: string }> }) {
+  const params = await props.params;
   try {
     const rate = checkRateLimit('intake:' + params.vertical + ':' + getRequestIdentity(request), 12, 60_000);
     if (!rate.allowed) return NextResponse.json({ error: 'Please try again later' }, { status: 429, headers: { 'Retry-After': String(rate.retryAfter) } });

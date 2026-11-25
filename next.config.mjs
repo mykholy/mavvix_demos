@@ -4,9 +4,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  experimental: {
-    serverComponentsExternalPackages: ['node:sqlite'],
-  },
+  serverExternalPackages: ['node:sqlite'],
   async redirects() {
     return [
       {

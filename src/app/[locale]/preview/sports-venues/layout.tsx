@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { ContactDock } from '@/components/shared/ContactDock';
@@ -5,7 +6,16 @@ import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { arenaPath } from '@/lib/verticals/sports-venues/data';
 import { Trophy,ArrowUpRight,Goal,MapPinned } from 'lucide-react';
 
-export default function ArenaLayout({children,params:{locale}}:{children:React.ReactNode;params:{locale:Locale}}){
+export default async function ArenaLayout(props:{children:React.ReactNode;params: Promise<{ locale: string }>}) {
+ const params = await props.params;
+
+ const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
+
+ const {
+  children
+ } = props;
+
  const ar=locale==='ar';
  const nav=[
   {href:arenaPath(locale,'courts'),label:ar?'الملاعب':'Courts'},

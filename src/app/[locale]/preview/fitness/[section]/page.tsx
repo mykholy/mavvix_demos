@@ -40,10 +40,24 @@ const sectionData={
 } as const;
 type Topic=keyof typeof sectionData;
 export function generateStaticParams(){return Object.keys(sectionData).map(section=>({section}));}
-export function generateMetadata({params:{locale,section}}:{params:{locale:Locale;section:string}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale;section:string}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
  const d=sectionData[section as Topic];return d?{title:d[locale]+' | Pulse District',description:locale==='ar'?d.summaryAr:d.summaryEn,robots:{index:false}}:{};
 }
-export default function FitnessTopic({params:{locale,section}}:{params:{locale:Locale;section:string}}){
+export default async function FitnessTopic(props:{params: Promise<{locale:Locale;section:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
  const topic=sectionData[section as Topic];if(!topic)notFound();const ar=locale==='ar';
  return <div>
   <section className="bg-[#141421] text-white border-b-[10px] border-[#E0FE61]">

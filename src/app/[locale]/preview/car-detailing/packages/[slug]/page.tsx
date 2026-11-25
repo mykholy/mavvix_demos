@@ -5,10 +5,24 @@ import type { Locale } from '@/lib/i18n/config';
 import { GLOSSBAY,glossService,glossPath } from '@/lib/verticals/car-detailing/data';
 import { ArrowUpRight,CheckCircle2,Clock3,Info,ShieldCheck } from 'lucide-react';
 export function generateStaticParams(){return GLOSSBAY.services.map(s=>({slug:s.slug}));}
-export function generateMetadata({params:{locale,slug}}:{params:{locale:Locale;slug:string}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale;slug:string}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const s=glossService(slug);return s?{title:s.title[locale]+' | GlossBay',description:s.summary[locale],robots:{index:false}}:{};
 }
-export default function GlossDetail({params:{locale,slug}}:{params:{locale:Locale;slug:string}}){
+export default async function GlossDetail(props:{params: Promise<{locale:Locale;slug:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const service=glossService(slug);if(!service)notFound();const ar=locale==='ar';
  return <div><section className="bg-[#0D1626] text-white pt-12 pb-20 sm:pb-28"><div className="max-w-7xl mx-auto px-5 sm:px-8">
   <nav className="text-xs text-[#BBD8E4]"><Link href={glossPath(locale)}>{ar?'الرئيسية':'Home'}</Link> / <Link href={glossPath(locale,'packages')}>{ar?'الخدمات':'Packages'}</Link> / {service.title[locale]}</nav>

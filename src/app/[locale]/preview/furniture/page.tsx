@@ -4,13 +4,25 @@ import type { Locale } from '@/lib/i18n/config';
 import { OAKLINE,OAK_PHOTOS,oakPath,oakText } from '@/lib/verticals/furniture/data';
 import { ArrowUpRight,ArrowRight,ArrowLeft,Armchair,House,BookOpen,Ruler,Leaf,Layers,CheckCircle2,ClipboardCheck,ShieldCheck,MoveDiagonal2,Grid2X2,Palette,PenTool,Box,Truck,Heart,Image as PhotoIcon } from 'lucide-react';
 
-export function generateMetadata({params:{locale}}:{params:{locale:Locale}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';
  const title=ar?'تصميم موقع معرض أثاث حسب الطلب | Oakline Living من مافكس':'Custom Furniture Website Design | Oakline Living by Mavvix';
  const description=ar?'تجربة موقع أثاث فاخرة فيها 10 قطع بتوصيف واضح وخامات وتشطيبات وقياسات وسلة طلب تسعير متعددة القطع محفوظة في النظام.':'Editorial furniture website with a real custom quote basket, precise dimensional preference fields, original product content and bilingual room-first design by Mavvix.';
  return {title,description,openGraph:{title,description,type:'website'},robots:{index:false,follow:false}};
 }
-export default function OaklineHome({params:{locale}}:{params:{locale:Locale}}){
+export default async function OaklineHome(props:{params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';const Arrow=ar?ArrowLeft:ArrowRight;
  const moods=[{slug:'living',icon:Armchair,ar:'غرفة المعيشة',en:'Living room',descAr:'مقاعد وجلسة وترابيزات تخدم الحركة والراحة.',descEn:'Seating, tables and circulation that feel considered.'},
  {slug:'bedroom',icon:House,ar:'غرفة النوم',en:'Bedroom',descAr:'سرير ودولاب بأبعاد تناسب الغرفة الحقيقية.',descEn:'Storage and sleeping furniture defined by room dimensions.'},

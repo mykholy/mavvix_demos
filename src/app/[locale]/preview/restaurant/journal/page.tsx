@@ -3,11 +3,12 @@ import { Locale } from '@/lib/i18n/config';
 import { getEditorialPosts } from '@/lib/db/repositories';
 import { RestaurantJournalClient } from './RestaurantJournalClient';
 
-export default function RestaurantJournalPage({
-  params,
-}: {
-  params: { locale: Locale };
-}) {
+export default async function RestaurantJournalPage(
+  props: {
+    params: Promise<{ locale: Locale }>;
+  }
+) {
+  const params = await props.params;
   const { locale } = params;
   const isAr = locale === 'ar';
   const articles = getEditorialPosts('restaurant', locale);

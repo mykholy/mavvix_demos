@@ -2,7 +2,16 @@ import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { PAWWELL,pawPath } from '@/lib/verticals/veterinary/data';
 import { PawPrint,ArrowUpRight,CheckCircle2,Stethoscope } from 'lucide-react';
-export default function PawServices({params:{locale},searchParams}:{params:{locale:Locale};searchParams:{species?:string}}){
+export default async function PawServices(
+ props:{params: Promise<{locale:Locale}>;searchParams: Promise<{species?:string}>}
+) {
+ const searchParams = await props.searchParams;
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';const requestedSpecies=searchParams.species??'';const species=PAWWELL.species.some(p=>p.id===requestedSpecies)?requestedSpecies:'all';
  const list=PAWWELL.services.filter(s=>species==='all'||s.species.includes(species));
  return <div className="max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-24">

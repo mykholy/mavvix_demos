@@ -4,12 +4,24 @@ import type { Locale } from '@/lib/i18n/config';
 import { FORMA,FORMA_IMAGES,formaPath,formaText } from '@/lib/verticals/interiors-kitchens/data';
 import { ArrowUpRight,ArrowLeft,ArrowRight,Ruler,PenTool,BookOpen } from 'lucide-react';
 
-export function generateMetadata({params:{locale}}:{params:{locale:Locale}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';const title=ar?'تصميم موقع شركة مطابخ وديكور حسب المقاس | Forma Atelier من مافكس':'Kitchen & Interior Design Website | Forma Atelier by Mavvix';
  const description=ar?'تجربة موقع مطابخ مميزة تشمل تخطيطات حرف L وU وجزيرة ومواد وأسطح عمل، ورحلة استشارة تحفظ قياسات مبدئية بدون سعر نهائي.':'An architectural kitchen website with nine authored design dossiers, material guides, live schematic layout preference and a persisted nonbinding consultation brief.';
  return {title,description,robots:{index:false,follow:false},openGraph:{title,description,type:'website'}};
 }
-export default function FormaHome({params:{locale}}:{params:{locale:Locale}}){
+export default async function FormaHome(props:{params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';const Arrow=ar?ArrowLeft:ArrowRight;
  const plans=[
   {slug:'l-shaped',ar:'حرف L',en:'L-shaped',noteAr:'زاوية مدروسة وممر حركة واضح',noteEn:'Two runs and a considered corner'},

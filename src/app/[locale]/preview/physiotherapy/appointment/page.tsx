@@ -4,7 +4,16 @@ import { MOTION,motionPath } from '@/lib/verticals/physiotherapy/data';
 import { MotionAssessmentForm } from './MotionAssessmentForm';
 import { ShieldCheck,CalendarDays,LockKeyhole,HeartPulse } from 'lucide-react';
 
-export default function MotionAppointment({params:{locale},searchParams}:{params:{locale:Locale};searchParams:{service?:string;goal?:string}}){
+export default async function MotionAppointment(
+ props:{params: Promise<{locale:Locale}>;searchParams: Promise<{service?:string;goal?:string}>}
+) {
+ const searchParams = await props.searchParams;
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar',service=MOTION.services.some(s=>s.slug===searchParams.service)?searchParams.service:'',goal=MOTION.intake.goalTypes.includes(searchParams.goal||'')?searchParams.goal:'';
  return <div className="bg-[#E7F3E9]"><div className="max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-24 grid lg:grid-cols-[.66fr_1fr] gap-12">
  <div className="lg:sticky lg:top-32 self-start"><p className="font-mono text-[#287459] text-xs font-extrabold tracking-widest">MOTION LAB / INITIAL CONTACT</p>

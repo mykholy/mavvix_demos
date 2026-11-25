@@ -4,7 +4,16 @@ import { LEXORA,lexoraPath,lexoraText } from '@/lib/verticals/law-firm/data';
 import { ArrowUpRight,BriefcaseBusiness,Landmark,FileText,ShieldCheck } from 'lucide-react';
 
 const types=[['all','كل المجالات','All practices'],['corporate','الشركات','Corporate'],['people','علاقات العمل','Employment'],['disputes','النزاعات','Disputes'],['innovation','الملكية الفكرية','IP'],['assets','الأصول والعقارات','Assets'],['international','الأعمال الدولية','International']] as const;
-export default function LexoraPractices({params:{locale},searchParams}:{params:{locale:Locale};searchParams:{category?:string}}){
+export default async function LexoraPractices(
+ props:{params: Promise<{locale:Locale}>;searchParams: Promise<{category?:string}>}
+) {
+ const searchParams = await props.searchParams;
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';const category=types.some(t=>t[0]===searchParams.category)?searchParams.category:'all';
  const list=LEXORA.services.filter(s=>category==='all'||s.category===category);
  return <div><section className="bg-[#F2E9DB] py-16 sm:py-24 border-b border-[#D6C8B6]"><div className="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[1fr_.65fr] gap-9 items-end"><div><p className="font-bold text-xs uppercase tracking-[.18em] text-[#775A2E]">PRACTICE AREA LIBRARY / 08</p><h1 className="lexora-display text-4xl sm:text-6xl leading-[1.12] mt-6">{ar?'المجال القانوني قبل أي طلب':'The practice-area index, with purpose'}</h1></div><p className="leading-9 text-[#584C60]">{ar?'ثمانية مجالات بمحتوى تثقيفي مختلف لكل تخصص. الاستشارة الفعلية تتطلب مراجعة محامٍ مرخص وفق الدولة والموضوع.':'Eight legal domains with original subject-matter explanations. Real advice requires a qualified professional within the relevant jurisdiction.'}</p></div></section>
