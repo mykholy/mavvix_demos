@@ -1,4 +1,4 @@
-name: Prepare isolated Zod 4 security upgrade
+name: Prepare isolated Zod 4 security upgrade (API compatibility retry)
 on:
   push:
     branches: ['fix/mavvix-next16-migration']
