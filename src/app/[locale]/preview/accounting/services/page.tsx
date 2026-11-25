@@ -1,9 +1,14 @@
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { LEDGERPOINT,ledgerPath,ledgerText } from '@/lib/verticals/accounting/data';
 import { ArrowUpRight,BookOpen,ClipboardCheck,ShieldCheck } from 'lucide-react';
 const categories=[['all',{ar:'كل الخدمات',en:'All services'}],['operations',{ar:'العمليات',en:'Operations'}],['controls',{ar:'الرقابة والتسويات',en:'Controls'}],['insights',{ar:'التقارير',en:'Reports'}],['compliance',{ar:'الالتزامات',en:'Compliance'}],['systems',{ar:'الأنظمة',en:'Systems'}],['setup',{ar:'التأسيس',en:'Setup'}]] as const;
-export default function LedgerServices({params:{locale},searchParams}:{params:{locale:Locale};searchParams:{category?:string}}){
+export default async function LedgerServices({params,searchParams: query}:{params:Promise<{locale:string}>;searchParams:Promise<{category?:string|string[]}>}){
+ const {locale}=await params;
+ if(locale!=='ar'&&locale!=='en')notFound();
+ const rawQuery=await query;
+ const searchParams={category:typeof rawQuery.category==='string'?rawQuery.category:undefined};
  const ar=locale==='ar',active=categories.some(c=>c[0]===searchParams.category)?searchParams.category:'all';
  const entries=LEDGERPOINT.services.filter(s=>active==='all'||s.category===active);
  return <div><section className="bg-[#DCECEB] border-b border-[#C3D6D4] py-20"><div className="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[1fr_.6fr] items-end gap-10"><div><p className="text-[#176C72] font-black tracking-widest text-xs">LEDGERPOINT / SERVICE INDEX</p><h1 className="ledger-display text-4xl sm:text-6xl leading-tight mt-6">{ar?'خدمة محددة، بمخرجات مفهومة':'Service scopes that mean something'}</h1></div><p className="text-[#455F6C] leading-9">{ar?'كل مجال له مدخلات وخطوات ومخرجات مختلفة. لا توجد أسعار تلقائية أو شهادات مراجعة مستقلة من جهة غير حقيقية.':'Each category has inputs, scope questions and real operating dependencies. No invented audit credentials, automated accounting outcomes or fictitious fee quotes.'}</p></div></section>

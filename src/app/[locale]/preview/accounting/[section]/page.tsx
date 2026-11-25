@@ -18,7 +18,9 @@ const headings:Record<Topic,{ar:string;en:string}>={
  questions:{ar:'أسئلة قبل الاتفاق على خدمة محاسبية',en:'Frequently asked scope questions'},
 };
 export function generateStaticParams(){return sections.map(section=>({section}));}
-export function generateMetadata({params:{locale,section}}:{params:{locale:Locale;section:string}}):Metadata{
+export async function generateMetadata({params}:{params:Promise<{locale:string;section:string}>}):Promise<Metadata>{
+ const {locale,section}=await params;
+ if(locale!=='ar'&&locale!=='en')notFound();
  const x=headings[section as Topic];return x?{title:x[locale]+' | LedgerPoint',description:locale==='ar'?'تجربة تصميم موقع محاسبي متخصص من مافكس مع نموذج استفسار آمن ومحتوى توضيحي دون إقرارات أو مراجعات فعلية.':'Bilingual accounting business website concept by Mavvix with privacy-aware service scoping and no actual CPA engagement.',robots:{index:false}}:{};
 }
 const close=[
@@ -27,7 +29,9 @@ const close=[
  {name:{ar:'مراجعة التقارير',en:'Management report review'},description:{ar:'تعريف المقياس وتفسير أي رقم تقديري.',en:'Define metrics and qualify estimates.'}},
  {name:{ar:'الاعتماد والتسليم',en:'Approval and delivery'},description:{ar:'تسجيل القرارات ونسخة قابلة للمراجعة.',en:'Record approvals and a reviewable version.'}}
 ];
-export default function LedgerTopicalPage({params:{locale,section}}:{params:{locale:Locale;section:string}}){
+export default async function LedgerTopicalPage({params}:{params:Promise<{locale:string;section:string}>}){
+ const {locale,section}=await params;
+ if(locale!=='ar'&&locale!=='en')notFound();
  if(!sections.includes(section as Topic))notFound();
  const topic=section as Topic,ar=locale==='ar';const base=ledgerPath(locale);
  const h=(x:string)=><h2 className="ledger-display text-3xl sm:text-4xl font-bold">{x}</h2>;

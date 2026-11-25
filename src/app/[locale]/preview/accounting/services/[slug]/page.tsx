@@ -5,10 +5,14 @@ import type { Locale } from '@/lib/i18n/config';
 import { LEDGERPOINT,ledgerPath,ledgerService } from '@/lib/verticals/accounting/data';
 import { ArrowUpRight,ClipboardCheck,LockKeyhole,ShieldCheck } from 'lucide-react';
 export function generateStaticParams(){return LEDGERPOINT.services.map(s=>({slug:s.slug}));}
-export function generateMetadata({params:{locale,slug}}:{params:{locale:Locale;slug:string}}):Metadata{
+export async function generateMetadata({params}:{params:Promise<{locale:string;slug:string}>}):Promise<Metadata>{
+ const {locale,slug}=await params;
+ if(locale!=='ar'&&locale!=='en')notFound();
  const s=ledgerService(slug);return s?{title:s.title[locale]+' | LedgerPoint',description:s.summary[locale],robots:{index:false}}:{};
 }
-export default function LedgerServiceDetail({params:{locale,slug}}:{params:{locale:Locale;slug:string}}){
+export default async function LedgerServiceDetail({params}:{params:Promise<{locale:string;slug:string}>}){
+ const {locale,slug}=await params;
+ if(locale!=='ar'&&locale!=='en')notFound();
  const s=ledgerService(slug);if(!s)notFound();const ar=locale==='ar';
  return <div><section className="bg-[#1C3343] text-white py-14 sm:py-24"><div className="max-w-7xl mx-auto px-5 sm:px-8"><nav className="text-xs text-[#C1DADC]"><Link href={ledgerPath(locale)}>{ar?'الرئيسية':'Home'}</Link> / <Link href={ledgerPath(locale,'services')}>{ar?'الخدمات':'Services'}</Link> / <span className="text-[#7DE0DC]">{s.title[locale]}</span></nav><div className="mt-14 grid lg:grid-cols-[1fr_auto] gap-10 items-end"><div><p className="font-mono text-xs text-[#7DE0DC]">LEDGER SERVICE / {String(s.rank).padStart(2,'0')}</p><h1 className="ledger-display text-4xl sm:text-6xl mt-5 font-bold">{s.title[locale]}</h1><p className="mt-7 text-[#D3E3E7] text-lg leading-9 max-w-3xl">{s.summary[locale]}</p></div><Link href={ledgerPath(locale,'quote')+'?service='+s.slug} className="inline-flex items-center gap-3 bg-[#7DE0DC] text-[#1C3343] font-bold px-7 py-4 text-sm">{ar?'طلب نطاق الخدمة':'Request scope'}<ArrowUpRight size={17}/></Link></div></div></section>
   <section className="max-w-7xl mx-auto px-5 sm:px-8 py-20 grid lg:grid-cols-[.45fr_1fr] gap-12"><div><ClipboardCheck size={39} className="text-[#147C82]"/><h2 className="ledger-display text-3xl mt-5">{ar?'إيه اللي يخص الخدمة؟':'Understand the work'}</h2></div><p className="text-[#455F6C] text-lg leading-[2.1]">{s.body[locale]}</p></section>

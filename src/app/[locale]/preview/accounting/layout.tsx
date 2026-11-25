@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import type { Metadata } from 'next';
@@ -6,12 +7,16 @@ import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { ledgerPath } from '@/lib/verticals/accounting/data';
 import { ChartNoAxesCombined,ArrowUpRight,FileSpreadsheet,ShieldCheck } from 'lucide-react';
 
-export function generateMetadata({params:{locale}}:{params:{locale:Locale}}):Metadata{
+export async function generateMetadata({params}:{params:Promise<{locale:string}>}):Promise<Metadata>{
+ const {locale}=await params;
+ if(locale!=='ar'&&locale!=='en')notFound();
  const ar=locale==='ar',title=ar?'LedgerPoint — تجربة موقع خدمات محاسبية احترافي من مافكس':'LedgerPoint — Premium Accounting Firm Website Experience by Mavvix';
  const description=ar?'موقع أعمال محاسبية بتصميم مميز لخدمات مسك الدفاتر والتسويات والتقارير ونموذج طلب عرض آمن للشركات في مصر والخليج، من مافكس.':'A bilingual accounting website concept with sector-specific reporting guidance and strictly minimal accounting-service enquiries, designed by Mavvix.';
  return {title,description,robots:{index:false,follow:false},openGraph:{title,description,type:'website'}};
 }
-export default function LedgerLayout({children,params:{locale}}:{children:React.ReactNode;params:{locale:Locale}}){
+export default async function LedgerLayout({children,params}:{children:React.ReactNode;params:Promise<{locale:string}>}){
+ const {locale}=await params;
+ if(locale!=='ar'&&locale!=='en')notFound();
  const ar=locale==='ar';const nav=[
   {href:ledgerPath(locale,'services'),label:ar?'الخدمات':'Services'},
   {href:ledgerPath(locale,'industries'),label:ar?'القطاعات':'Industries'},

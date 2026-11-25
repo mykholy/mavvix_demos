@@ -1,9 +1,12 @@
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { LEDGERPOINT,LEDGER_HERO,LEDGER_HERO_SOURCE,ledgerPath,ledgerText } from '@/lib/verticals/accounting/data';
 import { ArrowUpRight,ArrowLeft,ArrowRight,ChartNoAxesCombined,ClipboardCheck,ShieldCheck,FileSpreadsheet,Landmark,BookOpen,Layers,RefreshCcw,Scale,FileCheck2,CalendarDays,Workflow,Database,CheckCircle2,ReceiptText,Globe2,ScanEye,ArrowDown } from 'lucide-react';
 
-export default function LedgerHome({params:{locale}}:{params:{locale:Locale}}){
+export default async function LedgerHome({params}:{params:Promise<{locale:string}>}){
+ const {locale}=await params;
+ if(locale!=='ar'&&locale!=='en')notFound();
  const ar=locale==='ar',Arrow=ar?ArrowLeft:ArrowRight;const services=LEDGERPOINT.services;
  return <div>
   {/* 01 - data-led editorial art direction */}
