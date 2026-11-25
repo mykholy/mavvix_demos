@@ -38,7 +38,7 @@ export default async function FitnessLayout(props:{children:React.ReactNode;para
       <Link href={pulsePath(locale,'trial')} aria-label={ar?'طلب تجربة حصة رياضية':'Request gym class trial'} className="min-h-11 min-w-11 inline-flex items-center justify-center gap-2 bg-[#141421] text-[#E0FE61] rounded-full px-3 sm:px-6 text-xs font-black">
        <Zap size={17}/><span className="hidden sm:inline">{ar?'اختار حصة تجريبية':'Explore a trial'}</span>
       </Link>
-      <MobileSectorNav links={[...nav,{href:pulsePath(locale,'trial'),label:ar?'التجربة':'Trial'}]}/>
+      <MobileSectorNav breakpoint="xl" tone="light" links={[...nav,{href:pulsePath(locale,'trial'),label:ar?'التجربة':'Trial'}]}/>
      </div>
     </div>
    </header>

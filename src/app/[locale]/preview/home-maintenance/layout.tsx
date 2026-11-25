@@ -40,7 +40,7 @@ export default async function HomeMaintenanceLayout(props:{children:React.ReactN
     <nav aria-label={ar?'التنقل الرئيسي':'Main navigation'} className="hidden xl:flex gap-5 text-[#527089] text-xs font-bold">{nav.map(n=><Link key={n.href} href={n.href} className="hover:text-[#D39421]">{n.label}</Link>)}</nav>
     <div className="flex items-center gap-3">
      <Link href={maintenancePath(locale,'book')} className="hidden sm:flex bg-[#174E78] text-white px-5 py-3 text-xs font-bold rounded-xl gap-2 items-center">{ar?'اطلب معاينة':'Request a visit'}<ArrowUpRight size={16}/></Link>
-     <MobileSectorNav links={[...nav,{href:maintenancePath(locale,'book'),label:ar?'طلب معاينة':'Request visit'}]}/>
+     <MobileSectorNav breakpoint="xl" tone="light" links={[...nav,{href:maintenancePath(locale,'book'),label:ar?'طلب معاينة':'Request visit'}]}/>
     </div>
    </div>
   </header>

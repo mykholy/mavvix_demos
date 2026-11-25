@@ -47,7 +47,7 @@ export default async function GlossLayout(props:{children:React.ReactNode;params
     <nav aria-label={ar?'قائمة الموقع':'Main navigation'} className="hidden xl:flex items-center gap-5">{nav.map(n=><Link key={n.href} href={n.href} className="text-xs font-semibold text-[#D1E7F3] hover:text-[#4CCBF4]">{n.label}</Link>)}</nav>
     <div className="flex gap-2 items-center">
      <Link href={glossPath(locale,'quote')} className="min-h-11 min-w-11 rounded-md flex gap-2 items-center justify-center bg-[#4CCBF4] text-[#0D1626] px-2 sm:px-5 py-3 font-black text-xs" aria-label={ar?'طلب عرض عناية بالسيارة':'Request car care quote'}><CarFront size={17}/><span className="hidden sm:inline">{ar?'جهز طلبك':'Build a brief'}</span></Link>
-     <MobileSectorNav links={[...nav,{href:glossPath(locale,'quote'),label:ar?'طلب عرض':'Request quote'}]}/>
+     <MobileSectorNav breakpoint="xl" tone="dark" links={[...nav,{href:glossPath(locale,'quote'),label:ar?'طلب عرض':'Request quote'}]}/>
     </div>
    </div>
   </header>

@@ -54,7 +54,7 @@ export default async function LexoraLayout(props:{children:React.ReactNode;param
       <Link href={lexoraPath(locale,'consultation')} aria-label={ar?'طلب استفسار قانوني عام':'Request introductory legal enquiry'} className="flex gap-2 items-center rounded-sm bg-[#251D34] text-white h-11 px-3 sm:px-6 text-xs font-bold">
        <span className="hidden sm:inline">{ar?'طلب استفسار أولي':'Send an enquiry'}</span><ArrowUpRight size={17}/>
       </Link>
-      <MobileSectorNav links={[...nav,{href:lexoraPath(locale,'consultation'),label:ar?'استفسار أولي':'Enquiry'}]}/>
+      <MobileSectorNav breakpoint="xl" tone="light" links={[...nav,{href:lexoraPath(locale,'consultation'),label:ar?'استفسار أولي':'Enquiry'}]}/>
     </div>
    </div>
   </header>
