@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { ContactDock } from '@/components/shared/ContactDock';
@@ -5,12 +6,11 @@ import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { oakPath } from '@/lib/verticals/furniture/data';
 import { Armchair,ArrowUpRight,Leaf,Home } from 'lucide-react';
 
-export default async function OaklineLayout(props:{children:React.ReactNode;params: Promise<{locale:Locale}>}) {
+export default async function OaklineLayout(props:{children:React.ReactNode;params: Promise<{ locale: string }>}) {
  const params = await props.params;
 
- const {
-  locale
- } = params;
+ const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
 
  const {
   children

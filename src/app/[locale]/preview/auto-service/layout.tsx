@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Wrench, ArrowUpRight, Gauge, MapPin, ArrowLeft, ArrowRight } from 'lucide-react';
 import { ContactDock } from '@/components/shared/ContactDock';
@@ -5,12 +6,11 @@ import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { autoPath } from '@/lib/verticals/auto-service/data';
 import type { Locale } from '@/lib/i18n/config';
 
-export default async function AutoServiceLayout(props:{children:React.ReactNode;params: Promise<{locale:Locale}>}) {
+export default async function AutoServiceLayout(props:{children:React.ReactNode;params: Promise<{ locale: string }>}) {
  const params = await props.params;
 
- const {
-  locale
- } = params;
+ const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
 
  const {
   children

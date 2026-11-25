@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { SectorUtilityBar } from '@/components/shared/SectorUtilityBar';
 import { ContactDock } from '@/components/shared/ContactDock';
 import React from 'react';
@@ -10,14 +11,13 @@ import { Sparkles, Shield, AlertTriangle, ArrowRight, ArrowLeft, ChevronRight } 
 export default async function EcommerceLayout(
   props: {
     children: React.ReactNode;
-    params: Promise<{ locale: Locale }>;
+    params: Promise<{ locale: string }>;
   }
 ) {
   const params = await props.params;
 
-  const {
-    locale
-  } = params;
+  const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
 
   const {
     children
