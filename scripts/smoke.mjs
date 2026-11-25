@@ -521,6 +521,66 @@ try {
   assert.equal(repeatedResult.refNumber,lexResult.refNumber);
   console.log('PASS: 30 Lexora bilingual routes, confidentiality-only strict intake and idempotent saved reference');
 
+
+  const ledgerRoutes=['','services','services/bookkeeping','services/bank-reconciliation','quote','resources','resources/monthly-close','industries','reporting','compliance','reconciliation','process','about','contact','questions'];
+  for(const lang of ['ar','en']){
+    for(const tail of ledgerRoutes){
+      const url='/'+lang+'/preview/accounting'+(tail?'/'+tail:'');
+      const res=await get(url);
+      assert.equal(res.status,200,'LedgerPoint route failed '+url);
+      assert.ok((await res.text()).includes('data-mavvix-contact-dock'),'LedgerPoint sales dock missing '+url);
+    }
+  }
+  const accountingRequest={
+    flowType:'accounting_scope_request',clientRequestId:'77777777-7777-4777-8777-777777777777',
+    serviceSlug:'bookkeeping',country:'egypt',entityType:'sme',volumeBand:'50-200',
+    cadence:'monthly',existingSystem:'spreadsheets',
+    guestName:'QA Accounting',guestPhone:'01000000000',consent:true,honeypot:'',
+    utm:{source:'qa',medium:'integration',campaign:'ledgerpoint'}
+  };
+  assert.equal((await post('/api/portfolio/accounting',{...accountingRequest,consent:false})).status,400);
+  assert.equal((await post('/api/portfolio/accounting',{...accountingRequest,taxId:'PRIVATE'})).status,400);
+  const savedLedger=await post('/api/portfolio/accounting',accountingRequest);
+  const savedLedgerBody=await savedLedger.json();
+  assert.equal(savedLedger.status,201,'LedgerPoint request persistence '+JSON.stringify(savedLedgerBody));
+  assert.match(savedLedgerBody.refNumber,/^MVX-LED-[A-F0-9]+$/);
+  assert.equal(savedLedgerBody.status,'pending_operator_confirmation');
+  const sameLedger=await post('/api/portfolio/accounting',accountingRequest);
+  const sameLedgerBody=await sameLedger.json();
+  assert.equal(sameLedger.status,200);
+  assert.equal(sameLedgerBody.duplicate,true);
+  assert.equal(sameLedgerBody.refNumber,savedLedgerBody.refNumber);
+  console.log('PASS: 30 LedgerPoint bilingual routes and idempotent consented accounting scope receipt');
+
+  const travelRoutes=['','destinations','journeys','travel-styles','planning','inclusions','guides','faq','about','quote','journeys/cairo-heritage','journeys/luxor-temples','journeys/aswan-nubian','journeys/red-sea-escape','journeys/alexandria-weekend','journeys/riyadh-city-break','journeys/jeddah-coast','journeys/tailor-made-journey','guides/read-the-inclusions','guides/pace-and-transfer','guides/before-you-book'];
+  for(const lang of ['ar','en']){
+    for(const tail of travelRoutes){
+      const url='/'+lang+'/preview/travel-agency'+(tail?'/'+tail:'');
+      const response=await get(url);
+      assert.equal(response.status,200,'Nomad Routes failed '+url);
+      assert.ok((await response.text()).includes('data-mavvix-contact-dock'),'Nomad sales dock missing '+url);
+    }
+  }
+  assert.equal((await get('/en/preview/travel-agency/journeys/unknown-route')).status,404);
+  const travel={flowType:'travel_planning_request',clientRequestId:'88888888-8888-4888-8888-888888888888',serviceSlug:'luxor-temples',country:'egypt',duration:4,groupSize:2,pace:'balanced',budgetBand:'comfort',departureDate:'',guestName:'QA Travel',guestPhone:'01000000000',consent:true,honeypot:'',utm:{source:'qa',medium:'integration',campaign:'nomad'}};
+  const endpoint='/api/portfolio/travel-agency';
+  assert.equal((await post(endpoint,{...travel,consent:false})).status,400);
+  assert.equal((await post(endpoint,{...travel,passport:'QA-PRIVATE'})).status,400);
+  assert.equal((await post(endpoint,{...travel,country:'saudi-arabia'})).status,400);
+  assert.equal((await post(endpoint,{...travel,duration:3})).status,400);
+  assert.equal((await post(endpoint,{...travel,departureDate:'2020-02-30'})).status,400);
+  const travelSaved=await post(endpoint,travel), travelBody=await travelSaved.json();
+  assert.equal(travelSaved.status,201,'Nomad persistence: '+JSON.stringify(travelBody));
+  assert.match(travelBody.refNumber,/^MVX-NOM-[A-F0-9]{10}$/);
+  assert.equal(travelBody.status,'pending_operator_confirmation');
+  const travelDuplicate=await post(endpoint,travel), travelDuplicateBody=await travelDuplicate.json();
+  assert.equal(travelDuplicate.status,200);
+  assert.equal(travelDuplicateBody.duplicate,true);
+  assert.equal(travelDuplicateBody.refNumber,travelBody.refNumber);
+  const privateQueue=await get('/admin/portfolio-requests?sector=travel-agency',{redirect:'manual'});
+  assert.ok([302,303,307,308,401].includes(privateQueue.status),'Admin queue should not expose a guest request');
+  console.log('PASS: 42 Nomad bilingual routes, destination/duration/date/PII safeguards and idempotent request receipt');
+
   console.log('PASS: auth guard, flow validation, Academy SQLite progress, trusted ecommerce price, private receipt');
 } catch (error) {
   console.error(error);

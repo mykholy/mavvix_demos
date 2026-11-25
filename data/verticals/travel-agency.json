@@ -1,0 +1,480 @@
+{
+  "slug": "travel-agency",
+  "brand": "Nomad Routes",
+  "classification": "editorial_portfolio_concept_no_live_booking",
+  "services": [
+    {
+      "slug": "cairo-heritage",
+      "rank": 1,
+      "category": "heritage",
+      "title": {
+        "ar": "القاهرة عبر العصور",
+        "en": "Cairo through the ages"
+      },
+      "summary": {
+        "ar": "ثلاثة أيام بين الجيزة والقاهرة التاريخية مع وقت مفتوح للاستكشاف.",
+        "en": "Three days between Giza and historic Cairo with space for independent discovery."
+      },
+      "body": {
+        "ar": "يبدأ البرنامج المقترح بالجيزة في يوم مستقل لتجنب ضغط الانتقالات، ثم يوم للمتاحف ووسط البلد، ويوم للمشي في القاهرة التاريخية. يُراجع المرشد المرخص مواعيد الزيارة والتذاكر وخيارات النقل قبل الاتفاق. اختر وتيرة هادئة إذا كنت مسافرًا مع أطفال أو كبار السن؛ لا يشمل هذا التصور دخولًا مؤكدًا أو حجز سيارة.",
+        "en": "Set aside a day for Giza, a museum and downtown day, then a walking-focused day in historic Cairo. A licensed operator must confirm opening times, admissions and transfer arrangements. Choose a slower pace for mixed-age groups. No ticket, vehicle or guide is reserved by this itinerary."
+      },
+      "checkpoints": {
+        "ar": [
+          "تحديد المتحف المناسب ومواعيد دخوله",
+          "مراجعة المسافات ومستوى المشي",
+          "توضيح التذاكر والانتقالات المستثناة"
+        ],
+        "en": [
+          "Confirm museum choice and entry arrangements",
+          "Review walking distances and pace",
+          "Clarify excluded tickets and transfers"
+        ]
+      },
+      "days": 3,
+      "stops": [
+        {
+          "ar": "الجيزة",
+          "en": "Giza"
+        },
+        {
+          "ar": "وسط البلد والمتاحف",
+          "en": "Downtown and museums"
+        },
+        {
+          "ar": "القاهرة التاريخية",
+          "en": "Historic Cairo"
+        }
+      ],
+      "pace": "balanced"
+    },
+    {
+      "slug": "luxor-temples",
+      "rank": 2,
+      "category": "heritage",
+      "title": {
+        "ar": "الأقصر على الضفتين",
+        "en": "Luxor across both banks"
+      },
+      "summary": {
+        "ar": "أربعة أيام تجمع آثار الضفة الشرقية والغربية ومشاهد النيل.",
+        "en": "Four days combining the east and west banks with Nile-side time."
+      },
+      "body": {
+        "ar": "افصل معابد الكرنك والأقصر عن زيارة الجبانة الملكية والضفة الغربية بحيث لا تُضغط الزيارات في يوم واحد. اترك نافذة للراحة في الظهيرة والتنقل بين الضفتين، ويومًا مرنًا للتوسع في المواقع أو الراحة. الأنشطة الجوية اختيارية وتخضع للمشغل والطقس والتراخيص؛ الصورة التحريرية ليست وعدًا برحلة منطاد.",
+        "en": "Separate Karnak and Luxor Temple from the west-bank monuments to avoid an overloaded day. Reserve midday rest and a flexible day for further sites. Balloon experiences are optional and depend on weather, licensed operators and actual availability; the editorial photograph is not a promised inclusion."
+      },
+      "checkpoints": {
+        "ar": [
+          "تحديد المعابد والمقابر المراد زيارتها",
+          "تأكيد وسيلة عبور النيل والتنقل",
+          "مراجعة القيود والطقس قبل الأنشطة الاختيارية"
+        ],
+        "en": [
+          "Select the actual monuments and tombs",
+          "Confirm river crossings and transport",
+          "Verify weather and operator constraints for optional activities"
+        ]
+      },
+      "days": 4,
+      "stops": [
+        {
+          "ar": "الكرنك",
+          "en": "Karnak"
+        },
+        {
+          "ar": "الضفة الغربية",
+          "en": "West bank"
+        },
+        {
+          "ar": "النيل",
+          "en": "Nile"
+        }
+      ],
+      "pace": "balanced"
+    },
+    {
+      "slug": "aswan-nubian",
+      "rank": 3,
+      "category": "culture",
+      "title": {
+        "ar": "أسوان والنوبة بهدوء",
+        "en": "Slow Aswan and Nubian culture"
+      },
+      "summary": {
+        "ar": "ثلاثة أيام لمشاهد النهر والثقافة المحلية ووقت مرن للزيارة.",
+        "en": "Three days of river landscapes, local culture and flexible exploration."
+      },
+      "body": {
+        "ar": "تُبنى الرحلة حول النيل والزيارات الثقافية بإيقاع أقل ازدحامًا، مع فصل التنقلات الطويلة عن الأنشطة القصيرة. ينبغي احترام خصوصية السكان وطلب الإذن قبل التصوير داخل المنازل. تُراجع زيارة فيلة وأي رحلة خارج المدينة من حيث التذاكر والنقل والمواعيد قبل إصدار برنامج نهائي.",
+        "en": "Build around the river and respectful local cultural encounters, separating longer journeys from shorter activities. Ask permission before photographing people or private homes. Confirm Philae and any out-of-town visit with an actual operator, including transfer times and admission."
+      },
+      "checkpoints": {
+        "ar": [
+          "اتفاق واضح على الأنشطة الثقافية",
+          "مراجعة وسائل النقل النهري",
+          "تحديد أي زيارة خارج أسوان مسبقًا"
+        ],
+        "en": [
+          "Agree the cultural visits respectfully",
+          "Review river transport arrangements",
+          "Confirm any out-of-town journey in advance"
+        ]
+      },
+      "days": 3,
+      "stops": [
+        {
+          "ar": "أسوان",
+          "en": "Aswan"
+        },
+        {
+          "ar": "فيلة",
+          "en": "Philae"
+        },
+        {
+          "ar": "النوبة",
+          "en": "Nubian communities"
+        }
+      ],
+      "pace": "slow"
+    },
+    {
+      "slug": "red-sea-escape",
+      "rank": 4,
+      "category": "coast",
+      "title": {
+        "ar": "البحر الأحمر بإيقاعك",
+        "en": "Red Sea at your own pace"
+      },
+      "summary": {
+        "ar": "خمسة أيام تجمع الراحة الساحلية وأنشطة اختيارية حسب الخبرة.",
+        "en": "Five days of coastal downtime and optional experience-based activities."
+      },
+      "body": {
+        "ar": "يُقسم الوقت بين الوصول والاستقرار والراحة على الشاطئ، مع إمكانية طلب نشاط بحري مستقل بعد مراجعة أهلية المشاركين والطقس. لا يُفترض أن كل فندق يوفر شاطئًا مناسبًا أو أن كل رحلة بحرية ملائمة للأطفال. اطلب سياسة الإلغاء والبدائل إذا ألغى المشغل النشاط.",
+        "en": "Allow arrival and recovery time, beach days and optional marine experiences after reviewing eligibility and weather. Beach access, supervision and child suitability must be confirmed individually. Ask about operator cancellation terms and alternatives if activities cannot proceed."
+      },
+      "checkpoints": {
+        "ar": [
+          "مراجعة موقع الفندق والوصول للشاطئ",
+          "تأكيد شروط النشاط البحري حسب الخبرة",
+          "فصل تكلفة الإقامة عن الأنشطة الإضافية"
+        ],
+        "en": [
+          "Check accommodation location and beach access",
+          "Verify marine activity eligibility",
+          "Separate accommodation and optional activity costs"
+        ]
+      },
+      "days": 5,
+      "stops": [
+        {
+          "ar": "الغردقة",
+          "en": "Hurghada"
+        },
+        {
+          "ar": "الساحل",
+          "en": "Coast"
+        },
+        {
+          "ar": "وقت مرن",
+          "en": "Flexible time"
+        }
+      ],
+      "pace": "slow"
+    },
+    {
+      "slug": "alexandria-weekend",
+      "rank": 5,
+      "category": "culture",
+      "title": {
+        "ar": "ويك إند الإسكندرية",
+        "en": "Alexandria weekend"
+      },
+      "summary": {
+        "ar": "يومان للمدينة الساحلية والمواقع الثقافية دون جدول مزدحم.",
+        "en": "Two days for coastal views and cultural stops without a packed schedule."
+      },
+      "body": {
+        "ar": "يوم للوصول والمشي على الكورنيش وزيارة ثقافية، ثم يوم لموقع تاريخي ووقت مرن قبل العودة. إذا كان السفر من القاهرة يجب حساب زمن الوصول والعودة بشكل منفصل. اختر وسيلة النقل ونقطة اللقاء مع المشغل قبل اعتماد خطة اليوم.",
+        "en": "Keep one day for arrival, the corniche and a cultural stop, and another for a historic site and flexible return time. If starting from Cairo, allow separately for transport. Confirm the actual mode of travel and meeting point before finalizing the itinerary."
+      },
+      "checkpoints": {
+        "ar": [
+          "اختيار نقطة الانطلاق والعودة",
+          "مراجعة ساعات المواقع حسب يوم الزيارة",
+          "تخصيص وقت كافٍ للانتقالات"
+        ],
+        "en": [
+          "Choose departure and return points",
+          "Confirm site hours for the intended day",
+          "Leave realistic transfer buffers"
+        ]
+      },
+      "days": 2,
+      "stops": [
+        {
+          "ar": "الكورنيش",
+          "en": "Corniche"
+        },
+        {
+          "ar": "مواقع ثقافية",
+          "en": "Cultural sites"
+        }
+      ],
+      "pace": "balanced"
+    },
+    {
+      "slug": "riyadh-city-break",
+      "rank": 6,
+      "category": "city",
+      "title": {
+        "ar": "الرياض: مدينة وتجارب ثقافية",
+        "en": "Riyadh city and culture"
+      },
+      "summary": {
+        "ar": "أربعة أيام بين الأحياء الثقافية والمدينة الحديثة مع خيارات عائلية.",
+        "en": "Four days balancing cultural districts, contemporary city life and family choices."
+      },
+      "body": {
+        "ar": "تبدأ الخطة بفهم أماكن الإقامة والمسافات بين المناطق، ثم اختيار يوم للدرعية والمواقع الثقافية بحسب الحجوزات، ويوم لوجهات المدينة المعاصرة، ووقت مرن للعائلة. يجب مراجعة فعاليات الموسم الفعلية وشروط الدخول من مصادرها الرسمية. لا يتضمن التصور تأشيرة أو تذكرة فعالية.",
+        "en": "Start with accommodation location and travel times, then allow a cultural district day, contemporary city exploration and a flexible family day. Verify event schedules and admission with their official operators. No visa or event ticket is included or promised."
+      },
+      "checkpoints": {
+        "ar": [
+          "تأكيد توفر التذاكر للأنشطة المختارة",
+          "مراجعة المسافات خلال أوقات الذروة",
+          "فصل الإقامة والتأشيرة عن البرنامج المقترح"
+        ],
+        "en": [
+          "Confirm admission for selected experiences",
+          "Review distances and traffic at planned times",
+          "Separate accommodation and visa from proposed activities"
+        ]
+      },
+      "days": 4,
+      "stops": [
+        {
+          "ar": "الرياض",
+          "en": "Riyadh"
+        },
+        {
+          "ar": "الدرعية",
+          "en": "Diriyah"
+        },
+        {
+          "ar": "وقت عائلي",
+          "en": "Family time"
+        }
+      ],
+      "pace": "balanced"
+    },
+    {
+      "slug": "jeddah-coast",
+      "rank": 7,
+      "category": "coast",
+      "title": {
+        "ar": "جدة: البلد والبحر",
+        "en": "Jeddah old town and coast"
+      },
+      "summary": {
+        "ar": "ثلاثة أيام للعمارة التاريخية والمشاهد الساحلية ووقت للتجول.",
+        "en": "Three days of historic architecture, coastal scenery and unhurried exploration."
+      },
+      "body": {
+        "ar": "خصص زيارة للبلد ومناطقها التراثية مع مراعاة ساعات العمل والطقس، ثم وقتًا للواجهة البحرية وتجارب الطعام، واترك نافذة اختيارية للتسوق أو الراحة. الأنشطة البحرية تحتاج تحققًا من المشغل والشروط قبل تأكيدها. لا تستخدم الصور أو النصوص بوصفها دليلًا على حجوزات قائمة.",
+        "en": "Allow time for Al-Balad and its heritage architecture, the waterfront and local food, with a flexible window for shopping or rest. Check opening hours, weather and operator requirements separately for optional marine experiences. No live availability or reservations are represented."
+      },
+      "checkpoints": {
+        "ar": [
+          "اختيار مسار المشي المناسب",
+          "مراجعة شروط الأنشطة البحرية",
+          "تحديد نقطة الانطلاق ونهاية الرحلة"
+        ],
+        "en": [
+          "Choose a suitable walking route",
+          "Verify marine activity conditions",
+          "Agree actual start and end points"
+        ]
+      },
+      "days": 3,
+      "stops": [
+        {
+          "ar": "البلد",
+          "en": "Al-Balad"
+        },
+        {
+          "ar": "الواجهة البحرية",
+          "en": "Waterfront"
+        },
+        {
+          "ar": "جدة",
+          "en": "Jeddah"
+        }
+      ],
+      "pace": "balanced"
+    },
+    {
+      "slug": "tailor-made-journey",
+      "rank": 8,
+      "category": "custom",
+      "title": {
+        "ar": "رحلة مصممة على احتياجك",
+        "en": "A journey built around you"
+      },
+      "summary": {
+        "ar": "خطة خاصة حسب البلد والمدة واهتمامات المجموعة دون أسعار أو حجوزات وهمية.",
+        "en": "A custom planning brief based on country, duration and group priorities without invented prices or bookings."
+      },
+      "body": {
+        "ar": "ابدأ بتحديد البلد ونطاق الميزانية والمدة المرغوبة ونوع الرحلة، ثم رتّب الأولويات: آثار أو شاطئ أو ثقافة أو راحة. يوضح المنظم الحقيقي ما يمكن جمعه في برنامج منطقي وما يحتاج يومًا إضافيًا، ويعرض تكاليف الخدمات وسياسات الإلغاء قبل الدفع. النموذج لا يطلب جواز سفر أو بطاقة دفع ولا يصدر عرض سعر ملزمًا.",
+        "en": "Specify country, budget band, duration and trip style before ranking heritage, beach, culture or rest. A real travel professional would reconcile distances and available services, present inclusions and cancellation terms, and obtain consent before taking payment. This intake collects no passport or card details and makes no binding quote."
+      },
+      "checkpoints": {
+        "ar": [
+          "حدد أولويات الرحلة بدل قائمة طويلة",
+          "اتفق على مستوى الإقامة والانتقالات",
+          "اطلب عرضًا مكتوبًا قبل أي دفع"
+        ],
+        "en": [
+          "Rank priorities rather than overloading the itinerary",
+          "Agree lodging and transfer preferences",
+          "Request a written offer before paying"
+        ]
+      },
+      "days": null,
+      "stops": [],
+      "pace": "custom"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "read-the-inclusions",
+      "title": {
+        "ar": "اقرأ ما يشمله البرنامج قبل المقارنة",
+        "en": "Read the inclusions before comparing trips"
+      },
+      "summary": {
+        "ar": "السعر وحده لا يوضح ما إذا كانت الإقامة والنقل والتذاكر محسوبة.",
+        "en": "The headline price alone cannot establish whether lodging, transfers or tickets are included."
+      },
+      "body": {
+        "ar": "ابدأ بجدول للخدمات: ليالي الإقامة ونوع الغرفة ووجبات الطعام ووسائل التنقل والمرشد والتذاكر. افصل الخدمات الاختيارية والمصروفات الشخصية والرسوم المتغيرة. اسأل عن سياسة التعديل والإلغاء والبدائل عند إغلاق موقع أو تغير الطقس. قارن عروضًا لها نفس النطاق وتواريخ السفر، واطلب نسخة مكتوبة من المشغل قبل تحويل أي مبلغ. لا يمثل هذا المقال سعرًا أو عرضًا فعليًا.",
+        "en": "Build a line-by-line comparison of lodging nights, room types, meals, transport, guides and admissions. Identify optional experiences, personal expenses and variable fees separately. Ask about cancellation, changes and contingencies for closures or weather. Compare like-for-like dates and scope, then obtain a written offer from the actual operator before paying. This is planning guidance, not a live travel offer."
+      }
+    },
+    {
+      "slug": "pace-and-transfer",
+      "title": {
+        "ar": "مسافات أقل وتجربة أعمق",
+        "en": "Less transit, more discovery"
+      },
+      "summary": {
+        "ar": "اختيار عدد منطقي من المدن والأنشطة أهم من حشر الزيارات.",
+        "en": "A realistic number of stops matters more than a packed itinerary."
+      },
+      "body": {
+        "ar": "احسب يوم الوصول والمغادرة ووقت تسجيل الدخول إلى مكان الإقامة ضمن الرحلة. ضع المواقع القريبة في اليوم نفسه وخصص مساحة للاستراحة والطعام. إذا شملت الرحلة مدنًا متعددة لا تفترض أن يوم النقل يوم كامل للزيارات. اترك يومًا مرنًا عند السفر مع أطفال أو أفراد يحتاجون وتيرة أبطأ. استشر المشغل بشأن وسيلة النقل وساعات التشغيل قبل اعتماد المسار.",
+        "en": "Count arrival and departure days and check-in logistics within the trip. Group nearby sites and leave time for meals and rest. On multi-city journeys, do not assume that a transfer day is a full sightseeing day. Keep a flexible window for families and travelers who prefer a slower pace. Confirm transfer mode and site schedules with a qualified operator before finalizing."
+      }
+    },
+    {
+      "slug": "before-you-book",
+      "title": {
+        "ar": "قبل حجز السفر: أسئلة لا تتجاوزها",
+        "en": "Before booking: the questions worth asking"
+      },
+      "summary": {
+        "ar": "تحقق من الجهة المشغلة وشروط التأشيرة والإلغاء وحماية بياناتك.",
+        "en": "Verify the operator, visa requirements, cancellation and personal-data handling."
+      },
+      "body": {
+        "ar": "تحقق من هوية شركة السياحة وترخيصها من الجهة المختصة، ثم اطلب برنامجًا وتكاليف مكتوبة. متطلبات دخول البلد تتغير حسب الجنسية والغرض ومدة الإقامة؛ راجع المصدر الحكومي الرسمي وقت السفر. لا ترسل جواز السفر أو بيانات الدفع إلى نموذج عام مجهول. راجع شروط التأمين والاسترداد والطوارئ مع جهات مؤهلة. المرجع التجريبي هنا لا يمثل تذكرة أو تأشيرة أو حجزًا.",
+        "en": "Verify the provider's identity and licence through the relevant authority, then request written scope and costs. Entry requirements depend on nationality, purpose and dates; use current official government sources. Do not submit passports or payment data to an unverified public form. Check insurance, refunds and emergency arrangements with qualified providers. A portfolio request reference is not a ticket, visa or reservation."
+      }
+    }
+  ],
+  "faq": [
+    {
+      "question": {
+        "ar": "هل الرحلات قابلة للحجز الآن؟",
+        "en": "Can these journeys be booked now?"
+      },
+      "answer": {
+        "ar": "لا. هي مسارات تحريرية ضمن معرض أعمال مافكس، وأي تشغيل فعلي يحتاج جهة سياحة مرخصة.",
+        "en": "No. These are editorial planning concepts within Mavvix's portfolio; actual travel requires a licensed operator."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل السعر يشمل الطيران والفندق؟",
+        "en": "Do the itineraries include flights and hotels?"
+      },
+      "answer": {
+        "ar": "لا يوجد سعر أو توفر مؤكد. يتحدد نطاق الإقامة والنقل والتذاكر في عرض مكتوب من المشغل الفعلي.",
+        "en": "No price or availability is confirmed. A real operator must specify accommodation, transfers and tickets in a written offer."
+      }
+    },
+    {
+      "question": {
+        "ar": "ماذا لو كنا عائلة أو مجموعة كبيرة؟",
+        "en": "Can a family or larger group request a different pace?"
+      },
+      "answer": {
+        "ar": "يتيح النموذج تحديد عدد المسافرين وفئة الوتيرة والمدة المرغوبة. يجب أن يتحقق مشغل حقيقي من ملاءمة كل نشاط للمجموعة.",
+        "en": "The brief captures group size, pace and duration. An actual operator must confirm suitability and capacity."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل أرسل جواز السفر في النموذج؟",
+        "en": "Should I submit passport details?"
+      },
+      "answer": {
+        "ar": "لا. لا يجمع النموذج جوازات سفر أو هويات أو تفاصيل دفع أو وثائق تأشيرة.",
+        "en": "No. The form must not collect passports, identity numbers, payment details or visa documents."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل يمكن تغيير تاريخ الرحلة؟",
+        "en": "Can travel dates be changed?"
+      },
+      "answer": {
+        "ar": "التاريخ المرسل تفضيل وليس حجزًا؛ شروط التغيير والإلغاء يحددها المشغل في عقد السفر الحقيقي.",
+        "en": "Submitted dates are preferences rather than bookings; changes and cancellations depend on the actual travel contract."
+      }
+    }
+  ],
+  "countries": [
+    "egypt",
+    "saudi-arabia",
+    "flexible"
+  ],
+  "pace": [
+    "slow",
+    "balanced",
+    "active",
+    "custom"
+  ],
+  "budgetBands": [
+    "economy",
+    "comfort",
+    "premium",
+    "flexible"
+  ],
+  "media": [
+    {
+      "role": "luxor-editorial-hero",
+      "title": "Floating over the Valley of the Kings, Luxor, Egypt",
+      "credit": "Mustang Joe / Joe deSousa",
+      "license": "CC0-1.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Floating_over_the_Valley_of_the_Kings,_Luxor,_Egypt_(54480104477).jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Floating_over_the_Valley_of_the_Kings,_Luxor,_Egypt_(54480104477).jpg/1280px-Floating_over_the_Valley_of_the_Kings,_Luxor,_Egypt_(54480104477).jpg",
+      "alt": {
+        "ar": "منطاد فوق وادي الملوك بالأقصر — صورة تحريرية وليست نشاطًا محجوزًا",
+        "en": "Hot-air balloon above the Valley of the Kings, Luxor — editorial photograph, not a booked activity"
+      }
+    }
+  ]
+}

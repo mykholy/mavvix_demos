@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400,0,0;9..144,600,0,0;9..144,700,0,0&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Readex+Pro:wght@400;500;600;700&display=swap');
@@ -237,3 +238,10 @@ button:disabled {
 .lexora-shell[lang="ar"] .lexora-display{font-family:'Tajawal','Cairo',sans-serif;font-weight:700;letter-spacing:0;line-height:1.16;}
 .lexora-shell[lang="en"] .lexora-display{font-family:'Fraunces',Georgia,serif;letter-spacing:-.032em;}
 .lexora-shell{overflow-x:clip;}
+
+/* LedgerPoint is ledger/reporting editorial, not a copy of legal or medical interfaces. */
+.ledger-shell[lang="en"]{font-family:'Plus Jakarta Sans',system-ui,sans-serif;}
+.ledger-shell[lang="en"] .ledger-display{font-family:'Barlow Semi Condensed','Plus Jakarta Sans',sans-serif;font-weight:800;letter-spacing:-.035em;}
+.ledger-shell[lang="ar"]{font-family:'Cairo','Tajawal',sans-serif;}
+.ledger-shell[lang="ar"] .ledger-display{font-family:'Cairo','Tajawal',sans-serif;font-weight:800;letter-spacing:0;line-height:1.22;}
+.ledger-shell{overflow-x:clip;}

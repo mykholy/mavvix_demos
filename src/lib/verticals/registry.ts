@@ -169,7 +169,7 @@ export const VERTICALS = [
     "en": "Accounting",
     "wave": 2,
     "accent": "#50C2C3",
-    "status": "planned"
+    "status": "in_progress"
   },
   {
     "slug": "travel-agency",
@@ -178,7 +178,7 @@ export const VERTICALS = [
     "en": "Travel agencies",
     "wave": 2,
     "accent": "#E0AB6A",
-    "status": "planned"
+    "status": "in_progress"
   },
   {
     "slug": "boutique-hotel",

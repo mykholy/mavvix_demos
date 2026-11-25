@@ -1,0 +1,11 @@
+import { notFound } from 'next/navigation';
+import Link from 'next/link';
+import type { Locale } from '@/lib/i18n/config';
+import { LEDGERPOINT,ledgerPath,ledgerText } from '@/lib/verticals/accounting/data';
+import { BookOpen,ArrowUpRight } from 'lucide-react';
+export default async function LedgerResources({params}:{params:Promise<{locale:string}>}){
+ const {locale}=await params;
+ if(locale!=='ar'&&locale!=='en')notFound();
+ const ar=locale==='ar';
+ return <div className="max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-24"><p className="uppercase text-xs tracking-widest text-[#176C72] font-bold">LEDGERPOINT / FIELD NOTES</p><h1 className="ledger-display text-4xl sm:text-6xl mt-6">{ar?'معلومات تعرف بيها نوع الخدمة قبل الاتفاق':'Know what a professional engagement should clarify'}</h1><p className="text-[#455F6C] mt-6 leading-9 max-w-3xl">{ar?'ثلاثة موضوعات مستقلة عن الإقفال الشهري ونطاق التسعير والفرق بين التسجيل والمراجعة، من غير عرض قوانين أو أرقام ضريبية غير مدققة.':'Three original guides on month-end close, pricing scope and bookkeeping versus audit, without invented regulations or confidential financial data.'}</p><div className="grid lg:grid-cols-3 gap-5 mt-12">{LEDGERPOINT.articles.map((a,i)=><Link href={ledgerPath(locale,'resources/'+a.slug)} key={a.slug} className="min-h-[335px] p-8 border border-[#CDDCD9] bg-white flex flex-col hover:shadow-xl"><BookOpen size={33} className="text-[#15858C]"/><span className="text-xs font-mono mt-9 text-[#176C72]">RESOURCE / 0{i+1}</span><h2 className="ledger-display text-3xl mt-4">{ledgerText(a.title,locale)}</h2><p className="mt-4 leading-8 text-[#455F6C] text-sm">{ledgerText(a.summary,locale)}</p><span className="mt-auto pt-7 font-bold text-sm inline-flex gap-2 items-center">{ar?'اقرأ الدليل':'Read the guide'}<ArrowUpRight size={17}/></span></Link>)}</div></div>;
+}

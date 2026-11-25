@@ -25,6 +25,8 @@ import {
   Wrench,
   Droplets,
   Trophy,
+  ChartNoAxesCombined,
+  Compass,
 } from 'lucide-react';
 import { MAVVIX_CONTACT, SECTOR_LABELS, type PortfolioSectorName } from '@/lib/business/mavvix-contact';
 
@@ -49,6 +51,8 @@ const DEMOS_LIST = [
   { slug: 'physiotherapy', nameAr: 'موشن لاب / علاج طبيعي', nameEn: 'Motion Lab · Physiotherapy', icon: Activity, color: '#79C9C1' },
   { slug: 'veterinary', nameAr: 'بوويل / عيادات بيطرية', nameEn: 'PawWell · Veterinary', icon: HeartPulse, color: '#F3B98E' },
   { slug: 'law-firm', nameAr: 'ليكسورا / محاماة واستشارات', nameEn: 'Lexora Counsel · Law Firm', icon: Building2, color: '#B79B6A' },
+  { slug: 'travel-agency', nameAr: 'نوماد روتس / سياحة وسفر', nameEn: 'Nomad Routes · Travel Planning', icon: Compass, color: '#A4492D' },
+  { slug: 'accounting', nameAr: 'ليدجر بوينت / خدمات محاسبية', nameEn: 'LedgerPoint · Accounting Services', icon: ChartNoAxesCombined, color: '#50C2C3' },
 ];
 
 export function ContactDock({
