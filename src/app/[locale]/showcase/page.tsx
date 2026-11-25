@@ -1,3 +1,4 @@
+import { NOMAD_ROUTES } from '@/lib/verticals/travel-agency/data';
 import { MAVVIX_CONTACT } from '@/lib/business/mavvix-contact';
 import { SectorPhoto } from '@/components/shared/SectorPhoto';
 import { SECTOR_IMAGES } from '@/lib/media/sector-images';
@@ -23,7 +24,8 @@ import {
   Sparkles,
   Layers,
   Database,
-  Trophy
+  Trophy,
+  Compass
 } from 'lucide-react';
 
 interface Props {
@@ -377,6 +379,19 @@ const demos = [
       {ar:'استفسار محفوظ برقم مرجعي دون وعود مراجعة أو تسعير وهمي',en:'Idempotent pending-only scope request without invented audit credentials'}
     ],
     features:['Accounting Scope Explorer','Reconciliation Education','Minimal-PII Quote Flow']
+  },
+  {
+    number:'22',slug:'travel-agency',
+    name:{ar:'نوماد روتس — موقع سياحة وسفر',en:'Nomad Routes — Travel Planning Website'},
+    sector:{ar:'رحلات ومقارنة وجهات وتخطيط سفر',en:'Itineraries, destinations and travel planning'},
+    icon:Compass,color:'#A4492D',bgColor:'bg-amber-50',borderColor:'border-amber-200',routesCount:21,
+    tagline:{ar:'رحلات تحريرية مخصصة حسب الوجهة والمدة والوتيرة مع طلب تخطيط آمن',en:'Editorial itineraries and a scoped, privacy-minimal travel planning request'},
+    journeys:[
+      {ar:'ثمانية مسارات سفر متميزة ودليل مقاصد مصر والسعودية',en:'Eight distinct journey dossiers for Egypt and Saudi Arabia'},
+      {ar:'تصفية حسب نوع الرحلة ومراجعة المشمول والمستثنى',en:'Travel-style filtering and an inclusions checklist'},
+      {ar:'استفسار تخطيط محفوظ دون تأكيد حجز أو سعر أو تأشيرة',en:'Persisted nonbinding enquiry without fake availability or price'}
+    ],
+    features:['Itinerary Explorer','Destination and Pace Guide','Validated Planning Enquiry']
   }
 ];
 
@@ -535,6 +550,8 @@ export default function ShowcasePage({ params }: Props) {
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#E8EFE5]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Veterinary_Office_with_dog.JPG/1280px-Veterinary_Office_with_dog.JPG" loading="lazy" decoding="async" className="h-full w-full object-cover" alt={isAr?'صورة حقيقية مرخصة لكلب في عيادة بيطرية مستقلة، ليست PawWell':'Real CC0 editorial dog photograph in an unrelated veterinary clinic'}/></div>
                   : d.slug==='law-firm'
                   ? <div className="relative h-52 bg-[#D6CAB8] overflow-hidden"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Canadian_law_books_%2831460630695%29.jpg/1280px-Canadian_law_books_%2831460630695%29.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'كتب قانونية حقيقية من كندا، صورة عامة مرخصة لا تتبع Lexora':'CC0 editorial Canadian law books, not an operating Lexora office'}/></div>
+                  : d.slug==='travel-agency'
+                  ? <div className="relative h-52 bg-[#F4EBDD] overflow-hidden"><img src={NOMAD_ROUTES.media[0].url} loading="lazy" decoding="async" className="w-full h-full object-cover" alt={NOMAD_ROUTES.media[0].alt[locale]}/></div>
                   : d.slug==='accounting'
                   ? <div className="relative h-52 bg-[#D7E3DF] overflow-hidden"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Desktop_with_laptop_and_calculator_%28Unsplash%29.jpg/1280px-Desktop_with_laptop_and_calculator_%28Unsplash%29.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'صورة مرخصة حقيقية لمكتب عليه آلة حاسبة ولابتوب لا يتبع LedgerPoint':'Real CC0 editorial office calculator photo unrelated to LedgerPoint clients'}/></div>
                   : <SectorPhoto sector={d.slug as keyof typeof SECTOR_IMAGES} alt="" className="h-52 w-full" />}
