@@ -1,0 +1,34 @@
+{
+  "vertical": "nursery",
+  "checked_on": "2026-11-24",
+  "assets": [
+    {
+      "id": "learning-materials",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Traditional_Montessori_educational_materials.jpg",
+      "remote": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Traditional_Montessori_educational_materials.jpg/1280px-Traditional_Montessori_educational_materials.jpg",
+      "author": "Nixdorf",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "original_dimensions": "5312x2988",
+      "served_dimensions": "1280x720",
+      "verified_source_license": true,
+      "verified_image_visually": true,
+      "editorial_only": true,
+      "credit_note": "2017 exhibition at Triennale di Milano; educational materials, not a BloomSteps facility. Display source, author, license and crop note if displayed cropped."
+    },
+    {
+      "id": "educational-shelves",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Montessorishelves.jpg",
+      "remote": "https://upload.wikimedia.org/wikipedia/commons/7/71/Montessorishelves.jpg",
+      "author": "Clematitedusud",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "original_dimensions": "2448x2448",
+      "verified_source_license": true,
+      "verified_image_visually": true,
+      "editorial_only": true,
+      "credit_note": "Independent Montessori material shelves. Display with attribution, source, licence and display crop notice."
+    }
+  ],
+  "release_note": "Self-hosted optimization and exact browser load still pending. Do not use recognizable children in showcase media."
+}

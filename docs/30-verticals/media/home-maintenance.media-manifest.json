@@ -1,0 +1,23 @@
+{
+  "vertical": "home-maintenance",
+  "verified_at": "2026-11-23",
+  "assets": [
+    {
+      "id": "real-air-conditioner",
+      "source_page": "https://commons.wikimedia.org/wiki/File:AirConditioner.jpg",
+      "remote": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/AirConditioner.jpg/1280px-AirConditioner.jpg",
+      "author": "Raysonho @ Open Grid Scheduler / Grid Engine",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "original_dimensions": "3924x2616",
+      "preview_dimensions": "1280x853",
+      "local_path": null,
+      "editorial_only": true,
+      "alt_ar": "صورة تحريرية حقيقية لمكيف هواء وليست مقر خدمة Fixora",
+      "alt_en": "Editorial photo of air conditioner hardware, not a Fixora client installation",
+      "verified_source_and_license": true,
+      "verified_remote_image_fetch": false,
+      "warning": "Remote thumbnail may require alternate Commons size/path verification. Must verify loading, provenance and crop with a browser before production."
+    }
+  ]
+}

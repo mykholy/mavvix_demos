@@ -1,0 +1,13 @@
+import Link from 'next/link';
+import type { Locale } from '@/lib/i18n/config';
+import { VELORA,veloraPath,veloraText } from '@/lib/verticals/salon-spa/data';
+import { BookOpen,ArrowUpRight,Flower2 } from 'lucide-react';
+export default async function VeloraJournal(props:{params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
+ const ar=locale==='ar';return <div className="max-w-7xl mx-auto px-5 sm:px-8 py-20 sm:py-28"><p className="text-xs text-[#855060] uppercase tracking-[.22em] font-bold">THE BEAUTY JOURNAL</p><h1 className="velora-display text-5xl sm:text-7xl mt-6">{ar?'معلومات تخلي اختيارك أهدى':'Thoughtful reads for your next beauty decision'}</h1><p className="text-base text-[#704E59] mt-6 leading-9 max-w-3xl">{ar?'ثلاثة موضوعات مفصلة عن اختيار العناية وتوقيت المناسبة وطريقة فهم خدمات الأظافر، بمحتوى واضح وغير طبي.':'Three original, carefully authored field notes on beauty service choice, nails and the getting-ready timeline. Not medical advice or invented results.'}</p><div className="grid lg:grid-cols-3 gap-5 mt-14">{VELORA.articles.map((a,i)=><Link key={a.slug} href={veloraPath(locale,'journal/'+a.slug)} className="bg-[#FFFDF9] p-8 sm:p-10 border border-[#E3D3D2] min-h-[360px] flex flex-col hover:bg-[#F4E8E5] transition-colors"><BookOpen size={33} strokeWidth={1.3} className="text-[#98616F]"/><span className="text-[#855060] text-xs font-mono mt-9">JOURNAL / 0{i+1}</span><h2 className="velora-display text-3xl mt-4 leading-snug">{veloraText(a.title,locale)}</h2><p className="mt-5 text-sm text-[#704E59] leading-8">{veloraText(a.summary,locale)}</p><span className="mt-auto pt-8 inline-flex items-center gap-2 font-bold text-sm">{ar?'اقرئي المقال':'Read the note'}<ArrowUpRight size={17}/></span></Link>)}</div><section className="bg-[#4B2834] text-white p-8 sm:p-12 mt-16"><Flower2 size={31} className="text-[#E0B7C0]"/><h2 className="velora-display text-3xl sm:text-4xl mt-6">{ar?'اختاري الخدمة وانتي فاهمة نطاقها':'Let your choice begin with better information'}</h2><Link href={veloraPath(locale,'services')} className="mt-6 inline-block border-b border-white text-sm font-bold">{ar?'اكتشفي تفاصيل الخدمات':'Explore the service dossiers'}</Link></section></div>;
+}

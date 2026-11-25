@@ -5,7 +5,7 @@ import { updateSubmissionStatus } from '@/lib/db/repositories';
 
 export async function POST(request: Request) {
   try {
-    const cookieStore = cookies();
+    const cookieStore = await cookies();
     const token = cookieStore.get('mavvix_admin_session')?.value;
     const admin = token ? verifySessionToken(token) : null;
 

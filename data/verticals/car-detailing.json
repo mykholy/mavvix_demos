@@ -1,0 +1,496 @@
+{
+  "slug": "car-detailing",
+  "brand": "GlossBay",
+  "classification": "Mavvix illustrative detailing and car care website, not a real operating provider.",
+  "services": [
+    {
+      "slug": "studio-wash",
+      "rank": 1,
+      "category": "wash",
+      "title": {
+        "ar": "غسيل عناية خارجية",
+        "en": "Precision exterior wash"
+      },
+      "durations": [
+        45,
+        60,
+        75
+      ],
+      "summary": {
+        "ar": "تنظيف منظّم حسب درجة الاتساخ والأسطح الحساسة، مع فصل الغسيل عن إزالة عيوب الطلاء.",
+        "en": "A measured exterior cleaning process tailored to soil, finish and sensitive surfaces; it is not paint restoration."
+      },
+      "body": {
+        "ar": "الغسيل الجيد يبدأ بشطف مناسب ثم منظف متوافق مع طبيعة السطح ومراجعة الجنوط والحواف والمناطق الصعبة. يختلف الأسلوب باختلاف الطلاء والحماية المركبة سابقًا ودرجة الاتساخ. ينبغي سؤال المركز هل يشمل التنظيف تجاويف الأبواب والجنوط والصندوق أم تُحسب كإضافات. الغسيل يزيل الأوساخ القابلة للتنظيف لكنه لا يزيل الخدوش العميقة أو يعالج تلف طبقة الطلاء.",
+        "en": "A careful wash should separate loose dirt removal from contact cleaning, use suitable products, and address wheels and sensitive trim based on actual condition. Clarify whether door jambs, wheels and trunk are included. Washing is not a promise to remove deep scratches, repair clear-coat failure or restore chemically damaged finishes."
+      },
+      "checks": {
+        "ar": [
+          "ابدأ بالفحص وتحديد حالة الخامة قبل اختيار المنتج.",
+          "اسأل عن الخطوات التي يشملها نطاق العمل والاستثناءات.",
+          "راجع شروط التسليم والعناية اللاحقة بدون وعود غير موثقة."
+        ],
+        "en": [
+          "Inspect the vehicle and material condition before choosing a product.",
+          "Confirm included steps, exclusions and how additions change the scope.",
+          "Ask about handover and aftercare without invented warranty claims."
+        ]
+      }
+    },
+    {
+      "slug": "interior-detail",
+      "rank": 2,
+      "category": "interior",
+      "title": {
+        "ar": "تنظيف داخلي تفصيلي",
+        "en": "Interior cabin detailing"
+      },
+      "durations": [
+        90,
+        120,
+        180
+      ],
+      "summary": {
+        "ar": "إزالة الاتساخات من المقصورة بحسب القماش والجلد والأرضيات وحالة التهوية والتجفيف.",
+        "en": "Interior cleaning scoped by fabric, leather, carpets, ventilation and safe drying considerations."
+      },
+      "body": {
+        "ar": "الفرش والمقاعد وأسطح البلاستيك تحتاج مواد مختلفة وطريقة اختبار على جزء غير ظاهر عند الحاجة. إزالة البقع تعتمد على نوعها وعمرها وخامة السطح؛ لا يمكن ضمان إزالتها بالكامل من صورة. لا يجب إغراق الأزرار الكهربائية أو ترك الرطوبة داخل المقصورة، ويجب توضيح وقت التجفيف وأي استثناءات مثل السقف أو صندوق الأمتعة.",
+        "en": "Interior detailing includes vacuuming, upholstery-specific cleaning and thoughtful drying. Stain removal depends on material, age and chemistry, and some discoloration cannot be reversed. Operators should avoid excessive moisture near electrical controls and must explain headliner, seat and trunk exclusions and the handover drying state."
+      },
+      "checks": {
+        "ar": [
+          "ابدأ بالفحص وتحديد حالة الخامة قبل اختيار المنتج.",
+          "اسأل عن الخطوات التي يشملها نطاق العمل والاستثناءات.",
+          "راجع شروط التسليم والعناية اللاحقة بدون وعود غير موثقة."
+        ],
+        "en": [
+          "Inspect the vehicle and material condition before choosing a product.",
+          "Confirm included steps, exclusions and how additions change the scope.",
+          "Ask about handover and aftercare without invented warranty claims."
+        ]
+      }
+    },
+    {
+      "slug": "paint-decon",
+      "rank": 3,
+      "category": "finish",
+      "title": {
+        "ar": "إزالة الملوثات عن الطلاء",
+        "en": "Paint decontamination"
+      },
+      "durations": [
+        75,
+        90,
+        120
+      ],
+      "summary": {
+        "ar": "إزالة ترسبات عالقة بعناية قبل أي تلميع أو طبقة حماية، مع تقييم طبيعة الطلاء أولًا.",
+        "en": "Controlled removal of bonded surface contaminants before polishing or protection."
+      },
+      "body": {
+        "ar": "قد تبقى بعض الرواسب على الطلاء بعد الغسيل، مثل حبيبات عالقة أو بقايا معدنية تحتاج طريقة متوافقة مع السطح. استخدام أدوات إزالة الترسبات دون خبرة قد يسبب آثارًا سطحية، ولذلك يجب الفحص وإجراء الاختبار المناسب قبل بدء الإزالة. لا تُعتبر العملية إصلاحًا للخدوش أو بديلاً عن إعادة الطلاء عندما يتدهور الورنيش.",
+        "en": "A clean surface may still contain bonded deposits. The correct decontamination method depends on the finish and any existing protective layer. Abrasive media can mark the surface if used incorrectly; inspection and technique matter. Decontamination does not repair damaged clear coat or deep paint defects."
+      },
+      "checks": {
+        "ar": [
+          "ابدأ بالفحص وتحديد حالة الخامة قبل اختيار المنتج.",
+          "اسأل عن الخطوات التي يشملها نطاق العمل والاستثناءات.",
+          "راجع شروط التسليم والعناية اللاحقة بدون وعود غير موثقة."
+        ],
+        "en": [
+          "Inspect the vehicle and material condition before choosing a product.",
+          "Confirm included steps, exclusions and how additions change the scope.",
+          "Ask about handover and aftercare without invented warranty claims."
+        ]
+      }
+    },
+    {
+      "slug": "single-step-polish",
+      "rank": 4,
+      "category": "correction",
+      "title": {
+        "ar": "تلميع درجة واحدة",
+        "en": "One-step machine polish"
+      },
+      "durations": [
+        120,
+        150,
+        180
+      ],
+      "summary": {
+        "ar": "تحسين بصري محدود لعيوب سطحية خفيفة بحسب سمك الطبقة ودرجة الخدوش.",
+        "en": "A restrained finish enhancement for light surface haze, subject to actual paint condition."
+      },
+      "body": {
+        "ar": "التلميع الميكانيكي يزيل جزءًا محدودًا من الطبقة السطحية، لذلك يلزم تحديد الحالة قبل اختيار قوة المركب وسرعة الجهاز. بعض الخدوش عميقة ولا يجب مطاردتها على حساب سلامة الطلاء. الأفضل الاتفاق مسبقًا على مستوى التحسين المتوقع وأماكن الاختبار بدل وعد إزالة نسبة ثابتة أو نتيجة مضمونة لكل سيارة.",
+        "en": "Machine polishing is a controlled abrasive process. A genuine detailer should inspect the paint and avoid over-correction where film thickness is unknown. Deep scratches and failing paint may remain; a fixed numerical correction promise is not responsible without inspecting the actual vehicle."
+      },
+      "checks": {
+        "ar": [
+          "ابدأ بالفحص وتحديد حالة الخامة قبل اختيار المنتج.",
+          "اسأل عن الخطوات التي يشملها نطاق العمل والاستثناءات.",
+          "راجع شروط التسليم والعناية اللاحقة بدون وعود غير موثقة."
+        ],
+        "en": [
+          "Inspect the vehicle and material condition before choosing a product.",
+          "Confirm included steps, exclusions and how additions change the scope.",
+          "Ask about handover and aftercare without invented warranty claims."
+        ]
+      }
+    },
+    {
+      "slug": "multi-step-correction",
+      "rank": 5,
+      "category": "correction",
+      "title": {
+        "ar": "تصحيح طلاء متعدد المراحل",
+        "en": "Multi-stage paint correction"
+      },
+      "durations": [
+        180,
+        240,
+        300
+      ],
+      "summary": {
+        "ar": "مراحل محسوبة لمعالجة آثار سطحية مختلفة عندما تسمح حالة الطلاء، مع حماية لاحقة متفق عليها.",
+        "en": "Staged polishing only when paint condition, defect severity and available film allow it."
+      },
+      "body": {
+        "ar": "يمكن أن تتطلب آثار الغسيل الدائرية والتعتيم مراحل مختلفة من التلميع والإنهاء، لكن ليست كل سيارة مناسبة لإجراءات مكثفة. يبدأ تحديد نطاق العمل بفحص بصري واختبار موضعي، مع ذكر الأجزاء التي لا يُنصح بالتدخل فيها والحدود الواقعية للتصحيح. لا يجوز عرض صور قبل وبعد لسيارات عملاء بدون إذن حقيقي.",
+        "en": "Swirl marks, haze and marring may require different compounds and finishing pads, but aggressive correction is not automatically suitable. Good scope includes initial observation, a test area and explicit limitations for weak or previously repaired panels. The site must not imply guaranteed restoration or show invented customer outcomes."
+      },
+      "checks": {
+        "ar": [
+          "ابدأ بالفحص وتحديد حالة الخامة قبل اختيار المنتج.",
+          "اسأل عن الخطوات التي يشملها نطاق العمل والاستثناءات.",
+          "راجع شروط التسليم والعناية اللاحقة بدون وعود غير موثقة."
+        ],
+        "en": [
+          "Inspect the vehicle and material condition before choosing a product.",
+          "Confirm included steps, exclusions and how additions change the scope.",
+          "Ask about handover and aftercare without invented warranty claims."
+        ]
+      }
+    },
+    {
+      "slug": "ceramic-protection",
+      "rank": 6,
+      "category": "protection",
+      "title": {
+        "ar": "حماية سيراميك للطلاء",
+        "en": "Ceramic paint protection"
+      },
+      "durations": [
+        150,
+        210,
+        270
+      ],
+      "summary": {
+        "ar": "خيارات حماية مظهر الطلاء ومقاومة الاتساخ وفق منتج حقيقي وتعليمات التطبيق.",
+        "en": "Coating application for appearance and easier care when an actual product and method are approved."
+      },
+      "body": {
+        "ar": "قبل تطبيق أي حماية يجب تنظيف السطح وإعداده ومعرفة حالة الطلاء والحماية السابقة. الأداء ووقت التصلب والعناية بعد التطبيق يعتمد على المنتج وتعليمات الشركة، ولا يوجد سيراميك يجعل الطلاء غير قابل للخدش أو يلغي الغسيل. لا نعرض مدة ضمان أو عدد سنوات حماية متخيل، بل نطلب فحص السيارة وتحديد المنتج الحقيقي.",
+        "en": "A ceramic coating is product-specific and requires appropriate surface preparation, environmental controls and curing. It can support maintenance and appearance but cannot make paint scratch-proof or maintenance-free. Warranty duration and product claims must come from a verified operator and manufacturer instructions."
+      },
+      "checks": {
+        "ar": [
+          "ابدأ بالفحص وتحديد حالة الخامة قبل اختيار المنتج.",
+          "اسأل عن الخطوات التي يشملها نطاق العمل والاستثناءات.",
+          "راجع شروط التسليم والعناية اللاحقة بدون وعود غير موثقة."
+        ],
+        "en": [
+          "Inspect the vehicle and material condition before choosing a product.",
+          "Confirm included steps, exclusions and how additions change the scope.",
+          "Ask about handover and aftercare without invented warranty claims."
+        ]
+      }
+    },
+    {
+      "slug": "ppf-assessment",
+      "rank": 7,
+      "category": "protection",
+      "title": {
+        "ar": "استشارة حماية PPF",
+        "en": "Paint protection film assessment"
+      },
+      "durations": [
+        60,
+        90,
+        120
+      ],
+      "summary": {
+        "ar": "تقييم مناطق الحماية وشكل السيارة وحالة الدهان قبل عرض نطاق أفلام حماية الطلاء.",
+        "en": "Define panel coverage and surface suitability before a paint protection film quotation."
+      },
+      "body": {
+        "ar": "فيلم حماية الطلاء ليس قالبًا مناسبًا لكل سيارة دون تحديد موديلها والحالة الحالية للأجزاء المراد تغطيتها. يختلف نطاق الحماية بين مقدمة السيارة والأجزاء المعرضة للاحتكاك والتغطية الكاملة، وتحتاج الحواف والمنحنيات إلى تنفيذ متخصص. لا يصح الوعد بأن الفيلم يمنع أي ضرر أو يدوم فترة محددة دون مواصفات منتج موثقة.",
+        "en": "PPF is a fitted film with coverage choices such as bumper, bonnet, high-contact areas or full body. Existing paint condition, panel geometry, installation technique and exact product matter. A quote should be based on real inspection rather than guaranteeing resistance to every scratch or unsupported lifetime."
+      },
+      "checks": {
+        "ar": [
+          "ابدأ بالفحص وتحديد حالة الخامة قبل اختيار المنتج.",
+          "اسأل عن الخطوات التي يشملها نطاق العمل والاستثناءات.",
+          "راجع شروط التسليم والعناية اللاحقة بدون وعود غير موثقة."
+        ],
+        "en": [
+          "Inspect the vehicle and material condition before choosing a product.",
+          "Confirm included steps, exclusions and how additions change the scope.",
+          "Ask about handover and aftercare without invented warranty claims."
+        ]
+      }
+    },
+    {
+      "slug": "glass-care",
+      "rank": 8,
+      "category": "finish",
+      "title": {
+        "ar": "تنظيف الزجاج ومعالجة الرؤية",
+        "en": "Glass cleaning and visibility care"
+      },
+      "durations": [
+        30,
+        45,
+        60
+      ],
+      "summary": {
+        "ar": "تنظيف الزجاج من الترسبات مع احترام حساسية الطبقات والإكسسوارات المركبة.",
+        "en": "Glass surface care and residue removal with suitable techniques and finish compatibility."
+      },
+      "body": {
+        "ar": "الزجاج يحتاج إزالة ترسبات مناسبة لنوع السطح وعدم الإضرار بالأفلام المركبة أو حساسات الكاميرات. في الخدمة الحقيقية يجب تحديد إن كان المطلوب مجرد تنظيف أم معالجة سطحية بمنتج معتمد، مع مراجعة تعليمات صانع السيارة. الموقع لا يقدم ادعاء تحسين سلامة القيادة بنسبة ثابتة أو يطلب تدخلًا في الحساسات.",
+        "en": "Glass cleaning must consider tint films, coatings, camera and sensor housings, and manufacturer restrictions. A professional should separate routine washing from chemical treatment and avoid unsourced claims of quantified driving visibility or guaranteed water behavior."
+      },
+      "checks": {
+        "ar": [
+          "ابدأ بالفحص وتحديد حالة الخامة قبل اختيار المنتج.",
+          "اسأل عن الخطوات التي يشملها نطاق العمل والاستثناءات.",
+          "راجع شروط التسليم والعناية اللاحقة بدون وعود غير موثقة."
+        ],
+        "en": [
+          "Inspect the vehicle and material condition before choosing a product.",
+          "Confirm included steps, exclusions and how additions change the scope.",
+          "Ask about handover and aftercare without invented warranty claims."
+        ]
+      }
+    },
+    {
+      "slug": "wheel-care",
+      "rank": 9,
+      "category": "finish",
+      "title": {
+        "ar": "عناية الجنوط والإطارات",
+        "en": "Wheel and tire finish"
+      },
+      "durations": [
+        45,
+        60,
+        75
+      ],
+      "summary": {
+        "ar": "تنظيف المواد العالقة عن الجنوط وتحديد مواد العناية وفق التشطيب الفعلي.",
+        "en": "Wheel-cleaning and tire-finish choices matched to the actual material and coating."
+      },
+      "body": {
+        "ar": "اختيار منظف الجنوط يعتمد على خامة وتشطيب السطح، ويجب تجنب المواد غير الملائمة أو الفرك العنيف. معالجة الإطارات التجميلية يجب ألا تلوث سطح التلامس مع الطريق أو مكونات الفرامل. يوضح مركز الخدمة الحقيقي ما يشمله غسل الجنط والحواف والمحاور وما يُعتبر خدمة منفصلة.",
+        "en": "Wheel finishes and brake residues require correct chemistry and mechanical technique. Tire dressing belongs on suitable sidewall areas, not the road-contact tread or braking components. Clarify whether wheel barrels, spokes, arch liners and hardware are in the service scope."
+      },
+      "checks": {
+        "ar": [
+          "ابدأ بالفحص وتحديد حالة الخامة قبل اختيار المنتج.",
+          "اسأل عن الخطوات التي يشملها نطاق العمل والاستثناءات.",
+          "راجع شروط التسليم والعناية اللاحقة بدون وعود غير موثقة."
+        ],
+        "en": [
+          "Inspect the vehicle and material condition before choosing a product.",
+          "Confirm included steps, exclusions and how additions change the scope.",
+          "Ask about handover and aftercare without invented warranty claims."
+        ]
+      }
+    },
+    {
+      "slug": "fleet-care",
+      "rank": 10,
+      "category": "fleet",
+      "title": {
+        "ar": "عناية دورية لأساطيل الشركات",
+        "en": "Fleet care programme enquiry"
+      },
+      "durations": [
+        60,
+        90,
+        120
+      ],
+      "summary": {
+        "ar": "تخطيط عدد المركبات وتكرار الخدمة ونطاق التغطية دون اختراع أسعار اشتراكات.",
+        "en": "Define vehicle volume, service cadence and operating constraints before any B2B proposal."
+      },
+      "body": {
+        "ar": "خطط الأسطول تحتاج معرفة عدد السيارات وأحجامها ومواقعها ومدى تكرار التنظيف، إضافة إلى ساعات العمل المسموح بها والتزامات السلامة والبيئة. لا يمكن تسعير عقد دوري من صفحة عامة دون بيانات تشغيلية وقيود وصول واضحة. الطلب التفاعلي يجمع المتطلبات العامة فقط ليُراجعها المشغل الفعلي لاحقًا.",
+        "en": "Fleet agreements depend on vehicle sizes, frequency, onsite access, operating hours, equipment, staff and environmental rules. A good B2B form gathers approximate volumes and service goals without inventing a signed contract, fixed monthly price or guaranteed regional dispatch."
+      },
+      "checks": {
+        "ar": [
+          "ابدأ بالفحص وتحديد حالة الخامة قبل اختيار المنتج.",
+          "اسأل عن الخطوات التي يشملها نطاق العمل والاستثناءات.",
+          "راجع شروط التسليم والعناية اللاحقة بدون وعود غير موثقة."
+        ],
+        "en": [
+          "Inspect the vehicle and material condition before choosing a product.",
+          "Confirm included steps, exclusions and how additions change the scope.",
+          "Ask about handover and aftercare without invented warranty claims."
+        ]
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slug": "coating-vs-ppf",
+      "title": {
+        "ar": "الحماية السيراميك ولا PPF؟ افهم الفرق قبل ما تدفع",
+        "en": "Ceramic coating versus PPF: what each protects"
+      },
+      "summary": {
+        "ar": "الحماية ليست منتجًا واحدًا؛ افصل بين طبقة حماية كيميائية وفيلم ملموس يثبت على الأجزاء.",
+        "en": "Distinguish a surface coating from fitted protective film before choosing scope and upkeep."
+      },
+      "body": {
+        "ar": "تختلف الحماية السيراميك عن فيلم حماية الطلاء في نوع المنتج وطريقة التطبيق والعناية اللاحقة. السيراميك طبقة تُطبّق على السطح بعد التحضير وفق تعليمات الصانع، وقد تساعد على سهولة تنظيف بعض الملوثات، لكنه ليس حاجزًا ضد الخدوش العميقة ولا يُغني عن غسل السيارة. أما PPF فهو فيلم يثبت على أجزاء مختارة ويتطلب ملاءمة للشكل والحواف وظروف السطح؛ وقد يكون مناسبًا لمناطق الاحتكاك وفق تفضيل العميل. في الحالتين، التفاصيل الحقيقية مثل منتج الحماية ومكان التنفيذ والضمان وشروط العناية تعتمد على مورد معلوم ومركز يعمل بالفعل. لا تختار بناء على وعد 'حماية مدى الحياة' غير موثق.",
+        "en": "Ceramic coatings and paint protection films solve different aesthetic and care problems. A coating is applied to an appropriately prepared surface and may make routine cleaning easier depending on product and use. It does not make paint impervious to chips, scratching or maintenance. PPF is a physical fitted film with specific coverage, edge work and installer technique, commonly considered for higher-contact areas. The right choice depends on the panel, condition, intended use, actual manufacturer instructions and quote exclusions. Never equate a generic promotional line with a verified warranty or installation result."
+      }
+    },
+    {
+      "slug": "before-detail",
+      "title": {
+        "ar": "قبل جلسة الديتيلنج: إيه اللي تصوره وتسأل عنه؟",
+        "en": "Before a detailing visit: a practical service brief"
+      },
+      "summary": {
+        "ar": "نوع السيارة والخامة والبقع وحالة الطلاء أهم من توقع نتيجة من صورة واحدة.",
+        "en": "Prepare vehicle size, surface types, contamination concerns and inclusion questions."
+      },
+      "body": {
+        "ar": "ابدأ بتحديد نوع السيارة التقريبي، وما إذا كانت المقاعد جلدية أم قماشية، وهل توجد بقع قديمة أو روائح أو بقايا مواد لاصقة أو خدوش ظاهرة. من الأفضل وصف الملاحظة بطريقة محايدة؛ مثل 'بقعة قديمة في الكرسي' وليس 'تنظيف مضمون بنسبة مئة بالمئة'. اسأل المركز عن تنظيف السقف وصندوق الأمتعة والجنوط والتجفيف والمواد المستخدمة وما إذا كان هناك معاينة قبل تحديد السعر النهائي. لا ترسل صورًا تكشف لوحات سيارات أو بيانات أشخاص آخرين في طلب تجريبي عام، ولا تدخل عنوان المنزل التفصيلي.",
+        "en": "Before discussing scope, identify the vehicle size, seat and trim material, contamination type, and any protection already installed. Describe observable issues without promising the outcome: an old textile stain or apparent swirl mark is a starting point for inspection, not proof of guaranteed removal. Ask whether roof lining, trunk, door edges, wheel barrels and drying are included. A genuine operator should confirm final scope, products and timing. Do not share license plates, exact home addresses or unnecessary personally identifiable photographs through a portfolio enquiry."
+      }
+    },
+    {
+      "slug": "paint-correction-limits",
+      "title": {
+        "ar": "تلميع الطلاء يقدر يصلح إيه؟ وحدود التصحيح الآمن",
+        "en": "Paint correction has limits: responsible expectations"
+      },
+      "summary": {
+        "ar": "الفرق بين السويرلز والخدش العميق وتلف الورنيش مهم جدًا قبل الموافقة على التلميع.",
+        "en": "Know the distinction between superficial marring, deep scratches and failing clear coat."
+      },
+      "body": {
+        "ar": "قد تظهر آثار الغسيل الدائري والضبابية وخدوش سطحية على الطبقة الشفافة من الطلاء. بعض هذه الآثار يمكن تقليل ظهورها بأسلوب تلميع محسوب بعد اختبار موضعي، لكن الخدوش العميقة أو فقدان الورنيش لا تُصلح تلقائيًا بالتلميع. كل إزالة لعيب سطحي تحتاج موازنة بين درجة التحسين والمحافظة على طبقة الحماية، وقد تكون إعادة طلاء جزء من السيارة هي الحل المناسب في حالات محددة يقررها مختص. لا تعتمد على مقارنة قبل وبعد تخص مركبة أخرى لإثبات نتيجة سيارتك؛ اطلب فحص الحالة وحدود العمل والمرحلة النهائية والمنتج المتوافق.",
+        "en": "Surface marring and light wash swirls differ from scratches that cross the protective clear coat or damage the paint film. Controlled polishing may improve appearance when inspection and surface condition permit, but it removes material and is not suitable for every panel or failure mode. Aggressive correction can compromise remaining clear coat. A careful detailer should assess the surface, perform a limited test when appropriate and explain achievable improvement honestly. Client before-and-after imagery needs documented permission and is never a guarantee for a different car."
+      }
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "ar": "هل السيراميك يمنع الخدوش نهائيًا؟",
+        "en": "Does ceramic coating make paint scratch-proof?"
+      },
+      "a": {
+        "ar": "لا. خصائص الطبقة تتغير حسب المنتج والظروف والعناية، ولا يوجد وعد مشروع بمنع كل خدش.",
+        "en": "No. Any coating has practical limits and needs suitable maintenance."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل السعر واحد لكل أحجام السيارات؟",
+        "en": "Is every vehicle size charged the same?"
+      },
+      "a": {
+        "ar": "لا. حجم السيارة ونوع الخامات وحالة الاتساخ تغير حجم العمل؛ نطلب معاينة قبل تسعير نهائي.",
+        "en": "No. Vehicle category, contamination and materials affect the real scope; this is an enquiry only."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل كل الباقات تشمل تنظيف الشنطة؟",
+        "en": "Is the trunk always included?"
+      },
+      "a": {
+        "ar": "لا تفترض ذلك. يجب تحديد الشنطة والبطانة والسقف والجنوط ضمن نطاق الخدمة المعتمد.",
+        "en": "Not automatically. Trunk, roof lining and wheel scope must be defined by the operator."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل الحجز هنا مؤكد؟",
+        "en": "Is the selected date a confirmed appointment?"
+      },
+      "a": {
+        "ar": "لا. نحفظ تفضيلك كتجربة برمجية، ولا يوجد مشغل يستقبل الحجوزات فعليًا.",
+        "en": "No. This is a Mavvix concept with a saved request, not an operating detailing center."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل في صور قبل وبعد حقيقية لـ GlossBay؟",
+        "en": "Does GlossBay show verified customer transformations?"
+      },
+      "a": {
+        "ar": "الصور تحريرية مرخصة وليست لعميل أو مشروع يحمل هذا الاسم.",
+        "en": "Editorial images are licensed examples, not verified GlossBay customer work."
+      }
+    }
+  ],
+  "vehicleSizes": [
+    {
+      "slug": "compact",
+      "ar": "صغيرة / هاتشباك",
+      "en": "Compact / hatchback"
+    },
+    {
+      "slug": "sedan",
+      "ar": "سيدان",
+      "en": "Sedan"
+    },
+    {
+      "slug": "suv",
+      "ar": "SUV",
+      "en": "SUV"
+    },
+    {
+      "slug": "large-suv",
+      "ar": "SUV كبيرة / فان",
+      "en": "Large SUV / van"
+    }
+  ],
+  "addons": [
+    {
+      "slug": "trunk",
+      "ar": "تنظيف الشنطة",
+      "en": "Trunk interior"
+    },
+    {
+      "slug": "wheels",
+      "ar": "تفاصيل الجنوط",
+      "en": "Detailed wheels"
+    },
+    {
+      "slug": "stain",
+      "ar": "فحص بقع المقاعد",
+      "en": "Seat stain assessment"
+    },
+    {
+      "slug": "glass",
+      "ar": "العناية بالزجاج",
+      "en": "Glass detailing"
+    }
+  ],
+  "preferences": [
+    "morning",
+    "afternoon",
+    "evening",
+    "flexible"
+  ]
+}

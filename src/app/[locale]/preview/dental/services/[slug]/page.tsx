@@ -8,11 +8,18 @@ import {
   UserCheck, ArrowRight, ArrowLeft, ArrowUpRight, Sparkles
 } from 'lucide-react';
 
-export async function generateMetadata({
-  params: { locale, slug }
-}: {
-  params: { locale: Locale; slug: string }
-}) {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ locale: Locale; slug: string }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale,
+    slug
+  } = params;
+
   const service = getDentalServiceBySlug(slug, locale);
   if (!service) return { title: 'Treatment Not Found' };
   return {
@@ -21,11 +28,18 @@ export async function generateMetadata({
   };
 }
 
-export default function DentalServiceDetailPage({
-  params: { locale, slug }
-}: {
-  params: { locale: Locale; slug: string }
-}) {
+export default async function DentalServiceDetailPage(
+  props: {
+    params: Promise<{ locale: Locale; slug: string }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale,
+    slug
+  } = params;
+
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;
 

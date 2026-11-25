@@ -3,11 +3,12 @@ import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
 import { getRestaurantBranches } from '@/lib/db/repositories';
 
-export default function RestaurantLocationsPage({
-  params,
-}: {
-  params: { locale: Locale };
-}) {
+export default async function RestaurantLocationsPage(
+  props: {
+    params: Promise<{ locale: Locale }>;
+  }
+) {
+  const params = await props.params;
   const { locale } = params;
   const isAr = locale === 'ar';
   const branches = getRestaurantBranches(locale);

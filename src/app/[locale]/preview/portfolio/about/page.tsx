@@ -8,11 +8,17 @@ export const metadata = {
   description: 'Design ethos, creative methodology, and tools shaping Salma Hassan Studio’s independent practice.'
 };
 
-export default function PortfolioAboutPage({
-  params: { locale }
-}: {
-  params: { locale: Locale }
-}) {
+export default async function PortfolioAboutPage(
+  props: {
+    params: Promise<{ locale: Locale }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;
 

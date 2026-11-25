@@ -17,12 +17,16 @@ import {
   Factory,
   Home,
   HeartPulse,
+  Activity,
   ShoppingBag,
   Palette,
   UtensilsCrossed,
   GraduationCap,
+  Wrench,
+  Droplets,
+  Trophy,
 } from 'lucide-react';
-import { MAVVIX_CONTACT, SECTOR_LABELS, type SectorName } from '@/lib/business/mavvix-contact';
+import { MAVVIX_CONTACT, SECTOR_LABELS, type PortfolioSectorName } from '@/lib/business/mavvix-contact';
 
 const DEMOS_LIST = [
   { slug: 'construction', nameAr: 'أطلس للمقاولات', nameEn: 'Atlas Contracting', icon: Building2, color: '#D26A3B' },
@@ -33,13 +37,25 @@ const DEMOS_LIST = [
   { slug: 'portfolio', nameAr: 'سلمى حسن ستوديو', nameEn: 'Salma Hassan Studio', icon: Palette, color: '#3B82F6' },
   { slug: 'restaurant', nameAr: 'سفرة زعفران', nameEn: 'Saffron Table', icon: UtensilsCrossed, color: '#C65D23' },
   { slug: 'academy', nameAr: 'نوفا للتعلم', nameEn: 'Nova Learning', icon: GraduationCap, color: '#4F46E5' },
+  { slug: 'auto-service', nameAr: 'تورك جراج / صيانة سيارات', nameEn: 'Torque Garage · Auto service', icon: Wrench, color: '#FB6935' },
+  { slug: 'home-maintenance', nameAr: 'فكسورا كير / صيانة منزلية', nameEn: 'Fixora · Home maintenance', icon: Home, color: '#F7B347' },
+  { slug: 'salon-spa', nameAr: 'فيلورا بيوتي / صالون وسبا', nameEn: 'Velora Beauty · Salon & Spa', icon: HeartPulse, color: '#9B6070' },
+  { slug: 'fitness', nameAr: 'بالس ديستريكت / جيم ولياقة', nameEn: 'Pulse District · Fitness Club', icon: Wrench, color: '#8E6BFF' },
+  { slug: 'sports-venues', nameAr: 'أرينا كورتس / ملاعب', nameEn: 'Arena Courts · Sports Venues', icon: Trophy, color: '#F0B044' },
+  { slug: 'furniture', nameAr: 'أوكلين ليفينج / أثاث', nameEn: 'Oakline Living · Furniture', icon: Home, color: '#BA9062' },
+  { slug: 'interiors-kitchens', nameAr: 'فورما / مطابخ وتصميم داخلي', nameEn: 'Forma Atelier · Kitchen & Interiors', icon: Palette, color: '#B9866B' },
+  { slug: 'nursery', nameAr: 'بلوم ستيبس / حضانات', nameEn: 'BloomSteps · Nursery & Preschool', icon: GraduationCap, color: '#F5C04E' },
+  { slug: 'car-detailing', nameAr: 'جلوس باي / ديتيلنج السيارات', nameEn: 'GlossBay · Car detailing', icon: Droplets, color: '#4CCBF4' },
+  { slug: 'physiotherapy', nameAr: 'موشن لاب / علاج طبيعي', nameEn: 'Motion Lab · Physiotherapy', icon: Activity, color: '#79C9C1' },
+  { slug: 'veterinary', nameAr: 'بوويل / عيادات بيطرية', nameEn: 'PawWell · Veterinary', icon: HeartPulse, color: '#F3B98E' },
+  { slug: 'law-firm', nameAr: 'ليكسورا / محاماة واستشارات', nameEn: 'Lexora Counsel · Law Firm', icon: Building2, color: '#B79B6A' },
 ];
 
 export function ContactDock({
   sector,
   locale = 'ar',
 }: {
-  sector: SectorName;
+  sector: PortfolioSectorName;
   locale: 'ar' | 'en';
 }) {
   const [expanded, setExpanded] = useState(false);
@@ -154,8 +170,8 @@ export function ContactDock({
           {/* Quick Demo Switcher Grid (All 8 Demos) */}
           <div className="space-y-2">
             <div className="flex items-center justify-between text-[11px] font-bold text-slate-400 uppercase tracking-wider">
-              <span>{ar ? 'الانتقال السريع للديموز (8 قطاعات):' : 'Switch Sector Demo (8 Sectors):'}</span>
-              <span className="text-cyan-400 font-mono text-[10px]">ALL LIVE</span>
+              <span>{ar ? 'الانتقال السريع بين المواقع المنفذة:' : 'Browse completed industry sites:'}</span>
+              <span className="text-cyan-400 font-mono text-[10px]">LIVE EXAMPLES</span>
             </div>
 
             <div className="grid grid-cols-2 gap-1.5 max-h-48 overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-slate-700">
@@ -235,12 +251,24 @@ export function ContactDock({
 
       {/* Floating Action Trigger Button / Hub Pill */}
       <div className="flex items-center gap-2">
+        {/* Persistent one-tap conversion controls; not hidden behind the expanded hub. */}
+        <a href={wa} target="_blank" rel="noopener noreferrer" onClick={() => track('whatsapp_click')}
+           className="sm:hidden flex items-center justify-center gap-2 min-h-12 rounded-full bg-[#16864F] text-white px-4 py-3 text-xs font-bold shadow-xl"
+           aria-label={ar ? 'واتساب مافكس لتنفيذ موقع مشابه' : 'WhatsApp Mavvix to commission a website'}>
+          <MessageCircle size={19} aria-hidden="true" />
+          <span>{ar ? 'عايز موقع زي ده' : 'Build my site'}</span>
+        </a>
+        <a href={`tel:${MAVVIX_CONTACT.phoneE164}`} onClick={() => track('phone_click')}
+           className="sm:hidden grid place-items-center min-w-12 min-h-12 rounded-full bg-slate-900 text-white shadow-xl"
+           aria-label={ar ? 'اتصال مباشر بمافكس' : 'Call Mavvix directly'}>
+          <Phone size={19} aria-hidden="true" />
+        </a>
         {showScrollTop && (
           <button
             type="button"
             onClick={scrollToTop}
             aria-label={ar ? 'الصعود للأعلى' : 'Scroll to top'}
-            className="w-11 h-11 rounded-full bg-slate-900/90 hover:bg-slate-800 text-white shadow-xl backdrop-blur-md border border-slate-700 flex items-center justify-center transition-all active:scale-95 hover:scale-105"
+            className="hidden sm:flex w-11 h-11 rounded-full bg-slate-900/90 hover:bg-slate-800 text-white shadow-xl backdrop-blur-md border border-slate-700 flex items-center justify-center transition-all active:scale-95 hover:scale-105"
           >
             <ChevronUp className="w-5 h-5" />
           </button>
@@ -250,9 +278,10 @@ export function ContactDock({
         <button
           type="button"
           aria-expanded={expanded}
+          aria-label={expanded ? (ar ? 'إغلاق خيارات التواصل' : 'Close contact options') : (ar ? 'المزيد من خيارات التواصل' : 'More contact options')}
           aria-controls={`mavvix-dock-options-${sector}`}
           onClick={() => setExpanded((v) => !v)}
-          className={`relative group flex items-center gap-2.5 min-h-12 px-4 py-2.5 rounded-full text-white font-bold text-xs sm:text-sm shadow-2xl transition-all duration-300 active:scale-95 ${
+          className={`relative group flex items-center gap-2.5 min-h-12 min-w-12 px-3 sm:px-4 py-2.5 rounded-full text-white font-bold text-xs sm:text-sm shadow-2xl transition-all duration-300 active:scale-95 ${
             expanded
               ? 'bg-slate-900 ring-2 ring-slate-700'
               : 'bg-gradient-to-r from-mavvix-blue via-blue-600 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 ring-2 ring-blue-400/30 shadow-blue-500/25'
@@ -271,14 +300,14 @@ export function ContactDock({
             </div>
           )}
 
-          <span className="font-arabic font-extrabold tracking-wide">
+          <span className="hidden sm:inline font-arabic font-extrabold tracking-wide">
             {expanded
               ? (ar ? 'إغلاق القائمة' : 'Close Menu')
               : (ar ? 'عايز موقع لشركتك؟' : 'Need a site like this?')}
           </span>
 
           <span className="hidden sm:inline-flex items-center text-[10px] bg-white/20 text-white font-mono px-2 py-0.5 rounded-full font-bold">
-            8 DEMOS
+            18 EXPERIENCES
           </span>
         </button>
       </div>

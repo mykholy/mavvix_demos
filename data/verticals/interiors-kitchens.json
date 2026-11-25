@@ -1,0 +1,409 @@
+{
+  "slug": "interiors-kitchens",
+  "brand": "Forma Atelier",
+  "classification": "Mavvix architectural editorial concept, not an operating kitchen manufacturer or design studio.",
+  "services": [
+    {
+      "slug": "l-shaped",
+      "rank": 1,
+      "category": "kitchens",
+      "title": {
+        "ar": "مطبخ حرف L",
+        "en": "L-shaped kitchen"
+      },
+      "summary": {
+        "ar": "اتجاهين متعامدين بزاوية واضحة وإمكانية الحفاظ على ممر حركة مناسب.",
+        "en": "Two perpendicular runs with deliberate corner access and a sensible circulation zone."
+      },
+      "body": {
+        "ar": "التخطيط حرف L مناسب لمساحات مختلفة، لكن الاستفادة الحقيقية تتوقف على أماكن الشبابيك والأبواب ومداخل الكهرباء والسباكة. ينبغي تسجيل طول الحائطين الفعليين وأماكن فتح الضلف والركن، ثم مراجعة مثلث الحركة والتهوية قبل اعتماد الرسومات. لا يمكن تحديد عدد وحدات التخزين بدقة من حرف التخطيط وحده.",
+        "en": "An L-shaped layout connects two perpendicular cabinet runs, but the right result depends on exact wall measurements, doors, windows, service points and clearances. Corner storage and opening arcs should be mapped before an operator chooses cabinet modules. A layout preference alone cannot be translated into a trustworthy installation quote."
+      },
+      "checklist": {
+        "ar": [
+          "سجّل الطول والارتفاع والنوافذ والفتحات",
+          "حدد مواقع التوصيلات والأجهزة قبل تخطيط الخزائن",
+          "اطلب مخطط قياس فعلي واعتماد الخامات والتكلفة"
+        ],
+        "en": [
+          "Record widths, heights, openings and windows",
+          "Identify appliances and utility points before cabinet modules",
+          "Request measured plans, approved material specs and an itemized quote"
+        ]
+      }
+    },
+    {
+      "slug": "u-shaped",
+      "rank": 2,
+      "category": "kitchens",
+      "title": {
+        "ar": "مطبخ حرف U",
+        "en": "U-shaped kitchen"
+      },
+      "summary": {
+        "ar": "ثلاثة جوانب للتخزين والعمل مع مراعاة مسافة الممر الداخلي.",
+        "en": "Three working runs with careful review of internal clearance and appliance movement."
+      },
+      "body": {
+        "ar": "حرف U يوفر أسطحًا وخزائن على ثلاثة اتجاهات، لكنه قد يخلق زوايا يصعب الوصول إليها إذا لم تُخطط الخزائن والأدراج والفتحات بدقة. سجّل طول كل حائط ونقاط المياه والغاز وموقع الثلاجة ومسافات فتح الأجهزة. يعتمد القرار على قياس الموقع والاشتراطات الفنية لا على رسم تخطيطي جذاب فقط.",
+        "en": "A U-shaped plan can provide abundant worktops across three runs, though cabinet doors, corner modules and appliance clearances may collide in compact rooms. A designer needs accurate wall measurements, utilities, ventilation and equipment locations before fixing the design. Real suitability must be confirmed on site."
+      },
+      "checklist": {
+        "ar": [
+          "سجّل الطول والارتفاع والنوافذ والفتحات",
+          "حدد مواقع التوصيلات والأجهزة قبل تخطيط الخزائن",
+          "اطلب مخطط قياس فعلي واعتماد الخامات والتكلفة"
+        ],
+        "en": [
+          "Record widths, heights, openings and windows",
+          "Identify appliances and utility points before cabinet modules",
+          "Request measured plans, approved material specs and an itemized quote"
+        ]
+      }
+    },
+    {
+      "slug": "galley",
+      "rank": 3,
+      "category": "kitchens",
+      "title": {
+        "ar": "مطبخ متوازٍ",
+        "en": "Parallel / galley kitchen"
+      },
+      "summary": {
+        "ar": "صفان متوازيان لاستغلال المساحة الطولية وتوزيع التجهيزات.",
+        "en": "Two parallel working runs that prioritize safe and comfortable circulation."
+      },
+      "body": {
+        "ar": "في المساحات الطولية، قد يناسب وجود صفين متوازيين للخزائن بشرط ترك مساحة حركة وفتح أدراج مناسبة. يجب توضيح اتجاه دخول المطبخ وتقاطعات الأبواب وموضع الأجهزة الكبيرة، كما يلزم مراجعة ارتفاع الخزائن العلوية وحل الإضاءة وتوصيلات الأجهزة مع مختص.",
+        "en": "A parallel kitchen can make efficient use of a long room, but circulation and opposing cabinet doors need careful study. Accurate entrance positions, refrigerator depth, drawer opening space and worktop locations should be recorded. The correct clearances depend on the site and applicable design/installation requirements."
+      },
+      "checklist": {
+        "ar": [
+          "سجّل الطول والارتفاع والنوافذ والفتحات",
+          "حدد مواقع التوصيلات والأجهزة قبل تخطيط الخزائن",
+          "اطلب مخطط قياس فعلي واعتماد الخامات والتكلفة"
+        ],
+        "en": [
+          "Record widths, heights, openings and windows",
+          "Identify appliances and utility points before cabinet modules",
+          "Request measured plans, approved material specs and an itemized quote"
+        ]
+      }
+    },
+    {
+      "slug": "island",
+      "rank": 4,
+      "category": "kitchens",
+      "title": {
+        "ar": "جزيرة المطبخ",
+        "en": "Kitchen island planning"
+      },
+      "summary": {
+        "ar": "كتلة مستقلة تتطلب مراجعة الممرات ونقاط الكهرباء والتهوية.",
+        "en": "A freestanding element requiring full clearance and utilities assessment."
+      },
+      "body": {
+        "ar": "الجزيرة عنصر مفيد للتحضير أو الجلسة إذا كانت المساحة تسمح بالدوران حولها دون تعطيل فتح الثلاجة أو الأدراج. الجزيرة التي تحتوي على حوض أو موقد تحتاج متطلبات سباكة أو كهرباء أو تهوية إضافية يحددها المتخصص. وجود صورة مطبخ بجزيرة ليس دليلًا على أن كل مساحة تسمح بها.",
+        "en": "An island may support preparation or seating when circulation around all sides can be maintained. Adding a sink or hob can introduce extra plumbing, electrical and ventilation work. A real space assessment is needed before promising an island, not an attractive reference photograph."
+      },
+      "checklist": {
+        "ar": [
+          "سجّل الطول والارتفاع والنوافذ والفتحات",
+          "حدد مواقع التوصيلات والأجهزة قبل تخطيط الخزائن",
+          "اطلب مخطط قياس فعلي واعتماد الخامات والتكلفة"
+        ],
+        "en": [
+          "Record widths, heights, openings and windows",
+          "Identify appliances and utility points before cabinet modules",
+          "Request measured plans, approved material specs and an itemized quote"
+        ]
+      }
+    },
+    {
+      "slug": "wardrobes",
+      "rank": 5,
+      "category": "storage",
+      "title": {
+        "ar": "دواليب ودريسنج حسب المقاس",
+        "en": "Built-in wardrobes & dressing"
+      },
+      "summary": {
+        "ar": "تقسيمات داخلية تعتمد على الملابس والارتفاعات والفتحات المتاحة.",
+        "en": "Storage modules designed around clothing type, heights and access."
+      },
+      "body": {
+        "ar": "الدريسنج الجيد لا يبدأ بشكل الأبواب، بل بتقسيم الملابس وأطوال التعليق وعدد الأدراج واستخدام الإكسسوارات. سجّل عرض الحائط وارتفاع السقف وأماكن الكهرباء ومفصلات الباب، وفكّر في فتح الأدراج أمام مناطق المرور. ينبغي توضيح الخامات وآلية التثبيت مع صاحب العمل.",
+        "en": "A dressing project needs to start with garment needs, hanging heights, drawer access and how people will move within the room. Record full wall width, ceiling height and any conflicting switches or doors. Internal fittings and anchor choices depend on actual material and supplier specifications."
+      },
+      "checklist": {
+        "ar": [
+          "سجّل الطول والارتفاع والنوافذ والفتحات",
+          "حدد مواقع التوصيلات والأجهزة قبل تخطيط الخزائن",
+          "اطلب مخطط قياس فعلي واعتماد الخامات والتكلفة"
+        ],
+        "en": [
+          "Record widths, heights, openings and windows",
+          "Identify appliances and utility points before cabinet modules",
+          "Request measured plans, approved material specs and an itemized quote"
+        ]
+      }
+    },
+    {
+      "slug": "vanity",
+      "rank": 6,
+      "category": "storage",
+      "title": {
+        "ar": "وحدات حمام ومغاسل",
+        "en": "Vanity & washroom cabinetry"
+      },
+      "summary": {
+        "ar": "اختيارات وحدات ملائمة للرطوبة مع التحقق من التهوية والمواد.",
+        "en": "Cabinet design mindful of moisture exposure and installation context."
+      },
+      "body": {
+        "ar": "بيئة الحمام مختلفة عن غرفة النوم بسبب الرطوبة والتنظيف المتكرر. اختيار الخامة وتشطيب الحواف والقواعد يحتاج الرجوع إلى مواصفات مورد المواد ومقاومتها الفعلية للماء. لا تكفي عبارة مقاوم للمياه دون مستندات فنية وحالة استخدام محددة.",
+        "en": "Bathrooms present different humidity and splash conditions from bedrooms. Board substrates, edge sealing and hardware performance depend on manufacturer technical data and actual exposure. Avoid vague 'waterproof' promises unless a supplier and installer can substantiate them."
+      },
+      "checklist": {
+        "ar": [
+          "سجّل الطول والارتفاع والنوافذ والفتحات",
+          "حدد مواقع التوصيلات والأجهزة قبل تخطيط الخزائن",
+          "اطلب مخطط قياس فعلي واعتماد الخامات والتكلفة"
+        ],
+        "en": [
+          "Record widths, heights, openings and windows",
+          "Identify appliances and utility points before cabinet modules",
+          "Request measured plans, approved material specs and an itemized quote"
+        ]
+      }
+    },
+    {
+      "slug": "pantry",
+      "rank": 7,
+      "category": "storage",
+      "title": {
+        "ar": "خزائن البانتري والتخزين",
+        "en": "Pantry & interior organizers"
+      },
+      "summary": {
+        "ar": "توزيع الرفوف والأدراج حسب ارتفاع العناصر ووزنها وسهولة الوصول.",
+        "en": "Plan shelving and pullouts around object dimensions, load and reach."
+      },
+      "body": {
+        "ar": "مخزن المطبخ الفعال يبدأ من معرفة الأغراض المستخدمة يوميًا وأحجام الأواني وارتفاعاتها وأوزانها. يمكن استخدام أدراج سحب أو أرفف قابلة للتعديل حين يسمح تصميم الوحدة والحمولة. لا يجوز افتراض قدرة تحمل وحدة أو مفصلة دون المواصفة الفنية المعتمدة من المورد.",
+        "en": "An efficient pantry starts with what must be stored, how often items are reached for and their real dimensions and weights. Pull-out organizers and adjustable shelves can improve access if the cabinetry and hardware are rated appropriately. Weight capacity should come from supplier specifications, not illustrative marketing numbers."
+      },
+      "checklist": {
+        "ar": [
+          "سجّل الطول والارتفاع والنوافذ والفتحات",
+          "حدد مواقع التوصيلات والأجهزة قبل تخطيط الخزائن",
+          "اطلب مخطط قياس فعلي واعتماد الخامات والتكلفة"
+        ],
+        "en": [
+          "Record widths, heights, openings and windows",
+          "Identify appliances and utility points before cabinet modules",
+          "Request measured plans, approved material specs and an itemized quote"
+        ]
+      }
+    },
+    {
+      "slug": "countertops",
+      "rank": 8,
+      "category": "materials",
+      "title": {
+        "ar": "أسطح العمل والرخام الصناعي",
+        "en": "Worktops & surface selection"
+      },
+      "summary": {
+        "ar": "اختيار السطح بناءً على الاستخدام والحرارة والتنظيف والتثبيت.",
+        "en": "Choose finishes from supplier-documented properties and intended use."
+      },
+      "body": {
+        "ar": "أسطح العمل تختلف في مقاومة الحرارة والبقع والصدمات ومتطلبات العناية اليومية. مقارنة الكوارتز والمواد الخشبية والبدائل الأخرى يجب أن تعتمد على كتالوج المورد والتصنيف الفني لا على اللون وحده. الوصلات والفتحات حول الحوض والموقد تؤثر في النتيجة والتكلفة.",
+        "en": "Countertop decisions should consider actual supplier data on heat, stain resistance, maintenance and fabrication tolerances. Quartz, solid surfaces and laminate products have different care and installation requirements. Sink and hob cutouts, joints and edge profiles affect scope and must be measured professionally."
+      },
+      "checklist": {
+        "ar": [
+          "سجّل الطول والارتفاع والنوافذ والفتحات",
+          "حدد مواقع التوصيلات والأجهزة قبل تخطيط الخزائن",
+          "اطلب مخطط قياس فعلي واعتماد الخامات والتكلفة"
+        ],
+        "en": [
+          "Record widths, heights, openings and windows",
+          "Identify appliances and utility points before cabinet modules",
+          "Request measured plans, approved material specs and an itemized quote"
+        ]
+      }
+    },
+    {
+      "slug": "lighting",
+      "rank": 9,
+      "category": "finishes",
+      "title": {
+        "ar": "إضاءة المطبخ العملية",
+        "en": "Layered kitchen lighting"
+      },
+      "summary": {
+        "ar": "توزيع إضاءة السقف والعمل تحت الخزائن دون وعود بتركيبات غير معتمدة.",
+        "en": "Combine general and task light with safe electrical planning."
+      },
+      "body": {
+        "ar": "توزيع الإضاءة يحتاج فصل ضوء الممر عن ضوء التحضير على سطح العمل مع مراجعة انعكاسات الأسطح والخزائن. تركيب وحدات الإضاءة وتغيير خطوط التغذية أعمال كهربائية يجب أن ينفذها متخصص وفق الاشتراطات المناسبة. العرض يشرح عناصر التصميم فقط وليس خطة توصيل أو قدرة كهربية معتمدة.",
+        "en": "Kitchen lighting benefits from separating ambient illumination from task light over preparation areas. Reflective surfaces and cabinet overhangs affect glare and shadows. Electrical circuits and fixture installation must be designed and completed by qualified professionals; a website diagram is not a wiring plan."
+      },
+      "checklist": {
+        "ar": [
+          "سجّل الطول والارتفاع والنوافذ والفتحات",
+          "حدد مواقع التوصيلات والأجهزة قبل تخطيط الخزائن",
+          "اطلب مخطط قياس فعلي واعتماد الخامات والتكلفة"
+        ],
+        "en": [
+          "Record widths, heights, openings and windows",
+          "Identify appliances and utility points before cabinet modules",
+          "Request measured plans, approved material specs and an itemized quote"
+        ]
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slug": "measure-before-design",
+      "title": {
+        "ar": "قياسات المطبخ: إيه اللي تسجله قبل مقابلة المصمم؟",
+        "en": "Kitchen measuring: what to prepare before design consultation"
+      },
+      "summary": {
+        "ar": "عرض الحائط مش كفاية؛ الفتحات والزوايا والأجهزة هي اللي بتحدد التخطيط الواقعي.",
+        "en": "Wall lengths alone are not enough; openings, appliances and service points shape a realistic plan."
+      },
+      "body": {
+        "ar": "ابدأ برسم مبسط يوضح عدد الحوائط وتوزيع الأبواب والنوافذ، ثم سجل الأطوال والارتفاعات التقديرية بوحدات موحدة. حدد مواقع الحوض والبوتاجاز والثلاجة وتوصيلات الغاز والكهرباء والسباكة من غير لمسها أو تعديلها. لو فيه أعمدة أو تمديدات ظاهرة، وضح موقعها بالنسبة لكل حائط. قس عرض الأبواب واتجاه فتحها ومساحة حركة الأشخاص. هذه قياسات استكشافية لإعداد الاستشارة فقط؛ يتعين على متخصص إجراء رفع مقاسات دقيق قبل التصنيع أو التركيب. تجنب إرسال صور لمستندات ملكية أو عنوان المنزل الكامل في فورم توضيحي.",
+        "en": "Begin with a rough plan showing the number of walls, doors, windows and any columns. Record approximate wall lengths and ceiling height in one unit system, and describe appliance locations and obvious plumbing, gas and electrical service points without touching or altering them. Note door swing direction, circulation paths and where large appliances may open. This preparation helps a designer discuss options, but a qualified professional must verify every dimension before fabrication or installation. A public portfolio enquiry does not need property documents, full home addresses or confidential floor plans."
+      }
+    },
+    {
+      "slug": "finishes-matter",
+      "title": {
+        "ar": "قبل اختيار لون المطبخ: اسأل عن الخامة والتشطيب",
+        "en": "Beyond cabinet colours: the materials and finishes conversation"
+      },
+      "summary": {
+        "ar": "لون الصورة مش هو اختبار التحمل. ركز على المورد والحواف والتنظيف والمفصلات.",
+        "en": "A colour sample is not a durability test; inspect supplier documentation, edges and maintenance."
+      },
+      "body": {
+        "ar": "المظهر النهائي يشمل لون الواجهات ونوعية الخامة والسُمك ونظام فتح الأبواب والمفصلات والحواف. تختلف المواد المخصصة للمطابخ في خصائصها وحدود استخدامها، وبعضها يحتاج عناية خاصة عند التعرض للرطوبة أو الحرارة. اطلب من الشركة الفعلية اسم المنتج ومواصفاته وتعليمات تنظيفه وضمان المورد إن وجد، ولا تعتبر كل مادة باسم متشابه متساوية في الأداء. اعمل مقارنة بين عينة لون حقيقية وبين ظروف إضاءة المطبخ حتى تتجنب مفاجأة اختلاف اللون بعد التركيب. أي أسعار هنا تظل توقعًا حتى يتم اعتماد المقاسات والخامات.",
+        "en": "A kitchen finish is more than a colour swatch. Ask for substrate material, surface finish, edge treatment, hinges, opening hardware and manufacturer specifications. Some finishes need specific maintenance near heat, steam and cleaning chemicals, and apparent similarities between products do not guarantee equal performance. Evaluate physical samples in the room's actual light. A credible maker should explain supplier data, maintenance and any genuine warranty terms before issuing a final quote."
+      }
+    },
+    {
+      "slug": "layout-decision",
+      "title": {
+        "ar": "L ولا U ولا مطبخ متوازي؟ البداية من الحركة",
+        "en": "L, U or galley? Start with movement and functional zones"
+      },
+      "summary": {
+        "ar": "حدد الاستخدام اليومي ومساحات الحركة وفتح الأدراج قبل اختيار شكل مطبخ من الصور.",
+        "en": "Start with circulation, appliance access and daily routines rather than copying a layout photo."
+      },
+      "body": {
+        "ar": "تُظهر صور تصميمات المطابخ أكثر من شكل، لكنها لا تعني أن كل شكل مناسب لمساحة البيت. المطابخ حرف L تستخدم حائطين، وU تستخدم ثلاثة، والمطابخ المتوازية توزع العمل على خطين متقابلين. راجع موقع الدخول وإمكانية فتح الثلاجة والفرن وطرق الوصول إلى الحوض والتحضير دون تزاحم. إضافة جزيرة قد تكون عملية في مساحة كبيرة، لكنها قد تضيق الحركة في مطبخ آخر. احتفظ بعرضك المفضل كفكرة مبدئية، ثم اطلب تصميمًا يقبل التعديل بعد رفع المقاسات ومعاينة الوصلات.",
+        "en": "Kitchen layout names describe cabinet-run patterns, not guaranteed quality. An L-shaped arrangement uses two adjoining walls, while U-shaped kitchens use three; galley kitchens face two runs across a circulation space. Consider the actual entry, refrigerator opening direction, oven use, sink position and how people pass behind one another. An island can improve preparation space in one room and obstruct movement in another. Treat layout choices as a consultation hypothesis until a proper survey and technical plan confirm feasibility."
+      }
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "ar": "هل اختيار طول الحوائط يطلع سعر نهائي؟",
+        "en": "Does wall measurement give a final kitchen price?"
+      },
+      "a": {
+        "ar": "لا؛ القياس الأولي يحدد نطاق الاستفسار فقط، والسعر يعتمد على رفع مقاسات وخامات وأعمال معتمدة.",
+        "en": "No. Approximate measurements only scope the enquiry; real quotes need a site survey and approved material specifications."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل التصميم الثلاثي الأبعاد متاح في التجربة؟",
+        "en": "Does the concept include real-time 3D kitchen rendering?"
+      },
+      "a": {
+        "ar": "لا؛ المعاينة هنا شرح تخطيطات واختيار تفضيلات. التصميم النهائي يحتاج أدوات ومختص فعلي.",
+        "en": "No. It captures layout preferences; an accurate 3D plan must be separately designed and reviewed."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل يمكن استخدام صورة مطبخ كأنه مشروع منفذ؟",
+        "en": "Can a reference photo be presented as a delivered project?"
+      },
+      "a": {
+        "ar": "لا، الصور التحريرية مرخصة لكنها ليست مشروعات نفذتها Forma أو مافكس لصالح عميل.",
+        "en": "No. Editorial photos do not represent Forma installations or Mavvix client work."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل لازم أقدم عنواني الكامل؟",
+        "en": "Do I need to enter my home address?"
+      },
+      "a": {
+        "ar": "لا، في التجربة نطلب المنطقة بصورة عامة فقط ولا نطلب بيانات ملكية أو مخططات خاصة.",
+        "en": "No. The example request only needs a general service area, never ownership documents or confidential plans."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل المقايسة تشمل كهرباء وسباكة؟",
+        "en": "Are electrical or plumbing changes included?"
+      },
+      "a": {
+        "ar": "لا نفترض أي خدمات إنشائية أو كهربائية. جهة العمل الحقيقية تحدد النطاق مع فنيين مؤهلين.",
+        "en": "No construction or utility works are presumed. Only a real operator and qualified trades can scope them."
+      }
+    }
+  ],
+  "layouts": [
+    "L",
+    "U",
+    "galley",
+    "single-wall",
+    "island"
+  ],
+  "finishFamilies": [
+    "matte",
+    "wood-look",
+    "lacquer",
+    "mixed"
+  ],
+  "countertops": [
+    "quartz",
+    "solid-surface",
+    "laminate",
+    "undecided"
+  ],
+  "budgetBands": [
+    "researching",
+    "under-100k-egp",
+    "100k-250k-egp",
+    "250k-plus-egp",
+    "quotation-needed"
+  ],
+  "areas": [
+    "Cairo",
+    "Giza",
+    "Alexandria",
+    "Delta",
+    "Other Egypt",
+    "Riyadh",
+    "Jeddah",
+    "Other GCC"
+  ],
+  "timelines": [
+    "exploring",
+    "1-3-months",
+    "3-6-months",
+    "6-months-plus"
+  ]
+}

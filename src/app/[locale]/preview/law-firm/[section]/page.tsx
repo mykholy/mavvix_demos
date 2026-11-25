@@ -1,0 +1,78 @@
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
+import type { Locale } from '@/lib/i18n/config';
+import { LEXORA,lexoraPath,lexoraText } from '@/lib/verticals/law-firm/data';
+import { ArrowUpRight,Scale,ShieldCheck,Building2,ScrollText,LockKeyhole,FileText,BookOpen,CheckCircle2,Landmark,AlertTriangle,Globe2 } from 'lucide-react';
+
+const sections=['industries','approach','team','confidentiality','about','contact','questions','jurisdictions'] as const;
+type Topic=typeof sections[number];
+const names:Record<Topic,{ar:string;en:string}>={
+ industries:{ar:'الخدمات القانونية حسب قطاع الأعمال',en:'Legal practice across industry contexts'},
+ approach:{ar:'كيف تبدأ المراجعة المهنية الصحيحة؟',en:'A responsible first-contact process'},
+ team:{ar:'التخصصات والمحامون: بيانات موثقة فقط',en:'Qualified profiles require real verification'},
+ confidentiality:{ar:'سرية المعلومات وحدود التواصل',en:'Confidentiality starts before the first form'},
+ about:{ar:'Lexora Counsel: تصور من مافكس',en:'About the Lexora Counsel experience'},
+ contact:{ar:'اطلب تنفيذ موقع قانوني لمكتبك',en:'A distinctive website for your real law firm'},
+ questions:{ar:'أسئلة شائعة عن الخدمات والاستفسارات',en:'Common questions about legal service intake'},
+ jurisdictions:{ar:'مصر والسعودية: أهمية الاختصاص القانوني',en:'Egypt and Saudi Arabia: jurisdiction is fundamental'},
+};
+const safeStep=[
+ {ar:'حدّد مجال الخدمة',en:'Identify the practice category',descAr:'عقود، تأسيس، نزاعات، أصول أو أعمال عابرة للحدود دون وصف القضية.',descEn:'Choose corporate, contracts, disputes, assets or cross-border work without submitting case facts.'},
+ {ar:'حدّد الاختصاص العام',en:'Establish the broad jurisdiction',descAr:'حدد الدولة فقط؛ لا تستخدم نموذج العرض لتحديد المحكمة أو مواعيد القضايا.',descEn:'A country is enough for an example; court eligibility and legal deadlines need a practitioner.'},
+ {ar:'تحقّق من المؤهلات',en:'Confirm professional qualifications',descAr:'اسم المحامي والترخيص والخبرة تُوثّق من الجهة الحقيقية قبل نشرها.',descEn:'Actual lawyers, licenses, credentials and availability must be verified before publication.'},
+ {ar:'اتفق على حدود العمل',en:'Agree on the engagement scope',descAr:'الأتعاب والملفات وسرية التعامل وطريقة المتابعة يجب أن توضح في اتفاق حقيقي.',descEn:'Fees, confidentiality, data handling and engagement are agreed with the real law firm.'},
+];
+export function generateStaticParams(){return sections.map(section=>({section}));}
+export async function generateMetadata(props:{params: Promise<{locale:Locale;section:string}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
+ const item=names[section as Topic];return item?{title:item[locale]+' | Lexora Counsel',description:locale==='ar'?'محتوى موقع قانوني متخصص من مافكس للتعريف بالمجالات والخدمات والتواصل الأولي الآمن دون تقديم استشارات قانونية.':'A bilingual legal practice website concept with privacy-first intake, informative service context and no actual legal engagement.',robots:{index:false}}:{};
+}
+export default async function LegalTopic(props:{params: Promise<{locale:Locale;section:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
+ if(!sections.includes(section as Topic))notFound();
+ const topic=section as Topic,ar=locale==='ar';
+ const intro=ar?'هذا المحتوى يشرح نوع الموقع الذي يمكن لـMavvix تصميمه لمكتب قانوني حقيقي، ولا يشير إلى فريق أو ترخيص أو خدمة قانونية متاحة باسم Lexora.':'This page illustrates what Mavvix can build for a licensed law firm; it does not claim Lexora has real lawyers, operating branches or accepted clients.';
+ return <div className="bg-[#FAF7F1]">
+  <section className="bg-[#251D34] text-[#FAF7F1] py-12 sm:py-24"><div className="max-w-7xl mx-auto px-5 sm:px-8"><nav className="text-xs text-[#D4BFD6]"><Link href={lexoraPath(locale)}>{ar?'الرئيسية':'Home'}</Link> / {names[topic][locale]}</nav><div className="grid lg:grid-cols-[1fr_.48fr] items-end mt-12 gap-10"><div><span className="text-[#E4CA91] text-xs tracking-[.19em] font-bold uppercase">LEXORA / {topic.toUpperCase()}</span><h1 className="lexora-display text-4xl sm:text-6xl leading-tight mt-5">{names[topic][locale]}</h1></div><p className="text-sm leading-8 text-[#E9DFEA]">{intro}</p></div></div></section>
+  {topic==='industries'&&<>
+   <section className="max-w-7xl mx-auto px-5 sm:px-8 py-20 grid lg:grid-cols-[.65fr_1fr] gap-12"><div><Building2 size={38} strokeWidth={1.2} className="text-[#84662F]"/><h2 className="lexora-display text-4xl mt-5">{ar?'النشاط التجاري يغيّر السياق':'Industry context changes legal questions'}</h2></div><p className="text-[#584C60] leading-9">{ar?'العقد المناسب لخدمة رقمية ليس بالضرورة نفس عقد التوريدات أو الإيجار التجاري. اختلاف القطاع وطبيعة الأشخاص والبلد يغيّر المستندات ومسار المراجعة المحتمل. لا تعني هذه الأمثلة أن Lexora يقدم خدمة حالية أو يمثل قطاعًا بعينه.':'Service agreements, industrial supply, employment arrangements and property transactions raise distinct questions. Industry, party type and jurisdiction all affect the required professional review. This example does not represent current Lexora clients or operating sectors.'}</p></section>
+   <section className="bg-white py-20"><div className="max-w-7xl mx-auto px-5 sm:px-8 grid md:grid-cols-3 gap-5">{[[ar?'التجارة والخدمات':'Commerce and services',ar?'عقود العميل والمورّد وتغيير النطاق والخصوصية.':'Customer/supplier contracts, change control and data obligations.'],[ar?'المنشآت والحوكمة':'Company operations',ar?'صلاحيات التوقيع ومحاضر الإدارة وتوزيع المسؤوليات.':'Signing authority, governance records and responsibility allocation.'],[ar?'الأصول والاستثمار':'Property and assets',ar?'المستندات والملكية وقرارات الالتزام حسب الدولة.':'Documentation, title diligence and jurisdiction-specific requirements.']].map(([title,desc],i)=><article key={i} className="border border-[#DCCDBB] bg-[#FAF7F1] p-8"><span className="font-mono text-[#84662F]">0{i+1}</span><h3 className="lexora-display text-3xl mt-7">{title}</h3><p className="mt-5 text-sm text-[#584C60] leading-8">{desc}</p></article>)}</div></section>
+  </>}
+  {topic==='approach'&&<>
+   <section className="max-w-7xl mx-auto px-5 sm:px-8 py-20"><h2 className="lexora-display text-4xl sm:text-5xl">{ar?'أربع خطوات قبل أي نقاش تفصيلي':'Four responsible stages before any detailed matter review'}</h2><div className="mt-11 space-y-4">{safeStep.map((s,i)=><div key={i} className="grid md:grid-cols-[95px_.7fr_1fr] items-start gap-7 border border-[#DCCDBB] p-7 sm:p-8 bg-white"><span className="font-mono text-3xl text-[#84662F]">{String(i+1).padStart(2,'0')}</span><h3 className="lexora-display text-3xl">{s[locale]}</h3><p className="text-sm leading-8 text-[#584C60]">{ar?s.descAr:s.descEn}</p></div>)}</div></section>
+  </>}
+  {topic==='team'&&<>
+   <section className="max-w-7xl mx-auto px-5 sm:px-8 py-20 grid lg:grid-cols-[.7fr_1fr] gap-10"><div><ShieldCheck size={42} strokeWidth={1.2} className="text-[#84662F]"/><h2 className="lexora-display text-4xl mt-6">{ar?'الثقة تحتاج أدلة، لا أسماء متخيلة':'Professional credibility needs verification'}</h2></div><div><p className="leading-9 text-[#584C60]">{ar?'هذا المثال لا يضع صور محامين أو تراخيص أو شهادات غير متحققة. عند تسليم موقع حقيقي، صاحب المكتب يقدّم الأسماء والجهات المرخصة وصور الأفراد بموافقتهم ومجالات التخصص المثبتة.':'This sample intentionally contains no fictional attorney portraits, bar admissions, certifications or client results. A real firm must supply properly verified professional details, consented portraits, relevant jurisdictions and authoritative qualifications.'}</p><div className="grid sm:grid-cols-2 mt-8 gap-4">{[ar?'الترخيص والجهة المعتمدة':'Verified license & body',ar?'التخصص ونطاق الممارسة':'Practice area and jurisdiction',ar?'موافقة صاحب الصورة':'Consented professional portraits',ar?'البيانات المحدّثة':'Current accurate credentials'].map(x=><div key={x} className="p-5 bg-white border border-[#DCCDBB] flex gap-3 items-center text-sm font-bold"><CheckCircle2 size={20} className="text-[#84662F] shrink-0"/>{x}</div>)}</div></div></section>
+  </>}
+  {topic==='confidentiality'&&<>
+   <section className="max-w-7xl mx-auto px-5 sm:px-8 py-20 grid lg:grid-cols-[.75fr_1fr] gap-12"><div><LockKeyhole size={43} className="text-[#84662F]"/><h2 className="lexora-display text-4xl mt-6">{ar?'المعلومات الحساسة لا تبدأ من فورم عام':'Do not submit a case narrative into an example form'}</h2></div><div><p className="text-[#584C60] leading-9">{ar?'نموذج الاستفسار يقبل الاسم ورقم التواصل ونوع الخدمة والدولة فقط. لا نطلب تفاصيل النزاع أو العقود أو أسماء الأطراف أو رقم قضية أو رقم قومي أو ملفات. لا يُنشئ الإرسال علاقة موكل ومحامٍ، ولا تنشأ بمجرده سرية مهنية أو حق في تمثيل قانوني.':'Our intake asks only for basic contact, broad service category, jurisdiction and channel preference. No case facts, third-party names, contracts, case IDs, national IDs or document uploads. This does not establish privilege, representation or an attorney-client agreement.'}</p><p className="leading-9 mt-5 text-[#584C60]">{ar?'في موقع فعلي، يجب الاتفاق على آلية جمع المستندات والنفاذ إليها وتخزينها ومدد الاحتفاظ بها بعد موافقة المكتب المرخص والمتخصص القانوني.':'A commissioned law firm requires a separate approved process for secure documents, access controls, retention schedules and professional engagement terms.'}</p></div></section>
+   <section className="bg-[#ECE4D6] py-16"><div className="max-w-7xl mx-auto px-5 sm:px-8"><h2 className="text-2xl font-bold">{ar?'لا تستخدم النموذج في المواقف العاجلة':'Never rely on this form for urgent filings'}</h2><p className="mt-4 text-sm leading-9 text-[#584C60]">{ar?'الاستفسارات هنا لا تراقب مهلة قانونية؛ اطلب محاميًا محليًا مؤهلًا عند وجود إجراءات أو ميعاد ضروري.':'This showcase does not monitor deadlines or act on submissions. Contact a qualified local professional if a filing or hearing deadline is approaching.'}</p></div></section>
+  </>}
+  {topic==='about'&&<>
+   <section className="max-w-7xl mx-auto px-5 sm:px-8 py-20 grid lg:grid-cols-[.6fr_1fr] gap-12"><div><Scale size={48} className="text-[#84662F]" strokeWidth={1.2}/><h2 className="lexora-display text-4xl sm:text-5xl mt-7">{ar?'هوية تحريرية من مافكس':'A deliberately fictional editorial identity'}</h2></div><div className="text-[#584C60] leading-9 space-y-5"><p>{ar?'Lexora Counsel علامة توضيحية مخصصة لمعرض أعمال شركة Mavvix. بنينا صفحات متخصصة ونظام استقبال استفسار بسيط بلوحة إدارة، لكن لا يوجد مكتب قانوني حقيقي أو محامون يقدمون هذه الخدمات من خلال العلامة.':'Lexora Counsel is a fictional editorial brand for the Mavvix website portfolio. Its code supports an industry-specific bilingual website and a saved nonconfidential enquiry, but it is not an operating law practice.'}</p><p>{ar?'عند طلب عميل فعلي، تُستبدل الهوية باسم المكتب وتُراجع مجالات الممارسة والصور والتراخيص والمواعيد والسياسات مع صاحب النشاط.':'A real commissioning process would replace the brand, review legal marketing requirements, verify lawyer profiles and approve media, confidentiality workflows, contact and jurisdiction-specific claims.'}</p></div></section>
+  </>}
+  {topic==='jurisdictions'&&<>
+   <section className="max-w-7xl mx-auto px-5 sm:px-8 py-20"><div className="grid lg:grid-cols-2 gap-6">{[[ar?'مصر':'Egypt',ar?'تأسيس الشركات والتوظيف والعقود وطرق حل النزاعات قد تتطلب مراجعة قانون محلي وجهات مختلفة بحسب النشاط.':'Formation, employment, contracts and dispute paths can involve distinct Egyptian statutes, regulators and factual requirements.'],[ar?'المملكة العربية السعودية':'Saudi Arabia',ar?'بيئة الشركات والاستثمار والحكومة واللوائح تخضع لإجراءات وأنظمة محلية تختلف حسب نوع المنشأة.':'Corporate, investment, governance and procedural matters follow local rules that depend on entity type and commercial context.']].map(([country,desc],i)=><article key={i} className="border-t-4 border-[#84662F] bg-white p-8 sm:p-11"><Landmark size={35} className="text-[#84662F]"/><h2 className="lexora-display text-4xl mt-7">{country}</h2><p className="text-sm leading-9 mt-6 text-[#584C60]">{desc}</p></article>)}</div><div className="bg-[#ECE4D6] p-8 sm:p-11 mt-8"><Globe2 size={28} className="text-[#84662F]"/><h3 className="font-bold text-xl mt-5">{ar?'أعمال عبر الحدود؟':'Operating across borders?'}</h3><p className="mt-4 leading-9 text-[#584C60]">{ar?'لا يمكن توحيد قواعد مصر والسعودية أو تطبيق نصّ خاص بدولة على غيرها. الاستشارة المتخصصة تبدأ بتحديد الأنشطة والدول والمهنيين المرخصين.':'A generic cross-border explanation cannot substitute for distinct, current local legal advice from appropriately qualified professionals.'}</p></div></section>
+  </>}
+  {topic==='contact'&&<>
+   <section className="max-w-7xl mx-auto px-5 sm:px-8 py-20 grid lg:grid-cols-2 gap-12"><div><p className="uppercase tracking-widest text-xs font-bold text-[#775A2E]">MAVVIX / WEBSITE DEVELOPMENT</p><h2 className="lexora-display text-4xl sm:text-5xl mt-6">{ar?'موقع مهني يعبر عن مكتبك الحقيقي':'A high-trust website built around your actual firm'}</h2><p className="mt-6 text-[#584C60] leading-9">{ar?'مافكس شركة برمجيات تقدر تنفّذ موقع خدمات قانونية بالعربي والإنجليزي مع إدارة محتوى وتواصل أولي يحترم الخصوصية؛ اسم المكتب ومؤهلات المحامين والخدمات والمواد المعتمدة مصدرها صاحب المشروع.':'Mavvix can build bilingual practice content, document-safe contact workflows and protected lead management. The actual firm supplies its verified legal identity, approved service claims and operating policies.'}</p><a href={ar?'https://mavvix.com/ar/contact':'https://mavvix.com/en/contact'} target="_blank" rel="noopener noreferrer" className="mt-9 inline-flex items-center gap-3 bg-[#251D34] text-white px-7 py-4 font-bold text-sm">{ar?'اطلب تصميم موقع المكتب':'Request your firm website'}<ArrowUpRight size={18}/></a></div><div className="bg-[#EFE8DB] p-9"><h3 className="lexora-display text-3xl">{ar?'المعلومات اللازمة عند التنفيذ':'What an actual project needs'}</h3>{[ar?'اسم المكتب وهويته القانونية':'Verified firm name',ar?'مجالات الممارسة المعتمدة':'Approved practice areas',ar?'التراخيص والصور بموافقات حقيقية':'Licensed professionals and consented media',ar?'سياسة الخصوصية والاحتفاظ بالمعلومات':'Data and privacy policy',ar?'وسائل التواصل الرسمية':'Official contact channels'].map(x=><p key={x} className="flex gap-3 items-center text-sm mt-5"><CheckCircle2 size={20} className="text-[#84662F] shrink-0"/>{x}</p>)}</div></section>
+  </>}
+  {topic==='questions'&&<>
+   <section className="max-w-7xl mx-auto px-5 sm:px-8 py-20 grid lg:grid-cols-[.6fr_1fr] gap-12"><div><BookOpen size={38} className="text-[#84662F]"/><h2 className="lexora-display text-4xl mt-6">{ar?'إجابات صريحة قبل أي استفسار':'Honest answers before any enquiry'}</h2></div><div className="space-y-3">{LEXORA.faq.map((q,i)=><details key={i} className="bg-white border border-[#DCCDBB] p-7"><summary className="cursor-pointer font-bold">{q.q[locale]}</summary><p className="mt-5 text-[#584C60] leading-8 text-sm">{q.a[locale]}</p></details>)}</div></section>
+  </>}
+  <section className="bg-[#E5CAA0] py-16"><div className="max-w-7xl mx-auto px-5 sm:px-8 flex flex-wrap items-center gap-8 justify-between"><div><p className="text-xs font-bold tracking-widest text-[#5D482D]">LEXORA / NEXT STEP</p><h2 className="lexora-display text-3xl sm:text-4xl mt-4">{ar?'استفسار عام فقط، دون مشاركة بيانات قضية':'One clear first step, without exposing your case'}</h2></div><Link href={lexoraPath(locale,'consultation')} className="px-7 py-4 bg-[#251D34] text-white font-bold text-sm inline-flex items-center gap-2">{ar?'افتح نموذج الاستفسار':'Open the enquiry form'}<ArrowUpRight size={17}/></Link></div></section>
+ </div>;
+}

@@ -3,11 +3,12 @@ import { Locale } from '@/lib/i18n/config';
 import { getRestaurantDishes } from '@/lib/db/repositories';
 import { RestaurantMenuClient } from './RestaurantMenuClient';
 
-export default function RestaurantMenuPage({
-  params,
-}: {
-  params: { locale: Locale };
-}) {
+export default async function RestaurantMenuPage(
+  props: {
+    params: Promise<{ locale: Locale }>;
+  }
+) {
+  const params = await props.params;
   const { locale } = params;
   const isAr = locale === 'ar';
   const dishes = getRestaurantDishes(locale);

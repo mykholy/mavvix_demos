@@ -1,0 +1,835 @@
+{
+  "slug": "furniture",
+  "brand": "Oakline Living",
+  "classification": "Editorial Mavvix furniture showroom concept. No inventory, customers, production, prices or orders.",
+  "services": [
+    {
+      "slug": "modular-sofa",
+      "room": "living",
+      "category": "sofas",
+      "ar": "كنبة موديل وحدات قابلة للتنسيق",
+      "en": "Modular lounge sofa",
+      "arText": "تساعد الكنبة المقسمة لوحدات على إعادة ترتيب المقاعد حسب مساحة الغرفة ومسار الحركة. قبل طلب التفصيل سجّل طول الجدار، مكان الأبواب، وعرض المداخل، ثم اختر خامة التنجيد ودرجة اللون وطبيعة الاستخدام اليومي. الاختيار في الموقع يمثل طلب تصميم وليس منتجًا متاحًا في المخزن.",
+      "enText": "Modular seating works when individual sections suit the room's circulation, entrances and daily use. Before requesting a custom build, record wall length, clearance around doors, delivery access and the intended upholstery. Each configuration is a design brief, not proof that Oakline stocks or manufactures that exact sofa.",
+      "materials": [
+        "linen",
+        "velvet",
+        "boucle"
+      ],
+      "finishes": [
+        "natural",
+        "sand",
+        "charcoal"
+      ],
+      "w": [
+        1800,
+        3600
+      ],
+      "d": [
+        750,
+        1250
+      ],
+      "h": [
+        680,
+        1100
+      ],
+      "rank": 1,
+      "title": {
+        "ar": "كنبة موديل وحدات قابلة للتنسيق",
+        "en": "Modular lounge sofa"
+      },
+      "summary": {
+        "ar": "تساعد الكنبة المقسمة لوحدات على إعادة ترتيب المقاعد حسب مساحة الغرفة ومسار الحركة. قبل طلب التفصيل سجّل …",
+        "en": "Modular seating works when individual sections suit the room's circulation, entrances and daily use. Before requesting a custom buil…"
+      },
+      "body": {
+        "ar": "تساعد الكنبة المقسمة لوحدات على إعادة ترتيب المقاعد حسب مساحة الغرفة ومسار الحركة. قبل طلب التفصيل سجّل طول الجدار، مكان الأبواب، وعرض المداخل، ثم اختر خامة التنجيد ودرجة اللون وطبيعة الاستخدام اليومي. الاختيار في الموقع يمثل طلب تصميم وليس منتجًا متاحًا في المخزن.",
+        "en": "Modular seating works when individual sections suit the room's circulation, entrances and daily use. Before requesting a custom build, record wall length, clearance around doors, delivery access and the intended upholstery. Each configuration is a design brief, not proof that Oakline stocks or manufactures that exact sofa."
+      },
+      "minMax": {
+        "width": [
+          1800,
+          3600
+        ],
+        "depth": [
+          750,
+          1250
+        ],
+        "height": [
+          680,
+          1100
+        ]
+      },
+      "questions": {
+        "ar": [
+          "المقاس الصافي ومسارات الحركة",
+          "ملاءمة الخامة والتشطيب للاستخدام",
+          "مراجعة القياس والتثبيت مع الجهة المنفذة"
+        ],
+        "en": [
+          "Measure the available space and circulation",
+          "Clarify material, finish and daily-use requirements",
+          "Have the maker validate dimensions and installation"
+        ]
+      }
+    },
+    {
+      "slug": "accent-armchair",
+      "room": "living",
+      "category": "seating",
+      "ar": "كرسي جانبي بتنجيد مميز",
+      "en": "Upholstered accent armchair",
+      "arText": "الكرسي الجانبي يحدد زاوية قراءة أو استقبال داخل الصالة، لذلك يجب اختيار عرضه وارتفاع الجلسة المناسبين للمكان. القماش الناعم والنسيج المتين يعطيان إحساسًا مختلفًا في الاستخدام والعناية. لا تعني الصورة التحريرية المعروضة وجود كرسي تم تنفيذه بالفعل ولا تضمن مواصفة خامة لدى ورشة معينة.",
+      "enText": "An accent chair can anchor a reading corner or add flexible seating. Evaluate arm clearance, seat depth, upholstery cleaning expectations and the dimensions of adjoining furniture before requesting a build. A design-site image illustrates styling only; it does not show a manufactured Oakline item or guarantee supply of a specific fabric.",
+      "materials": [
+        "linen",
+        "velvet",
+        "boucle"
+      ],
+      "finishes": [
+        "natural",
+        "walnut",
+        "charcoal"
+      ],
+      "w": [
+        620,
+        1100
+      ],
+      "d": [
+        650,
+        1050
+      ],
+      "h": [
+        700,
+        1150
+      ],
+      "rank": 2,
+      "title": {
+        "ar": "كرسي جانبي بتنجيد مميز",
+        "en": "Upholstered accent armchair"
+      },
+      "summary": {
+        "ar": "الكرسي الجانبي يحدد زاوية قراءة أو استقبال داخل الصالة، لذلك يجب اختيار عرضه وارتفاع الجلسة المناسبين لل…",
+        "en": "An accent chair can anchor a reading corner or add flexible seating. Evaluate arm clearance, seat depth, upholstery cleaning expecta…"
+      },
+      "body": {
+        "ar": "الكرسي الجانبي يحدد زاوية قراءة أو استقبال داخل الصالة، لذلك يجب اختيار عرضه وارتفاع الجلسة المناسبين للمكان. القماش الناعم والنسيج المتين يعطيان إحساسًا مختلفًا في الاستخدام والعناية. لا تعني الصورة التحريرية المعروضة وجود كرسي تم تنفيذه بالفعل ولا تضمن مواصفة خامة لدى ورشة معينة.",
+        "en": "An accent chair can anchor a reading corner or add flexible seating. Evaluate arm clearance, seat depth, upholstery cleaning expectations and the dimensions of adjoining furniture before requesting a build. A design-site image illustrates styling only; it does not show a manufactured Oakline item or guarantee supply of a specific fabric."
+      },
+      "minMax": {
+        "width": [
+          620,
+          1100
+        ],
+        "depth": [
+          650,
+          1050
+        ],
+        "height": [
+          700,
+          1150
+        ]
+      },
+      "questions": {
+        "ar": [
+          "المقاس الصافي ومسارات الحركة",
+          "ملاءمة الخامة والتشطيب للاستخدام",
+          "مراجعة القياس والتثبيت مع الجهة المنفذة"
+        ],
+        "en": [
+          "Measure the available space and circulation",
+          "Clarify material, finish and daily-use requirements",
+          "Have the maker validate dimensions and installation"
+        ]
+      }
+    },
+    {
+      "slug": "oak-coffee-table",
+      "room": "living",
+      "category": "tables",
+      "ar": "ترابيزة قهوة بخشب طبيعي",
+      "en": "Solid-look coffee table",
+      "arText": "الترابيزة الوسطية تتحدد بمسافة الحركة بينها وبين الكنبة وطول الجلسة وارتفاع المقعد. اختيار سطح خشبي أو قشرة هندسية أو درجة تشطيب مختلف يغير الشكل ومتطلبات الصيانة. يجب الاتفاق مع المصنع الحقيقي على الخامات والسمك والحواف وتثبيت الأرجل؛ الموقع هنا يوضح أبعادًا مبدئية لا مقاسات إنتاج معتمدة.",
+      "enText": "A coffee table should leave practical circulation around a sofa and align visually with seat height. Solid wood, veneer and engineered panels have different finish and care considerations. An actual maker must confirm the construction, edge profile and load requirements before fabricating anything; the online dimensions are an illustrative request brief.",
+      "materials": [
+        "oak",
+        "walnut",
+        "engineered"
+      ],
+      "finishes": [
+        "natural",
+        "walnut",
+        "smoked"
+      ],
+      "w": [
+        700,
+        1800
+      ],
+      "d": [
+        400,
+        950
+      ],
+      "h": [
+        300,
+        620
+      ],
+      "rank": 3,
+      "title": {
+        "ar": "ترابيزة قهوة بخشب طبيعي",
+        "en": "Solid-look coffee table"
+      },
+      "summary": {
+        "ar": "الترابيزة الوسطية تتحدد بمسافة الحركة بينها وبين الكنبة وطول الجلسة وارتفاع المقعد. اختيار سطح خشبي أو ق…",
+        "en": "A coffee table should leave practical circulation around a sofa and align visually with seat height. Solid wood, veneer and engineer…"
+      },
+      "body": {
+        "ar": "الترابيزة الوسطية تتحدد بمسافة الحركة بينها وبين الكنبة وطول الجلسة وارتفاع المقعد. اختيار سطح خشبي أو قشرة هندسية أو درجة تشطيب مختلف يغير الشكل ومتطلبات الصيانة. يجب الاتفاق مع المصنع الحقيقي على الخامات والسمك والحواف وتثبيت الأرجل؛ الموقع هنا يوضح أبعادًا مبدئية لا مقاسات إنتاج معتمدة.",
+        "en": "A coffee table should leave practical circulation around a sofa and align visually with seat height. Solid wood, veneer and engineered panels have different finish and care considerations. An actual maker must confirm the construction, edge profile and load requirements before fabricating anything; the online dimensions are an illustrative request brief."
+      },
+      "minMax": {
+        "width": [
+          700,
+          1800
+        ],
+        "depth": [
+          400,
+          950
+        ],
+        "height": [
+          300,
+          620
+        ]
+      },
+      "questions": {
+        "ar": [
+          "المقاس الصافي ومسارات الحركة",
+          "ملاءمة الخامة والتشطيب للاستخدام",
+          "مراجعة القياس والتثبيت مع الجهة المنفذة"
+        ],
+        "en": [
+          "Measure the available space and circulation",
+          "Clarify material, finish and daily-use requirements",
+          "Have the maker validate dimensions and installation"
+        ]
+      }
+    },
+    {
+      "slug": "storage-console",
+      "room": "living",
+      "category": "storage",
+      "ar": "كونسول تخزين للمداخل",
+      "en": "Entry storage console",
+      "arText": "يساعد الكونسول على تنظيم المدخل أو خلف الكنبة دون سد مسار الباب. يجب مراعاة طول الجدار ومواضع الكهرباء ومفاتيح الإنارة وطريقة فتح الأدراج أو الضلف. اختيار اللون والمادة هنا لتكوين استفسار واضح؛ متطلبات الثبات والتثبيت بالجدار تُراجع من صاحب التنفيذ قبل الطلب الحقيقي.",
+      "enText": "A slim entry console works only when it clears doors, sockets and walking routes. Specify width, depth, opening direction and the items likely to be stored. A maker should review stability, mounting requirements and construction details before accepting a production order. This configurator is a quote brief, not a stocked furniture SKU.",
+      "materials": [
+        "oak",
+        "walnut",
+        "engineered"
+      ],
+      "finishes": [
+        "natural",
+        "sand",
+        "smoked"
+      ],
+      "w": [
+        700,
+        2200
+      ],
+      "d": [
+        250,
+        550
+      ],
+      "h": [
+        650,
+        1100
+      ],
+      "rank": 4,
+      "title": {
+        "ar": "كونسول تخزين للمداخل",
+        "en": "Entry storage console"
+      },
+      "summary": {
+        "ar": "يساعد الكونسول على تنظيم المدخل أو خلف الكنبة دون سد مسار الباب. يجب مراعاة طول الجدار ومواضع الكهرباء و…",
+        "en": "A slim entry console works only when it clears doors, sockets and walking routes. Specify width, depth, opening direction and the it…"
+      },
+      "body": {
+        "ar": "يساعد الكونسول على تنظيم المدخل أو خلف الكنبة دون سد مسار الباب. يجب مراعاة طول الجدار ومواضع الكهرباء ومفاتيح الإنارة وطريقة فتح الأدراج أو الضلف. اختيار اللون والمادة هنا لتكوين استفسار واضح؛ متطلبات الثبات والتثبيت بالجدار تُراجع من صاحب التنفيذ قبل الطلب الحقيقي.",
+        "en": "A slim entry console works only when it clears doors, sockets and walking routes. Specify width, depth, opening direction and the items likely to be stored. A maker should review stability, mounting requirements and construction details before accepting a production order. This configurator is a quote brief, not a stocked furniture SKU."
+      },
+      "minMax": {
+        "width": [
+          700,
+          2200
+        ],
+        "depth": [
+          250,
+          550
+        ],
+        "height": [
+          650,
+          1100
+        ]
+      },
+      "questions": {
+        "ar": [
+          "المقاس الصافي ومسارات الحركة",
+          "ملاءمة الخامة والتشطيب للاستخدام",
+          "مراجعة القياس والتثبيت مع الجهة المنفذة"
+        ],
+        "en": [
+          "Measure the available space and circulation",
+          "Clarify material, finish and daily-use requirements",
+          "Have the maker validate dimensions and installation"
+        ]
+      }
+    },
+    {
+      "slug": "platform-bed",
+      "room": "bedroom",
+      "category": "beds",
+      "ar": "سرير منخفض بإطار خشبي",
+      "en": "Low-profile platform bed",
+      "arText": "يتطلب اختيار السرير تحديد مقاس المرتبة الفعلي ومساحة المرور بجانبي الغرفة وموقع ظهر السرير. من المهم الفصل بين مقاس المرتبة والأبعاد الخارجية للإطار، والتأكد من أسلوب دعم القاعدة وطريقة التجميع. المقاسات في المثال مجرد تفضيل يُراجع مع صانع الأثاث قبل الاتفاق على مواد أو تسليم.",
+      "enText": "A platform bed specification should distinguish the mattress size from the external frame footprint. Confirm side clearances, headboard placement, bed-base support and ease of assembly. The illustrative dimensions in this portfolio website are not a final joinery drawing or an available model until verified by a real manufacturer.",
+      "materials": [
+        "oak",
+        "walnut",
+        "engineered"
+      ],
+      "finishes": [
+        "natural",
+        "walnut",
+        "smoked"
+      ],
+      "w": [
+        1400,
+        2300
+      ],
+      "d": [
+        1900,
+        2600
+      ],
+      "h": [
+        300,
+        1050
+      ],
+      "rank": 5,
+      "title": {
+        "ar": "سرير منخفض بإطار خشبي",
+        "en": "Low-profile platform bed"
+      },
+      "summary": {
+        "ar": "يتطلب اختيار السرير تحديد مقاس المرتبة الفعلي ومساحة المرور بجانبي الغرفة وموقع ظهر السرير. من المهم الف…",
+        "en": "A platform bed specification should distinguish the mattress size from the external frame footprint. Confirm side clearances, headbo…"
+      },
+      "body": {
+        "ar": "يتطلب اختيار السرير تحديد مقاس المرتبة الفعلي ومساحة المرور بجانبي الغرفة وموقع ظهر السرير. من المهم الفصل بين مقاس المرتبة والأبعاد الخارجية للإطار، والتأكد من أسلوب دعم القاعدة وطريقة التجميع. المقاسات في المثال مجرد تفضيل يُراجع مع صانع الأثاث قبل الاتفاق على مواد أو تسليم.",
+        "en": "A platform bed specification should distinguish the mattress size from the external frame footprint. Confirm side clearances, headboard placement, bed-base support and ease of assembly. The illustrative dimensions in this portfolio website are not a final joinery drawing or an available model until verified by a real manufacturer."
+      },
+      "minMax": {
+        "width": [
+          1400,
+          2300
+        ],
+        "depth": [
+          1900,
+          2600
+        ],
+        "height": [
+          300,
+          1050
+        ]
+      },
+      "questions": {
+        "ar": [
+          "المقاس الصافي ومسارات الحركة",
+          "ملاءمة الخامة والتشطيب للاستخدام",
+          "مراجعة القياس والتثبيت مع الجهة المنفذة"
+        ],
+        "en": [
+          "Measure the available space and circulation",
+          "Clarify material, finish and daily-use requirements",
+          "Have the maker validate dimensions and installation"
+        ]
+      }
+    },
+    {
+      "slug": "wardrobe-front",
+      "room": "bedroom",
+      "category": "storage",
+      "ar": "دولاب ملابس بتقسيم داخلي",
+      "en": "Made-to-measure wardrobe",
+      "arText": "تخطيط دولاب الملابس يبدأ من قياس ارتفاع السقف والعرض الصافي وفتح الأبواب ومواقع الشبابيك والمفاتيح. تختلف الاحتياجات بين الأرفف والأدراج والتعليق الطويل والقصير، ولا تكفي صورة خارجية للتقييم. يُشترط قياس موقعي معتمد قبل تصنيع دولاب فعلي، لذلك يظل الطلب الإلكتروني توصيفًا مبدئيًا فقط.",
+      "enText": "Wardrobe planning begins with true wall dimensions, ceiling height, door clearance and how the user wants shelving, drawers and hanging sections arranged. A design photograph cannot establish the actual building dimensions. Installation requires an owner-approved site measurement and joinery drawing before any commitment.",
+      "materials": [
+        "oak",
+        "engineered",
+        "walnut"
+      ],
+      "finishes": [
+        "natural",
+        "sand",
+        "charcoal"
+      ],
+      "w": [
+        1200,
+        4500
+      ],
+      "d": [
+        400,
+        850
+      ],
+      "h": [
+        1800,
+        3200
+      ],
+      "rank": 6,
+      "title": {
+        "ar": "دولاب ملابس بتقسيم داخلي",
+        "en": "Made-to-measure wardrobe"
+      },
+      "summary": {
+        "ar": "تخطيط دولاب الملابس يبدأ من قياس ارتفاع السقف والعرض الصافي وفتح الأبواب ومواقع الشبابيك والمفاتيح. تختل…",
+        "en": "Wardrobe planning begins with true wall dimensions, ceiling height, door clearance and how the user wants shelving, drawers and hang…"
+      },
+      "body": {
+        "ar": "تخطيط دولاب الملابس يبدأ من قياس ارتفاع السقف والعرض الصافي وفتح الأبواب ومواقع الشبابيك والمفاتيح. تختلف الاحتياجات بين الأرفف والأدراج والتعليق الطويل والقصير، ولا تكفي صورة خارجية للتقييم. يُشترط قياس موقعي معتمد قبل تصنيع دولاب فعلي، لذلك يظل الطلب الإلكتروني توصيفًا مبدئيًا فقط.",
+        "en": "Wardrobe planning begins with true wall dimensions, ceiling height, door clearance and how the user wants shelving, drawers and hanging sections arranged. A design photograph cannot establish the actual building dimensions. Installation requires an owner-approved site measurement and joinery drawing before any commitment."
+      },
+      "minMax": {
+        "width": [
+          1200,
+          4500
+        ],
+        "depth": [
+          400,
+          850
+        ],
+        "height": [
+          1800,
+          3200
+        ]
+      },
+      "questions": {
+        "ar": [
+          "المقاس الصافي ومسارات الحركة",
+          "ملاءمة الخامة والتشطيب للاستخدام",
+          "مراجعة القياس والتثبيت مع الجهة المنفذة"
+        ],
+        "en": [
+          "Measure the available space and circulation",
+          "Clarify material, finish and daily-use requirements",
+          "Have the maker validate dimensions and installation"
+        ]
+      }
+    },
+    {
+      "slug": "dining-table",
+      "room": "dining",
+      "category": "tables",
+      "ar": "ترابيزة سفرة للأسرة والضيوف",
+      "en": "Family dining table",
+      "arText": "اختيار طاولة الطعام يتأثر بعدد الكراسي والعرض المطلوب ومسار الحركة حول المائدة عند سحب الكراسي. الأسطح الطبيعية والهندسية تحتاج طرق عناية مختلفة، وسمك القاعدة والدعائم يحدده الصانع الحقيقي. استخدم الأبعاد المبدئية لتوضيح طلبك؛ الصور لا تعد بضمان تنفيذ مطابق لأي طراز.",
+      "enText": "Dining-table sizing should account for everyday seating, chair-pull clearance and comfortable circulation. Solid and engineered surfaces differ in maintenance needs and build methods. The manufacturer must approve actual structural support, edge details and service terms before providing a firm quote or making the requested piece.",
+      "materials": [
+        "oak",
+        "walnut",
+        "engineered"
+      ],
+      "finishes": [
+        "natural",
+        "walnut",
+        "smoked"
+      ],
+      "w": [
+        1100,
+        3200
+      ],
+      "d": [
+        700,
+        1300
+      ],
+      "h": [
+        700,
+        850
+      ],
+      "rank": 7,
+      "title": {
+        "ar": "ترابيزة سفرة للأسرة والضيوف",
+        "en": "Family dining table"
+      },
+      "summary": {
+        "ar": "اختيار طاولة الطعام يتأثر بعدد الكراسي والعرض المطلوب ومسار الحركة حول المائدة عند سحب الكراسي. الأسطح ا…",
+        "en": "Dining-table sizing should account for everyday seating, chair-pull clearance and comfortable circulation. Solid and engineered surf…"
+      },
+      "body": {
+        "ar": "اختيار طاولة الطعام يتأثر بعدد الكراسي والعرض المطلوب ومسار الحركة حول المائدة عند سحب الكراسي. الأسطح الطبيعية والهندسية تحتاج طرق عناية مختلفة، وسمك القاعدة والدعائم يحدده الصانع الحقيقي. استخدم الأبعاد المبدئية لتوضيح طلبك؛ الصور لا تعد بضمان تنفيذ مطابق لأي طراز.",
+        "en": "Dining-table sizing should account for everyday seating, chair-pull clearance and comfortable circulation. Solid and engineered surfaces differ in maintenance needs and build methods. The manufacturer must approve actual structural support, edge details and service terms before providing a firm quote or making the requested piece."
+      },
+      "minMax": {
+        "width": [
+          1100,
+          3200
+        ],
+        "depth": [
+          700,
+          1300
+        ],
+        "height": [
+          700,
+          850
+        ]
+      },
+      "questions": {
+        "ar": [
+          "المقاس الصافي ومسارات الحركة",
+          "ملاءمة الخامة والتشطيب للاستخدام",
+          "مراجعة القياس والتثبيت مع الجهة المنفذة"
+        ],
+        "en": [
+          "Measure the available space and circulation",
+          "Clarify material, finish and daily-use requirements",
+          "Have the maker validate dimensions and installation"
+        ]
+      }
+    },
+    {
+      "slug": "bench-seating",
+      "room": "dining",
+      "category": "seating",
+      "ar": "بنش طعام بحافة مريحة",
+      "en": "Dining bench seating",
+      "arText": "قد يساعد بنش السفرة على توفير مكان مرن في مساحة طويلة بشرط وجود ارتفاع مناسب للطاولة وممر واضح للسحب والدخول. يجب تحديد ما إذا كانت الجلسة مبطنة، وطبيعة الخامة ومدى تحمل الاستخدام اليومي. هذه التفاصيل أسئلة للنجار والمورد الفعلي، وليست اعتمادًا لمواصفة أو عمر افتراضي.",
+      "enText": "A dining bench can provide flexible seating against a wall or alongside a table, but seat height, circulation and comfort require deliberate planning. Specify if upholstery is preferred and the expected daily use. Actual construction, testing and material supply are the responsibility of the real commissioned furniture maker.",
+      "materials": [
+        "oak",
+        "walnut",
+        "linen"
+      ],
+      "finishes": [
+        "natural",
+        "sand",
+        "charcoal"
+      ],
+      "w": [
+        900,
+        2600
+      ],
+      "d": [
+        320,
+        700
+      ],
+      "h": [
+        380,
+        650
+      ],
+      "rank": 8,
+      "title": {
+        "ar": "بنش طعام بحافة مريحة",
+        "en": "Dining bench seating"
+      },
+      "summary": {
+        "ar": "قد يساعد بنش السفرة على توفير مكان مرن في مساحة طويلة بشرط وجود ارتفاع مناسب للطاولة وممر واضح للسحب وال…",
+        "en": "A dining bench can provide flexible seating against a wall or alongside a table, but seat height, circulation and comfort require de…"
+      },
+      "body": {
+        "ar": "قد يساعد بنش السفرة على توفير مكان مرن في مساحة طويلة بشرط وجود ارتفاع مناسب للطاولة وممر واضح للسحب والدخول. يجب تحديد ما إذا كانت الجلسة مبطنة، وطبيعة الخامة ومدى تحمل الاستخدام اليومي. هذه التفاصيل أسئلة للنجار والمورد الفعلي، وليست اعتمادًا لمواصفة أو عمر افتراضي.",
+        "en": "A dining bench can provide flexible seating against a wall or alongside a table, but seat height, circulation and comfort require deliberate planning. Specify if upholstery is preferred and the expected daily use. Actual construction, testing and material supply are the responsibility of the real commissioned furniture maker."
+      },
+      "minMax": {
+        "width": [
+          900,
+          2600
+        ],
+        "depth": [
+          320,
+          700
+        ],
+        "height": [
+          380,
+          650
+        ]
+      },
+      "questions": {
+        "ar": [
+          "المقاس الصافي ومسارات الحركة",
+          "ملاءمة الخامة والتشطيب للاستخدام",
+          "مراجعة القياس والتثبيت مع الجهة المنفذة"
+        ],
+        "en": [
+          "Measure the available space and circulation",
+          "Clarify material, finish and daily-use requirements",
+          "Have the maker validate dimensions and installation"
+        ]
+      }
+    },
+    {
+      "slug": "writing-desk",
+      "room": "workspace",
+      "category": "desks",
+      "ar": "مكتب عمل منزلي بخطوط نظيفة",
+      "en": "Home writing desk",
+      "arText": "المكتب المنزلي يحتاج عمقًا يسمح بوضع الشاشة ولوحة المفاتيح وتوزيع الكهرباء دون تزاحم، مع مساحة لحركة الكرسي والساقين. بعض المستخدمين يحتاجون أدراجًا أو فتحات للأسلاك، ولا توجد أبعاد واحدة تناسب كل استخدام. قبل تصنيع قطعة حقيقية يجب اعتماد مقاس الغرفة وطريقة التركيب ومتانة السطح.",
+      "enText": "A writing desk should support intended monitors, typing and cable routing while leaving room for leg movement and a chair. Drawer requirements, edge finishes and sockets affect the design. Online measurements are a first brief; the actual joiner must approve the build specifications and the buyer's workspace conditions.",
+      "materials": [
+        "oak",
+        "engineered",
+        "walnut"
+      ],
+      "finishes": [
+        "natural",
+        "smoked",
+        "charcoal"
+      ],
+      "w": [
+        900,
+        2400
+      ],
+      "d": [
+        500,
+        1000
+      ],
+      "h": [
+        690,
+        850
+      ],
+      "rank": 9,
+      "title": {
+        "ar": "مكتب عمل منزلي بخطوط نظيفة",
+        "en": "Home writing desk"
+      },
+      "summary": {
+        "ar": "المكتب المنزلي يحتاج عمقًا يسمح بوضع الشاشة ولوحة المفاتيح وتوزيع الكهرباء دون تزاحم، مع مساحة لحركة الك…",
+        "en": "A writing desk should support intended monitors, typing and cable routing while leaving room for leg movement and a chair. Drawer re…"
+      },
+      "body": {
+        "ar": "المكتب المنزلي يحتاج عمقًا يسمح بوضع الشاشة ولوحة المفاتيح وتوزيع الكهرباء دون تزاحم، مع مساحة لحركة الكرسي والساقين. بعض المستخدمين يحتاجون أدراجًا أو فتحات للأسلاك، ولا توجد أبعاد واحدة تناسب كل استخدام. قبل تصنيع قطعة حقيقية يجب اعتماد مقاس الغرفة وطريقة التركيب ومتانة السطح.",
+        "en": "A writing desk should support intended monitors, typing and cable routing while leaving room for leg movement and a chair. Drawer requirements, edge finishes and sockets affect the design. Online measurements are a first brief; the actual joiner must approve the build specifications and the buyer's workspace conditions."
+      },
+      "minMax": {
+        "width": [
+          900,
+          2400
+        ],
+        "depth": [
+          500,
+          1000
+        ],
+        "height": [
+          690,
+          850
+        ]
+      },
+      "questions": {
+        "ar": [
+          "المقاس الصافي ومسارات الحركة",
+          "ملاءمة الخامة والتشطيب للاستخدام",
+          "مراجعة القياس والتثبيت مع الجهة المنفذة"
+        ],
+        "en": [
+          "Measure the available space and circulation",
+          "Clarify material, finish and daily-use requirements",
+          "Have the maker validate dimensions and installation"
+        ]
+      }
+    },
+    {
+      "slug": "open-bookshelf",
+      "room": "workspace",
+      "category": "storage",
+      "ar": "مكتبة مفتوحة للكتب والديكور",
+      "en": "Open shelving library",
+      "arText": "تخطيط المكتبة يعتمد على ارتفاع الكتب والأوزان المتوقعة وسماكة الأرفف وموضع التثبيت بالحائط. المكتبات العالية أو المملوءة تحتاج تقييمًا حقيقيًا للثبات والتثبيت لمنع الانقلاب. النموذج يسمح بكتابة النطاق والأبعاد المبدئية، لكنه لا يمثل شهادة أمان أو تصميمًا هندسيًا مكتملًا.",
+      "enText": "Open shelving is useful only when shelf spans, expected loads and wall fixings are chosen safely. Tall units may require appropriate anti-tip anchoring and professional evaluation. The portfolio form records general dimensions and style preferences but does not certify structural stability or promise a manufactured installation.",
+      "materials": [
+        "oak",
+        "walnut",
+        "engineered"
+      ],
+      "finishes": [
+        "natural",
+        "sand",
+        "smoked"
+      ],
+      "w": [
+        600,
+        3000
+      ],
+      "d": [
+        250,
+        650
+      ],
+      "h": [
+        1000,
+        3000
+      ],
+      "rank": 10,
+      "title": {
+        "ar": "مكتبة مفتوحة للكتب والديكور",
+        "en": "Open shelving library"
+      },
+      "summary": {
+        "ar": "تخطيط المكتبة يعتمد على ارتفاع الكتب والأوزان المتوقعة وسماكة الأرفف وموضع التثبيت بالحائط. المكتبات الع…",
+        "en": "Open shelving is useful only when shelf spans, expected loads and wall fixings are chosen safely. Tall units may require appropriate…"
+      },
+      "body": {
+        "ar": "تخطيط المكتبة يعتمد على ارتفاع الكتب والأوزان المتوقعة وسماكة الأرفف وموضع التثبيت بالحائط. المكتبات العالية أو المملوءة تحتاج تقييمًا حقيقيًا للثبات والتثبيت لمنع الانقلاب. النموذج يسمح بكتابة النطاق والأبعاد المبدئية، لكنه لا يمثل شهادة أمان أو تصميمًا هندسيًا مكتملًا.",
+        "en": "Open shelving is useful only when shelf spans, expected loads and wall fixings are chosen safely. Tall units may require appropriate anti-tip anchoring and professional evaluation. The portfolio form records general dimensions and style preferences but does not certify structural stability or promise a manufactured installation."
+      },
+      "minMax": {
+        "width": [
+          600,
+          3000
+        ],
+        "depth": [
+          250,
+          650
+        ],
+        "height": [
+          1000,
+          3000
+        ]
+      },
+      "questions": {
+        "ar": [
+          "المقاس الصافي ومسارات الحركة",
+          "ملاءمة الخامة والتشطيب للاستخدام",
+          "مراجعة القياس والتثبيت مع الجهة المنفذة"
+        ],
+        "en": [
+          "Measure the available space and circulation",
+          "Clarify material, finish and daily-use requirements",
+          "Have the maker validate dimensions and installation"
+        ]
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slug": "measuring-a-room",
+      "title": {
+        "ar": "إزاي تقيس غرفتك قبل اختيار الأثاث؟",
+        "en": "Measure a room before requesting custom furniture"
+      },
+      "summary": {
+        "ar": "لا تقيس الجدار وحده؛ قس العرض الصافي وطول المساحة ومكان الأبواب والشبابيك ومخارج الكهرباء ومواضع مرور الأثاث عبر المدخل …",
+        "en": "Room planning requires more than measuring a single wall. Record usable width, door swings, window locations, electrical outlets, fl…"
+      },
+      "body": {
+        "ar": "لا تقيس الجدار وحده؛ قس العرض الصافي وطول المساحة ومكان الأبواب والشبابيك ومخارج الكهرباء ومواضع مرور الأثاث عبر المدخل والسلالم والمصعد. وضّح الاتجاه الذي ستفتح فيه الضلف والأدراج، واترك ممرًا مناسبًا للاستخدام اليومي. تسجيل هذه التفاصيل يسهّل النقاش مع المصمم لكنه لا يغني عن زيارة قياس حقيقية للقطع المخصصة.",
+        "en": "Room planning requires more than measuring a single wall. Record usable width, door swings, window locations, electrical outlets, floor-to-ceiling constraints and whether the proposed item can pass through staircases and lifts. Consider drawer and cabinet opening space. These notes support an early furniture brief but cannot replace a professional on-site measurement for custom installations."
+      }
+    },
+    {
+      "slug": "fabric-and-wood",
+      "title": {
+        "ar": "القماش والخشب: أسئلة مهمة قبل التفصيل",
+        "en": "Wood, upholstery and finish: questions before ordering"
+      },
+      "summary": {
+        "ar": "التنجيد يختلف في الملمس وطريقة التنظيف والتحمل اليومي، والأخشاب الطبيعية والقشرة والألواح الصناعية لكل منها استخدام وتكل…",
+        "en": "Upholstery fabrics differ in feel, cleaning requirements and expected wear. Solid timber, veneer and engineered boards each have dif…"
+      },
+      "body": {
+        "ar": "التنجيد يختلف في الملمس وطريقة التنظيف والتحمل اليومي، والأخشاب الطبيعية والقشرة والألواح الصناعية لكل منها استخدام وتكلفة وعناية مختلفة. اسأل عن تركيبة الخامة المتاحة بالفعل ودرجة اللون وعينات القماش والضمان المعتمد من المشغّل، ولا تعتبر اسم خامة عامًا وصفًا كافيًا للتصنيع. صورة المنتج المعروضة ليست عينة مادية موثقة ولا تثبت توافر الخامة.",
+        "en": "Upholstery fabrics differ in feel, cleaning requirements and expected wear. Solid timber, veneer and engineered boards each have different practical implications. Ask a real maker for samples, accurate substrate specifications, finishing methods and written care terms. A web visual is not a physically approved material sample, nor proof that a certain fabric or wood is currently in stock."
+      }
+    },
+    {
+      "slug": "delivery-access",
+      "title": {
+        "ar": "استلام الأثاث يبدأ من باب المبنى",
+        "en": "Delivery access is part of the furniture brief"
+      },
+      "summary": {
+        "ar": "قبل تصنيع كنبة كبيرة أو دولاب واسع، راجع عرض باب الشقة والمصعد والسلالم وممرات الدور، وحدد إذا كانت القطعة ستدخل مجمعة أ…",
+        "en": "A sofa or wardrobe design must be deliverable through real doors, stairwells, lifts and corridors. Establish whether the piece arriv…"
+      },
+      "body": {
+        "ar": "قبل تصنيع كنبة كبيرة أو دولاب واسع، راجع عرض باب الشقة والمصعد والسلالم وممرات الدور، وحدد إذا كانت القطعة ستدخل مجمعة أو على أجزاء. قد يؤثر ذلك على تقسيم وحدات التصنيع والتركيب في الموقع. التوصيل والضمان والتوقيت يحتاجون اتفاقًا مكتوبًا من الصانع الفعلي، وليس افتراضات من تجربة تصميمية.",
+        "en": "A sofa or wardrobe design must be deliverable through real doors, stairwells, lifts and corridors. Establish whether the piece arrives assembled or in sections; that can materially affect a maker's design choices. Packaging, assembly, delivery fees, site access and warranties must be confirmed in writing by the actual supplier rather than inferred from a portfolio mock-up."
+      }
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "ar": "هل المنتجات جاهزة في المخزن؟",
+        "en": "Are these products in stock?"
+      },
+      "a": {
+        "ar": "لا. دي مواصفات توضيحية لطلب تسعير، مش منتجات معروضة للبيع.",
+        "en": "No. These are editorial concepts used for an example quote flow."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل السعر بيظهر بمجرد إدخال المقاس؟",
+        "en": "Will the form calculate a final price?"
+      },
+      "a": {
+        "ar": "لا؛ المقاسات والخامة تحتاج اعتماد مصنع حقيقي قبل السعر.",
+        "en": "No; a real maker must review specifications before issuing a binding quote."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل صور الأثاث من عملاء Oakline؟",
+        "en": "Are the photos Oakline customer projects?"
+      },
+      "a": {
+        "ar": "لا؛ الصور مرخصة من مصادر تحريرية مستقلة.",
+        "en": "No, all example media is independently sourced and editorial only."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل ممكن أضيف أكثر من قطعة للعرض؟",
+        "en": "Can I prepare a multi-item RFQ?"
+      },
+      "a": {
+        "ar": "نعم، النموذج يتيح عدة قطع بإعدادات منفصلة لعرض تسعير غير ملزم.",
+        "en": "Yes, multiple concept pieces with separate dimensions can be saved into a nonbinding RFQ."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل يوجد توصيل أو ضمان؟",
+        "en": "Is delivery or a warranty included?"
+      },
+      "a": {
+        "ar": "التسليم والتصنيع والضمان غير متاحين في التجربة ويحددهم صاحب نشاط حقيقي.",
+        "en": "No live fulfillment or warranty; those terms belong to a real commissioned operator."
+      }
+    }
+  ],
+  "rooms": [
+    "living",
+    "bedroom",
+    "dining",
+    "workspace"
+  ],
+  "materials": [
+    "oak",
+    "walnut",
+    "engineered",
+    "linen",
+    "velvet",
+    "boucle"
+  ],
+  "finishes": [
+    "natural",
+    "sand",
+    "smoked",
+    "walnut",
+    "charcoal"
+  ],
+  "deliveryZones": [
+    "Cairo",
+    "Giza",
+    "Alexandria",
+    "Riyadh",
+    "Jeddah",
+    "Other"
+  ]
+}

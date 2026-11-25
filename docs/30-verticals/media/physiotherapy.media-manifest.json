@@ -1,0 +1,43 @@
+{
+  "vertical": "physiotherapy",
+  "stage": "research_only",
+  "checked_on": "2026-11-24",
+  "assets": [
+    {
+      "id": "ceibos-rehabilitation",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Rehabilitaci%C3%B3n_fisioterapia.jpg",
+      "author": "Ceibos",
+      "original_date": "2025-03-12",
+      "license": "CC BY 4.0 International",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_dimensions": "3000 x 4000",
+      "preview_landing": "https://commons.wikimedia.org/wiki/File:Rehabilitaci%C3%B3n_fisioterapia.jpg",
+      "verified_source_and_license": true,
+      "verified_thumbnail": false,
+      "planned_use": "educational vertical editorial photo only",
+      "credit_required": true,
+      "credit_text": "Ceibos / Wikimedia Commons / CC BY 4.0; changes/crop disclosed when made",
+      "actual_clinic_patient": false
+    },
+    {
+      "id": "indoor-exercise",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Indoor_physical_exercise.jpg",
+      "author": "Keyidin28",
+      "original_date": "2024-10-10",
+      "license": "CC0 1.0 Universal",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "original_dimensions": "6000 x 4000",
+      "verified_source_and_license": true,
+      "verified_thumbnail": false,
+      "planned_use": "exercise and mobility illustrative asset, not a physical therapy patient outcome",
+      "actual_clinic_patient": false
+    }
+  ],
+  "requirements": [
+    "View image pixel content and choose authentic applicable subject before adding to a medical service page",
+    "Do not attribute scene to any invented Motion Lab clinicians or patients",
+    "Test actual image URL and responsive crop using Chromium",
+    "Display CC BY 4.0 credit and link for the Ceibos file; comply with attribution if cropped",
+    "Do not present exercise stock as therapeutic outcome evidence"
+  ]
+}

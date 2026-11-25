@@ -8,11 +8,17 @@ export const metadata = {
   description: 'Original writings on typography, brand strategy, design systems, and digital architecture.'
 };
 
-export default function PortfolioJournalPage({
-  params: { locale }
-}: {
-  params: { locale: Locale }
-}) {
+export default async function PortfolioJournalPage(
+  props: {
+    params: Promise<{ locale: Locale }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const isAr = locale === 'ar';
   const articles = getEditorialPosts('portfolio', locale);
 

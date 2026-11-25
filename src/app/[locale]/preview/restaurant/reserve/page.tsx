@@ -3,11 +3,12 @@ import { Locale } from '@/lib/i18n/config';
 import { getRestaurantBranches, getRestaurantTimeSlots } from '@/lib/db/repositories';
 import { TableBookingWizard } from './TableBookingWizard';
 
-export default function RestaurantReservePage({
-  params,
-}: {
-  params: { locale: Locale };
-}) {
+export default async function RestaurantReservePage(
+  props: {
+    params: Promise<{ locale: Locale }>;
+  }
+) {
+  const params = await props.params;
   const { locale } = params;
   const isAr = locale === 'ar';
   const branches = getRestaurantBranches(locale);

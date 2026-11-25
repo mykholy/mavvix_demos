@@ -66,5 +66,149 @@ console.table(results);
 console.log('PASS: 60 distinct real topic-based AR/EN Academy lesson plans with exercises');
 assert.equal(results.length, 8, 'All eight sectors must exist');
 writeFileSync('handoff-audit-results.json', JSON.stringify({scanned_at:new Date().toISOString(),results},null,2)+'\n');
+
+const automotiveDir=join(root,'auto-service');
+const automotiveHome=readFileSync(join(automotiveDir,'page.tsx'),'utf8');
+const automotiveLayout=readFileSync(join(automotiveDir,'layout.tsx'),'utf8');
+assert.ok((automotiveHome.match(/<section\b/g)||[]).length>=9,'Auto-service must have 9 substantial homepage sections');
+assert.ok((automotiveHome.match(/data-sector-specific=/g)||[]).length>=4,'Auto-service needs 4 unique industry sections');
+assert.match(automotiveLayout,/<ContactDock\b/,'Every auto-service page needs commercial contact CTA');
+const automotivePaths=['services','services/[slug]','booking','resources','resources/[slug]','[section]'];
+for(const route of automotivePaths){
+ assert.ok(existsSync(join(automotiveDir,route,'page.tsx')),'Missing Auto-service route: '+route);
+}
+const roster=readFileSync(join(process.cwd(),'src/lib/verticals/registry.ts'),'utf8');
+assert.equal((roster.match(/"slug":/g)||[]).length,30,'Registry must contain 30 declared sectors');
+assert.equal((roster.match(/"status": "live"/g)||[]).length,8,'Only the original eight sectors are marked live until Gate 1 approval');
+
+const homeCareDir=join(root,'home-maintenance');
+const homeCareHome=readFileSync(join(homeCareDir,'page.tsx'),'utf8');
+const homeCareLayout=readFileSync(join(homeCareDir,'layout.tsx'),'utf8');
+assert.ok((homeCareHome.match(/<section\b/g)||[]).length>=9,'Home maintenance needs at least 9 substantive sections');
+assert.ok((homeCareHome.match(/data-sector-specific=/g)||[]).length>=4,'Home maintenance requires 4+ domain-only sections');
+assert.match(homeCareLayout,/<ContactDock\b/);
+for(const route of ['services','services/[slug]','book','resources','resources/[slug]','[section]']) {
+ assert.ok(existsSync(join(homeCareDir,route,'page.tsx')),'Missing home maintenance route '+route);
+}
+
+const salonDir=join(root,'salon-spa');
+const salonHome=readFileSync(join(salonDir,'page.tsx'),'utf8');
+const salonLayout=readFileSync(join(salonDir,'layout.tsx'),'utf8');
+const salonContent=JSON.parse(readFileSync(join(process.cwd(),'data/verticals/salon-spa.json'),'utf8'));
+assert.ok((salonHome.match(/<section\b/g)||[]).length>=9,'Salon SPA homepage must have 9 substantial sections');
+assert.ok((salonHome.match(/data-sector-specific=/g)||[]).length>=4,'Salon needs 4+ unique industry sections');
+assert.match(salonLayout,/<ContactDock\b/,'Salon must expose Mavvix contact dock');
+assert.match(salonLayout,/velora-shell/,"Salon independent typography and art direction absent");
+assert.ok(salonContent.services.length>=8 && salonContent.articles.length>=3 && salonContent.faq.length>=5);
+for(const route of ['services','services/[slug]','booking','journal','journal/[slug]','[section]']){
+ assert.ok(existsSync(join(salonDir,route,'page.tsx')),'Missing Velora inner route: '+route);
+}
+console.log('PASS: authored Velora SPA, bespoke editorial sections and deep bilingual beauty pages');
+
+console.log('PASS: bespoke Fixora 12-section homepage, deep pages, 8 services, new contact dock');
+
+console.log('PASS: all 8 legacy sectors preserved + deep automotive Wave 1 routes and 30-sector planned roster');
+
+
+const fitnessRoot=join(root,'fitness');
+const fitnessHomepage=readFileSync(join(fitnessRoot,'page.tsx'),'utf8');
+const fitnessFrame=readFileSync(join(fitnessRoot,'layout.tsx'),'utf8');
+assert.ok((fitnessHomepage.match(/<section\b/g)||[]).length>=9,'Gym needs 9 real homepage sections');
+assert.ok((fitnessHomepage.match(/data-sector-specific=/g)||[]).length>=4,'Gym needs 4 domain-only sections');
+assert.match(fitnessFrame,/<ContactDock\b/);
+assert.match(fitnessFrame,/pulse-shell/);
+for(const route of ['classes','classes/[slug]','trial','journal','journal/[slug]','[section]'])
+ assert.ok(existsSync(join(fitnessRoot,route,'page.tsx')),'Missing Pulse route '+route);
+console.log('PASS: authored Pulse homepage with unique type system, program routes and real enquiry');
+
+
+const arenaRoot=join(root,'sports-venues');
+const arenaHome=readFileSync(join(arenaRoot,'page.tsx'),'utf8');
+const arenaLayout=readFileSync(join(arenaRoot,'layout.tsx'),'utf8');
+const arenaContent=JSON.parse(readFileSync(join(process.cwd(),'data/verticals/sports-venues.json'),'utf8'));
+assert.ok((arenaHome.match(/<section\b/g)||[]).length>=9,'Sports-venues requires nine substantial home sections');
+assert.ok((arenaHome.match(/data-sector-specific=/g)||[]).length>=4,'Sports-venues requires four industry-specific sections');
+assert.match(arenaLayout,/<ContactDock\b/,'Arena requires Mavvix commercial contact');
+assert.match(arenaLayout,/arena-shell/,'Arena bespoke identity wrapper missing');
+assert.equal(arenaContent.services.length,8);
+for(const route of ['courts','courts/[slug]','book','journal','journal/[slug]','[section]'])
+ assert.ok(existsSync(join(arenaRoot,route,'page.tsx')),'Arena inner family missing: '+route);
+console.log('PASS: bespoke floodlit Arena site with eight sport-format details and pending-only court request');
+
 console.log('PASS: complete source-level route/section/media/localization structure for all 8 sectors');
 console.log('NOTE: structural checks and HTTP smoke tests do NOT validate client business identity, licensed media provenance, UX screenshots or operational fulfilment.');
+
+// Enforce completed source structure for both latest Wave 1 sectors.
+for(const [slug,shell,listing,intake] of [['furniture','oakline-shell','collections','quote'],['interiors-kitchens','forma-shell','services','consultation']]) {
+ const dir=join(root,slug),home=readFileSync(join(dir,'page.tsx'),'utf8'),layout=readFileSync(join(dir,'layout.tsx'),'utf8');
+ const data=JSON.parse(readFileSync(join(process.cwd(),'data/verticals',slug+'.json'),'utf8'));
+ assert.ok((home.match(/<section\b/g)||[]).length>=9,slug+' homepage needs nine substantive sections');
+ assert.ok((home.match(/data-sector-specific=/g)||[]).length>=4,slug+' needs four bespoke sections');
+ assert.ok(layout.includes(shell)&&layout.includes('<ContactDock'),slug+' identity/contact wrapper');
+ assert.ok(data.services.length>=8&&data.articles.length>=3&&data.faq.length>=5,slug+' domain content incomplete');
+ for(const route of [listing,listing+'/[slug]',intake,'journal','journal/[slug]','[section]'])assert.ok(existsSync(join(dir,route,'page.tsx')),slug+' missing '+route);
+ console.log('PASS: '+slug+' structural homepage, content and route-family gate');
+}
+
+const bloomRoot=join(root,'nursery'),bloomHome=readFileSync(join(bloomRoot,'page.tsx'),'utf8'),bloomLayout=readFileSync(join(bloomRoot,'layout.tsx'),'utf8');
+const bloomData=JSON.parse(readFileSync(join(process.cwd(),'data/verticals/nursery.json'),'utf8'));
+assert.ok((bloomHome.match(/<section\b/g)||[]).length>=9 && (bloomHome.match(/data-sector-specific=/g)||[]).length>=4);
+assert.ok(bloomLayout.includes('bloom-shell')&&bloomLayout.includes('<ContactDock'));
+assert.equal(bloomData.services.length,8);assert.equal(bloomData.articles.length,3);assert.equal(bloomData.faq.length,5);
+for(const route of ['admissions','[section]','programs/[slug]','journal/[slug]'])assert.ok(existsSync(join(bloomRoot,route,'page.tsx')), 'Missing BloomSteps route '+route);
+console.log('PASS: BloomSteps bespoke early-years identity, age-band dossiers and private guardian request source structure');
+
+
+const glossRoot=join(root,'car-detailing'),glossHome=readFileSync(join(glossRoot,'page.tsx'),'utf8'),glossLayout=readFileSync(join(glossRoot,'layout.tsx'),'utf8');
+const glossData=JSON.parse(readFileSync(join(process.cwd(),'data/verticals/car-detailing.json'),'utf8'));
+assert.ok((glossHome.match(/<section\b/g)||[]).length>=9,'GlossBay needs nine substantial homepage sections');
+assert.ok((glossHome.match(/data-sector-specific=/g)||[]).length>=4,'GlossBay needs four distinct detailing-only sections');
+assert.ok(glossLayout.includes('gloss-shell')&&glossLayout.includes('<ContactDock'),'GlossBay unique identity/contact missing');
+assert.equal(glossData.services.length,10);
+assert.equal(glossData.articles.length,3);
+assert.equal(glossData.faq.length,5);
+for(const route of ['packages','packages/[slug]','quote','journal','journal/[slug]','[section]'])assert.ok(existsSync(join(glossRoot,route,'page.tsx')),'GlossBay missing route '+route);
+console.log('PASS: GlossBay premium detailing sections, ten dossiers, seven route families and branded CTA');
+
+
+const motionDir=join(root,'physiotherapy'),motionHome=readFileSync(join(motionDir,'page.tsx'),'utf8');
+const motionLayout=readFileSync(join(motionDir,'layout.tsx'),'utf8');
+const motionData=JSON.parse(readFileSync(join(process.cwd(),'data/verticals/physiotherapy.json'),'utf8'));
+assert.ok((motionHome.match(/<section\b/g)||[]).length>=9,'Motion Lab needs nine substantial homepage sections');
+assert.ok((motionHome.match(/data-sector-specific=/g)||[]).length>=4,'Motion Lab needs four domain-only sections');
+assert.ok(motionLayout.includes('motion-shell') && motionLayout.includes('<ContactDock'),'Motion Lab brand or conversion missing');
+assert.equal(motionData.services.length,10); assert.equal(motionData.articles.length,3); assert.equal(motionData.faq.length,5);
+for(const route of ['services','services/[slug]','appointment','journal','journal/[slug]','[section]']){
+ assert.ok(existsSync(join(motionDir,route,'page.tsx')),'Missing Motion Lab route family: '+route);
+}
+console.log('PASS: unique Motion Lab 12-section home, 10 rehab dossiers, 10 inner topics and privacy-first form');
+
+
+const pawDir=join(root,'veterinary'),pawHome=readFileSync(join(pawDir,'page.tsx'),'utf8');
+const pawLayout=readFileSync(join(pawDir,'layout.tsx'),'utf8');
+const pawData=JSON.parse(readFileSync(join(process.cwd(),'data/verticals/veterinary.json'),'utf8'));
+assert.ok((pawHome.match(/<section\b/g)||[]).length>=9,'PawWell must provide 9+ unique homepage sections');
+assert.ok((pawHome.match(/data-sector-specific=/g)||[]).length>=4,'PawWell requires four veterinary-only homepage sections');
+assert.ok(pawLayout.includes('pawwell-shell')&&pawLayout.includes('<ContactDock'),'PawWell identity and Mavvix lead dock missing');
+assert.equal(pawData.services.length,8);
+assert.equal(pawData.articles.length,3);
+assert.equal(pawData.faq.length,5);
+for(const route of ['services','services/[slug]','pets','request','guides','guides/[slug]','[section]']){
+ assert.ok(existsSync(join(pawDir,route,'page.tsx')),'PawWell route family missing: '+route);
+}
+console.log('PASS: PawWell 12-sector home and seven families, 8 veterinary dossiers, 3 resources and species-aware enquiry');
+
+
+const legalDir=join(root,'law-firm');
+const legalHome=readFileSync(join(legalDir,'page.tsx'),'utf8');
+const legalLayout=readFileSync(join(legalDir,'layout.tsx'),'utf8');
+const legalData=JSON.parse(readFileSync(join(process.cwd(),'data/verticals/law-firm.json'),'utf8'));
+assert.ok((legalHome.match(/<section\b/g)||[]).length>=9,'Lexora requires at least nine substantial sections');
+assert.ok((legalHome.match(/data-sector-specific=/g)||[]).length>=4,'Lexora requires four legal-only features');
+assert.ok(legalLayout.includes('lexora-shell')&&legalLayout.includes('<ContactDock'),'Lexora requires its own branding + lead CTA');
+assert.equal(legalData.services.length,8);
+assert.equal(legalData.articles.length,3);
+assert.equal(legalData.faq.length,5);
+for(const path of ['practices','practices/[slug]','consultation','insights','insights/[slug]','[section]'])
+ assert.ok(existsSync(join(legalDir,path,'page.tsx')),'Lexora route missing: '+path);
+console.log('PASS: Lexora law firm distinct editorial homepage, 8 legal dossiers, 3 guides, strict no-confidential-facts intake');

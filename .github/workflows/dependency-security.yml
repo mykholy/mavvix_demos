@@ -1,0 +1,46 @@
+name: Mavvix Dependency Security
+on:
+  pull_request:
+    branches:
+      - main
+      - 'feat/mavvix-30-verticals'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: security-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  dependency-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Audit locked dependencies and production exposure
+        shell: bash
+        run: |
+          mkdir -p artifacts/security
+          set +e
+          npm audit --json --audit-level=high > artifacts/security/full-audit.json
+          full_status=$?
+          npm audit --omit=dev --json --audit-level=high > artifacts/security/production-audit.json
+          prod_status=$?
+          set -e
+          node -e 'for (const f of ["full-audit","production-audit"]) { const r = require("./artifacts/security/"+f+".json"); if(r.error || !r.metadata?.vulnerabilities) throw new Error("Audit unavailable: "+f); console.log(f,JSON.stringify(r.metadata.vulnerabilities)); }'
+          if [ "$full_status" -ne 0 ] || [ "$prod_status" -ne 0 ]; then
+            echo "::error::Dependency audit failed; review both reports before merge."
+            exit 1
+          fi
+      - name: Publish audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mavvix-dependency-audit-${{ github.run_id }}
+          path: artifacts/security
+          if-no-files-found: error
+          retention-days: 7

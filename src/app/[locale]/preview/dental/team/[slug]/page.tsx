@@ -8,11 +8,18 @@ import {
   ArrowRight, ArrowLeft, CheckCircle2, ShieldCheck
 } from 'lucide-react';
 
-export async function generateMetadata({
-  params: { locale, slug }
-}: {
-  params: { locale: Locale; slug: string }
-}) {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ locale: Locale; slug: string }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale,
+    slug
+  } = params;
+
   const doc = getDentalPractitionerBySlug(slug, locale);
   if (!doc) return { title: 'Practitioner Not Found' };
   return {
@@ -21,11 +28,18 @@ export async function generateMetadata({
   };
 }
 
-export default function DentalPractitionerDetailPage({
-  params: { locale, slug }
-}: {
-  params: { locale: Locale; slug: string }
-}) {
+export default async function DentalPractitionerDetailPage(
+  props: {
+    params: Promise<{ locale: Locale; slug: string }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale,
+    slug
+  } = params;
+
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;
 

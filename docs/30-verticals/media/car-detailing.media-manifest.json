@@ -1,0 +1,54 @@
+{
+  "vertical": "car-detailing",
+  "verified_at": "2026-11-24",
+  "assets": [
+    {
+      "id": "exterior-detailing",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Exterior_Car_detailing.png",
+      "author": "Jeffkbookoo",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "dimensions": {
+        "width": 3264,
+        "height": 1840
+      },
+      "preview_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Exterior_Car_detailing.png/1280px-Exterior_Car_detailing.png",
+      "url_verified_by_web_tool": true,
+      "preview_verified_by_web_tool": true,
+      "editorial_only": true,
+      "alt_ar": "سيارة تخضع لعملية تنظيف وتفصيل خارجي في صورة تحريرية",
+      "alt_en": "Editorial real car exterior detailing image, not a GlossBay client project",
+      "used_on": [
+        "homepage",
+        "gallery"
+      ],
+      "local_path": null
+    },
+    {
+      "id": "washing-detail",
+      "source_page": "https://commons.wikimedia.org/wiki/File:A_man_is_washing_a_car.jpg",
+      "author": "Susan565",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "dimensions": {
+        "width": 2016,
+        "height": 4480
+      },
+      "preview_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/A%20man%20is%20washing%20a%20car.jpg?width=461",
+      "url_verified_by_web_tool": false,
+      "preview_verified_by_web_tool": false,
+      "editorial_only": true,
+      "alt_ar": "شخص يغسل سيارة باستخدام الماء في صورة تحريرية",
+      "alt_en": "Editorial photograph of someone washing a car, not a GlossBay employee",
+      "used_on": [
+        "gallery"
+      ],
+      "local_path": null
+    }
+  ],
+  "release_blockers": [
+    "Chromium must verify external URL, responsive crop and alt text before release",
+    "Download and optimize/locally host licensed photo if verified",
+    "Car pictured is not a GlossBay vehicle or customer"
+  ]
+}

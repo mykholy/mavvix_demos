@@ -9,11 +9,17 @@ export const metadata = {
   description: 'Perspectives on mindful tailoring, natural linen care, and timeless dressing principles.'
 };
 
-export default function EcommerceJournalPage({
-  params: { locale }
-}: {
-  params: { locale: Locale }
-}) {
+export default async function EcommerceJournalPage(
+  props: {
+    params: Promise<{ locale: Locale }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;
 

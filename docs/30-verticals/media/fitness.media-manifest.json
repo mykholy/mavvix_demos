@@ -1,0 +1,46 @@
+{
+  "vertical": "fitness",
+  "brand": "Pulse District",
+  "checked_on": "2026-11-23",
+  "concept_notice": "No real fitness club, actual member results, coach roster, branches or bookable slots.",
+  "assets": [
+    {
+      "id": "pulse-real-fitness-floor",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Fitness_Center_Equipment.jpg",
+      "author": "Teddyhtsai (Wikimedia account)",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "original_dimensions": "2048 x 1365",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Fitness_Center_Equipment.jpg",
+      "local_path": null,
+      "verified_source_license": true,
+      "checked_remote_via_web": true,
+      "web_page_description": "Actual gym floor with exercise machines",
+      "editorial_only": true,
+      "alt_ar": "صورة معدات رياضية في منشأة مستقلة، ليست Pulse",
+      "alt_en": "Actual fitness equipment in unrelated venue; editorial only"
+    },
+    {
+      "id": "pulse-real-equipment",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Gym_Equipment.jpg",
+      "author": "Teddyhtsai (Wikimedia account)",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "original_dimensions": "1108 x 1478",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Gym_Equipment.jpg",
+      "local_path": null,
+      "verified_source_license": true,
+      "checked_remote_via_web": true,
+      "web_page_description": "Real gym strength equipment, purple wall background",
+      "editorial_only": true,
+      "alt_ar": "أجهزة جيم حقيقية بصورة مستقلة عن العلامة",
+      "alt_en": "Strength equipment in unrelated real gym, editorial only"
+    }
+  ],
+  "blockers": [
+    "Recheck actual image network bytes in GitHub Chromium screenshot suite; explicitly mark if thumbnails fail",
+    "Self-host correctly sized WebP/AVIF versions before deployment where rights allow",
+    "Never present uploaded equipment images as the gym client's venue",
+    "Original owner-provided photos are needed for a commissioned production website"
+  ]
+}

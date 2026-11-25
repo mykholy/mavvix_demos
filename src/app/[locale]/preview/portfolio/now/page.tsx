@@ -8,11 +8,17 @@ export const metadata = {
   description: 'What the studio is actively reading, researching, and engineering during the current quarter.'
 };
 
-export default function PortfolioNowPage({
-  params: { locale }
-}: {
-  params: { locale: Locale }
-}) {
+export default async function PortfolioNowPage(
+  props: {
+    params: Promise<{ locale: Locale }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;
 

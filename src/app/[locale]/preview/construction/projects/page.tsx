@@ -3,11 +3,13 @@ import type { Locale } from '@/lib/i18n/config';
 import { ProjectsClientExplorer } from './ProjectsClientExplorer';
 
 interface Props {
-  params: { locale: Locale };
-  searchParams: { sector?: string; city?: string; area?: string };
+  params: Promise<{ locale: Locale }>;
+  searchParams: Promise<{ sector?: string; city?: string; area?: string }>;
 }
 
-export default function ConstructionProjectsPage({ params, searchParams }: Props) {
+export default async function ConstructionProjectsPage(props: Props) {
+  const searchParams = await props.searchParams;
+  const params = await props.params;
   const { locale } = params;
   const initialProjects = getProjects('construction', locale);
 

@@ -1,0 +1,23 @@
+{
+  "vertical": "auto-service",
+  "checked_on": "2026-11-23",
+  "assets": [
+    {
+      "id": "mechanic-engine-hero",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Mechanic_repairing_car_engine.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Mechanic_repairing_car_engine.jpg/1280px-Mechanic_repairing_car_engine.jpg",
+      "author": "Bembety",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "original_dimensions": "4608×3456",
+      "display_dimensions": "1280×960",
+      "local_path": null,
+      "editorial_only": true,
+      "alt_ar": "ميكانيكي يفحص مكونات محرك سيارة مفتوح",
+      "alt_en": "Mechanic inspecting components in an open car engine bay",
+      "verified_page_metadata": true,
+      "verified_direct_download": false,
+      "note": "Photo depicts an unrelated workshop; never imply it shows a Torque Garage facility, staff member or delivered service. Direct download from execution container failed; browser runtime still requires asset load QA."
+    }
+  ]
+}

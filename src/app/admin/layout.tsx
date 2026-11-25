@@ -23,8 +23,8 @@ interface Props {
   children: React.ReactNode;
 }
 
-export default function AdminLayout({ children }: Props) {
-  const cookieStore = cookies();
+export default async function AdminLayout({ children }: Props) {
+  const cookieStore = await cookies();
   const token = cookieStore.get('mavvix_admin_session')?.value;
   const admin = token ? verifySessionToken(token) : null;
 
@@ -57,6 +57,9 @@ export default function AdminLayout({ children }: Props) {
                 <Link href="/admin/submissions" className="text-slate-300 hover:text-white flex items-center gap-1.5 font-medium">
                   <Inbox className="w-3.5 h-3.5 text-amber-400" />
                   <span>Submissions</span>
+                </Link>
+                <Link href="/admin/portfolio-requests" className="text-slate-300 hover:text-white flex items-center gap-1.5 font-medium">
+                  <Inbox className="w-3.5 h-3.5 text-[#FB6935]" /><span>Industry Requests</span>
                 </Link>
                 <Link href="/ar/showcase" className="text-slate-400 hover:text-cyan-300 flex items-center gap-1">
                   <span>Showcase</span>

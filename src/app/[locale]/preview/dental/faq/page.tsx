@@ -8,11 +8,17 @@ export const metadata = {
   description: 'Common questions regarding gentle consultations, clinic sterilization protocols, pediatric care, and pricing transparency.'
 };
 
-export default function DentalFaqPage({
-  params: { locale }
-}: {
-  params: { locale: Locale }
-}) {
+export default async function DentalFaqPage(
+  props: {
+    params: Promise<{ locale: Locale }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const isAr = locale === 'ar';
 
   return (

@@ -8,11 +8,17 @@ export const metadata = {
   description: 'Explore 12 comprehensive design case studies across branding, digital platforms, design systems, and editorial.'
 };
 
-export default function PortfolioWorkPage({
-  params: { locale }
-}: {
-  params: { locale: Locale }
-}) {
+export default async function PortfolioWorkPage(
+  props: {
+    params: Promise<{ locale: Locale }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const isAr = locale === 'ar';
   const projects = getProjects('portfolio', locale);
 

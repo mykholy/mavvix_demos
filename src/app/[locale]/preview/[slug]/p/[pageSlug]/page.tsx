@@ -5,14 +5,15 @@ import { CustomPageRenderer } from '@/components/cms/CustomPageRenderer';
 import { ContactDock } from '@/components/shared/ContactDock';
 
 interface Props {
-  params: {
+  params: Promise<{
     locale: 'ar' | 'en';
     slug: string;
     pageSlug: string;
-  };
+  }>;
 }
 
-export default function CustomDynamicPage({ params }: Props) {
+export default async function CustomDynamicPage(props: Props) {
+  const params = await props.params;
   const { locale, slug, pageSlug } = params;
 
   const site = getSiteBySlug(slug);

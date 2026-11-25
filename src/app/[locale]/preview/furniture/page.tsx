@@ -1,0 +1,103 @@
+import Link from 'next/link';
+import type { Metadata } from 'next';
+import type { Locale } from '@/lib/i18n/config';
+import { OAKLINE,OAK_PHOTOS,oakPath,oakText } from '@/lib/verticals/furniture/data';
+import { ArrowUpRight,ArrowRight,ArrowLeft,Armchair,House,BookOpen,Ruler,Leaf,Layers,CheckCircle2,ClipboardCheck,ShieldCheck,MoveDiagonal2,Grid2X2,Palette,PenTool,Box,Truck,Heart,Image as PhotoIcon } from 'lucide-react';
+
+export async function generateMetadata(props:{params: Promise<{locale:Locale}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
+ const ar=locale==='ar';
+ const title=ar?'تصميم موقع معرض أثاث حسب الطلب | Oakline Living من مافكس':'Custom Furniture Website Design | Oakline Living by Mavvix';
+ const description=ar?'تجربة موقع أثاث فاخرة فيها 10 قطع بتوصيف واضح وخامات وتشطيبات وقياسات وسلة طلب تسعير متعددة القطع محفوظة في النظام.':'Editorial furniture website with a real custom quote basket, precise dimensional preference fields, original product content and bilingual room-first design by Mavvix.';
+ return {title,description,openGraph:{title,description,type:'website'},robots:{index:false,follow:false}};
+}
+export default async function OaklineHome(props:{params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
+ const ar=locale==='ar';const Arrow=ar?ArrowLeft:ArrowRight;
+ const moods=[{slug:'living',icon:Armchair,ar:'غرفة المعيشة',en:'Living room',descAr:'مقاعد وجلسة وترابيزات تخدم الحركة والراحة.',descEn:'Seating, tables and circulation that feel considered.'},
+ {slug:'bedroom',icon:House,ar:'غرفة النوم',en:'Bedroom',descAr:'سرير ودولاب بأبعاد تناسب الغرفة الحقيقية.',descEn:'Storage and sleeping furniture defined by room dimensions.'},
+ {slug:'dining',icon:Layers,ar:'السفرة',en:'Dining',descAr:'طاولة وجلسات تخطط للأكل والحركة.',descEn:'Tables and seating planned around real chair clearance.'},
+ {slug:'workspace',icon:PenTool,ar:'مساحة العمل',en:'Workspace',descAr:'مكتب ومكتبة يناسبان استخدامك ومداخل المكان.',descEn:'Desks and shelving sized to real use and access.'}];
+ return <div>
+  {/* 01 warm interior magazine hero */}
+  <section data-sector-specific="editorial-room-hero" className="bg-[#EDE5D7]">
+   <div className="max-w-7xl mx-auto px-5 sm:px-8 pt-14 sm:pt-20 pb-20 grid lg:grid-cols-[.91fr_1.09fr] gap-10 lg:gap-16 items-center">
+    <div className="lg:py-10"><div className="flex items-center gap-3 text-[#755A3C] text-xs font-bold tracking-[.24em]"><span className="w-12 h-px bg-[#795C3C]"/>THE ART OF LIVING WELL</div>
+     <h1 className="oakline-display text-[clamp(3.4rem,6.3vw,7rem)] leading-[1.03] mt-8 font-normal tracking-tight">{ar?<>مساحة تعرف <span className="text-[#8E683E]">تفاصيلك.</span></>:<>Every room has <em className="text-[#8E683E]">a story.</em></>}</h1>
+     <p className="text-[#65513D] mt-8 text-base sm:text-lg leading-9 max-w-xl">{ar?'فكّر في المكان قبل القطعة. اختار غرفة وخامة وتشطيب وأبعادًا مبدئية، وجرّب سلة طلب تسعير مخصصة بدل تصفح منتجات مبهمة.':'Start with the space, then the object. Discover genuinely written furniture specifications, explore textures and build a measured, nonbinding quote brief for multiple pieces.'}</p>
+     <div className="flex flex-wrap gap-4 mt-10"><Link href={oakPath(locale,'quote')} className="bg-[#392C24] text-white rounded-full px-8 py-5 font-bold text-sm inline-flex items-center gap-3">{ar?'جهّز طلب الأثاث':'BUILD A FURNITURE BRIEF'}<Arrow size={17}/></Link><Link href={oakPath(locale,'collections')} className="border-b border-[#392C24] text-sm font-black px-2 py-4 inline-flex gap-3 items-center">{ar?'استكشف القطع':'Explore the collection'}<Arrow size={16}/></Link></div>
+     <div className="mt-14 flex items-center gap-3 text-xs font-semibold text-[#68513B]"><Ruler size={19}/>{ar?'مقاسات وخامات للتخطيط، وليس تنفيذًا أو بيعًا مؤكدًا.':'Custom specifications, not fake inventory or completed projects.'}</div>
+    </div>
+    <figure className="relative min-h-[470px] sm:min-h-[610px] lg:min-h-[720px]">
+     <div className="absolute inset-[0_2%_6%_13%] bg-[#D8BFA2]"/>
+     <img src={OAK_PHOTOS.room} loading="eager" alt={ar?'صورة CC0 حقيقية لغرفة معيشة بكنبة زرقاء من مصور مستقل وليست منتج Oakline':'Real CC0 editorial living room with blue sofa by Jarosław Ceborski, not an Oakline project'} className="absolute inset-[5%_11%_0_0] w-[89%] h-[95%] object-cover shadow-[0_35px_85px_rgba(57,44,36,.18)]"/>
+     <figcaption className="absolute bottom-6 end-0 bg-[#F9F0E4] p-6 sm:p-8 max-w-[205px] shadow-lg text-xs text-[#5B4936] leading-7"><Leaf size={25} className="text-[#836342]"/><span className="block mt-4 font-bold">{ar?'صورة تحريرية مرخصة، لا تمثل منتجات شركتنا.':'Licensed editorial photography, not an Oakline catalogue item.'}</span></figcaption>
+    </figure>
+   </div>
+  </section>
+  {/* 02 room-first product discovery */}
+  <section data-sector-specific="room-first-discovery" className="bg-[#F9F6F0] py-20 sm:py-28"><div className="max-w-7xl mx-auto px-5 sm:px-8">
+   <div className="flex flex-wrap justify-between items-end gap-8"><div><p className="uppercase text-xs tracking-[.18em] text-[#806044] font-bold">CONSIDER THE ROOM</p><h2 className="oakline-display text-4xl sm:text-6xl mt-5">{ar?'ابدأ بالغرفة... مش بالموديل':'Start with the room, not the catalogue'}</h2></div><p className="max-w-sm text-sm leading-9 text-[#68513D]">{ar?'كل غرفة تحتاج قياسات مختلفة ومسار حركة وخامات مناسبة للاستخدام.':'Each room brings distinct access, dimensions, materials and daily-use considerations.'}</p></div>
+   <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-11">{moods.map((m,i)=>{const Icon=m.icon;return <Link key={m.slug} href={oakPath(locale,'rooms')+'?room='+m.slug} className="min-h-[310px] border border-[#D7C6B0] bg-white p-7 flex flex-col hover:bg-[#F0E6D8] transition-colors"><div className="flex justify-between"><Icon size={35} strokeWidth={1.2}/><span className="text-xs font-mono text-[#725A40]">0{i+1}</span></div><div className="mt-auto"><h3 className="oakline-display text-3xl">{ar?m.ar:m.en}</h3><p className="mt-5 text-sm leading-8 text-[#68513D]">{ar?m.descAr:m.descEn}</p><span className="flex mt-6 pt-5 border-t border-[#D8C6B3] gap-2 items-center text-sm font-bold">{ar?'شوف قطع الغرفة':'EXPLORE ROOM'}<Arrow size={16}/></span></div></Link>})}</div>
+  </div></section>
+  {/* 03 measurements and honest dimension rules */}
+  <section data-sector-specific="measurement-science" className="bg-[#392C24] text-white py-20 sm:py-28"><div className="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[.75fr_1.2fr] gap-12">
+   <div><p className="uppercase tracking-[.17em] text-[#E4C096] font-bold text-xs">DIMENSIONS & LIVING SPACE</p><h2 className="oakline-display text-4xl sm:text-6xl mt-6 leading-tight">{ar?'المقاس الحقيقي هو بداية التصميم':'Good furniture begins with good measurements'}</h2><p className="text-[#E7D9C6] mt-7 leading-9">{ar?'مش كفاية طول الحيطة. الأبواب والسلالم والمصعد ومكان فتح الأدراج كلها تغير قرار القطعة.':'Measure doors, lifts, staircases, drawer swing and walking space—not merely the wall length.'}</p><Link href={oakPath(locale,'measurement-guide')} className="mt-8 inline-flex gap-3 items-center text-[#E6BF8E] underline underline-offset-8 font-bold text-sm">{ar?'دليل القياسات':'Measurement guide'}<Arrow size={17}/></Link></div>
+   <div className="border border-[#8B765D] bg-[#493A2B] p-8 sm:p-12"><Ruler size={43} className="text-[#E6BF8E]"/><h3 className="oakline-display text-3xl sm:text-4xl mt-8">{ar?'3 قياسات لازم تفرق بينهم':'THE THREE DIMENSIONS TO CLARIFY'}</h3>
+    <div className="grid gap-4 mt-9">{[[ar?'العرض':'WIDTH',ar?'المساحة الأفقية والفراغ الجانبي للقطعة':'Horizontal footprint and side access'],[ar?'العمق':'DEPTH',ar?'المسافة من الأمام للخلف وممرات الحركة':'Front-to-back size and walking space'],[ar?'الارتفاع':'HEIGHT',ar?'علاقة القطعة بالسقف والمقاعد والرفوف':'Ceiling clearances, seats and shelf access']].map(([title,body],i)=><div key={i} className="flex gap-5 items-start border-b border-[#876A4B] pb-5"><span className="font-mono text-2xl text-[#E6BF8E]">0{i+1}</span><div><h4 className="font-bold">{title}</h4><p className="text-sm leading-7 text-[#E8D9C6] mt-3">{body}</p></div></div>)}</div>
+   </div>
+  </div></section>
+  {/* 04 genuine original product dossiers */}
+  <section data-sector-specific="designed-piece-collection" className="max-w-7xl mx-auto px-5 sm:px-8 py-20 sm:py-28"><div className="flex flex-wrap justify-between items-end gap-8">
+   <div><p className="uppercase text-xs text-[#806044] tracking-widest font-bold">TEN EDITORIAL DESIGN DOSSIERS</p><h2 className="oakline-display text-4xl sm:text-6xl mt-6">{ar?'عشر قطع... ولكل قطعة حكاية مفيدة':'A collection with substance, not just names'}</h2></div><Link href={oakPath(locale,'collections')} className="font-bold text-sm underline underline-offset-8">{ar?'جميع القطع':'Explore pieces'}</Link></div>
+   <div className="grid md:grid-cols-2 xl:grid-cols-5 gap-4 mt-12">{OAKLINE.services.map((p,i)=><Link key={p.slug} href={oakPath(locale,'collections/'+p.slug)} className="min-h-[295px] bg-[#F9F5EE] border border-[#D8C7B3] p-6 flex flex-col hover:bg-white hover:shadow-lg transition-all">
+    <span className="flex justify-between items-start"><Armchair size={30} className="text-[#785B3E]"/><small className="font-mono text-[#856445] text-[11px]">0{i+1}</small></span>
+    <h3 className="oakline-display text-2xl mt-10 leading-snug">{oakText(p.title,locale)}</h3><p className="mt-4 text-[#685440] text-xs leading-7">{oakText(p.summary,locale)}</p><span className="inline-flex mt-auto pt-6 text-xs font-bold gap-2 items-center">{ar?'شوف الخامات والمقاسات':'MATERIALS & SIZES'}<Arrow size={15}/></span>
+   </Link>)}</div>
+  </section>
+  {/* 05 materials guide */}
+  <section data-sector-specific="materials-moodboard" className="bg-[#E9DECD] py-20 sm:py-28"><div className="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[.8fr_1fr] gap-12">
+   <div><p className="text-[#735239] font-bold text-xs tracking-[.16em]">MATERIALS ARE NOT JUST COLORS</p><h2 className="oakline-display text-4xl sm:text-6xl mt-5">{ar?'ملمس الخامة جزء من التجربة':'Textures shape how a room feels'}</h2><p className="text-[#634B37] leading-9 mt-7">{ar?'خشب طبيعي وقشرة وألواح هندسية، كتان ومخمل وبوكليه... لكل خامة إحساس مختلف ومتطلبات استخدام. الاختيار في النموذج استرشادي حتى يراجع الصانع العينات.':'Solid timber, veneer, engineered panels and upholstery textiles have different use and maintenance considerations. This website records an aesthetic preference, not a verified physical stock sample.'}</p><Link href={oakPath(locale,'materials')} className="mt-8 font-bold underline underline-offset-8 text-sm inline-flex gap-2">{ar?'دليل الخامات':'Read the material guide'}<Arrow size={16}/></Link></div>
+   <div className="grid grid-cols-3 gap-3 items-stretch">{[{name:'OAK',bg:'#B79567',fg:'#291D15'},{name:'LINEN',bg:'#D7C7AD',fg:'#291D15'},{name:'WALNUT',bg:'#604632',fg:'#FAEFDE'},{name:'BOUCLÉ',bg:'#F0E4D1',fg:'#291D15'},{name:'SMOKED',bg:'#71685A',fg:'#FFF4E6'},{name:'CHARCOAL',bg:'#393D3A',fg:'#F5F3EA'}].map((m,i)=><div key={m.name} className="aspect-[.8] p-4 flex items-end min-w-0" style={{background:m.bg,color:m.fg}}><span className="text-[11px] tracking-wide font-bold">{m.name}</span></div>)}</div>
+  </div></section>
+  {/* 06 real third-party editorial furniture photography */}
+  <section data-sector-specific="real-interior-photo-story" className="bg-[#F9F5ED] grid lg:grid-cols-2">
+   <figure className="relative min-h-[440px] sm:min-h-[600px] bg-[#D6C1A5]"><img className="absolute inset-0 object-cover w-full h-full" loading="lazy" src={OAK_PHOTOS.vignette} alt={ar?'صورة فوتوغرافية مرخصة لغرفة معيشة في مونتريال، ليست مشروع Oakline':'CC0 editorial furniture photo from Montréal by Stephen Di Donato, not an Oakline project'}/><figcaption className="absolute bottom-4 start-4 text-[10px] text-white bg-[#30271F]/90 px-3 py-2">Stephen Di Donato · CC0 · Wikimedia Commons</figcaption></figure>
+   <div className="p-8 sm:p-14 lg:p-20 flex flex-col justify-center"><p className="text-[#75553B] tracking-widest text-xs font-bold">REAL PHOTOGRAPHY. HONEST PROVENANCE.</p><h2 className="oakline-display text-4xl sm:text-6xl mt-6 leading-tight">{ar?'إحساس حقيقي من صورة حقيقية':'A real interior. An honest design concept.'}</h2><p className="leading-9 mt-6 text-[#634D3B]">{ar?'الصور من مصدر تحريري CC0 وبتوصف المكان والاتجاه البصري فقط. لا تعني أن Oakline صنعت الأثاث أو صوّرت منزل عميل.':'The licensed photo shows an independent real interior. It sets the editorial mood but never claims an Oakline-made product or actual customer delivery.'}</p><Link href={oakPath(locale,'gallery')} className="mt-9 font-bold text-sm underline underline-offset-8 inline-flex gap-3">{ar?'شوف مصادر الصور':'Visual references & sources'}<Arrow size={16}/></Link></div>
+  </section>
+  {/* 07 durable customer workflow */}
+  <section data-sector-specific="multi-item-quote-flow" className="py-20 sm:py-28 bg-[#392C24] text-white"><div className="max-w-7xl mx-auto px-5 sm:px-8"><p className="text-xs tracking-widest font-bold text-[#E5C297]">CUSTOM QUOTE, NOT AN INSTANT CHECKOUT</p>
+   <div className="grid lg:grid-cols-[.8fr_1fr] gap-12 mt-6 items-center"><div><h2 className="oakline-display text-4xl sm:text-6xl leading-tight">{ar?'قطعة، اتنين، أو مجموعة كاملة... طلب واحد':'A roomful of ideas. One organized quote request.'}</h2><p className="text-[#E3D5C3] mt-7 leading-9">{ar?'اختار عدد القطع والخامات والتشطيب ومقاسات كل قطعة، واجمعهم في سلة تسعير. النظام يتحقق ويحفظ استفسارك ولا يخترع سعرًا أو وقت تصنيع.':'Add distinct pieces with their own material, finish and exact dimension preferences. The system validates compatibility, saves the basket and returns a reference—not a fabricated order or price.'}</p><Link href={oakPath(locale,'quote')} className="inline-flex items-center gap-3 mt-9 bg-[#E1BD8A] text-[#392C24] px-8 py-5 font-bold text-sm">{ar?'ابدأ تكوين الطلب':'BUILD YOUR QUOTE BASKET'}<Arrow size={18}/></Link></div>
+    <div className="border border-[#80664A] p-8 sm:p-11 grid gap-4">{[[Layers,ar?'اختار قطع مختلفة':'Choose distinct pieces'],[Palette,ar?'حدّد خامة وتشطيب':'Select material and finish'],[Ruler,ar?'راجع مقاس كل قطعة':'Validate dimensions'],[ClipboardCheck,ar?'استلم رقمًا مرجعيًا':'Receive a pending reference']].map(([Icon,title],i)=><div key={i} className="flex items-center gap-6 bg-[#493A2B] px-5 py-6"><span className="font-mono text-[#E1BD8A]">0{i+1}</span>{typeof Icon!=='string'&&<Icon size={26} className="text-[#DDBA8C]"/>}<span className="font-bold text-sm">{title as string}</span></div>)}</div>
+   </div></div></section>
+  {/* 08 process and logistics */}
+  <section data-sector-specific="delivery-approval-process" className="bg-[#F7F2EB] py-20 sm:py-28"><div className="max-w-7xl mx-auto px-5 sm:px-8">
+   <div className="grid lg:grid-cols-[.7fr_1fr] gap-10"><div><p className="text-xs tracking-widest text-[#806044] font-bold">A PROCESS WITH REAL-WORLD CHECKS</p><h2 className="oakline-display text-4xl sm:text-5xl mt-5">{ar?'قبل التنفيذ... فيه أسئلة مهمة':'A good quote begins before production'}</h2></div><div className="grid gap-3">{[[ar?'قياس حقيقي':'Measured room',ar?'صاحب النشاط يراجع أبعاد الموقع ومسار الدخول.':'The real maker verifies space and access.'],[ar?'اعتماد الخامات':'Approved samples',ar?'اللون والخشب والقماش يحتاجوا عينة معتمدة.':'The real supplier confirms actual materials.'],[ar?'عرض وسعر مكتوب':'Written quotation',ar?'البنود والمهلة والشحن تحددها الجهة المنفذة.':'The operator issues real fees, timing and delivery terms.'],[ar?'تسليم وتوثيق':'Handover policy',ar?'الفحص والضمان والتركيب لازم يكونوا موثقين.':'Real installation and warranty must be agreed.']].map(([title,desc],i)=><div key={i} className="p-6 border border-[#D6C4B0] bg-white flex gap-5"><span className="text-[#87623D] font-mono font-bold text-xl">0{i+1}</span><div><h3 className="font-black">{title}</h3><p className="text-sm text-[#67513C] leading-8 mt-3">{desc}</p></div></div>)}</div></div>
+  </div></section>
+  {/* 09 educational articles */}
+  <section data-sector-specific="home-editorial-guides" className="bg-[#EEE6D9] py-20 sm:py-28"><div className="max-w-7xl mx-auto px-5 sm:px-8">
+   <div className="flex justify-between gap-6 items-end"><div><p className="text-xs font-bold text-[#735239] tracking-widest">FIELD NOTES FROM THE ROOM</p><h2 className="oakline-display text-4xl sm:text-6xl mt-5">{ar?'معلومات تساعدك تختار صح':'Read before you choose'}</h2></div><Link href={oakPath(locale,'journal')} className="text-sm font-bold underline underline-offset-8">{ar?'كل المقالات':'All guides'}</Link></div>
+   <div className="grid lg:grid-cols-3 gap-5 mt-12">{OAKLINE.articles.map((a,i)=><Link key={a.slug} href={oakPath(locale,'journal/'+a.slug)} className="bg-[#FFFCF6] border border-[#D7C4AE] min-h-[340px] p-8 flex flex-col hover:bg-white hover:shadow-lg"><BookOpen size={31} className="text-[#7B5A3B]"/><p className="text-xs font-mono text-[#7B5A3B] mt-9">OAKLINE NOTES / 0{i+1}</p><h3 className="oakline-display text-3xl mt-4 leading-tight">{oakText(a.title,locale)}</h3><p className="text-[#67513C] mt-5 text-sm leading-8">{oakText(a.summary,locale)}</p><span className="mt-auto pt-7 flex gap-2 text-xs items-center font-bold">{ar?'اقرأ الدليل':'READ GUIDE'}<Arrow size={17}/></span></Link>)}</div>
+  </div></section>
+  {/* 10 FAQ */}
+  <section data-sector-specific="furniture-trust-questions" className="py-20 sm:py-28 bg-[#F9F5EF]"><div className="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[.7fr_1.2fr] gap-12">
+   <div><p className="text-xs text-[#735239] tracking-widest font-bold">A TRANSPARENT FURNITURE ENQUIRY</p><h2 className="oakline-display text-4xl sm:text-6xl mt-5">{ar?'كل حاجة لازم تكون واضحة':'Clarity is the most important material'}</h2></div>
+   <div className="space-y-3">{OAKLINE.faq.map((f,i)=><details key={i} className="bg-white border border-[#D8C5B1] p-6 open:shadow-lg"><summary className="font-extrabold cursor-pointer">{oakText(f.q,locale)}</summary><p className="mt-4 text-sm leading-8 text-[#66513D]">{oakText(f.a,locale)}</p></details>)}</div>
+  </div></section>
+  {/* 11 actual Mavvix sales CTA */}
+  <section data-sector-specific="mavvix-furniture-offer" className="bg-[#392C24] py-20 sm:py-28 text-[#F9EEE1]"><div className="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[1fr_auto] items-center gap-12">
+   <div><p className="text-[#E1BB8A] text-xs tracking-widest font-bold">MAVVIX SOFTWARE / COMMISSION YOUR SITE</p><h2 className="oakline-display text-4xl sm:text-6xl mt-6 max-w-4xl">{ar?'معرض أثاثك يستاهل موقع يشرح قيمته':'Build a furniture website that explains your craft'}</h2><p className="mt-6 leading-9 text-[#E8D8C5] max-w-2xl">{ar?'مافكس تقدر تنفذ كتالوج باسم نشاطك الحقيقي، صور منتجاتك المعتمدة، خامات ومقاسات مخصصة، طلبات تسعير ولوحة متابعة.':'Mavvix can build an owner-approved catalogue with authentic photography, material/size configurators, quote basket and secure admin lead pipeline.'}</p></div>
+   <a href={ar?'https://mavvix.com/ar/contact':'https://mavvix.com/en/contact'} target="_blank" rel="noopener noreferrer" className="bg-[#DDB88B] text-[#392C24] inline-flex items-center gap-3 px-8 py-5 font-bold text-sm">{ar?'اطلب موقع معرضك':'DISCUSS YOUR FURNITURE WEBSITE'}<ArrowUpRight size={18}/></a>
+  </div></section>
+ </div>;
+}

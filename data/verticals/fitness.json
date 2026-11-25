@@ -1,0 +1,467 @@
+{
+  "slug": "fitness",
+  "brand": "Pulse District",
+  "classification": "Mavvix concept, not an operating gym or real capacity/coach availability.",
+  "services": [
+    {
+      "slug": "foundations",
+      "rank": 1,
+      "category": "strength",
+      "levels": [
+        "beginner",
+        "returning"
+      ],
+      "durations": [
+        45,
+        60
+      ],
+      "title": {
+        "ar": "تدريب أساسيات القوة",
+        "en": "Strength Foundations"
+      },
+      "summary": {
+        "ar": "تعلم أنماط الحركة الأساسية وتدرج الأحمال بأسلوب بسيط.",
+        "en": "Understand foundational movements and progress gradually without chasing a fixed performance target."
+      },
+      "body": {
+        "ar": "يركز برنامج أساسيات القوة على ملاحظة نمط القرفصاء والسحب والدفع والتحكم في الجذع، مع مراعاة الراحة والتدرج في المجهود. شكل الحركة الجيد أهم من افتراض وزن محدد أو عدد تكرارات يصلح للجميع. الخطط الفعلية تعتمد على تقييم المدرب المؤهل وحالة الشخص، ولا تعتبر هذه الصفحة وصفة تدريب شخصية أو اختبار جاهزية طبية.",
+        "en": "A foundational strength program introduces squat, hinge, push and pull movement patterns with appropriate form and recovery. Rather than prescribing a uniform weight or repetition target, a qualified instructor should adapt effort and progression to an individual. This page describes the class focus without claiming individualized instruction or a medical readiness evaluation."
+      },
+      "checklist": {
+        "ar": [
+          "اختار مستوى يناسب خبرتك الفعلية",
+          "راجع الأدوات ونطاق التمرين مع مدرب مؤهل",
+          "لا تفترض حجز وقت أو وجود مدرب دون تأكيد"
+        ],
+        "en": [
+          "Select the class level based on your real experience",
+          "Confirm equipment and scope with a qualified coach",
+          "Do not assume a slot or coach exists without approval"
+        ]
+      }
+    },
+    {
+      "slug": "barbell-technique",
+      "rank": 2,
+      "category": "strength",
+      "levels": [
+        "intermediate",
+        "returning"
+      ],
+      "durations": [
+        45,
+        60
+      ],
+      "title": {
+        "ar": "تقنيات الأوزان الحرة",
+        "en": "Free-weight Technique"
+      },
+      "summary": {
+        "ar": "جلسة تعلم مسارات الرفع وتحكم الثبات ومتى تخفف الوزن.",
+        "en": "Practice controlled lifting patterns, spotting considerations and when to reduce a load."
+      },
+      "body": {
+        "ar": "التدريب بالأوزان الحرة يعتمد على اختيار الحمل المناسب، وتحضير المكان وتثبيت الحركة، والاستعانة بمساعدة مدرب عند الحركات التي تحتاج مراقبة. يتغير مستوى الصعوبة حسب خبرة المتدرب وطبيعة التمرين. الهدف من الموقع عرض ما قد يناقشه المتدرب مع المدرب، لا ادعاء أن هناك فني تدريب يشرف على الجلسة حاليًا.",
+        "en": "Free-weight coaching typically explores setup, range of motion, progressive loading and safe spotting where necessary. Class suitability varies with experience and control. A commercial site should describe the instruction focus, equipment needs and real coach qualifications only when a gym operator has actually verified them."
+      },
+      "checklist": {
+        "ar": [
+          "اختار مستوى يناسب خبرتك الفعلية",
+          "راجع الأدوات ونطاق التمرين مع مدرب مؤهل",
+          "لا تفترض حجز وقت أو وجود مدرب دون تأكيد"
+        ],
+        "en": [
+          "Select the class level based on your real experience",
+          "Confirm equipment and scope with a qualified coach",
+          "Do not assume a slot or coach exists without approval"
+        ]
+      }
+    },
+    {
+      "slug": "mobility-reset",
+      "rank": 3,
+      "category": "mobility",
+      "levels": [
+        "beginner",
+        "returning",
+        "intermediate"
+      ],
+      "durations": [
+        30,
+        45
+      ],
+      "title": {
+        "ar": "حركة ومرونة يومية",
+        "en": "Mobility Reset"
+      },
+      "summary": {
+        "ar": "تمارين حركية خفيفة تناسب من يريد تحسين جودة الحركة عامة.",
+        "en": "Explore controlled, comfortable ranges of movement with a measured pace."
+      },
+      "body": {
+        "ar": "جلسة الحركة والمرونة يمكن أن تبدأ بحركات منخفضة الشدة للجذع والورك والكتف والعمود الفقري ضمن الحدود المريحة. لا تدفع المفاصل إلى المدى المؤلم ولا تساوِ بين المرونة وبين علاج إصابة. إذا توجد أعراض أو موانع أو ألم مستمر، يجب الحصول على تقييم مناسب بدل الاعتماد على وصف عبر الإنترنت.",
+        "en": "Mobility sessions emphasize controlled and comfortable movement around hips, shoulders and the trunk. The aim is general movement quality, not the treatment of injuries or guaranteed pain relief. Persistent symptoms require appropriate individual advice rather than a self-selected class based only on website copy."
+      },
+      "checklist": {
+        "ar": [
+          "اختار مستوى يناسب خبرتك الفعلية",
+          "راجع الأدوات ونطاق التمرين مع مدرب مؤهل",
+          "لا تفترض حجز وقت أو وجود مدرب دون تأكيد"
+        ],
+        "en": [
+          "Select the class level based on your real experience",
+          "Confirm equipment and scope with a qualified coach",
+          "Do not assume a slot or coach exists without approval"
+        ]
+      }
+    },
+    {
+      "slug": "cycle-intervals",
+      "rank": 4,
+      "category": "conditioning",
+      "levels": [
+        "returning",
+        "intermediate"
+      ],
+      "durations": [
+        35,
+        45
+      ],
+      "title": {
+        "ar": "دراجات ومجهود متدرج",
+        "en": "Cycle Intervals"
+      },
+      "summary": {
+        "ar": "تجربة على الدراجة بمستويات شدة مختلفة مع مراعاة الاستشفاء.",
+        "en": "Indoor cycling intervals built around adjustable effort and recovery windows."
+      },
+      "body": {
+        "ar": "الدراجات الثابتة تتيح تعديل المقاومة ومعدل الجهد مع فترات استراحة محسوبة. ينصح بالبدء بالشدة التي تسمح بالتحكم والتنفس، ثم تعديل المجهود حسب خبرة الشخص وإرشادات المدرب. ما نعرضه هنا هو وصف للفئة، لا توصية بمعدل ضربات قلب معين أو وعد بخسارة وزن خلال فترة محددة.",
+        "en": "Indoor cycling intervals can alternate manageable work bouts with recovery. Resistance and pace should be scaled to experience, comfort and qualified coaching. This editorial program does not prescribe a heart-rate threshold, guarantee a body transformation or assert that any class slot is currently bookable."
+      },
+      "checklist": {
+        "ar": [
+          "اختار مستوى يناسب خبرتك الفعلية",
+          "راجع الأدوات ونطاق التمرين مع مدرب مؤهل",
+          "لا تفترض حجز وقت أو وجود مدرب دون تأكيد"
+        ],
+        "en": [
+          "Select the class level based on your real experience",
+          "Confirm equipment and scope with a qualified coach",
+          "Do not assume a slot or coach exists without approval"
+        ]
+      }
+    },
+    {
+      "slug": "bodyweight-flow",
+      "rank": 5,
+      "category": "conditioning",
+      "levels": [
+        "beginner",
+        "returning"
+      ],
+      "durations": [
+        30,
+        45
+      ],
+      "title": {
+        "ar": "تمارين وزن الجسم",
+        "en": "Bodyweight Flow"
+      },
+      "summary": {
+        "ar": "تدريبات بدون أجهزة كثيرة، تتدرج من التحضير إلى الأداء المنظم.",
+        "en": "A practical sequence of bodyweight movement with accessible effort variations."
+      },
+      "body": {
+        "ar": "تمارين وزن الجسم قد تتضمن السكوات البسيط والضغط المعدل وتمارين التوازن والتنقل، لكن الاختيارات تحتاج تدرجًا وتقييمًا صحيحًا للمجهود. لا تعني كلمة بدون أجهزة أنها مناسبة تلقائيًا لكل حالة. يجب أن يوضح النادي الحقيقي متطلبات اللبس ومستوى الخبرة ودور المتابعة قبل أي تجربة مدفوعة.",
+        "en": "Bodyweight training may involve modified squats, presses, balance and movement transitions. Low equipment demand does not mean a class suits every physical condition. An actual club should confirm the instructor, safety brief, accessible modifications and real calendar before accepting a paid member."
+      },
+      "checklist": {
+        "ar": [
+          "اختار مستوى يناسب خبرتك الفعلية",
+          "راجع الأدوات ونطاق التمرين مع مدرب مؤهل",
+          "لا تفترض حجز وقت أو وجود مدرب دون تأكيد"
+        ],
+        "en": [
+          "Select the class level based on your real experience",
+          "Confirm equipment and scope with a qualified coach",
+          "Do not assume a slot or coach exists without approval"
+        ]
+      }
+    },
+    {
+      "slug": "core-control",
+      "rank": 6,
+      "category": "mobility",
+      "levels": [
+        "beginner",
+        "intermediate"
+      ],
+      "durations": [
+        30,
+        45
+      ],
+      "title": {
+        "ar": "تحكم وتوازن للجذع",
+        "en": "Core Control"
+      },
+      "summary": {
+        "ar": "تعلّم التنفس والثبات والتوازن في حركات بسيطة قابلة للتدرج.",
+        "en": "Practice stable trunk movement, breath awareness and accessible balance patterns."
+      },
+      "body": {
+        "ar": "تدريبات الجذع تهدف لتعلم تنظيم التنفس والثبات والتحكم في وضعيات متعددة، مع إيقاف أي حركة تسبب ألماً أو دواراً. ليست بديلاً عن العلاج الطبيعي أو تقييم مشكلة صحية، ويجب عدم استخدام وصف الموقع كخطة إعادة تأهيل. يختلف التدرج الآمن حسب الشخص وهدفه.",
+        "en": "Core-control practice emphasizes movement awareness, breathing coordination and appropriate progressions. It is not rehabilitation or a clinical treatment. Any movement that triggers pain, dizziness or unusual symptoms warrants stopping and seeking suitable professional advice rather than continuing based on generic class copy."
+      },
+      "checklist": {
+        "ar": [
+          "اختار مستوى يناسب خبرتك الفعلية",
+          "راجع الأدوات ونطاق التمرين مع مدرب مؤهل",
+          "لا تفترض حجز وقت أو وجود مدرب دون تأكيد"
+        ],
+        "en": [
+          "Select the class level based on your real experience",
+          "Confirm equipment and scope with a qualified coach",
+          "Do not assume a slot or coach exists without approval"
+        ]
+      }
+    },
+    {
+      "slug": "strength-circuit",
+      "rank": 7,
+      "category": "strength",
+      "levels": [
+        "intermediate",
+        "returning"
+      ],
+      "durations": [
+        45,
+        60
+      ],
+      "title": {
+        "ar": "محطات قوة وحركة",
+        "en": "Strength Circuit"
+      },
+      "summary": {
+        "ar": "دوائر تدريب متنوعة تعتمد على ترتيب المحطات وراحة واضحة.",
+        "en": "A structured mix of stations and rest periods with transparent exercise expectations."
+      },
+      "body": {
+        "ar": "التمرين الدائري يتضمن التنقل بين محطات تدريب مختلفة وفترات راحة، وقد يختلف نوع الأجهزة بحسب تجهيزات كل صالة. ينبغي أن يتعرف المشترك على ترتيب التمرين ومستوى الشدة المطلوب وعدد المشاركين والمدرب المتاح قبل التسجيل. لا توجد هنا بيانات حضور أو سعة حقيقية أو أجهزة تخص نادياً قائماً.",
+        "en": "A circuit class typically rotates among strength and conditioning stations with planned recovery. An operating gym must document equipment, floor capacity, staff supervision and suitability. This example demonstrates a meaningful class dossier without claiming real session inventory, member attendance or equipment ownership."
+      },
+      "checklist": {
+        "ar": [
+          "اختار مستوى يناسب خبرتك الفعلية",
+          "راجع الأدوات ونطاق التمرين مع مدرب مؤهل",
+          "لا تفترض حجز وقت أو وجود مدرب دون تأكيد"
+        ],
+        "en": [
+          "Select the class level based on your real experience",
+          "Confirm equipment and scope with a qualified coach",
+          "Do not assume a slot or coach exists without approval"
+        ]
+      }
+    },
+    {
+      "slug": "boxing-fundamentals",
+      "rank": 8,
+      "category": "conditioning",
+      "levels": [
+        "beginner",
+        "returning"
+      ],
+      "durations": [
+        45,
+        60
+      ],
+      "title": {
+        "ar": "مبادئ اللياقة بالملاكمة",
+        "en": "Boxing Fitness Basics"
+      },
+      "summary": {
+        "ar": "تعلم وضعية الوقوف وحركات اليد في تمرين لياقة غير تنافسي.",
+        "en": "Introduce stance, footwork and low-contact boxing-inspired fitness."
+      },
+      "body": {
+        "ar": "جلسات اللياقة المستوحاة من الملاكمة قد تركز على الوقفة وحركة القدمين والتنسيق الحركي، دون اشتراط احتكاك مباشر. يحدد المشغل الحقيقي إذا كانت معدات الحماية أو القفازات مطلوبة، وما شروط المشاركة وسن المتدرب. ينبغي عرض حدود أي تلامس أو مخاطر بوضوح لا من خلال صور منافسات مضللة.",
+        "en": "Boxing-inspired fitness can emphasize stance, footwork and coordination without competitive sparring. Real operators must specify whether contact, protective equipment, age limits and qualified supervision apply. The website should not imply an actual combat academy or a live instructor without verified data."
+      },
+      "checklist": {
+        "ar": [
+          "اختار مستوى يناسب خبرتك الفعلية",
+          "راجع الأدوات ونطاق التمرين مع مدرب مؤهل",
+          "لا تفترض حجز وقت أو وجود مدرب دون تأكيد"
+        ],
+        "en": [
+          "Select the class level based on your real experience",
+          "Confirm equipment and scope with a qualified coach",
+          "Do not assume a slot or coach exists without approval"
+        ]
+      }
+    },
+    {
+      "slug": "recovery-stretch",
+      "rank": 9,
+      "category": "mobility",
+      "levels": [
+        "beginner",
+        "returning",
+        "intermediate"
+      ],
+      "durations": [
+        30,
+        45
+      ],
+      "title": {
+        "ar": "إطالات واستعادة هدوء",
+        "en": "Stretch & Unwind"
+      },
+      "summary": {
+        "ar": "جلسة منخفضة الإيقاع لحركات مريحة وتدرج تدريجي.",
+        "en": "A gentler movement session for general range and recovery awareness."
+      },
+      "body": {
+        "ar": "تمارين الإطالة اللطيفة تعتمد على احترام المدى المريح وتجنب الدفع القسري أو الحركات المؤلمة. لا توجد درجة مرونة مثالية للجميع. عند اختيار الحصة المناسبة، من المفيد السؤال عن نوع المعدات المطلوبة والملابس والمكان وزمن الانتقال بين الأنشطة. لا تستخدم النصائح العامة لعلاج الإصابات أو توصيف حالة طبية.",
+        "en": "A gentle stretching class should emphasize nonpainful range, paced breath and accessible alternatives rather than forcing flexibility milestones. A genuine studio should describe the setting, equipment and level. This is general wellbeing content and does not claim treatment of injuries or any clinical outcomes."
+      },
+      "checklist": {
+        "ar": [
+          "اختار مستوى يناسب خبرتك الفعلية",
+          "راجع الأدوات ونطاق التمرين مع مدرب مؤهل",
+          "لا تفترض حجز وقت أو وجود مدرب دون تأكيد"
+        ],
+        "en": [
+          "Select the class level based on your real experience",
+          "Confirm equipment and scope with a qualified coach",
+          "Do not assume a slot or coach exists without approval"
+        ]
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slug": "starting-with-strength",
+      "title": {
+        "ar": "أول مرة في الجيم: كيف تختار حصة القوة؟",
+        "en": "New to the gym: choosing your first strength class"
+      },
+      "summary": {
+        "ar": "ابدأ من تعريف الحركات الأساسية وحدود المجهود، لا رقم ثابت من الإنترنت.",
+        "en": "Start with movement patterns and manageable effort, not fixed internet targets."
+      },
+      "body": {
+        "ar": "لا تحتاج أول زيارة إلى خطة معقدة. ابدأ بتحديد هل تريد تعلّم الحركات الأساسية أو تجربة نشاط جماعي، وما خبرتك السابقة في استخدام الأدوات. اقرأ وصف الحصة وأهدافها والمدة وملابس التدريب المناسبة، واسأل مشغّل النادي عن دور المدرب وسعة المجموعة. لا تحول أي محتوى عام على الإنترنت إلى برنامج طبي أو شخصي. إذا شعرت بألم أو دوار أو أعراض غير معتادة، توقف واستعن بتقييم مختص. الهدف من اختيار حصة مبتدئين أن تفهم الحركة والتدرج وتنتظم بشكل يمكن الاستمرار عليه.",
+        "en": "Your first gym visit does not need a complicated personal program. Decide whether you want to learn basic movement patterns, explore a group class or understand the equipment. Read the class scope, session length and entry requirements, then ask the actual operator about supervision and group capacity. Generic online content is not medical screening or a personal exercise prescription. Stop if unusual symptoms occur and seek suitable professional advice. The aim is to learn at a manageable pace, not hit an arbitrary performance number."
+      }
+    },
+    {
+      "slug": "group-class-expectations",
+      "title": {
+        "ar": "قبل الاشتراك في كلاس جماعي: خمس نقاط مهمة",
+        "en": "Before a group fitness class: five practical questions"
+      },
+      "summary": {
+        "ar": "افهم المستوى وعدد المحطات وتوقيت الوصول والمشرف وطريقة التعديل.",
+        "en": "Clarify class level, equipment, arrival window, supervision and variations."
+      },
+      "body": {
+        "ar": "الكلاس الجماعي تجربة لها تنسيق مختلف عن التدريب الفردي. اسأل عن مستوى الحصة ومن يشرف عليها والمعدات والعدد الممكن داخل المساحة، ومتى ينبغي الوصول للاستعداد. تأكد هل توجد بدائل أبسط للحركات وما حدود المشاركة إذا احتجت راحة أثناء الجلسة. الوقت المنشور في صفحة تجريبية ليس فتحة حجز حقيقية، والعدد والاشتراكات يجب أن يؤكدهم مشغل النادي. هذه الأسئلة تساعدك تقارن بين الخدمات قبل الدفع دون افتراض نتائج صحية أو لياقة مضمونة.",
+        "en": "A group class has different logistics from an individual session. Ask who leads the class, what level it targets, which equipment is used, the planned group size and how early you need to arrive. Understand whether simpler movement variations and rest breaks are possible. A time shown on an illustrative website does not reserve a class place. The real gym must verify capacity, membership eligibility and terms before taking payment or confirming access."
+      }
+    },
+    {
+      "slug": "training-rhythm",
+      "title": {
+        "ar": "تنظيم أسبوعك بين القوة والحركة والراحة",
+        "en": "Building a sustainable mix of strength, movement and recovery"
+      },
+      "summary": {
+        "ar": "اعرف الفرق بين التنوع في النشاط والوعود السريعة؛ التدرج مهم.",
+        "en": "Understand variation and recovery without quick-transformation claims."
+      },
+      "body": {
+        "ar": "ممارسة النشاط بانتظام تتعلق باختيار أنشطة مناسبة لك والتدرج فيها والحفاظ على وقت للاستشفاء. يمكنك المقارنة بين جلسات القوة واللياقة والحركة من حيث مدة الحصة وطبيعتها، لكن الجدول الشخصي يعتمد على خبرتك وقدرتك وأهدافك الفعلية. لا نحدد من خلال هذا النموذج شدة تمرين أو معدل ضربات قلب أو وضعاً صحياً. عند وجود ظروف خاصة يجب الرجوع إلى مختص مناسب. الموقع يعرض فكرة اختيار الإيقاع الأسبوعي كنموذج تصميم لخدمة نادي رياضي، لا شهادة عضوية أو خطة مدرب حقيقية.",
+        "en": "A sustainable routine combines appropriate activities with enough recovery and realistic scheduling. Strength, conditioning and mobility sessions serve different purposes and do not need to be sold as rapid body transformations. The right personal training frequency varies by experience, access and individual circumstances, so a public website should not present a medical or performance prescription. A rhythm selector can help a prospective member discuss preferences with a real club without making a real enrollment."
+      }
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "ar": "هل المواعيد المكتوبة متاحة للحجز الآن؟",
+        "en": "Are listed class times bookable now?"
+      },
+      "a": {
+        "ar": "لا، جدول Pulse مثال توضيحي وليس تقويم نادي يعمل فعلاً.",
+        "en": "No. Pulse shows illustrative times, not a connected real gym calendar."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل عندكم مدربين موثقين وفروع؟",
+        "en": "Do you have verified coaches and branches?"
+      },
+      "a": {
+        "ar": "لا ندعي أسماء مدربين أو فروع حقيقية لهذا المفهوم. النادي الحقيقي يضيف بياناته.",
+        "en": "No coach profiles or gym branches are claimed for this design concept."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل الاشتراك والدفع يحصلان هنا؟",
+        "en": "Can I pay or activate membership here?"
+      },
+      "a": {
+        "ar": "النموذج يحفظ اهتماماً بالمزايا أو التجربة فقط ولا يُنشئ عضوية أو تحصيل.",
+        "en": "The form saves interest only; no payment, access pass or active membership is created."
+      }
+    },
+    {
+      "q": {
+        "ar": "كيف أختار بين حصص القوة والمرونة؟",
+        "en": "How do I choose strength versus mobility classes?"
+      },
+      "a": {
+        "ar": "ابدأ بهدفك ومستوى خبرتك واطلب توضيح الحصة من المدرب الفعلي.",
+        "en": "Consider your goals and experience, then discuss suitability with a real qualified trainer."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل يمكن طلب حصة تجريبية؟",
+        "en": "Can I ask for a trial class?"
+      },
+      "a": {
+        "ar": "نعم، يمكنك تحديد تفضيلك ويُحفظ مرجع للطلب بانتظار مشغّل فعلي.",
+        "en": "Yes, you can save a trial preference; only an actual operator could confirm it."
+      }
+    }
+  ],
+  "levels": [
+    "beginner",
+    "returning",
+    "intermediate"
+  ],
+  "goals": [
+    "general_fitness",
+    "strength_skill",
+    "mobility",
+    "group_motivation",
+    "exploring"
+  ],
+  "requestType": [
+    "trial",
+    "class_interest",
+    "membership_interest",
+    "private_intro"
+  ],
+  "regions": [
+    "Cairo",
+    "Giza",
+    "Alexandria",
+    "Riyadh",
+    "Jeddah",
+    "Other"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "vertical": "sports-venues",
+  "checked_on": "2026-11-23",
+  "photography": [
+    {
+      "id": "arena-floodlit-football",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Pexels-jonathan-petersson-399187.jpg",
+      "photographer": "Jonathan Petersson",
+      "source_date": "2017-05-02",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "verified_license_on_commons": true,
+      "dimensions": "3008x2000",
+      "direct_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Pexels-jonathan-petersson-399187.jpg/1280px-Pexels-jonathan-petersson-399187.jpg",
+      "media_status": "editorial; depicts unrelated field",
+      "local_copy": false,
+      "independent_browser_load_verified": false,
+      "alt_ar": "صورة تحريرية حقيقية لملعب مضاء ليلاً ولا تمثل Arena",
+      "alt_en": "CC0 floodlit football field, not an Arena venue"
+    },
+    {
+      "id": "arena-soccer-at-night",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Soccer_at_night_(Unsplash).jpg",
+      "photographer": "Abigail Keenan",
+      "source_date": "2015-05-11",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "verified_license_on_commons": true,
+      "dimensions": "5184x3456",
+      "direct_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Soccer_at_night_%28Unsplash%29.jpg/1280px-Soccer_at_night_%28Unsplash%29.jpg",
+      "media_status": "secondary licensed editorial option not currently represented as operator property",
+      "local_copy": false,
+      "independent_browser_load_verified": false,
+      "alt_ar": "صورة تحريرية لمباراة ليلاً بمصدر مستقل",
+      "alt_en": "Independent nighttime soccer editorial photography"
+    }
+  ],
+  "disclosures": [
+    "No image shows an Arena-operated venue, verified available pitch, named employee or booked game.",
+    "Any actual venue site must replace illustrative images with approved original photography.",
+    "Browser image-load and responsive crop pass must be attached to PR before release."
+  ]
+}

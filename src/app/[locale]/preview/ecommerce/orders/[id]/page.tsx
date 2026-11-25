@@ -9,22 +9,36 @@ import {
   MapPin, Clock, ArrowRight, ArrowLeft, Printer
 } from 'lucide-react';
 
-export async function generateMetadata({
-  params: { id }
-}: {
-  params: { id: string }
-}) {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ id: string }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    id
+  } = params;
+
   return {
     title: `Order Receipt | Noria Atelier`,
     description: `Simulated order confirmation for ID: ${id}`
   };
 }
 
-export default function EcommerceOrderReceiptPage({
-  params: { locale, id }, searchParams
-}: {
-  params: { locale: Locale; id: string }; searchParams: { access?: string }
-}) {
+export default async function EcommerceOrderReceiptPage(
+  props: {
+    params: Promise<{ locale: Locale; id: string }>; searchParams: Promise<{ access?: string }>
+  }
+) {
+  const searchParams = await props.searchParams;
+  const params = await props.params;
+
+  const {
+    locale,
+    id
+  } = params;
+
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;
 

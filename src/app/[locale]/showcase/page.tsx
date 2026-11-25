@@ -1,3 +1,4 @@
+import { MAVVIX_CONTACT } from '@/lib/business/mavvix-contact';
 import { SectorPhoto } from '@/components/shared/SectorPhoto';
 import { SECTOR_IMAGES } from '@/lib/media/sector-images';
 import Link from 'next/link';
@@ -5,6 +6,7 @@ import { MavvixHeader } from '@/components/shared/MavvixHeader';
 import { MavvixFooter } from '@/components/shared/MavvixFooter';
 import { ContactDock } from '@/components/shared/ContactDock';
 import type { Locale } from '@/lib/i18n/config';
+import type { Metadata } from 'next';
 import {
   Building2,
   Factory,
@@ -14,16 +16,18 @@ import {
   Palette,
   UtensilsCrossed,
   GraduationCap,
+  Wrench,
   ArrowUpRight,
   ShieldCheck,
   CheckCircle2,
   Sparkles,
   Layers,
-  Database
+  Database,
+  Trophy
 } from 'lucide-react';
 
 interface Props {
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }
 
 const demos = [
@@ -194,15 +198,207 @@ const demos = [
       { ar: 'تسجيل نسبة الإنجاز والدرجة في SQLite وطلب الالتحاق', en: 'Persisted quiz score progress & enrollment interest' }
     ],
     features: ['Interactive Lesson Player', 'Scored Knowledge Quiz', 'Persistent Progress Tracker']
+  },
+  {
+    number: '09',
+    slug: 'auto-service',
+    name: { ar: 'تورك جراج — موقع مراكز صيانة السيارات', en: 'Torque Garage — Automotive Service Experience' },
+    sector: { ar: 'صيانة سيارات وفحص وتشخيص', en: 'Automotive Service & Inspection' },
+    icon: Wrench,
+    color: '#FB6935',
+    bgColor: 'bg-orange-50',
+    borderColor: 'border-orange-200',
+    routesCount: 13,
+    tagline: { ar: 'افهم العلامة، اختار الخدمة، وسجّل طلب فحص واضح', en: 'Understand the symptom, select the service and save a structured inspection request.' },
+    journeys: [
+      { ar: 'ثمانية ملفات فنية لخدمات الصيانة', en: 'Eight authored technical service dossiers' },
+      { ar: 'تحديد الماركة والموديل ومؤشر العطل', en: 'Vehicle make, model, warning category and service selection' },
+      { ar: 'طلب محفوظ برقم مرجعي وينتظر تأكيد المشغّل', en: 'Persistent request reference with no false appointment confirmation' }
+    ],
+    features: ['Diagnostic Field Notes', 'Car Model Enquiry', 'Validated Request Workflow']
+
+  },
+  {
+    number:'10',
+    slug:'home-maintenance',
+    name:{ar:'فكسورا كير — موقع شركات الصيانة والتكييف',en:'Fixora Care — Home Maintenance Website'},
+    sector:{ar:'صيانة منزلية وتكييف وسباكة وكهرباء',en:'Home Services, AC, Plumbing & Electrical'},
+    icon:Wrench,
+    color:'#F7B347',
+    bgColor:'bg-blue-50',
+    borderColor:'border-blue-200',
+    routesCount:14,
+    tagline:{ar:'اختار مشكلة البيت وخطوات المعاينة في تجربة منظمة وآمنة',en:'Choose the issue and explore a safe, structured service request journey'},
+    journeys:[
+      {ar:'8 ملفات خدمات صيانة متخصصة بالتفاصيل',en:'Eight authored home-repair service dossiers'},
+      {ar:'نموذج 3 مراحل: المشكلة، المنطقة، وسيلة التواصل',en:'Three-step issue, coverage and contact enquiry'},
+      {ar:'حفظ الطلب برقم مرجعي دون ادعاء إرسال فني',en:'Persisted request with no false technician dispatch'}],
+    features:['Safety-first Service Triage','Three-step Intake','Operator Confirmation Required']
+  },
+  {
+    number:'11',slug:'salon-spa',
+    name:{ar:'فيلورا بيوتي — موقع صالونات تجميل',en:'Velora Beauty — Premium Salon & Spa Website'},
+    sector:{ar:'تجميل وعناية بالشعر والأظافر',en:'Salon, Hair & Nail Care'},
+    icon:HeartPulse,color:'#9B6070',bgColor:'bg-rose-50',borderColor:'border-rose-200',routesCount:16,
+    tagline:{ar:'قائمة عناية أنيقة ومجال للتخصص وتفضيلات المواعيد بلا وعود وهمية',en:'Editorial beauty stories, detailed service dossiers and honest appointment preferences'},
+    journeys:[
+      {ar:'10 خدمات محددة مع المدة والأسئلة والخطوات',en:'Ten original bilingual service dossiers and indicative durations'},
+      {ar:'تصفية قائمة الخدمات بالأنواع وشرح تخصص كل مجال',en:'Beauty-service category explorer and role-specific guidance'},
+      {ar:'استفسار محفوظ مع رقم مرجعي دون ادعاء تأكيد حجز',en:'Persisted pending-only appointment reference with consent and validation'}
+    ],
+    features:['Speciality-aware Intake','Beauty Editorial Journal','Pending-only Booking Flow']
+  },
+  {
+    number:'12',slug:'fitness',
+    name:{ar:'بالس ديستريكت — موقع جيم وحصص لياقة',en:'Pulse District — Premium Fitness Club Website'},
+    sector:{ar:'جيم وعضويات وحصص تدريب جماعي',en:'Fitness, Membership & Group Classes'},
+    icon:Wrench,color:'#8E6BFF',bgColor:'bg-violet-50',borderColor:'border-violet-200',routesCount:15,
+    tagline:{ar:'حصص رياضية موضحة بالمستويات وطلب تجربة محفوظ بدون عضوية وهمية',en:'Kinetic fitness site with authored class guides and honest pending-only trial'},
+    journeys:[
+      {ar:'تصفح 9 حصص للقوة واللياقة والحركة حسب المستوى',en:'Nine original programs with experience-level selection'},
+      {ar:'جدول توضيحي ومقارنة عضوية ومعلومات بداية التدريب',en:'Illustrative weekly timetable, memberships and first-visit preparation'},
+      {ar:'استفسار محفوظ بمعرّف فريد وموافقة صريحة دون حجوزات وهمية',en:'Persisted class/trial enquiry with validation, consent and idempotency'}
+    ],
+    features:['Class-Level Selector','Pending-only Trial Request','Training Knowledge Journal']
+  },
+  {
+    number:'13',slug:'sports-venues',
+    name:{ar:'أرينا كورتس — موقع ملاعب كرة وبادل',en:'Arena Courts — Football & Padel Venue Website'},
+    sector:{ar:'حجز ملاعب وصيغ اللعب',en:'Football & Padel Sports Venues'},
+    icon:Trophy,color:'#F0B044',bgColor:'bg-emerald-50',borderColor:'border-emerald-200',routesCount:16,
+    tagline:{ar:'ملعبك وقواعد اللعب وتفضيل الموعد، بدون حجز مؤكد',en:'Sport-format guides, team-size selection and transparent pending-only court requests'},
+    journeys:[
+      {ar:'ثمانية ملفات صيغ اللعب للخماسي والسباعي والبادل',en:'Eight independently authored football and padel format dossiers'},
+      {ar:'اختيار العدد والوقت والمدة وفق قواعد كل صيغة',en:'Team count, requested time and allowable duration validation'},
+      {ar:'رقم مرجعي محفوظ حتى يؤكد المشغّل الحقيقي',en:'Persisted booking-preference reference, never a fake reservation'}
+    ],
+    features:['Sport-aware Team Size','No Fake Availability','Owner-confirmed Booking Only']
+  },
+  {
+    number:'14',slug:'furniture',
+    name:{ar:'أوكلين ليفينج — أثاث حسب المقاس',en:'Oakline Living — Bespoke Furniture Website'},
+    sector:{ar:'أثاث غرف ومعارض وتفصيل حسب الطلب',en:'Furniture, Room Planning & Custom Quotes'},
+    icon:Home,color:'#BA9062',bgColor:'bg-amber-50',borderColor:'border-amber-200',routesCount:18,
+    tagline:{ar:'كتالوج خامات ومقاسات وسلة تسعير متعددة القطع محفوظة',en:'Room-first furniture dossiers and multi-item material/dimension quote basket'},
+    journeys:[
+      {ar:'10 قطع مفصلة تشمل الغرف والخامات والأبعاد',en:'Ten original room-specific furniture design dossiers'},
+      {ar:'اختيار خامة وتشطيب وثلاثة أبعاد لكل قطعة',en:'Compatible material, finish and full dimension selection per item'},
+      {ar:'سلة تصل 6 قطع برقم مرجعي دون سعر مختلق',en:'Saved six-item RFQ with nonbinding reference, no fake stock or price'}
+    ],
+    features:['Material/Finish Validation','Multi-piece RFQ Basket','No Invented Inventory']
+  },
+  {
+    number:'15',slug:'interiors-kitchens',
+    name:{ar:'فورما أتيليه — مطابخ وتصميم داخلي',en:'Forma Atelier — Kitchen & Interior Design'},
+    sector:{ar:'مطابخ وديكور وتخطيط مساحات',en:'Kitchen Design & Interior Planning'},
+    icon:Palette,color:'#B9866B',bgColor:'bg-stone-50',borderColor:'border-stone-200',routesCount:25,
+    tagline:{ar:'من تخطيط المطبخ والخامات إلى طلب تصميم بمقاسات استرشادية',en:'Architectural layout planning, materials and a measured design brief'},
+    journeys:[
+      {ar:'تخطيطات حرف L وU ومتوازي وجزيرة',en:'L, U, galley and island layout guidance'},
+      {ar:'اختيار الخامات وأسطح العمل والميزانية',en:'Finish, countertop and budget preferences'},
+      {ar:'طلب تصميم محفوظ دون سعر أو تصنيع مؤكد',en:'Validated persisted design brief without binding price'}
+    ],
+    features:['Layout-aware Wall Measurements','Material Selection','Nonbinding Design Brief']
+  },
+  {
+    number:'16',slug:'nursery',
+    name:{ar:'بلوم ستيبس — موقع حضانات ورياض أطفال',en:'BloomSteps — Premium Nursery & Early Years Website'},
+    sector:{ar:'رياض أطفال وبرامج تعلم باللعب',en:'Nursery, Preschool & Early Years'},
+    icon:GraduationCap,color:'#F5C04E',bgColor:'bg-amber-50',borderColor:'border-amber-200',routesCount:23,
+    tagline:{ar:'الفئات العمرية والتعلم باللعب وطلب زيارة بموافقة ولي الأمر',en:'Age-led learning, safety-first storytelling and a guardian-only visit request'},
+    journeys:[
+      {ar:'8 ملفات برامج وتخصصات للطفولة المبكرة',en:'Eight original early-years program and activity dossiers'},
+      {ar:'معلومات سلامة وروتين اليوم والعناية بالخصوصية',en:'Safeguarding, learning rhythm and child-privacy guidance'},
+      {ar:'طلب زيارة محفوظ لولي الأمر دون بيانات شخصية عن الأطفال',en:'Consented guardian-only saved visit request with no child-identifiable details'}
+    ],
+    features:['Age-Band Guided Programs','Guardian Privacy-First Intake','Nonbinding Visit Request']
+  },
+  {
+    number:'17',slug:'car-detailing',
+    name:{ar:'جلوس باي — موقع عناية وتلميع السيارات',en:'GlossBay — Premium Car Detailing Website'},
+    sector:{ar:'ديتيلنج وتنظيف وحماية السيارات',en:'Automotive Detailing, Cleaning & Paint Protection'},
+    icon:Wrench,color:'#4CCBF4',bgColor:'bg-cyan-50',borderColor:'border-cyan-200',routesCount:26,
+    tagline:{ar:'اختيار حجم السيارة وتفاصيل التلميع والإضافات مع طلب عرض غير ملزم',en:'Vehicle-size selector, treatment dossiers and a nonbinding quote enquiry builder'},
+    journeys:[
+      {ar:'10 خدمات تفصيلية تشمل الداخلية والطلاء وPPF والسيراميك',en:'Ten substantive wash, cabin, correction and protection dossiers'},
+      {ar:'تحديد حجم العربية والإضافات وحالة السطح وتاريخ مفضل',en:'Select vehicle size, treatment, add-ons, surface condition and preferred day'},
+      {ar:'حفظ استفسار برقم مرجعي بدون سعر وهمي أو حجز مؤكد',en:'Consent-based persisted request with no fabricated quote or appointment'}
+    ],
+    features:['Vehicle-size Service Scope','Paint Protection Education','Idempotent Quote Request']
+  },
+  {
+    number:'18',slug:'physiotherapy',
+    name:{ar:'موشن لاب — موقع العلاج الطبيعي والتأهيل',en:'Motion Lab — Premium Physiotherapy Website'},
+    sector:{ar:'التقييم الوظيفي والتأهيل والحركة',en:'Functional Movement & Physiotherapy'},
+    icon:HeartPulse,color:'#79C9C1',bgColor:'bg-emerald-50',borderColor:'border-emerald-200',routesCount:27,
+    tagline:{ar:'استشارات أولية منظمة، خصوصية صحية، ومعلومات تأهيل متخصصة',en:'Clinician-aware first-visit enquiry, health privacy and original movement education'},
+    journeys:[
+      {ar:'10 ملفات تأهيل تعليمية عربية وإنجليزية بدون تشخيص أو وعود شفاء',en:'Ten bilingual rehabilitation service dossiers without diagnoses or recovery promises'},
+      {ar:'زيارة أولى وتفضيلات عامة من غير تقارير أو بيانات طبية',en:'Privacy-first initial enquiry with no medical uploads or sensitive health records'},
+      {ar:'طلب محفوظ برقم مرجعي من غير ادعاء وجود مركز أو معالج حقيقي',en:'Idempotent pending reference with no invented clinician, slot or medical outcome'}
+    ],
+    features:['Privacy-Minimal Assessment Enquiry','Movement Education','Qualified Operator Confirmation']
+  },
+  {
+    number:'19',slug:'veterinary',
+    name:{ar:'بوويل — تجربة موقع عيادة بيطرية',en:'PawWell — Veterinary Clinic Website Experience'},
+    sector:{ar:'رعاية الحيوانات الأليفة والزيارة البيطرية',en:'Pet Wellness & Veterinary Care'},
+    icon:HeartPulse,color:'#F3B98E',bgColor:'bg-emerald-50',borderColor:'border-emerald-200',routesCount:16,
+    tagline:{ar:'رعاية تبدأ بفهم نوع الحيوان والعمر والزيارة المناسبة',en:'Pet-first care journeys, original service guides and nonbinding visit preferences'},
+    journeys:[
+      {ar:'8 ملفات رعاية متخصصة ومقالات توعوية',en:'Eight original pet-care dossiers and three authored guides'},
+      {ar:'دليل تفاعلي يفلتر حسب نوع الحيوان',en:'Species-aware interactive service explorer'},
+      {ar:'تقديم استفسار زيارة محفوظ برقم مرجعي دون طبيب أو موعد وهمي',en:'Idempotent pending visit request without invented clinicians'}
+    ],
+    features:['Pet-Species-Aware Care Explorer','Emergency Safety Boundary','Persistent Visit Enquiry']
+  },
+  {
+    number:'20',slug:'law-firm',
+    name:{ar:'ليكسورا كاونسل — موقع مكاتب المحاماة',en:'Lexora Counsel — Law Firm Website Experience'},
+    sector:{ar:'المحاماة والخدمات القانونية للشركات',en:'Legal Practice, Contracts & Governance'},
+    icon:ShieldCheck,color:'#B79B6A',bgColor:'bg-amber-50',borderColor:'border-amber-200',routesCount:24,
+    tagline:{ar:'مجالات قانونية متخصصة مع استفسار أولي يحمي السرية',en:'Eight authored legal practice areas with a privacy-minimal initial enquiry'},
+    journeys:[
+      {ar:'8 ملفات مجالات قانونية مفصلة و3 مقالات مستقلة',en:'Eight substantive law practice dossiers and three bilingual original insights'},
+      {ar:'تحديد نوع الخدمة والدولة والعميل دون جمع تفاصيل قضية',en:'Jurisdiction, practice and client category selection without confidential case data'},
+      {ar:'استفسار محفوظ برقم مرجعي دون ادعاء محامٍ أو موعد مؤكد',en:'Consented pending-only request with no invented legal representation'}
+    ],
+    features:['Privacy-First Legal Intake','Jurisdiction-Aware Service Taxonomy','Idempotent Enquiry Receipt']
   }
 ];
 
-export default function ShowcasePage({ params }: Props) {
+/** Preview examples are not operating businesses. Canonicals become indexable only
+ * after the owner configures the verified PUBLIC portfolio origin. */
+export async function generateMetadata(props:{params: Promise<{locale:Locale}>}):Promise<Metadata> {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
+  const ar=locale==='ar';
+  const originValue=process.env.NEXT_PUBLIC_MAVVIX_SHOWCASE_ORIGIN || '';
+  let origin='';
+  try {const url=new URL(originValue);if(url.protocol==='https:')origin=url.origin;}catch{}
+  const verifiedIndex=Boolean(origin)&&process.env.MAVVIX_INDEX_SHOWCASE==='true';
+  const title=ar?`نماذج مواقع احترافية لقطاعات مختلفة | مافكس — ${demos.length} تجربة`:`Premium Industry Website Portfolio | Mavvix — ${demos.length} Experiences`;
+  const description=ar?'استعرض مواقع قطاعات متعددة بالعربي والإنجليزي وتجارب تفاعلية لنماذج خدمات وحجوزات ومتاجر، وتواصل مع مافكس لتنفيذ موقع بهوية نشاطك الحقيقية.':'Explore bespoke bilingual industry website experiences by Mavvix, including service enquiry, retail and scheduling concepts. Commission an original site tailored to your real business.';
+  return {
+   title,description,
+   robots:{index:verifiedIndex,follow:verifiedIndex},
+   alternates:origin?{canonical:`${origin}/${locale}/showcase`,languages:{ar:`${origin}/ar/showcase`,en:`${origin}/en/showcase`}}:undefined,
+   openGraph:{title,description,type:'website',siteName:'Mavvix Software',locale:ar?'ar_EG':'en_US',url:origin?`${origin}/${locale}/showcase`:undefined},
+   twitter:{card:'summary_large_image',title,description}
+  };
+}
+
+export default async function ShowcasePage(props: Props) {
+  const params = await props.params;
   const { locale } = params;
   const isAr = locale === 'ar';
 
   return (
-    <div className="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+    <div className="mavvix-showcase bg-slate-50 text-slate-900 min-h-screen flex flex-col">
       {/* Commercial Announcement Bar */}
       <div className="bg-gradient-to-r from-blue-700 via-indigo-600 to-cyan-600 text-white text-xs sm:text-sm font-semibold py-2.5 px-4 text-center">
         <div className="max-w-7xl mx-auto flex items-center justify-center gap-2 flex-wrap">
@@ -211,11 +407,11 @@ export default function ShowcasePage({ params }: Props) {
           </span>
           <span>
             {isAr
-              ? 'احصل على موقع رقمي متكامل لشركتك خلال 48 ساعة بواسطة Mavvix — جاهز للمبيعات والحملات الإعلانية'
-              : 'Get a production-grade commercial platform for your business in 48 hours by Mavvix — ad campaign ready'}
+              ? 'استعرض مواقع متخصصّة لمجالات مختلفة، واطلب تنفيذ موقع يناسب نشاطك وميزانيتك'
+              : 'Explore custom industry website experiences and discuss a project for your business with Mavvix'}
           </span>
           <a
-            href="https://wa.me/201017799042?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%85%D8%A7%D9%81%D9%83%D8%B3%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D9%85%D9%88%D9%82%D8%B9%20%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A%20%D9%84%D8%B4%D8%B1%D9%83%D8%AA%D9%8A%20%D8%AE%D9%84%D8%A7%D9%84%2048%20%D8%B3%D8%A7%D8%B9%D8%A9"
+            href={`https://wa.me/${MAVVIX_CONTACT.whatsappNumber}?text=${encodeURIComponent(isAr?'أهلًا مافكس، عايز موقع احترافي لنشاطي بعد ما شوفت معرض المواقع.':'Hello Mavvix, I want a bespoke business website after browsing your industry portfolio.')}`}
             target="_blank"
             rel="noopener noreferrer"
             className="underline hover:text-cyan-200 font-bold ml-1"
@@ -244,13 +440,13 @@ export default function ShowcasePage({ params }: Props) {
 
           <p className="mt-6 text-slate-300 text-base sm:text-xl max-w-3xl leading-relaxed">
             {isAr
-              ? 'ثمانية مواقع متخصصة؛ كل موقع يتميز بهوية بصرية مخصصة، ومسارات فرعية متعددة، وقاعدة بيانات SQLite حقيقية، ولوحة تحكم لإدارة المحتوى والطلبات.'
-              : 'Eight meticulously crafted industry websites. Each demo features bespoke visual art direction, 10+ deep routes, persistent SQLite database state, and protected Content Studio.'}
+              ? 'مجموعة مواقع متخصصة تختلف في التصميم والخدمات وطريقة استقبال الاستفسارات. جميعها أمثلة لما يمكن لمافكس تطويره لنشاطك، وليست شركات تشغيلية قائمة.'
+              : 'Explore bespoke Arabic/English industry web experiences with specialized service journeys, realistic editorial content and saved requests. These are Mavvix portfolio concepts, not operating businesses.'}
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center sm:justify-start gap-3 mb-6">
             <a
-              href="https://wa.me/201017799042?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%85%D8%A7%D9%81%D9%83%D8%B3%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D9%85%D9%88%D9%82%D8%B9%20%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A%20%D9%84%D8%B4%D8%B1%D9%83%D8%AA%D9%8A"
+              href={`https://wa.me/${MAVVIX_CONTACT.whatsappNumber}?text=${encodeURIComponent(isAr?'أهلًا مافكس، عايز موقع احترافي لنشاطي بعد ما شوفت معرض المواقع.':'Hello Mavvix, I want a bespoke business website after browsing your industry portfolio.')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-slate-950 font-bold px-6 py-3 rounded-xl text-sm transition-all shadow-lg shadow-emerald-950/20 active:scale-95"
@@ -273,7 +469,7 @@ export default function ShowcasePage({ params }: Props) {
             </div>
             <div className="flex items-center gap-2 bg-slate-800/80 border border-slate-700 px-3.5 py-2 rounded-lg text-slate-200">
               <Layers className="w-4 h-4 text-blue-400" />
-              <span>{isAr ? '91 مسارًا تفاعليًا عربي/إنجليزي' : '91 Bilingual Route Patterns'}</span>
+              <span>{isAr ? 'محتوى ومسارات تفصيلية بالعربي والإنجليزي' : 'Bilingual Industry Journeys'}</span>
             </div>
             <div className="flex items-center gap-2 bg-slate-800/80 border border-slate-700 px-3.5 py-2 rounded-lg text-slate-200">
               <ShieldCheck className="w-4 h-4 text-amber-400" />
@@ -288,7 +484,7 @@ export default function ShowcasePage({ params }: Props) {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 pb-6 border-b border-slate-200 gap-4">
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
-              {isAr ? 'استكشف نماذج القطاعات الثمانية' : 'Explore All Eight Sector Demos'}
+              {isAr ? 'استكشف مواقع القطاعات المختلفة' : 'Explore Industry Website Experiences'}
             </h2>
             <p className="mt-2 text-slate-600 text-sm">
               {isAr
@@ -297,7 +493,7 @@ export default function ShowcasePage({ params }: Props) {
             </p>
           </div>
           <div className="text-xs font-semibold px-3 py-1.5 rounded bg-slate-100 text-slate-700 border border-slate-300 w-fit">
-            8 / 8 {isAr ? 'نماذج جاهزة ومعتمدة' : 'Demos Ready & Verified'}
+            12 {isAr ? 'تجربة قطاعية، مع مواقع جديدة قيد الاختبار البصري' : 'Industry experiences, including newly built sites under visual QA'}
           </div>
         </div>
 
@@ -309,7 +505,31 @@ export default function ShowcasePage({ params }: Props) {
                 key={d.slug}
                 className="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden group"
               >
-                <SectorPhoto sector={d.slug as keyof typeof SECTOR_IMAGES} alt="" className="h-52 w-full" />
+                {d.slug==='auto-service'
+                  ? <div className="relative h-52 w-full overflow-hidden bg-[#161A20]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Mechanic_repairing_car_engine.jpg/1280px-Mechanic_repairing_car_engine.jpg" loading="lazy" decoding="async" className="h-full w-full object-cover" alt={isAr?'صورة تحريرية لميكانيكي يفحص محرك سيارة':'Editorial photo of a mechanic examining a car engine'}/></div>
+                  : d.slug==='home-maintenance'
+                  ? <div className="relative h-52 w-full overflow-hidden bg-[#EEF7FC]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/AirConditioner.jpg/1280px-AirConditioner.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'صورة تحريرية لمكيف هواء':'CC0 editorial air conditioning photo'} /></div>
+                  : d.slug==='salon-spa'
+                  ? <div className="relative h-52 bg-[#E9D9D8] overflow-hidden"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Getting_her_nails_painted_%28Unsplash%29.jpg/1280px-Getting_her_nails_painted_%28Unsplash%29.jpg" className="w-full h-full object-cover" alt={isAr?'صورة تحريرية للعناية بالأظافر':'CC0 editorial manicure photography'}/></div>
+                  : d.slug==='fitness'
+                  ? <div className="relative h-52 w-full overflow-hidden bg-[#141421]"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Fitness_Center_Equipment.jpg" alt={isAr?'أجهزة رياضية حقيقية من صورة CC0 تحريرية':'CC0 editorial photo of fitness equipment at an unrelated gym'} className="w-full h-full object-cover"/></div>
+                  : d.slug==='sports-venues'
+                  ? <div className="relative h-52 w-full overflow-hidden bg-[#102B26]"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Pexels-jonathan-petersson-399187.jpg/1280px-Pexels-jonathan-petersson-399187.jpg" alt={isAr?'صورة تحريرية حقيقية لملعب ليلي':'CC0 real floodlit football pitch editorial photo'} className="w-full h-full object-cover"/></div>
+                  : d.slug==='furniture'
+                  ? <div className="relative h-52 w-full overflow-hidden bg-[#EDE3D4]"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Living_room_%28Unsplash%29.jpg/1280px-Living_room_%28Unsplash%29.jpg" alt={isAr?'صورة CC0 حقيقية لصالون بكنبة زرقاء':'CC0 editorial blue sofa living room'} className="h-full w-full object-cover"/></div>
+                  : d.slug==='interiors-kitchens'
+                  ? <div className="relative h-52 w-full overflow-hidden bg-[#F4F0EA]"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Kitchen_Design.jpg/960px-Kitchen_Design.jpg" alt={isAr?'صورة تحريرية لتصميم مطبخ':'Editorial kitchen design photograph'} className="h-full w-full object-cover"/></div>
+                  : d.slug==='nursery'
+                  ? <div className="relative h-52 w-full overflow-hidden bg-[#FFF5DA]"><img src="https://upload.wikimedia.org/wikipedia/commons/7/71/Montessorishelves.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'مواد تعليمية حقيقية من فصل مونتيسوري مستقل، لا يمثل حضانة بلوم ستيبس':'Real editorial Montessori learning materials in an unrelated classroom'}/></div>
+                  : d.slug==='car-detailing'
+                  ? <div className="relative h-52 w-full overflow-hidden bg-[#071424]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Exterior_Car_detailing.png/1280px-Exterior_Car_detailing.png" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'صورة مرخصة حقيقية لسيارة خلال عمل ديتيلنج':'Genuine CC0 editorial car-detailing photograph'}/></div>
+                  : d.slug==='physiotherapy'
+                  ? <div className="relative h-52 w-full overflow-hidden bg-[#E5F2E9]"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Rehabilitaci%C3%B3n_fisioterapia.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover object-center" alt={isAr?'صورة تحريرية لمجال العلاج الطبيعي، ليست من مركز موشن لاب':'CC BY 4.0 editorial physiotherapy image; not Motion Lab staff or patients'}/></div>
+                  : d.slug==='veterinary'
+                  ? <div className="relative h-52 w-full overflow-hidden bg-[#E8EFE5]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Veterinary_Office_with_dog.JPG/1280px-Veterinary_Office_with_dog.JPG" loading="lazy" decoding="async" className="h-full w-full object-cover" alt={isAr?'صورة حقيقية مرخصة لكلب في عيادة بيطرية مستقلة، ليست PawWell':'Real CC0 editorial dog photograph in an unrelated veterinary clinic'}/></div>
+                  : d.slug==='law-firm'
+                  ? <div className="relative h-52 bg-[#D6CAB8] overflow-hidden"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Canadian_law_books_%2831460630695%29.jpg/1280px-Canadian_law_books_%2831460630695%29.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'كتب قانونية حقيقية من كندا، صورة عامة مرخصة لا تتبع Lexora':'CC0 editorial Canadian law books, not an operating Lexora office'}/></div>
+                  : <SectorPhoto sector={d.slug as keyof typeof SECTOR_IMAGES} alt="" className="h-52 w-full" />}
                 {/* Sector Overview */}
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
                   <div>
@@ -372,8 +592,8 @@ export default function ShowcasePage({ params }: Props) {
 
                     <Link
                       href={`/${locale}/preview/${d.slug}`}
-                      className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-white transition-all shadow-sm shrink-0"
-                      style={{ backgroundColor: d.color }}
+                      className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-white bg-[#08132D] hover:bg-[#17345D] transition-all shadow-sm shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2"
+                      style={{ borderBottom: `3px solid ${d.color}` }}
                     >
                       <span>{isAr ? 'تصفح الموقع' : 'Explore Website'}</span>
                       <ArrowUpRight className="w-4 h-4" />
