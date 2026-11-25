@@ -20,17 +20,19 @@ import {
 } from 'lucide-react';
 
 interface Props {
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }
 
-export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+export async function generateMetadata(props: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const params = await props.params;
   const ar = params.locale === 'ar';
   const title = ar ? "موقع توريدات صناعية | كتالوج ومقارنة وRFQ | مافكس" : "Industrial Supply Website | Technical Catalogue & RFQ | Mavvix";
   const description = ar ? "موقع توريدات متخصص يعرض مواصفات المنتجات الصناعية ومقارنتها وتجهيز طلب عروض أسعار متعدد البنود." : "Technical B2B catalogue with material specifications, product comparison and a multi-item procurement quotation journey.";
   return { title, description, openGraph: {title, description, locale: ar ? 'ar_EG' : 'en_US', type: 'website'}, twitter: {card:'summary_large_image',title,description} };
 }
 
-export default function IndustrialHomePage({ params }: Props) {
+export default async function IndustrialHomePage(props: Props) {
+  const params = await props.params;
   const { locale } = params;
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;

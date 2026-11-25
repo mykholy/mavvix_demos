@@ -4,13 +4,25 @@ import { ArrowUpRight, ArrowRight, ArrowLeft, Wind, Droplets, Zap, Hammer, Shiel
 import { HOME_CARE,careLocale,maintenancePath } from '@/lib/verticals/home-maintenance/data';
 import type { Locale } from '@/lib/i18n/config';
 
-export function generateMetadata({params:{locale}}:{params:{locale:Locale}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';const title=ar?'موقع شركة صيانة منزلية | Fixora Care بتصميم مافكس':'Home Maintenance Website | Fixora Care by Mavvix';
  const description=ar?'موقع متكامل لخدمات التكييف والسباكة والكهرباء وحجز طلب معاينة غير مؤكد، وتجربة عربية وإنجليزية احترافية.':'Distinct home services website with AC, plumbing, electrical and safe three-step service enquiries, developed by Mavvix.';
  return {title,description,openGraph:{title,description,type:'website'},twitter:{card:'summary_large_image',title,description}};
 }
 const PHOTO='https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/AirConditioner.jpg/1280px-AirConditioner.jpg';
-export default function HomeCarePage({params:{locale}}:{params:{locale:Locale}}){
+export default async function HomeCarePage(props:{params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';const Arrow=ar?ArrowLeft:ArrowRight;
  const services=HOME_CARE.services;
  const topics=[

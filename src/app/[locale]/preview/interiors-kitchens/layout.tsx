@@ -5,7 +5,17 @@ import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { formaPath } from '@/lib/verticals/interiors-kitchens/data';
 import { Ruler,ArrowUpRight,PenTool,Instagram } from 'lucide-react';
 
-export default function FormaLayout({children,params:{locale}}:{children:React.ReactNode;params:{locale:Locale}}){
+export default async function FormaLayout(props:{children:React.ReactNode;params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
+ const {
+  children
+ } = props;
+
  const ar=locale==='ar';
  const menu=[
   {href:formaPath(locale,'services'),label:ar?'التصميمات':'Solutions'},

@@ -3,11 +3,13 @@ import type { Locale } from '@/lib/i18n/config';
 import { RealEstateCompareClient } from './RealEstateCompareClient';
 
 interface Props {
-  params: { locale: Locale };
-  searchParams: { units?: string };
+  params: Promise<{ locale: Locale }>;
+  searchParams: Promise<{ units?: string }>;
 }
 
-export default function RealEstateComparePage({ params, searchParams }: Props) {
+export default async function RealEstateComparePage(props: Props) {
+  const searchParams = await props.searchParams;
+  const params = await props.params;
   const { locale } = params;
   const allUnits = getPropertyUnits(locale);
 

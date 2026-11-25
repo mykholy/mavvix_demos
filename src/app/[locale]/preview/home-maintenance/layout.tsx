@@ -5,7 +5,17 @@ import { ArrowUpRight, LifeBuoy, Home, CheckCircle2, ShieldCheck, Phone } from '
 import type { Locale } from '@/lib/i18n/config';
 import { maintenancePath } from '@/lib/verticals/home-maintenance/data';
 
-export default function HomeMaintenanceLayout({children,params:{locale}}:{children:React.ReactNode;params:{locale:Locale}}){
+export default async function HomeMaintenanceLayout(props:{children:React.ReactNode;params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
+ const {
+  children
+ } = props;
+
  const ar=locale==='ar';
  const nav=[
   {href:maintenancePath(locale,'services'),label:ar?'الخدمات':'Services'},

@@ -8,11 +8,17 @@ export const metadata = {
   description: 'Search across 24 natural linen and lifestyle garments, fabrics, and artisan cuts.'
 };
 
-export default function EcommerceSearchPage({
-  params: { locale }
-}: {
-  params: { locale: Locale }
-}) {
+export default async function EcommerceSearchPage(
+  props: {
+    params: Promise<{ locale: Locale }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const isAr = locale === 'ar';
   const products = getCatalogItems('ecommerce', locale);
 

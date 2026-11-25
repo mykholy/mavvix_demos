@@ -3,7 +3,13 @@ import type { Locale } from '@/lib/i18n/config';
 import { GLOSSBAY,GLOSS_IMAGES,glossPath,glossText } from '@/lib/verticals/car-detailing/data';
 import { ArrowUpRight, ArrowLeft, ArrowRight, Droplets, Layers3, ShieldCheck, CarFront, Gauge, Wrench, Sparkles, BookOpen, CheckCircle2, ScanSearch, Waves, Gem, Sun, ClipboardCheck, Wind, Info } from 'lucide-react';
 
-export default function GlossBayHome({params:{locale}}:{params:{locale:Locale}}){
+export default async function GlossBayHome(props:{params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';const Arrow=ar?ArrowLeft:ArrowRight;
  const treatments=GLOSSBAY.services;
  const hero=GLOSS_IMAGES.exterior;

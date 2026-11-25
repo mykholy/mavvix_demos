@@ -3,12 +3,24 @@ import type { Metadata } from 'next';
 import type { Locale } from '@/lib/i18n/config';
 import { PULSE,PULSE_MEDIA,pulsePath,pulseText } from '@/lib/verticals/fitness/data';
 import { ArrowUpRight,ArrowRight,ArrowLeft,Activity,Dumbbell,Timer,Footprints,ShieldCheck,BookOpen,Target,CalendarClock,Zap,CheckCircle2,Heart,MoveUpRight,Gauge,Clock3,ArrowDown } from 'lucide-react';
-export function generateMetadata({params:{locale}}:{params:{locale:Locale}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar',title=ar?'موقع جيم ونادي رياضي | Pulse District بتصميم مافكس':'Premium Gym Website | Pulse District by Mavvix';
  const description=ar?'تجربة رقمية لجيم احترافي بعروض حصص قوة ولياقة ومرونة، دليل أول زيارة وطلب حصة تجريبية محفوظ برقم مرجعي غير مؤكد.':'A distinctive gym website concept with nine meaningful class profiles, bilingual schedules, a trial preference journey and honest pending-only receipt.';
  return {title,description,openGraph:{title,description,type:'website'},robots:{index:false,follow:false}};
 }
-export default function FitnessHome({params:{locale}}:{params:{locale:Locale}}){
+export default async function FitnessHome(props:{params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar',Arrow=ar?ArrowLeft:ArrowRight;
  const groups=[{slug:'strength',num:'01',title:ar?'القوة':'STRENGTH',sub:ar?'اتعلم الحركة والتدرج':'Technique before numbers',icon:Dumbbell},
  {slug:'conditioning',num:'02',title:ar?'اللياقة':'CONDITIONING',sub:ar?'مجهود يناسب خبرتك':'Effort with control',icon:Activity},

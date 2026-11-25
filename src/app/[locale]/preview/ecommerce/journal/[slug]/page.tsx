@@ -5,11 +5,18 @@ import { Locale } from '@/lib/i18n/config';
 import { getEditorialPostBySlug, getCatalogItems } from '@/lib/db/repositories';
 import { ArrowRight, ArrowLeft, Clock, BookOpen, Sparkles } from 'lucide-react';
 
-export async function generateMetadata({
-  params: { locale, slug }
-}: {
-  params: { locale: Locale; slug: string }
-}) {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ locale: Locale; slug: string }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale,
+    slug
+  } = params;
+
   const post = getEditorialPostBySlug('ecommerce', slug, locale);
   if (!post) return { title: 'Article Not Found' };
   return {
@@ -18,11 +25,18 @@ export async function generateMetadata({
   };
 }
 
-export default function EcommerceArticleDetailPage({
-  params: { locale, slug }
-}: {
-  params: { locale: Locale; slug: string }
-}) {
+export default async function EcommerceArticleDetailPage(
+  props: {
+    params: Promise<{ locale: Locale; slug: string }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale,
+    slug
+  } = params;
+
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;
 

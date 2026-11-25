@@ -4,11 +4,12 @@ import { notFound } from 'next/navigation';
 import { Locale } from '@/lib/i18n/config';
 import { getRestaurantBranchBySlug, getRestaurantTimeSlots } from '@/lib/db/repositories';
 
-export default function RestaurantBranchDetailPage({
-  params,
-}: {
-  params: { locale: Locale; slug: string };
-}) {
+export default async function RestaurantBranchDetailPage(
+  props: {
+    params: Promise<{ locale: Locale; slug: string }>;
+  }
+) {
+  const params = await props.params;
   const { locale, slug } = params;
   const isAr = locale === 'ar';
   const branch = getRestaurantBranchBySlug(slug, locale);

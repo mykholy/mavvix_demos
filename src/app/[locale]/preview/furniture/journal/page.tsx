@@ -2,7 +2,13 @@ import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { OAKLINE,oakPath,oakText } from '@/lib/verticals/furniture/data';
 import { BookOpen,ArrowUpRight,Ruler } from 'lucide-react';
-export default function FurnitureJournal({params:{locale}}:{params:{locale:Locale}}){
+export default async function FurnitureJournal(props:{params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';
  return <div><section className="bg-[#E6DAC8] py-16 sm:py-24"><div className="max-w-7xl mx-auto px-5 sm:px-8">
   <p className="text-xs tracking-widest text-[#785A3A] font-bold">OAKLINE / THE ROOM NOTES</p><h1 className="oakline-display text-4xl sm:text-7xl mt-6">{ar?'اختيار الأثاث يبدأ بمعلومة مفيدة':'THOUGHTFUL READING FOR REAL ROOMS'}</h1>

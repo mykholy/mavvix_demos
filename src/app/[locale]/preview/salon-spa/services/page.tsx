@@ -3,7 +3,16 @@ import type { Locale } from '@/lib/i18n/config';
 import { VELORA, veloraPath, veloraText } from '@/lib/verticals/salon-spa/data';
 import { ArrowUpRight, Clock3, Flower2, CheckCircle2 } from 'lucide-react';
 const types=[['all',{ar:'جميع الخدمات',en:'All services'}],['hair',{ar:'الشعر',en:'Hair'}],['nails',{ar:'الأظافر',en:'Nails'}],['rituals',{ar:'العناية والاسترخاء',en:'Wellbeing'}],['occasion',{ar:'المناسبات',en:'Occasions'}],['face',{ar:'الحواجب',en:'Brows'}]] as const;
-export default function VeloraServices({params:{locale},searchParams}:{params:{locale:Locale};searchParams:{category?:string}}){
+export default async function VeloraServices(
+ props:{params: Promise<{locale:Locale}>;searchParams: Promise<{category?:string}>}
+) {
+ const searchParams = await props.searchParams;
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';const cat=types.some(t=>t[0]===searchParams.category)?searchParams.category:'all';
  const list=VELORA.services.filter(s=>cat==='all'||s.category===cat);
  return <div><section className="bg-[#F1E6E4] border-b border-[#DCC7CA] py-20 sm:py-28"><div className="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[1fr_.65fr] gap-10 items-end">

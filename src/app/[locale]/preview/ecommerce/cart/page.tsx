@@ -7,11 +7,17 @@ export const metadata = {
   description: 'Review your selected garments, choose your shipping zone, and apply demo promotion coupons.'
 };
 
-export default function EcommerceCartPage({
-  params: { locale }
-}: {
-  params: { locale: Locale }
-}) {
+export default async function EcommerceCartPage(
+  props: {
+    params: Promise<{ locale: Locale }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const isAr = locale === 'ar';
 
   return (

@@ -4,7 +4,16 @@ import { PAWWELL,pawPath } from '@/lib/verticals/veterinary/data';
 import { PawVisitForm } from './PawVisitForm';
 import { ShieldCheck, CalendarDays, AlertTriangle, PawPrint } from 'lucide-react';
 
-export default function PawRequestPage({params:{locale},searchParams}:{params:{locale:Locale};searchParams:{service?:string}}){
+export default async function PawRequestPage(
+ props:{params: Promise<{locale:Locale}>;searchParams: Promise<{service?:string}>}
+) {
+ const searchParams = await props.searchParams;
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';const initial=PAWWELL.services.some(s=>s.slug===searchParams.service)?searchParams.service:'';
  return <div className="bg-[#F5F8F1]"><div className="max-w-7xl mx-auto px-5 sm:px-8 py-14 sm:py-20 grid lg:grid-cols-[.75fr_1.15fr] gap-12 items-start">
   <div className="lg:sticky lg:top-32">

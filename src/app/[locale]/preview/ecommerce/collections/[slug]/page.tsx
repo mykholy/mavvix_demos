@@ -5,11 +5,18 @@ import { Locale } from '@/lib/i18n/config';
 import { getEcommerceCollectionBySlug, getCatalogItems } from '@/lib/db/repositories';
 import CollectionListingClient from './CollectionListingClient';
 
-export async function generateMetadata({
-  params: { locale, slug }
-}: {
-  params: { locale: Locale; slug: string }
-}) {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ locale: Locale; slug: string }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale,
+    slug
+  } = params;
+
   const collection = getEcommerceCollectionBySlug(slug, locale);
   if (!collection) return { title: 'Collection Not Found' };
   return {
@@ -18,11 +25,18 @@ export async function generateMetadata({
   };
 }
 
-export default function EcommerceCollectionDetailPage({
-  params: { locale, slug }
-}: {
-  params: { locale: Locale; slug: string }
-}) {
+export default async function EcommerceCollectionDetailPage(
+  props: {
+    params: Promise<{ locale: Locale; slug: string }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale,
+    slug
+  } = params;
+
   const isAr = locale === 'ar';
   const collection = getEcommerceCollectionBySlug(slug, locale);
 

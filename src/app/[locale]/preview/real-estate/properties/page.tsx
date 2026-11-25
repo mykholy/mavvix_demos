@@ -3,11 +3,13 @@ import type { Locale } from '@/lib/i18n/config';
 import { RealEstatePropertiesClient } from './RealEstatePropertiesClient';
 
 interface Props {
-  params: { locale: Locale };
-  searchParams: { type?: string; maxPrice?: string; beds?: string };
+  params: Promise<{ locale: Locale }>;
+  searchParams: Promise<{ type?: string; maxPrice?: string; beds?: string }>;
 }
 
-export default function RealEstatePropertiesPage({ params, searchParams }: Props) {
+export default async function RealEstatePropertiesPage(props: Props) {
+  const searchParams = await props.searchParams;
+  const params = await props.params;
   const { locale } = params;
   const initialUnits = getPropertyUnits(locale);
 

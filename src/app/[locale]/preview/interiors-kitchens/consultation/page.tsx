@@ -3,7 +3,16 @@ import type { Locale } from '@/lib/i18n/config';
 import { FORMA,formaPath } from '@/lib/verticals/interiors-kitchens/data';
 import { FormaBriefForm } from './FormaBriefForm';
 import { Ruler,ShieldCheck,PenTool } from 'lucide-react';
-export default function FormaConsultation({params:{locale},searchParams}:{params:{locale:Locale};searchParams:{service?:string}}){
+export default async function FormaConsultation(
+ props:{params: Promise<{locale:Locale}>;searchParams: Promise<{service?:string}>}
+) {
+ const searchParams = await props.searchParams;
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';const initial=FORMA.services.some(s=>s.slug===searchParams.service)?searchParams.service:'l-shaped';
  return <section className="py-16 sm:py-24"><div className="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[.7fr_1.1fr] gap-12 items-start">
   <aside className="lg:sticky lg:top-36"><p className="font-mono text-[#793D40] text-xs tracking-widest">FORMA / ARCHITECTURAL INTAKE</p>

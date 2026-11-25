@@ -4,7 +4,13 @@ import { PAWWELL,PAW_HERO_IMAGE,PAW_HERO_IMAGE_SOURCE,pawPath,pawText } from '@/
 import { PawPrint, ArrowUpRight, ArrowRight, ArrowLeft, Heart, CalendarDays, ShieldCheck, BookOpen,
  Stethoscope, HeartPulse, Cat, Dog, Rabbit, Bird, Sparkles, Activity, ClipboardList, CheckCircle2, Info, AlertTriangle } from 'lucide-react';
 
-export default function PawWellHome({params:{locale}}:{params:{locale:Locale}}){
+export default async function PawWellHome(props:{params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';const Arrow=ar?ArrowLeft:ArrowRight;
  const steps=[
   [ar?'النوع والعمر':'Species & age band',ar?'الاحتياجات بتختلف من نوع لآخر؛ ابدأ بتصنيف آمن وعام.':'Start with general pet category and age range, without private medical details.'],

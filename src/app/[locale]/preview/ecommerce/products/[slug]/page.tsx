@@ -5,11 +5,18 @@ import { Locale } from '@/lib/i18n/config';
 import { getCatalogItemBySlug, getCatalogItems } from '@/lib/db/repositories';
 import ProductDetailClient from './ProductDetailClient';
 
-export async function generateMetadata({
-  params: { locale, slug }
-}: {
-  params: { locale: Locale; slug: string }
-}) {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ locale: Locale; slug: string }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale,
+    slug
+  } = params;
+
   const product = getCatalogItemBySlug('ecommerce', slug, locale);
   if (!product) return { title: 'Product Not Found' };
   return {
@@ -18,11 +25,18 @@ export async function generateMetadata({
   };
 }
 
-export default function EcommerceProductDetailPage({
-  params: { locale, slug }
-}: {
-  params: { locale: Locale; slug: string }
-}) {
+export default async function EcommerceProductDetailPage(
+  props: {
+    params: Promise<{ locale: Locale; slug: string }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale,
+    slug
+  } = params;
+
   const isAr = locale === 'ar';
   const product = getCatalogItemBySlug('ecommerce', slug, locale);
 

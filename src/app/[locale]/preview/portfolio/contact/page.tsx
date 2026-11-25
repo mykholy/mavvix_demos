@@ -8,11 +8,17 @@ export const metadata = {
   description: 'Initiate a qualified design brief for brand identity systems, digital platforms, or fractional design advisory.'
 };
 
-export default function PortfolioContactPage({
-  params: { locale }
-}: {
-  params: { locale: Locale }
-}) {
+export default async function PortfolioContactPage(
+  props: {
+    params: Promise<{ locale: Locale }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const isAr = locale === 'ar';
   const services = getPortfolioServices(locale);
   const cases = getProjects('portfolio', locale);

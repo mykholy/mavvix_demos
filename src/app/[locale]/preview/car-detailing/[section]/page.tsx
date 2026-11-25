@@ -24,10 +24,24 @@ const steps=[
  {title:{ar:'تسليم وعناية',en:'Handover and aftercare'},copy:{ar:'وثق العمل الفعلي وتعليمات المنتج والقيود والمدة التي اتفق عليها الطرفان.',en:'Document completed work, actual product, exclusions and care guidance.'}},
 ];
 export function generateStaticParams(){return sections.map(section=>({section}));}
-export function generateMetadata({params:{locale,section}}:{params:{locale:Locale;section:string}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale;section:string}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
  const title=headings[section as Topic];return title?{title:title[locale]+' | GlossBay',description:locale==='ar'?'معلومات متخصصة لتجربة موقع غسيل وتلميع سيارات من مافكس دون ادعاء منتجات أو أسعار أو حجوزات حقيقية.':'Specialized detailing, paint care and client enquiry workflow in a Mavvix car-care design concept.',robots:{index:false}}:{};
 }
-export default function GlossTopic({params:{locale,section}}:{params:{locale:Locale;section:string}}){
+export default async function GlossTopic(props:{params: Promise<{locale:Locale;section:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
  if(!sections.includes(section as Topic))notFound();const topic=section as Topic,ar=locale==='ar';
  const h=(s:string)=><h2 className="gloss-display text-3xl sm:text-4xl font-black">{s}</h2>;
  const detailServices=GLOSSBAY.services.filter(s=>['interior','finish','correction','wash'].includes(s.category));

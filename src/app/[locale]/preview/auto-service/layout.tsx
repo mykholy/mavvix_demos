@@ -5,7 +5,17 @@ import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { autoPath } from '@/lib/verticals/auto-service/data';
 import type { Locale } from '@/lib/i18n/config';
 
-export default function AutoServiceLayout({children,params:{locale}}:{children:React.ReactNode;params:{locale:Locale}}){
+export default async function AutoServiceLayout(props:{children:React.ReactNode;params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
+ const {
+  children
+ } = props;
+
  const ar=locale==='ar';const Arrow=ar?ArrowLeft:ArrowRight;
  const nav=[
   {href:autoPath(locale,'services'),label:ar?'الخدمات':'Services'},

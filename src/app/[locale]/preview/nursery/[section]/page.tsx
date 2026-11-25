@@ -19,7 +19,14 @@ const titles:Record<Topic,{ar:string;en:string}>={
  faq:{ar:'أسئلة الأسرة قبل الزيارة',en:'Family questions before a visit'}
 };
 export function generateStaticParams(){return sections.map(section=>({section}));}
-export function generateMetadata({params:{locale,section}}:{params:{locale:Locale;section:string}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale;section:string}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
  const t=titles[section as Topic];return t?{title:t[locale]+' | BloomSteps',description:locale==='ar'?'دليل تعليمي ومعلومات للأهل ضمن تجربة موقع حضانة من مافكس، دون ادعاء قبول فعلي.':'Early-years guidance and family enquiry experience by Mavvix; no real nursery enrollment.',robots:{index:false,follow:false}}:{};
 }
 const safety=[
@@ -28,7 +35,14 @@ const safety=[
  {ar:'الإشراف والنظافة',en:'Supervision and hygiene',descAr:'راجع أعداد العاملين الفعلية وتغطية غيابهم وإجراءات تنظيف الأدوات واختيار خامات ملائمة للعمر.',descEn:'Review actual staffing, absence coverage, cleaning routines and age-appropriate materials.'},
  {ar:'الطوارئ والخصوصية',en:'Emergencies and privacy',descAr:'اطلب شرح إجراءات الطوارئ والموافقة على التصوير وكيفية الاحتفاظ بالمعلومات الخاصة للطفل.',descEn:'Ask about emergency procedures, photo permissions and secure handling of private child records.'}
 ];
-export default function BloomSection({params:{locale,section}}:{params:{locale:Locale;section:string}}){
+export default async function BloomSection(props:{params: Promise<{locale:Locale;section:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
  if(!sections.includes(section as Topic))notFound();const topic=section as Topic,ar=locale==='ar';
  return <div><section className="bg-[#E9F4ED] py-16 sm:py-24"><div className="max-w-7xl mx-auto px-5 sm:px-8"><nav className="text-xs mb-8"><Link className="underline" href={bloomPath(locale)}>{ar?'الرئيسية':'Home'}</Link> / {titles[topic][locale]}</nav><p className="text-xs tracking-widest font-bold uppercase">BLOOMSTEPS / {topic.replaceAll('-',' ')}</p><h1 className="bloom-display text-4xl sm:text-6xl mt-6 max-w-4xl leading-tight">{titles[topic][locale]}</h1><p className="mt-6 max-w-3xl leading-8 text-sm">{ar?'محتوى توضيحي لتجربة موقع حضانة، لا يمثل منشأة أو اعتمادًا أو مواعيد فعلية.':'Editorial nursery website content, not an operating facility, accreditation or live appointment calendar.'}</p></div></section>
  {(topic==='age-groups'||topic==='curriculum')&&<section className="max-w-7xl mx-auto px-5 sm:px-8 py-16"><p className="max-w-3xl leading-9">{topic==='age-groups'?(ar?'قارن الفئات العمرية قبل طلب زيارة. السن الفعلي للقبول يحتاج قرار المشغل وترخيصه.':'Compare illustrative age bands before a visit; actual eligibility is an operator decision.'):(ar?'أنشطة تعليمية متنوعة تراعي الإشراف والاختيار وإيقاع الطفل، وليس منهجًا معتمدًا.':'Explore learning activities that allow choice and supervision, without claiming accredited provision.')}</p><div className="mt-10 grid md:grid-cols-2 gap-5">{BLOOM.services.filter(p=>p.category===(topic==='age-groups'?'age':'curriculum')).map(p=><article key={p.slug} className="bg-white rounded-3xl p-8 border border-[#D6E4D6]"><p className="text-xs font-bold text-[#8F412A]">{p.ageBand==='all'?(ar?'نشاط تعليمي':'Learning activity'):p.ageBand+' '+(ar?'سنوات':'years')}</p><h2 className="text-2xl font-extrabold mt-5">{p.title[locale]}</h2><p className="mt-5 text-sm leading-8">{p.body[locale]}</p><Link href={bloomPath(locale,'programs/'+p.slug)} className="mt-7 inline-flex gap-2 font-bold text-sm underline">{ar?'تفاصيل النشاط':'Explore programme'}<ArrowUpRight size={16}/></Link></article>)}</div></section>}

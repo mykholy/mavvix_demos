@@ -6,11 +6,12 @@ import { SubmissionsClientTable } from './SubmissionsClientTable';
 import { Inbox } from 'lucide-react';
 
 interface Props {
-  searchParams: { site?: string };
+  searchParams: Promise<{ site?: string }>;
 }
 
-export default function SubmissionsPage({ searchParams }: Props) {
-  const cookieStore = cookies();
+export default async function SubmissionsPage(props: Props) {
+  const searchParams = await props.searchParams;
+  const cookieStore = await cookies();
   const token = cookieStore.get('mavvix_admin_session')?.value;
   const admin = token ? verifySessionToken(token) : null;
 

@@ -3,7 +3,16 @@ import { ArrowUpRight, Wrench, ScanSearch, ShieldCheck } from 'lucide-react';
 import { AUTO_SERVICE, autoPath, localized } from '@/lib/verticals/auto-service/data';
 import type { Locale } from '@/lib/i18n/config';
 
-export default function AutoServices({params:{locale},searchParams}:{params:{locale:Locale};searchParams:{category?:string}}){
+export default async function AutoServices(
+ props:{params: Promise<{locale:Locale}>;searchParams: Promise<{category?:string}>}
+) {
+ const searchParams = await props.searchParams;
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';
  const groups=[['all',ar?'كل الخدمات':'All services'],['safety',ar?'سلامة وثبات':'Safety'],['preventive',ar?'صيانة دورية':'Preventive'],['diagnostics',ar?'تشخيص':'Diagnostics'],['comfort',ar?'راحة وتكييف':'Comfort'],['electrical',ar?'كهرباء':'Electrical'],['inspection',ar?'فحص':'Inspection']];
  const chosen=groups.some(x=>x[0]===searchParams.category)?searchParams.category:'all';

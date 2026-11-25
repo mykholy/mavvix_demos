@@ -13,11 +13,17 @@ export const metadata = {
   description: 'Practical guidance for your first dental consultation. Interactive non-PII checklist, hygiene standards, and care policies.'
 };
 
-export default function DentalPatientGuidePage({
-  params: { locale }
-}: {
-  params: { locale: Locale }
-}) {
+export default async function DentalPatientGuidePage(
+  props: {
+    params: Promise<{ locale: Locale }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;
 

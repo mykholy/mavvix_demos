@@ -4,10 +4,8 @@ import { verifySessionToken } from '@/lib/security/auth';
 import { getSiteBySlug } from '@/lib/db/repositories';
 import { getSitePages, createCustomPage, updateCustomPage, deleteCustomPage } from '@/lib/db/cms';
 
-export async function GET(
-  req: NextRequest,
-  { params }: { params: { slug: string } }
-) {
+export async function GET(req: NextRequest, props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   try {
     const { slug } = params;
     const site = getSiteBySlug(slug);
@@ -23,12 +21,10 @@ export async function GET(
   }
 }
 
-export async function POST(
-  req: NextRequest,
-  { params }: { params: { slug: string } }
-) {
+export async function POST(req: NextRequest, props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   try {
-    const cookieStore = cookies();
+    const cookieStore = await cookies();
     const token = cookieStore.get('mavvix_admin_session')?.value;
     const admin = token ? verifySessionToken(token) : null;
 
@@ -56,7 +52,7 @@ export async function PUT(
   { params }: { params: { slug: string } }
 ) {
   try {
-    const cookieStore = cookies();
+    const cookieStore = await cookies();
     const token = cookieStore.get('mavvix_admin_session')?.value;
     const admin = token ? verifySessionToken(token) : null;
 
@@ -83,7 +79,7 @@ export async function DELETE(
   { params }: { params: { slug: string } }
 ) {
   try {
-    const cookieStore = cookies();
+    const cookieStore = await cookies();
     const token = cookieStore.get('mavvix_admin_session')?.value;
     const admin = token ? verifySessionToken(token) : null;
 

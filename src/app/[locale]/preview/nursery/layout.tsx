@@ -5,20 +5,36 @@ import { ContactDock } from '@/components/shared/ContactDock';
 import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { bloomPath } from '@/lib/verticals/nursery/data';
 import { Flower2,ArrowUpRight } from 'lucide-react';
-export function generateMetadata({params:{locale}}:{params:{locale:Locale}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';
  const title=ar?'تصميم موقع حضانة ورياض أطفال | BloomSteps من مافكس':'Nursery & Early Years Website Design | BloomSteps by Mavvix';
  const description=ar?'تجربة عربية وإنجليزية لبرامج الطفولة المبكرة والروتين اليومي والأمان وطلب زيارة محفوظ دون تسجيل فعلي.':'A bilingual early-years website with age groups, play-based learning, safeguarding guidance and a privacy-conscious visit enquiry.';
  return {title,description,openGraph:{title,description,type:'website'},robots:{index:false,follow:false}};
 }
-export default function BloomLayout({children,params:{locale}}:{children:React.ReactNode;params:{locale:Locale}}){
+export default async function BloomLayout(props:{children:React.ReactNode;params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
+ const {
+  children
+ } = props;
+
  const ar=locale==='ar';const nav=[
- {href:bloomPath(locale,'age-groups'),label:ar?'الفئات العمرية':'Age groups'},
- {href:bloomPath(locale,'curriculum'),label:ar?'التعلم باللعب':'Learning'},
- {href:bloomPath(locale,'daily-routine'),label:ar?'يومنا':'Daily rhythm'},
- {href:bloomPath(locale,'safety'),label:ar?'الأمان':'Safeguarding'},
- {href:bloomPath(locale,'gallery'),label:ar?'البيئة':'Gallery'},
- {href:bloomPath(locale,'admissions'),label:ar?'القبول والزيارة':'Admissions'}];
+  {href:bloomPath(locale,'age-groups'),label:ar?'الفئات العمرية':'Age groups'},
+  {href:bloomPath(locale,'curriculum'),label:ar?'التعلم باللعب':'Learning'},
+  {href:bloomPath(locale,'daily-routine'),label:ar?'يومنا':'Daily rhythm'},
+  {href:bloomPath(locale,'safety'),label:ar?'الأمان':'Safeguarding'},
+  {href:bloomPath(locale,'gallery'),label:ar?'البيئة':'Gallery'},
+  {href:bloomPath(locale,'admissions'),label:ar?'القبول والزيارة':'Admissions'}];
  return <div lang={locale} dir={ar?'rtl':'ltr'} className="bloom-shell min-h-screen bg-[#FFF9EE] text-[#145960] selection:bg-[#F5C04E] selection:text-[#145960]">
  <div className="bg-[#145960] text-white text-center text-xs px-4 py-2 leading-6">{ar?'تجربة تصميم موقع حضانة من مافكس · لا يوجد قبول أو موعد زيارة مؤكد':'A Mavvix nursery website concept · no confirmed enrollment or visit'}</div>
  <header className="sticky top-0 z-40 bg-[#FFF9EE]/95 border-b border-[#E2E5D5] backdrop-blur-lg">

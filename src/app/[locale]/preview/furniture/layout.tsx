@@ -5,15 +5,25 @@ import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { oakPath } from '@/lib/verticals/furniture/data';
 import { Armchair,ArrowUpRight,Leaf,Home } from 'lucide-react';
 
-export default function OaklineLayout({children,params:{locale}}:{children:React.ReactNode;params:{locale:Locale}}){
+export default async function OaklineLayout(props:{children:React.ReactNode;params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
+ const {
+  children
+ } = props;
+
  const ar=locale==='ar';const nav=[
-  {href:oakPath(locale,'rooms'),label:ar?'الغرف':'Rooms'},
-  {href:oakPath(locale,'collections'),label:ar?'المجموعات':'Collections'},
-  {href:oakPath(locale,'materials'),label:ar?'دليل الخامات':'Materials'},
-  {href:oakPath(locale,'process'),label:ar?'من الفكرة للتنفيذ':'Process'},
-  {href:oakPath(locale,'journal'),label:ar?'مقالات البيت':'Journal'},
-  {href:oakPath(locale,'about'),label:ar?'حكايتنا':'Story'},
- ];
+   {href:oakPath(locale,'rooms'),label:ar?'الغرف':'Rooms'},
+   {href:oakPath(locale,'collections'),label:ar?'المجموعات':'Collections'},
+   {href:oakPath(locale,'materials'),label:ar?'دليل الخامات':'Materials'},
+   {href:oakPath(locale,'process'),label:ar?'من الفكرة للتنفيذ':'Process'},
+   {href:oakPath(locale,'journal'),label:ar?'مقالات البيت':'Journal'},
+   {href:oakPath(locale,'about'),label:ar?'حكايتنا':'Story'},
+  ];
  return <div dir={ar?'rtl':'ltr'} lang={locale} className="oakline-shell min-h-screen bg-[#F4EFE6] text-[#392C24] selection:bg-[#E1BD8A] selection:text-[#392C24]">
   <div className="bg-[#60452F] text-[#FAF0E2] px-4 py-2 text-xs text-center font-semibold">
    {ar?'تصميم موقع أثاث حسب الطلب من مافكس — القطع والصور توضيحية ولا يوجد تصنيع أو شراء مؤكد':'A Mavvix custom-furniture website concept — illustrative pieces, no confirmed products or orders'}

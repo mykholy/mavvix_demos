@@ -5,7 +5,17 @@ import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { veloraPath } from '@/lib/verticals/salon-spa/data';
 import { Flower2, ArrowUpRight, Sparkles, Instagram } from 'lucide-react';
 
-export default function VeloraLayout({children,params:{locale}}:{children:React.ReactNode;params:{locale:Locale}}){
+export default async function VeloraLayout(props:{children:React.ReactNode;params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
+ const {
+  children
+ } = props;
+
  const ar=locale==='ar';
  const nav=[
   {href:veloraPath(locale,'services'),label:ar?'قائمة الخدمات':'Service menu'},

@@ -11,18 +11,25 @@ import { Sparkles, ArrowRight, ArrowLeft, ShieldCheck, HeartHandshake, Leaf, Sci
 
 
 
-export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+export async function generateMetadata(props: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const params = await props.params;
   const ar = params.locale === 'ar';
   const title = ar ? "متجر إلكتروني راقٍ | مجموعات ومنتجات وتسوق | تصميم مافكس" : "Premium Ecommerce Website | Fashion Storefront | Mavvix";
   const description = ar ? "تصميم متجر بأقسام متخصصة وVariants وسلة وتسعير شحن وطلبات محمية وتجربة موبايل مصممة للبيع." : "A premium boutique storefront with collections, product options, cart, delivery estimates and private order receipts.";
   return { title, description, openGraph: {title, description, locale: ar ? 'ar_EG' : 'en_US', type: 'website'}, twitter: {card:'summary_large_image',title,description} };
 }
 
-export default function EcommerceStorefrontPage({
-  params: { locale }
-}: {
-  params: { locale: Locale }
-}) {
+export default async function EcommerceStorefrontPage(
+  props: {
+    params: Promise<{ locale: Locale }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;
 

@@ -28,7 +28,8 @@ const bodySchema = z.object({
 const reject = (code: string, message: string, status = 422) => NextResponse.json({ error: message, code }, { status });
 const cents = (x: number) => Number.isFinite(x) && Number.isSafeInteger(x) && x >= 0 && x <= 100000000000;
 
-export async function POST(request: Request, { params }: { params: { vertical: string } }) {
+export async function POST(request: Request, props: { params: Promise<{ vertical: string }> }) {
+  const params = await props.params;
   try {
     const rate = checkRateLimit('intake:' + params.vertical + ':' + getRequestIdentity(request), 12, 60_000);
     if (!rate.allowed) return NextResponse.json({ error: 'Please try again later' }, { status: 429, headers: { 'Retry-After': String(rate.retryAfter) } });

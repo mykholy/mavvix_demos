@@ -19,7 +19,14 @@ const headlines:Record<Section,{ar:string;en:string}>={
  faq:{ar:'أهم أسئلة تصميم المطابخ قبل الاتفاق',en:'Kitchen consultation questions answered'}
 };
 export function generateStaticParams(){return sections.map(section=>({section}));}
-export function generateMetadata({params:{locale,section}}:{params:{locale:Locale;section:string}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale;section:string}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
  const title=headlines[section as Section]?.[locale];return title?{title:title+' | Forma Atelier',description:locale==='ar'?'دليل تخطيط مطابخ تفصيلي ضمن تجربة موقع مافكس؛ لا توجد شركة مصنعة أو عرض سعر مؤكد.':'Practical kitchen and cabinetry design guide by Mavvix; no live fabrication business, project or quote is claimed.',robots:{index:false}}:{};
 }
 const workflow=[
@@ -28,7 +35,14 @@ const workflow=[
  {ar:'اعتماد التصميم والخامات',en:'Review design and materials',detailAr:'تتم مراجعة الرسم الفني وخامة الألواح والمفصلات والأسطح والتشطيبات وفق مستندات المورد.',detailEn:'The actual business must approve technical drawings, substrates, hardware, worktops and supplier specifications.'},
  {ar:'مقايسة واتفاق',en:'Itemized scope and contract',detailAr:'يُحدد المشغل الأسعار والمدة وشروط التركيب قبل أي طلب تصنيع، بعيدًا عن طلب الموقع التجريبي.',detailEn:'Only the operator can provide final fees, delivery timelines, guarantees and an installation agreement.'}
 ];
-export default function FormaTopic({params:{locale,section}}:{params:{locale:Locale;section:string}}){
+export default async function FormaTopic(props:{params: Promise<{locale:Locale;section:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
  if(!sections.includes(section as Section))notFound();const topic=section as Section,ar=locale==='ar';
  const heading=(x:string)=><h2 className="forma-display text-3xl sm:text-4xl">{x}</h2>;
  const guidance=(title:string,body:string,i:number)=><article key={title} className="bg-white border border-[#D2BFB0] p-7 sm:p-8 min-h-[210px]"><span className="font-mono text-xs text-[#793D40]">{String(i+1).padStart(2,'0')}</span><h3 className="forma-display text-2xl mt-6">{title}</h3><p className="text-[#625146] text-sm leading-8 mt-4">{body}</p></article>;

@@ -6,13 +6,29 @@ import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { lexoraPath } from '@/lib/verticals/law-firm/data';
 import { Scale, ArrowUpRight, ShieldCheck, Landmark } from 'lucide-react';
 
-export function generateMetadata({params:{locale}}:{params:{locale:Locale}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';
  const title=ar?'Lexora Counsel | تجربة موقع مكتب محاماة احترافي — مافكس':'Lexora Counsel — Bilingual Law Firm Website Experience by Mavvix';
  const description=ar?'تصور واجهة مكتب محاماة بمحتوى متخصص للخدمات القانونية ونموذج استفسار يحترم السرية، من تصميم مافكس. ليس مكتبًا مرخصًا ولا استشارة قانونية.':'An editorial bilingual law firm website concept by Mavvix: practice-area dossiers, privacy-first contact intake and original business-oriented legal education. No legal engagement.';
  return {title,description,robots:{index:false,follow:false},openGraph:{title,description,type:'website'}};
 }
-export default function LexoraLayout({children,params:{locale}}:{children:React.ReactNode;params:{locale:Locale}}){
+export default async function LexoraLayout(props:{children:React.ReactNode;params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
+ const {
+  children
+ } = props;
+
  const ar=locale==='ar';
  const nav=[
   {href:lexoraPath(locale,'practices'),label:ar?'مجالات الممارسة':'Practice Areas'},

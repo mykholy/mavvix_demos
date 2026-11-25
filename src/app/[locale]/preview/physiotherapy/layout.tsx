@@ -6,20 +6,36 @@ import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { motionPath } from '@/lib/verticals/physiotherapy/data';
 import { Activity, ArrowUpRight, ArrowRight, HeartPulse, MoveUpRight, ShieldCheck } from 'lucide-react';
 
-export function generateMetadata({params:{locale}}:{params:{locale:Locale}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';const title=ar?'موقع علاج طبيعي وتأهيل متكامل | Motion Lab من مافكس':'Premium Physiotherapy Website | Motion Lab by Mavvix';
  const description=ar?'تجربة موقع لخدمات تقييم الحركة والتأهيل الرياضي والتواصل الإداري مع مركز فعلي عند تشغيله، بدون جمع تقارير طبية أو حجوزات وهمية.':'Movement-first rehabilitation website concept with original educational service dossiers and a privacy-minimal first-visit enquiry.';
  return {title,description,robots:{index:false,follow:false},openGraph:{type:'website',title,description}};
 }
-export default function MotionLayout({children,params:{locale}}:{children:React.ReactNode;params:{locale:Locale}}){
+export default async function MotionLayout(props:{children:React.ReactNode;params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
+ const {
+  children
+ } = props;
+
  const ar=locale==='ar';const nav=[
- {href:motionPath(locale,'services'),label:ar?'التخصصات':'Specialties'},
- {href:motionPath(locale,'first-visit'),label:ar?'الزيارة الأولى':'First visit'},
- {href:motionPath(locale,'mobility'),label:ar?'الحركة':'Mobility'},
- {href:motionPath(locale,'sports'),label:ar?'تأهيل النشاط':'Sport return'},
- {href:motionPath(locale,'process'),label:ar?'المنهج':'Our approach'},
- {href:motionPath(locale,'journal'),label:ar?'معلومات مهمة':'Insights'},
- ];
+  {href:motionPath(locale,'services'),label:ar?'التخصصات':'Specialties'},
+  {href:motionPath(locale,'first-visit'),label:ar?'الزيارة الأولى':'First visit'},
+  {href:motionPath(locale,'mobility'),label:ar?'الحركة':'Mobility'},
+  {href:motionPath(locale,'sports'),label:ar?'تأهيل النشاط':'Sport return'},
+  {href:motionPath(locale,'process'),label:ar?'المنهج':'Our approach'},
+  {href:motionPath(locale,'journal'),label:ar?'معلومات مهمة':'Insights'},
+  ];
  return <div lang={locale} dir={ar?'rtl':'ltr'} className="motion-shell min-h-screen bg-[#F3F6F1] text-[#1D3934] selection:bg-[#A5D9C1] selection:text-[#122D2A]">
  <div className="bg-[#23443F] text-[#EDF9F2] text-center text-[11px] font-semibold leading-6 px-4 py-2">{ar?'موقع توضيحي من مافكس · لا يوجد مركز أو معالج أو حجز طبي مؤكد باسم Motion Lab':'A Mavvix clinical website concept · no operating Motion Lab practitioners or appointments'}</div>
  <header className="sticky top-0 z-40 bg-[#FDFDF9]/95 backdrop-blur-xl border-b border-[#CBDED3]"><div className="max-w-7xl mx-auto px-4 sm:px-8 h-[82px] flex gap-3 items-center justify-between">

@@ -2,11 +2,12 @@ import React from 'react';
 import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
 
-export default function RestaurantStoryPage({
-  params,
-}: {
-  params: { locale: Locale };
-}) {
+export default async function RestaurantStoryPage(
+  props: {
+    params: Promise<{ locale: Locale }>;
+  }
+) {
+  const params = await props.params;
   const { locale } = params;
   const isAr = locale === 'ar';
 

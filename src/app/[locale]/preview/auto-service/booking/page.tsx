@@ -4,7 +4,16 @@ import { AUTO_SERVICE, autoPath } from '@/lib/verticals/auto-service/data';
 import { AutoBookingForm } from './AutoBookingForm';
 import { ShieldCheck, AlertTriangle } from 'lucide-react';
 
-export default function AutoBooking({params:{locale},searchParams}:{params:{locale:Locale};searchParams:{service?:string}}){
+export default async function AutoBooking(
+ props:{params: Promise<{locale:Locale}>;searchParams: Promise<{service?:string}>}
+) {
+ const searchParams = await props.searchParams;
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';
  const initial=AUTO_SERVICE.services.some(s=>s.slug===searchParams.service)?searchParams.service:'';
  return <div className="bg-white"><div className="max-w-7xl mx-auto px-5 sm:px-8 pt-14 pb-24 grid lg:grid-cols-[.65fr_1.15fr] gap-12 items-start">

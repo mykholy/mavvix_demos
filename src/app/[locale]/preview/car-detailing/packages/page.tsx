@@ -3,7 +3,16 @@ import type { Locale } from '@/lib/i18n/config';
 import { GLOSSBAY,glossText,glossPath } from '@/lib/verticals/car-detailing/data';
 import { ArrowUpRight,Clock3,ScanSearch,ShieldCheck } from 'lucide-react';
 const filters=[['all',{ar:'كل المجالات',en:'All care'}],['wash',{ar:'الغسيل',en:'Washing'}],['interior',{ar:'الداخلية',en:'Interior'}],['correction',{ar:'التصحيح',en:'Correction'}],['protection',{ar:'الحماية',en:'Protection'}],['finish',{ar:'الإنهاء',en:'Finishing'}],['fleet',{ar:'الأساطيل',en:'Fleet'}]] as const;
-export default function GlossPackages({params:{locale},searchParams}:{params:{locale:Locale};searchParams:{category?:string}}){
+export default async function GlossPackages(
+ props:{params: Promise<{locale:Locale}>;searchParams: Promise<{category?:string}>}
+) {
+ const searchParams = await props.searchParams;
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';const category=filters.some(f=>f[0]===searchParams.category)?searchParams.category:'all';
  const list=GLOSSBAY.services.filter(s=>category==='all'||s.category===category);
  return <div><section className="bg-[#0D1626] text-white py-20 sm:py-28"><div className="max-w-7xl mx-auto px-5 sm:px-8">

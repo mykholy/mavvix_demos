@@ -5,7 +5,17 @@ import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { pulsePath } from '@/lib/verticals/fitness/data';
 import { Activity, Zap, ArrowUpRight, CircleDot, Crosshair } from 'lucide-react';
 
-export default function FitnessLayout({children,params:{locale}}:{children:React.ReactNode;params:{locale:Locale}}){
+export default async function FitnessLayout(props:{children:React.ReactNode;params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
+ const {
+  children
+ } = props;
+
  const ar=locale==='ar';
  const nav=[
   {href:pulsePath(locale,'classes'),label:ar?'الحصص':'Classes'},

@@ -7,13 +7,22 @@ import { CartProvider } from '@/lib/ecommerce/cart-context';
 import EcommerceHeader from './EcommerceHeader';
 import { Sparkles, Shield, AlertTriangle, ArrowRight, ArrowLeft, ChevronRight } from 'lucide-react';
 
-export default function EcommerceLayout({
-  children,
-  params: { locale },
-}: {
-  children: React.ReactNode;
-  params: { locale: Locale };
-}) {
+export default async function EcommerceLayout(
+  props: {
+    children: React.ReactNode;
+    params: Promise<{ locale: Locale }>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
+  const {
+    children
+  } = props;
+
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;
 

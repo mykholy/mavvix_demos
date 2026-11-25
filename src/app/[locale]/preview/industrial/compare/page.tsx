@@ -3,11 +3,13 @@ import type { Locale } from '@/lib/i18n/config';
 import { IndustrialCompareClient } from './IndustrialCompareClient';
 
 interface Props {
-  params: { locale: Locale };
-  searchParams: { items?: string };
+  params: Promise<{ locale: Locale }>;
+  searchParams: Promise<{ items?: string }>;
 }
 
-export default function IndustrialComparePage({ params, searchParams }: Props) {
+export default async function IndustrialComparePage(props: Props) {
+  const searchParams = await props.searchParams;
+  const params = await props.params;
   const { locale } = params;
   const allProducts = getCatalogItems('industrial', locale);
 

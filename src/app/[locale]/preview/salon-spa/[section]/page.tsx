@@ -17,7 +17,14 @@ const headings:Record<Topic,{ar:string;en:string}>={
  questions:{ar:'أسئلة بخصوص الخدمات والحجوزات',en:'Questions about services and enquiries'},
 };
 export function generateStaticParams(){return topics.map(section=>({section}));}
-export function generateMetadata({params:{locale,section}}:{params:{locale:Locale;section:string}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale;section:string}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
  const x=headings[section as Topic];return x?{title:x[locale]+' | Velora Beauty',description:locale==='ar'?'تجربة موقع صالون تحترم المحتوى الأصلي وتعرض التخصصات والطقوس والحجز غير المؤكد من مافكس.':'An authentic premium salon website concept with service guidance, editorial media and pending-only appointment requests.',robots:{index:false}}:{};
 }
 const planned=[
@@ -31,7 +38,14 @@ const process=[
  {title:{ar:'اختيار وقت مفضل',en:'Set a time preference'},desc:{ar:'حددي اليوم والفترة والتخصص لكن انتظري تأكيد المشغل الحقيقي.',en:'Choose date, time window and speciality while waiting for a real operator to confirm.'}},
  {title:{ar:'اعتماد التفاصيل',en:'Confirm through an operator'},desc:{ar:'الأسعار والموظفون والفرع والدفع يجب أن يكونوا بيانات حقيقية معتمدة.',en:'Only the actual business may confirm fees, staff, locations and payment.'}},
 ];
-export default function VeloraEditorialPage({params:{locale,section}}:{params:{locale:Locale;section:string}}){
+export default async function VeloraEditorialPage(props:{params: Promise<{locale:Locale;section:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
  if(!topics.includes(section as Topic))notFound();const topic=section as Topic;const ar=locale==='ar';const base=veloraPath(locale);
  return <div>
   <section className="bg-[#F4E8E5] py-14 sm:py-20"><div className="max-w-7xl mx-auto px-5 sm:px-8">

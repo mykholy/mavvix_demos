@@ -21,10 +21,16 @@ export function generateStaticParams() {
 
 interface Props {
   children: React.ReactNode;
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }
 
-export default function ConstructionLayout({ children, params }: Props) {
+export default async function ConstructionLayout(props: Props) {
+  const params = await props.params;
+
+  const {
+    children
+  } = props;
+
   const { locale } = params;
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;

@@ -6,8 +6,9 @@ import { IndustryRequestQueue } from './IndustryRequestQueue';
 import { Inbox, Download } from 'lucide-react';
 
 export const dynamic='force-dynamic';
-export default function IndustryRequestsPage({searchParams}:{searchParams:{sector?:string}}){
- const token=cookies().get('mavvix_admin_session')?.value;
+export default async function IndustryRequestsPage(props:{searchParams: Promise<{sector?:string}>}) {
+ const searchParams = await props.searchParams;
+ const token=(await cookies()).get('mavvix_admin_session')?.value;
  const admin=token?verifySessionToken(token):null;
  if(!admin)redirect('/admin/login');
  const sector=(searchParams.sector||'').slice(0,64);

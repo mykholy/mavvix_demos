@@ -2,6 +2,12 @@ import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { PULSE,pulsePath,pulseText } from '@/lib/verticals/fitness/data';
 import { ArrowUpRight,BookOpen,ShieldCheck } from 'lucide-react';
-export default function PulseJournal({params:{locale}}:{params:{locale:Locale}}){
+export default async function PulseJournal(props:{params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';return <div className="max-w-7xl mx-auto px-5 sm:px-8 py-20 sm:py-28"><p className="text-[#5939B3] tracking-[.2em] font-black text-xs">PULSE / TRAINING FIELD NOTES</p><h1 className="pulse-display text-5xl sm:text-7xl mt-6 font-black">{ar?'تعلّم قبل ما تلتزم':'GET CONTEXT BEFORE THE COMMITMENT.'}</h1><p className="mt-6 text-[#3D3B52] leading-9 max-w-3xl">{ar?'أدلة أصلية تساعدك تقارن بين الحصص وتتحدث مع مدرب مؤهل، بدون وعود بتحول جسمك أو نصائح طبية فردية.':'Original training-education notes to help you compare classes, ask smart questions and avoid false transformation promises.'}</p><div className="grid lg:grid-cols-3 gap-5 mt-12">{PULSE.articles.map((a,i)=><Link href={pulsePath(locale,'journal/'+a.slug)} key={a.slug} className="border-2 border-[#D7D5E0] bg-white min-h-[340px] p-9 flex flex-col hover:border-[#5939B3]"><BookOpen size={32} className="text-[#5939B3]"/><p className="text-[#5939B3] text-xs font-mono font-black mt-10">FIELD GUIDE / 0{i+1}</p><h2 className="font-black text-xl mt-6">{pulseText(a.title,locale)}</h2><p className="mt-4 text-[#3D3B52] leading-8 text-sm">{pulseText(a.summary,locale)}</p><span className="mt-auto pt-7 text-xs font-black inline-flex items-center gap-3">{ar?'اقرأ الدليل':'READ GUIDE'}<ArrowUpRight size={16}/></span></Link>)}</div><section className="p-9 sm:p-12 mt-14 bg-[#141421] text-white"><ShieldCheck size={29} className="text-[#E0FE61]"/><h2 className="pulse-display text-3xl sm:text-4xl mt-6">{ar?'حدود المحتوى مهمة':'GENERAL GUIDANCE, NOT PERSONAL MEDICAL ADVICE.'}</h2><p className="mt-6 text-[#E8E6F1] text-sm leading-9">{ar?'إذا كانت هناك أعراض أو ظروف صحية خاصة، استعن بمهني مناسب قبل بدء برنامج نشاط.':'Where health symptoms or individual circumstances apply, seek appropriate qualified guidance before beginning an exercise program.'}</p></section></div>;
 }

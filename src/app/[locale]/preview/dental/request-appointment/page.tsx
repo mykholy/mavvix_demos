@@ -8,11 +8,17 @@ export const metadata = {
   description: 'Submit an illustrative consultation preference with your chosen specialist, studio branch, and time window.'
 };
 
-export default function DentalAppointmentPage({
-  params: { locale }
-}: {
-  params: { locale: Locale }
-}) {
+export default async function DentalAppointmentPage(
+  props: {
+    params: Promise<{ locale: Locale }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const isAr = locale === 'ar';
   const services = getDentalServices(locale);
   const practitioners = getDentalPractitioners(locale);

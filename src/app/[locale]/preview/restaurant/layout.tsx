@@ -6,13 +6,18 @@ import { Locale } from '@/lib/i18n/config';
 import { OrderProvider } from '@/lib/restaurant/order-context';
 import { RestaurantHeader } from './RestaurantHeader';
 
-export default function RestaurantLayout({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: { locale: Locale };
-}) {
+export default async function RestaurantLayout(
+  props: {
+    children: React.ReactNode;
+    params: Promise<{ locale: Locale }>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    children
+  } = props;
+
   const { locale } = params;
   const isAr = locale === 'ar';
   const mavvixSalesUrl = process.env.NEXT_PUBLIC_MAVVIX_SALES_URL || (isAr ? 'https://mavvix.com/ar/contact' : 'https://mavvix.com/en/contact');

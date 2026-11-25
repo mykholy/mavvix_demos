@@ -5,7 +5,17 @@ import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { arenaPath } from '@/lib/verticals/sports-venues/data';
 import { Trophy,ArrowUpRight,Goal,MapPinned } from 'lucide-react';
 
-export default function ArenaLayout({children,params:{locale}}:{children:React.ReactNode;params:{locale:Locale}}){
+export default async function ArenaLayout(props:{children:React.ReactNode;params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
+ const {
+  children
+ } = props;
+
  const ar=locale==='ar';
  const nav=[
   {href:arenaPath(locale,'courts'),label:ar?'الملاعب':'Courts'},

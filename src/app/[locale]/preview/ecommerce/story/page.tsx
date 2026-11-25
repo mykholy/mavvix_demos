@@ -8,11 +8,17 @@ export const metadata = {
   description: 'Learn about Noria Atelier’s philosophy: Egyptian natural linen, architectural proportions, and mindful living.'
 };
 
-export default function EcommerceStoryPage({
-  params: { locale }
-}: {
-  params: { locale: Locale }
-}) {
+export default async function EcommerceStoryPage(
+  props: {
+    params: Promise<{ locale: Locale }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;
 

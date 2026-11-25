@@ -12,11 +12,17 @@ export const metadata = {
   description: 'Explore our three calming studio locations across Sheikh Zayed, Heliopolis, and New Cairo.'
 };
 
-export default function DentalLocationsPage({
-  params: { locale }
-}: {
-  params: { locale: Locale }
-}) {
+export default async function DentalLocationsPage(
+  props: {
+    params: Promise<{ locale: Locale }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;
 

@@ -6,13 +6,22 @@ import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
 import { Sparkles, ArrowRight, ArrowLeft, ArrowUpRight, AlertTriangle, Layers } from 'lucide-react';
 
-export default function PortfolioLayout({
-  children,
-  params: { locale },
-}: {
-  children: React.ReactNode;
-  params: { locale: Locale };
-}) {
+export default async function PortfolioLayout(
+  props: {
+    children: React.ReactNode;
+    params: Promise<{ locale: Locale }>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
+  const {
+    children
+  } = props;
+
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;
 

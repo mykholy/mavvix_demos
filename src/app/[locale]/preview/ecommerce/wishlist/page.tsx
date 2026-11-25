@@ -8,11 +8,17 @@ export const metadata = {
   description: 'View and manage your saved garments and wardrobe favorites.'
 };
 
-export default function EcommerceWishlistPage({
-  params: { locale }
-}: {
-  params: { locale: Locale }
-}) {
+export default async function EcommerceWishlistPage(
+  props: {
+    params: Promise<{ locale: Locale }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const isAr = locale === 'ar';
   const allProducts = getCatalogItems('ecommerce', locale);
 

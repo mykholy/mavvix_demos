@@ -4,7 +4,16 @@ import { ARENA,arenaPath } from '@/lib/verticals/sports-venues/data';
 import { ArenaRequestForm } from './ArenaRequestForm';
 import { ShieldCheck,CalendarClock,Users,Trophy } from 'lucide-react';
 
-export default function ArenaBookingPage({params:{locale},searchParams}:{params:{locale:Locale};searchParams:{court?:string}}){
+export default async function ArenaBookingPage(
+ props:{params: Promise<{locale:Locale}>;searchParams: Promise<{court?:string}>}
+) {
+ const searchParams = await props.searchParams;
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';
  const selected=ARENA.services.some(s=>s.slug===searchParams.court)?searchParams.court:'';
  return <div className="bg-[#E8F0E6]"><div className="max-w-7xl mx-auto px-5 sm:px-8 pt-14 pb-24 grid lg:grid-cols-[.7fr_1.1fr] gap-12 items-start">

@@ -3,7 +3,13 @@ import type { Locale } from '@/lib/i18n/config';
 import { MOTION,MOTION_PHOTO,MOTION_PHOTO_SOURCE,motionPath,motionText } from '@/lib/verticals/physiotherapy/data';
 import { ArrowUpRight,ArrowLeft,ArrowRight,Activity,Target,HeartPulse,BookOpen,ShieldCheck,MoveUpRight,ClipboardCheck,Footprints,Move,Orbit,Feather,CheckCircle2,LockKeyhole,CalendarCheck,ScanSearch,ArrowDown,Info } from 'lucide-react';
 
-export default function MotionLabHome({params:{locale}}:{params:{locale:Locale}}){
+export default async function MotionLabHome(props:{params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar',Arrow=ar?ArrowLeft:ArrowRight;
  const special=[MOTION.services[0],MOTION.services[2],MOTION.services[6],MOTION.services[7]];
  const steps=[

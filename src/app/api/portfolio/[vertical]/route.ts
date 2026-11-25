@@ -38,7 +38,8 @@ const schema=z.object({
 }).strict();
 function failure(code:string,status=422){return NextResponse.json({success:false,code,message:code},{status});}
 
-export async function POST(req:Request,{params}:{params:{vertical:string}}){
+export async function POST(req:Request, props:{params: Promise<{vertical:string}>}) {
+ const params = await props.params;
  if(params.vertical==='car-detailing')return handleCarDetailingQuote(req);
  if(params.vertical==='physiotherapy')return handlePhysiotherapyInterest(req);
  if(params.vertical==='veterinary')return handleVeterinaryVisit(req);

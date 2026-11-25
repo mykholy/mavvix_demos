@@ -5,13 +5,22 @@ import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
 import { Stethoscope, Calendar, MapPin, Phone, Shield, Clock, HelpCircle, HeartHandshake, Sparkles, ChevronRight, AlertTriangle } from 'lucide-react';
 
-export default function DentalLayout({
-  children,
-  params: { locale },
-}: {
-  children: React.ReactNode;
-  params: { locale: Locale };
-}) {
+export default async function DentalLayout(
+  props: {
+    children: React.ReactNode;
+    params: Promise<{ locale: Locale }>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
+  const {
+    children
+  } = props;
+
   const isAr = locale === 'ar';
 
   return (

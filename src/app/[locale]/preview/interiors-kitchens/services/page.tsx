@@ -3,7 +3,16 @@ import type { Locale } from '@/lib/i18n/config';
 import { FORMA,formaPath,formaText } from '@/lib/verticals/interiors-kitchens/data';
 import { ArrowUpRight,Ruler,CheckCircle2 } from 'lucide-react';
 const types=[['all',{ar:'كل خدمات التصميم',en:'All design services'}],['kitchens',{ar:'تخطيط المطابخ',en:'Kitchen layouts'}],['storage',{ar:'التخزين والدريسنج',en:'Cabinetry and storage'}],['materials',{ar:'أسطح وخامات',en:'Materials'}],['finishes',{ar:'الإضاءة والتشطيب',en:'Finishing details'}]] as const;
-export default function FormaServices({params:{locale},searchParams}:{params:{locale:Locale};searchParams:{category?:string}}){
+export default async function FormaServices(
+ props:{params: Promise<{locale:Locale}>;searchParams: Promise<{category?:string}>}
+) {
+ const searchParams = await props.searchParams;
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';const filter=types.some(x=>x[0]===searchParams.category)?searchParams.category:'all';
  const services=FORMA.services.filter(s=>filter==='all'||s.category===filter);
  return <div><section className="bg-[#2B2A29] text-[#F5EBE1] py-16 sm:py-24"><div className="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[1fr_.7fr] gap-9 items-end">

@@ -5,13 +5,29 @@ import { ContactDock } from '@/components/shared/ContactDock';
 import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { glossPath } from '@/lib/verticals/car-detailing/data';
 import { Droplets, ArrowUpRight, CarFront, Waves } from 'lucide-react';
-export function generateMetadata({params:{locale}}:{params:{locale:Locale}}):Metadata {
+export async function generateMetadata(props:{params: Promise<{locale:Locale}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';
  const title=ar?'موقع ديتيلنج وحماية سيارات | GlossBay من مافكس':'Premium Car Detailing Website | GlossBay by Mavvix';
  const description=ar?'تجربة موقع لغسيل وتلميع السيارات بحزمة خدمات متخصصة وطلب عرض سعر حسب حجم السيارة والإضافات، دون حجز وهمي.':'Bilingual car detailing concept with a specialist treatment catalogue and transparent vehicle-size quote request by Mavvix.';
  return {title,description,openGraph:{title,description,type:'website'},robots:{index:false,follow:false}};
 }
-export default function GlossLayout({children,params:{locale}}:{children:React.ReactNode;params:{locale:Locale}}){
+export default async function GlossLayout(props:{children:React.ReactNode;params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
+ const {
+  children
+ } = props;
+
  const ar=locale==='ar';
  const nav=[
   {href:glossPath(locale,'packages'),label:ar?'الباقات':'Packages'},
