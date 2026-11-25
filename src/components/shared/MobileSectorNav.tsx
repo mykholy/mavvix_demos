@@ -21,7 +21,7 @@ export function MobileSectorNav({ links, tone = 'dark', breakpoint = 'lg' }: {
         {open ? <X size={22} /> : <Menu size={22} />}
       </button>
       {open && <nav id={menuId} aria-label={ar ? 'قائمة التنقل' : 'Mobile navigation'}
-        className={'absolute top-full mt-3 end-0 z-50 min-w-[240px] w-[min(85vw,320px)] rounded-2xl border p-2 shadow-2xl backdrop-blur-xl ' +
+        className={'absolute top-full mt-3 end-0 z-50 w-[min(75vw,320px)] max-w-[calc(100vw-2rem)] rounded-2xl border p-2 shadow-2xl backdrop-blur-xl ' +
           (light ? 'bg-white/95 border-stone-200 text-stone-900' : 'bg-slate-950/95 border-white/15 text-slate-100')}>
         {links.map(link => (
           <Link key={link.href} href={link.href} onClick={() => setOpen(false)}
