@@ -3,7 +3,16 @@ import type { Locale } from '@/lib/i18n/config';
 import { OAKLINE,oakPath } from '@/lib/verticals/furniture/data';
 import { OaklineQuoteBuilder } from './OaklineQuoteBuilder';
 import { Armchair,Ruler,CheckCircle2,ShieldCheck } from 'lucide-react';
-export default function OaklineQuote({params:{locale},searchParams}:{params:{locale:Locale};searchParams:{product?:string}}){
+export default async function OaklineQuote(
+ props:{params: Promise<{locale:Locale}>;searchParams: Promise<{product?:string}>}
+) {
+ const searchParams = await props.searchParams;
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';const selected=OAKLINE.services.some(p=>p.slug===searchParams.product)?searchParams.product:'';
  return <div className="bg-[#F5EFE6]"><div className="max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-24 grid lg:grid-cols-[.7fr_1.2fr] gap-10 lg:gap-14 items-start"><div className="lg:sticky lg:top-32">
   <span className="text-xs font-black tracking-widest text-[#7B5937]">OAKLINE / CUSTOM FURNITURE BRIEF</span><h1 className="oakline-display text-4xl sm:text-6xl leading-tight mt-6">{ar?'تفاصيل كل قطعة... في طلب واحد':'ONE REQUEST. EVERY PIECE CONSIDERED.'}</h1>

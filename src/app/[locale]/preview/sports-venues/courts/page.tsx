@@ -4,7 +4,16 @@ import { ARENA,arenaPath,arenaText } from '@/lib/verticals/sports-venues/data';
 import { Goal,ArrowUpRight,Clock3,Users,Flag,Trophy } from 'lucide-react';
 
 const modes=['all','football','padel'] as const;
-export default function ArenaCourts({params:{locale},searchParams}:{params:{locale:Locale};searchParams:{sport?:string}}){
+export default async function ArenaCourts(
+ props:{params: Promise<{locale:Locale}>;searchParams: Promise<{sport?:string}>}
+) {
+ const searchParams = await props.searchParams;
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';const mode=modes.includes(searchParams.sport as typeof modes[number])?searchParams.sport:'all';
  const items=ARENA.services.filter(c=>mode==='all'||c.sport===mode);
  return <div><section className="bg-[#102B26] text-white py-16 sm:py-24"><div className="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[1fr_.55fr] gap-10 items-end">

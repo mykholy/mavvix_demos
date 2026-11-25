@@ -18,7 +18,14 @@ const pages:Record<Topic,{ar:string;en:string}>={
  contact:{ar:'صمّم موقع معرض أثاث باسمك',en:'Commission a furniture website from Mavvix'},
 };
 export function generateStaticParams(){return topics.map(section=>({section}));}
-export function generateMetadata({params:{locale,section}}:{params:{locale:Locale;section:string}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale;section:string}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
  const p=pages[section as Topic];return p?{title:p[locale]+' | Oakline Living',description:locale==='ar'?'تجربة موقع أثاث مخصص من مافكس بخامات وأبعاد استرشادية وطلبات تسعير غير ملزمة.':'A visually distinct furniture site by Mavvix with authentic editorial imagery, real manufacturing questions and nonbinding specifications.',robots:{index:false,follow:false}}:{};
 }
 const roomCards=[
@@ -41,7 +48,14 @@ const process=[
  {ar:'اعتماد المصنع الفعلي',en:'Owner/maker review',bodyAr:'الصانع يتحقق من المقاسات والخامات والهياكل وقدرة التنفيذ ومهلة الإنتاج.',bodyEn:'A real maker validates feasibility, materials, joinery and production timing.'},
  {ar:'عرض مكتوب قبل الاتفاق',en:'Written quote before purchase',bodyAr:'تفاصيل السعر والتسليم والتركيب والضمان والإلغاء يحددها نشاط حقيقي.',bodyEn:'The real seller specifies price, delivery, assembly, warranty and cancellation.'}
 ];
-export default function OaklineInfo({params:{locale,section}}:{params:{locale:Locale;section:string}}){
+export default async function OaklineInfo(props:{params: Promise<{locale:Locale;section:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
  if(!topics.includes(section as Topic))notFound();const topic=section as Topic,ar=locale==='ar';
  const h=(v:string)=><h2 className="oakline-display text-3xl sm:text-5xl">{v}</h2>;
  return <div><section className="bg-[#E9DECE] py-14 sm:py-24"><div className="max-w-7xl mx-auto px-5 sm:px-8"><nav className="text-xs text-[#72573F]"><Link href={oakPath(locale)}>{ar?'الرئيسية':'Home'}</Link> / {pages[topic][locale]}</nav>

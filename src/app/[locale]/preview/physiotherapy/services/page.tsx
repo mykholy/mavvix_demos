@@ -3,7 +3,16 @@ import type { Locale } from '@/lib/i18n/config';
 import { MOTION,motionPath,motionText } from '@/lib/verticals/physiotherapy/data';
 import { ArrowUpRight,ShieldCheck,Activity,Info } from 'lucide-react';
 const cats=[['all',{ar:'كل المجالات',en:'All areas'}],['assessment',{ar:'التقييم',en:'Assessment'}],['mobility',{ar:'الحركة',en:'Mobility'}],['sports',{ar:'الرياضة',en:'Sports'}],['recovery',{ar:'المتابعة',en:'Recovery coordination'}],['functional',{ar:'الوظيفة والتوازن',en:'Function & balance'}],['education',{ar:'تعليم الحركة',en:'Education'}]] as const;
-export default function MotionServices({params:{locale},searchParams}:{params:{locale:Locale};searchParams:{category?:string}}){
+export default async function MotionServices(
+ props:{params: Promise<{locale:Locale}>;searchParams: Promise<{category?:string}>}
+) {
+ const searchParams = await props.searchParams;
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar',category=cats.some(c=>c[0]===searchParams.category)?searchParams.category:'all';
  const services=MOTION.services.filter(s=>category==='all'||s.category===category);
  return <div><section className="bg-[#E4F2E8] py-20 sm:py-24"><div className="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[1fr_.6fr] gap-11 items-end"><div><p className="text-xs text-[#287459] font-bold tracking-widest">MOTION / FUNCTION LIBRARY</p><h1 className="motion-display text-4xl sm:text-6xl font-black mt-5 leading-tight">{ar?'التخصصات... مش تشخيصات جاهزة':'Care areas, not an automated diagnosis'}</h1></div><p className="text-[#46695C] leading-9 text-base">{ar?'كل مجال يوضح نطاق الاستفسار والأسئلة المناسبة قبل زيارة مركز حقيقي. الطبيب أو المعالج المرخص فقط يحدد ملاءمة الخطة والتمارين.':'Each dossier explains a broad functional area and the right administrative expectations. Actual clinicians decide suitability, examination and individual exercise plans.'}</p></div></section>

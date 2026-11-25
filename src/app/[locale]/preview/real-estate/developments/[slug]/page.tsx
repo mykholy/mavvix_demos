@@ -15,10 +15,11 @@ import {
 } from 'lucide-react';
 
 interface Props {
-  params: { locale: Locale; slug: string };
+  params: Promise<{ locale: Locale; slug: string }>;
 }
 
-export default function RealEstateDevelopmentDetailPage({ params }: Props) {
+export default async function RealEstateDevelopmentDetailPage(props: Props) {
+  const params = await props.params;
   const { locale, slug } = params;
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;

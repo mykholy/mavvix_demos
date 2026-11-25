@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { ContactDock } from '@/components/shared/ContactDock';
@@ -5,15 +6,24 @@ import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { oakPath } from '@/lib/verticals/furniture/data';
 import { Armchair,ArrowUpRight,Leaf,Home } from 'lucide-react';
 
-export default function OaklineLayout({children,params:{locale}}:{children:React.ReactNode;params:{locale:Locale}}){
+export default async function OaklineLayout(props:{children:React.ReactNode;params: Promise<{ locale: string }>}) {
+ const params = await props.params;
+
+ const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
+
+ const {
+  children
+ } = props;
+
  const ar=locale==='ar';const nav=[
-  {href:oakPath(locale,'rooms'),label:ar?'الغرف':'Rooms'},
-  {href:oakPath(locale,'collections'),label:ar?'المجموعات':'Collections'},
-  {href:oakPath(locale,'materials'),label:ar?'دليل الخامات':'Materials'},
-  {href:oakPath(locale,'process'),label:ar?'من الفكرة للتنفيذ':'Process'},
-  {href:oakPath(locale,'journal'),label:ar?'مقالات البيت':'Journal'},
-  {href:oakPath(locale,'about'),label:ar?'حكايتنا':'Story'},
- ];
+   {href:oakPath(locale,'rooms'),label:ar?'الغرف':'Rooms'},
+   {href:oakPath(locale,'collections'),label:ar?'المجموعات':'Collections'},
+   {href:oakPath(locale,'materials'),label:ar?'دليل الخامات':'Materials'},
+   {href:oakPath(locale,'process'),label:ar?'من الفكرة للتنفيذ':'Process'},
+   {href:oakPath(locale,'journal'),label:ar?'مقالات البيت':'Journal'},
+   {href:oakPath(locale,'about'),label:ar?'حكايتنا':'Story'},
+  ];
  return <div dir={ar?'rtl':'ltr'} lang={locale} className="oakline-shell min-h-screen bg-[#F4EFE6] text-[#392C24] selection:bg-[#E1BD8A] selection:text-[#392C24]">
   <div className="bg-[#60452F] text-[#FAF0E2] px-4 py-2 text-xs text-center font-semibold">
    {ar?'تصميم موقع أثاث حسب الطلب من مافكس — القطع والصور توضيحية ولا يوجد تصنيع أو شراء مؤكد':'A Mavvix custom-furniture website concept — illustrative pieces, no confirmed products or orders'}
@@ -27,7 +37,7 @@ export default function OaklineLayout({children,params:{locale}}:{children:React
     <nav aria-label={ar?'القائمة الرئيسية':'Main navigation'} className="hidden xl:flex items-center gap-6 text-xs font-bold text-[#584737]">{nav.map(n=><Link key={n.href} href={n.href} className="hover:text-[#996735]">{n.label}</Link>)}</nav>
     <div className="flex shrink-0 gap-2 items-center"><Link aria-label={ar?'طلب تسعير أثاث':'Furniture quote basket'} href={oakPath(locale,'quote')} className="min-w-11 min-h-11 px-3 sm:px-6 py-3 bg-[#392C24] text-[#F8F2E9] rounded-full inline-flex items-center justify-center gap-2 text-xs font-extrabold">
       <Leaf size={18}/><span className="hidden sm:inline">{ar?'ابدأ طلب تسعير':'PREPARE A QUOTE'}</span>
-     </Link><MobileSectorNav links={[...nav,{href:oakPath(locale,'quote'),label:ar?'طلب تسعير':'Quote request'}]}/></div>
+     </Link><MobileSectorNav breakpoint="xl" tone="light" links={[...nav,{href:oakPath(locale,'quote'),label:ar?'طلب تسعير':'Quote request'}]}/></div>
    </div>
   </header>
   <main>{children}</main>

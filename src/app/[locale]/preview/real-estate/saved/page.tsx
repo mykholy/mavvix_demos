@@ -3,10 +3,11 @@ import type { Locale } from '@/lib/i18n/config';
 import { RealEstateSavedClient } from './RealEstateSavedClient';
 
 interface Props {
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }
 
-export default function RealEstateSavedPage({ params }: Props) {
+export default async function RealEstateSavedPage(props: Props) {
+  const params = await props.params;
   const { locale } = params;
   const allUnits = getPropertyUnits(locale);
 

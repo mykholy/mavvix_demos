@@ -4,11 +4,13 @@ import type { Locale } from '@/lib/i18n/config';
 import { ViewingRequestWizard } from './ViewingRequestWizard';
 
 interface Props {
-  params: { locale: Locale };
-  searchParams: { unit?: string };
+  params: Promise<{ locale: Locale }>;
+  searchParams: Promise<{ unit?: string }>;
 }
 
-export default function RealEstateViewingPage({ params, searchParams }: Props) {
+export default async function RealEstateViewingPage(props: Props) {
+  const searchParams = await props.searchParams;
+  const params = await props.params;
   const { locale } = params;
   const allUnits = getPropertyUnits(locale);
 

@@ -2,7 +2,13 @@ import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { ARENA,arenaPath,arenaText } from '@/lib/verticals/sports-venues/data';
 import { BookOpen,ArrowUpRight,Trophy } from 'lucide-react';
-export default function ArenaJournal({params:{locale}}:{params:{locale:Locale}}){
+export default async function ArenaJournal(props:{params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';
  return <div><section className="bg-[#102B26] text-white py-16 sm:py-24"><div className="max-w-7xl mx-auto px-5 sm:px-8">
   <p className="text-xs tracking-widest text-[#F0B044] font-black">ARENA / FIELD JOURNAL</p><h1 className="arena-display font-black text-4xl sm:text-7xl mt-5">{ar?'قبل اللعب، جهز فريقك صح':'KNOW THE GAME BEFORE THE WHISTLE'}</h1>

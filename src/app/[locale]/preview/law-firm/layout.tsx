@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import type { Locale } from '@/lib/i18n/config';
@@ -6,13 +7,27 @@ import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { lexoraPath } from '@/lib/verticals/law-firm/data';
 import { Scale, ArrowUpRight, ShieldCheck, Landmark } from 'lucide-react';
 
-export function generateMetadata({params:{locale}}:{params:{locale:Locale}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{ locale: string }>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
+
  const ar=locale==='ar';
  const title=ar?'Lexora Counsel | تجربة موقع مكتب محاماة احترافي — مافكس':'Lexora Counsel — Bilingual Law Firm Website Experience by Mavvix';
  const description=ar?'تصور واجهة مكتب محاماة بمحتوى متخصص للخدمات القانونية ونموذج استفسار يحترم السرية، من تصميم مافكس. ليس مكتبًا مرخصًا ولا استشارة قانونية.':'An editorial bilingual law firm website concept by Mavvix: practice-area dossiers, privacy-first contact intake and original business-oriented legal education. No legal engagement.';
  return {title,description,robots:{index:false,follow:false},openGraph:{title,description,type:'website'}};
 }
-export default function LexoraLayout({children,params:{locale}}:{children:React.ReactNode;params:{locale:Locale}}){
+export default async function LexoraLayout(props:{children:React.ReactNode;params: Promise<{ locale: string }>}) {
+ const params = await props.params;
+
+ const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
+
+ const {
+  children
+ } = props;
+
  const ar=locale==='ar';
  const nav=[
   {href:lexoraPath(locale,'practices'),label:ar?'مجالات الممارسة':'Practice Areas'},
@@ -39,7 +54,7 @@ export default function LexoraLayout({children,params:{locale}}:{children:React.
       <Link href={lexoraPath(locale,'consultation')} aria-label={ar?'طلب استفسار قانوني عام':'Request introductory legal enquiry'} className="flex gap-2 items-center rounded-sm bg-[#251D34] text-white h-11 px-3 sm:px-6 text-xs font-bold">
        <span className="hidden sm:inline">{ar?'طلب استفسار أولي':'Send an enquiry'}</span><ArrowUpRight size={17}/>
       </Link>
-      <MobileSectorNav links={[...nav,{href:lexoraPath(locale,'consultation'),label:ar?'استفسار أولي':'Enquiry'}]}/>
+      <MobileSectorNav breakpoint="xl" tone="light" links={[...nav,{href:lexoraPath(locale,'consultation'),label:ar?'استفسار أولي':'Enquiry'}]}/>
     </div>
    </div>
   </header>

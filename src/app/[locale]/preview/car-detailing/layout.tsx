@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import type { Metadata } from 'next';
@@ -5,13 +6,27 @@ import { ContactDock } from '@/components/shared/ContactDock';
 import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { glossPath } from '@/lib/verticals/car-detailing/data';
 import { Droplets, ArrowUpRight, CarFront, Waves } from 'lucide-react';
-export function generateMetadata({params:{locale}}:{params:{locale:Locale}}):Metadata {
+export async function generateMetadata(props:{params: Promise<{ locale: string }>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
+
  const ar=locale==='ar';
  const title=ar?'موقع ديتيلنج وحماية سيارات | GlossBay من مافكس':'Premium Car Detailing Website | GlossBay by Mavvix';
  const description=ar?'تجربة موقع لغسيل وتلميع السيارات بحزمة خدمات متخصصة وطلب عرض سعر حسب حجم السيارة والإضافات، دون حجز وهمي.':'Bilingual car detailing concept with a specialist treatment catalogue and transparent vehicle-size quote request by Mavvix.';
  return {title,description,openGraph:{title,description,type:'website'},robots:{index:false,follow:false}};
 }
-export default function GlossLayout({children,params:{locale}}:{children:React.ReactNode;params:{locale:Locale}}){
+export default async function GlossLayout(props:{children:React.ReactNode;params: Promise<{ locale: string }>}) {
+ const params = await props.params;
+
+ const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
+
+ const {
+  children
+ } = props;
+
  const ar=locale==='ar';
  const nav=[
   {href:glossPath(locale,'packages'),label:ar?'الباقات':'Packages'},
@@ -32,7 +47,7 @@ export default function GlossLayout({children,params:{locale}}:{children:React.R
     <nav aria-label={ar?'قائمة الموقع':'Main navigation'} className="hidden xl:flex items-center gap-5">{nav.map(n=><Link key={n.href} href={n.href} className="text-xs font-semibold text-[#D1E7F3] hover:text-[#4CCBF4]">{n.label}</Link>)}</nav>
     <div className="flex gap-2 items-center">
      <Link href={glossPath(locale,'quote')} className="min-h-11 min-w-11 rounded-md flex gap-2 items-center justify-center bg-[#4CCBF4] text-[#0D1626] px-2 sm:px-5 py-3 font-black text-xs" aria-label={ar?'طلب عرض عناية بالسيارة':'Request car care quote'}><CarFront size={17}/><span className="hidden sm:inline">{ar?'جهز طلبك':'Build a brief'}</span></Link>
-     <MobileSectorNav links={[...nav,{href:glossPath(locale,'quote'),label:ar?'طلب عرض':'Request quote'}]}/>
+     <MobileSectorNav breakpoint="xl" tone="dark" links={[...nav,{href:glossPath(locale,'quote'),label:ar?'طلب عرض':'Request quote'}]}/>
     </div>
    </div>
   </header>

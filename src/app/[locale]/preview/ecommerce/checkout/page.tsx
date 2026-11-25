@@ -7,11 +7,17 @@ export const metadata = {
   description: 'Complete your simulated order with verified server recalculation and Cash-on-Delivery demonstration.'
 };
 
-export default function EcommerceCheckoutPage({
-  params: { locale }
-}: {
-  params: { locale: Locale }
-}) {
+export default async function EcommerceCheckoutPage(
+  props: {
+    params: Promise<{ locale: Locale }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const isAr = locale === 'ar';
 
   return (

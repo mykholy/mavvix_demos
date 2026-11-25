@@ -3,11 +3,13 @@ import type { Locale } from '@/lib/i18n/config';
 import { RfqBasketClient } from './RfqBasketClient';
 
 interface Props {
-  params: { locale: Locale };
-  searchParams: { sku?: string };
+  params: Promise<{ locale: Locale }>;
+  searchParams: Promise<{ sku?: string }>;
 }
 
-export default function IndustrialRfqPage({ params, searchParams }: Props) {
+export default async function IndustrialRfqPage(props: Props) {
+  const searchParams = await props.searchParams;
+  const params = await props.params;
   const { locale } = params;
   const allProducts = getCatalogItems('industrial', locale);
 

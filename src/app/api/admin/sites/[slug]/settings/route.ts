@@ -4,12 +4,10 @@ import { verifySessionToken } from '@/lib/security/auth';
 import { getSiteBySlug } from '@/lib/db/repositories';
 import { execute } from '@/lib/db';
 
-export async function POST(
-  req: NextRequest,
-  { params }: { params: { slug: string } }
-) {
+export async function POST(req: NextRequest, props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   try {
-    const cookieStore = cookies();
+    const cookieStore = await cookies();
     const token = cookieStore.get('mavvix_admin_session')?.value;
     const admin = token ? verifySessionToken(token) : null;
 

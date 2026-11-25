@@ -21,17 +21,19 @@ import {
 } from 'lucide-react';
 
 interface Props {
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }
 
-export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+export async function generateMetadata(props: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const params = await props.params;
   const ar = params.locale === 'ar';
   const title = ar ? "موقع عقارات احترافي | وحدات ومقارنات ومعاينات | مافكس" : "Real Estate Website | Property Listings & Viewings | Mavvix";
   const description = ar ? "استكشف تجربة موقع عقارات بها مجمعات سكنية وفلاتر وحدات ومقارنة مواصفات ونموذج طلب معاينة." : "Explore property listings, development dossiers, unit comparison, buyer FAQs and structured viewing enquiries.";
   return { title, description, openGraph: {title, description, locale: ar ? 'ar_EG' : 'en_US', type: 'website'}, twitter: {card:'summary_large_image',title,description} };
 }
 
-export default function RealEstateHomePage({ params }: Props) {
+export default async function RealEstateHomePage(props: Props) {
+  const params = await props.params;
   const { locale } = params;
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;

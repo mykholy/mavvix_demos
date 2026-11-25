@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { ContactDock } from '@/components/shared/ContactDock';
@@ -5,7 +6,16 @@ import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { veloraPath } from '@/lib/verticals/salon-spa/data';
 import { Flower2, ArrowUpRight, Sparkles, Instagram } from 'lucide-react';
 
-export default function VeloraLayout({children,params:{locale}}:{children:React.ReactNode;params:{locale:Locale}}){
+export default async function VeloraLayout(props:{children:React.ReactNode;params: Promise<{ locale: string }>}) {
+ const params = await props.params;
+
+ const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
+
+ const {
+  children
+ } = props;
+
  const ar=locale==='ar';
  const nav=[
   {href:veloraPath(locale,'services'),label:ar?'قائمة الخدمات':'Service menu'},
@@ -32,7 +42,7 @@ export default function VeloraLayout({children,params:{locale}}:{children:React.
      <Link href={veloraPath(locale,'booking')} aria-label={ar?'طلب موعد عناية':'Request appointment'} className="min-h-11 inline-flex gap-2 items-center bg-[#4B2834] text-[#FFF9F4] rounded-full px-3 sm:px-6 py-3 text-xs font-bold hover:bg-[#633849]">
       <Sparkles size={16}/><span className="hidden sm:inline">{ar?'طلب موعد':'Request an appointment'}</span>
      </Link>
-     <MobileSectorNav links={[...nav,{href:veloraPath(locale,'booking'),label:ar?'طلب موعد':'Appointment'}]}/>
+     <MobileSectorNav breakpoint="xl" tone="light" links={[...nav,{href:veloraPath(locale,'booking'),label:ar?'طلب موعد':'Appointment'}]}/>
     </div>
    </div>
   </header>

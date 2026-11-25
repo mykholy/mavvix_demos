@@ -18,10 +18,24 @@ const headings:Record<Topic,{ar:string;en:string}>={
  'care-plan':{ar:'خطة أسئلة تتغير حسب العمر والنوع',en:'A practical age- and species-aware care guide'}
 };
 export function generateStaticParams(){return routes.map(section=>({section}));}
-export function generateMetadata({params:{locale,section}}:{params:{locale:Locale;section:string}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale;section:string}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
  const obj=headings[section as Topic];return obj?{title:obj[locale]+' | PawWell',description:locale==='ar'?'معلومات متخصصة عن العناية البيطرية من تجربة مافكس، دون بيانات مرضية أو ادعاء تشغيل عيادة.':'Sector-specific veterinary care guidance in an honest Mavvix website concept; no active clinic or medical service.',robots:{index:false}}:{};
 }
-export default function VeterinaryTopicPage({params:{locale,section}}:{params:{locale:Locale;section:string}}){
+export default async function VeterinaryTopicPage(props:{params: Promise<{locale:Locale;section:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
  if(!routes.includes(section as Topic))notFound();const topic=section as Topic;const ar=locale==='ar';
  return <div>
   <section className="bg-[#E8EFE3] py-14 sm:py-20"><div className="max-w-7xl mx-auto px-5 sm:px-8">

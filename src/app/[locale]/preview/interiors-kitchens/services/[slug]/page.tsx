@@ -5,10 +5,24 @@ import type { Metadata } from 'next';
 import { FORMA,formaPath,formaService } from '@/lib/verticals/interiors-kitchens/data';
 import { Ruler,CheckCircle2,ArrowUpRight,ShieldCheck } from 'lucide-react';
 export function generateStaticParams(){return FORMA.services.map(s=>({slug:s.slug}));}
-export function generateMetadata({params:{locale,slug}}:{params:{locale:Locale;slug:string}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale;slug:string}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const s=formaService(slug);return s?{title:s.title[locale]+' | Forma Atelier',description:s.summary[locale],robots:{index:false}}:{};
 }
-export default function FormaDetail({params:{locale,slug}}:{params:{locale:Locale;slug:string}}){
+export default async function FormaDetail(props:{params: Promise<{locale:Locale;slug:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const s=formaService(slug);if(!s)notFound();const ar=locale==='ar';
  return <div><section className="bg-[#6C3538] text-white py-16 sm:py-24"><div className="max-w-7xl mx-auto px-5 sm:px-8">
   <nav className="text-xs text-[#E6C1B4]"><Link href={formaPath(locale)}>{ar?'الرئيسية':'Home'}</Link> / <Link href={formaPath(locale,'services')}>{ar?'التخصصات':'Services'}</Link> / {s.title[locale]}</nav>

@@ -36,8 +36,8 @@ const verticals = [
   { slug: 'academy', name: 'Nova Learning', ar: 'أكاديمية نوفا للتعليم والتدريب', icon: GraduationCap, color: 'text-indigo-500', bg: 'bg-indigo-500/10', border: 'border-indigo-500/30' },
 ];
 
-export default function AdminDashboardPage() {
-  const cookieStore = cookies();
+export default async function AdminDashboardPage() {
+  const cookieStore = await cookies();
   const token = cookieStore.get('mavvix_admin_session')?.value;
   const admin = token ? verifySessionToken(token) : null;
 

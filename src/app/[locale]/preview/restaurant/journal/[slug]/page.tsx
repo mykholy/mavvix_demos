@@ -4,11 +4,12 @@ import { notFound } from 'next/navigation';
 import { Locale } from '@/lib/i18n/config';
 import { getEditorialPostBySlug, getRestaurantDishes } from '@/lib/db/repositories';
 
-export default function RestaurantArticleDetailPage({
-  params,
-}: {
-  params: { locale: Locale; slug: string };
-}) {
+export default async function RestaurantArticleDetailPage(
+  props: {
+    params: Promise<{ locale: Locale; slug: string }>;
+  }
+) {
+  const params = await props.params;
   const { locale, slug } = params;
   const isAr = locale === 'ar';
   const article = getEditorialPostBySlug('restaurant', slug, locale);

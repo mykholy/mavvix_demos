@@ -5,10 +5,24 @@ import type { Locale } from '@/lib/i18n/config';
 import { PULSE,pulseClass,pulsePath } from '@/lib/verticals/fitness/data';
 import { ArrowUpRight,Clock3,ShieldCheck,Activity,Dumbbell,CheckCircle2 } from 'lucide-react';
 export function generateStaticParams(){return PULSE.services.map(s=>({slug:s.slug}));}
-export function generateMetadata({params:{locale,slug}}:{params:{locale:Locale;slug:string}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale;slug:string}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const s=pulseClass(slug);return s?{title:s.title[locale]+' | Pulse District by Mavvix',description:s.summary[locale],robots:{index:false}}:{};
 }
-export default function PulseClassDetail({params:{locale,slug}}:{params:{locale:Locale;slug:string}}){
+export default async function PulseClassDetail(props:{params: Promise<{locale:Locale;slug:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const s=pulseClass(slug);if(!s)notFound();const ar=locale==='ar';
  return <div><section className="bg-[#141421] text-white"><div className="max-w-7xl px-5 sm:px-8 mx-auto py-14 sm:py-24"><nav className="text-xs text-[#D3D1E4]"><Link href={pulsePath(locale)}>{ar?'الرئيسية':'Home'}</Link> / <Link href={pulsePath(locale,'classes')}>{ar?'الحصص':'Classes'}</Link> / {s.title[locale]}</nav><p className="font-mono font-black text-[#E0FE61] text-xs tracking-widest mt-14">PULSE / PROGRAM FILE {String(s.rank).padStart(2,'0')}</p><h1 className="pulse-display text-5xl sm:text-7xl font-black mt-6 uppercase leading-tight">{s.title[locale]}</h1><p className="text-[#E7E5F1] text-lg max-w-3xl leading-9 mt-7">{s.summary[locale]}</p><div className="flex flex-wrap mt-8 gap-5 text-xs font-black text-[#E0FE61]"><span className="inline-flex gap-2 items-center"><Clock3 size={17}/>{s.durations.join(' / ')} MIN · {ar?'تقديري':'ILLUSTRATIVE'}</span><span>{s.levels.join(' / ')}</span></div></div></section>
   <section className="max-w-7xl mx-auto px-5 sm:px-8 py-20 grid lg:grid-cols-[.5fr_1fr] gap-10"><div><Activity size={36} className="text-[#5B38C3]"/><h2 className="pulse-display text-4xl mt-5">{ar?'الهدف الفعلي من النشاط':'WHAT THIS CLASS PRACTICES'}</h2></div><p className="leading-[2.1] text-base sm:text-lg text-[#3E3C50]">{s.body[locale]}</p></section>

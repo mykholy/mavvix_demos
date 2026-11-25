@@ -3,7 +3,13 @@ import type { Locale } from '@/lib/i18n/config';
 import { LEXORA,LEGAL_BOOKS_PHOTO,LEGAL_BOOKS_SOURCE,lexoraPath,lexoraText } from '@/lib/verticals/law-firm/data';
 import { ArrowUpRight, ArrowLeft, ArrowRight, Scale, Landmark, BookOpen, ShieldCheck, FileText, BriefcaseBusiness, Gavel, Network, LockKeyhole, CircleHelp, Compass, Building2, CheckCircle2, ArrowDown, ScrollText, MessageSquareMore } from 'lucide-react';
 
-export default function LexoraHome({params:{locale}}:{params:{locale:Locale}}){
+export default async function LexoraHome(props:{params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar',Arrow=ar?ArrowLeft:ArrowRight;
  const practice=LEXORA.services;
  const roles=[

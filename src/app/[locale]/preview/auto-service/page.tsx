@@ -5,14 +5,21 @@ import { ArrowUpRight, ArrowLeft, ArrowRight, Gauge, ShieldCheck, Wrench, ScanSe
 import { AUTO_SERVICE, autoPath, localized } from '@/lib/verticals/auto-service/data';
 import type { Locale } from '@/lib/i18n/config';
 
-export function generateMetadata({params}:{params:{locale:Locale}}):Metadata {
+export async function generateMetadata(props:{params: Promise<{locale:Locale}>}):Promise<Metadata> {
+ const params = await props.params;
  const ar=params.locale==='ar';
  const title=ar?'موقع مركز صيانة سيارات متكامل | تجربة Torque Garage من مافكس':'Auto Service Website | Torque Garage Experience by Mavvix';
  const description=ar?'استكشف خدمات الصيانة وفحص الأعطال واختيار السيارة وطلب فحص منظم في تجربة موقع متخصصة صممتها مافكس.':'Explore a premium automotive service website with model-aware repair guides, inspection requests and informed vehicle service journeys.';
  return {title,description,openGraph:{title,description,type:'website'},twitter:{card:'summary_large_image',title,description}};
 }
 const PHOTO='https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Mechanic_repairing_car_engine.jpg/1280px-Mechanic_repairing_car_engine.jpg';
-export default function AutoServiceHome({params:{locale}}:{params:{locale:Locale}}){
+export default async function AutoServiceHome(props:{params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar',Arrow=ar?ArrowLeft:ArrowRight;
  const services=AUTO_SERVICE.services,faq=AUTO_SERVICE.faq,articles=AUTO_SERVICE.articles;
  const stages=ar?[

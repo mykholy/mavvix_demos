@@ -5,10 +5,24 @@ import type { Locale } from '@/lib/i18n/config';
 import { OAKLINE,oakProduct,oakPath } from '@/lib/verticals/furniture/data';
 import { Armchair,ArrowUpRight,Ruler,Palette,CheckCircle2,ShieldCheck } from 'lucide-react';
 export function generateStaticParams(){return OAKLINE.services.map(x=>({slug:x.slug}));}
-export function generateMetadata({params:{locale,slug}}:{params:{locale:Locale;slug:string}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale;slug:string}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const p=oakProduct(slug);return p?{title:p.title[locale]+' | Oakline Living',description:p.summary[locale],robots:{index:false}}:{};
 }
-export default function OakProductDetail({params:{locale,slug}}:{params:{locale:Locale;slug:string}}){
+export default async function OakProductDetail(props:{params: Promise<{locale:Locale;slug:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const p=oakProduct(slug);if(!p)notFound();const ar=locale==='ar';
  return <div><section className="bg-[#3E3025] text-[#F9F1E7] py-16 sm:py-24"><div className="max-w-7xl mx-auto px-5 sm:px-8">
   <nav className="text-xs text-[#E3CDAF]"><Link href={oakPath(locale)}>{ar?'الرئيسية':'Home'}</Link> / <Link href={oakPath(locale,'collections')}>{ar?'القطع':'Collection'}</Link> / {p.title[locale]}</nav>

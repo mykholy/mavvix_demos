@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { ContactDock } from '@/components/shared/ContactDock';
@@ -5,7 +6,16 @@ import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { pulsePath } from '@/lib/verticals/fitness/data';
 import { Activity, Zap, ArrowUpRight, CircleDot, Crosshair } from 'lucide-react';
 
-export default function FitnessLayout({children,params:{locale}}:{children:React.ReactNode;params:{locale:Locale}}){
+export default async function FitnessLayout(props:{children:React.ReactNode;params: Promise<{ locale: string }>}) {
+ const params = await props.params;
+
+ const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
+
+ const {
+  children
+ } = props;
+
  const ar=locale==='ar';
  const nav=[
   {href:pulsePath(locale,'classes'),label:ar?'الحصص':'Classes'},
@@ -28,7 +38,7 @@ export default function FitnessLayout({children,params:{locale}}:{children:React
       <Link href={pulsePath(locale,'trial')} aria-label={ar?'طلب تجربة حصة رياضية':'Request gym class trial'} className="min-h-11 min-w-11 inline-flex items-center justify-center gap-2 bg-[#141421] text-[#E0FE61] rounded-full px-3 sm:px-6 text-xs font-black">
        <Zap size={17}/><span className="hidden sm:inline">{ar?'اختار حصة تجريبية':'Explore a trial'}</span>
       </Link>
-      <MobileSectorNav links={[...nav,{href:pulsePath(locale,'trial'),label:ar?'التجربة':'Trial'}]}/>
+      <MobileSectorNav breakpoint="xl" tone="light" links={[...nav,{href:pulsePath(locale,'trial'),label:ar?'التجربة':'Trial'}]}/>
      </div>
     </div>
    </header>

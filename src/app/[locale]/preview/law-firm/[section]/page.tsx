@@ -24,10 +24,24 @@ const safeStep=[
  {ar:'اتفق على حدود العمل',en:'Agree on the engagement scope',descAr:'الأتعاب والملفات وسرية التعامل وطريقة المتابعة يجب أن توضح في اتفاق حقيقي.',descEn:'Fees, confidentiality, data handling and engagement are agreed with the real law firm.'},
 ];
 export function generateStaticParams(){return sections.map(section=>({section}));}
-export function generateMetadata({params:{locale,section}}:{params:{locale:Locale;section:string}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale;section:string}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
  const item=names[section as Topic];return item?{title:item[locale]+' | Lexora Counsel',description:locale==='ar'?'محتوى موقع قانوني متخصص من مافكس للتعريف بالمجالات والخدمات والتواصل الأولي الآمن دون تقديم استشارات قانونية.':'A bilingual legal practice website concept with privacy-first intake, informative service context and no actual legal engagement.',robots:{index:false}}:{};
 }
-export default function LegalTopic({params:{locale,section}}:{params:{locale:Locale;section:string}}){
+export default async function LegalTopic(props:{params: Promise<{locale:Locale;section:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
  if(!sections.includes(section as Topic))notFound();
  const topic=section as Topic,ar=locale==='ar';
  const intro=ar?'هذا المحتوى يشرح نوع الموقع الذي يمكن لـMavvix تصميمه لمكتب قانوني حقيقي، ولا يشير إلى فريق أو ترخيص أو خدمة قانونية متاحة باسم Lexora.':'This page illustrates what Mavvix can build for a licensed law firm; it does not claim Lexora has real lawyers, operating branches or accepted clients.';

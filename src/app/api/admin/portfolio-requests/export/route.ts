@@ -10,7 +10,7 @@ function safeCell(value:unknown){
  return '"'+s.replace(/"/g,'""')+'"';
 }
 export async function GET(){
- const token=cookies().get('mavvix_admin_session')?.value;
+ const token=(await cookies()).get('mavvix_admin_session')?.value;
  const user=token?verifySessionToken(token):null;
  if(!user)return NextResponse.json({error:'UNAUTHORIZED'},{status:401});
  if(user.role==='viewer')return NextResponse.json({error:'FORBIDDEN'},{status:403});

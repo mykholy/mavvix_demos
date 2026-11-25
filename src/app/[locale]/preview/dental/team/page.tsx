@@ -9,11 +9,17 @@ export const metadata = {
   description: 'Meet our multidisciplinary team of dental practitioners. Filter by specialty and explore calm care philosophies.'
 };
 
-export default function DentalTeamPage({
-  params: { locale }
-}: {
-  params: { locale: Locale }
-}) {
+export default async function DentalTeamPage(
+  props: {
+    params: Promise<{ locale: Locale }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const isAr = locale === 'ar';
   const practitioners = getDentalPractitioners(locale);
 

@@ -11,11 +11,17 @@ export const metadata = {
   description: 'Reach our fictional clinic coordination desk or contact Mavvix to commission a custom healthcare website.'
 };
 
-export default function DentalContactPage({
-  params: { locale }
-}: {
-  params: { locale: Locale }
-}) {
+export default async function DentalContactPage(
+  props: {
+    params: Promise<{ locale: Locale }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;
 

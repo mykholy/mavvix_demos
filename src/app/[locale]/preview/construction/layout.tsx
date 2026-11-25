@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { ContactDock } from '@/components/shared/ContactDock';
 import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import Link from 'next/link';
@@ -21,11 +22,18 @@ export function generateStaticParams() {
 
 interface Props {
   children: React.ReactNode;
-  params: { locale: Locale };
+  params: Promise<{ locale: string }>;
 }
 
-export default function ConstructionLayout({ children, params }: Props) {
+export default async function ConstructionLayout(props: Props) {
+  const params = await props.params;
+
+  const {
+    children
+  } = props;
+
   const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;
 

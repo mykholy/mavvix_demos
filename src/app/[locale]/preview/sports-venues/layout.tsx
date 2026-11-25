@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { ContactDock } from '@/components/shared/ContactDock';
@@ -5,7 +6,16 @@ import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { arenaPath } from '@/lib/verticals/sports-venues/data';
 import { Trophy,ArrowUpRight,Goal,MapPinned } from 'lucide-react';
 
-export default function ArenaLayout({children,params:{locale}}:{children:React.ReactNode;params:{locale:Locale}}){
+export default async function ArenaLayout(props:{children:React.ReactNode;params: Promise<{ locale: string }>}) {
+ const params = await props.params;
+
+ const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
+
+ const {
+  children
+ } = props;
+
  const ar=locale==='ar';
  const nav=[
   {href:arenaPath(locale,'courts'),label:ar?'الملاعب':'Courts'},
@@ -30,7 +40,7 @@ export default function ArenaLayout({children,params:{locale}}:{children:React.R
      <Link href={arenaPath(locale,'book')} aria-label={ar?'طلب ملعب':'Request a court'} className="min-h-11 min-w-11 flex items-center justify-center rounded-sm px-3 sm:px-5 bg-[#F0B044] text-[#102B26] font-extrabold text-xs gap-2">
       <Goal size={18}/><span className="hidden sm:inline">{ar?'اطلب وقت ملعب':'REQUEST A COURT'}</span>
      </Link>
-     <MobileSectorNav links={[...nav,{href:arenaPath(locale,'book'),label:ar?'طلب ملعب':'Request Court'}]}/>
+     <MobileSectorNav breakpoint="xl" tone="dark" links={[...nav,{href:arenaPath(locale,'book'),label:ar?'طلب ملعب':'Request Court'}]}/>
     </div>
    </div>
   </header>

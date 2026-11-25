@@ -8,7 +8,16 @@ const names:Record<typeof groups[number],{ar:string;en:string}>={
  all:{ar:'كل الخدمات',en:'All services'},ac:{ar:'تكييف',en:'Air conditioning'},plumbing:{ar:'سباكة',en:'Plumbing'},
  electrical:{ar:'كهرباء',en:'Electrical'},appliances:{ar:'أجهزة وسخانات',en:'Appliances'},carpentry:{ar:'نجارة وأبواب',en:'Carpentry'}
 };
-export default function HomeServices({params:{locale},searchParams}:{params:{locale:Locale};searchParams:{category?:string}}){
+export default async function HomeServices(
+ props:{params: Promise<{locale:Locale}>;searchParams: Promise<{category?:string}>}
+) {
+ const searchParams = await props.searchParams;
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';const chosen=groups.includes(searchParams.category as typeof groups[number])?searchParams.category:'all';
  const list=HOME_CARE.services.filter(s=>chosen==='all'||s.category===chosen);
  return <div className="max-w-7xl mx-auto px-5 sm:px-8 py-14 sm:py-20">

@@ -5,11 +5,18 @@ import { Locale } from '@/lib/i18n/config';
 import { getPortfolioServiceBySlug, getProjects } from '@/lib/db/repositories';
 import { ArrowUpRight, ArrowRight, ArrowLeft, CheckCircle2, Clock, ShieldCheck, Sparkles } from 'lucide-react';
 
-export async function generateMetadata({
-  params: { locale, slug }
-}: {
-  params: { locale: Locale; slug: string }
-}) {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ locale: Locale; slug: string }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale,
+    slug
+  } = params;
+
   const service = getPortfolioServiceBySlug(slug, locale);
   if (!service) return { title: 'Service Not Found' };
   return {
@@ -18,11 +25,18 @@ export async function generateMetadata({
   };
 }
 
-export default function PortfolioServiceDetailPage({
-  params: { locale, slug }
-}: {
-  params: { locale: Locale; slug: string }
-}) {
+export default async function PortfolioServiceDetailPage(
+  props: {
+    params: Promise<{ locale: Locale; slug: string }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale,
+    slug
+  } = params;
+
   const isAr = locale === 'ar';
   const Arrow = isAr ? ArrowLeft : ArrowRight;
 

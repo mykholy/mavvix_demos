@@ -6,10 +6,24 @@ import { AUTO_SERVICE, findAutoArticle, autoPath } from '@/lib/verticals/auto-se
 import type { Locale } from '@/lib/i18n/config';
 
 export function generateStaticParams(){return AUTO_SERVICE.articles.map(a=>({slug:a.slug}));}
-export function generateMetadata({params:{slug,locale}}:{params:{slug:string;locale:Locale}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{slug:string;locale:Locale}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  slug,
+  locale
+ } = params;
+
  const a=findAutoArticle(slug);return a?{title:a.title[locale]+' | Torque Garage',description:a.summary[locale]}:{};
 }
-export default function AutoArticleDetail({params:{locale,slug}}:{params:{locale:Locale;slug:string}}){
+export default async function AutoArticleDetail(props:{params: Promise<{locale:Locale;slug:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const article=findAutoArticle(slug);if(!article)notFound();const ar=locale==='ar';
  return <div className="max-w-5xl mx-auto px-5 sm:px-8 py-16">
   <nav className="text-sm text-stone-500"><Link href={autoPath(locale)}>{ar?'الرئيسية':'Home'}</Link> / <Link href={autoPath(locale,'resources')}>{ar?'دليل السائق':'Field notes'}</Link></nav>

@@ -9,7 +9,7 @@ export const runtime='nodejs';
 const body=z.object({id:z.string().min(5).max(100),
  status:z.enum(['new','contacted','qualified','quoted','won','lost','archived']),notes:z.string().max(2000)}).strict();
 export async function POST(request:Request){
- const token=cookies().get('mavvix_admin_session')?.value;
+ const token=(await cookies()).get('mavvix_admin_session')?.value;
  const admin=token?verifySessionToken(token):null;
  if(!admin)return NextResponse.json({error:'UNAUTHORIZED'},{status:401});
  if(admin.role==='viewer')return NextResponse.json({error:'FORBIDDEN'},{status:403});

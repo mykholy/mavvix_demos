@@ -17,7 +17,14 @@ const names:Record<Section,{ar:string;en:string}>={
  about:{ar:'فكرة Torque Garage',en:'About the Torque Garage experience'},
  contact:{ar:'التواصل وتنفيذ موقع مشابه',en:'Contact and commissioning this experience'}
 };
-export function generateMetadata({params:{locale,section}}:{params:{locale:Locale;section:string}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale;section:string}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
  if(!sections.includes(section as Section))return {};
  return {title:names[section as Section][locale]+' | Torque Garage',description:locale==='ar'?'دليل متخصص من تجربة موقع مافكس لصيانة السيارات، مع شرح الخطوات وطلب الفحص دون ادعاء حجز مؤكد.':'Industry-specific automotive website content and request journey by Mavvix; no real bookings are confirmed.'};
 }
@@ -27,7 +34,14 @@ const schedules=[
  {en:'Scope approval',ar:'اعتماد العمل',descEn:'The driver should confirm labor, possible parts, alternatives and what happens if more work is needed.',descAr:'صاحب العربية يراجع بنود العمل وقطع الغيار والبدائل وآلية طلب موافقته على أي زيادة.'},
  {en:'Handover notes',ar:'ملاحظات التسليم',descEn:'The final record should show what was tested, what was replaced and follow-up recommendations.',descAr:'سجل التسليم يوضح الاختبارات والأجزاء المستبدلة وملاحظات المتابعة.'},
 ];
-export default function AutoServiceIndustryPage({params:{locale,section}}:{params:{locale:Locale;section:string}}){
+export default async function AutoServiceIndustryPage(props:{params: Promise<{locale:Locale;section:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  section
+ } = params;
+
  if(!sections.includes(section as Section))notFound();
  const topic=section as Section,ar=locale==='ar';
  const h=(text:string)=><h2 className="text-2xl sm:text-3xl font-black">{text}</h2>;

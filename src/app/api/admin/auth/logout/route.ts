@@ -3,7 +3,7 @@ import { revokeSession } from '@/lib/security/auth';
 import { cookies } from 'next/headers';
 
 export async function POST() {
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   const token = cookieStore.get('mavvix_admin_session')?.value;
   if (token) {
     revokeSession(token);

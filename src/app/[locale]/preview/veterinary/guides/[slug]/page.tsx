@@ -5,10 +5,24 @@ import type { Locale } from '@/lib/i18n/config';
 import { PAWWELL,pawPath,pawArticle } from '@/lib/verticals/veterinary/data';
 import { BookOpen, ArrowUpRight, ShieldCheck } from 'lucide-react';
 export function generateStaticParams(){return PAWWELL.articles.map(x=>({slug:x.slug}));}
-export function generateMetadata({params:{locale,slug}}:{params:{locale:Locale;slug:string}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale;slug:string}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const a=pawArticle(slug);return a?{title:a.title[locale]+' | PawWell',description:a.summary[locale],robots:{index:false}}:{};
 }
-export default function PetCareArticle({params:{locale,slug}}:{params:{locale:Locale;slug:string}}){
+export default async function PetCareArticle(props:{params: Promise<{locale:Locale;slug:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const article=pawArticle(slug);if(!article)notFound();const ar=locale==='ar';
  return <div className="max-w-5xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
   <nav className="text-sm text-[#476458]"><Link href={pawPath(locale)}>{ar?'الرئيسية':'Home'}</Link> / <Link href={pawPath(locale,'guides')}>{ar?'المجلة':'Care journal'}</Link></nav>

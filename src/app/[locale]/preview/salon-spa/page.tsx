@@ -4,13 +4,25 @@ import type { Locale } from '@/lib/i18n/config';
 import { VELORA, VELORA_PHOTOS, veloraPath, veloraText } from '@/lib/verticals/salon-spa/data';
 import { ArrowUpRight, ArrowLeft, ArrowRight, Flower2, Sparkles, Heart, Scissors, HandHeart, Palette, BookOpen, CalendarDays, ShieldCheck, Clock3, CheckCircle2, Sun, Gem, Feather, ArrowDown, Image as ImageIcon } from 'lucide-react';
 
-export function generateMetadata({params:{locale}}:{params:{locale:Locale}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';
  const title=ar?'تصميم موقع صالون تجميل فاخر | Velora Beauty من مافكس':'Premium Salon & Spa Website Design | Velora Beauty by Mavvix';
  const description=ar?'تجربة موقع صالون تجميل بخدمات الشعر والأظافر والعناية وجدول استفسار منظم ومجلة تجميل. تصميم مافكس عربي وإنجليزي بدون حجوزات وهمية.':'Explore an editorial salon website with bilingual hair, nails and wellbeing service dossiers, curated beauty content and a pending-only appointment enquiry.';
  return {title,description,openGraph:{title,description,type:'website'},robots:{index:false,follow:false}};
 }
-export default function VeloraHome({params:{locale}}:{params:{locale:Locale}}){
+export default async function VeloraHome(props:{params: Promise<{locale:Locale}>}) {
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar';const Arrow=ar?ArrowLeft:ArrowRight;
  const sections=[
   {title:ar?'الشعر والتصفيف':'Hair artistry',subtitle:ar?'قصة تناسب يومك':'Designed for your rhythm',icon:Scissors,filter:'hair'},

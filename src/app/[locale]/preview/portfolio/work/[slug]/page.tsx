@@ -6,11 +6,18 @@ import { Locale } from '@/lib/i18n/config';
 import { getProjectBySlug } from '@/lib/db/repositories';
 import CaseStudyDetailClient from './CaseStudyDetailClient';
 
-export async function generateMetadata({
-  params: { locale, slug }
-}: {
-  params: { locale: Locale; slug: string }
-}) {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ locale: Locale; slug: string }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale,
+    slug
+  } = params;
+
   const project = getProjectBySlug('portfolio', slug, locale);
   if (!project) return { title: 'Case Study Not Found' };
   return {
@@ -19,11 +26,18 @@ export async function generateMetadata({
   };
 }
 
-export default function PortfolioCaseDetailPage({
-  params: { locale, slug }
-}: {
-  params: { locale: Locale; slug: string }
-}) {
+export default async function PortfolioCaseDetailPage(
+  props: {
+    params: Promise<{ locale: Locale; slug: string }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale,
+    slug
+  } = params;
+
   const isAr = locale === 'ar';
   const project = getProjectBySlug('portfolio', slug, locale);
 

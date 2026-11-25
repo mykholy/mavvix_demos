@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import type { Locale } from '@/lib/i18n/config';
@@ -6,20 +7,34 @@ import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { pawPath } from '@/lib/verticals/veterinary/data';
 import { PawPrint, ArrowUpRight, Heart, ShieldCheck } from 'lucide-react';
 
-export function generateMetadata({params:{locale}}:{params:{locale:Locale}}):Metadata {
+export async function generateMetadata(props:{params: Promise<{ locale: string }>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
+
  const ar=locale==='ar';const title=ar?'PawWell — تجربة موقع عيادة بيطرية | Mavvix':'PawWell — Veterinary Clinic Website Experience | Mavvix';
  const description=ar?'تجربة موقع بيطري متخصصة للكلاب والقطط ورعاية الحيوانات الأليفة، مع ملفات خدمات وطلب زيارة محفوظ غير مؤكد. تصميم مافكس.':'Premium veterinary website concept by Mavvix: pet-first service guides, preventive care and a saved, nonconfirmed visit enquiry.';
  return {title,description,robots:{index:false,follow:false},openGraph:{title,description,type:'website'}};
 }
-export default function PawLayout({children,params:{locale}}:{children:React.ReactNode;params:{locale:Locale}}){
+export default async function PawLayout(props:{children:React.ReactNode;params: Promise<{ locale: string }>}) {
+ const params = await props.params;
+
+ const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
+
+ const {
+  children
+ } = props;
+
  const ar=locale==='ar';const nav=[
-  {href:pawPath(locale,'pets'),label:ar?'دليل الحيوانات':'Pet families'},
-  {href:pawPath(locale,'services'),label:ar?'الرعاية والخدمات':'Services'},
-  {href:pawPath(locale,'prevention'),label:ar?'الوقاية':'Prevention'},
-  {href:pawPath(locale,'team'),label:ar?'التخصصات':'Specialities'},
-  {href:pawPath(locale,'guides'),label:ar?'مكتبة المالك':'Pet-care journal'},
-  {href:pawPath(locale,'process'),label:ar?'رحلة الزيارة':'Visit process'},
- ];
+   {href:pawPath(locale,'pets'),label:ar?'دليل الحيوانات':'Pet families'},
+   {href:pawPath(locale,'services'),label:ar?'الرعاية والخدمات':'Services'},
+   {href:pawPath(locale,'prevention'),label:ar?'الوقاية':'Prevention'},
+   {href:pawPath(locale,'team'),label:ar?'التخصصات':'Specialities'},
+   {href:pawPath(locale,'guides'),label:ar?'مكتبة المالك':'Pet-care journal'},
+   {href:pawPath(locale,'process'),label:ar?'رحلة الزيارة':'Visit process'},
+  ];
  return <div lang={locale} dir={ar?'rtl':'ltr'} className="pawwell-shell min-h-screen bg-[#FBF9F3] text-[#24463D] selection:bg-[#F3B98E]">
   <div className="bg-[#24463D] text-[#FFF6EA] text-[11px] leading-6 px-5 py-2 text-center">
    {ar?'PawWell تصور موقع بيطري من مافكس، وليس عيادة شغالة أو خط طوارئ أو حجز مؤكد':'PawWell is a Mavvix veterinary website concept, not a real hospital, emergency line or confirmed booking'}
@@ -36,7 +51,7 @@ export default function PawLayout({children,params:{locale}}:{children:React.Rea
      <Link href={pawPath(locale,'request')} className="rounded-full min-w-11 min-h-11 px-3 sm:px-6 py-3 inline-flex items-center justify-center bg-[#24463D] text-white text-xs font-extrabold hover:bg-[#31594B]" aria-label={ar?'طلب زيارة بيطرية غير مؤكدة':'Request a nonconfirmed veterinary visit'}>
       <PawPrint size={17} className="sm:hidden"/><span className="hidden sm:inline">{ar?'طلب زيارة':'Request visit'}</span>
      </Link>
-     <MobileSectorNav links={[...nav,{href:pawPath(locale,'request'),label:ar?'طلب زيارة':'Visit enquiry'}]}/>
+     <MobileSectorNav breakpoint="xl" tone="light" links={[...nav,{href:pawPath(locale,'request'),label:ar?'طلب زيارة':'Visit enquiry'}]}/>
     </div>
    </div>
   </header>

@@ -4,7 +4,16 @@ import { PULSE,pulsePath,pulseText } from '@/lib/verticals/fitness/data';
 import { Dumbbell,Activity,Footprints,ArrowUpRight,Clock3,ShieldCheck } from 'lucide-react';
 const groups=['all','strength','conditioning','mobility'] as const;
 const names:Record<typeof groups[number],{ar:string;en:string}>={all:{ar:'كل الحصص',en:'All classes'},strength:{ar:'القوة',en:'Strength'},conditioning:{ar:'اللياقة',en:'Conditioning'},mobility:{ar:'الحركة',en:'Mobility'}};
-export default function PulseClasses({params:{locale},searchParams}:{params:{locale:Locale};searchParams:{category?:string}}){
+export default async function PulseClasses(
+ props:{params: Promise<{locale:Locale}>;searchParams: Promise<{category?:string}>}
+) {
+ const searchParams = await props.searchParams;
+ const params = await props.params;
+
+ const {
+  locale
+ } = params;
+
  const ar=locale==='ar',filter=groups.includes(searchParams.category as typeof groups[number])?searchParams.category:'all';
  const result=PULSE.services.filter(s=>filter==='all'||s.category===filter);
  return <div><section className="bg-[#141421] text-white py-20 sm:py-28"><div className="max-w-7xl px-5 sm:px-8 mx-auto grid lg:grid-cols-[1.1fr_.55fr] gap-10 items-end"><div><p className="text-[#E0FE61] text-xs font-black tracking-widest">THE PULSE TRAINING LIBRARY</p><h1 className="pulse-display uppercase text-5xl sm:text-7xl font-black mt-6">{ar?'كل حصة لها شخصيتها':'NOT ALL CLASSES ARE THE SAME.'}</h1></div><p className="text-[#E4E3F1] text-sm leading-9">{ar?'شوف هدف كل نوع تدريب، مستويات الخبرة المناسبة ومعلومات تحتاج تسأل عنها المدرب الحقيقي قبل التجربة.':'Explore training intent, experience level and typical duration. A real gym must verify capacity, coach and timetable before booking.'}</p></div></section>

@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import type { Locale } from '@/lib/i18n/config';
@@ -5,27 +6,41 @@ import { ContactDock } from '@/components/shared/ContactDock';
 import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { bloomPath } from '@/lib/verticals/nursery/data';
 import { Flower2,ArrowUpRight } from 'lucide-react';
-export function generateMetadata({params:{locale}}:{params:{locale:Locale}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{ locale: string }>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
+
  const ar=locale==='ar';
  const title=ar?'تصميم موقع حضانة ورياض أطفال | BloomSteps من مافكس':'Nursery & Early Years Website Design | BloomSteps by Mavvix';
  const description=ar?'تجربة عربية وإنجليزية لبرامج الطفولة المبكرة والروتين اليومي والأمان وطلب زيارة محفوظ دون تسجيل فعلي.':'A bilingual early-years website with age groups, play-based learning, safeguarding guidance and a privacy-conscious visit enquiry.';
  return {title,description,openGraph:{title,description,type:'website'},robots:{index:false,follow:false}};
 }
-export default function BloomLayout({children,params:{locale}}:{children:React.ReactNode;params:{locale:Locale}}){
+export default async function BloomLayout(props:{children:React.ReactNode;params: Promise<{ locale: string }>}) {
+ const params = await props.params;
+
+ const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
+
+ const {
+  children
+ } = props;
+
  const ar=locale==='ar';const nav=[
- {href:bloomPath(locale,'age-groups'),label:ar?'الفئات العمرية':'Age groups'},
- {href:bloomPath(locale,'curriculum'),label:ar?'التعلم باللعب':'Learning'},
- {href:bloomPath(locale,'daily-routine'),label:ar?'يومنا':'Daily rhythm'},
- {href:bloomPath(locale,'safety'),label:ar?'الأمان':'Safeguarding'},
- {href:bloomPath(locale,'gallery'),label:ar?'البيئة':'Gallery'},
- {href:bloomPath(locale,'admissions'),label:ar?'القبول والزيارة':'Admissions'}];
+  {href:bloomPath(locale,'age-groups'),label:ar?'الفئات العمرية':'Age groups'},
+  {href:bloomPath(locale,'curriculum'),label:ar?'التعلم باللعب':'Learning'},
+  {href:bloomPath(locale,'daily-routine'),label:ar?'يومنا':'Daily rhythm'},
+  {href:bloomPath(locale,'safety'),label:ar?'الأمان':'Safeguarding'},
+  {href:bloomPath(locale,'gallery'),label:ar?'البيئة':'Gallery'},
+  {href:bloomPath(locale,'admissions'),label:ar?'القبول والزيارة':'Admissions'}];
  return <div lang={locale} dir={ar?'rtl':'ltr'} className="bloom-shell min-h-screen bg-[#FFF9EE] text-[#145960] selection:bg-[#F5C04E] selection:text-[#145960]">
  <div className="bg-[#145960] text-white text-center text-xs px-4 py-2 leading-6">{ar?'تجربة تصميم موقع حضانة من مافكس · لا يوجد قبول أو موعد زيارة مؤكد':'A Mavvix nursery website concept · no confirmed enrollment or visit'}</div>
  <header className="sticky top-0 z-40 bg-[#FFF9EE]/95 border-b border-[#E2E5D5] backdrop-blur-lg">
  <div className="max-w-7xl mx-auto px-4 sm:px-8 min-h-[80px] flex justify-between items-center gap-3">
  <Link href={bloomPath(locale)} aria-label={ar?'الرئيسية':'Home'} className="flex items-center gap-2 min-w-0"><span className="rounded-[38%_62%_50%_50%] bg-[#F5C04E] grid place-items-center shrink-0 h-10 w-10"><Flower2 size={23}/></span><span className="min-w-0"><strong className="bloom-display text-xl sm:text-3xl block leading-none">BloomSteps<span className="text-[#A54F35]">.</span></strong><small className="text-[10px] tracking-wide block mt-1 font-bold">{ar?'كل خطوة اكتشاف':'little moments, big beginnings'}</small></span></Link>
  <nav className="hidden xl:flex items-center gap-5 font-bold text-xs" aria-label={ar?'القائمة الرئيسية':'Main navigation'}>{nav.slice(0,5).map(n=><Link key={n.href} href={n.href} className="hover:underline underline-offset-4">{n.label}</Link>)}</nav>
- <div className="flex items-center gap-2 shrink-0"><Link href={bloomPath(locale,'admissions')} aria-label={ar?'طلب زيارة':'Request a visit'} className="min-w-11 min-h-11 grid sm:flex items-center justify-center gap-2 bg-[#145960] text-white rounded-full px-3 sm:px-6 py-3 font-bold text-xs"><span className="hidden sm:inline">{ar?'خطط لزيارة':'Plan a visit'}</span><ArrowUpRight size={17}/></Link><MobileSectorNav links={nav}/></div>
+ <div className="flex items-center gap-2 shrink-0"><Link href={bloomPath(locale,'admissions')} aria-label={ar?'طلب زيارة':'Request a visit'} className="min-w-11 min-h-11 grid sm:flex items-center justify-center gap-2 bg-[#145960] text-white rounded-full px-3 sm:px-6 py-3 font-bold text-xs"><span className="hidden sm:inline">{ar?'خطط لزيارة':'Plan a visit'}</span><ArrowUpRight size={17}/></Link><MobileSectorNav breakpoint="xl" tone="light" links={nav}/></div>
  </div></header>
  <div>{children}</div>
  <footer className="bg-[#145960] text-[#FFF9EE] pt-16 pb-32 sm:pb-16"><div className="max-w-7xl mx-auto px-5 sm:px-8 grid md:grid-cols-[1.2fr_1fr_1fr] gap-10">

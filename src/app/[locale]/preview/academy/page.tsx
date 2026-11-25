@@ -7,7 +7,8 @@ import Link from 'next/link';
 import { getAcademyCourses, getAcademyTracks, getAcademyInstructors, getEditorialPosts } from '@/lib/db/repositories';
 import type { Locale } from '@/lib/i18n/config';
 
-export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+export async function generateMetadata(props: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const params = await props.params;
   const ar = params.locale === 'ar';
   const title = ar ? "منصة تعليمية احترافية | دورات ودروس واختبارات | مافكس" : "Learning Platform | Courses, Lessons & Quizzes | Mavvix";
   const description = ar ? "تجربة منصة تعليمية بمسارات ودورات ودروس متخصصة واختبارات وتقدم محفوظ وطلبات التحاق." : "Education platform with courses, subject-specific lessons, scored quizzes, persisted progress and enrollment enquiries.";

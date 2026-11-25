@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { ContactDock } from '@/components/shared/ContactDock';
@@ -5,7 +6,16 @@ import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { formaPath } from '@/lib/verticals/interiors-kitchens/data';
 import { Ruler,ArrowUpRight,PenTool,Instagram } from 'lucide-react';
 
-export default function FormaLayout({children,params:{locale}}:{children:React.ReactNode;params:{locale:Locale}}){
+export default async function FormaLayout(props:{children:React.ReactNode;params: Promise<{ locale: string }>}) {
+ const params = await props.params;
+
+ const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
+
+ const {
+  children
+ } = props;
+
  const ar=locale==='ar';
  const menu=[
   {href:formaPath(locale,'services'),label:ar?'التصميمات':'Solutions'},
@@ -32,7 +42,7 @@ export default function FormaLayout({children,params:{locale}}:{children:React.R
      <Link href={formaPath(locale,'consultation')} aria-label={ar?'طلب استشارة تصميم':'Request a design consultation'} className="min-w-11 h-11 flex items-center justify-center gap-2 rounded-none bg-[#6C3538] text-white px-3 sm:px-5 text-xs font-extrabold">
       <PenTool size={17}/><span className="hidden sm:inline">{ar?'اطلب استشارة تصميم':'Design brief'}</span>
      </Link>
-     <MobileSectorNav links={[...menu,{href:formaPath(locale,'consultation'),label:ar?'اطلب استشارة':'Design brief'}]}/>
+     <MobileSectorNav breakpoint="xl" tone="light" links={[...menu,{href:formaPath(locale,'consultation'),label:ar?'اطلب استشارة':'Design brief'}]}/>
     </div>
    </div>
   </header>

@@ -3,11 +3,13 @@ import type { Locale } from '@/lib/i18n/config';
 import { IndustrialCatalogClient } from './IndustrialCatalogClient';
 
 interface Props {
-  params: { locale: Locale };
-  searchParams: { category?: string; grade?: string; search?: string };
+  params: Promise<{ locale: Locale }>;
+  searchParams: Promise<{ category?: string; grade?: string; search?: string }>;
 }
 
-export default function IndustrialProductsPage({ params, searchParams }: Props) {
+export default async function IndustrialProductsPage(props: Props) {
+  const searchParams = await props.searchParams;
+  const params = await props.params;
   const { locale } = params;
   const initialProducts = getCatalogItems('industrial', locale);
 

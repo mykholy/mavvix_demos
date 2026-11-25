@@ -5,10 +5,24 @@ import type { Locale } from '@/lib/i18n/config';
 import { VELORA,veloraPath,veloraService,veloraText } from '@/lib/verticals/salon-spa/data';
 import { Clock3,ArrowUpRight,Flower2,ShieldCheck,CheckCircle2 } from 'lucide-react';
 export function generateStaticParams(){return VELORA.services.map(s=>({slug:s.slug}));}
-export function generateMetadata({params:{locale,slug}}:{params:{locale:Locale;slug:string}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale;slug:string}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const s=veloraService(slug);return s?{title:s.title[locale]+' | Velora Beauty',description:s.summary[locale],robots:{index:false}}:{};
 }
-export default function VeloraDetail({params:{locale,slug}}:{params:{locale:Locale;slug:string}}){
+export default async function VeloraDetail(props:{params: Promise<{locale:Locale;slug:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const s=veloraService(slug);if(!s)notFound();const ar=locale==='ar';
  return <div><section className="bg-[#4B2834] text-[#FFF9F4]"><div className="max-w-7xl mx-auto px-5 sm:px-8 pt-12 pb-20 sm:pb-24">
   <nav className="text-xs text-[#E4BDC4]"><Link href={veloraPath(locale)}>{ar?'الرئيسية':'Home'}</Link> / <Link href={veloraPath(locale,'services')}>{ar?'الخدمات':'Services'}</Link> / {s.title[locale]}</nav>

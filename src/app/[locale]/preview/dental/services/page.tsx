@@ -8,11 +8,17 @@ export const metadata = {
   description: 'Explore calm, evidence-based dental care pathways, including preventative, pediatric, and restorative consultations.'
 };
 
-export default function DentalServicesPage({
-  params: { locale }
-}: {
-  params: { locale: Locale }
-}) {
+export default async function DentalServicesPage(
+  props: {
+    params: Promise<{ locale: Locale }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const isAr = locale === 'ar';
   const services = getDentalServices(locale);
 

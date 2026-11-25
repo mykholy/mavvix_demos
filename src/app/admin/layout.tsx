@@ -23,8 +23,8 @@ interface Props {
   children: React.ReactNode;
 }
 
-export default function AdminLayout({ children }: Props) {
-  const cookieStore = cookies();
+export default async function AdminLayout({ children }: Props) {
+  const cookieStore = await cookies();
   const token = cookieStore.get('mavvix_admin_session')?.value;
   const admin = token ? verifySessionToken(token) : null;
 

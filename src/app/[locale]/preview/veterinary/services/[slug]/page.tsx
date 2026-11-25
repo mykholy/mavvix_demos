@@ -5,10 +5,24 @@ import type { Locale } from '@/lib/i18n/config';
 import { PAWWELL,pawPath,pawService } from '@/lib/verticals/veterinary/data';
 import { CheckCircle2,ArrowUpRight,PawPrint,ShieldCheck } from 'lucide-react';
 export function generateStaticParams(){return PAWWELL.services.map(s=>({slug:s.slug}));}
-export function generateMetadata({params:{slug,locale}}:{params:{slug:string;locale:Locale}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{slug:string;locale:Locale}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  slug,
+  locale
+ } = params;
+
  const s=pawService(slug);return s?{title:s.title[locale]+' | PawWell by Mavvix',description:s.summary[locale],robots:{index:false}}:{};
 }
-export default function PawServiceDetail({params:{locale,slug}}:{params:{locale:Locale;slug:string}}){
+export default async function PawServiceDetail(props:{params: Promise<{locale:Locale;slug:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const service=pawService(slug);if(!service)notFound();const ar=locale==='ar';
  return <div>
   <section className="bg-[#24463D] text-white py-16 sm:py-24"><div className="max-w-7xl mx-auto px-5 sm:px-8"><nav className="text-[#D4E9D9] text-xs"><Link href={pawPath(locale)}>{ar?'الرئيسية':'Home'}</Link> / <Link href={pawPath(locale,'services')}>{ar?'الخدمات':'Services'}</Link> / {service.title[locale]}</nav>

@@ -5,10 +5,24 @@ import type { Metadata } from 'next';
 import { FORMA,formaArticle,formaPath } from '@/lib/verticals/interiors-kitchens/data';
 import { BookOpen,ArrowUpRight } from 'lucide-react';
 export function generateStaticParams(){return FORMA.articles.map(a=>({slug:a.slug}));}
-export function generateMetadata({params:{locale,slug}}:{params:{locale:Locale;slug:string}}):Metadata{
+export async function generateMetadata(props:{params: Promise<{locale:Locale;slug:string}>}):Promise<Metadata> {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const a=formaArticle(slug);return a?{title:a.title[locale]+' | Forma Atelier',description:a.summary[locale],robots:{index:false}}:{};
 }
-export default function FormaJournalArticle({params:{locale,slug}}:{params:{locale:Locale;slug:string}}){
+export default async function FormaJournalArticle(props:{params: Promise<{locale:Locale;slug:string}>}) {
+ const params = await props.params;
+
+ const {
+  locale,
+  slug
+ } = params;
+
  const a=formaArticle(slug);if(!a)notFound();const ar=locale==='ar';
  return <div className="max-w-5xl px-5 sm:px-8 mx-auto py-16 sm:py-24"><nav className="text-xs text-[#776458]"><Link href={formaPath(locale)}>{ar?'الرئيسية':'Home'}</Link> / <Link href={formaPath(locale,'journal')}>{ar?'المقالات':'Journal'}</Link></nav>
   <header className="mt-14 border-b-2 border-[#793D40] pb-10"><p className="font-mono text-[#793D40] text-xs tracking-widest">FORMA / DESIGN JOURNAL</p><h1 className="forma-display text-4xl sm:text-6xl leading-tight mt-6">{a.title[locale]}</h1><p className="text-[#65544A] text-lg leading-9 mt-6">{a.summary[locale]}</p></header>

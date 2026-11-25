@@ -29,7 +29,7 @@ import {
 } from 'lucide-react';
 
 interface Props {
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }
 
 const demos = [
@@ -397,24 +397,31 @@ const demos = [
 
 /** Preview examples are not operating businesses. Canonicals become indexable only
  * after the owner configures the verified PUBLIC portfolio origin. */
-export function generateMetadata({params:{locale}}:{params:{locale:Locale}}):Metadata {
- const ar=locale==='ar';
- const originValue=process.env.NEXT_PUBLIC_MAVVIX_SHOWCASE_ORIGIN || '';
- let origin='';
- try {const url=new URL(originValue);if(url.protocol==='https:')origin=url.origin;}catch{}
- const verifiedIndex=Boolean(origin)&&process.env.MAVVIX_INDEX_SHOWCASE==='true';
- const title=ar?`نماذج مواقع احترافية لقطاعات مختلفة | مافكس — ${demos.length} تجربة`:`Premium Industry Website Portfolio | Mavvix — ${demos.length} Experiences`;
- const description=ar?'استعرض مواقع قطاعات متعددة بالعربي والإنجليزي وتجارب تفاعلية لنماذج خدمات وحجوزات ومتاجر، وتواصل مع مافكس لتنفيذ موقع بهوية نشاطك الحقيقية.':'Explore bespoke bilingual industry website experiences by Mavvix, including service enquiry, retail and scheduling concepts. Commission an original site tailored to your real business.';
- return {
-  title,description,
-  robots:{index:verifiedIndex,follow:verifiedIndex},
-  alternates:origin?{canonical:`${origin}/${locale}/showcase`,languages:{ar:`${origin}/ar/showcase`,en:`${origin}/en/showcase`}}:undefined,
-  openGraph:{title,description,type:'website',siteName:'Mavvix Software',locale:ar?'ar_EG':'en_US',url:origin?`${origin}/${locale}/showcase`:undefined},
-  twitter:{card:'summary_large_image',title,description}
- };
+export async function generateMetadata(props:{params: Promise<{locale:Locale}>}):Promise<Metadata> {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
+  const ar=locale==='ar';
+  const originValue=process.env.NEXT_PUBLIC_MAVVIX_SHOWCASE_ORIGIN || '';
+  let origin='';
+  try {const url=new URL(originValue);if(url.protocol==='https:')origin=url.origin;}catch{}
+  const verifiedIndex=Boolean(origin)&&process.env.MAVVIX_INDEX_SHOWCASE==='true';
+  const title=ar?`نماذج مواقع احترافية لقطاعات مختلفة | مافكس — ${demos.length} تجربة`:`Premium Industry Website Portfolio | Mavvix — ${demos.length} Experiences`;
+  const description=ar?'استعرض مواقع قطاعات متعددة بالعربي والإنجليزي وتجارب تفاعلية لنماذج خدمات وحجوزات ومتاجر، وتواصل مع مافكس لتنفيذ موقع بهوية نشاطك الحقيقية.':'Explore bespoke bilingual industry website experiences by Mavvix, including service enquiry, retail and scheduling concepts. Commission an original site tailored to your real business.';
+  return {
+   title,description,
+   robots:{index:verifiedIndex,follow:verifiedIndex},
+   alternates:origin?{canonical:`${origin}/${locale}/showcase`,languages:{ar:`${origin}/ar/showcase`,en:`${origin}/en/showcase`}}:undefined,
+   openGraph:{title,description,type:'website',siteName:'Mavvix Software',locale:ar?'ar_EG':'en_US',url:origin?`${origin}/${locale}/showcase`:undefined},
+   twitter:{card:'summary_large_image',title,description}
+  };
 }
 
-export default function ShowcasePage({ params }: Props) {
+export default async function ShowcasePage(props: Props) {
+  const params = await props.params;
   const { locale } = params;
   const isAr = locale === 'ar';
 
