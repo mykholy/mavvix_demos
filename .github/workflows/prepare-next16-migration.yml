@@ -1,4 +1,4 @@
-name: Prepare isolated Zod 4 security upgrade (API compatibility retry)
+name: Prepare isolated Zod 4 security upgrade (seeded regression retry)
 on:
   push:
     branches: ['fix/mavvix-next16-migration']
@@ -24,7 +24,11 @@ jobs:
           npm audit --audit-level=high
           npm audit --omit=dev --audit-level=high
           npm run typecheck
+          npm run db:migrate
+          npm run db:seed
+          npm run qa:handoff
           npm run test:unit
+          npm run build
       - name: Generate reviewable source and lockfile patch
         run: |
           git add -- package.json package-lock.json
