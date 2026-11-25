@@ -1,4 +1,4 @@
-name: Prepare isolated Next 16 migration
+name: Prepare isolated Zod 4 security upgrade
 on:
   push:
     branches: ['fix/mavvix-next16-migration']
@@ -16,31 +16,19 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Resolve maintained stable packages and regenerate lockfile
-        shell: bash
+      - name: Upgrade vulnerable Zod to patched major version
+        run: npm install --save-exact zod@4.6.7
+      - name: Validate dependency and API compatibility
         run: |
-          npm pkg set 'devDependencies.eslint=^9' 'devDependencies.eslint-config-next=16' 'devDependencies.@types/react=^19' 'devDependencies.@types/react-dom=^19'
-          npm install --save-exact next@16 react@19 react-dom@19
-          npm install --save-dev --save-exact eslint@9 eslint-config-next@16 @types/react@19 @types/react-dom@19
-          npm pkg set 'scripts.lint=eslint src' 'scripts.build=next build --webpack'
-      - name: Migrate async request APIs and framework config
-        run: |
-          npx --yes @next/codemod@16 next-async-request-api src --force
-          node --input-type=module - <<'JS'
-          import fs from 'node:fs';
-          const p='next.config.mjs';
-          const text=fs.readFileSync(p,'utf8');
-          fs.writeFileSync(p,text.replace(/  experimental: \{\s*serverComponentsExternalPackages: \['node:sqlite'\],\s*\},/, "  serverExternalPackages: ['node:sqlite'],"));
-          JS
-          cat > eslint.config.mjs <<'EOF'
-          import nextVitals from 'eslint-config-next/core-web-vitals';
-          import nextTs from 'eslint-config-next/typescript';
-          export default [...nextVitals, ...nextTs, { ignores: ['.next/**', 'node_modules/**', 'next-env.d.ts', 'artifacts/**'] }];
-          EOF
+          npm ci
+          npm audit --audit-level=high
+          npm audit --omit=dev --audit-level=high
+          npm run typecheck
+          npm run test:unit
       - name: Generate reviewable source and lockfile patch
         run: |
-          git add -- package.json package-lock.json next.config.mjs eslint.config.mjs src
-          git diff --cached --binary -- package.json package-lock.json next.config.mjs eslint.config.mjs src > "$RUNNER_TEMP/next16.patch"
+          git add -- package.json package-lock.json
+          git diff --cached --binary -- package.json package-lock.json > "$RUNNER_TEMP/next16.patch"
           test -s "$RUNNER_TEMP/next16.patch"
           git diff --cached --stat
       - uses: actions/upload-artifact@v4
@@ -49,12 +37,6 @@ jobs:
           path: ${{ runner.temp }}/next16.patch
           if-no-files-found: error
           retention-days: 7
-      - name: Typecheck migration candidate (diagnostic)
-        continue-on-error: true
-        run: npm run typecheck
-      - name: Audit production dependencies (diagnostic)
-        continue-on-error: true
-        run: npm audit --omit=dev --audit-level=high
   publish-candidate:
     needs: prepare
     runs-on: ubuntu-latest
@@ -76,11 +58,11 @@ jobs:
           git apply --index "$RUNNER_TEMP/candidate/next16.patch"
           git diff --cached --name-only | while IFS= read -r path; do
             case "$path" in
-              package.json|package-lock.json|next.config.mjs|eslint.config.mjs|src/*) ;;
+              package.json|package-lock.json) ;;
               *) echo "Unexpected path: $path"; exit 1 ;;
             esac
           done
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m "chore: prepare Next 16 migration candidate (requires review)"
+          git commit -m "fix(security): upgrade Zod to patched 4.6.7"
           git push origin HEAD:refs/heads/fix/mavvix-next16-migration
