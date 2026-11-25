@@ -46,7 +46,7 @@ const cases=[
  ['showcase','']
 ];
 const viewports=[{name:'mobile-360',width:360,height:780},{name:'mobile-390',width:390,height:844},
- {name:'tablet-768',width:768,height:1024},{name:'desktop-1440',width:1440,height:900}];
+ {name:'tablet-768',width:768,height:1024},{name:'tablet-1024',width:1024,height:768},{name:'desktop-1440',width:1440,height:900}];
 const results=[],issues=[];
 let browser;
 try{
@@ -55,7 +55,7 @@ try{
  for(const locale of ['ar','en']){
   for(const [sector,subpath] of cases){
    const url='/'+locale+(sector==='showcase'?'/showcase':'/preview/'+sector+(subpath?'/'+subpath:''));
-   const widths=(subpath===''&&sector!=='showcase')?viewports:[viewports[1],viewports[3]];
+   const widths=(subpath===''&&sector!=='showcase')?viewports:[viewports[1],viewports[viewports.length-1]];
    for(const viewport of widths){
     const page=await browser.newPage({viewport:{width:viewport.width,height:viewport.height},deviceScaleFactor:1,
      isMobile:viewport.width<=390,hasTouch:viewport.width<=390,reducedMotion:'reduce'});
@@ -98,6 +98,19 @@ try{
      if(pre.unlabeled.length)entry.issues.push('Unlabeled form controls: '+JSON.stringify(pre.unlabeled));
      if(sector!=='showcase'&&(!pre.hasWhatsApp||!pre.hasCall))entry.issues.push('Missing persistent Mavvix contact link');
      if(entry.images.length)entry.issues.push('Broken image(s): '+entry.images.map(x=>x.src).join(' | '));
+     if(sector!=='showcase'&&subpath===''&&viewport.width<1280){
+       const trigger=page.locator('[data-mobile-sector-nav] button').first();
+       if(!(await trigger.isVisible()))entry.issues.push('Mobile/tablet navigation unavailable');
+       else{
+         await trigger.click();
+         const menu=page.locator('[data-mobile-sector-nav] nav').first();
+         if(!(await menu.isVisible())||!(await menu.locator('a[href]').count()))entry.issues.push('Navigation drawer did not expose links');
+         const box=await menu.boundingBox();
+         if(box&&(box.x< -1||box.x+box.width>viewport.width+1))entry.issues.push('Navigation drawer overflows viewport');
+         await trigger.press('Escape');
+         if(await menu.isVisible())entry.issues.push('Navigation drawer did not close on Escape');
+       }
+     }
      await page.addScriptTag({path:axePath});
      const axe=await page.evaluate(async()=>window.axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}}));
      entry.a11y=axe.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.length,summary:v.nodes.slice(0,24).map(x=>({selector:x.target.join(' '),failureSummary:x.failureSummary}))}));

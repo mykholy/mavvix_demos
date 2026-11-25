@@ -51,7 +51,7 @@ export default async function PawLayout(props:{children:React.ReactNode;params: 
      <Link href={pawPath(locale,'request')} className="rounded-full min-w-11 min-h-11 px-3 sm:px-6 py-3 inline-flex items-center justify-center bg-[#24463D] text-white text-xs font-extrabold hover:bg-[#31594B]" aria-label={ar?'طلب زيارة بيطرية غير مؤكدة':'Request a nonconfirmed veterinary visit'}>
       <PawPrint size={17} className="sm:hidden"/><span className="hidden sm:inline">{ar?'طلب زيارة':'Request visit'}</span>
      </Link>
-     <MobileSectorNav links={[...nav,{href:pawPath(locale,'request'),label:ar?'طلب زيارة':'Visit enquiry'}]}/>
+     <MobileSectorNav breakpoint="xl" tone="light" links={[...nav,{href:pawPath(locale,'request'),label:ar?'طلب زيارة':'Visit enquiry'}]}/>
     </div>
    </div>
   </header>

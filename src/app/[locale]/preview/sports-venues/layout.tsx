@@ -40,7 +40,7 @@ export default async function ArenaLayout(props:{children:React.ReactNode;params
      <Link href={arenaPath(locale,'book')} aria-label={ar?'طلب ملعب':'Request a court'} className="min-h-11 min-w-11 flex items-center justify-center rounded-sm px-3 sm:px-5 bg-[#F0B044] text-[#102B26] font-extrabold text-xs gap-2">
       <Goal size={18}/><span className="hidden sm:inline">{ar?'اطلب وقت ملعب':'REQUEST A COURT'}</span>
      </Link>
-     <MobileSectorNav links={[...nav,{href:arenaPath(locale,'book'),label:ar?'طلب ملعب':'Request Court'}]}/>
+     <MobileSectorNav breakpoint="xl" tone="dark" links={[...nav,{href:arenaPath(locale,'book'),label:ar?'طلب ملعب':'Request Court'}]}/>
     </div>
    </div>
   </header>
