@@ -1,0 +1,362 @@
+{
+  "slug": "events",
+  "brand": "Luma Events",
+  "classification": "editorial_portfolio_concept_no_live_booking",
+  "services": [
+    {
+      "slug": "corporate-conferences",
+      "rank": 1,
+      "category": "corporate",
+      "title": {
+        "ar": "المؤتمرات واجتماعات الأعمال",
+        "en": "Corporate conferences"
+      },
+      "summary": {
+        "ar": "تخطيط الجلسات والتسجيل ومسارات الحضور وفق هدف المؤتمر وعدد الضيوف.",
+        "en": "Plan sessions, registration and attendee circulation around the conference goals and audience size."
+      },
+      "body": {
+        "ar": "تبدأ خطة المؤتمر بتحديد هدف الاجتماع وعدد القاعات والجلسات المتزامنة، ثم حصر متطلبات التسجيل والشاشات والصوت والإنترنت وإتاحة الوصول. لا تُعتمد السعة أو أسماء الموردين أو أسعارهم دون مراجعة موقع الفعالية الحقيقي.",
+        "en": "A conference brief defines the business objective, room count and parallel sessions before specifying registration, AV, connectivity and accessibility. Venue capacity, suppliers and pricing require confirmation from the actual operator."
+      },
+      "checkpoints": {
+        "ar": [
+          "توزيع الجلسات والقاعات",
+          "مسار دخول وتسجيل الحضور",
+          "احتياجات الصوت والعرض والاتصال"
+        ],
+        "en": [
+          "Session and room allocation",
+          "Arrival and registration flow",
+          "Audio, display and connectivity"
+        ]
+      }
+    },
+    {
+      "slug": "brand-launches",
+      "rank": 2,
+      "category": "corporate",
+      "title": {
+        "ar": "إطلاق العلامات والمنتجات",
+        "en": "Brand and product launches"
+      },
+      "summary": {
+        "ar": "تجربة إطلاق مبنية على قصة المنتج وعرضه أمام الجمهور.",
+        "en": "A product-led launch experience that translates brand storytelling into a guest journey."
+      },
+      "body": {
+        "ar": "تُحدد لحظة الكشف عن المنتج ومساحة عرضه وتجربة الضيوف والتصوير، ثم تُراجع خطة الإضاءة والصوت والتوقيت ومسارات الفريق. أي مواد أو شعارات أو عينات تحتاج موافقة مالك العلامة قبل التنفيذ.",
+        "en": "Define the reveal moment, product display, guest experience and photography before aligning lighting, sound, run-of-show and staff circulation. Brand assets, samples and permissions must be approved by the actual owner."
+      },
+      "checkpoints": {
+        "ar": [
+          "لحظة الكشف والعرض",
+          "حركة الضيوف حول المنتج",
+          "الموافقات على مواد العلامة"
+        ],
+        "en": [
+          "Reveal and presentation",
+          "Guest circulation around the product",
+          "Brand asset approvals"
+        ]
+      }
+    },
+    {
+      "slug": "weddings",
+      "rank": 3,
+      "category": "social",
+      "title": {
+        "ar": "حفلات الزفاف",
+        "en": "Wedding celebrations"
+      },
+      "summary": {
+        "ar": "تصميم رحلة الضيوف من الاستقبال حتى نهاية الاحتفال مع مراعاة الخصوصية.",
+        "en": "Design the guest journey from welcome to the closing celebration with privacy in mind."
+      },
+      "body": {
+        "ar": "تُرتب لحظات الاستقبال والمراسم والطعام والتصوير على جدول مرن يتفق عليه أصحاب المناسبة. يتحدد عدد المقاعد والممرات والخدمات حسب معاينة القاعة، وتُحترم خصوصية الضيوف وأي قيود على التصوير.",
+        "en": "Arrange welcome, ceremony, dining and photography in a flexible schedule approved by the couple. Seating, circulation and services depend on venue inspection; respect guest privacy and any restrictions on photography."
+      },
+      "checkpoints": {
+        "ar": [
+          "جدول لحظات الحفل",
+          "توزيع المقاعد ومسارات الحركة",
+          "خصوصية التصوير والتنسيق"
+        ],
+        "en": [
+          "Celebration timeline",
+          "Seating and circulation",
+          "Photography privacy and coordination"
+        ]
+      }
+    },
+    {
+      "slug": "private-celebrations",
+      "rank": 4,
+      "category": "social",
+      "title": {
+        "ar": "المناسبات الخاصة",
+        "en": "Private celebrations"
+      },
+      "summary": {
+        "ar": "تنسيق احتفال خاص يناسب حجم المجموعة وطبيعة المناسبة.",
+        "en": "Shape a private celebration around group size and occasion."
+      },
+      "body": {
+        "ar": "يبدأ التنسيق بنوع المناسبة وعدد الضيوف والفئات العمرية ومدة الاحتفال، ثم اختيار تجربة الاستقبال والطعام والأنشطة. يتم الاتفاق على قواعد المكان ومستويات الصوت والسلامة والخصوصية مع الجهة المسؤولة قبل الحجز.",
+        "en": "Start with occasion, audience size, age range and event duration, then design welcome, dining and activity options. Confirm venue rules, sound limits, safety and privacy arrangements with the responsible operator before booking."
+      },
+      "checkpoints": {
+        "ar": [
+          "عدد الضيوف والفئات العمرية",
+          "خطة الطعام والأنشطة",
+          "شروط المكان والخصوصية"
+        ],
+        "en": [
+          "Guest count and age range",
+          "Dining and activity plan",
+          "Venue rules and privacy"
+        ]
+      }
+    },
+    {
+      "slug": "exhibitions",
+      "rank": 5,
+      "category": "corporate",
+      "title": {
+        "ar": "المعارض وتجارب الزوار",
+        "en": "Exhibitions and visitor experiences"
+      },
+      "summary": {
+        "ar": "تخطيط توزيع العارضين ومسارات الزوار ومناطق العرض والخدمات.",
+        "en": "Plan exhibitor distribution, visitor journeys, presentation spaces and support."
+      },
+      "body": {
+        "ar": "تتطلب المعارض فهماً لمساحة القاعة ومداخلها واحتياجات العارضين قبل رسم توزيع مبدئي للأجنحة. يُراجع الوصول الآمن والممرات ونقاط الخدمات والطاقة بالتنسيق مع إدارة المكان ومهندس مؤهل عند الحاجة.",
+        "en": "Exhibition planning begins with venue area, entrances and exhibitor requirements before a preliminary booth layout. Review safe access, circulation, utilities and power with the venue and qualified professionals where needed."
+      },
+      "checkpoints": {
+        "ar": [
+          "قائمة العارضين ومتطلبات الأجنحة",
+          "مسارات الزوار والخدمات",
+          "معاينة فنية وموافقات المكان"
+        ],
+        "en": [
+          "Exhibitor and booth brief",
+          "Visitor and support circulation",
+          "Technical inspection and venue approvals"
+        ]
+      }
+    },
+    {
+      "slug": "gala-dinners",
+      "rank": 6,
+      "category": "corporate",
+      "title": {
+        "ar": "حفلات التكريم والعشاء",
+        "en": "Gala dinners and awards"
+      },
+      "summary": {
+        "ar": "تنسيق الاستقبال والجلوس والتكريم ضمن برنامج متوازن.",
+        "en": "Coordinate arrival, seating and awards in a balanced program."
+      },
+      "body": {
+        "ar": "تُبنى الأمسية حول ترتيب الفقرات وتوقيت تقديم الطعام واحتياجات المنصة، مع تحديد مسؤول عن اعتماد قائمة الضيوف وتسلسل التكريم. تُراجع خيارات الطعام والحساسية وإتاحة الوصول مع الموردين الحقيقيين قبل التنفيذ.",
+        "en": "Structure the evening around programming, meal service and stage requirements, assigning responsibility for guest lists and awards order. Confirm food options, allergy accommodations and accessibility with actual suppliers before execution."
+      },
+      "checkpoints": {
+        "ar": [
+          "تسلسل التكريم",
+          "الجلوس وتقديم الطعام",
+          "متطلبات المنصة والوصول"
+        ],
+        "en": [
+          "Awards sequence",
+          "Seating and meal service",
+          "Stage and access requirements"
+        ]
+      }
+    },
+    {
+      "slug": "outdoor-events",
+      "rank": 7,
+      "category": "special",
+      "title": {
+        "ar": "الفعاليات الخارجية",
+        "en": "Outdoor events"
+      },
+      "summary": {
+        "ar": "تصور للمساحات المفتوحة يشمل بدائل الطقس والخدمات الأساسية.",
+        "en": "An open-air event concept with weather contingencies and essential services."
+      },
+      "body": {
+        "ar": "يحتاج الحدث الخارجي إلى مراجعة الموقع والطقس ومصادر الكهرباء والمياه والوصول ومناطق الراحة. لا يتم اعتبار أي مخطط صالحاً للتنفيذ قبل اعتماد التصاريح ومخارج الطوارئ وخطة الطقس من الجهات المختصة.",
+        "en": "Outdoor events require assessment of location, weather, utilities, access and rest areas. No concept becomes executable until permits, emergency exits and weather contingencies have been approved by the relevant professionals."
+      },
+      "checkpoints": {
+        "ar": [
+          "خطة الطقس البديلة",
+          "الوصول والمرافق",
+          "التصاريح والسلامة"
+        ],
+        "en": [
+          "Weather contingency",
+          "Access and facilities",
+          "Permits and safety"
+        ]
+      }
+    },
+    {
+      "slug": "event-production",
+      "rank": 8,
+      "category": "special",
+      "title": {
+        "ar": "إدارة الإنتاج والتنسيق",
+        "en": "Event production and coordination"
+      },
+      "summary": {
+        "ar": "تنظيم جدول التجهيز والتشغيل والتسليم بين الفرق.",
+        "en": "Coordinate setup, live operations and handover among teams."
+      },
+      "body": {
+        "ar": "تُحدد الأعمال المطلوبة لكل فريق وجدول دخول الموردين والتجارب الفنية واعتماد البرنامج قبل بدء الفعالية. يظل تحديد المعدات والسعة وأعمال الكهرباء والتركيب مسؤولية الجهات الفنية المؤهلة بعد المعاينة.",
+        "en": "Define team responsibilities, vendor access, technical rehearsals and run-of-show approval before the event. Equipment, capacity, electrical works and rigging remain the responsibility of qualified professionals following inspection."
+      },
+      "checkpoints": {
+        "ar": [
+          "جدول دخول وتجهيز الفرق",
+          "البروفة الفنية وتسلسل الفقرات",
+          "مسؤوليات التسليم والتفكيك"
+        ],
+        "en": [
+          "Team load-in and setup",
+          "Technical rehearsal and run-of-show",
+          "Handover and breakdown responsibilities"
+        ]
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slug": "event-brief",
+      "title": {
+        "ar": "كيف تجهز ملف متطلبات الفعالية",
+        "en": "How to prepare an event brief"
+      },
+      "summary": {
+        "ar": "الهدف والجمهور والمكان والوقت قبل اختيار الموردين.",
+        "en": "Define the objective, audience, venue and timing before selecting vendors."
+      },
+      "body": {
+        "ar": "ابدأ بهدف واضح للفعالية وحدد الجمهور والعدد المتوقع ونطاق الميزانية. اكتب أولوياتك وما يحتاج موافقات قبل مقارنة عروض الموردين. افصل العناصر الأساسية عن الإضافات، واطلب تفصيلاً مكتوباً للخدمات وشروط التغيير. لا يمثل الملف موافقة حجز أو ضماناً للسعة.",
+        "en": "Start with the event objective, audience, expected attendance and budget band. Record priorities and approval requirements before comparing suppliers. Separate essentials from optional additions and ask for written scope and change terms. A brief does not confirm a booking or venue capacity."
+      }
+    },
+    {
+      "slug": "guest-journey",
+      "title": {
+        "ar": "تجربة الضيف تبدأ قبل دخوله القاعة",
+        "en": "Guest experience starts before the venue door"
+      },
+      "summary": {
+        "ar": "الاستقبال والإرشاد والتسجيل والخروج جزء من التصميم.",
+        "en": "Arrival, wayfinding, registration and departure belong in the design."
+      },
+      "body": {
+        "ar": "راجع وصول الضيوف واحتياجات إتاحة الوصول ونقاط الانتظار والإرشاد إلى القاعات قبل رسم توزيع المقاعد. خصص مسؤولاً عن الاستقبال، وراجع احتياجات الضيوف مع إدارة المكان. لا تُجمع أسماء أو بيانات صحية للضيوف في نموذج الاستفسار العام.",
+        "en": "Review arrivals, accessibility, waiting areas and wayfinding before designing seating. Assign responsibility for reception and discuss guest needs with the venue. Do not collect guest lists or health records in a public enquiry form."
+      }
+    },
+    {
+      "slug": "production-timeline",
+      "title": {
+        "ar": "جدول إنتاج الفعالية من التجهيز للتسليم",
+        "en": "Event production from setup to handover"
+      },
+      "summary": {
+        "ar": "مسؤوليات واضحة ونقاط اعتماد قبل كل مرحلة.",
+        "en": "Clear responsibilities and approval milestones for each stage."
+      },
+      "body": {
+        "ar": "حدد جدول المعاينة والتوريد والتجهيز والبروفة والتشغيل والتفكيك. اترك وقتاً لتأخر التوريد والتعديل، ووثّق مسؤولية كل فريق عن التسليم. عند وجود تركيب أو أعمال كهربائية أو تجهيزات مؤقتة، اطلب مراجعة فنيين مؤهلين والتزم باشتراطات الموقع.",
+        "en": "Set milestones for inspection, delivery, setup, rehearsal, operation and breakdown. Include buffers for delivery and changes, with ownership for each handover. Temporary structures, electrical installations and other technical work require qualified review and venue compliance."
+      }
+    }
+  ],
+  "faq": [
+    {
+      "question": {
+        "ar": "هل هذا حجز مؤكد؟",
+        "en": "Is this a confirmed booking?"
+      },
+      "answer": {
+        "ar": "لا، الاستفسار مرجع مبدئي فقط ولا يحجز مكاناً أو مورداً.",
+        "en": "No. The reference is an enquiry, not a venue or vendor booking."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل توجد أسعار ثابتة؟",
+        "en": "Are prices fixed?"
+      },
+      "answer": {
+        "ar": "لا توجد أسعار مؤكدة في هذا التصور؛ يراجع المشغل الحقيقي نطاق الخدمات.",
+        "en": "No confirmed prices are represented; the actual operator must review scope."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل أستطيع تغيير عدد الحضور؟",
+        "en": "Can attendance change?"
+      },
+      "answer": {
+        "ar": "نعم كتفضيل في الاستفسار، مع ضرورة تحقق المكان من السعة الفعلية.",
+        "en": "As a planning preference, yes; actual capacity requires venue confirmation."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل ترسلون بيانات الضيوف؟",
+        "en": "Should I send guest lists?"
+      },
+      "answer": {
+        "ar": "لا يطلب النموذج أسماء الضيوف أو هوياتهم أو تفاصيل الدفع.",
+        "en": "The public form must not collect guest lists, IDs or payment details."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل تشمل الفعالية التصاريح؟",
+        "en": "Are permits included?"
+      },
+      "answer": {
+        "ar": "التصاريح متطلبات يحددها الموقع والمشغل والجهات المختصة قبل التنفيذ.",
+        "en": "Permit requirements are confirmed by the venue, operator and authorities before delivery."
+      }
+    }
+  ],
+  "eventTypes": [
+    "corporate",
+    "social",
+    "special"
+  ],
+  "guestBands": [
+    "under-50",
+    "50-149",
+    "150-299",
+    "300-499",
+    "500-plus"
+  ],
+  "budgetBands": [
+    "essential",
+    "standard",
+    "premium",
+    "flexible"
+  ],
+  "venueStatus": [
+    "selected",
+    "shortlisted",
+    "not-selected"
+  ],
+  "media": []
+}
