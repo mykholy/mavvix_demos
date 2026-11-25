@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ContactDock } from '@/components/shared/ContactDock';
 import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
@@ -5,12 +6,11 @@ import { ArrowUpRight, LifeBuoy, Home, CheckCircle2, ShieldCheck, Phone } from '
 import type { Locale } from '@/lib/i18n/config';
 import { maintenancePath } from '@/lib/verticals/home-maintenance/data';
 
-export default async function HomeMaintenanceLayout(props:{children:React.ReactNode;params: Promise<{locale:Locale}>}) {
+export default async function HomeMaintenanceLayout(props:{children:React.ReactNode;params: Promise<{ locale: string }>}) {
  const params = await props.params;
 
- const {
-  locale
- } = params;
+ const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
 
  const {
   children

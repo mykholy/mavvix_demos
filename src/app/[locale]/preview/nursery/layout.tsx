@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import type { Locale } from '@/lib/i18n/config';
@@ -5,24 +6,22 @@ import { ContactDock } from '@/components/shared/ContactDock';
 import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { bloomPath } from '@/lib/verticals/nursery/data';
 import { Flower2,ArrowUpRight } from 'lucide-react';
-export async function generateMetadata(props:{params: Promise<{locale:Locale}>}):Promise<Metadata> {
+export async function generateMetadata(props:{params: Promise<{ locale: string }>}):Promise<Metadata> {
  const params = await props.params;
 
- const {
-  locale
- } = params;
+ const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
 
  const ar=locale==='ar';
  const title=ar?'تصميم موقع حضانة ورياض أطفال | BloomSteps من مافكس':'Nursery & Early Years Website Design | BloomSteps by Mavvix';
  const description=ar?'تجربة عربية وإنجليزية لبرامج الطفولة المبكرة والروتين اليومي والأمان وطلب زيارة محفوظ دون تسجيل فعلي.':'A bilingual early-years website with age groups, play-based learning, safeguarding guidance and a privacy-conscious visit enquiry.';
  return {title,description,openGraph:{title,description,type:'website'},robots:{index:false,follow:false}};
 }
-export default async function BloomLayout(props:{children:React.ReactNode;params: Promise<{locale:Locale}>}) {
+export default async function BloomLayout(props:{children:React.ReactNode;params: Promise<{ locale: string }>}) {
  const params = await props.params;
 
- const {
-  locale
- } = params;
+ const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
 
  const {
   children

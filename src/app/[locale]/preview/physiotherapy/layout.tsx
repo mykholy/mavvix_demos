@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import type { Metadata } from 'next';
@@ -6,23 +7,21 @@ import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { motionPath } from '@/lib/verticals/physiotherapy/data';
 import { Activity, ArrowUpRight, ArrowRight, HeartPulse, MoveUpRight, ShieldCheck } from 'lucide-react';
 
-export async function generateMetadata(props:{params: Promise<{locale:Locale}>}):Promise<Metadata> {
+export async function generateMetadata(props:{params: Promise<{ locale: string }>}):Promise<Metadata> {
  const params = await props.params;
 
- const {
-  locale
- } = params;
+ const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
 
  const ar=locale==='ar';const title=ar?'موقع علاج طبيعي وتأهيل متكامل | Motion Lab من مافكس':'Premium Physiotherapy Website | Motion Lab by Mavvix';
  const description=ar?'تجربة موقع لخدمات تقييم الحركة والتأهيل الرياضي والتواصل الإداري مع مركز فعلي عند تشغيله، بدون جمع تقارير طبية أو حجوزات وهمية.':'Movement-first rehabilitation website concept with original educational service dossiers and a privacy-minimal first-visit enquiry.';
  return {title,description,robots:{index:false,follow:false},openGraph:{type:'website',title,description}};
 }
-export default async function MotionLayout(props:{children:React.ReactNode;params: Promise<{locale:Locale}>}) {
+export default async function MotionLayout(props:{children:React.ReactNode;params: Promise<{ locale: string }>}) {
  const params = await props.params;
 
- const {
-  locale
- } = params;
+ const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
 
  const {
   children

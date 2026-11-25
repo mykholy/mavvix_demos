@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { SectorUtilityBar } from '@/components/shared/SectorUtilityBar';
 import { ContactDock } from '@/components/shared/ContactDock';
 import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
@@ -9,14 +10,13 @@ import { Sparkles, ArrowRight, ArrowLeft, ArrowUpRight, AlertTriangle, Layers } 
 export default async function PortfolioLayout(
   props: {
     children: React.ReactNode;
-    params: Promise<{ locale: Locale }>;
+    params: Promise<{ locale: string }>;
   }
 ) {
   const params = await props.params;
 
-  const {
-    locale
-  } = params;
+  const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
 
   const {
     children
