@@ -36,7 +36,7 @@ export default async function LedgerLayout({children,params}:{children:React.Rea
      <span><strong className="ledger-display tracking-[-.04em] block text-[20px] sm:text-3xl leading-none font-black">LEDGER<span className="text-[#15858C]">POINT</span></strong><small className="text-[#4C6570] block text-[9px] tracking-[.16em] mt-1">CLARITY IN EVERY RECORD</small></span>
     </Link>
     <nav aria-label={ar?'القائمة الرئيسية':'Main navigation'} className="hidden xl:flex items-center gap-5 text-xs font-bold text-[#46636E]">{nav.map(n=><Link key={n.href} href={n.href} className="hover:text-[#087D86]">{n.label}</Link>)}</nav>
-    <div className="flex gap-2 items-center"><Link aria-label={ar?'طلب عرض نطاق محاسبي':'Request accounting scope'} href={ledgerPath(locale,'quote')} className="bg-[#1C3343] text-white h-11 px-3 sm:px-5 inline-flex gap-2 items-center text-xs font-bold"><span className="hidden sm:inline">{ar?'اطلب عرض':'Request a proposal'}</span><ArrowUpRight size={18}/></Link><MobileSectorNav links={[...nav,{href:ledgerPath(locale,'quote'),label:ar?'طلب عرض':'Request quote'}]}/></div>
+    <div className="flex gap-2 items-center"><Link aria-label={ar?'طلب عرض نطاق محاسبي':'Request accounting scope'} href={ledgerPath(locale,'quote')} className="bg-[#1C3343] text-white h-11 px-3 sm:px-5 inline-flex gap-2 items-center text-xs font-bold"><span className="hidden sm:inline">{ar?'اطلب عرض':'Request a proposal'}</span><ArrowUpRight size={18}/></Link><MobileSectorNav breakpoint="xl" tone="light" links={[...nav,{href:ledgerPath(locale,'quote'),label:ar?'طلب عرض':'Request quote'}]}/></div>
    </div>
   </header>
   <main>{children}</main>
