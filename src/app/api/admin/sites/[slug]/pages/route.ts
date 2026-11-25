@@ -49,7 +49,7 @@ export async function POST(req: NextRequest, props: { params: Promise<{ slug: st
 
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { slug: string } }
+  _context: { params: Promise<{ slug: string }> }
 ) {
   try {
     const cookieStore = await cookies();
@@ -76,7 +76,7 @@ export async function PUT(
 
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { slug: string } }
+  _context: { params: Promise<{ slug: string }> }
 ) {
   try {
     const cookieStore = await cookies();

@@ -30,7 +30,7 @@ export async function GET(req: NextRequest, props: { params: Promise<{ slug: str
 
 export async function POST(
   req: NextRequest,
-  { params }: { params: { slug: string } }
+  _context: { params: Promise<{ slug: string }> }
 ) {
   try {
     const cookieStore = await cookies();

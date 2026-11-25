@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import type { Locale } from '@/lib/i18n/config';
@@ -6,23 +7,21 @@ import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { pawPath } from '@/lib/verticals/veterinary/data';
 import { PawPrint, ArrowUpRight, Heart, ShieldCheck } from 'lucide-react';
 
-export async function generateMetadata(props:{params: Promise<{locale:Locale}>}):Promise<Metadata> {
+export async function generateMetadata(props:{params: Promise<{ locale: string }>}):Promise<Metadata> {
  const params = await props.params;
 
- const {
-  locale
- } = params;
+ const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
 
  const ar=locale==='ar';const title=ar?'PawWell — تجربة موقع عيادة بيطرية | Mavvix':'PawWell — Veterinary Clinic Website Experience | Mavvix';
  const description=ar?'تجربة موقع بيطري متخصصة للكلاب والقطط ورعاية الحيوانات الأليفة، مع ملفات خدمات وطلب زيارة محفوظ غير مؤكد. تصميم مافكس.':'Premium veterinary website concept by Mavvix: pet-first service guides, preventive care and a saved, nonconfirmed visit enquiry.';
  return {title,description,robots:{index:false,follow:false},openGraph:{title,description,type:'website'}};
 }
-export default async function PawLayout(props:{children:React.ReactNode;params: Promise<{locale:Locale}>}) {
+export default async function PawLayout(props:{children:React.ReactNode;params: Promise<{ locale: string }>}) {
  const params = await props.params;
 
- const {
-  locale
- } = params;
+ const { locale } = params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
 
  const {
   children

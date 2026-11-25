@@ -1,4 +1,4 @@
-name: Prepare isolated Zod 4 security upgrade (seeded regression retry)
+name: Prepare isolated Zod 4 security upgrade (generated route type regression)
 on:
   push:
     branches: ['fix/mavvix-next16-migration']
@@ -23,6 +23,7 @@ jobs:
           npm ci
           npm audit --audit-level=high
           npm audit --omit=dev --audit-level=high
+          npx --no-install next typegen
           npm run typecheck
           npm run db:migrate
           npm run db:seed
