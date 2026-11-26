@@ -28,6 +28,7 @@ async function ready(){
  throw Error('Next server did not start: '+serverLog.slice(-2000));
 }
 const cases=[
+ ['logistics',''],['logistics','services'],['logistics','services/ocean-fcl'],['logistics','quote'],['logistics','scope'],['logistics','tracking'],['logistics','guides/freight-quote-checklist'],
  ['events',''],['events','experiences'],['events','experiences/corporate-conferences'],['events','enquiry'],['events','venue-brief'],['events','guides/event-brief'],
  ['travel-agency',''],['travel-agency','destinations'],['travel-agency','journeys'],['travel-agency','journeys/luxor-temples'],['travel-agency','quote'],['travel-agency','guides/before-you-book'],
  ['accounting',''],['accounting','services'],['accounting','services/bank-reconciliation'],['accounting','quote'],['accounting','resources/monthly-close'],

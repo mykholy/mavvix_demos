@@ -606,6 +606,29 @@ try {
   assert.ok([302,303,307,308,401].includes(evQueue.status),'Luma request queue must remain private');
   console.log('PASS: 42 Luma bilingual routes, event format/date/PII validation and idempotent persistence');
 
+  const freightRoutes=['','services','modes','scope','milestones','tracking','guides','faq','about','quote','services/ocean-fcl','services/ocean-lcl','services/air-freight','services/road-ftl','services/road-ltl','services/warehousing','services/customs-coordination','services/multimodal','guides/freight-quote-checklist','guides/compare-freight-modes','guides/handover-and-tracking'];
+  for(const lang of ['ar','en'])for(const tail of freightRoutes){
+    const url='/'+lang+'/preview/logistics'+(tail?'/'+tail:'');
+    const response=await get(url);
+    assert.equal(response.status,200,'RouteLine route failed '+url);
+    assert.ok((await response.text()).includes('data-mavvix-contact-dock'),'RouteLine contact dock missing '+url);
+  }
+  assert.equal((await get('/en/preview/logistics/services/nonexistent')).status,404);
+  const freight={flowType:'freight_quote_request',clientRequestId:'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa',serviceSlug:'ocean-fcl',mode:'ocean',origin:'egypt',destination:'saudi-arabia',cargoType:'palletized',weightBand:'500-1999',scope:'door-to-door',preferredDate:'',guestName:'QA Freight',guestPhone:'01000000000',consent:true,honeypot:'',utm:{source:'qa',medium:'integration',campaign:'routeline'}};
+  const freightEndpoint='/api/portfolio/logistics';
+  for(const invalid of [{consent:false},{invoice:'PRIVATE'},{mode:'road'},{preferredDate:'2020-02-30'},{cargoType:'dangerous'},{destination:'egypt'}])assert.equal((await post(freightEndpoint,{...freight,...invalid})).status,400);
+  const freightSaved=await post(freightEndpoint,freight),freightBody=await freightSaved.json();
+  assert.equal(freightSaved.status,201,'RouteLine persistence '+JSON.stringify(freightBody));
+  assert.match(freightBody.refNumber,/^MVX-RTL-[A-F0-9]{10}$/);
+  assert.equal(freightBody.status,'pending_operator_confirmation');
+  const freightDuplicate=await post(freightEndpoint,freight),freightAgain=await freightDuplicate.json();
+  assert.equal(freightDuplicate.status,200);
+  assert.equal(freightAgain.duplicate,true);
+  assert.equal(freightAgain.refNumber,freightBody.refNumber);
+  const freightQueue=await get('/admin/portfolio-requests?sector=logistics',{redirect:'manual'});
+  assert.ok([302,303,307,308,401].includes(freightQueue.status),'RouteLine queue must remain private');
+  console.log('PASS: 42 RouteLine bilingual routes, freight mode/route/date/PII safeguards and idempotent persistence');
+
   console.log('PASS: auth guard, flow validation, Academy SQLite progress, trusted ecommerce price, private receipt');
 } catch (error) {
   console.error(error);

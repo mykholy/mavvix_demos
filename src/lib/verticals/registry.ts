@@ -250,7 +250,7 @@ export const VERTICALS = [
     "en": "Logistics",
     "wave": 2,
     "accent": "#F08A4B",
-    "status": "planned"
+    "status": "in_progress"
   },
   {
     "slug": "recruitment",
