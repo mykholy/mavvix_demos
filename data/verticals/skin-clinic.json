@@ -1,0 +1,364 @@
+{
+  "slug": "skin-clinic",
+  "brand": "Elyra Skin",
+  "classification": "fictional_portfolio_concept_no_medical_service",
+  "services": [
+    {
+      "slug": "consultation",
+      "category": "medical",
+      "rank": 1,
+      "title": {
+        "ar": "استشارة الجلدية",
+        "en": "Dermatology consultation"
+      },
+      "summary": {
+        "ar": "ابدأ بتقييم متخصص قبل اختيار أي إجراء.",
+        "en": "Start with professional assessment before choosing any procedure."
+      },
+      "body": {
+        "ar": "تساعد زيارة طبيب الجلدية على فهم الشكوى والتاريخ الطبي وتحديد ما إذا كان الفحص أو أي اختبارات إضافية مناسبة. لا يقدم هذا الموقع تشخيصاً أو وصفة أو موعداً مؤكداً. ناقش الخيارات والفوائد والمخاطر والتكلفة مع الطبيب الحقيقي قبل الاتفاق.",
+        "en": "A qualified dermatologist can review concerns and relevant history and determine whether examination or additional tests are appropriate. This site provides no diagnosis, prescription or confirmed appointment. Discuss options, benefits, risks and costs with the actual clinician."
+      },
+      "checkpoints": {
+        "ar": [
+          "تقييم طبي قبل الإجراء",
+          "مراجعة الخيارات والمخاطر",
+          "خطة متابعة يحددها الطبيب"
+        ],
+        "en": [
+          "Clinical assessment first",
+          "Review options and risks",
+          "Clinician-led follow-up"
+        ]
+      }
+    },
+    {
+      "slug": "acne-skin",
+      "category": "medical",
+      "rank": 2,
+      "title": {
+        "ar": "حب الشباب وآثاره",
+        "en": "Acne and acne-scar assessment"
+      },
+      "summary": {
+        "ar": "تقييم طبي للحبوب والآثار قبل مناقشة الخيارات.",
+        "en": "Clinical assessment of acne and scarring before discussing options."
+      },
+      "body": {
+        "ar": "تختلف الحبوب وآثارها من شخص لآخر. يحدد الطبيب طبيعة المشكلة وما يناسبها بعد التقييم، ويفصل بين علاج الحبوب النشطة ومناقشة الآثار. لا توجد نتيجة مضمونة أو عدد جلسات محدد في هذه التجربة، ولا ينبغي مشاركة صور شخصية أو تاريخ طبي في نموذج التواصل العام.",
+        "en": "Acne and scarring differ between individuals. A clinician assesses the concern and distinguishes active acne from scar-related goals. No guaranteed result or fixed number of sessions is represented; do not share personal photographs or medical history in the public enquiry."
+      },
+      "checkpoints": {
+        "ar": [
+          "التقييم قبل أي جلسة",
+          "فصل الحبوب النشطة عن الآثار",
+          "مناقشة التوقعات والمتابعة"
+        ],
+        "en": [
+          "Assessment before any session",
+          "Separate active acne and scar goals",
+          "Discuss expectations and follow-up"
+        ]
+      }
+    },
+    {
+      "slug": "pigmentation",
+      "category": "medical",
+      "rank": 3,
+      "title": {
+        "ar": "التصبغات وتفاوت اللون",
+        "en": "Pigmentation assessment"
+      },
+      "summary": {
+        "ar": "فهم سبب تغير اللون قبل اختيار أي علاج تجميلي.",
+        "en": "Understand discoloration before considering cosmetic interventions."
+      },
+      "body": {
+        "ar": "يحتاج تغير لون الجلد إلى تقييم طبي لمعرفة ما إذا كانت هناك أسباب مختلفة تتطلب معالجة مختلفة. يناقش الطبيب الخيارات والآثار الجانبية والاحتياطات الملائمة للبشرة، ولا يُفترض أن كل تصبغ مناسب لليزر أو التقشير. هذه الصفحة معلومات عامة وليست توصية علاجية.",
+        "en": "Skin discoloration requires clinical assessment because different causes may need different management. A clinician can discuss options, adverse effects and skin-specific precautions; laser or peels are not appropriate for every concern. This page is general information, not a treatment recommendation."
+      },
+      "checkpoints": {
+        "ar": [
+          "فحص السبب المحتمل",
+          "مراجعة ملاءمة الخيارات للبشرة",
+          "توقعات واقعية ومتابعة"
+        ],
+        "en": [
+          "Assess possible causes",
+          "Review skin-specific suitability",
+          "Realistic expectations and follow-up"
+        ]
+      }
+    },
+    {
+      "slug": "hair-scalp",
+      "category": "medical",
+      "rank": 4,
+      "title": {
+        "ar": "الشعر وفروة الرأس",
+        "en": "Hair and scalp assessment"
+      },
+      "summary": {
+        "ar": "مراجعة طبيب الجلدية لمشكلات الشعر وفروة الرأس.",
+        "en": "Dermatologist-led review of hair and scalp concerns."
+      },
+      "body": {
+        "ar": "يبدأ تقييم الشعر وفروة الرأس بمراجعة طبية وفحص مناسب عند الطبيب، وقد يحتاج إلى معلومات أو اختبارات إضافية وفق الحالة. لا يمكن تحديد سبب التساقط أو اختيار إجراء من صورة أو نموذج عام. يحتفظ الموقع فقط بطلب التواصل دون معلومات صحية.",
+        "en": "Hair and scalp evaluation begins with a clinical review and examination, with further information or tests when indicated. Hair loss causes and procedural suitability cannot be established through this public form. The website stores only a general contact enquiry, not health information."
+      },
+      "checkpoints": {
+        "ar": [
+          "مراجعة طبية متخصصة",
+          "اختيار الفحوص عند الحاجة",
+          "مناقشة خطة متابعة"
+        ],
+        "en": [
+          "Professional clinical review",
+          "Tests when indicated",
+          "Discuss follow-up"
+        ]
+      }
+    },
+    {
+      "slug": "laser-information",
+      "category": "aesthetic",
+      "rank": 5,
+      "title": {
+        "ar": "استشارة الليزر",
+        "en": "Laser suitability consultation"
+      },
+      "summary": {
+        "ar": "مناقشة الملاءمة والاحتياطات قبل حجز أي جلسة.",
+        "en": "Discuss suitability and precautions before any session."
+      },
+      "body": {
+        "ar": "يحتاج اختيار إجراء الليزر إلى تقييم فردي لنوع البشرة والهدف والمخاطر والأدوية أو الظروف ذات الصلة في بيئة طبية خاصة. يوضح المختص البدائل والاحتياطات والتوقعات وما إذا كان الإجراء مناسباً. لا يعرض الموقع جهازاً متاحاً أو نتيجة أو سعراً مضموناً.",
+        "en": "Laser suitability depends on an individual assessment of skin, goals, risks and relevant medications or circumstances in a private clinical setting. A qualified clinician explains alternatives, precautions and expectations. No device availability, guaranteed outcome or confirmed price is represented."
+      },
+      "checkpoints": {
+        "ar": [
+          "تقييم الملاءمة",
+          "مراجعة المخاطر والاحتياطات",
+          "موافقة مستنيرة قبل الإجراء"
+        ],
+        "en": [
+          "Suitability assessment",
+          "Review risks and precautions",
+          "Informed consent before treatment"
+        ]
+      }
+    },
+    {
+      "slug": "skin-texture",
+      "category": "aesthetic",
+      "rank": 6,
+      "title": {
+        "ar": "استشارة ملمس البشرة",
+        "en": "Skin texture consultation"
+      },
+      "summary": {
+        "ar": "تحديد هدف واقعي ومراجعة الخيارات بعد التقييم.",
+        "en": "Define realistic goals and review options after assessment."
+      },
+      "body": {
+        "ar": "تختلف إجراءات تحسين مظهر الجلد في ملاءمتها وفترة التعافي ومخاطرها. يمكن للطبيب شرح البدائل، بما فيها عدم إجراء أي تدخل، قبل اتخاذ قرار مستنير. لا تمثل الصور التحريرية نتيجة قبل وبعد، ولا يوصي الموقع بإجراء محدد لأي شخص.",
+        "en": "Procedures intended to improve skin appearance differ in suitability, recovery and risks. A clinician can discuss alternatives, including no intervention, before an informed choice. Editorial photographs do not depict before-and-after outcomes, and this site recommends no individual procedure."
+      },
+      "checkpoints": {
+        "ar": [
+          "تحديد الهدف",
+          "مراجعة البدائل والتعافي",
+          "تقييم التوقعات والمخاطر"
+        ],
+        "en": [
+          "Define the goal",
+          "Review alternatives and recovery",
+          "Assess expectations and risks"
+        ]
+      }
+    },
+    {
+      "slug": "aesthetic-consultation",
+      "category": "aesthetic",
+      "rank": 7,
+      "title": {
+        "ar": "استشارة التجميل الطبي",
+        "en": "Medical aesthetics consultation"
+      },
+      "summary": {
+        "ar": "مناقشة الخيارات وحدودها في بيئة طبية خاصة.",
+        "en": "Discuss aesthetic options and their limits in a private clinical setting."
+      },
+      "body": {
+        "ar": "تبدأ الاستشارة بفهم الأهداف ومراجعة الملاءمة الطبية ومناقشة النتائج الممكنة والمخاطر والتكلفة. يحق للمراجع طلب وقت للتفكير أو عدم اختيار الإجراء. لا تقدم الصفحة عروضاً على إجراءات طبية أو ضمانات لنتائج تجميلية.",
+        "en": "A consultation clarifies goals, medical suitability, possible outcomes, risks and costs. A person may take time to consider options or choose no procedure. The page does not sell medical procedures or guarantee aesthetic results."
+      },
+      "checkpoints": {
+        "ar": [
+          "تحديد الأهداف والملاءمة",
+          "شرح المخاطر والبدائل",
+          "وقت لاتخاذ قرار مستنير"
+        ],
+        "en": [
+          "Goals and suitability",
+          "Explain risks and alternatives",
+          "Time for informed decisions"
+        ]
+      }
+    },
+    {
+      "slug": "follow-up",
+      "category": "care",
+      "rank": 8,
+      "title": {
+        "ar": "المتابعة واستمرارية الرعاية",
+        "en": "Follow-up and continuity of care"
+      },
+      "summary": {
+        "ar": "تنظيم التواصل مع مقدم الرعاية الفعلي بعد التقييم.",
+        "en": "Coordinate follow-up with the actual care provider after assessment."
+      },
+      "body": {
+        "ar": "تحدد المتابعة حسب خطة الطبيب واحتياجات الحالة. يمكن للمراجع الاستفسار من مقدم الرعاية عن المواعيد وطريقة التواصل الآمن وما يستدعي مراجعة عاجلة. لا يوفر هذا الموقع خدمة طوارئ أو متابعة طبية مباشرة، ولا يجمع نتائج فحوص أو تقارير صحية.",
+        "en": "Follow-up depends on the clinician's plan and individual needs. Ask the actual provider about appointments, secure contact and when urgent review is needed. This site provides no emergency or live clinical service and collects no test results or medical records."
+      },
+      "checkpoints": {
+        "ar": [
+          "موعد يحدده مقدم الرعاية",
+          "قناة تواصل آمنة",
+          "مراجعة التعليمات مع الطبيب"
+        ],
+        "en": [
+          "Provider-defined timing",
+          "Secure contact channel",
+          "Review instructions with clinician"
+        ]
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slug": "prepare-for-consultation",
+      "title": {
+        "ar": "كيف تستعد لاستشارة الجلدية؟",
+        "en": "Prepare for a dermatology consultation"
+      },
+      "summary": {
+        "ar": "أسئلة تطرحها على الطبيب في الزيارة.",
+        "en": "Questions to discuss with your clinician."
+      },
+      "body": {
+        "ar": "جهز أسئلتك وما تريد فهمه من الزيارة، وناقش التاريخ الطبي والأدوية والحساسية مباشرة مع الطبيب في قناة آمنة. اطلب توضيح الخيارات والبدائل والتكلفة والمتابعة. لا ترفع تقارير أو صوراً طبية إلى نموذج التواصل العام. هذه معلومات تنظيمية وليست نصيحة علاجية.",
+        "en": "Prepare questions and goals for your visit. Discuss medical history, medicines and allergies privately with your clinician. Ask about options, alternatives, costs and follow-up. Do not upload medical reports or photographs to a public contact form. This is organizational guidance, not treatment advice."
+      }
+    },
+    {
+      "slug": "informed-aesthetic-choice",
+      "title": {
+        "ar": "قرار تجميلي مبني على معلومات",
+        "en": "Make an informed aesthetic choice"
+      },
+      "summary": {
+        "ar": "مراجعة البدائل والمخاطر والتوقعات قبل الإجراء.",
+        "en": "Review alternatives, risks and expectations before a procedure."
+      },
+      "body": {
+        "ar": "تحقق من مؤهلات مقدم الرعاية ومكان تقديم الخدمة، واطلب شرحاً فردياً للفوائد والمخاطر والبدائل وفترة التعافي والتكلفة. لا تعتمد على صور النتائج أو وعد بضمان التحسن. يظل عدم إجراء أي تدخل خياراً مشروعاً. الموافقة الفعلية تتم مع مقدم الرعاية بعد التقييم.",
+        "en": "Verify the provider's credentials and care setting. Ask for an individual explanation of benefits, risks, alternatives, recovery and cost. Do not rely on outcome photographs or guaranteed improvement claims. Choosing no intervention remains valid. Actual consent takes place with the clinician after assessment."
+      }
+    },
+    {
+      "slug": "privacy-and-follow-up",
+      "title": {
+        "ar": "الخصوصية والتواصل بعد الزيارة",
+        "en": "Privacy and follow-up"
+      },
+      "summary": {
+        "ar": "افصل الاستفسار الإداري عن المعلومات الطبية.",
+        "en": "Keep administrative enquiries separate from health information."
+      },
+      "body": {
+        "ar": "استخدم قناة آمنة مع مقدم الرعاية الفعلي لمشاركة المعلومات الصحية أو النتائج عند الحاجة. اطلب طريقة التواصل والمتابعة المعتمدة من الطبيب. نموذج الاستفسار هنا لا يجمع تشخيصاً أو أعراضاً أو صوراً أو ملفات صحية. في الطوارئ اطلب مساعدة طبية محلية عاجلة ولا تنتظر رداً من الموقع.",
+        "en": "Use a secure channel with the actual provider for health information or results when needed. Ask for the clinician's approved contact and follow-up process. This enquiry collects no diagnosis, symptoms, photos or medical files. In emergencies, seek urgent local medical help rather than waiting for a website reply."
+      }
+    }
+  ],
+  "faq": [
+    {
+      "question": {
+        "ar": "هل هذا موقع عيادة تعمل بالفعل؟",
+        "en": "Is this an operating clinic?"
+      },
+      "answer": {
+        "ar": "لا، تصميم متخصص من مافكس ولا يمثل مقدم رعاية مرخصاً.",
+        "en": "No. This is a Mavvix website concept, not a licensed care provider."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل يمكن تشخيص حالتي هنا؟",
+        "en": "Can I receive a diagnosis here?"
+      },
+      "answer": {
+        "ar": "لا، يلزم تقييم طبي لدى مقدم رعاية مؤهل.",
+        "en": "No; a qualified clinician must assess you."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل توجد أسعار أو مواعيد مؤكدة؟",
+        "en": "Are prices or appointments confirmed?"
+      },
+      "answer": {
+        "ar": "لا، الرقم المرجعي يثبت حفظ طلب تواصل فقط.",
+        "en": "No. The reference confirms only a saved contact enquiry."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل أرسل صور البشرة أو التحاليل؟",
+        "en": "Should I upload skin photos or lab results?"
+      },
+      "answer": {
+        "ar": "لا، استخدم قناة طبية آمنة مع مقدم الرعاية الفعلي.",
+        "en": "No; use a secure clinical channel with your actual provider."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل النتائج مضمونة؟",
+        "en": "Are results guaranteed?"
+      },
+      "answer": {
+        "ar": "لا؛ تختلف الملاءمة والنتائج ويحدد الطبيب الخيارات بعد التقييم.",
+        "en": "No; suitability and outcomes vary, and a clinician assesses the options."
+      }
+    }
+  ],
+  "categories": [
+    "medical",
+    "aesthetic",
+    "care"
+  ],
+  "contactWindows": [
+    "morning",
+    "afternoon",
+    "evening",
+    "flexible"
+  ],
+  "media": [
+    {
+      "role": "clinical-editorial",
+      "title": "Dermatoscope in primary care",
+      "credit": "Whispyhistory",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Dermascope.jpg",
+      "originalSha1": "765279e39fe306f89af5fef87f594dbcc0030e4a",
+      "alt": {
+        "ar": "جهاز فحص الجلد في صورة تحريرية مستقلة، لا يمثل معدات عيادة إيليرا",
+        "en": "Dermatoscope in an independent editorial photograph, not Elyra equipment"
+      }
+    }
+  ]
+}
