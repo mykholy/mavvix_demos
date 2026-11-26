@@ -191,14 +191,14 @@ export function RfqBasketClient({ allProducts, locale, initialSku }: Props) {
           </div>
 
           <div className="text-start sm:text-end font-mono">
-            <span className="text-[11px] text-stone-400 block uppercase">{isAr ? 'كود المرجع' : 'RFQ Reference'}</span>
-            <span className="text-lg font-black text-amber-600">{receipt.refNumber}</span>
+            <span className="text-[11px] text-stone-600 block uppercase">{isAr ? 'كود المرجع' : 'RFQ Reference'}</span>
+            <span className="text-lg font-black text-amber-800">{receipt.refNumber}</span>
           </div>
         </div>
 
         {/* Demo Disclosure */}
         <div className="p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-xs leading-relaxed flex items-start gap-3">
-          <ShieldCheck className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+          <ShieldCheck className="w-5 h-5 text-amber-800 shrink-0 mt-0.5" />
           <div>
             <strong>{isAr ? 'إشعار التحقق التجريبي:' : 'Concept Demo Disclosure:'}</strong>{' '}
             {isAr
@@ -215,7 +215,7 @@ export function RfqBasketClient({ allProducts, locale, initialSku }: Props) {
 
           <div className="overflow-x-auto">
             <table className="w-full text-left rtl:text-right">
-              <thead className="text-stone-400 border-b border-stone-300 text-[11px]">
+              <thead className="text-stone-600 border-b border-stone-300 text-[11px]">
                 <tr>
                   <th className="py-2">SKU Code</th>
                   <th className="py-2">{isAr ? 'المواصفة' : 'Item Description'}</th>
@@ -238,11 +238,11 @@ export function RfqBasketClient({ allProducts, locale, initialSku }: Props) {
 
           <div className="pt-4 border-t border-stone-300 grid grid-cols-2 gap-4 text-stone-600 font-sans">
             <div>
-              <span className="text-stone-400 block text-[11px] font-mono uppercase">{isAr ? 'جهة الشراء' : 'Purchasing Entity'}</span>
+              <span className="text-stone-600 block text-[11px] font-mono uppercase">{isAr ? 'جهة الشراء' : 'Purchasing Entity'}</span>
               <span className="font-bold text-[#12243C]">{buyerCompany}</span>
             </div>
             <div>
-              <span className="text-stone-400 block text-[11px] font-mono uppercase">{isAr ? 'وجهة الشحن' : 'Destination'}</span>
+              <span className="text-stone-600 block text-[11px] font-mono uppercase">{isAr ? 'وجهة الشحن' : 'Destination'}</span>
               <span className="font-bold text-[#12243C] capitalize">{destination.replace('_', ' ')}</span>
             </div>
           </div>
@@ -260,7 +260,7 @@ export function RfqBasketClient({ allProducts, locale, initialSku }: Props) {
 
           <Link
             href={`/${locale}/preview/industrial/products`}
-            className="text-amber-600 hover:underline flex items-center gap-1"
+            className="text-amber-800 hover:underline flex items-center gap-1"
           >
             <span>{isAr ? 'العودة للدليل الفني' : 'Return to Catalog'}</span>
             <Arrow className="w-3.5 h-3.5" />
@@ -281,7 +281,7 @@ export function RfqBasketClient({ allProducts, locale, initialSku }: Props) {
 
       {/* Item Lines Section */}
       <div className="space-y-4">
-        <div className="flex items-center justify-between pb-3 border-b border-stone-200">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-3 border-b border-stone-200">
           <h2 className="text-base font-bold text-[#12243C] uppercase tracking-wider font-mono">
             {isAr ? 'بنود طلب عروض الأسعار (RFQ Lines)' : 'Quotation Line Items'} ({lines.length})
           </h2>
@@ -295,7 +295,8 @@ export function RfqBasketClient({ allProducts, locale, initialSku }: Props) {
               }
             }}
             defaultValue=""
-            className="bg-[#F4F6F6] border border-stone-300 text-xs px-3 py-1.5 rounded-lg text-[#12243C] font-mono focus:outline-none"
+            aria-label={isAr ? 'إضافة بند للسلة' : 'Add SKU to basket'}
+            className="w-full sm:w-auto min-w-0 max-w-full bg-[#F4F6F6] border border-stone-300 text-xs px-3 py-1.5 rounded-lg text-[#12243C] font-mono focus:outline-none"
           >
             <option value="" disabled>
               + {isAr ? 'إضافة بند آخر للسلة' : 'Add another SKU'}
@@ -320,29 +321,30 @@ export function RfqBasketClient({ allProducts, locale, initialSku }: Props) {
                   {l.sku}
                 </span>
                 <h4 className="text-xs font-bold text-[#12243C]">{l.title}</h4>
-                <p className="text-[11px] text-stone-500 font-mono">
+                <p className="text-[11px] text-stone-600 font-mono">
                   MOQ: {l.minQty} {l.unit} • Pack multiple: {l.packMultiple}
                 </p>
               </div>
 
               <div className="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">
                 <div className="flex items-center gap-2">
-                  <label className="text-xs text-stone-500 font-mono">{isAr ? 'الكمية:' : 'Qty:'}</label>
+                  <label className="text-xs text-stone-600 font-mono">{isAr ? 'الكمية:' : 'Qty:'}</label>
                   <input
                     type="number"
                     step={l.packMultiple}
                     min={l.minQty}
-                    value={l.quantity}
+                    aria-label={isAr ? 'الكمية' : 'Quantity'}
+            value={l.quantity}
                     onChange={(e) => updateQuantity(l.id, parseInt(e.target.value, 10) || 0)}
                     className="w-28 px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-xs font-mono font-bold text-[#12243C] focus:outline-none focus:ring-2 focus:ring-[#DE9E37]"
                   />
-                  <span className="text-xs text-stone-500 font-mono">{l.unit}</span>
+                  <span className="text-xs text-stone-600 font-mono">{l.unit}</span>
                 </div>
 
                 <button
                   type="button"
                   onClick={() => removeLine(l.id)}
-                  className="p-1.5 text-stone-400 hover:text-red-600 transition-colors"
+                  className="p-1.5 text-stone-600 hover:text-red-600 transition-colors"
                   title="Remove SKU line"
                 >
                   <Trash2 className="w-4 h-4" />
@@ -360,6 +362,7 @@ export function RfqBasketClient({ allProducts, locale, initialSku }: Props) {
             {isAr ? 'نمط التعبئة والتغليف المطلوب' : 'Industrial Packaging Specification'}
           </label>
           <select
+            aria-label={isAr ? 'نمط التعبئة' : 'Packaging specification'}
             value={packaging}
             onChange={(e) => setPackaging(e.target.value)}
             className="w-full p-2.5 bg-[#F4F6F6] border border-stone-300 rounded-xl text-xs text-[#12243C] font-mono focus:outline-none focus:ring-2 focus:ring-[#DE9E37]"
@@ -375,6 +378,7 @@ export function RfqBasketClient({ allProducts, locale, initialSku }: Props) {
             {isAr ? 'منطقة الشحن / التصدير المستهدفة' : 'Target Destination Region'}
           </label>
           <select
+            aria-label={isAr ? 'وجهة التصدير' : 'Destination region'}
             value={destination}
             onChange={(e) => setDestination(e.target.value)}
             className="w-full p-2.5 bg-[#F4F6F6] border border-stone-300 rounded-xl text-xs text-[#12243C] font-mono focus:outline-none focus:ring-2 focus:ring-[#DE9E37]"
@@ -395,6 +399,7 @@ export function RfqBasketClient({ allProducts, locale, initialSku }: Props) {
           </label>
           <input
             type="text"
+            aria-label={isAr ? 'اسم الشركة' : 'Buyer enterprise name'}
             value={buyerCompany}
             onChange={(e) => setBuyerCompany(e.target.value)}
             className="w-full p-2.5 bg-[#F4F6F6] border border-stone-300 rounded-xl text-xs font-bold text-[#12243C] focus:outline-none focus:ring-2 focus:ring-[#DE9E37]"
@@ -407,6 +412,7 @@ export function RfqBasketClient({ allProducts, locale, initialSku }: Props) {
           </label>
           <input
             type="email"
+            aria-label={isAr ? 'البريد التجاري' : 'Procurement email'}
             value={buyerEmail}
             onChange={(e) => setBuyerEmail(e.target.value)}
             className="w-full p-2.5 bg-[#F4F6F6] border border-stone-300 rounded-xl text-xs font-bold text-[#12243C] focus:outline-none focus:ring-2 focus:ring-[#DE9E37]"
@@ -418,7 +424,7 @@ export function RfqBasketClient({ allProducts, locale, initialSku }: Props) {
       <div className="pt-6 border-t border-stone-200 flex items-center justify-between">
         <Link
           href={`/${locale}/preview/industrial/products`}
-          className="text-xs text-stone-500 hover:text-[#12243C] font-mono"
+          className="text-xs text-stone-600 hover:text-[#12243C] font-mono"
         >
           ← {isAr ? 'متابعة تصفح الدليل الفني' : 'Continue Browsing Catalog'}
         </Link>

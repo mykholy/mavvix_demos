@@ -277,7 +277,8 @@ export default function ProjectBriefIntakeWizard({
                 {isAr ? '2. هل تود الإشارة إلى دراسة حالة مرجعية؟ (اختياري)' : '2. Reference an Existing Case Study? (Optional)'}
               </label>
               <select
-                value={referencedCaseSlug}
+                aria-label={isAr ? 'دراسة حالة مرجعية' : 'Reference case study'}
+            value={referencedCaseSlug}
                 onChange={e => setReferencedCaseSlug(e.target.value)}
                 className="w-full px-4 py-2.5 rounded-xl bg-[#F6F5F2] border border-[#DDD9CE] font-mono text-xs text-[#0F0F10] focus:outline-none"
               >

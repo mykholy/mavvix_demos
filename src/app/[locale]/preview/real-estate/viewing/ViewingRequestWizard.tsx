@@ -120,8 +120,8 @@ export function ViewingRequestWizard({ allUnits, locale, initialUnitSlug }: Prop
           </div>
 
           <div className="text-start sm:text-end font-mono">
-            <span className="text-[11px] text-stone-400 block uppercase">{isAr ? 'كود المرجع' : 'Viewing Ref Code'}</span>
-            <span className="text-lg font-black text-[#A8764F]">{receipt.refNumber}</span>
+            <span className="text-[11px] text-stone-600 block uppercase">{isAr ? 'كود المرجع' : 'Viewing Ref Code'}</span>
+            <span className="text-lg font-black text-[#805333]">{receipt.refNumber}</span>
           </div>
         </div>
 
@@ -146,27 +146,27 @@ export function ViewingRequestWizard({ allUnits, locale, initialUnitSlug }: Prop
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             <div>
-              <span className="text-stone-500 block mb-0.5 font-sans">{isAr ? 'الوحدة السكنية' : 'Property Unit'}</span>
+              <span className="text-stone-600 block mb-0.5 font-sans">{isAr ? 'الوحدة السكنية' : 'Property Unit'}</span>
               <span className="font-bold text-[#25312D]">{selectedUnit.title}</span>
             </div>
             <div>
-              <span className="text-stone-500 block mb-0.5 font-sans">{isAr ? 'المساحة' : 'Area'}</span>
+              <span className="text-stone-600 block mb-0.5 font-sans">{isAr ? 'المساحة' : 'Area'}</span>
               <span className="font-bold text-[#25312D]">{selectedUnit.area_m2} m²</span>
             </div>
             <div>
-              <span className="text-stone-500 block mb-0.5 font-sans">{isAr ? 'السعر' : 'Price'}</span>
-              <span className="font-bold text-[#A8764F]">{(selectedUnit.price_cents / 100).toLocaleString()} EGP</span>
+              <span className="text-stone-600 block mb-0.5 font-sans">{isAr ? 'السعر' : 'Price'}</span>
+              <span className="font-bold text-[#805333]">{(selectedUnit.price_cents / 100).toLocaleString()} EGP</span>
             </div>
             <div>
-              <span className="text-stone-500 block mb-0.5 font-sans">{isAr ? 'اليوم المفضل' : 'Preferred Day'}</span>
+              <span className="text-stone-600 block mb-0.5 font-sans">{isAr ? 'اليوم المفضل' : 'Preferred Day'}</span>
               <span className="font-bold text-[#25312D] capitalize">{preferredDay}</span>
             </div>
             <div>
-              <span className="text-stone-500 block mb-0.5 font-sans">{isAr ? 'الفترة' : 'Time Slot'}</span>
+              <span className="text-stone-600 block mb-0.5 font-sans">{isAr ? 'الفترة' : 'Time Slot'}</span>
               <span className="font-bold text-[#25312D]">{preferredTime.replace('_', ' ')}</span>
             </div>
             <div>
-              <span className="text-stone-500 block mb-0.5 font-sans">{isAr ? 'نمط المعاينة' : 'Tour Mode'}</span>
+              <span className="text-stone-600 block mb-0.5 font-sans">{isAr ? 'نمط المعاينة' : 'Tour Mode'}</span>
               <span className="font-bold text-emerald-700 capitalize">{viewingMode.replace('_', ' ')}</span>
             </div>
           </div>
@@ -184,7 +184,7 @@ export function ViewingRequestWizard({ allUnits, locale, initialUnitSlug }: Prop
 
           <Link
             href={`/${locale}/preview/real-estate/properties`}
-            className="text-[#A8764F] hover:underline flex items-center gap-1"
+            className="text-[#805333] hover:underline flex items-center gap-1"
           >
             <span>{isAr ? 'العودة لدليل العقارات' : 'Return to Properties'}</span>
             <Arrow className="w-3.5 h-3.5" />
@@ -209,7 +209,8 @@ export function ViewingRequestWizard({ allUnits, locale, initialUnitSlug }: Prop
           {isAr ? 'الوحدة السكنية المستهدفة للمعاينة' : 'Target Property Unit'}
         </label>
         <select
-          value={selectedUnitSlug}
+          aria-label={isAr ? 'الوحدة السكنية' : 'Target property unit'}
+            value={selectedUnitSlug}
           onChange={(e) => setSelectedUnitSlug(e.target.value)}
           className="w-full p-3 bg-[#F5F0E6] border border-stone-300 rounded-xl text-xs font-bold text-[#25312D] font-mono focus:outline-none focus:ring-2 focus:ring-[#A8764F]"
         >
@@ -228,6 +229,7 @@ export function ViewingRequestWizard({ allUnits, locale, initialUnitSlug }: Prop
             {isAr ? 'اليوم المفضل' : 'Preferred Day'}
           </label>
           <select
+            aria-label={isAr ? 'اليوم المفضل' : 'Preferred day'}
             value={preferredDay}
             onChange={(e) => setPreferredDay(e.target.value)}
             className="w-full p-2.5 bg-[#F5F0E6] border border-stone-300 rounded-lg text-xs font-bold text-[#25312D]"
@@ -244,6 +246,7 @@ export function ViewingRequestWizard({ allUnits, locale, initialUnitSlug }: Prop
             {isAr ? 'الفترة الزمنية' : 'Time Slot'}
           </label>
           <select
+            aria-label={isAr ? 'الفترة الزمنية' : 'Time slot'}
             value={preferredTime}
             onChange={(e) => setPreferredTime(e.target.value)}
             className="w-full p-2.5 bg-[#F5F0E6] border border-stone-300 rounded-lg text-xs font-bold text-[#25312D]"
@@ -333,7 +336,7 @@ export function ViewingRequestWizard({ allUnits, locale, initialUnitSlug }: Prop
       <div className="pt-4 border-t border-stone-200 flex items-center justify-between">
         <Link
           href={`/${locale}/preview/real-estate/properties`}
-          className="text-xs text-stone-500 hover:text-[#25312D]"
+          className="text-xs text-stone-600 hover:text-[#25312D]"
         >
           ← {isAr ? 'العودة للوحدات' : 'Back to listings'}
         </Link>
@@ -341,7 +344,7 @@ export function ViewingRequestWizard({ allUnits, locale, initialUnitSlug }: Prop
         <button
           type="submit"
           disabled={submitting}
-          className="bg-[#A8764F] hover:bg-[#8e613e] text-white font-bold text-xs px-8 py-3.5 rounded-xl uppercase tracking-wider flex items-center gap-2 shadow-sm transition-all disabled:opacity-50"
+          className="bg-[#805333] hover:bg-[#8e613e] text-white font-bold text-xs px-8 py-3.5 rounded-xl uppercase tracking-wider flex items-center gap-2 shadow-sm transition-all disabled:opacity-50"
         >
           <Calendar className="w-4 h-4" />
           <span>{submitting ? (isAr ? 'جاري التسجيل...' : 'Recording in SQLite...') : (isAr ? 'تأكيد طلب المعاينة التجريبي' : 'Submit Viewing Request')}</span>

@@ -111,27 +111,27 @@ export default async function IndustrialHomePage(props: Props) {
               {/* 6-cell Data Table */}
               <div className="grid grid-cols-2 gap-3 text-xs font-mono">
                 <div className="bg-slate-950 p-3 rounded-lg border border-slate-800">
-                  <span className="text-slate-500 block text-[10px] uppercase">MATERIAL GRADE</span>
+                  <span className="text-slate-400 block text-[10px] uppercase">MATERIAL GRADE</span>
                   <span className="text-amber-400 font-bold text-sm">AISI 304 / S275JR</span>
                 </div>
                 <div className="bg-slate-950 p-3 rounded-lg border border-slate-800">
-                  <span className="text-slate-500 block text-[10px] uppercase">TENSILE STRENGTH</span>
+                  <span className="text-slate-400 block text-[10px] uppercase">TENSILE STRENGTH</span>
                   <span className="text-white font-bold text-sm">410 — 560 MPa</span>
                 </div>
                 <div className="bg-slate-950 p-3 rounded-lg border border-slate-800">
-                  <span className="text-slate-500 block text-[10px] uppercase">TOLERANCE CLASS</span>
+                  <span className="text-slate-400 block text-[10px] uppercase">TOLERANCE CLASS</span>
                   <span className="text-white font-bold text-sm">EN 10034 Cl. B</span>
                 </div>
                 <div className="bg-slate-950 p-3 rounded-lg border border-slate-800">
-                  <span className="text-slate-500 block text-[10px] uppercase">STANDARD MOQ</span>
+                  <span className="text-slate-400 block text-[10px] uppercase">STANDARD MOQ</span>
                   <span className="text-amber-400 font-bold text-sm">500 m / 2.5 Tons</span>
                 </div>
                 <div className="bg-slate-950 p-3 rounded-lg border border-slate-800">
-                  <span className="text-slate-500 block text-[10px] uppercase">SURFACE FINISH</span>
+                  <span className="text-slate-400 block text-[10px] uppercase">SURFACE FINISH</span>
                   <span className="text-white font-bold text-sm">Hot-Dip Galv / Mill</span>
                 </div>
                 <div className="bg-slate-950 p-3 rounded-lg border border-slate-800">
-                  <span className="text-slate-500 block text-[10px] uppercase">TRACEABILITY</span>
+                  <span className="text-slate-400 block text-[10px] uppercase">TRACEABILITY</span>
                   <span className="text-emerald-400 font-bold text-sm">EN 10204 3.1 Cert</span>
                 </div>
               </div>
@@ -160,7 +160,7 @@ export default async function IndustrialHomePage(props: Props) {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 pb-4 border-b border-stone-300 gap-4">
           <div>
-            <span className="text-xs font-mono font-bold text-amber-600 uppercase tracking-widest block mb-1">
+            <span className="text-xs font-mono font-bold text-amber-800 uppercase tracking-widest block mb-1">
               PRODUCT TAXONOMY
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-[#12243C]">
@@ -169,7 +169,7 @@ export default async function IndustrialHomePage(props: Props) {
           </div>
           <Link
             href={`/${locale}/preview/industrial/products`}
-            className="text-xs font-bold uppercase tracking-wider text-amber-600 hover:text-amber-700 flex items-center gap-1"
+            className="text-xs font-bold uppercase tracking-wider text-amber-800 hover:text-amber-700 flex items-center gap-1"
           >
             <span>{isAr ? 'الدليل الكامل' : 'All Products'}</span>
             <Arrow className="w-4 h-4" />
@@ -184,14 +184,14 @@ export default async function IndustrialHomePage(props: Props) {
               className="bg-white border border-stone-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all group flex flex-col justify-between"
             >
               <div>
-                <span className="text-[11px] font-mono text-stone-400 font-bold block mb-2">
+                <span className="text-[11px] font-mono text-stone-600 font-bold block mb-2">
                   {c.count}
                 </span>
-                <h3 className="text-base font-bold text-[#12243C] group-hover:text-amber-600 transition-colors mb-2">
+                <h3 className="text-base font-bold text-[#12243C] group-hover:text-amber-800 transition-colors mb-2">
                   {c.title}
                 </h3>
               </div>
-              <span className="text-xs font-bold text-amber-600 flex items-center gap-1 pt-4 border-t border-stone-100">
+              <span className="text-xs font-bold text-amber-800 flex items-center gap-1 pt-4 border-t border-stone-100">
                 <span>{isAr ? 'استعراض الـ SKUs' : 'Explore SKUs'}</span>
                 <Arrow className="w-3.5 h-3.5" />
               </span>
@@ -205,7 +205,7 @@ export default async function IndustrialHomePage(props: Props) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 pb-4 border-b border-stone-200 gap-4">
             <div>
-              <span className="text-xs font-mono font-bold text-amber-600 uppercase tracking-widest block mb-1">
+              <span className="text-xs font-mono font-bold text-amber-800 uppercase tracking-widest block mb-1">
                 STANDARDIZED SKUS
               </span>
               <h2 className="text-2xl sm:text-3xl font-black text-[#12243C]">
@@ -214,7 +214,7 @@ export default async function IndustrialHomePage(props: Props) {
             </div>
             <Link
               href={`/${locale}/preview/industrial/products`}
-              className="text-xs font-bold uppercase tracking-wider text-amber-600 flex items-center gap-1"
+              className="text-xs font-bold uppercase tracking-wider text-amber-800 flex items-center gap-1"
             >
               <span>{isAr ? 'تصفح كافة الـ 24 SKU' : 'View All 24 SKUs'}</span>
               <Arrow className="w-4 h-4" />
@@ -232,7 +232,7 @@ export default async function IndustrialHomePage(props: Props) {
                     <span className="font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded text-[11px]">
                       {p.sku}
                     </span>
-                    <span className="text-stone-500 capitalize">{p.item_type}</span>
+                    <span className="text-stone-600 capitalize">{p.item_type}</span>
                   </div>
 
                   <h3 className="text-base font-bold text-[#12243C] group-hover:text-amber-700 transition-colors mb-2">
@@ -244,11 +244,11 @@ export default async function IndustrialHomePage(props: Props) {
 
                   <div className="bg-white p-3 rounded-lg border border-stone-200 text-xs font-mono space-y-1 mb-4">
                     <div className="flex justify-between">
-                      <span className="text-stone-400">Standard:</span>
+                      <span className="text-stone-600">Standard:</span>
                       <span className="font-bold text-stone-800">DIN EN 10025</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-stone-400">Pricing:</span>
+                      <span className="text-stone-600">Pricing:</span>
                       <span className="font-bold text-emerald-700">RFQ Scoped</span>
                     </div>
                   </div>
@@ -257,7 +257,7 @@ export default async function IndustrialHomePage(props: Props) {
                 <div className="pt-4 border-t border-stone-200 flex items-center justify-between text-xs font-bold">
                   <Link
                     href={`/${locale}/preview/industrial/products/${p.slug}`}
-                    className="text-[#12243C] hover:text-amber-600 flex items-center gap-1"
+                    className="text-[#12243C] hover:text-amber-800 flex items-center gap-1"
                   >
                     <span>{isAr ? 'ملف المواصفات (Dossier)' : 'Technical Dossier'}</span>
                     <Arrow className="w-3.5 h-3.5" />
@@ -265,7 +265,7 @@ export default async function IndustrialHomePage(props: Props) {
 
                   <Link
                     href={`/${locale}/preview/industrial/rfq?sku=${p.sku}`}
-                    className="text-amber-600 hover:underline text-[11px]"
+                    className="text-amber-800 hover:underline text-[11px]"
                   >
                     + {isAr ? 'إضافة للـ RFQ' : 'Add to RFQ'}
                   </Link>
@@ -338,7 +338,7 @@ export default async function IndustrialHomePage(props: Props) {
               {n:'01',ar:'حدّد المواصفات',en:'Select specifications',arD:'اختر الكود والمادة والمقاسات الملائمة.',enD:'Select SKU, material and dimensions.'},
               {n:'02',ar:'راجع قواعد التعبئة',en:'Check quantity rules',arD:'تحقق من الحد الأدنى ومضاعفات العبوات.',enD:'Validate MOQ and packaging multiples.'},
               {n:'03',ar:'سجّل طلبك',en:'Submit your RFQ',arD:'أضف معلومات الشركة والتوصيل ليُراجع الطلب.',enD:'Provide buyer and destination details for review.'},
-            ].map(step => <div key={step.n} className="bg-white rounded-2xl border border-[#E0E4E7] p-6"><span className="text-amber-600 font-mono text-sm">{step.n}</span><h3 className="text-[#12243C] font-bold text-base mt-8">{isAr ? step.ar : step.en}</h3><p className="text-[#627080] text-sm mt-3 leading-6">{isAr ? step.arD : step.enD}</p></div>)}
+            ].map(step => <div key={step.n} className="bg-white rounded-2xl border border-[#E0E4E7] p-6"><span className="text-amber-800 font-mono text-sm">{step.n}</span><h3 className="text-[#12243C] font-bold text-base mt-8">{isAr ? step.ar : step.en}</h3><p className="text-[#627080] text-sm mt-3 leading-6">{isAr ? step.arD : step.enD}</p></div>)}
           </div>
         </div>
       </section>
@@ -347,7 +347,7 @@ export default async function IndustrialHomePage(props: Props) {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-8 pb-4 border-b border-stone-300">
           <div>
-            <span className="text-xs font-mono font-bold text-amber-600 uppercase tracking-widest block mb-1">
+            <span className="text-xs font-mono font-bold text-amber-800 uppercase tracking-widest block mb-1">
               TECHNICAL DOSSIERS
             </span>
             <h2 className="text-2xl font-black text-[#12243C]">
@@ -356,7 +356,7 @@ export default async function IndustrialHomePage(props: Props) {
           </div>
           <Link
             href={`/${locale}/preview/industrial/resources`}
-            className="text-xs font-bold uppercase tracking-wider text-amber-600 flex items-center gap-1"
+            className="text-xs font-bold uppercase tracking-wider text-amber-800 flex items-center gap-1"
           >
             <span>{isAr ? 'كافة المقالات' : 'All Resources'}</span>
             <Arrow className="w-4 h-4" />
@@ -374,7 +374,7 @@ export default async function IndustrialHomePage(props: Props) {
                 <span className="text-[11px] font-mono font-bold text-amber-700 uppercase">
                   {a.category}
                 </span>
-                <h3 className="text-base font-bold text-[#12243C] group-hover:text-amber-600 transition-colors mt-2 mb-3">
+                <h3 className="text-base font-bold text-[#12243C] group-hover:text-amber-800 transition-colors mt-2 mb-3">
                   {a.title}
                 </h3>
                 <p className="text-xs text-stone-600 leading-relaxed line-clamp-3">
@@ -382,9 +382,9 @@ export default async function IndustrialHomePage(props: Props) {
                 </p>
               </div>
 
-              <div className="pt-4 mt-6 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500">
+              <div className="pt-4 mt-6 border-t border-stone-100 flex items-center justify-between text-xs text-stone-600">
                 <span>{new Date(a.published_at).toLocaleDateString(locale)}</span>
-                <span className="text-amber-600 font-bold group-hover:underline flex items-center gap-1">
+                <span className="text-amber-800 font-bold group-hover:underline flex items-center gap-1">
                   <span>{isAr ? 'عرض الدليل' : 'View Guide'}</span>
                   <Arrow className="w-3 h-3" />
                 </span>

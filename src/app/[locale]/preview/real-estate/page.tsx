@@ -57,9 +57,9 @@ export default async function RealEstateHomePage(props: Props) {
 
               <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-[1.15] text-white font-serif">
                 {isAr ? (
-                  <>مساحات تختارها بالمقارنة، <span className="text-[#A8764F]">مش بالصور بس</span> وببيانات حقيقية.</>
+                  <>مساحات تختارها بالمقارنة، <span className="text-[#805333]">مش بالصور بس</span> وببيانات حقيقية.</>
                 ) : (
-                  <>Explore spaces with <span className="text-[#A8764F]">the details that matter</span> and audited specs.</>
+                  <>Explore spaces with <span className="text-[#805333]">the details that matter</span> and audited specs.</>
                 )}
               </h1>
 
@@ -72,7 +72,7 @@ export default async function RealEstateHomePage(props: Props) {
               <div className="pt-4 flex flex-wrap items-center gap-4">
                 <Link
                   href={`/${locale}/preview/real-estate/properties`}
-                  className="bg-[#A8764F] hover:bg-[#8e613e] text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded shadow-sm flex items-center gap-2 transition-all"
+                  className="bg-[#805333] hover:bg-[#8e613e] text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded shadow-sm flex items-center gap-2 transition-all"
                 >
                   <span>{isAr ? 'استعرض كافة الوحدات (24 وحدة)' : 'Browse 24 Properties'}</span>
                   <Arrow className="w-4 h-4" />
@@ -90,7 +90,7 @@ export default async function RealEstateHomePage(props: Props) {
 
             {/* Right: Property Finder Card (Signature Hero Module) */}
             <form action={`/${locale}/preview/real-estate/properties`} method="GET" className="lg:col-span-5 bg-white text-[#25312D] rounded-2xl p-6 sm:p-8 shadow-xl space-y-4">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-stone-500 font-mono pb-2 border-b border-stone-100">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-stone-600 font-mono pb-2 border-b border-stone-100">
                 {isAr ? 'البحث الذكي عن الوحدات' : 'Property Discovery Filter'}
               </h3>
 
@@ -119,7 +119,7 @@ export default async function RealEstateHomePage(props: Props) {
                   <label className="block text-stone-600 font-bold mb-1">{isAr ? 'عدد غرف النوم' : 'Bedrooms'}</label>
                   <div className="grid grid-cols-4 gap-2">
                     {[{ label: isAr ? 'الكل' : 'Any', value: 'all' }, { label: '2+', value: '2' }, { label: '3+', value: '3' }, { label: '4+', value: '4' }].map((b) => (
-                      <label key={b.value} className="relative cursor-pointer rounded bg-[#F5F0E6] border border-stone-300 font-bold hover:bg-[#A8764F]/10 focus-within:ring-2 focus-within:ring-[#A8764F]">
+                      <label key={b.value} className="relative cursor-pointer rounded bg-[#F5F0E6] border border-stone-300 font-bold hover:bg-[#805333]/10 focus-within:ring-2 focus-within:ring-[#A8764F]">
                         <input type="radio" name="beds" value={b.value} defaultChecked={b.value === 'all'} className="peer sr-only" />
                         <span className="block p-2 text-center peer-checked:bg-[#25312D] peer-checked:text-white rounded">{b.label}</span>
                       </label>
@@ -151,7 +151,7 @@ export default async function RealEstateHomePage(props: Props) {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 pb-4 border-b border-stone-300 gap-4">
           <div>
-            <span className="text-xs font-mono font-bold text-[#A8764F] uppercase tracking-widest block mb-1">
+            <span className="text-xs font-mono font-bold text-[#805333] uppercase tracking-widest block mb-1">
               CURATED RESIDENCES
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-[#25312D] font-serif">
@@ -160,7 +160,7 @@ export default async function RealEstateHomePage(props: Props) {
           </div>
           <Link
             href={`/${locale}/preview/real-estate/properties`}
-            className="text-xs font-bold uppercase tracking-wider text-[#A8764F] hover:underline flex items-center gap-1"
+            className="text-xs font-bold uppercase tracking-wider text-[#805333] hover:underline flex items-center gap-1"
           >
             <span>{isAr ? 'كافة الوحدات (24)' : 'View All 24 Units'}</span>
             <Arrow className="w-4 h-4" />
@@ -176,39 +176,39 @@ export default async function RealEstateHomePage(props: Props) {
                 className="bg-white border border-stone-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between group"
               >
                 <div className="p-6">
-                  <div className="flex items-center justify-between text-xs font-mono mb-3 text-stone-400">
+                  <div className="flex items-center justify-between text-xs font-mono mb-3 text-stone-600">
                     <span className="bg-stone-100 text-[#25312D] px-2 py-0.5 rounded font-bold uppercase text-[11px]">
                       {u.unit_type}
                     </span>
                     <span className="text-emerald-700 font-bold uppercase">{u.status.replace('_', ' ')}</span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-[#25312D] group-hover:text-[#A8764F] transition-colors mb-2">
+                  <h3 className="text-lg font-bold text-[#25312D] group-hover:text-[#805333] transition-colors mb-2">
                     {u.title}
                   </h3>
-                  <p className="text-xs text-stone-500 line-clamp-2 leading-relaxed mb-4">
+                  <p className="text-xs text-stone-600 line-clamp-2 leading-relaxed mb-4">
                     {u.summary}
                   </p>
 
                   <div className="grid grid-cols-3 gap-2 py-3 border-y border-stone-100 text-xs text-stone-700 font-mono text-center">
                     <div>
-                      <span className="text-stone-400 block text-[10px]">{isAr ? 'المساحة' : 'Area'}</span>
+                      <span className="text-stone-600 block text-[10px]">{isAr ? 'المساحة' : 'Area'}</span>
                       <span className="font-bold">{u.area_m2} m²</span>
                     </div>
                     <div>
-                      <span className="text-stone-400 block text-[10px]">{isAr ? 'الغرف' : 'Beds'}</span>
+                      <span className="text-stone-600 block text-[10px]">{isAr ? 'الغرف' : 'Beds'}</span>
                       <span className="font-bold">{u.bedrooms}</span>
                     </div>
                     <div>
-                      <span className="text-stone-400 block text-[10px]">{isAr ? 'الحمامات' : 'Baths'}</span>
+                      <span className="text-stone-600 block text-[10px]">{isAr ? 'الحمامات' : 'Baths'}</span>
                       <span className="font-bold">{u.bathrooms}</span>
                     </div>
                   </div>
 
                   <div className="pt-4 flex items-center justify-between">
                     <div>
-                      <span className="text-[10px] text-stone-400 block uppercase font-mono">{isAr ? 'السعر النقدي' : 'Base Price'}</span>
-                      <span className="text-base font-black text-[#A8764F] font-mono">{priceEgp} EGP</span>
+                      <span className="text-[10px] text-stone-600 block uppercase font-mono">{isAr ? 'السعر النقدي' : 'Base Price'}</span>
+                      <span className="text-base font-black text-[#805333] font-mono">{priceEgp} EGP</span>
                     </div>
                   </div>
                 </div>
@@ -216,7 +216,7 @@ export default async function RealEstateHomePage(props: Props) {
                 <div className="p-4 bg-stone-50 border-t border-stone-100 flex items-center justify-between text-xs font-bold">
                   <Link
                     href={`/${locale}/preview/real-estate/properties/${u.slug}`}
-                    className="text-[#25312D] hover:text-[#A8764F] flex items-center gap-1"
+                    className="text-[#25312D] hover:text-[#805333] flex items-center gap-1"
                   >
                     <span>{isAr ? 'تفاصيل الوحدة' : 'Inspect Unit'}</span>
                     <Arrow className="w-3.5 h-3.5" />
@@ -224,7 +224,7 @@ export default async function RealEstateHomePage(props: Props) {
 
                   <Link
                     href={`/${locale}/preview/real-estate/viewing?unit=${u.slug}`}
-                    className="text-[#A8764F] hover:underline text-[11px]"
+                    className="text-[#805333] hover:underline text-[11px]"
                   >
                     {isAr ? 'طلب معاينة' : 'Request Viewing'}
                   </Link>
@@ -293,7 +293,7 @@ export default async function RealEstateHomePage(props: Props) {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-8 pb-4 border-b border-stone-300">
           <div>
-            <span className="text-xs font-mono font-bold text-[#A8764F] uppercase tracking-widest block mb-1">
+            <span className="text-xs font-mono font-bold text-[#805333] uppercase tracking-widest block mb-1">
               ADVISORY & DISTRICT GUIDES
             </span>
             <h2 className="text-2xl font-black text-[#25312D] font-serif">
@@ -302,7 +302,7 @@ export default async function RealEstateHomePage(props: Props) {
           </div>
           <Link
             href={`/${locale}/preview/real-estate/journal`}
-            className="text-xs font-bold uppercase tracking-wider text-[#A8764F] flex items-center gap-1"
+            className="text-xs font-bold uppercase tracking-wider text-[#805333] flex items-center gap-1"
           >
             <span>{isAr ? 'كل الأدلة' : 'All Guides'}</span>
             <Arrow className="w-4 h-4" />
@@ -317,10 +317,10 @@ export default async function RealEstateHomePage(props: Props) {
               className="bg-white border border-stone-200 rounded-xl p-6 hover:shadow-md transition-all group flex flex-col justify-between"
             >
               <div>
-                <span className="text-[11px] font-mono font-bold text-[#A8764F] uppercase">
+                <span className="text-[11px] font-mono font-bold text-[#805333] uppercase">
                   {a.category}
                 </span>
-                <h3 className="text-base font-bold text-[#25312D] group-hover:text-[#A8764F] transition-colors mt-2 mb-3">
+                <h3 className="text-base font-bold text-[#25312D] group-hover:text-[#805333] transition-colors mt-2 mb-3">
                   {a.title}
                 </h3>
                 <p className="text-xs text-stone-600 leading-relaxed line-clamp-3">
@@ -328,9 +328,9 @@ export default async function RealEstateHomePage(props: Props) {
                 </p>
               </div>
 
-              <div className="pt-4 mt-6 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500">
+              <div className="pt-4 mt-6 border-t border-stone-100 flex items-center justify-between text-xs text-stone-600">
                 <span>{new Date(a.published_at).toLocaleDateString(locale)}</span>
-                <span className="text-[#A8764F] font-bold group-hover:underline flex items-center gap-1">
+                <span className="text-[#805333] font-bold group-hover:underline flex items-center gap-1">
                   <span>{isAr ? 'قراءة الدليل' : 'Read Guide'}</span>
                   <Arrow className="w-3 h-3" />
                 </span>
@@ -345,7 +345,7 @@ export default async function RealEstateHomePage(props: Props) {
           <div className="lg:col-span-4 space-y-4">
             <span className="text-[#966D4C] font-mono text-xs tracking-widest">{isAr ? 'قبل اتخاذ القرار' : 'BEFORE YOU DECIDE'}</span>
             <h2 id="meridian-faq-heading" className="font-serif text-3xl font-bold text-[#25312D]">{isAr ? 'إجابات توضح الصورة كاملة' : 'Answers for a more confident choice'}</h2>
-            <Link href={`/${locale}/preview/real-estate/contact`} className="inline-flex items-center gap-2 text-sm font-bold text-[#A8764F] hover:underline">{isAr ? 'أرسل استفسارك' : 'Ask a question'} <Arrow className="w-4 h-4" /></Link>
+            <Link href={`/${locale}/preview/real-estate/contact`} className="inline-flex items-center gap-2 text-sm font-bold text-[#805333] hover:underline">{isAr ? 'أرسل استفسارك' : 'Ask a question'} <Arrow className="w-4 h-4" /></Link>
           </div>
           <div className="lg:col-span-8 space-y-3">
             {[
