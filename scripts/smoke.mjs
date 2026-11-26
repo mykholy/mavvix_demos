@@ -581,6 +581,31 @@ try {
   assert.ok([302,303,307,308,401].includes(privateQueue.status),'Admin queue should not expose a guest request');
   console.log('PASS: 42 Nomad bilingual routes, destination/duration/date/PII safeguards and idempotent request receipt');
 
+  const eventRoutes=['','experiences','event-types','venue-brief','production','planning','guides','faq','about','enquiry','experiences/corporate-conferences','experiences/brand-launches','experiences/weddings','experiences/private-celebrations','experiences/exhibitions','experiences/gala-dinners','experiences/outdoor-events','experiences/event-production','guides/event-brief','guides/guest-journey','guides/production-timeline'];
+  for(const lang of ['ar','en'])for(const tail of eventRoutes){
+    const url='/'+lang+'/preview/events'+(tail?'/'+tail:'');
+    const response=await get(url);
+    assert.equal(response.status,200,'Luma route failed '+url);
+    assert.ok((await response.text()).includes('data-mavvix-contact-dock'),'Luma dock missing '+url);
+  }
+  assert.equal((await get('/en/preview/events/experiences/unknown-event')).status,404);
+  const ev={flowType:'event_planning_request',clientRequestId:'99999999-9999-4999-8999-999999999999',serviceSlug:'corporate-conferences',country:'egypt',eventType:'corporate',guestBand:'150-299',venueStatus:'shortlisted',eventDate:'',budgetBand:'standard',guestName:'QA Event',guestPhone:'01000000000',consent:true,honeypot:'',utm:{source:'qa',medium:'integration',campaign:'luma'}};
+  const eventEndpoint='/api/portfolio/events';
+  for(const invalid of [{consent:false},{guestList:['PRIVATE']},{eventType:'social'},{eventDate:'2020-02-30'},{guestBand:'invalid'}]){
+    assert.equal((await post(eventEndpoint,{...ev,...invalid})).status,400);
+  }
+  const evSaved=await post(eventEndpoint,ev),evBody=await evSaved.json();
+  assert.equal(evSaved.status,201,'Luma persistence '+JSON.stringify(evBody));
+  assert.match(evBody.refNumber,/^MVX-LUM-[A-F0-9]{10}$/);
+  assert.equal(evBody.status,'pending_operator_confirmation');
+  const evDuplicate=await post(eventEndpoint,ev),evAgain=await evDuplicate.json();
+  assert.equal(evDuplicate.status,200);
+  assert.equal(evAgain.duplicate,true);
+  assert.equal(evAgain.refNumber,evBody.refNumber);
+  const evQueue=await get('/admin/portfolio-requests?sector=events',{redirect:'manual'});
+  assert.ok([302,303,307,308,401].includes(evQueue.status),'Luma request queue must remain private');
+  console.log('PASS: 42 Luma bilingual routes, event format/date/PII validation and idempotent persistence');
+
   console.log('PASS: auth guard, flow validation, Academy SQLite progress, trusted ecommerce price, private receipt');
 } catch (error) {
   console.error(error);

@@ -226,3 +226,11 @@ for(const route of ['services','services/[slug]','quote','resources','resources/
  assert.ok(existsSync(join(accountingDir,route,'page.tsx')),'Missing LedgerPoint route family: '+route);
 }
 console.log('PASS: unique LedgerPoint 11-section accounting website, 8 services, 3 guides and privacy-safe scope form');
+
+const lumaDir=join(root,'events');
+const lumaHome=readFileSync(join(lumaDir,'page.tsx'),'utf8');
+const lumaLayout=readFileSync(join(lumaDir,'layout.tsx'),'utf8');
+assert.ok((lumaHome.match(/data-sector-specific=/g)||[]).length>=9);
+assert.match(lumaLayout,/<ContactDock/);
+for(const route of ['[section]','experiences/[slug]','guides/[slug]','enquiry'])assert.ok(existsSync(join(lumaDir,route,'page.tsx')),'Missing Luma route family '+route);
+console.log('PASS: distinct Luma event home, specialist pages and lead flow');
