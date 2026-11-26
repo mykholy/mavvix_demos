@@ -1,0 +1,63 @@
+import crypto from 'node:crypto';
+import { z } from 'zod';
+import { NextResponse } from 'next/server';
+import { getDb } from '@/lib/db';
+import { checkRateLimit, getRequestIdentity } from '@/lib/security/rate-limit';
+import catalog from '../../../data/verticals/events.json';
+
+const text = z.string().trim();
+const campaign = text.max(100).optional();
+const requestSchema = z.object({
+  flowType: z.literal('event_planning_request'),
+  clientRequestId: z.string().uuid(),
+  serviceSlug: text.min(3).max(100),
+  country: z.enum(['egypt', 'saudi-arabia', 'flexible']),
+  eventType: z.enum(['corporate','social','special']),
+  guestBand: z.enum(['under-50','50-149','150-299','300-499','500-plus']),
+  venueStatus: z.enum(['selected','shortlisted','not-selected']),
+  eventDate: text.regex(/^\d{4}-\d{2}-\d{2}$/).optional().or(z.literal('')),
+  budgetBand: z.enum(['essential','standard','premium','flexible']),
+  guestName: text.min(2).max(110),
+  guestPhone: text.regex(/^\+?[0-9\s()-]{8,24}$/),
+  consent: z.literal(true),
+  honeypot: z.literal('').optional().default(''),
+  utm: z.object({source: campaign, medium: campaign, campaign}).strict().optional().default({}),
+}).strict();
+const failure = (code: string, status = 400) => NextResponse.json({success:false, code}, {status});
+export async function handleEventPlanning(req: Request) {
+  const rate = checkRateLimit('portfolio:events:' + getRequestIdentity(req), 8, 60_000);
+  if (!rate.allowed) return NextResponse.json({success:false,code:'RATE_LIMIT'}, {status:429,headers:{'Retry-After':String(rate.retryAfter)}});
+  try {
+    const raw = await req.text();
+    if (raw.length > 10000) return failure('TOO_LARGE',413);
+    const parsed = requestSchema.safeParse(JSON.parse(raw));
+    if (!parsed.success) return failure('INVALID_FIELDS');
+    const v = parsed.data;
+    const experience = catalog.services.find(s => s.slug === v.serviceSlug);
+    if (!experience) return failure('UNKNOWN_EXPERIENCE');
+    if (experience.category !== v.eventType) return failure('EVENT_TYPE_MISMATCH');
+    if (v.eventDate) {
+      const date = new Date(v.eventDate + 'T00:00:00Z');
+      const today = new Date(); today.setUTCHours(0,0,0,0);
+      if (!Number.isFinite(date.getTime()) || date.toISOString().slice(0,10) !== v.eventDate || date < today || date.getTime() - today.getTime() > 366 * 86400000) return failure('INVALID_DATE');
+    }
+    const db = getDb();
+    if (!db.prepare("SELECT id FROM portfolio_services WHERE vertical_slug='events' AND slug=? AND active=1").get(v.serviceSlug)) return failure('UNAVAILABLE_EXPERIENCE');
+    const findExisting = () => db.prepare('SELECT ref_number FROM portfolio_requests WHERE vertical_slug=? AND client_request_id=?').get('events', v.clientRequestId) as {ref_number:string}|undefined;
+    const prior = findExisting();
+    if (prior) return NextResponse.json({success:true,refNumber:prior.ref_number,status:'pending_operator_confirmation',duplicate:true});
+    const ref = 'MVX-LUM-' + crypto.randomBytes(5).toString('hex').toUpperCase();
+    const payload = {serviceSlug:v.serviceSlug,country:v.country,eventType:v.eventType,guestBand:v.guestBand,venueStatus:v.venueStatus,eventDate:v.eventDate||null,budgetBand:v.budgetBand,notice:'Illustrative event enquiry only. No venue, vendor, capacity, price or payment confirmed.'};
+    const inserted = db.prepare(`INSERT OR IGNORE INTO portfolio_requests (id,ref_number,vertical_slug,flow_type,guest_name,guest_phone,payload_json,utm_json,consent_at,client_request_id) VALUES (?,?,?,?,?,?,?,?,?,?)`).run('luma_'+crypto.randomUUID(),ref,'events','event_planning_request',v.guestName,v.guestPhone,JSON.stringify(payload),JSON.stringify(v.utm),new Date().toISOString(),v.clientRequestId);
+    if (inserted.changes===0) {
+      const existing = findExisting();
+      if (existing) return NextResponse.json({success:true,refNumber:existing.ref_number,status:'pending_operator_confirmation',duplicate:true});
+      return failure('SAVE_FAILED',500);
+    }
+    return NextResponse.json({success:true,refNumber:ref,status:'pending_operator_confirmation'}, {status:201});
+  } catch (e) {
+    if (e instanceof SyntaxError) return failure('INVALID_JSON');
+    console.error('Luma Events intake failed', e instanceof Error ? e.name : 'unknown');
+    return failure('SAVE_FAILED',500);
+  }
+}
