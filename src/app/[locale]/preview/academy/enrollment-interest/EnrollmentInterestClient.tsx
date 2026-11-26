@@ -117,35 +117,35 @@ export function EnrollmentInterestClient({ courses, locale }: Props) {
         {/* Receipt Details Card */}
         <div className="p-6 rounded-2xl bg-[#F5F7FF] border border-[#192A48]/10 space-y-4 font-mono text-xs text-[#192A48]">
           <div className="flex items-center justify-between pb-3 border-b border-[#192A48]/10">
-            <span className="text-[#192A48]/60">{isAr ? 'رقم المرجع التجريبي:' : 'Reference Code:'}</span>
+            <span className="text-[#192A48]/80">{isAr ? 'رقم المرجع التجريبي:' : 'Reference Code:'}</span>
             <span className="font-bold text-[#5F67B5]">{receipt.refNumber}</span>
           </div>
 
           <div className="flex items-center justify-between pb-3 border-b border-[#192A48]/10">
-            <span className="text-[#192A48]/60">{isAr ? 'المنهج المختار:' : 'Selected Course:'}</span>
+            <span className="text-[#192A48]/80">{isAr ? 'المنهج المختار:' : 'Selected Course:'}</span>
             <span className="font-bold text-[#192A48]">
               {selectedCourseObj ? selectedCourseObj.title : receipt.courseSlug || receipt.track || 'General Track'}
             </span>
           </div>
 
           <div className="flex items-center justify-between pb-3 border-b border-[#192A48]/10">
-            <span className="text-[#192A48]/60">{isAr ? 'اسم المتعلم:' : 'Applicant Name:'}</span>
+            <span className="text-[#192A48]/80">{isAr ? 'اسم المتعلم:' : 'Applicant Name:'}</span>
             <span className="font-bold text-[#192A48]">{receipt.guestName}</span>
           </div>
 
           <div className="flex items-center justify-between pb-3 border-b border-[#192A48]/10">
-            <span className="text-[#192A48]/60">{isAr ? 'بيانات التواصل:' : 'Contact Detail:'}</span>
+            <span className="text-[#192A48]/80">{isAr ? 'بيانات التواصل:' : 'Contact Detail:'}</span>
             <span>{receipt.guestEmail || receipt.guestPhone}</span>
           </div>
 
           <div className="flex items-center justify-between pb-3 border-b border-[#192A48]/10">
-            <span className="text-[#192A48]/60">{isAr ? 'الهدف المهني:' : 'Career Goal:'}</span>
+            <span className="text-[#192A48]/80">{isAr ? 'الهدف المهني:' : 'Career Goal:'}</span>
             <span className="capitalize">{receipt.careerGoal}</span>
           </div>
 
           <div className="flex items-center justify-between">
-            <span className="text-[#192A48]/60">{isAr ? 'وقت التسجيل:' : 'Timestamp:'}</span>
-            <span className="text-[11px] text-[#192A48]/50">{receipt.submittedAt.slice(0, 19)}</span>
+            <span className="text-[#192A48]/80">{isAr ? 'وقت التسجيل:' : 'Timestamp:'}</span>
+            <span className="text-[11px] text-[#192A48]/80">{receipt.submittedAt.slice(0, 19)}</span>
           </div>
         </div>
 
@@ -232,7 +232,7 @@ export function EnrollmentInterestClient({ courses, locale }: Props) {
               {isAr ? '⚠️ [خيار تجريبي غير صالح - لاختبار التحقق من الخلل]' : '⚠️ [Invalid Choice - Test Edge-Case Rejection]'}
             </option>
           </select>
-          <p className="text-[11px] text-[#192A48]/50">
+          <p className="text-[11px] text-[#192A48]/80">
             {isAr
               ? 'اختر المنهج الذي ترغب في دراسته، أو جرب اختيار الخيار التجريبي لاختبار التحقق من الأخطاء.'
               : 'Choose your desired curriculum or select the invalid option to verify error handling.'}
@@ -339,7 +339,7 @@ export function EnrollmentInterestClient({ courses, locale }: Props) {
 
         {/* Submit Button */}
         <div className="pt-4 border-t border-[#192A48]/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-xs text-[#192A48]/60">
+          <div className="text-xs text-[#192A48]/80">
             {isAr ? '* كافة الحقول المعلمة بالنجمة إلزامية' : '* Required fields are enforced'}
           </div>
 

@@ -156,7 +156,7 @@ export default async function RestaurantLayout(
             </div>
 
             {/* Bottom Bar */}
-            <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 gap-4">
+            <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/75 gap-4">
               <p>
                 © 2026 SAFFRON TABLE. {isAr ? 'تجربة موقع مطعم صممتها' : 'Design by'}{' '}
                 <a href={mavvixSalesUrl} target="_blank" rel="noreferrer" className="text-[#F2B38E] underline underline-offset-2">

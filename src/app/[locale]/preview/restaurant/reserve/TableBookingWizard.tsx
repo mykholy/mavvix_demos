@@ -150,23 +150,23 @@ export function TableBookingWizard({
         {/* Receipt Details Box */}
         <div className="p-6 rounded-2xl bg-[#FAF3E6] border border-[#321F18]/10 space-y-3 text-xs">
           <div className="flex justify-between items-center">
-            <span className="text-[#321F18]/60">{isAr ? 'الرقم المرجعي:' : 'Reference Number:'}</span>
+            <span className="text-[#321F18]/80">{isAr ? 'الرقم المرجعي:' : 'Reference Number:'}</span>
             <span className="font-mono font-bold text-[#984321] text-sm">{receipt.refNumber}</span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-[#321F18]/60">{isAr ? 'الفرع المحدد:' : 'Selected Pavilion:'}</span>
+            <span className="text-[#321F18]/80">{isAr ? 'الفرع المحدد:' : 'Selected Pavilion:'}</span>
             <span className="font-semibold text-[#321F18]">{receipt.branch}</span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-[#321F18]/60">{isAr ? 'تاريخ الحجز:' : 'Date:'}</span>
+            <span className="text-[#321F18]/80">{isAr ? 'تاريخ الحجز:' : 'Date:'}</span>
             <span className="font-semibold text-[#321F18]">{receipt.date}</span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-[#321F18]/60">{isAr ? 'وقت الجلسة:' : 'Time Window:'}</span>
+            <span className="text-[#321F18]/80">{isAr ? 'وقت الجلسة:' : 'Time Window:'}</span>
             <span className="font-semibold text-[#321F18]">{receipt.time}</span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-[#321F18]/60">{isAr ? 'عدد الضيوف:' : 'Party Size:'}</span>
+            <span className="text-[#321F18]/80">{isAr ? 'عدد الضيوف:' : 'Party Size:'}</span>
             <span className="font-semibold text-[#321F18]">{receipt.partySize} {isAr ? 'أفراد' : 'guests'}</span>
           </div>
         </div>
@@ -274,7 +274,7 @@ export function TableBookingWizard({
                     />
                     <div>
                       <h4 className="font-serif text-sm font-bold text-[#321F18]">{b.name}</h4>
-                      <p className="text-xs text-[#321F18]/60 mt-0.5">{b.address}</p>
+                      <p className="text-xs text-[#321F18]/80 mt-0.5">{b.address}</p>
                       <span className="text-[11px] text-[#62622F] block mt-1">{b.seating}</span>
                     </div>
                   </div>

@@ -117,7 +117,7 @@ export default async function AcademyHomePage({
           <SectorPhoto sector="academy" secondary alt="" className="col-span-8 h-52 sm:h-[340px] rounded-[1.5rem]" />
           <SectorPhoto sector="academy" alt="" className="col-span-4 h-52 sm:h-[340px] rounded-[1.5rem]" />
         </div>
-        <figcaption className="text-[11px] mt-3 opacity-60 text-center px-4">
+        <figcaption className="text-[11px] mt-3 opacity-90 text-center px-4">
           {isAr ? 'صور فوتوغرافية مرجعية لاتجاه التصميم، وليست توثيقًا لمشروعات أو منشآت هذه العلامة' : 'Licensed editorial art direction — not documentation of this brand’s real facilities or work'}
         </figcaption>
       </figure>
@@ -156,7 +156,7 @@ export default async function AcademyHomePage({
               </div>
 
               <div className="pt-6 border-t border-[#192A48]/10 mt-6 flex items-center justify-between text-xs font-semibold">
-                <span className="text-[#192A48]/60">
+                <span className="text-[#192A48]/80">
                   {track.coursesCount} {isAr ? 'مناهج دراسية' : 'Curricula'}
                 </span>
                 <Link
@@ -207,7 +207,7 @@ export default async function AcademyHomePage({
                     <span className="px-2.5 py-1 rounded-full bg-[#192A48]/5 font-medium text-[#192A48] capitalize">
                       {course.track}
                     </span>
-                    <span className="text-[#192A48]/50 capitalize">{course.level}</span>
+                    <span className="text-[#192A48]/80 capitalize">{course.level}</span>
                   </div>
 
                   <h3 className="font-serif text-base font-bold text-[#192A48] hover:text-[#B74132] transition-colors">
@@ -218,7 +218,7 @@ export default async function AcademyHomePage({
                     {course.summary}
                   </p>
 
-                  <div className="text-xs text-[#192A48]/60 flex items-center gap-3 pt-1">
+                  <div className="text-xs text-[#192A48]/80 flex items-center gap-3 pt-1">
                     <span>⏱️ ~{hours} {isAr ? 'ساعات' : 'hrs'}</span>
                     <span>•</span>
                     <span>📁 5 {isAr ? 'دروس تفصيلية' : 'lessons'}</span>
@@ -227,7 +227,7 @@ export default async function AcademyHomePage({
 
                 <div className="pt-6 border-t border-[#192A48]/10 mt-6 space-y-3">
                   <div className="flex items-baseline justify-between">
-                    <span className="text-xs text-[#192A48]/50">{isAr ? 'الرسوم التجريبية' : 'Demo Tuition'}</span>
+                    <span className="text-xs text-[#192A48]/80">{isAr ? 'الرسوم التجريبية' : 'Demo Tuition'}</span>
                     <span className="font-bold text-sm text-[#192A48]">{priceEgp} EGP</span>
                   </div>
 
@@ -332,7 +332,7 @@ export default async function AcademyHomePage({
               </div>
 
               <div className="pt-4 border-t border-[#192A48]/10 flex items-center justify-between text-xs">
-                <span className="text-[#192A48]/50">
+                <span className="text-[#192A48]/80">
                   {ins.experienceYears} {isAr ? 'سنوات خبرة' : 'yrs experience'}
                 </span>
                 <Link
@@ -385,7 +385,7 @@ export default async function AcademyHomePage({
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[#192A48]/10 flex items-center justify-between text-xs text-[#192A48]/50">
+              <div className="pt-4 border-t border-[#192A48]/10 flex items-center justify-between text-xs text-[#192A48]/80">
                 <span>{article.published_at.slice(0, 10)}</span>
                 <Link
                   href={`/${locale}/preview/academy/resources/${article.slug}`}

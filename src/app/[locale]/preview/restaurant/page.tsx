@@ -162,7 +162,7 @@ export default async function RestaurantHomePage(
           <SectorPhoto sector="restaurant" secondary alt="" className="col-span-8 h-52 sm:h-[340px] rounded-[1.5rem]" />
           <SectorPhoto sector="restaurant" alt="" className="col-span-4 h-52 sm:h-[340px] rounded-[1.5rem]" />
         </div>
-        <figcaption className="text-[11px] mt-3 opacity-60 text-center px-4">
+        <figcaption className="text-[11px] mt-3 opacity-90 text-center px-4">
           {isAr ? 'صور فوتوغرافية مرجعية لاتجاه التصميم، وليست توثيقًا لمشروعات أو منشآت هذه العلامة' : 'Licensed editorial art direction — not documentation of this brand’s real facilities or work'}
         </figcaption>
       </figure>
@@ -256,7 +256,7 @@ export default async function RestaurantHomePage(
 
                 <div className="pt-4 border-t border-[#321F18]/10 flex items-center justify-between">
                   <div>
-                    <span className="text-xs text-[#321F18]/60 block">{isAr ? 'السعر' : 'Price'}</span>
+                    <span className="text-xs text-[#321F18]/80 block">{isAr ? 'السعر' : 'Price'}</span>
                     <span className="font-serif text-lg font-bold text-[#321F18]">
                       {(dish.price_cents / 100).toFixed(0)} <span className="text-xs font-normal">{isAr ? 'ج.م' : 'EGP'}</span>
                     </span>
@@ -280,19 +280,19 @@ export default async function RestaurantHomePage(
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-xs uppercase tracking-widest text-[#984321] font-bold">
+              <span className="text-xs uppercase tracking-widest text-[#F2B38E] font-bold">
                 {isAr ? 'أصول الحرفة' : 'Our Culinary Roots'}
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl font-bold leading-tight">
                 {isAr ? (
                   <>
                     لا نؤمن بالوجبات السريعة، <br />
-                    <span className="text-[#984321] italic font-normal">بل بالطعام الذي يُصنع بالصبر والمحبة</span>
+                    <span className="text-[#F2B38E] italic font-normal">بل بالطعام الذي يُصنع بالصبر والمحبة</span>
                   </>
                 ) : (
                   <>
                     We do not believe in haste, <br />
-                    <span className="text-[#984321] italic font-normal">but in meals shaped by patience and fire.</span>
+                    <span className="text-[#F2B38E] italic font-normal">but in meals shaped by patience and fire.</span>
                   </>
                 )}
               </h2>
@@ -304,7 +304,7 @@ export default async function RestaurantHomePage(
               <div>
                 <Link
                   href={`/${locale}/preview/restaurant/story`}
-                  className="inline-flex items-center gap-2 text-xs font-semibold text-[#984321] hover:underline"
+                  className="inline-flex items-center gap-2 text-xs font-semibold text-[#F2B38E] hover:underline"
                 >
                   <span>{isAr ? 'اقرأ قصة التوابل ومصادر المكونات' : 'Read our full sourcing & spice manifesto'}</span>
                   <span>→</span>
@@ -314,7 +314,7 @@ export default async function RestaurantHomePage(
 
             <div className="lg:col-span-6 grid grid-cols-2 gap-4">
               <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-2">
-                <span className="font-serif text-3xl font-bold text-[#984321]">100%</span>
+                <span className="font-serif text-3xl font-bold text-[#F2B38E]">100%</span>
                 <h4 className="text-sm font-semibold text-white">
                   {isAr ? 'زعفران نقي موثق' : 'Pure Mountain Saffron'}
                 </h4>
@@ -324,7 +324,7 @@ export default async function RestaurantHomePage(
               </div>
 
               <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-2">
-                <span className="font-serif text-3xl font-bold text-[#984321]">3</span>
+                <span className="font-serif text-3xl font-bold text-[#F2B38E]">3</span>
                 <h4 className="text-sm font-semibold text-white">
                   {isAr ? 'فروع ذات طابع تراثي' : 'Heritage Pavilions'}
                 </h4>
@@ -334,7 +334,7 @@ export default async function RestaurantHomePage(
               </div>
 
               <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-2">
-                <span className="font-serif text-3xl font-bold text-[#984321]">25</span>
+                <span className="font-serif text-3xl font-bold text-[#F2B38E]">25</span>
                 <h4 className="text-sm font-semibold text-white">
                   {isAr ? 'دقيقة تحضير متأنية' : 'Minutes Slow Prep'}
                 </h4>
@@ -344,7 +344,7 @@ export default async function RestaurantHomePage(
               </div>
 
               <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-2">
-                <span className="font-serif text-3xl font-bold text-[#984321]">0</span>
+                <span className="font-serif text-3xl font-bold text-[#F2B38E]">0</span>
                 <h4 className="text-sm font-semibold text-white">
                   {isAr ? 'زيوت مهدرجة صناعية' : 'Hydrogenated Fats'}
                 </h4>

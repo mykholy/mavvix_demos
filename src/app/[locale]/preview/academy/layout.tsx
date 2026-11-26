@@ -147,7 +147,7 @@ export default async function AcademyLayout({
                 : 'Education platform experience by Mavvix. Curricula, instructors and certificates require approval from the real training operator before an accredited offering. No tuition fees are collected here.'}
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-white/40">© 2026 Mavvix Studio</span>
+              <span className="text-white/70">© 2026 Mavvix Studio</span>
               <span className="w-1.5 h-1.5 rounded-full bg-white/20" />
               <Link href={`/${locale}/showcase`} className="text-[#FFB4A5] hover:underline">
                 Mavvix Showcase

@@ -150,7 +150,7 @@ export default async function IndustrialHomePage(props: Props) {
           <SectorPhoto sector="industrial" secondary alt="" className="col-span-8 h-52 sm:h-[340px] rounded-[1.5rem]" />
           <SectorPhoto sector="industrial" alt="" className="col-span-4 h-52 sm:h-[340px] rounded-[1.5rem]" />
         </div>
-        <figcaption className="text-[11px] mt-3 opacity-60 text-center px-4">
+        <figcaption className="text-[11px] mt-3 opacity-90 text-center px-4">
           {isAr ? 'صور فوتوغرافية مرجعية لاتجاه التصميم، وليست توثيقًا لمشروعات أو منشآت هذه العلامة' : 'Licensed editorial art direction — not documentation of this brand’s real facilities or work'}
         </figcaption>
       </figure>
