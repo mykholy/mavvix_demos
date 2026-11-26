@@ -264,7 +264,7 @@ export default function ProjectBriefIntakeWizard({
                 >
                   <div className="space-y-1">
                     <span className="font-serif text-sm font-bold block">{svc.name}</span>
-                    <span className="text-[11px] font-mono block text-[#57544C]">{svc.timeline}</span>
+                    <span className={`text-[11px] font-mono block ${selectedServiceSlug === svc.slug ? 'text-[#E8F3B0]' : 'text-[#57544C]'}`}>{svc.timeline}</span>
                   </div>
                 </button>
               ))}

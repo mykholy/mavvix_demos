@@ -59,7 +59,7 @@ export default async function ConstructionLayout(props: Props) {
               <span className="text-base font-extrabold tracking-widest uppercase block text-white group-hover:text-amber-400 transition-colors">
                 ATLAS STRUCTURES
               </span>
-              <span className="text-[11px] font-medium text-stone-600 block tracking-wider">
+              <span className="text-[11px] font-medium text-stone-300 block tracking-wider">
                 {isAr ? 'أطلس للبناء والتطوير الهندسي' : 'General Contracting & Fit-Out'}
               </span>
             </div>

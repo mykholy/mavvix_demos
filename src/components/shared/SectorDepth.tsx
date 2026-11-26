@@ -164,7 +164,7 @@ const theme:Record<SectorName,{ink:string;paper:string;accent:string;muted:strin
  ecommerce:{ink:'#1A1715',paper:'#F8F0E8',accent:'#8A503E',muted:'#766359'},
  portfolio:{ink:'#0F0F10',paper:'#F4F3EE',accent:'#5D6E4A',muted:'#64635D'},
  restaurant:{ink:'#321F18',paper:'#F8EEE0',accent:'#984321',muted:'#795D4D'},
- academy:{ink:'#192A48',paper:'#F1F4FC',accent:'#B74132',muted:'#65728D'}
+ academy:{ink:'#192A48',paper:'#F1F4FC',accent:'#B74132',muted:'#536078'}
 };
 export function SectorDepth({sector,locale}:{sector:SectorName;locale:'ar'|'en'}){
  const d=DATA[sector],t=theme[sector],ar=locale==='ar';

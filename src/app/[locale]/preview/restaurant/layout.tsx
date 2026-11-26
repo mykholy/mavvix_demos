@@ -50,7 +50,7 @@ export default async function RestaurantLayout(
                     <h3 className="font-serif text-lg font-bold">
                       {isAr ? 'سُفرة زعفران' : 'SAFFRON TABLE'}
                     </h3>
-                    <p className="text-[11px] text-[#62622F] uppercase tracking-wider font-medium">
+                    <p className="text-[11px] text-[#D9D5A2] uppercase tracking-wider font-medium">
                       {isAr ? 'مطبخ وتراث شرقي' : 'Heritage Culinary Experience'}
                     </p>
                   </div>

@@ -328,7 +328,7 @@ export default async function IndustrialHomePage(props: Props) {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="ferroline-rfq-heading">
         <div className="grid lg:grid-cols-12 gap-8 border border-[#DADFE4] rounded-3xl bg-[#F0F3F5] p-7 sm:p-12">
           <div className="lg:col-span-5">
-            <span className="font-mono text-xs uppercase tracking-widest text-[#A77E30]">{isAr ? 'دورة طلب التوريد' : 'B2B PROCUREMENT WORKFLOW'}</span>
+            <span className="font-mono text-xs uppercase tracking-widest text-[#805B17]">{isAr ? 'دورة طلب التوريد' : 'B2B PROCUREMENT WORKFLOW'}</span>
             <h2 id="ferroline-rfq-heading" className="font-bold text-2xl sm:text-4xl text-[#12243C] mt-3">{isAr ? 'من كود المنتج إلى طلب عرض سعر واضح' : 'A more precise RFQ starts with the specifications.'}</h2>
             <p className="text-sm leading-7 text-[#526474] mt-4">{isAr ? 'جهّز قائمة متعددة البنود مع الكميات ومعايير التعبئة المطلوبة قبل إرسال استفسار التوريد.' : 'Create a multi-item request, review minimum quantities and pack sizes, then provide shipping requirements for an accurate procurement discussion.'}</p>
             <Link href={`/${locale}/preview/industrial/rfq`} className="inline-flex items-center gap-3 bg-[#12243C] hover:bg-[#1C3553] text-white rounded-xl font-bold px-6 py-3 text-sm mt-6 transition-colors">{isAr ? 'افتح سلة طلب التسعير' : 'Start a quotation request'} <Arrow className="w-4 h-4" /></Link>

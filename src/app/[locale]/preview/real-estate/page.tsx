@@ -241,7 +241,7 @@ export default async function RealEstateHomePage(props: Props) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-9">
           <div className="flex flex-wrap items-end justify-between gap-5">
             <div className="max-w-2xl">
-              <span className="font-mono text-[11px] tracking-[.25em] uppercase text-[#966D4C]">{isAr ? 'تصوّر متكامل للمكان' : 'THE COMMUNITY COLLECTION'}</span>
+              <span className="font-mono text-[11px] tracking-[.25em] uppercase text-[#71492F]">{isAr ? 'تصوّر متكامل للمكان' : 'THE COMMUNITY COLLECTION'}</span>
               <h2 id="meridian-communities-heading" className="mt-3 font-serif text-3xl sm:text-4xl font-bold text-[#25312D]">{isAr ? 'المكان أكثر من مجرد مساحة' : 'Thoughtful places to call home'}</h2>
               <p className="text-sm mt-3 text-[#4F6056] leading-7">{isAr ? 'ابدأ بالمجتمع السكني، ثم تعرّف على المخططات والأسعار والتفاصيل التي تهم قرارك.' : 'Explore each neighborhood idea, its planning approach, residence layouts and available home types before making a decision.'}</p>
             </div>
@@ -251,11 +251,11 @@ export default async function RealEstateHomePage(props: Props) {
             {developments.map((development, index) => (
               <article key={development.id} className="group bg-[#FAF9F5] rounded-[1.6rem] border border-white/60 shadow-sm p-6 sm:p-7 flex flex-col justify-between min-h-[250px] hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                 <div>
-                  <div className="flex justify-between items-center font-mono text-xs text-[#8D795F] mb-6"><span>{String(index + 1).padStart(2,'0')} / {String(developments.length).padStart(2,'0')}</span><span>{development.city}</span></div>
+                  <div className="flex justify-between items-center font-mono text-xs text-[#645039] mb-6"><span>{String(index + 1).padStart(2,'0')} / {String(developments.length).padStart(2,'0')}</span><span>{development.city}</span></div>
                   <h3 className="font-serif text-2xl text-[#25312D] font-bold mb-3">{development.title}</h3>
                   <p className="text-sm text-[#637068] leading-6 line-clamp-4">{development.summary}</p>
                 </div>
-                <Link href={`/${locale}/preview/real-estate/developments/${development.slug}`} className="mt-6 pt-4 border-t border-[#DED6C9] inline-flex items-center justify-between font-bold text-sm text-[#936B4C]">
+                <Link href={`/${locale}/preview/real-estate/developments/${development.slug}`} className="mt-6 pt-4 border-t border-[#DED6C9] inline-flex items-center justify-between font-bold text-sm text-[#71492F]">
                   {isAr ? 'استعراض تفاصيل المشروع' : 'Explore the development'} <Arrow className="w-4 h-4 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" />
                 </Link>
               </article>
@@ -343,7 +343,7 @@ export default async function RealEstateHomePage(props: Props) {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="meridian-faq-heading">
         <div className="grid lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-4 space-y-4">
-            <span className="text-[#966D4C] font-mono text-xs tracking-widest">{isAr ? 'قبل اتخاذ القرار' : 'BEFORE YOU DECIDE'}</span>
+            <span className="text-[#71492F] font-mono text-xs tracking-widest">{isAr ? 'قبل اتخاذ القرار' : 'BEFORE YOU DECIDE'}</span>
             <h2 id="meridian-faq-heading" className="font-serif text-3xl font-bold text-[#25312D]">{isAr ? 'إجابات توضح الصورة كاملة' : 'Answers for a more confident choice'}</h2>
             <Link href={`/${locale}/preview/real-estate/contact`} className="inline-flex items-center gap-2 text-sm font-bold text-[#805333] hover:underline">{isAr ? 'أرسل استفسارك' : 'Ask a question'} <Arrow className="w-4 h-4" /></Link>
           </div>
