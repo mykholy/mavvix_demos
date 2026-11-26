@@ -89,6 +89,8 @@ export function ContactDock({
   const contactLink = ar ? MAVVIX_CONTACT.contactAr : MAVVIX_CONTACT.contactEn;
 
   function track(event: 'whatsapp_click' | 'phone_click' | 'contact_click') {
+    // Never forward health-sector browsing or callback context to ad/analytics hooks.
+    if (sector === 'skin-clinic' || sector === 'diagnostics-lab') return;
     try {
       const w = window as Window & {
         dataLayer?: Array<Record<string, unknown>>;

@@ -8,3 +8,9 @@ test('Elyra original consultation dossiers and strictly limited callback',()=>{
  const api=fs.readFileSync('src/server/portfolio/skin-clinic.ts','utf8');assert.match(api,/\.strict\(\)/);assert.match(api,/consent:z.literal\(true\)/);assert.match(api,/pending_operator_confirmation/);assert.match(api,/Cache-Control/);
  const form=fs.readFileSync('src/app/[locale]/preview/skin-clinic/contact/CallbackForm.tsx','utf8');assert.doesNotMatch(form,/URLSearchParams|type="file"|<textarea/);assert.match(form,/referrerPolicy:'no-referrer'/);
 });
+
+test('health-sector contact dock never forwards sector context to advertising hooks',()=>{
+ const dock=fs.readFileSync('src/components/shared/ContactDock.tsx','utf8');
+ const guard=dock.indexOf("if (sector === 'skin-clinic' || sector === 'diagnostics-lab') return;");
+ assert.ok(guard>=0&&guard<dock.indexOf('w.dataLayer?.push')&&guard<dock.indexOf("w.fbq?.('track'"));
+});
