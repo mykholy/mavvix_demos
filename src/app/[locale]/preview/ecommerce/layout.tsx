@@ -120,7 +120,7 @@ export default async function EcommerceLayout(
                 <Link href={`/${locale}/preview/ecommerce/help`} className="hover:text-white transition-colors">
                   {isAr ? 'شروط العرض التوضيحي' : 'Site Information & Policies'}
                 </Link>
-                <Link href={`/${locale}/showcase`} className="text-[#C89B8C] hover:underline">
+                <Link href={`/${locale}/showcase`} className="text-[#E2BEB0] underline">
                   {isAr ? 'معرض نماذج مافيكس' : 'Mavvix Showcase'}
                 </Link>
               </div>

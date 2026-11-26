@@ -48,8 +48,8 @@ export default async function RestaurantHomePage(
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6 text-start">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#BA5C34]/10 border border-[#BA5C34]/20 text-[#BA5C34] text-xs font-semibold">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#BA5C34]" />
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#984321]/10 border border-[#BA5C34]/20 text-[#984321] text-xs font-semibold">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#984321]" />
                 <span>{isAr ? 'زعفران بلدي نقي • فخار حراري • خبز حجري' : '100% Mountain Saffron • Hearth Bread • Clay Tagines'}</span>
               </div>
 
@@ -57,12 +57,12 @@ export default async function RestaurantHomePage(
                 {isAr ? (
                   <>
                     كرم الضيافة وسحر النكهة <br />
-                    <span className="text-[#BA5C34] italic font-normal">على أصول التراث الشرقي</span>
+                    <span className="text-[#984321] italic font-normal">على أصول التراث الشرقي</span>
                   </>
                 ) : (
                   <>
                     Warm Eastern Gastronomy, <br />
-                    <span className="text-[#BA5C34] italic font-normal">Steeped in Timeless Spice.</span>
+                    <span className="text-[#984321] italic font-normal">Steeped in Timeless Spice.</span>
                   </>
                 )}
               </h1>
@@ -77,7 +77,7 @@ export default async function RestaurantHomePage(
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <Link
                   href={`/${locale}/preview/restaurant/menu`}
-                  className="px-6 py-3.5 rounded-xl bg-[#BA5C34] text-white hover:bg-[#9E4A28] transition-all text-sm font-semibold shadow-md shadow-[#BA5C34]/20 flex items-center gap-2"
+                  className="px-6 py-3.5 rounded-xl bg-[#984321] text-white hover:bg-[#9E4A28] transition-all text-sm font-semibold shadow-md shadow-[#BA5C34]/20 flex items-center gap-2"
                 >
                   <span>{isAr ? 'استكشف قائمة الطعام والطلب' : 'Explore Menu & Demo Order'}</span>
                   <span className="text-lg">→</span>
@@ -87,7 +87,7 @@ export default async function RestaurantHomePage(
                   href={`/${locale}/preview/restaurant/reserve`}
                   className="px-6 py-3.5 rounded-xl bg-[#321F18] text-[#FAF3E6] hover:bg-[#452B21] transition-all text-sm font-semibold flex items-center gap-2"
                 >
-                  <svg className="w-4 h-4 text-[#BA5C34]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-[#984321]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                   <span>{isAr ? 'طلب حجز طاولة' : 'Request Table Reservation'}</span>
@@ -95,7 +95,7 @@ export default async function RestaurantHomePage(
               </div>
 
               {/* Discrete Notice */}
-              <p className="text-xs text-[#8B8B52] font-medium pt-2">
+              <p className="text-xs text-[#62622F] font-medium pt-2">
                 {isAr
                   ? '✦ نموذج رقمي استعراضي من مافيكس — يمكنك تجربة اختيار المكونات وتخصيص الأطباق وحجز الطاولات تجريبيًا.'
                   : '✦ Interactive Mavvix demonstration — customize portion sizes, test allergen filters, and preview table requests.'}
@@ -106,12 +106,12 @@ export default async function RestaurantHomePage(
             <div className="lg:col-span-5">
               <div className="relative rounded-2xl bg-gradient-to-br from-[#321F18] to-[#1C120E] text-[#FAF3E6] p-8 shadow-2xl border border-[#321F18]/20 overflow-hidden">
                 {/* Decorative Pattern Background */}
-                <div className="absolute top-0 right-0 w-48 h-48 bg-[#BA5C34]/15 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute top-0 right-0 w-48 h-48 bg-[#984321]/15 rounded-full blur-3xl pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#8B8B52]/15 rounded-full blur-3xl pointer-events-none" />
 
                 <div className="relative space-y-6">
                   <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                    <span className="text-xs uppercase tracking-widest text-[#BA5C34] font-bold">
+                    <span className="text-xs uppercase tracking-widest text-[#F2B38E] font-bold">
                       {isAr ? 'ساعات اليوم' : 'Today’s Table Service'}
                     </span>
                     <span className="text-xs px-2.5 py-0.5 rounded-full bg-emerald-950/60 text-emerald-400 border border-emerald-500/30 font-medium">
@@ -124,19 +124,19 @@ export default async function RestaurantHomePage(
                       <span className="text-sm font-medium text-white/90">
                         {isAr ? 'فرع جاردن سيتي (الزمالك)' : 'Garden Pavilion (Zamalek)'}
                       </span>
-                      <span className="text-xs text-[#8B8B52]">11:00 AM - 11:00 PM</span>
+                      <span className="text-xs text-[#D9D5A2]">11:00 AM - 11:00 PM</span>
                     </div>
                     <div className="flex justify-between items-baseline">
                       <span className="text-sm font-medium text-white/90">
                         {isAr ? 'فرع تراس الكورنيش (المعادي)' : 'Corniche Terrace (Maadi)'}
                       </span>
-                      <span className="text-xs text-[#8B8B52]">12:00 PM - 12:00 AM</span>
+                      <span className="text-xs text-[#D9D5A2]">12:00 PM - 12:00 AM</span>
                     </div>
                     <div className="flex justify-between items-baseline">
                       <span className="text-sm font-medium text-white/90">
                         {isAr ? 'فرع وسط البلد (طلعت حرب)' : 'Historic Downtown (Talaat)'}
                       </span>
-                      <span className="text-xs text-[#8B8B52]">11:00 AM - 11:00 PM</span>
+                      <span className="text-xs text-[#D9D5A2]">11:00 AM - 11:00 PM</span>
                     </div>
                   </div>
 
@@ -146,7 +146,7 @@ export default async function RestaurantHomePage(
                     </span>
                     <Link
                       href={`/${locale}/preview/restaurant/locations`}
-                      className="text-[#BA5C34] hover:underline font-semibold"
+                      className="text-[#F2B38E] hover:underline font-semibold"
                     >
                       {isAr ? 'تفاصيل الفروع ←' : 'View Branches →'}
                     </Link>
@@ -181,7 +181,7 @@ export default async function RestaurantHomePage(
           </div>
           <Link
             href={`/${locale}/preview/restaurant/menu`}
-            className="text-xs font-semibold text-[#BA5C34] hover:underline"
+            className="text-xs font-semibold text-[#984321] hover:underline"
           >
             {isAr ? 'عرض القائمة الكاملة والفلاتر ←' : 'View Full Interactive Menu →'}
           </Link>
@@ -195,10 +195,10 @@ export default async function RestaurantHomePage(
               className="p-5 rounded-xl bg-white border border-[#321F18]/10 hover:border-[#BA5C34] hover:shadow-md transition-all group text-center"
             >
               <span className="text-3xl block mb-2">{cat.icon}</span>
-              <h3 className="font-serif text-base font-bold text-[#321F18] group-hover:text-[#BA5C34] transition-colors">
+              <h3 className="font-serif text-base font-bold text-[#321F18] group-hover:text-[#984321] transition-colors">
                 {cat.name}
               </h3>
-              <span className="text-xs text-[#8B8B52] mt-1 inline-block">
+              <span className="text-xs text-[#62622F] mt-1 inline-block">
                 {cat.count} {isAr ? 'أطباق' : 'dishes'}
               </span>
             </Link>
@@ -210,7 +210,7 @@ export default async function RestaurantHomePage(
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-baseline justify-between gap-4 mb-8">
           <div>
-            <span className="text-xs uppercase tracking-widest text-[#BA5C34] font-bold">
+            <span className="text-xs uppercase tracking-widest text-[#984321] font-bold">
               {isAr ? 'مختارات الموسم' : 'Chef’s Seasonal Selection'}
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#321F18] mt-1">
@@ -219,7 +219,7 @@ export default async function RestaurantHomePage(
           </div>
           <Link
             href={`/${locale}/preview/restaurant/menu`}
-            className="text-xs font-semibold text-[#BA5C34] hover:underline"
+            className="text-xs font-semibold text-[#984321] hover:underline"
           >
             {isAr ? 'استكشف كافة الأطباق ←' : 'Browse All 30 Dishes →'}
           </Link>
@@ -232,11 +232,11 @@ export default async function RestaurantHomePage(
               className="rounded-2xl bg-white border border-[#321F18]/10 overflow-hidden flex flex-col justify-between hover:shadow-lg transition-all group"
             >
               {/* Dish Header Color Ribbon */}
-              <div className="h-3 bg-[#BA5C34]/80 group-hover:bg-[#BA5C34] transition-colors" />
+              <div className="h-3 bg-[#984321]/80 group-hover:bg-[#984321] transition-colors" />
 
               <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div>
-                  <div className="flex items-center justify-between text-xs text-[#8B8B52] mb-2">
+                  <div className="flex items-center justify-between text-xs text-[#62622F] mb-2">
                     <span className="uppercase font-semibold tracking-wider">{dish.category}</span>
                     {dish.attributes?.dietary_tags?.includes('vegetarian') && (
                       <span className="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-bold">
@@ -245,7 +245,7 @@ export default async function RestaurantHomePage(
                     )}
                   </div>
 
-                  <h3 className="font-serif text-lg font-bold text-[#321F18] group-hover:text-[#BA5C34] transition-colors">
+                  <h3 className="font-serif text-lg font-bold text-[#321F18] group-hover:text-[#984321] transition-colors">
                     {dish.title}
                   </h3>
 
@@ -264,7 +264,7 @@ export default async function RestaurantHomePage(
 
                   <Link
                     href={`/${locale}/preview/restaurant/menu/${dish.slug}`}
-                    className="px-3.5 py-2 rounded-lg bg-[#FAF3E6] border border-[#321F18]/15 text-[#321F18] hover:bg-[#BA5C34] hover:text-white hover:border-[#BA5C34] transition-all text-xs font-semibold"
+                    className="px-3.5 py-2 rounded-lg bg-[#FAF3E6] border border-[#321F18]/15 text-[#321F18] hover:bg-[#984321] hover:text-white hover:border-[#BA5C34] transition-all text-xs font-semibold"
                   >
                     {isAr ? 'تخصيص وطلب' : 'Customize'}
                   </Link>
@@ -280,19 +280,19 @@ export default async function RestaurantHomePage(
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-xs uppercase tracking-widest text-[#BA5C34] font-bold">
+              <span className="text-xs uppercase tracking-widest text-[#984321] font-bold">
                 {isAr ? 'أصول الحرفة' : 'Our Culinary Roots'}
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl font-bold leading-tight">
                 {isAr ? (
                   <>
                     لا نؤمن بالوجبات السريعة، <br />
-                    <span className="text-[#BA5C34] italic font-normal">بل بالطعام الذي يُصنع بالصبر والمحبة</span>
+                    <span className="text-[#984321] italic font-normal">بل بالطعام الذي يُصنع بالصبر والمحبة</span>
                   </>
                 ) : (
                   <>
                     We do not believe in haste, <br />
-                    <span className="text-[#BA5C34] italic font-normal">but in meals shaped by patience and fire.</span>
+                    <span className="text-[#984321] italic font-normal">but in meals shaped by patience and fire.</span>
                   </>
                 )}
               </h2>
@@ -304,7 +304,7 @@ export default async function RestaurantHomePage(
               <div>
                 <Link
                   href={`/${locale}/preview/restaurant/story`}
-                  className="inline-flex items-center gap-2 text-xs font-semibold text-[#BA5C34] hover:underline"
+                  className="inline-flex items-center gap-2 text-xs font-semibold text-[#984321] hover:underline"
                 >
                   <span>{isAr ? 'اقرأ قصة التوابل ومصادر المكونات' : 'Read our full sourcing & spice manifesto'}</span>
                   <span>→</span>
@@ -314,7 +314,7 @@ export default async function RestaurantHomePage(
 
             <div className="lg:col-span-6 grid grid-cols-2 gap-4">
               <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-2">
-                <span className="font-serif text-3xl font-bold text-[#BA5C34]">100%</span>
+                <span className="font-serif text-3xl font-bold text-[#984321]">100%</span>
                 <h4 className="text-sm font-semibold text-white">
                   {isAr ? 'زعفران نقي موثق' : 'Pure Mountain Saffron'}
                 </h4>
@@ -324,7 +324,7 @@ export default async function RestaurantHomePage(
               </div>
 
               <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-2">
-                <span className="font-serif text-3xl font-bold text-[#BA5C34]">3</span>
+                <span className="font-serif text-3xl font-bold text-[#984321]">3</span>
                 <h4 className="text-sm font-semibold text-white">
                   {isAr ? 'فروع ذات طابع تراثي' : 'Heritage Pavilions'}
                 </h4>
@@ -334,7 +334,7 @@ export default async function RestaurantHomePage(
               </div>
 
               <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-2">
-                <span className="font-serif text-3xl font-bold text-[#BA5C34]">25</span>
+                <span className="font-serif text-3xl font-bold text-[#984321]">25</span>
                 <h4 className="text-sm font-semibold text-white">
                   {isAr ? 'دقيقة تحضير متأنية' : 'Minutes Slow Prep'}
                 </h4>
@@ -344,7 +344,7 @@ export default async function RestaurantHomePage(
               </div>
 
               <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-2">
-                <span className="font-serif text-3xl font-bold text-[#BA5C34]">0</span>
+                <span className="font-serif text-3xl font-bold text-[#984321]">0</span>
                 <h4 className="text-sm font-semibold text-white">
                   {isAr ? 'زيوت مهدرجة صناعية' : 'Hydrogenated Fats'}
                 </h4>
@@ -361,7 +361,7 @@ export default async function RestaurantHomePage(
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-baseline justify-between gap-4 mb-8">
           <div>
-            <span className="text-xs uppercase tracking-widest text-[#BA5C34] font-bold">
+            <span className="text-xs uppercase tracking-widest text-[#984321] font-bold">
               {isAr ? 'أماكن اللقاء' : 'Dining Pavilions'}
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#321F18] mt-1">
@@ -370,7 +370,7 @@ export default async function RestaurantHomePage(
           </div>
           <Link
             href={`/${locale}/preview/restaurant/reserve`}
-            className="text-xs font-semibold text-[#BA5C34] hover:underline"
+            className="text-xs font-semibold text-[#984321] hover:underline"
           >
             {isAr ? 'طلب حجز طاولة مباشرة ←' : 'Request Table Reservation Directly →'}
           </Link>
@@ -384,8 +384,8 @@ export default async function RestaurantHomePage(
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-[#BA5C34] uppercase tracking-wider">{branch.district}</span>
-                  <span className="text-xs text-[#8B8B52] font-medium">{branch.capacityTables} {isAr ? 'طاولة' : 'tables'}</span>
+                  <span className="text-xs font-bold text-[#984321] uppercase tracking-wider">{branch.district}</span>
+                  <span className="text-xs text-[#62622F] font-medium">{branch.capacityTables} {isAr ? 'طاولة' : 'tables'}</span>
                 </div>
 
                 <h3 className="font-serif text-xl font-bold text-[#321F18]">
@@ -398,7 +398,7 @@ export default async function RestaurantHomePage(
 
                 <div className="p-3 rounded-lg bg-[#FAF3E6] border border-[#321F18]/10 text-xs space-y-1">
                   <span className="font-semibold block text-[#321F18]">{branch.hours}</span>
-                  <span className="text-[11px] text-[#8B8B52] block">{branch.fridayNote}</span>
+                  <span className="text-[11px] text-[#62622F] block">{branch.fridayNote}</span>
                 </div>
 
                 <p className="text-xs text-[#321F18]/80 italic">
@@ -409,14 +409,14 @@ export default async function RestaurantHomePage(
               <div className="pt-4 border-t border-[#321F18]/10 flex items-center justify-between">
                 <Link
                   href={`/${locale}/preview/restaurant/locations/${branch.slug}`}
-                  className="text-xs text-[#321F18] hover:text-[#BA5C34] font-medium"
+                  className="text-xs text-[#321F18] hover:text-[#984321] font-medium"
                 >
                   {isAr ? 'تفاصيل الفرع' : 'Branch Details'}
                 </Link>
 
                 <Link
                   href={`/${locale}/preview/restaurant/reserve?branch=${branch.id}`}
-                  className="px-3 py-1.5 rounded-lg bg-[#321F18] text-[#FAF3E6] hover:bg-[#BA5C34] transition-all text-xs font-semibold"
+                  className="px-3 py-1.5 rounded-lg bg-[#321F18] text-[#FAF3E6] hover:bg-[#984321] transition-all text-xs font-semibold"
                 >
                   {isAr ? 'حجز طاولة' : 'Reserve Table'}
                 </Link>
@@ -430,7 +430,7 @@ export default async function RestaurantHomePage(
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-baseline justify-between gap-4 mb-8">
           <div>
-            <span className="text-xs uppercase tracking-widest text-[#BA5C34] font-bold">
+            <span className="text-xs uppercase tracking-widest text-[#984321] font-bold">
               {isAr ? 'يوميات المطبخ' : 'Culinary Essays'}
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#321F18] mt-1">
@@ -439,7 +439,7 @@ export default async function RestaurantHomePage(
           </div>
           <Link
             href={`/${locale}/preview/restaurant/journal`}
-            className="text-xs font-semibold text-[#BA5C34] hover:underline"
+            className="text-xs font-semibold text-[#984321] hover:underline"
           >
             {isAr ? 'تصفح كافة المقالات ←' : 'Browse All Articles →'}
           </Link>
@@ -453,10 +453,10 @@ export default async function RestaurantHomePage(
               className="p-6 rounded-2xl bg-white border border-[#321F18]/10 hover:border-[#BA5C34] hover:shadow-md transition-all group flex flex-col justify-between"
             >
               <div className="space-y-3">
-                <span className="text-[11px] uppercase tracking-wider font-semibold text-[#8B8B52]">
+                <span className="text-[11px] uppercase tracking-wider font-semibold text-[#62622F]">
                   {art.category}
                 </span>
-                <h3 className="font-serif text-lg font-bold text-[#321F18] group-hover:text-[#BA5C34] transition-colors leading-snug">
+                <h3 className="font-serif text-lg font-bold text-[#321F18] group-hover:text-[#984321] transition-colors leading-snug">
                   {art.title}
                 </h3>
                 <p className="text-xs text-[#321F18]/70 line-clamp-3 leading-relaxed">
@@ -464,7 +464,7 @@ export default async function RestaurantHomePage(
                 </p>
               </div>
 
-              <div className="pt-4 mt-6 border-t border-[#321F18]/10 flex items-center justify-between text-xs text-[#BA5C34] font-semibold">
+              <div className="pt-4 mt-6 border-t border-[#321F18]/10 flex items-center justify-between text-xs text-[#984321] font-semibold">
                 <span>{isAr ? 'قراءة المقال' : 'Read Article'}</span>
                 <span>→</span>
               </div>

@@ -17,7 +17,7 @@ export default async function RestaurantReservePage(
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
       <div className="border-b border-[#321F18]/10 pb-8 space-y-3 text-start">
-        <span className="text-xs uppercase tracking-widest text-[#BA5C34] font-bold">
+        <span className="text-xs uppercase tracking-widest text-[#984321] font-bold">
           {isAr ? 'حجز طاولة تجريبي' : 'Simulated Dining Reservation'}
         </span>
         <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#321F18]">

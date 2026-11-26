@@ -295,6 +295,7 @@ export function ViewingRequestWizard({ allUnits, locale, initialUnitSlug }: Prop
           <input
             type="text"
             required
+            aria-label={isAr ? 'الاسم الكامل' : 'Full name'}
             value={clientName}
             onChange={(e) => setClientName(e.target.value)}
             className="w-full p-2.5 bg-[#F5F0E6] border border-stone-300 rounded-lg text-xs font-bold text-[#25312D]"
@@ -306,6 +307,7 @@ export function ViewingRequestWizard({ allUnits, locale, initialUnitSlug }: Prop
           <input
             type="email"
             required
+            aria-label={isAr ? 'البريد الإلكتروني' : 'Email address'}
             value={clientEmail}
             onChange={(e) => setClientEmail(e.target.value)}
             className="w-full p-2.5 bg-[#F5F0E6] border border-stone-300 rounded-lg text-xs font-bold text-[#25312D]"
@@ -317,6 +319,7 @@ export function ViewingRequestWizard({ allUnits, locale, initialUnitSlug }: Prop
           <input
             type="tel"
             required
+            aria-label={isAr ? 'رقم الهاتف' : 'Phone number'}
             value={clientPhone}
             onChange={(e) => setClientPhone(e.target.value)}
             className="w-full p-2.5 bg-[#F5F0E6] border border-stone-300 rounded-lg text-xs font-bold text-[#25312D]"

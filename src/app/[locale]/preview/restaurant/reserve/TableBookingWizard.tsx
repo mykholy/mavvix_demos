@@ -134,7 +134,7 @@ export function TableBookingWizard({
           <span className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-2xl mx-auto">
             ✓
           </span>
-          <span className="text-[10px] uppercase font-bold tracking-widest text-[#BA5C34] block">
+          <span className="text-[10px] uppercase font-bold tracking-widest text-[#984321] block">
             {isAr ? 'حالة الطلب: قيد المراجعة التوضيحية (REQUESTED)' : 'STATUS: REQUESTED (DEMO ONLY)'}
           </span>
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#321F18]">
@@ -151,7 +151,7 @@ export function TableBookingWizard({
         <div className="p-6 rounded-2xl bg-[#FAF3E6] border border-[#321F18]/10 space-y-3 text-xs">
           <div className="flex justify-between items-center">
             <span className="text-[#321F18]/60">{isAr ? 'الرقم المرجعي:' : 'Reference Number:'}</span>
-            <span className="font-mono font-bold text-[#BA5C34] text-sm">{receipt.refNumber}</span>
+            <span className="font-mono font-bold text-[#984321] text-sm">{receipt.refNumber}</span>
           </div>
           <div className="flex justify-between items-center">
             <span className="text-[#321F18]/60">{isAr ? 'الفرع المحدد:' : 'Selected Pavilion:'}</span>
@@ -187,7 +187,7 @@ export function TableBookingWizard({
         <div className="flex flex-col sm:flex-row gap-4">
           <Link
             href={`/${locale}/preview/restaurant/menu`}
-            className="w-full sm:w-1/2 py-3.5 rounded-xl bg-[#BA5C34] text-white text-center font-semibold text-xs hover:bg-[#9E4A28] transition-colors"
+            className="w-full sm:w-1/2 py-3.5 rounded-xl bg-[#984321] text-white text-center font-semibold text-xs hover:bg-[#9E4A28] transition-colors"
           >
             {isAr ? 'استكشف قائمة الطعام' : 'Explore Menu'}
           </Link>
@@ -211,7 +211,7 @@ export function TableBookingWizard({
       {/* Step Indicator */}
       <div className="flex items-center justify-between border-b border-[#321F18]/10 pb-6">
         <div>
-          <span className="text-[10px] uppercase font-bold tracking-widest text-[#BA5C34]">
+          <span className="text-[10px] uppercase font-bold tracking-widest text-[#984321]">
             {isAr ? `الخطوة ${step} من ٣` : `Step ${step} of 3`}
           </span>
           <h2 className="font-serif text-2xl font-bold text-[#321F18] mt-1">
@@ -227,7 +227,7 @@ export function TableBookingWizard({
               key={s}
               className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-all ${
                 s === step
-                  ? 'bg-[#BA5C34] text-white'
+                  ? 'bg-[#984321] text-white'
                   : s < step
                   ? 'bg-[#8B8B52] text-white'
                   : 'bg-[#FAF3E6] text-[#321F18]/40'
@@ -275,10 +275,10 @@ export function TableBookingWizard({
                     <div>
                       <h4 className="font-serif text-sm font-bold text-[#321F18]">{b.name}</h4>
                       <p className="text-xs text-[#321F18]/60 mt-0.5">{b.address}</p>
-                      <span className="text-[11px] text-[#8B8B52] block mt-1">{b.seating}</span>
+                      <span className="text-[11px] text-[#62622F] block mt-1">{b.seating}</span>
                     </div>
                   </div>
-                  <span className="text-xs font-semibold text-[#BA5C34] whitespace-nowrap">
+                  <span className="text-xs font-semibold text-[#984321] whitespace-nowrap">
                     {b.district}
                   </span>
                 </label>
@@ -292,7 +292,7 @@ export function TableBookingWizard({
               <label className="text-xs font-bold text-[#321F18] uppercase tracking-wider block">
                 {isAr ? 'عدد الضيوف (الحد الأقصى ٨):' : 'Party Size (Max 8):'}
               </label>
-              <span className="text-xs font-mono font-bold text-[#BA5C34]">
+              <span className="text-xs font-mono font-bold text-[#984321]">
                 {partySize} {isAr ? 'أفراد' : 'guests'}
               </span>
             </div>
@@ -313,7 +313,7 @@ export function TableBookingWizard({
                 </button>
               ))}
             </div>
-            <p className="text-[10px] text-[#8B8B52]">
+            <p className="text-[10px] text-[#62622F]">
               {isAr
                 ? '* للمجموعات التي تزيد عن ٨ ضيوف، يرجى التنسيق المباشر لمأدبة خاصة.'
                 : '* For parties larger than 8, please request a private banquet inquiry.'}
@@ -337,7 +337,7 @@ export function TableBookingWizard({
                   onClick={() => setSeatingPreference(opt.id as any)}
                   className={`p-3 rounded-xl border text-xs font-semibold text-center transition-all ${
                     seatingPreference === opt.id
-                      ? 'bg-[#BA5C34] text-white border-[#BA5C34]'
+                      ? 'bg-[#984321] text-white border-[#BA5C34]'
                       : 'bg-white border-[#321F18]/15 text-[#321F18] hover:border-[#BA5C34]'
                   }`}
                 >
@@ -353,7 +353,7 @@ export function TableBookingWizard({
               type="button"
               id="step1-next-btn"
               onClick={handleStep1Next}
-              className="w-full py-4 rounded-2xl bg-[#BA5C34] text-white hover:bg-[#9E4A28] font-semibold text-sm transition-all shadow-md shadow-[#BA5C34]/20 flex items-center justify-center gap-2"
+              className="w-full py-4 rounded-2xl bg-[#984321] text-white hover:bg-[#9E4A28] font-semibold text-sm transition-all shadow-md shadow-[#BA5C34]/20 flex items-center justify-center gap-2"
             >
               <span>{isAr ? 'متابعة لاختيار التاريخ والموعد' : 'Proceed to Date & Slot'}</span>
               <span>→</span>
@@ -385,7 +385,7 @@ export function TableBookingWizard({
               <label className="text-xs font-bold text-[#321F18] uppercase tracking-wider block">
                 {isAr ? 'فترات الجلسات التجريبية المتاحة في هذا الفرع:' : 'Sample Available Slots at Pavilion:'}
               </label>
-              <span className="text-[11px] text-[#8B8B52]">
+              <span className="text-[11px] text-[#62622F]">
                 {branchSlots.filter(s => s.status === 'available').length} {isAr ? 'فترات متاحة' : 'slots available'}
               </span>
             </div>
@@ -418,7 +418,7 @@ export function TableBookingWizard({
                 );
               })}
             </div>
-            <p className="text-[10px] text-[#8B8B52]">
+            <p className="text-[10px] text-[#62622F]">
               {isAr
                 ? '* الفترات المعطلة تمثل طاولات مكتملة الحجز في السيناريو التوضيحي.'
                 : '* Disabled slots represent fully booked tables in our demonstration scenario.'}
@@ -439,7 +439,7 @@ export function TableBookingWizard({
               type="button"
               id="step2-next-btn"
               onClick={handleStep2Next}
-              className="flex-1 py-4 rounded-2xl bg-[#BA5C34] text-white hover:bg-[#9E4A28] font-semibold text-sm transition-all shadow-md shadow-[#BA5C34]/20 flex items-center justify-center gap-2"
+              className="flex-1 py-4 rounded-2xl bg-[#984321] text-white hover:bg-[#9E4A28] font-semibold text-sm transition-all shadow-md shadow-[#BA5C34]/20 flex items-center justify-center gap-2"
             >
               <span>{isAr ? 'متابعة لبيانات الضيف' : 'Proceed to Guest Details'}</span>
               <span>→</span>
@@ -492,13 +492,13 @@ export function TableBookingWizard({
 
           {/* Request Summary Box */}
           <div className="p-4 rounded-2xl bg-[#FAF3E6] border border-[#321F18]/10 text-xs space-y-1.5">
-            <span className="text-[10px] uppercase font-bold text-[#BA5C34] block">
+            <span className="text-[10px] uppercase font-bold text-[#984321] block">
               {isAr ? 'ملخص الحجز التجريبي:' : 'Reservation Request Summary:'}
             </span>
             <p className="font-semibold text-[#321F18]">
               {selectedBranch.name} • {partySize} {isAr ? 'ضيوف' : 'guests'} • {date} • {branchSlots.find(s => s.id === selectedSlotId)?.starts_at}
             </p>
-            <p className="text-[11px] text-[#8B8B52]">
+            <p className="text-[11px] text-[#62622F]">
               {isAr ? `تفضيل الجلسة: ${seatingPreference}` : `Seating style: ${seatingPreference}`}
             </p>
           </div>
@@ -517,7 +517,7 @@ export function TableBookingWizard({
               type="submit"
               id="submit-table-request-btn"
               disabled={submitting}
-              className="flex-1 py-4 rounded-2xl bg-[#BA5C34] text-white hover:bg-[#9E4A28] disabled:opacity-50 font-semibold text-sm transition-all shadow-md shadow-[#BA5C34]/20 flex items-center justify-center gap-2"
+              className="flex-1 py-4 rounded-2xl bg-[#984321] text-white hover:bg-[#9E4A28] disabled:opacity-50 font-semibold text-sm transition-all shadow-md shadow-[#BA5C34]/20 flex items-center justify-center gap-2"
             >
               {submitting ? (
                 <span>{isAr ? 'جارٍ تسجيل طلب الحجز...' : 'Recording Table Request...'}</span>

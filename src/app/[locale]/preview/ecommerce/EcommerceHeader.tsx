@@ -86,7 +86,7 @@ export default function EcommerceHeader({ locale }: Props) {
             href={`/${locale}/preview/ecommerce/cart`}
             className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1A1715] text-[#FAF8F5] text-xs font-semibold hover:bg-[#332E2A] transition-colors shadow-sm"
           >
-            <ShoppingBag className="w-4 h-4 text-[#C89B8C]" />
+            <ShoppingBag className="w-4 h-4 text-[#895549]" />
             <span className="hidden sm:inline">{isAr ? 'الحقيبة' : 'Bag'}</span>
             <span className="w-4 h-4 rounded-full bg-white/20 text-white text-[10px] flex items-center justify-center">
               {itemCount}
