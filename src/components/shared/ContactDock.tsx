@@ -52,6 +52,7 @@ const DEMOS_LIST = [
   { slug: 'physiotherapy', nameAr: 'موشن لاب / علاج طبيعي', nameEn: 'Motion Lab · Physiotherapy', icon: Activity, color: '#79C9C1' },
   { slug: 'veterinary', nameAr: 'بوويل / عيادات بيطرية', nameEn: 'PawWell · Veterinary', icon: HeartPulse, color: '#F3B98E' },
   { slug: 'law-firm', nameAr: 'ليكسورا / محاماة واستشارات', nameEn: 'Lexora Counsel · Law Firm', icon: Building2, color: '#B79B6A' },
+  { slug: 'skin-clinic', nameAr: 'إيليرا / الجلدية والتجميل', nameEn: 'Elyra Skin · Dermatology & Aesthetics', icon: Sparkles, color: '#86566B' },
   { slug: 'logistics', nameAr: 'روت لاين / الشحن واللوجستيات', nameEn: 'RouteLine Cargo · Freight & Logistics', icon: Truck, color: '#31566C' },
   { slug: 'events', nameAr: 'لوما / تنظيم الفعاليات', nameEn: 'Luma Events · Event Planning', icon: Sparkles, color: '#874F63' },
   { slug: 'travel-agency', nameAr: 'نوماد روتس / سياحة وسفر', nameEn: 'Nomad Routes · Travel Planning', icon: Compass, color: '#A4492D' },
