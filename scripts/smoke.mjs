@@ -653,6 +653,28 @@ try {
   assert.ok([302,303,307,308,401].includes(skinQueue.status),'Elyra queue must remain private');
   console.log('PASS: 40 Elyra bilingual routes, clinical data rejection, consent and idempotent callback');
 
+  const labRoutes=['','services','visit','home-collection','results','providers','privacy','guides','faq','about','contact','services/consultation','services/clinical-chemistry','services/hematology','services/immunology','services/microbiology','services/home-collection','services/report-access','services/provider-coordination','guides/before-your-visit','guides/private-results','guides/home-collection-questions'];
+  for(const lang of ['ar','en'])for(const tail of labRoutes){
+    const url='/'+lang+'/preview/diagnostics-lab'+(tail?'/'+tail:'');
+    const response=await get(url);
+    assert.equal(response.status,200,'ClearPath route failed '+url);
+    assert.ok((await response.text()).includes('data-mavvix-contact-dock'),'ClearPath dock missing '+url);
+  }
+  assert.equal((await get('/en/preview/diagnostics-lab/services/unknown')).status,404);
+  const lab={flowType:'lab_contact_request',clientRequestId:'cccccccc-cccc-4ccc-8ccc-cccccccccccc',guestName:'QA Lab Callback',guestPhone:'01000000000',preferredWindow:'morning',consent:true,honeypot:''};
+  const labEndpoint='/api/portfolio/diagnostics-lab';
+  for(const invalid of [{consent:false},{testName:'PRIVATE'},{report:'PRIVATE'},{address:'PRIVATE'},{utm:{campaign:'health'}}])assert.equal((await post(labEndpoint,{...lab,...invalid})).status,400);
+  const labSaved=await post(labEndpoint,lab),labBody=await labSaved.json();
+  assert.equal(labSaved.status,201,'ClearPath persistence '+JSON.stringify(labBody));
+  assert.match(labBody.refNumber,/^MVX-CLP-[A-F0-9]{10}$/);
+  assert.equal(labBody.status,'pending_operator_confirmation');
+  assert.equal(labSaved.headers.get('cache-control'),'no-store');
+  const labDuplicate=await post(labEndpoint,lab),labAgain=await labDuplicate.json();
+  assert.equal(labDuplicate.status,200);assert.equal(labAgain.duplicate,true);assert.equal(labAgain.refNumber,labBody.refNumber);
+  const labQueue=await get('/admin/portfolio-requests?sector=diagnostics-lab',{redirect:'manual'});
+  assert.ok([302,303,307,308,401].includes(labQueue.status),'ClearPath queue must remain private');
+  console.log('PASS: 44 ClearPath bilingual routes, health data rejection, consent and idempotent callback');
+
   console.log('PASS: auth guard, flow validation, Academy SQLite progress, trusted ecommerce price, private receipt');
 } catch (error) {
   console.error(error);

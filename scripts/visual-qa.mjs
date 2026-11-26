@@ -28,6 +28,7 @@ async function ready(){
  throw Error('Next server did not start: '+serverLog.slice(-2000));
 }
 const cases=[
+ ['diagnostics-lab',''],['diagnostics-lab','services'],['diagnostics-lab','services/clinical-chemistry'],['diagnostics-lab','contact'],['diagnostics-lab','results'],['diagnostics-lab','home-collection'],['diagnostics-lab','privacy'],['diagnostics-lab','guides/private-results'],
  ['skin-clinic',''],['skin-clinic','services'],['skin-clinic','services/consultation'],['skin-clinic','contact'],['skin-clinic','privacy'],['skin-clinic','informed-choice'],['skin-clinic','guides/prepare-for-consultation'],
  ['logistics',''],['logistics','services'],['logistics','services/ocean-fcl'],['logistics','quote'],['logistics','scope'],['logistics','tracking'],['logistics','guides/freight-quote-checklist'],
  ['events',''],['events','experiences'],['events','experiences/corporate-conferences'],['events','enquiry'],['events','venue-brief'],['events','guides/event-brief'],
