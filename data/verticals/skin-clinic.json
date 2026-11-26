@@ -348,6 +348,23 @@
   ],
   "media": [
     {
+      "role": "room-editorial",
+      "title": "Modern medical examination room",
+      "credit": "Shixart1985 (Nenad Stojković)",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Modern_medical_examination_room.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Modern_medical_examination_room.jpg/1280px-Modern_medical_examination_room.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Modern_medical_examination_room.jpg",
+      "originalSha1": "1c55782a48b6bcaef3f7d7e144839e4f20d85f63",
+      "width": 5926,
+      "height": 3956,
+      "alt": {
+        "ar": "غرفة فحص طبية حديثة في صورة تحريرية مستقلة، لا تمثل منشآت إيليرا",
+        "en": "Modern medical examination room, independent editorial photograph, not Elyra premises"
+      }
+    },
+    {
       "role": "clinical-editorial",
       "title": "Dermatoscope in primary care",
       "credit": "Whispyhistory",
@@ -358,7 +375,11 @@
       "alt": {
         "ar": "جهاز فحص الجلد في صورة تحريرية مستقلة، لا يمثل معدات عيادة إيليرا",
         "en": "Dermatoscope in an independent editorial photograph, not Elyra equipment"
-      }
+      },
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Dermascope.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Dermascope.jpg",
+      "width": 2886,
+      "height": 2551
     }
   ]
 }
