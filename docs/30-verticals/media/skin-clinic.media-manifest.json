@@ -1,0 +1,33 @@
+{
+  "vertical": "skin-clinic",
+  "assets": [
+    {
+      "id": "elyra-room",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Modern_medical_examination_room.jpg",
+      "author": "Shixart1985 (Nenad Stojković)",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "downloaded_from": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Modern_medical_examination_room.jpg",
+      "original_sha1": "1c55782a48b6bcaef3f7d7e144839e4f20d85f63",
+      "local": "/assets/portfolio/elyra-room.webp",
+      "dimensions": "1600x1068",
+      "sha256": "2edffa3d4e096a5fa89c76ffd268b4ad1372ba7aa7021ddc865002e96cf3e23a",
+      "bytes": 100834,
+      "changes": "Resized, rotated and WebP encoded, display crop; editorial photo, not Elyra premises or equipment. Original license retained."
+    },
+    {
+      "id": "elyra-device",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Dermascope.jpg",
+      "author": "Whispyhistory",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "downloaded_from": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Dermascope.jpg",
+      "original_sha1": "765279e39fe306f89af5fef87f594dbcc0030e4a",
+      "local": "/assets/portfolio/elyra-device.webp",
+      "dimensions": "1600x1414",
+      "sha256": "eb959b581f847f7ace47ff9c9216858a55d9f4004ebe4e3d402b1db6b44a11b6",
+      "bytes": 282370,
+      "changes": "Resized, rotated and WebP encoded, display crop; editorial photo, not Elyra premises or equipment. Original license retained."
+    }
+  ]
+}

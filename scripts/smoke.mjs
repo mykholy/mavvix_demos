@@ -629,6 +629,30 @@ try {
   assert.ok([302,303,307,308,401].includes(freightQueue.status),'RouteLine queue must remain private');
   console.log('PASS: 42 RouteLine bilingual routes, freight mode/route/date/PII safeguards and idempotent persistence');
 
+  const skinRoutes=['','services','care-journey','informed-choice','privacy','guides','faq','about','contact','services/consultation','services/acne-skin','services/pigmentation','services/hair-scalp','services/laser-information','services/skin-texture','services/aesthetic-consultation','services/follow-up','guides/prepare-for-consultation','guides/informed-aesthetic-choice','guides/privacy-and-follow-up'];
+  for(const lang of ['ar','en'])for(const tail of skinRoutes){
+    const url='/'+lang+'/preview/skin-clinic'+(tail?'/'+tail:'');
+    const response=await get(url);
+    assert.equal(response.status,200,'Elyra route failed '+url);
+    assert.ok((await response.text()).includes('data-mavvix-contact-dock'),'Elyra dock missing '+url);
+  }
+  assert.equal((await get('/en/preview/skin-clinic/services/unknown')).status,404);
+  const skin={flowType:'clinic_contact_request',clientRequestId:'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb',guestName:'QA Callback',guestPhone:'01000000000',preferredWindow:'morning',consent:true,honeypot:''};
+  const skinEndpoint='/api/portfolio/skin-clinic';
+  for(const invalid of [{consent:false},{symptoms:'PRIVATE'},{medicalImage:'PRIVATE'},{serviceSlug:'acne-skin'},{utm:{campaign:'medical'}}])assert.equal((await post(skinEndpoint,{...skin,...invalid})).status,400);
+  const skinSaved=await post(skinEndpoint,skin),skinBody=await skinSaved.json();
+  assert.equal(skinSaved.status,201,'Elyra persistence '+JSON.stringify(skinBody));
+  assert.match(skinBody.refNumber,/^MVX-ELY-[A-F0-9]{10}$/);
+  assert.equal(skinBody.status,'pending_operator_confirmation');
+  assert.equal(skinSaved.headers.get('cache-control'),'no-store');
+  const skinDuplicate=await post(skinEndpoint,skin),skinAgain=await skinDuplicate.json();
+  assert.equal(skinDuplicate.status,200);
+  assert.equal(skinAgain.duplicate,true);
+  assert.equal(skinAgain.refNumber,skinBody.refNumber);
+  const skinQueue=await get('/admin/portfolio-requests?sector=skin-clinic',{redirect:'manual'});
+  assert.ok([302,303,307,308,401].includes(skinQueue.status),'Elyra queue must remain private');
+  console.log('PASS: 40 Elyra bilingual routes, clinical data rejection, consent and idempotent callback');
+
   console.log('PASS: auth guard, flow validation, Academy SQLite progress, trusted ecommerce price, private receipt');
 } catch (error) {
   console.error(error);

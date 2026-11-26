@@ -241,3 +241,10 @@ assert.ok((freightHome.match(/data-sector-specific=/g)||[]).length>=9);
 assert.match(readFileSync(join(freightDir,'layout.tsx'),'utf8'),/<ContactDock/);
 for(const route of ['[section]','services/[slug]','guides/[slug]','quote'])assert.ok(existsSync(join(freightDir,route,'page.tsx')),'Missing RouteLine route '+route);
 console.log('PASS: independent RouteLine freight home, specialist routes and quote workflow');
+
+const elyraDir=join(root,'skin-clinic');
+const elyraHome=readFileSync(join(elyraDir,'page.tsx'),'utf8');
+assert.ok((elyraHome.match(/data-sector-specific=/g)||[]).length>=9);
+assert.match(readFileSync(join(elyraDir,'layout.tsx'),'utf8'),/<ContactDock/);
+for(const route of ['[section]','services/[slug]','guides/[slug]','contact'])assert.ok(existsSync(join(elyraDir,route,'page.tsx')),'Missing Elyra route '+route);
+console.log('PASS: distinct Elyra consultation home, specialist routes and privacy-minimal contact');

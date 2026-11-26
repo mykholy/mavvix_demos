@@ -19,6 +19,7 @@ export function seedPortfolioVerticals(db, rootDir=process.cwd()) {
     {filename:'physiotherapy.json',slug:'physiotherapy',ar:'موشن لاب — العلاج الطبيعي والحركة الوظيفية',en:'Motion Lab · Physiotherapy',wave:2},
     {filename:'veterinary.json',slug:'veterinary',ar:'بوويل — رعاية الحيوانات الأليفة',en:'PawWell · Veterinary Clinic Website',wave:2},
     {filename:'law-firm.json',slug:'law-firm',ar:'ليكسورا كاونسل — واجهة خدمات قانونية',en:'Lexora Counsel · Legal Practice Website',wave:2},
+    {filename:'skin-clinic.json',slug:'skin-clinic',ar:'إيليرا — الجلدية والتجميل',en:'Elyra Skin · Dermatology & Aesthetics',wave:3},
     {filename:'logistics.json',slug:'logistics',ar:'روت لاين — الشحن واللوجستيات',en:'RouteLine Cargo · Freight & Logistics',wave:2},
     {filename:'events.json',slug:'events',ar:'لوما — تنظيم الفعاليات',en:'Luma Events · Event Planning',wave:2},
     {filename:'travel-agency.json',slug:'travel-agency',ar:'نوماد روتس — تخطيط الرحلات والسفر',en:'Nomad Routes · Travel Planning',wave:2},
