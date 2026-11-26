@@ -1,0 +1,358 @@
+{
+  "slug": "diagnostics-lab",
+  "brand": "ClearPath Labs",
+  "classification": "fictional_portfolio_concept_no_medical_service",
+  "services": [
+    {
+      "slug": "consultation",
+      "category": "support",
+      "rank": 1,
+      "title": {
+        "ar": "التواصل مع المعمل",
+        "en": "Laboratory contact"
+      },
+      "summary": {
+        "ar": "استفسار إداري عن طريقة التواصل والخدمات دون مشاركة معلومات طبية.",
+        "en": "Administrative enquiries about service access without clinical information."
+      },
+      "body": {
+        "ar": "ابدأ بالتواصل مع المعمل الفعلي للتحقق من الفروع المتاحة ومواعيد العمل وطريقة طلب الخدمة. لا يمثل هذا الموقع معملاً قائماً ولا يحدد التحليل المناسب أو يفسر النتائج. تواصل مع مقدم رعاية مؤهل عبر قناة آمنة لتبادل المعلومات الصحية.",
+        "en": "Contact the actual laboratory to verify locations, hours and service access. This concept is not an operating laboratory and does not select tests or interpret results. Discuss health information privately with a qualified provider."
+      },
+      "checkpoints": {
+        "ar": [
+          "التحقق من مقدم الخدمة",
+          "قناة تواصل خاصة",
+          "تأكيد النطاق والمواعيد"
+        ],
+        "en": [
+          "Verify the provider",
+          "Private communication channel",
+          "Confirm scope and hours"
+        ]
+      }
+    },
+    {
+      "slug": "clinical-chemistry",
+      "category": "laboratory",
+      "rank": 2,
+      "title": {
+        "ar": "الكيمياء الإكلينيكية",
+        "en": "Clinical chemistry"
+      },
+      "summary": {
+        "ar": "تعرف على مجال التحاليل الكيميائية ودور المعمل والطبيب.",
+        "en": "Understand the clinical chemistry discipline and the roles of the lab and clinician."
+      },
+      "body": {
+        "ar": "يتناول هذا المجال قياس بعض المكونات الكيميائية في العينات وفق طرق معملية معتمدة لدى مقدم الخدمة. يحدد الطبيب الاختبارات المناسبة ويقدم المعمل الحقيقي تعليمات التحضير الخاصة بكل اختبار. لا يقدم هذا الموقع توصية بإجراء تحليل أو أي قيمة مرجعية أو تفسير فردي.",
+        "en": "This discipline measures chemical constituents in specimens using methods validated by the actual provider. A clinician determines suitable tests, and the laboratory supplies test-specific preparation instructions. This concept does not recommend a test, reference range or individual interpretation."
+      },
+      "checkpoints": {
+        "ar": [
+          "اختيار التحليل مع المختص",
+          "تعليمات خاصة من المعمل",
+          "مراجعة النتائج مع الطبيب"
+        ],
+        "en": [
+          "Clinician-led test selection",
+          "Lab-specific instructions",
+          "Review results with a clinician"
+        ]
+      }
+    },
+    {
+      "slug": "hematology",
+      "category": "laboratory",
+      "rank": 3,
+      "title": {
+        "ar": "أمراض الدم المعملية",
+        "en": "Hematology"
+      },
+      "summary": {
+        "ar": "معلومات عامة عن خدمات فحص مكونات الدم داخل المعمل.",
+        "en": "General information about laboratory examination of blood components."
+      },
+      "body": {
+        "ar": "تُراجع عينات الدم باستخدام أجهزة وطرق يحددها المعمل وفق نطاق عمله. تختلف الاختبارات ودلالاتها حسب السياق الطبي، فلا ينبغي الاعتماد على نتيجة منفردة للتشخيص. اطلب من مقدم الخدمة الفعلي شرح خطوات الحصول على التقرير بطريقة آمنة.",
+        "en": "Blood samples are examined using instruments and methods appropriate to the laboratory's scope. Tests and their implications vary with clinical context, so an isolated result should not establish a diagnosis. Ask the actual provider about secure report delivery."
+      },
+      "checkpoints": {
+        "ar": [
+          "نطاق الاختبار لدى المعمل",
+          "مراجعة السياق الطبي",
+          "قناة آمنة للتقارير"
+        ],
+        "en": [
+          "Confirm laboratory test scope",
+          "Review clinical context",
+          "Secure report delivery"
+        ]
+      }
+    },
+    {
+      "slug": "immunology",
+      "category": "laboratory",
+      "rank": 4,
+      "title": {
+        "ar": "المناعة والاختبارات المصلية",
+        "en": "Immunology and serology"
+      },
+      "summary": {
+        "ar": "نظرة عامة على مجال الاختبارات المناعية دون توصيات فردية.",
+        "en": "An overview of immune-related testing without individual recommendations."
+      },
+      "body": {
+        "ar": "تشمل هذه الفئة اختبارات مختلفة لقياس مؤشرات مرتبطة بالجهاز المناعي. يعتمد اختيار الاختبار وتوقيت إجرائه وفهم النتيجة على التقييم الطبي وطريقة المعمل. لا يشير الوصف إلى توافر أي اختبار بعينه في منشأة فعلية، ولا يطلب النموذج أي معلومات عن الحالة الصحية.",
+        "en": "This category covers different tests measuring immune-related markers. Selection, timing and interpretation depend on clinical assessment and laboratory methods. This description does not establish availability at an actual facility; the public contact form requests no health information."
+      },
+      "checkpoints": {
+        "ar": [
+          "التقييم الطبي أولاً",
+          "التأكد من توافر الخدمة",
+          "عدم مشاركة بيانات صحية عامة"
+        ],
+        "en": [
+          "Clinical assessment first",
+          "Confirm service availability",
+          "Avoid public health data disclosure"
+        ]
+      }
+    },
+    {
+      "slug": "microbiology",
+      "category": "laboratory",
+      "rank": 5,
+      "title": {
+        "ar": "الأحياء الدقيقة المعملية",
+        "en": "Microbiology"
+      },
+      "summary": {
+        "ar": "فهم دور خدمات الأحياء الدقيقة ضمن رحلة التشخيص.",
+        "en": "Understand microbiology services within a diagnostic pathway."
+      },
+      "body": {
+        "ar": "تُستخدم طرق معملية مختلفة لدراسة الكائنات الدقيقة في عينات يحددها مقدم الرعاية. تختلف متطلبات جمع ونقل العينات والمدة حسب الاختبار، ويقدم المعمل الفعلي التعليمات المناسبة. لا يُطلب هنا جمع عينة بنفسك أو اختيار علاج بناء على نتيجة.",
+        "en": "Laboratories use different methods to study microorganisms in specimens selected by healthcare professionals. Collection, transport and timing vary by test, and the actual laboratory provides instructions. This concept does not direct self-collection or treatment decisions."
+      },
+      "checkpoints": {
+        "ar": [
+          "تعليمات المعمل الفعلي",
+          "التأكد من طريقة التسليم",
+          "التفسير مع مقدم الرعاية"
+        ],
+        "en": [
+          "Actual laboratory instructions",
+          "Confirm specimen handover",
+          "Interpret with a healthcare provider"
+        ]
+      }
+    },
+    {
+      "slug": "home-collection",
+      "category": "access",
+      "rank": 6,
+      "title": {
+        "ar": "تنسيق خدمة الزيارة المنزلية",
+        "en": "Home collection coordination"
+      },
+      "summary": {
+        "ar": "التعرف على كيفية طلب معلومات عن زيارات جمع العينات.",
+        "en": "Understand how to request information about home collection services."
+      },
+      "body": {
+        "ar": "قد يتيح مقدم خدمة فعلي جمع عينات في المنزل وفق نطاقه ومنطقته وجدوله. يجب التأكد من أهلية الخدمة والموعد والرسوم وتعليمات التحضير قبل الحجز. لا يوجد حجز منزلي حقيقي هنا، ولا يطلب النموذج عنوان المنزل أو تفاصيل الاختبار أو بيانات المريض.",
+        "en": "An actual provider may offer home collection depending on scope, area and schedule. Confirm eligibility, timing, charges and preparation before booking. No real visit is scheduled here, and the public form collects no home address, test details or patient records."
+      },
+      "checkpoints": {
+        "ar": [
+          "التحقق من المنطقة والخدمة",
+          "تأكيد الموعد مع المعمل",
+          "عدم إرسال عنوان أو معلومات طبية"
+        ],
+        "en": [
+          "Confirm area and service",
+          "Confirm timing with the lab",
+          "No address or clinical information"
+        ]
+      }
+    },
+    {
+      "slug": "report-access",
+      "category": "access",
+      "rank": 7,
+      "title": {
+        "ar": "استلام التقارير والخصوصية",
+        "en": "Report access and privacy"
+      },
+      "summary": {
+        "ar": "فهم الفرق بين طلب التواصل وملف النتائج الطبي الخاص.",
+        "en": "Distinguish a contact reference from a private clinical report."
+      },
+      "body": {
+        "ar": "تتطلب التقارير الطبية حماية مناسبة والتحقق من هوية صاحب الحق في الوصول. يوفر المعمل الفعلي قناة معتمدة لاستلام التقرير، ويحدد المختص طريقة مراجعة النتائج. رقم التواصل الصادر من هذه التجربة لا يفتح تقريراً ولا يكشف نتيجة تحليل أو ملف مريض.",
+        "en": "Medical reports require appropriate protection and verification of authorized access. The actual laboratory supplies a secure report channel, and a qualified professional reviews results. This concept's contact reference opens no report and exposes no test result or patient record."
+      },
+      "checkpoints": {
+        "ar": [
+          "التحقق من صلاحية الوصول",
+          "قناة تقارير آمنة",
+          "فصل المرجع الإداري عن التقرير"
+        ],
+        "en": [
+          "Verify access rights",
+          "Secure report channel",
+          "Separate administrative reference from report"
+        ]
+      }
+    },
+    {
+      "slug": "provider-coordination",
+      "category": "support",
+      "rank": 8,
+      "title": {
+        "ar": "تنسيق الخدمات للمؤسسات الطبية",
+        "en": "Healthcare provider coordination"
+      },
+      "summary": {
+        "ar": "توضيح نطاق التنسيق مع العيادات والمؤسسات قبل أي تكامل.",
+        "en": "Clarify coordination with clinics and institutions before any integration."
+      },
+      "body": {
+        "ar": "تحتاج خدمات الإحالة وتبادل التقارير إلى اتفاق واضح بين الجهات المؤهلة ومراجعة صلاحيات الوصول والخصوصية ومسؤولية كل طرف. لا يدعي الموقع وجود شراكة أو تكامل حقيقي مع جهة طبية، ولا يجمع أسماء المرضى أو أوامر التحاليل أو المستندات الطبية.",
+        "en": "Referral and report exchange require an agreement among qualified organizations, privacy review, access controls and clear responsibilities. This concept claims no clinical partnership or live integration and collects no patient names, test orders or medical documents."
+      },
+      "checkpoints": {
+        "ar": [
+          "تحديد المسؤوليات",
+          "مراجعة الخصوصية والصلاحيات",
+          "اعتماد التكامل الحقيقي"
+        ],
+        "en": [
+          "Define responsibilities",
+          "Review privacy and authorization",
+          "Validate actual integration"
+        ]
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slug": "before-your-visit",
+      "title": {
+        "ar": "أسئلة قبل زيارة المعمل",
+        "en": "Questions before your laboratory visit"
+      },
+      "summary": {
+        "ar": "تأكد من نطاق الخدمة والمواعيد والتعليمات الخاصة بك.",
+        "en": "Confirm scope, hours and instructions specific to your visit."
+      },
+      "body": {
+        "ar": "تواصل مع المعمل الفعلي لمعرفة طريقة الوصول وتوافر الاختبار المطلوب وتعليماته. اسأل مقدم الرعاية عن أي تعليمات تخص حالتك أو أدويتك؛ لا تغير دواء أو تتبع صياماً بناء على صفحة عامة. احتفظ بالمستندات الطبية في قناة موثوقة وخاصة.",
+        "en": "Ask the actual laboratory about access, test availability and specific preparation requirements. Discuss medication or individual instructions with your care provider; do not change medication or fast based on a generic page. Keep medical documents within a trusted private channel."
+      }
+    },
+    {
+      "slug": "private-results",
+      "title": {
+        "ar": "كيف تحافظ على خصوصية تقريرك؟",
+        "en": "Keeping laboratory reports private"
+      },
+      "summary": {
+        "ar": "النتائج بيانات صحية وليست معلومات لطلب تسويقي.",
+        "en": "Results are health data, not marketing enquiry information."
+      },
+      "body": {
+        "ar": "استلم التقارير من القناة المعتمدة للمعمل الفعلي وتحقق من صلاحيات الوصول قبل مشاركتها. لا ترفع نتائج أو صور تقارير إلى نموذج تواصل عام. راجع التقرير مع مختص يعرف سياقك الطبي ولا تعتبر النتيجة المنفردة تشخيصاً.",
+        "en": "Obtain reports through the actual laboratory's approved channel and confirm access rights before sharing them. Do not upload results or report photographs to public contact forms. Review reports with a qualified professional familiar with your medical context."
+      }
+    },
+    {
+      "slug": "home-collection-questions",
+      "title": {
+        "ar": "ما الذي تسأل عنه قبل الزيارة المنزلية؟",
+        "en": "Questions about home collection"
+      },
+      "summary": {
+        "ar": "التغطية والتعليمات والرسوم تحتاج تأكيداً من مقدم الخدمة.",
+        "en": "Coverage, instructions and charges require provider confirmation."
+      },
+      "body": {
+        "ar": "تأكد من أن المعمل الفعلي يقدم الزيارة في منطقتك ويحدد من سيجمع العينة وموعد الزيارة ورسومها وتعليماتها. شارك عنوانك أو البيانات اللازمة فقط مع الجهة الموثوقة عبر قناة مناسبة. لا يعني الاستفسار العام تأكيد الزيارة أو توافر اختبار معين.",
+        "en": "Confirm whether the actual lab covers your area, who collects the specimen, timing, fees and instructions. Share addresses and necessary information only with the verified provider through an appropriate channel. A general enquiry confirms neither a visit nor test availability."
+      }
+    }
+  ],
+  "faq": [
+    {
+      "question": {
+        "ar": "هل أستطيع معرفة نتائج التحاليل هنا؟",
+        "en": "Can I retrieve lab results here?"
+      },
+      "answer": {
+        "ar": "لا؛ هذه تجربة تصميم لا تتصل بتقارير مرضى.",
+        "en": "No; this website concept has no patient report integration."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل أحتاج للصيام؟",
+        "en": "Do I need to fast?"
+      },
+      "answer": {
+        "ar": "تعتمد التعليمات على الاختبار وحالتك؛ اسأل المعمل الفعلي والطبيب.",
+        "en": "Preparation depends on the test and your situation; ask the actual laboratory and clinician."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل يحجز النموذج زيارة منزلية؟",
+        "en": "Does the form book a home visit?"
+      },
+      "answer": {
+        "ar": "لا، يحفظ طلب تواصل إداري فقط.",
+        "en": "No, it saves only an administrative callback request."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل أرفع تقريراً أو وصفة؟",
+        "en": "Should I upload a report or prescription?"
+      },
+      "answer": {
+        "ar": "لا؛ استخدم قناة آمنة لدى مقدم الرعاية الفعلي.",
+        "en": "No; use a secure channel provided by your actual healthcare provider."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل يعرض الموقع أسعاراً أو اعتمادات مؤكدة؟",
+        "en": "Are prices or accreditations confirmed?"
+      },
+      "answer": {
+        "ar": "لا؛ يجب التحقق من هوية المعمل الحقيقي ونطاقه وأسعاره واعتماداته.",
+        "en": "No; verify the actual lab's identity, scope, prices and accreditation."
+      }
+    }
+  ],
+  "categories": [
+    "laboratory",
+    "access",
+    "support"
+  ],
+  "media": [
+    {
+      "role": "clinical-analyzer-editorial",
+      "credit": "Lazborn",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Cobas_machine.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Cobas_machine.jpg",
+      "originalSha1": "390ffbe1236e4b547382366c0d0066a61512fa1e",
+      "alt": {
+        "ar": "جهاز تحليل كيمياء إكلينيكية، صورة مستقلة لا تمثل معدات كلير باث",
+        "en": "Clinical chemistry analyzer, independent editorial photograph, not ClearPath equipment"
+      }
+    }
+  ]
+}
