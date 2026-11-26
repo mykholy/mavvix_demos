@@ -1,0 +1,74 @@
+name: Prepare licensed local portfolio media
+on:
+  workflow_dispatch:
+  push:
+    branches: [feat/vertical-events]
+    paths:
+      - '.github/workflows/prepare-local-media.yml'
+      - 'scripts/prepare-local-media.mjs'
+permissions:
+  contents: read
+concurrency:
+  group: luma-local-media
+  cancel-in-progress: false
+jobs:
+  prepare:
+    if: github.ref == 'refs/heads/feat/vertical-events'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - name: Retrieve and decode exact licensed photographs
+        run: node scripts/prepare-local-media.mjs
+      - name: Produce strictly scoped binary patch
+        run: |
+          git add -- public/assets/portfolio/montessori-shelves.webp public/assets/portfolio/physiotherapy.webp public/assets/portfolio/luma-conference-hall.webp src/lib/verticals/nursery/data.ts src/lib/verticals/physiotherapy/data.ts 'src/app/[locale]/showcase/page.tsx' data/verticals/events.json docs/30-verticals/media/nursery.media-manifest.json docs/30-verticals/media/physiotherapy.media-manifest.json docs/30-verticals/media/self-hosted-media.json
+          git diff --cached --binary > /tmp/local-media.patch
+          test -s /tmp/local-media.patch
+      - uses: actions/upload-artifact@v4
+        with:
+          name: licensed-local-media
+          path: |
+            /tmp/local-media.patch
+            public/assets/portfolio/*.webp
+            docs/30-verticals/media/self-hosted-media.json
+  publish:
+    needs: prepare
+    if: github.ref == 'refs/heads/feat/vertical-events'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/vertical-events
+      - uses: actions/download-artifact@v4
+        with:
+          name: licensed-local-media
+          path: /tmp/approved-media
+      - name: Publish only verified media to this feature branch
+        env:
+          EXPECTED: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED"
+          patch="$(find /tmp/approved-media -name local-media.patch -type f)"
+          test -f "$patch"
+          git apply --index "$patch"
+          git diff --cached --name-only | while IFS= read -r file; do
+            case "$file" in
+              public/assets/portfolio/montessori-shelves.webp|public/assets/portfolio/physiotherapy.webp|public/assets/portfolio/luma-conference-hall.webp|src/lib/verticals/nursery/data.ts|src/lib/verticals/physiotherapy/data.ts|'src/app/[locale]/showcase/page.tsx'|data/verticals/events.json|docs/30-verticals/media/nursery.media-manifest.json|docs/30-verticals/media/physiotherapy.media-manifest.json|docs/30-verticals/media/self-hosted-media.json) ;;
+              *) echo "Unexpected path $file"; exit 1 ;;
+            esac
+          done
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'fix(media): self-host three decoded licensed portfolio photographs'
+          git push origin HEAD:refs/heads/feat/vertical-events
