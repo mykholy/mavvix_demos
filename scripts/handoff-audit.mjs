@@ -234,3 +234,10 @@ assert.ok((lumaHome.match(/data-sector-specific=/g)||[]).length>=9);
 assert.match(lumaLayout,/<ContactDock/);
 for(const route of ['[section]','experiences/[slug]','guides/[slug]','enquiry'])assert.ok(existsSync(join(lumaDir,route,'page.tsx')),'Missing Luma route family '+route);
 console.log('PASS: distinct Luma event home, specialist pages and lead flow');
+
+const freightDir=join(root,'logistics');
+const freightHome=readFileSync(join(freightDir,'page.tsx'),'utf8');
+assert.ok((freightHome.match(/data-sector-specific=/g)||[]).length>=9);
+assert.match(readFileSync(join(freightDir,'layout.tsx'),'utf8'),/<ContactDock/);
+for(const route of ['[section]','services/[slug]','guides/[slug]','quote'])assert.ok(existsSync(join(freightDir,route,'page.tsx')),'Missing RouteLine route '+route);
+console.log('PASS: independent RouteLine freight home, specialist routes and quote workflow');

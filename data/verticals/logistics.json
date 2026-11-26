@@ -1,0 +1,384 @@
+{
+  "slug": "logistics",
+  "brand": "RouteLine Cargo",
+  "classification": "editorial_portfolio_concept_no_live_carrier",
+  "services": [
+    {
+      "slug": "ocean-fcl",
+      "category": "ocean",
+      "rank": 1,
+      "title": {
+        "ar": "شحن بحري بحاوية كاملة",
+        "en": "Full-container ocean freight"
+      },
+      "summary": {
+        "ar": "حاوية مخصصة لشحنة تجارية، مع تحديد نقطة التحميل والتسليم.",
+        "en": "Dedicated container scope with agreed loading and delivery points."
+      },
+      "body": {
+        "ar": "ابدأ بتحديد نوع البضاعة وحجمها الإجمالي ووزنها وطبيعة التعبئة. يراجع الناقل المؤهل ملاءمة نوع الحاوية وحدود الوزن والميناء ومسؤوليات التحميل والتسليم قبل التسعير. الرسوم المحلية والانتظار والتأمين تحتاج تحديدًا مكتوبًا.",
+        "en": "Identify commodity, volume, gross weight and packaging before a qualified carrier assesses container type, weight limits, port and handover responsibilities. Local fees, detention and insurance require separate written confirmation."
+      },
+      "checkpoints": {
+        "ar": [
+          "الحجم والوزن والتعبئة",
+          "ميناء التحميل والتفريغ",
+          "مسؤوليات النقل والرسوم"
+        ],
+        "en": [
+          "Volume, weight and packaging",
+          "Loading and discharge ports",
+          "Transport responsibility and fees"
+        ]
+      }
+    },
+    {
+      "slug": "ocean-lcl",
+      "category": "ocean",
+      "rank": 2,
+      "title": {
+        "ar": "شحن بحري مجمع",
+        "en": "Less-than-container ocean freight"
+      },
+      "summary": {
+        "ar": "تجميع شحنات تجارية أصغر عند ملاءمة التعبئة والوجهة.",
+        "en": "Consolidated ocean shipping for smaller suitable consignments."
+      },
+      "body": {
+        "ar": "تختلف ملاءمة الشحن المجمع باختلاف الحجم والوزن وطبيعة البضاعة وتوافقها مع الشحنات الأخرى. راجع نقاط التجميع وفك التجميع ورسوم المناولة والموعد المتوقع مع المشغل، دون افتراض أن الشحن المجمع أرخص في كل حالة.",
+        "en": "Consolidation suitability depends on dimensions, weight, commodity and compatibility with other freight. Confirm consolidation and deconsolidation points, handling charges and timing with an operator; LCL is not necessarily cheaper in every case."
+      },
+      "checkpoints": {
+        "ar": [
+          "أبعاد الطرود الإجمالية",
+          "نقاط التجميع والمناولة",
+          "القيود والتكاليف المحلية"
+        ],
+        "en": [
+          "Total package dimensions",
+          "Consolidation and handling points",
+          "Restrictions and local charges"
+        ]
+      }
+    },
+    {
+      "slug": "air-freight",
+      "category": "air",
+      "rank": 3,
+      "title": {
+        "ar": "الشحن الجوي التجاري",
+        "en": "Commercial air freight"
+      },
+      "summary": {
+        "ar": "خيار للبضائع ذات الأولوية الزمنية بعد مراجعة القيود والوزن المحتسب.",
+        "en": "A time-sensitive freight option subject to restrictions and chargeable weight."
+      },
+      "body": {
+        "ar": "يحتاج تقييم الشحن الجوي إلى الوزن الفعلي والأبعاد ونوع البضائع والموعد المطلوب. يحدد المشغل الوزن المحتسب والقبول ومتطلبات التعبئة والفحص والمناولة. لا يمثل وقت الوصول المتوقع موعدًا مضمونًا، ولا تقبل الشحنات المقيدة عبر هذا النموذج.",
+        "en": "Air freight evaluation needs actual weight, dimensions, commodity and desired timing. The operator establishes chargeable weight, acceptance, packaging, screening and handling requirements. An estimate is not a guaranteed arrival; restricted cargo is not accepted through this enquiry."
+      },
+      "checkpoints": {
+        "ar": [
+          "الوزن الفعلي والأبعاد",
+          "الموعد المطلوب والمرونة",
+          "القبول ومتطلبات المشغل"
+        ],
+        "en": [
+          "Actual weight and dimensions",
+          "Required timing and flexibility",
+          "Operator acceptance requirements"
+        ]
+      }
+    },
+    {
+      "slug": "road-ftl",
+      "category": "road",
+      "rank": 4,
+      "title": {
+        "ar": "النقل البري بشاحنة كاملة",
+        "en": "Full-truckload road freight"
+      },
+      "summary": {
+        "ar": "نقل مخصص بين نقاط استلام وتسليم معروفة، وفق المعاينة الفعلية.",
+        "en": "Dedicated road transport between agreed pickup and delivery points."
+      },
+      "body": {
+        "ar": "راجع موقع التحميل وقدرته على استقبال المركبة، وطبيعة الطرود والوزن والمواعيد. يجب اعتماد المركبة والحمولة والوثائق ومسؤوليات التسليم من الناقل الحقيقي وفق القواعد السارية، دون وعد بوقت عبور حدود أو سعة محددة.",
+        "en": "Review loading access, cargo packaging, weight and schedule. The actual carrier must approve vehicle, load, documentation and handover responsibilities under applicable rules, without guaranteed border transit or capacity claims."
+      },
+      "checkpoints": {
+        "ar": [
+          "وصول المركبة لنقاط التحميل",
+          "الوزن والأبعاد",
+          "وثائق ومسؤوليات التسليم"
+        ],
+        "en": [
+          "Vehicle access at loading points",
+          "Weight and dimensions",
+          "Documents and handover responsibilities"
+        ]
+      }
+    },
+    {
+      "slug": "road-ltl",
+      "category": "road",
+      "rank": 5,
+      "title": {
+        "ar": "النقل البري المجمع",
+        "en": "Less-than-truckload road freight"
+      },
+      "summary": {
+        "ar": "خيار للطرود والمنصات الصغيرة وفق المسار والتوافق.",
+        "en": "Shared road transport for smaller suitable packages and pallets."
+      },
+      "body": {
+        "ar": "تُراجع قابلية الشحنة للمناولة والتجميع ومواعيد الاستلام والتسليم ونقاط التحويل. ناقش حماية التغليف وحدود الخدمة والتكاليف الإضافية مع الناقل. لا تضع معلومات شخصية للمرسل إليه أو مستندات تجارية حساسة في نموذج عام.",
+        "en": "Assess handling and consolidation suitability, pickup and delivery windows and transfer points. Discuss packaging protection, scope boundaries and extra charges with the carrier. Do not provide consignee personal data or confidential commercial documents in a public enquiry."
+      },
+      "checkpoints": {
+        "ar": [
+          "عدد الطرود أو المنصات",
+          "نوافذ الاستلام والتسليم",
+          "متطلبات المناولة والتغليف"
+        ],
+        "en": [
+          "Packages or pallets",
+          "Pickup and delivery windows",
+          "Handling and packaging needs"
+        ]
+      }
+    },
+    {
+      "slug": "warehousing",
+      "category": "support",
+      "rank": 6,
+      "title": {
+        "ar": "التخزين والتوزيع",
+        "en": "Warehousing and distribution"
+      },
+      "summary": {
+        "ar": "تقييم احتياجات التخزين والمناولة والتوزيع حسب طبيعة البضاعة.",
+        "en": "Assess storage, handling and distribution needs around commodity requirements."
+      },
+      "body": {
+        "ar": "يبدأ التخزين بتحديد مدة تقريبية وحجم البضاعة ونمط الاستلام والصرف ومتطلبات البيئة والمناولة. يحتاج أي مخزون خاص إلى تقييم منشأة مؤهلة، ولا يعني الاستفسار حجز مساحة أو اعتماد منشأة أو توافر خدمة.",
+        "en": "Start with storage duration, cargo volume, inbound/outbound patterns and environmental and handling requirements. Specialized inventory requires a qualified facility assessment; an enquiry does not reserve space or establish facility approval or availability."
+      },
+      "checkpoints": {
+        "ar": [
+          "مدة التخزين والحجم",
+          "نمط الاستلام والصرف",
+          "متطلبات البيئة والمناولة"
+        ],
+        "en": [
+          "Duration and volume",
+          "Inbound and outbound patterns",
+          "Environmental and handling requirements"
+        ]
+      }
+    },
+    {
+      "slug": "customs-coordination",
+      "category": "support",
+      "rank": 7,
+      "title": {
+        "ar": "تنسيق التخليص الجمركي",
+        "en": "Customs coordination"
+      },
+      "summary": {
+        "ar": "تحديد نطاق التنسيق والوثائق المطلوبة مع مختص مرخص.",
+        "en": "Define coordination scope and document requirements with a qualified broker."
+      },
+      "body": {
+        "ar": "تختلف متطلبات التخليص حسب السلعة والبلد والمسار والجهة المختصة. يحدد المخلص المرخص المستندات والتصنيف والرسوم الفعلية من مصادر رسمية عند التنفيذ. لا يطلب هذا النموذج جوازات أو فواتير أو بيانات حسابات أو أرقام هوية.",
+        "en": "Clearance requirements vary by commodity, country, route and authority. A licensed broker must determine documents, classification and actual duties from official sources. This enquiry collects no passports, invoices, bank details or identity numbers."
+      },
+      "checkpoints": {
+        "ar": [
+          "البلد ونوع العملية",
+          "مراجعة المستندات مع المختص",
+          "فصل الرسوم عن أجر الخدمة"
+        ],
+        "en": [
+          "Country and transaction type",
+          "Document review with a broker",
+          "Separate duties and service fees"
+        ]
+      }
+    },
+    {
+      "slug": "multimodal",
+      "category": "support",
+      "rank": 8,
+      "title": {
+        "ar": "تنسيق النقل متعدد الوسائط",
+        "en": "Multimodal coordination"
+      },
+      "summary": {
+        "ar": "ربط مراحل النقل والتخزين والتسليم ضمن نطاق مسؤوليات واضح.",
+        "en": "Coordinate transport legs, storage and handovers within explicit responsibility boundaries."
+      },
+      "body": {
+        "ar": "تحدد خطة النقل متعدد الوسائط نقاط التحويل ومسؤولية كل مرحلة والمتطلبات الزمنية والبدائل عند التأخير. يراجع المشغل الفعلي توفر الوسائط وشروط الناقل والتأمين قبل الاتفاق، دون ادعاء وجود شبكة أو أسعار أو مواعيد مباشرة.",
+        "en": "A multimodal plan defines transfer points, responsibility by leg, timing requirements and disruption alternatives. Actual operators confirm mode availability, carrier conditions and insurance before agreement, without claiming live network access, rates or schedules."
+      },
+      "checkpoints": {
+        "ar": [
+          "مراحل الرحلة ونقاط التحويل",
+          "مسؤوليات كل مرحلة",
+          "البدائل والتكاليف والاستثناءات"
+        ],
+        "en": [
+          "Journey legs and transfer points",
+          "Responsibilities per leg",
+          "Alternatives, costs and exclusions"
+        ]
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slug": "freight-quote-checklist",
+      "title": {
+        "ar": "جهز بيانات عرض الشحن",
+        "en": "Prepare a freight quote brief"
+      },
+      "summary": {
+        "ar": "المسار والوزن والأبعاد ونطاق الخدمة أساس المقارنة.",
+        "en": "Route, weight, dimensions and service scope underpin comparisons."
+      },
+      "body": {
+        "ar": "حدد دولة المنشأ والوجهة ونقاط الاستلام والتسليم وعدد الطرود وأبعادها ووزنها الإجمالي. افصل النقل والمناولة والتخليص والتأمين عن بعضها واطلب عرضًا مكتوبًا بشروط الاستثناء والتغيير. راجع الناقل المؤهل قبل أي تحويل مالي.",
+        "en": "Identify origin and destination, pickup and delivery points, package count, dimensions and gross weight. Separate freight, handling, customs and insurance and request written exclusions and change terms. Confirm with a qualified carrier before any payment."
+      }
+    },
+    {
+      "slug": "compare-freight-modes",
+      "title": {
+        "ar": "قارن وسائل الشحن بوضوح",
+        "en": "Compare freight modes clearly"
+      },
+      "summary": {
+        "ar": "الوقت والتكلفة والقيود ليست واحدة بين البحر والجو والبر.",
+        "en": "Timing, costs and restrictions vary between ocean, air and road."
+      },
+      "body": {
+        "ar": "ابدأ بالموعد المطلوب والحجم والوزن وطبيعة البضاعة. اطلب مقارنة عروض بنفس نطاق الاستلام والتسليم، وتحقق من الرسوم غير المشمولة والقيود ومتطلبات التعبئة. لا تعتمد على سعر أو مدة تقديرية دون تأكيد المشغل.",
+        "en": "Start with required timing, dimensions, weight and cargo characteristics. Compare quotes on equivalent pickup and delivery scope, checking exclusions, restrictions and packaging needs. Do not rely on estimates without operator confirmation."
+      }
+    },
+    {
+      "slug": "handover-and-tracking",
+      "title": {
+        "ar": "فرق بين رقم الاستفسار وتتبع الشحنة",
+        "en": "An enquiry reference is not shipment tracking"
+      },
+      "summary": {
+        "ar": "رقم طلب العرض لا يعني أن الشحنة تحركت.",
+        "en": "A quote enquiry reference does not mean freight is moving."
+      },
+      "body": {
+        "ar": "يصدر رقم تتبع الشحنة من الناقل بعد الإجراءات الفعلية. اطلب تحديد مسؤولية التحديثات ومصدر البيانات والمستندات اللازمة للتسليم. لا تنشر تفاصيل العميل أو الشحنة أو العنوان عبر رابط عام. الرقم الناتج عن هذا الموقع هو مرجع استفسار فقط.",
+        "en": "A tracking identifier comes from the carrier following actual operational arrangements. Establish update ownership, data source and handover documents. Do not disclose customer, cargo or address details through a public link. This site's reference identifies an enquiry only."
+      }
+    }
+  ],
+  "faq": [
+    {
+      "question": {
+        "ar": "هل السعر محسوب تلقائيًا؟",
+        "en": "Is a price calculated automatically?"
+      },
+      "answer": {
+        "ar": "لا؛ يلزم تقييم الناقل ومراجعة النطاق والرسوم.",
+        "en": "No; an operator must assess scope and charges."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل رقم الطلب رقم تتبع شحنة؟",
+        "en": "Is the enquiry number a shipment tracking number?"
+      },
+      "answer": {
+        "ar": "لا، لا يؤكد تحرك بضاعة أو حجز ناقل.",
+        "en": "No, it confirms neither movement nor carrier booking."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل يقبل الموقع البضائع الخطرة؟",
+        "en": "Does this form accept dangerous goods?"
+      },
+      "answer": {
+        "ar": "لا؛ راجع جهة مؤهلة عبر قناة مخصصة.",
+        "en": "No; consult a qualified provider through a dedicated channel."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل أرفع الفواتير أو وثائق الهوية؟",
+        "en": "Should I upload invoices or identity documents?"
+      },
+      "answer": {
+        "ar": "لا يجمع هذا النموذج تلك الملفات.",
+        "en": "This form does not collect those documents."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل مدة الشحن مضمونة؟",
+        "en": "Is transit time guaranteed?"
+      },
+      "answer": {
+        "ar": "يحدد الناقل الفعلي المدة والشروط عند تقديم العرض.",
+        "en": "The actual carrier confirms timing and terms in its quote."
+      }
+    }
+  ],
+  "modes": [
+    "ocean",
+    "air",
+    "road",
+    "support"
+  ],
+  "countries": [
+    "egypt",
+    "saudi-arabia",
+    "uae",
+    "other"
+  ],
+  "cargoTypes": [
+    "general",
+    "packaged",
+    "palletized"
+  ],
+  "weightBands": [
+    "under-100",
+    "100-499",
+    "500-1999",
+    "2000-plus",
+    "unknown"
+  ],
+  "scope": [
+    "door-to-door",
+    "terminal-to-terminal",
+    "door-to-terminal",
+    "terminal-to-door",
+    "undecided"
+  ],
+  "media": [
+    {
+      "role": "terminal-editorial",
+      "title": "Shipping terminal in Singapore",
+      "credit": "chuttersnap",
+      "license": "CC0-1.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Shipping_terminal_in_Singapore_(Unsplash).jpg",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "alt": {
+        "ar": "صورة جوية لمحطة حاويات في سنغافورة، لا تمثل منشأة روت لاين",
+        "en": "Aerial container terminal in Singapore, not a RouteLine facility"
+      },
+      "url": "/assets/portfolio/routeline-singapore-terminal.webp"
+    }
+  ]
+}

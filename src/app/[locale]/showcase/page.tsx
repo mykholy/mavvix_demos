@@ -1,3 +1,4 @@
+import { ROUTELINE } from '@/lib/verticals/logistics/data';
 import { LUMA_EVENTS } from '@/lib/verticals/events/data';
 import { NOMAD_ROUTES } from '@/lib/verticals/travel-agency/data';
 import { MAVVIX_CONTACT } from '@/lib/business/mavvix-contact';
@@ -26,7 +27,8 @@ import {
   Layers,
   Database,
   Trophy,
-  Compass
+  Compass,
+  Truck
 } from 'lucide-react';
 
 interface Props {
@@ -402,6 +404,15 @@ const demos = [
     tagline:{ar:'تخطيط تجربة الضيوف والمكان والإنتاج واستفسار فعالية آمن',en:'Guest journey, venue and production planning with a scoped event brief'},
     journeys:[{ar:'ثماني تجارب متخصصة مع نطاق ومتطلبات واضحة',en:'Eight authored experience dossiers with planning checkpoints'},{ar:'تصفية أنواع الفعاليات ودليل المكان والإنتاج',en:'Event format filters, venue brief and production guide'},{ar:'استفسار محفوظ بدون حجز قاعة أو دفع وهمي',en:'Persisted nonbinding enquiry without fake venue booking or payments'}],
     features:['Event Format Explorer','Guest Journey & Production','Validated Event Brief']
+  },
+  {
+    number:'24',slug:'logistics',
+    name:{ar:'روت لاين — موقع الشحن واللوجستيات',en:'RouteLine Cargo — Freight & Logistics Website'},
+    sector:{ar:'النقل البحري والجوي والبري والتخزين',en:'Ocean, air, road freight and support'},
+    icon:Truck,color:'#31566C',bgColor:'bg-slate-50',borderColor:'border-slate-200',routesCount:21,
+    tagline:{ar:'مقارنة وسائل الشحن ونطاق النقل وطلب عرض سعر منظم',en:'Freight mode comparison, service scope and structured quote enquiry'},
+    journeys:[{ar:'ثمانية ملفات خدمات شحن متخصصة',en:'Eight freight and support service dossiers'},{ar:'مقارنة مراحل النقل والمسؤوليات والمشمول',en:'Transport milestones, responsibility and scope comparison'},{ar:'مرجع طلب محفوظ دون تتبع أو حجز وهمي',en:'Persisted enquiry reference, not simulated live tracking'}],
+    features:['Freight Mode Explorer','Route & Scope Guide','Validated Freight Enquiry']
   }
 ];
 
@@ -567,6 +578,8 @@ export default async function ShowcasePage(props: Props) {
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#E8EFE5]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Veterinary_Office_with_dog.JPG/1280px-Veterinary_Office_with_dog.JPG" loading="lazy" decoding="async" className="h-full w-full object-cover" alt={isAr?'صورة حقيقية مرخصة لكلب في عيادة بيطرية مستقلة، ليست PawWell':'Real CC0 editorial dog photograph in an unrelated veterinary clinic'}/></div>
                   : d.slug==='law-firm'
                   ? <div className="relative h-52 bg-[#D6CAB8] overflow-hidden"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Canadian_law_books_%2831460630695%29.jpg/1280px-Canadian_law_books_%2831460630695%29.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'كتب قانونية حقيقية من كندا، صورة عامة مرخصة لا تتبع Lexora':'CC0 editorial Canadian law books, not an operating Lexora office'}/></div>
+                  : d.slug==='logistics'
+                  ? <div className="relative h-52 bg-[#DDE6E9] overflow-hidden"><img src={ROUTELINE.media[0].url} loading="lazy" decoding="async" className="w-full h-full object-cover" alt={ROUTELINE.media[0].alt[locale]}/><span className="absolute bottom-0 inset-x-0 bg-[#102A3A] text-white text-[10px] px-2 py-1">chuttersnap · CC0 · {isAr?'صورة تحريرية':'Editorial photograph'}</span></div>
                   : d.slug==='events'
                   ? <div className="relative h-52 bg-[#F1E4DF] overflow-hidden"><img src={LUMA_EVENTS.media[0].url} loading="lazy" decoding="async" className="w-full h-full object-cover" alt={LUMA_EVENTS.media[0].alt[locale]}/><span className="absolute bottom-0 inset-x-0 bg-[#291C2D] text-white text-[10px] px-2 py-1">PattayaPatrol · CC BY-SA 4.0 · {isAr?'اقتصاص':'cropped'}</span></div>
                   : d.slug==='travel-agency'

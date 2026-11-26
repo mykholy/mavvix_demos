@@ -1,0 +1,19 @@
+{
+  "vertical": "logistics",
+  "assets": [
+    {
+      "id": "routeline-singapore-terminal",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Shipping_terminal_in_Singapore_(Unsplash).jpg",
+      "author": "chuttersnap",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloaded_from": "https://upload.wikimedia.org/wikipedia/commons/7/73/Shipping_terminal_in_Singapore_%28Unsplash%29.jpg",
+      "original_sha1": "778d2efe0fb0104d8ee41978e0bb25e24b6b2ca3",
+      "local": "/assets/portfolio/routeline-singapore-terminal.webp",
+      "dimensions": "1600x1067",
+      "sha256": "af6d0bbf9427327178951c34ca710379f1ca24b5f1f3fa8919e290e2c856bf96",
+      "bytes": 469208,
+      "changes": "Resized and WebP encoded; display crop; independent editorial photograph, not a RouteLine facility"
+    }
+  ]
+}
