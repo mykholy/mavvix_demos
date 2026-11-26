@@ -157,14 +157,14 @@ const DATA:Record<SectorName,SectorRecord>={
  }
 };
 const theme:Record<SectorName,{ink:string;paper:string;accent:string;muted:string}>={
- construction:{ink:'#162327',paper:'#F1EEE8',accent:'#D26A3B',muted:'#52605A'},
- industrial:{ink:'#12243C',paper:'#EDF2F6',accent:'#C38D32',muted:'#506276'},
- 'real-estate':{ink:'#25312D',paper:'#F1EBE0',accent:'#A8764F',muted:'#55665A'},
- dental:{ink:'#193A39',paper:'#EAF5F1',accent:'#519C84',muted:'#4E6967'},
- ecommerce:{ink:'#1A1715',paper:'#F8F0E8',accent:'#B7806A',muted:'#766359'},
+ construction:{ink:'#162327',paper:'#F1EEE8',accent:'#A64B26',muted:'#52605A'},
+ industrial:{ink:'#12243C',paper:'#EDF2F6',accent:'#895807',muted:'#506276'},
+ 'real-estate':{ink:'#25312D',paper:'#F1EBE0',accent:'#805333',muted:'#55665A'},
+ dental:{ink:'#193A39',paper:'#EAF5F1',accent:'#306D59',muted:'#4E6967'},
+ ecommerce:{ink:'#1A1715',paper:'#F8F0E8',accent:'#8A503E',muted:'#766359'},
  portfolio:{ink:'#0F0F10',paper:'#F4F3EE',accent:'#5D6E4A',muted:'#64635D'},
- restaurant:{ink:'#321F18',paper:'#F8EEE0',accent:'#BA5C34',muted:'#795D4D'},
- academy:{ink:'#192A48',paper:'#F1F4FC',accent:'#EF6A55',muted:'#65728D'}
+ restaurant:{ink:'#321F18',paper:'#F8EEE0',accent:'#984321',muted:'#795D4D'},
+ academy:{ink:'#192A48',paper:'#F1F4FC',accent:'#B74132',muted:'#65728D'}
 };
 export function SectorDepth({sector,locale}:{sector:SectorName;locale:'ar'|'en'}){
  const d=DATA[sector],t=theme[sector],ar=locale==='ar';

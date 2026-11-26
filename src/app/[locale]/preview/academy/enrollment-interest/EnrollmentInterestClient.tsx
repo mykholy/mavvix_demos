@@ -346,7 +346,7 @@ export function EnrollmentInterestClient({ courses, locale }: Props) {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full sm:w-auto px-8 py-3 rounded-xl bg-[#EF6A55] hover:bg-[#D95540] text-white font-semibold text-sm shadow-md transition-all flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-8 py-3 rounded-xl bg-[#B74132] hover:bg-[#D95540] text-white font-semibold text-sm shadow-md transition-all flex items-center justify-center gap-2"
           >
             {submitting ? (
               <span>{isAr ? 'جاري الإرسال...' : 'Submitting...'}</span>

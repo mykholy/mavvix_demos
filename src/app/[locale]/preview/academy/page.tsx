@@ -41,7 +41,7 @@ export default async function AcademyHomePage({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#192A48]/10 text-[#192A48] text-xs font-semibold">
-              <span className="w-2 h-2 rounded-full bg-[#EF6A55]" />
+              <span className="w-2 h-2 rounded-full bg-[#B74132]" />
               <span>
                 {isAr ? 'التعليم التطبيقي القائم على المشاريع الحقيقية' : 'Production-Grade Project-Based Learning'}
               </span>
@@ -84,7 +84,7 @@ export default async function AcademyHomePage({
 
               <Link
                 href={`/${locale}/preview/academy/learn/course-01/lesson-01-01`}
-                className="px-6 py-3.5 rounded-xl bg-white border border-[#192A48]/20 text-[#192A48] hover:border-[#EF6A55] hover:text-[#EF6A55] transition-all text-sm font-semibold shadow-sm flex items-center gap-2"
+                className="px-6 py-3.5 rounded-xl bg-white border border-[#192A48]/20 text-[#192A48] hover:border-[#EF6A55] hover:text-[#B74132] transition-all text-sm font-semibold shadow-sm flex items-center gap-2"
               >
                 <span>{isAr ? 'تجربة درس مجاني واختبار مقيم ⚡' : 'Try Free Lesson & Scored Quiz ⚡'}</span>
               </Link>
@@ -150,7 +150,7 @@ export default async function AcademyHomePage({
                   <h3 className="font-serif text-lg font-bold text-[#192A48] group-hover:text-[#5F67B5] transition-colors">
                     {track.name}
                   </h3>
-                  <p className="text-xs text-[#EF6A55] font-medium mt-1">{track.headline}</p>
+                  <p className="text-xs text-[#B74132] font-medium mt-1">{track.headline}</p>
                 </div>
                 <p className="text-xs text-[#192A48]/70 leading-relaxed">{track.description}</p>
               </div>
@@ -161,7 +161,7 @@ export default async function AcademyHomePage({
                 </span>
                 <Link
                   href={`/${locale}/preview/academy/courses?track=${track.slug}`}
-                  className="text-[#5F67B5] hover:text-[#EF6A55] flex items-center gap-1 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all"
+                  className="text-[#5F67B5] hover:text-[#B74132] flex items-center gap-1 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all"
                 >
                   <span>{isAr ? 'عرض الدورات' : 'View Track'}</span>
                   <span>{isAr ? '←' : '→'}</span>
@@ -176,7 +176,7 @@ export default async function AcademyHomePage({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
           <div className="space-y-2">
-            <div className="text-xs font-semibold uppercase tracking-wider text-[#EF6A55]">
+            <div className="text-xs font-semibold uppercase tracking-wider text-[#B74132]">
               {isAr ? 'مناهج مميزة' : 'Featured Curricula'}
             </div>
             <h2 className="font-serif text-3xl font-bold text-[#192A48]">
@@ -185,7 +185,7 @@ export default async function AcademyHomePage({
           </div>
           <Link
             href={`/${locale}/preview/academy/courses`}
-            className="text-sm font-semibold text-[#5F67B5] hover:text-[#EF6A55] inline-flex items-center gap-1"
+            className="text-sm font-semibold text-[#5F67B5] hover:text-[#B74132] inline-flex items-center gap-1"
           >
             <span>{isAr ? 'تصفح كافة الـ ١٢ منهجًا' : 'Browse All 12 Curricula'}</span>
             <span>{isAr ? '←' : '→'}</span>
@@ -210,7 +210,7 @@ export default async function AcademyHomePage({
                     <span className="text-[#192A48]/50 capitalize">{course.level}</span>
                   </div>
 
-                  <h3 className="font-serif text-base font-bold text-[#192A48] hover:text-[#EF6A55] transition-colors">
+                  <h3 className="font-serif text-base font-bold text-[#192A48] hover:text-[#B74132] transition-colors">
                     <Link href={`/${locale}/preview/academy/courses/${course.slug}`}>{course.title}</Link>
                   </h3>
 
@@ -240,7 +240,7 @@ export default async function AcademyHomePage({
                     </Link>
                     <Link
                       href={`/${locale}/preview/academy/learn/${course.slug}/lesson-01-01`}
-                      className="py-2 px-2 rounded-lg bg-[#EF6A55]/10 text-[#EF6A55] hover:bg-[#EF6A55] hover:text-white transition-colors"
+                      className="py-2 px-2 rounded-lg bg-[#B74132]/10 text-[#B74132] hover:bg-[#B74132] hover:text-white transition-colors"
                     >
                       {isAr ? 'درس تجريبي ⚡' : 'Preview ⚡'}
                     </Link>
@@ -256,7 +256,7 @@ export default async function AcademyHomePage({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-gradient-to-r from-[#192A48] via-[#243555] to-[#192A48] rounded-3xl p-8 sm:p-12 text-white shadow-xl relative overflow-hidden">
           <div className="max-w-2xl space-y-4 relative z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[#EF6A55] text-xs font-semibold">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[#FFB4A5] text-xs font-semibold">
               <span>⚡ {isAr ? 'محاكاة رحلة المتعلم الكاملة' : 'Complete Learner Journey Test Drive'}</span>
             </div>
 
@@ -275,7 +275,7 @@ export default async function AcademyHomePage({
             <div className="pt-2 flex flex-wrap gap-4">
               <Link
                 href={`/${locale}/preview/academy/learn/course-01/lesson-01-01`}
-                className="px-6 py-3 rounded-xl bg-[#EF6A55] text-white hover:bg-[#D95540] text-sm font-semibold transition-all shadow-md"
+                className="px-6 py-3 rounded-xl bg-[#B74132] text-white hover:bg-[#D95540] text-sm font-semibold transition-all shadow-md"
               >
                 {isAr ? 'بدء الدرس التجريبي الأول' : 'Start Preview Lesson (Lesson 01)'}
               </Link>
@@ -294,7 +294,7 @@ export default async function AcademyHomePage({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
           <div className="space-y-2">
-            <div className="text-xs font-semibold uppercase tracking-wider text-[#EF6A55]">
+            <div className="text-xs font-semibold uppercase tracking-wider text-[#B74132]">
               {isAr ? 'هيئة التدريس والخبراء' : 'Faculty & Practitioners'}
             </div>
             <h2 className="font-serif text-3xl font-bold text-[#192A48]">
@@ -303,7 +303,7 @@ export default async function AcademyHomePage({
           </div>
           <Link
             href={`/${locale}/preview/academy/instructors`}
-            className="text-sm font-semibold text-[#5F67B5] hover:text-[#EF6A55] inline-flex items-center gap-1"
+            className="text-sm font-semibold text-[#5F67B5] hover:text-[#B74132] inline-flex items-center gap-1"
           >
             <span>{isAr ? 'عرض كافة الخبراء (٨ أعضاء)' : 'View All 8 Instructors'}</span>
             <span>{isAr ? '←' : '→'}</span>
@@ -326,7 +326,7 @@ export default async function AcademyHomePage({
                       {ins.name}
                     </Link>
                   </h3>
-                  <p className="text-xs text-[#EF6A55] font-medium mt-0.5">{ins.title}</p>
+                  <p className="text-xs text-[#B74132] font-medium mt-0.5">{ins.title}</p>
                 </div>
                 <p className="text-xs text-[#192A48]/70 leading-relaxed line-clamp-3">{ins.bio}</p>
               </div>
@@ -337,7 +337,7 @@ export default async function AcademyHomePage({
                 </span>
                 <Link
                   href={`/${locale}/preview/academy/instructors/${ins.slug}`}
-                  className="font-semibold text-[#5F67B5] hover:text-[#EF6A55]"
+                  className="font-semibold text-[#5F67B5] hover:text-[#B74132]"
                 >
                   {isAr ? 'الملف الشخصي' : 'Profile'}
                 </Link>
@@ -351,7 +351,7 @@ export default async function AcademyHomePage({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
           <div className="space-y-2">
-            <div className="text-xs font-semibold uppercase tracking-wider text-[#EF6A55]">
+            <div className="text-xs font-semibold uppercase tracking-wider text-[#B74132]">
               {isAr ? 'المقالات والتحليلات' : 'Articles & Guides'}
             </div>
             <h2 className="font-serif text-3xl font-bold text-[#192A48]">
@@ -360,7 +360,7 @@ export default async function AcademyHomePage({
           </div>
           <Link
             href={`/${locale}/preview/academy/resources`}
-            className="text-sm font-semibold text-[#5F67B5] hover:text-[#EF6A55] inline-flex items-center gap-1"
+            className="text-sm font-semibold text-[#5F67B5] hover:text-[#B74132] inline-flex items-center gap-1"
           >
             <span>{isAr ? 'المزيد من المقالات' : 'More Resources'}</span>
             <span>{isAr ? '←' : '→'}</span>
@@ -377,7 +377,7 @@ export default async function AcademyHomePage({
                 <span className="inline-block px-2.5 py-1 rounded-full bg-[#192A48]/5 text-[#192A48] text-xs font-medium">
                   {article.category}
                 </span>
-                <h3 className="font-serif text-lg font-bold text-[#192A48] hover:text-[#EF6A55] transition-colors leading-snug">
+                <h3 className="font-serif text-lg font-bold text-[#192A48] hover:text-[#B74132] transition-colors leading-snug">
                   <Link href={`/${locale}/preview/academy/resources/${article.slug}`}>{article.title}</Link>
                 </h3>
                 <p className="text-xs text-[#192A48]/70 leading-relaxed line-clamp-3">
@@ -389,7 +389,7 @@ export default async function AcademyHomePage({
                 <span>{article.published_at.slice(0, 10)}</span>
                 <Link
                   href={`/${locale}/preview/academy/resources/${article.slug}`}
-                  className="font-semibold text-[#5F67B5] hover:text-[#EF6A55]"
+                  className="font-semibold text-[#5F67B5] hover:text-[#B74132]"
                 >
                   {isAr ? 'قراءة المقال ←' : 'Read Article →'}
                 </Link>

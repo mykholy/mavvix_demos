@@ -47,7 +47,7 @@ export function AcademyHeader({ locale }: { locale: 'ar' | 'en' }) {
                   key={link.href}
                   href={link.href}
                   className={`text-sm font-medium transition-colors ${
-                    active ? 'text-[#EF6A55] font-semibold' : 'text-[#192A48]/80 hover:text-[#EF6A55]'
+                    active ? 'text-[#B74132] font-semibold' : 'text-[#192A48]/80 hover:text-[#B74132]'
                   }`}
                 >
                   {link.label}
@@ -61,7 +61,7 @@ export function AcademyHeader({ locale }: { locale: 'ar' | 'en' }) {
             {/* Language Switch */}
             <Link
               href={switchLocaleHref}
-              className="text-xs px-2.5 py-1 rounded border border-[#192A48]/20 text-[#192A48] hover:border-[#EF6A55] hover:text-[#EF6A55] transition-colors"
+              className="text-xs px-2.5 py-1 rounded border border-[#192A48]/20 text-[#192A48] hover:border-[#EF6A55] hover:text-[#B74132] transition-colors"
             >
               {isAr ? 'English' : 'عربي'}
             </Link>
@@ -77,7 +77,7 @@ export function AcademyHeader({ locale }: { locale: 'ar' | 'en' }) {
             {/* Enrollment Interest CTA */}
             <Link
               href={`/${locale}/preview/academy/enrollment-interest`}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#EF6A55] text-white hover:bg-[#D95540] transition-all text-xs font-semibold shadow-sm"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#B74132] text-white hover:bg-[#D95540] transition-all text-xs font-semibold shadow-sm"
             >
               <span>{isAr ? 'تسجيل الاهتمام' : 'Enrollment Interest'}</span>
             </Link>
@@ -122,7 +122,7 @@ export function AcademyHeader({ locale }: { locale: 'ar' | 'en' }) {
             <Link
               href={`/${locale}/preview/academy/enrollment-interest`}
               onClick={() => setMobileMenuOpen(false)}
-              className="mt-2 text-center py-2.5 px-4 rounded-lg bg-[#EF6A55] text-white text-sm font-semibold"
+              className="mt-2 text-center py-2.5 px-4 rounded-lg bg-[#B74132] text-white text-sm font-semibold"
             >
               {isAr ? 'تسجيل اهتمام بالالتحاق' : 'Register Enrollment Interest'}
             </Link>
