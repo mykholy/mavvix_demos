@@ -1,3 +1,4 @@
+import { handleEventPlanning } from '@/server/portfolio/events';
 import { handleTravelPlanning } from '@/server/portfolio/travel-agency';
 import { handleAccountingScope } from '@/server/portfolio/accounting';
 import { handleLegalEnquiry } from '@/server/portfolio/law-firm';
@@ -46,6 +47,7 @@ export async function POST(req:Request, props:{params: Promise<{vertical:string}
  if(params.vertical==='physiotherapy')return handlePhysiotherapyInterest(req);
  if(params.vertical==='veterinary')return handleVeterinaryVisit(req);
  if(params.vertical==='law-firm')return handleLegalEnquiry(req);
+ if(params.vertical==='events')return handleEventPlanning(req);
  if(params.vertical==='travel-agency')return handleTravelPlanning(req);
  if(params.vertical==='accounting')return handleAccountingScope(req);
  if(params.vertical==='nursery')return handleNurseryVisit(req);

@@ -1,0 +1,43 @@
+{
+  "assets": [
+    {
+      "id": "montessori-shelves",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Montessorishelves.jpg",
+      "author": "Clematitedusud",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "downloaded_from": "https://upload.wikimedia.org/wikipedia/commons/7/71/Montessorishelves.jpg",
+      "local": "/assets/portfolio/montessori-shelves.webp",
+      "dimensions": "1600x1600",
+      "sha256": "caaab590105a58984f1371192f9660d972579c167b4ec9e6ac31a21a7788af39",
+      "bytes": 221316,
+      "changes": "Resized, orientation normalized, WebP encoding; display may crop. Derivative image retains source license."
+    },
+    {
+      "id": "physiotherapy",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Rehabilitaci%C3%B3n_fisioterapia.jpg",
+      "author": "Ceibos",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "downloaded_from": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Rehabilitaci%C3%B3n_fisioterapia.jpg",
+      "local": "/assets/portfolio/physiotherapy.webp",
+      "dimensions": "1200x1600",
+      "sha256": "5bafb9a54d404085f2d6e32b716945283ee5bbbc35ceb182b169a1029c204d9a",
+      "bytes": 48112,
+      "changes": "Resized, orientation normalized, WebP encoding; display may crop. Derivative image retains source license."
+    },
+    {
+      "id": "luma-conference-hall",
+      "source_page": "https://commons.wikimedia.org/wiki/File:DZ6_0468_Spacious_elegantly_lit_banquet_hall_set_up_with_rows_of_white-covered_chairs_facing_a_stage_ready_for_a_large_conference_or_formal_event.jpg",
+      "author": "PattayaPatrol",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "downloaded_from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/DZ6_0468_Spacious_elegantly_lit_banquet_hall_set_up_with_rows_of_white-covered_chairs_facing_a_stage_ready_for_a_large_conference_or_formal_event.jpg/1280px-DZ6_0468_Spacious_elegantly_lit_banquet_hall_set_up_with_rows_of_white-covered_chairs_facing_a_stage_ready_for_a_large_conference_or_formal_event.jpg",
+      "local": "/assets/portfolio/luma-conference-hall.webp",
+      "dimensions": "1280x852",
+      "sha256": "4b44c7768617ec2c8456342c017b88b8cc094efb290b6fb140cf8915e0a772e0",
+      "bytes": 210850,
+      "changes": "Resized, orientation normalized, WebP encoding; display may crop. Derivative image retains source license."
+    }
+  ]
+}

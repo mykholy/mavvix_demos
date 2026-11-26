@@ -1,3 +1,4 @@
+import { LUMA_EVENTS } from '@/lib/verticals/events/data';
 import { NOMAD_ROUTES } from '@/lib/verticals/travel-agency/data';
 import { MAVVIX_CONTACT } from '@/lib/business/mavvix-contact';
 import { SectorPhoto } from '@/components/shared/SectorPhoto';
@@ -392,6 +393,15 @@ const demos = [
       {ar:'استفسار تخطيط محفوظ دون تأكيد حجز أو سعر أو تأشيرة',en:'Persisted nonbinding enquiry without fake availability or price'}
     ],
     features:['Itinerary Explorer','Destination and Pace Guide','Validated Planning Enquiry']
+  },
+  {
+    number:'23',slug:'events',
+    name:{ar:'لوما — موقع تنظيم الحفلات والفعاليات',en:'Luma Events — Event Planning Website'},
+    sector:{ar:'المؤتمرات والمعارض والمناسبات والإنتاج',en:'Conferences, celebrations, exhibitions and production'},
+    icon:Sparkles,color:'#874F63',bgColor:'bg-rose-50',borderColor:'border-rose-200',routesCount:21,
+    tagline:{ar:'تخطيط تجربة الضيوف والمكان والإنتاج واستفسار فعالية آمن',en:'Guest journey, venue and production planning with a scoped event brief'},
+    journeys:[{ar:'ثماني تجارب متخصصة مع نطاق ومتطلبات واضحة',en:'Eight authored experience dossiers with planning checkpoints'},{ar:'تصفية أنواع الفعاليات ودليل المكان والإنتاج',en:'Event format filters, venue brief and production guide'},{ar:'استفسار محفوظ بدون حجز قاعة أو دفع وهمي',en:'Persisted nonbinding enquiry without fake venue booking or payments'}],
+    features:['Event Format Explorer','Guest Journey & Production','Validated Event Brief']
   }
 ];
 
@@ -548,15 +558,17 @@ export default async function ShowcasePage(props: Props) {
                   : d.slug==='interiors-kitchens'
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#F4F0EA]"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Kitchen_Design.jpg/960px-Kitchen_Design.jpg" alt={isAr?'صورة تحريرية لتصميم مطبخ':'Editorial kitchen design photograph'} className="h-full w-full object-cover"/></div>
                   : d.slug==='nursery'
-                  ? <div className="relative h-52 w-full overflow-hidden bg-[#FFF5DA]"><img src="https://upload.wikimedia.org/wikipedia/commons/7/71/Montessorishelves.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'مواد تعليمية حقيقية من فصل مونتيسوري مستقل، لا يمثل حضانة بلوم ستيبس':'Real editorial Montessori learning materials in an unrelated classroom'}/></div>
+                  ? <div className="relative h-52 w-full overflow-hidden bg-[#FFF5DA]"><img src="/assets/portfolio/montessori-shelves.webp" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'مواد تعليمية حقيقية من فصل مونتيسوري مستقل، لا يمثل حضانة بلوم ستيبس':'Real editorial Montessori learning materials in an unrelated classroom'}/></div>
                   : d.slug==='car-detailing'
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#071424]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Exterior_Car_detailing.png/1280px-Exterior_Car_detailing.png" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'صورة مرخصة حقيقية لسيارة خلال عمل ديتيلنج':'Genuine CC0 editorial car-detailing photograph'}/></div>
                   : d.slug==='physiotherapy'
-                  ? <div className="relative h-52 w-full overflow-hidden bg-[#E5F2E9]"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Rehabilitaci%C3%B3n_fisioterapia.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover object-center" alt={isAr?'صورة تحريرية لمجال العلاج الطبيعي، ليست من مركز موشن لاب':'CC BY 4.0 editorial physiotherapy image; not Motion Lab staff or patients'}/></div>
+                  ? <div className="relative h-52 w-full overflow-hidden bg-[#E5F2E9]"><img src="/assets/portfolio/physiotherapy.webp" loading="lazy" decoding="async" className="w-full h-full object-cover object-center" alt={isAr?'صورة تحريرية لمجال العلاج الطبيعي، ليست من مركز موشن لاب':'CC BY 4.0 editorial physiotherapy image; not Motion Lab staff or patients'}/></div>
                   : d.slug==='veterinary'
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#E8EFE5]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Veterinary_Office_with_dog.JPG/1280px-Veterinary_Office_with_dog.JPG" loading="lazy" decoding="async" className="h-full w-full object-cover" alt={isAr?'صورة حقيقية مرخصة لكلب في عيادة بيطرية مستقلة، ليست PawWell':'Real CC0 editorial dog photograph in an unrelated veterinary clinic'}/></div>
                   : d.slug==='law-firm'
                   ? <div className="relative h-52 bg-[#D6CAB8] overflow-hidden"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Canadian_law_books_%2831460630695%29.jpg/1280px-Canadian_law_books_%2831460630695%29.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'كتب قانونية حقيقية من كندا، صورة عامة مرخصة لا تتبع Lexora':'CC0 editorial Canadian law books, not an operating Lexora office'}/></div>
+                  : d.slug==='events'
+                  ? <div className="relative h-52 bg-[#F1E4DF] overflow-hidden"><img src={LUMA_EVENTS.media[0].url} loading="lazy" decoding="async" className="w-full h-full object-cover" alt={LUMA_EVENTS.media[0].alt[locale]}/><span className="absolute bottom-0 inset-x-0 bg-[#291C2D] text-white text-[10px] px-2 py-1">PattayaPatrol · CC BY-SA 4.0 · {isAr?'اقتصاص':'cropped'}</span></div>
                   : d.slug==='travel-agency'
                   ? <div className="relative h-52 bg-[#F4EBDD] overflow-hidden"><img src={NOMAD_ROUTES.media[0].url} loading="lazy" decoding="async" className="w-full h-full object-cover" alt={NOMAD_ROUTES.media[0].alt[locale]}/></div>
                   : d.slug==='accounting'

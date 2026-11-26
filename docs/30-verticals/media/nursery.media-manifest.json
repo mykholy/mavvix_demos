@@ -27,7 +27,12 @@
       "verified_source_license": true,
       "verified_image_visually": true,
       "editorial_only": true,
-      "credit_note": "Independent Montessori material shelves. Display with attribution, source, licence and display crop notice."
+      "credit_note": "Independent Montessori material shelves. Display with attribution, source, licence and display crop notice.",
+      "local": "/assets/portfolio/montessori-shelves.webp",
+      "served_dimensions": "1600x1600",
+      "sha256": "caaab590105a58984f1371192f9660d972579c167b4ec9e6ac31a21a7788af39",
+      "downloaded_from": "https://upload.wikimedia.org/wikipedia/commons/7/71/Montessorishelves.jpg",
+      "changes": "Resized, orientation normalized, WebP encoding; display may crop. Derivative image retains source license."
     }
   ],
   "release_note": "Self-hosted optimization and exact browser load still pending. Do not use recognizable children in showcase media."

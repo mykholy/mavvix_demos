@@ -17,7 +17,12 @@
       "planned_use": "educational vertical editorial photo only",
       "credit_required": true,
       "credit_text": "Ceibos / Wikimedia Commons / CC BY 4.0; changes/crop disclosed when made",
-      "actual_clinic_patient": false
+      "actual_clinic_patient": false,
+      "local": "/assets/portfolio/physiotherapy.webp",
+      "served_dimensions": "1200x1600",
+      "sha256": "5bafb9a54d404085f2d6e32b716945283ee5bbbc35ceb182b169a1029c204d9a",
+      "downloaded_from": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Rehabilitaci%C3%B3n_fisioterapia.jpg",
+      "changes": "Resized, orientation normalized, WebP encoding; display may crop. Derivative image retains source license."
     },
     {
       "id": "indoor-exercise",
