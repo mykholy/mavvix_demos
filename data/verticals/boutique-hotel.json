@@ -347,5 +347,21 @@
       }
     }
   ],
-  "media": []
+  "media": [
+    {
+      "role": "room-editorial",
+      "credit": "Book Elizabeth",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Boutique-hotel.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Boutique-hotel.jpg",
+      "originalSha1": "6cb170ab0f72dbd466de403e095ef2ac72cd29c0",
+      "width": 2560,
+      "height": 2560,
+      "alt": {
+        "ar": "غرفة فندقية أنيقة في صورة تحريرية مستقلة",
+        "en": "Elegant boutique hotel room, independent editorial photography"
+      }
+    }
+  ]
 }
