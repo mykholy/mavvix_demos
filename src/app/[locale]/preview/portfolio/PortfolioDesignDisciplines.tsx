@@ -138,7 +138,7 @@ export function PortfolioDesignDisciplines({ locale }: { locale: Locale }) {
     <section className="bg-[#F6F5F2] rounded-[2rem] border border-[#E2E0D8] p-6 sm:p-10 lg:p-12 space-y-8" aria-labelledby="disciplines-heading">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E2E0D8] pb-6">
         <div>
-          <span className="font-mono text-xs uppercase tracking-widest text-[#737068]">
+          <span className="font-mono text-xs uppercase tracking-widest text-[#42403B] font-bold">
             {isAr ? 'أركان الممارسة الاستشارية' : 'Methodology & Pillars'}
           </span>
           <h2 id="disciplines-heading" className="font-serif text-2xl sm:text-4xl font-bold text-[#0F0F10] mt-2">
@@ -147,7 +147,7 @@ export function PortfolioDesignDisciplines({ locale }: { locale: Locale }) {
         </div>
         <Link
           href={`/${locale}/preview/portfolio/services`}
-          className="font-mono text-xs font-semibold text-[#0F0F10] hover:text-[#737068] inline-flex items-center gap-1.5"
+          className="font-mono text-xs font-semibold text-[#0F0F10] hover:text-[#42403B] inline-flex items-center gap-1.5"
         >
           <span>{isAr ? 'استعراض كل الخدمات' : 'Explore All Services'}</span>
           <Arrow className="w-3.5 h-3.5" />
@@ -183,7 +183,7 @@ export function PortfolioDesignDisciplines({ locale }: { locale: Locale }) {
         {/* Left: Content & Thesis */}
         <div className="lg:col-span-7 space-y-6">
           <div className="space-y-2">
-            <span className="font-mono text-xs text-[#737068] uppercase tracking-wider block">
+            <span className="font-mono text-xs text-[#42403B] font-bold uppercase tracking-wider block">
               {isAr ? 'المنهجية المعتمدة' : 'Operational Philosophy'}
             </span>
             <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0F0F10]">
@@ -220,7 +220,7 @@ export function PortfolioDesignDisciplines({ locale }: { locale: Locale }) {
               <span>{isAr ? 'طلب استشارة في هذا المجال' : 'Commission This Discipline'}</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-[#CCFF00]" />
             </Link>
-            <div className="font-mono text-xs text-[#737068]">
+            <div className="font-mono text-xs text-[#42403B] font-semibold">
               {isAr ? 'استوديو سلمى حسن — مافيكس' : 'Salma Hassan Studio — Mavvix'}
             </div>
           </div>
@@ -242,7 +242,7 @@ export function PortfolioDesignDisciplines({ locale }: { locale: Locale }) {
               <span className="text-[#CCFF00] font-bold uppercase">{photo.category}</span>
             </div>
           </div>
-          <p className="text-[11px] font-mono text-[#737068] text-center">
+          <p className="text-[11px] font-mono text-[#42403B] font-semibold text-center">
             {photo.author} · {photo.license} ({photo.width}×{photo.height}px)
           </p>
         </div>

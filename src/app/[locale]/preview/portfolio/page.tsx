@@ -108,7 +108,7 @@ export default async function PortfolioHomePage(
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10" aria-labelledby="flagship-cases-heading">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E2E0D8] pb-4">
           <div>
-            <span className="font-mono text-xs uppercase tracking-widest text-[#737068]">
+            <span className="font-mono text-xs uppercase tracking-widest text-[#42403B] font-bold">
               {isAr ? 'دراسات الحالة المميزة' : 'Selected Case Studies'}
             </span>
             <h2 id="flagship-cases-heading" className="font-serif text-2xl sm:text-4xl font-bold text-[#0F0F10] mt-2">
@@ -117,7 +117,7 @@ export default async function PortfolioHomePage(
           </div>
           <Link
             href={`/${locale}/preview/portfolio/work`}
-            className="font-mono text-xs font-semibold text-[#0F0F10] hover:text-[#737068] inline-flex items-center gap-1.5"
+            className="font-mono text-xs font-semibold text-[#0F0F10] hover:text-[#42403B] inline-flex items-center gap-1.5"
             aria-label={isAr ? 'استعراض كافة المشاريع الاثني عشر' : 'View all 12 case studies'}
           >
             <span>{isAr ? 'جميع المشاريع (12)' : 'All 12 Projects'}</span>
@@ -185,7 +185,7 @@ export default async function PortfolioHomePage(
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10" aria-labelledby="services-overview-heading">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E2E0D8] pb-4">
           <div>
-            <span className="font-mono text-xs uppercase tracking-widest text-[#737068]">
+            <span className="font-mono text-xs uppercase tracking-widest text-[#42403B] font-bold">
               {isAr ? 'الخدمات ونماذج التعاقد' : 'Services & Engagements'}
             </span>
             <h2 id="services-overview-heading" className="font-serif text-2xl sm:text-4xl font-bold text-[#0F0F10] mt-2">
@@ -194,7 +194,7 @@ export default async function PortfolioHomePage(
           </div>
           <Link
             href={`/${locale}/preview/portfolio/services`}
-            className="font-mono text-xs font-semibold text-[#0F0F10] hover:text-[#737068] inline-flex items-center gap-1.5"
+            className="font-mono text-xs font-semibold text-[#0F0F10] hover:text-[#42403B] inline-flex items-center gap-1.5"
             aria-label={isAr ? 'استعراض جميع الخدمات السبع' : 'View all 7 services'}
           >
             <span>{isAr ? 'جميع الخدمات (7)' : 'All 7 Services'}</span>
@@ -251,7 +251,7 @@ export default async function PortfolioHomePage(
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="salma-method-heading">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 lg:items-end border-t border-[#D8D4C9] pt-10">
           <div className="lg:w-1/2">
-            <span className="font-mono text-[11px] text-[#737068] uppercase tracking-[.24em]">
+            <span className="font-mono text-[11px] text-[#42403B] font-bold uppercase tracking-[.24em]">
               {isAr ? 'منهجية العمل' : 'THE PRACTICE / HOW WE WORK'}
             </span>
             <h2 id="salma-method-heading" className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-[#0F0F10] mt-4">

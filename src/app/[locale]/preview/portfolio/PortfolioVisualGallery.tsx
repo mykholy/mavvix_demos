@@ -45,7 +45,7 @@ export function PortfolioVisualGallery({ locale }: { locale: Locale }) {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#E2E0D8]">
         <div className="space-y-2">
-          <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#737068]">
+          <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#42403B] font-bold">
             <Camera className="w-4 h-4 text-[#0F0F10]" />
             <span>{isAr ? 'الأرشيف البصري ومراجع التوجيه الفني' : 'Visual Atelier & Reference Archive'}</span>
           </div>
@@ -118,7 +118,7 @@ export function PortfolioVisualGallery({ locale }: { locale: Locale }) {
                 <h3 className="font-serif text-base font-bold text-[#0F0F10] leading-snug group-hover:text-[#0F0F10] transition-colors">
                   {isAr ? photo.titleAr : photo.titleEn}
                 </h3>
-                <p className="font-mono text-[11px] text-[#737068]">
+                <p className="font-mono text-[11px] text-[#42403B] font-semibold">
                   {photo.author} · {photo.license}
                 </p>
               </div>

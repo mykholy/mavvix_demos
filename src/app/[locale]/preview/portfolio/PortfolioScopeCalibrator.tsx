@@ -113,7 +113,7 @@ export function PortfolioScopeCalibrator({ locale }: { locale: Locale }) {
     <section className="bg-white rounded-[2rem] border border-[#E2E0D8] p-6 sm:p-10 lg:p-12 shadow-sm space-y-8" aria-labelledby="scope-calibrator-heading">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#E2E0D8]">
         <div className="space-y-2">
-          <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#737068]">
+          <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#42403B] font-bold">
             <Sliders className="w-4 h-4 text-[#0F0F10]" />
             <span>{isAr ? 'أداة معايرة النطاق والميزانية' : 'Scope & Engagement Calibrator'}</span>
           </div>
@@ -175,7 +175,7 @@ export function PortfolioScopeCalibrator({ locale }: { locale: Locale }) {
                   >
                     <div>
                       <div className="flex items-center justify-between font-mono text-[11px] mb-2">
-                        <span className={active ? 'text-[#CCFF00]' : 'text-[#737068]'}>
+                        <span className={active ? 'text-[#CCFF00]' : 'text-[#42403B] font-bold'}>
                           {s.baseWeeks} {isAr ? 'أسابيع' : 'weeks'}
                         </span>
                         {active && <CheckCircle2 className="w-4 h-4 text-[#CCFF00]" />}
@@ -225,7 +225,7 @@ export function PortfolioScopeCalibrator({ locale }: { locale: Locale }) {
                         <span className="font-serif text-sm font-bold text-[#0F0F10] block">
                           {isAr ? d.nameAr : d.nameEn}
                         </span>
-                        <span className="font-mono text-[10px] text-[#737068] uppercase">
+                        <span className="font-mono text-[10px] text-[#42403B] font-semibold uppercase">
                           {d.category} · +{d.weeksAdd} {isAr ? 'أسبوع' : 'wk'}
                         </span>
                       </div>
