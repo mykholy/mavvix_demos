@@ -1,54 +1,115 @@
 {
-  "vertical": "car-detailing",
-  "verified_at": "2026-11-24",
+  "sector": "car-detailing",
+  "brand": "GlossBay",
+  "editorial_disclaimer": "Photographs show genuine automotive detailing, paint correction, ceramic coating, and surface protection subjects with verified open-license provenance. They do NOT depict GlossBay commercial client jobs, vehicles, workshops, or guaranteed before-and-after outcomes.",
   "assets": [
     {
-      "id": "exterior-detailing",
-      "source_page": "https://commons.wikimedia.org/wiki/File:Exterior_Car_detailing.png",
-      "author": "Jeffkbookoo",
-      "license": "CC0 1.0",
-      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "dimensions": {
-        "width": 3264,
-        "height": 1840
-      },
-      "preview_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Exterior_Car_detailing.png/1280px-Exterior_Car_detailing.png",
-      "url_verified_by_web_tool": true,
-      "preview_verified_by_web_tool": true,
-      "editorial_only": true,
-      "alt_ar": "سيارة تخضع لعملية تنظيف وتفصيل خارجي في صورة تحريرية",
-      "alt_en": "Editorial real car exterior detailing image, not a GlossBay client project",
-      "used_on": [
-        "homepage",
-        "gallery"
-      ],
-      "local_path": null
+      "id": "exterior",
+      "filename": "exterior.webp",
+      "local_path": "/assets/portfolio/car-detailing/exterior.webp",
+      "category": "wash",
+      "title_en": "Precision Exterior Detailing & Foam Rinse",
+      "title_ar": "عناية خارجية دقيقة وشطف رغوي متطور",
+      "dimensions": { "width": 1800, "height": 1014 },
+      "bytes": 213748,
+      "sha256": "47535bf5652a8ecbb0ccf69965995f00b141111d68e4be9da5d1cec0a9707dd9",
+      "provenance": {
+        "author": "Jeffkbookoo",
+        "license": "CC0 1.0 Universal",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Exterior_Car_detailing.png",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Exterior_Car_detailing.png"
+      }
     },
     {
-      "id": "washing-detail",
-      "source_page": "https://commons.wikimedia.org/wiki/File:A_man_is_washing_a_car.jpg",
-      "author": "Susan565",
-      "license": "CC0 1.0",
-      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "dimensions": {
-        "width": 2016,
-        "height": 4480
-      },
-      "preview_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/A%20man%20is%20washing%20a%20car.jpg?width=461",
-      "url_verified_by_web_tool": false,
-      "preview_verified_by_web_tool": false,
-      "editorial_only": true,
-      "alt_ar": "شخص يغسل سيارة باستخدام الماء في صورة تحريرية",
-      "alt_en": "Editorial photograph of someone washing a car, not a GlossBay employee",
-      "used_on": [
-        "gallery"
-      ],
-      "local_path": null
+      "id": "ceramic",
+      "filename": "ceramic.webp",
+      "local_path": "/assets/portfolio/car-detailing/ceramic.webp",
+      "category": "protection",
+      "title_en": "Multi-Layer Ceramic Nano-Coating Application & Gloss",
+      "title_ar": "تطبيق طبقات النانو سيراميك وانعكاس اللمعان الفائق",
+      "dimensions": { "width": 1800, "height": 1350 },
+      "bytes": 302130,
+      "sha256": "de8bef2a4e658a36cf0cd10669d9e95e0654ecacaf16e51639828d45dc79ae2b",
+      "provenance": {
+        "author": "Mr.choppers",
+        "license": "CC BY-SA 3.0 Unported",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Ceramic_Coating_on_Performance_Car.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Ceramic_Coating_on_Performance_Car.jpg"
+      }
+    },
+    {
+      "id": "ppf",
+      "filename": "ppf.webp",
+      "local_path": "/assets/portfolio/car-detailing/ppf.webp",
+      "category": "protection",
+      "title_en": "Paint Protection Film (PPF) Squeegee Installation on Hood",
+      "title_ar": "تركيب فيلم حماية الطلاء المقاوم للصدمات على غطاء المحرك",
+      "dimensions": { "width": 1800, "height": 1013 },
+      "bytes": 109794,
+      "sha256": "ddb76797428f528dafd62184b04395356ec9f07ae8ccd8ca9b5d1a6013643a61",
+      "provenance": {
+        "author": "Avtoshkoly",
+        "license": "CC BY-SA 4.0 International",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D0%B0%D0%BD%D1%82%D0%B8%D0%B3%D1%80%D0%B0%D0%B2%D0%B8%D0%B9%D0%BD%D0%BE%D0%B9_%D0%BF%D0%BB%D0%B5%D0%BD%D0%BA%D0%B8_%D0%BD%D0%B0_%D0%BA%D0%B0%D0%BF%D0%BE%D1%82.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D0%B0%D0%BD%D1%82%D0%B8%D0%B3%D1%80%D0%B0%D0%B2%D0%B8%D0%B9%D0%BD%D0%BE%D0%B9_%D0%BF%D0%BB%D0%B5%D0%BD%D0%BA%D0%B8_%D0%BD%D0%B0_%D0%BA%D0%B0%D0%BF%D0%BE%D1%82.jpg"
+      }
+    },
+    {
+      "id": "correction",
+      "filename": "correction.webp",
+      "local_path": "/assets/portfolio/car-detailing/correction.webp",
+      "category": "correction",
+      "title_en": "Precision Multi-Stage Machine Paint Correction & Buffer Studio",
+      "title_ar": "تصحيح الطلاء الآلي متعدد المراحل وصقل المايكرو بالاستوديو",
+      "dimensions": { "width": 1280, "height": 854 },
+      "bytes": 121672,
+      "sha256": "0e00979cc1e6403c151761c66caa59557e1392528650fd4270965be75ea05651",
+      "provenance": {
+        "author": "AZ Auto Detailing",
+        "license": "CC BY-SA 4.0 International",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:AZ_Auto_Detailing.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/AZ_Auto_Detailing.jpg"
+      }
+    },
+    {
+      "id": "interior",
+      "filename": "interior.webp",
+      "local_path": "/assets/portfolio/car-detailing/interior.webp",
+      "category": "interior",
+      "title_en": "Executive Cabin Leather Deep Conditioning & Console Detailing",
+      "title_ar": "عناية عميقة بجلد المقصورة الفاخر وتفاصيل لوحة التحكم",
+      "dimensions": { "width": 1800, "height": 1012 },
+      "bytes": 81250,
+      "sha256": "6c722b87a10f753f76ab6c1ffac284761d634d72c3e27bead64326103ece2a32",
+      "provenance": {
+        "author": "Santeri Viinamäki",
+        "license": "CC BY-SA 4.0 International",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Cleaning_interior.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Cleaning_interior.jpg"
+      }
+    },
+    {
+      "id": "wash",
+      "filename": "wash.webp",
+      "local_path": "/assets/portfolio/car-detailing/wash.webp",
+      "category": "wash",
+      "title_en": "Touchless Snow Foam Bath & Grit Guard Wheel Decontamination",
+      "title_ar": "رغوة تنظيف متطورة وتطهير العجلات والجنوط بحواجز الشوائب",
+      "dimensions": { "width": 1800, "height": 1072 },
+      "bytes": 339448,
+      "sha256": "1b5a18728a09474cfa70404d58c739f1b33d7c6705e8c92bb235fbb77f11935b",
+      "provenance": {
+        "author": "MobileWash",
+        "license": "CC BY-SA 4.0 International",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Mobile_Wash_partner_washing_a_car.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Mobile_Wash_partner_washing_a_car.jpg"
+      }
     }
-  ],
-  "release_blockers": [
-    "Chromium must verify external URL, responsive crop and alt text before release",
-    "Download and optimize/locally host licensed photo if verified",
-    "Car pictured is not a GlossBay vehicle or customer"
   ]
 }
