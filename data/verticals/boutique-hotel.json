@@ -362,6 +362,35 @@
         "ar": "غرفة فندقية أنيقة في صورة تحريرية مستقلة",
         "en": "Elegant boutique hotel room, independent editorial photography"
       }
+    },
+    {
+      "role": "dining-editorial",
+      "credit": "Ka23 13",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:TableSetting_20240504_073606.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/TableSetting_20240504_073606.jpg",
+      "width": 4608,
+      "height": 2592,
+      "alt": {
+        "ar": "مائدة إفطار فندقية في صورة تحريرية مستقلة من اليابان",
+        "en": "Independent editorial photograph of hotel breakfast table settings in Japan"
+      }
+    },
+    {
+      "role": "courtyard-editorial",
+      "credit": "Arnaud 25",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Riad_Maroc_034.JPG",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Riad_Maroc_034.JPG",
+      "originalSha1": "2988732a3bc4227bbc070756d3006f6c923b0eaa",
+      "width": 1600,
+      "height": 1200,
+      "alt": {
+        "ar": "فناء رياض مونسو في مراكش، صورة مستقلة ليست من أواسيس",
+        "en": "Courtyard of Riad Monceau in Marrakech, independent editorial image, not Oasis property"
+      }
     }
   ]
 }
