@@ -131,8 +131,8 @@ export function TenderScopeWizard({ locale, initialRef, initialService, initialA
           </div>
 
           <div className="text-start sm:text-end font-mono">
-            <span className="text-[11px] text-stone-400 block uppercase">{isAr ? 'رقم المرجع التجريبي' : 'Reference Code'}</span>
-            <span className="text-lg font-black text-[#D26A3B]">{receipt.refNumber}</span>
+            <span className="text-[11px] text-stone-600 block uppercase">{isAr ? 'رقم المرجع التجريبي' : 'Reference Code'}</span>
+            <span className="text-lg font-black text-[#A64B26]">{receipt.refNumber}</span>
           </div>
         </div>
 
@@ -155,33 +155,33 @@ export function TenderScopeWizard({ locale, initialRef, initialService, initialA
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             <div>
-              <span className="text-stone-500 block mb-0.5">{isAr ? 'القطاع' : 'Sector'}</span>
+              <span className="text-stone-600 block mb-0.5">{isAr ? 'القطاع' : 'Sector'}</span>
               <span className="font-bold capitalize text-[#162327]">{sector}</span>
             </div>
             <div>
-              <span className="text-stone-500 block mb-0.5">{isAr ? 'المساحة التقريبية' : 'Gross Area'}</span>
+              <span className="text-stone-600 block mb-0.5">{isAr ? 'المساحة التقريبية' : 'Gross Area'}</span>
               <span className="font-bold text-[#162327] font-mono">{areaM2} m²</span>
             </div>
             <div>
-              <span className="text-stone-500 block mb-0.5">{isAr ? 'الجدول الزمني المستهدف' : 'Target Timeline'}</span>
+              <span className="text-stone-600 block mb-0.5">{isAr ? 'الجدول الزمني المستهدف' : 'Target Timeline'}</span>
               <span className="font-bold text-[#162327]">{timeline.replace('_', ' ')}</span>
             </div>
             <div>
-              <span className="text-stone-500 block mb-0.5">{isAr ? 'اسم جهة الطلب' : 'Client Identity'}</span>
+              <span className="text-stone-600 block mb-0.5">{isAr ? 'اسم جهة الطلب' : 'Client Identity'}</span>
               <span className="font-bold text-[#162327]">{clientName}</span>
             </div>
             <div>
-              <span className="text-stone-500 block mb-0.5">{isAr ? 'البريد المسجل' : 'Contact Email'}</span>
+              <span className="text-stone-600 block mb-0.5">{isAr ? 'البريد المسجل' : 'Contact Email'}</span>
               <span className="font-bold text-[#162327]">{clientContact}</span>
             </div>
             <div>
-              <span className="text-stone-500 block mb-0.5">{isAr ? 'تاريخ التسجيل' : 'Timestamp'}</span>
+              <span className="text-stone-600 block mb-0.5">{isAr ? 'تاريخ التسجيل' : 'Timestamp'}</span>
               <span className="font-bold text-stone-700">{new Date().toLocaleTimeString()}</span>
             </div>
           </div>
 
           <div className="pt-4 border-t border-stone-300">
-            <span className="text-stone-500 block mb-1 font-bold">{isAr ? 'الخدمات المشمولة في النطاق:' : 'Included Services:'}</span>
+            <span className="text-stone-600 block mb-1 font-bold">{isAr ? 'الخدمات المشمولة في النطاق:' : 'Included Services:'}</span>
             <div className="flex flex-wrap gap-2">
               {services.map((s) => (
                 <span key={s} className="bg-white border border-stone-300 px-2.5 py-1 rounded text-stone-800 font-semibold uppercase text-[11px]">
@@ -204,7 +204,7 @@ export function TenderScopeWizard({ locale, initialRef, initialService, initialA
 
           <Link
             href={`/${locale}/preview/construction/projects`}
-            className="text-[#D26A3B] hover:underline flex items-center gap-1"
+            className="text-[#A64B26] hover:underline flex items-center gap-1"
           >
             <span>{isAr ? 'العودة لمشاريع الأطلس' : 'Return to Project Atlas'}</span>
             <Arrow className="w-3.5 h-3.5" />
@@ -229,15 +229,15 @@ export function TenderScopeWizard({ locale, initialRef, initialService, initialA
             <div
               className={`w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs transition-colors ${
                 step === s.num
-                  ? 'bg-[#D26A3B] text-white'
+                  ? 'bg-[#A64B26] text-white'
                   : step > s.num
                   ? 'bg-stone-800 text-white'
-                  : 'bg-stone-100 text-stone-400'
+                  : 'bg-stone-100 text-stone-600'
               }`}
             >
               {s.num}
             </div>
-            <span className={`hidden sm:inline ${step === s.num ? 'text-[#162327] font-bold' : 'text-stone-400'}`}>
+            <span className={`hidden sm:inline ${step === s.num ? 'text-[#162327] font-bold' : 'text-stone-600'}`}>
               {s.label}
             </span>
           </div>
@@ -332,11 +332,11 @@ export function TenderScopeWizard({ locale, initialRef, initialService, initialA
                 onChange={(e) => setAreaM2(parseInt(e.target.value, 10) || 0)}
                 className="w-full px-4 py-3 bg-[#F2EFE9] border border-stone-300 rounded-xl text-base font-bold text-[#162327] font-mono focus:outline-none focus:ring-2 focus:ring-[#D26A3B]"
               />
-              <span className="absolute inset-y-0 right-4 rtl:left-4 rtl:right-auto flex items-center text-xs text-stone-400 font-mono">
+              <span className="absolute inset-y-0 right-4 rtl:left-4 rtl:right-auto flex items-center text-xs text-stone-600 font-mono">
                 m²
               </span>
             </div>
-            <p className="text-[11px] text-stone-500 mt-1">
+            <p className="text-[11px] text-stone-600 mt-1">
               {isAr ? 'يجب إدخال مساحة صالحة لحساب متطلبات الأعمال وتوزيع البنود.' : 'Required for accurate BOQ material and labor allocation.'}
             </p>
           </div>
@@ -363,7 +363,7 @@ export function TenderScopeWizard({ locale, initialRef, initialService, initialA
                   }`}
                 >
                   <span>{srv.title}</span>
-                  {services.includes(srv.id) && <CheckCircle2 className="w-4 h-4 text-[#D26A3B]" />}
+                  {services.includes(srv.id) && <CheckCircle2 className="w-4 h-4 text-[#A64B26]" />}
                 </button>
               ))}
             </div>
@@ -463,21 +463,21 @@ export function TenderScopeWizard({ locale, initialRef, initialService, initialA
           <div className="bg-[#F2EFE9] rounded-xl p-6 border border-stone-300/80 space-y-4 text-xs">
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               <div>
-                <span className="text-stone-400 block mb-0.5">{isAr ? 'القطاع' : 'Sector'}</span>
+                <span className="text-stone-600 block mb-0.5">{isAr ? 'القطاع' : 'Sector'}</span>
                 <span className="font-bold text-[#162327] capitalize">{sector}</span>
               </div>
               <div>
-                <span className="text-stone-400 block mb-0.5">{isAr ? 'المساحة' : 'Gross Area'}</span>
+                <span className="text-stone-600 block mb-0.5">{isAr ? 'المساحة' : 'Gross Area'}</span>
                 <span className="font-bold text-[#162327] font-mono">{areaM2} m²</span>
               </div>
               <div>
-                <span className="text-stone-400 block mb-0.5">{isAr ? 'المرحلة' : 'Stage'}</span>
+                <span className="text-stone-600 block mb-0.5">{isAr ? 'المرحلة' : 'Stage'}</span>
                 <span className="font-bold text-[#162327]">{projectStage}</span>
               </div>
             </div>
 
             <div className="pt-3 border-t border-stone-300">
-              <span className="text-stone-400 block mb-1 font-bold">{isAr ? 'الخدمات المحددة:' : 'Selected Packages:'}</span>
+              <span className="text-stone-600 block mb-1 font-bold">{isAr ? 'الخدمات المحددة:' : 'Selected Packages:'}</span>
               <div className="flex flex-wrap gap-2">
                 {services.map((s) => (
                   <span key={s} className="bg-white px-2 py-0.5 rounded border border-stone-300 font-bold uppercase text-[11px]">
@@ -518,7 +518,7 @@ export function TenderScopeWizard({ locale, initialRef, initialService, initialA
               setError(null);
               setStep(step + 1);
             }}
-            className="px-6 py-2.5 rounded-lg bg-[#D26A3B] hover:bg-[#b85629] text-white text-xs font-bold flex items-center gap-2 transition-all uppercase tracking-wider"
+            className="px-6 py-2.5 rounded-lg bg-[#A64B26] hover:bg-[#b85629] text-white text-xs font-bold flex items-center gap-2 transition-all uppercase tracking-wider"
           >
             <span>{isAr ? 'متابعة' : 'Next Step'}</span>
             <Arrow className="w-3.5 h-3.5" />

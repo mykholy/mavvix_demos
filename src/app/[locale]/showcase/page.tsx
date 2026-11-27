@@ -1,3 +1,4 @@
+import { CLEARPATH } from '@/lib/verticals/diagnostics-lab/data';
 import { ELYRA } from '@/lib/verticals/skin-clinic/data';
 import { ROUTELINE } from '@/lib/verticals/logistics/data';
 import { LUMA_EVENTS } from '@/lib/verticals/events/data';
@@ -25,6 +26,7 @@ import {
   ShieldCheck,
   CheckCircle2,
   Sparkles,
+  FlaskConical,
   Layers,
   Database,
   Trophy,
@@ -423,6 +425,15 @@ const demos = [
     tagline:{ar:'رحلة استشارة وتواصل إداري مع مراعاة الخصوصية',en:'Consultation education and privacy-minimal callback journey'},
     journeys:[{ar:'ثمانية مجالات للاستشارة ومعلومات متخصصة',en:'Eight consultation pathways and editorial guidance'},{ar:'دليل الاختيار المستنير والخصوصية والمتابعة',en:'Informed choice, privacy and follow-up guidance'},{ar:'طلب تواصل محفوظ بدون أعراض أو حجز طبي وهمي',en:'Persisted callback without clinical data or fabricated appointments'}],
     features:['Consultation Explorer','Care Journey & Privacy','Administrative Callback']
+  },
+  {
+    number:'26',slug:'diagnostics-lab',
+    name:{ar:'كلير باث — موقع معامل التحاليل',en:'ClearPath Labs — Laboratory Website'},
+    sector:{ar:'أقسام المعامل والتقارير والزيارات المنزلية',en:'Laboratory directory, reports and home collection information'},
+    icon:FlaskConical,color:'#126B8A',bgColor:'bg-cyan-50',borderColor:'border-cyan-200',routesCount:22,
+    tagline:{ar:'دليل متخصص للأقسام والتواصل الإداري مع مراعاة خصوصية التقارير',en:'Specialist laboratory directory and privacy-minimal administrative contact'},
+    journeys:[{ar:'ثمانية مجالات معملية ومعلومات متخصصة',en:'Eight authored laboratory and access dossiers'},{ar:'رحلة العينة والتقرير ودليل الزيارة المنزلية',en:'Specimen-to-report journey and home collection guide'},{ar:'تواصل إداري محفوظ دون نتائج أو بيانات طبية',en:'Persisted administrative callback without results or clinical details'}],
+    features:['Laboratory Directory','Private Report Guidance','Administrative Callback']
   }
 ];
 
@@ -588,6 +599,8 @@ export default async function ShowcasePage(props: Props) {
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#E8EFE5]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Veterinary_Office_with_dog.JPG/1280px-Veterinary_Office_with_dog.JPG" loading="lazy" decoding="async" className="h-full w-full object-cover" alt={isAr?'صورة حقيقية مرخصة لكلب في عيادة بيطرية مستقلة، ليست PawWell':'Real CC0 editorial dog photograph in an unrelated veterinary clinic'}/></div>
                   : d.slug==='law-firm'
                   ? <div className="relative h-52 bg-[#D6CAB8] overflow-hidden"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Canadian_law_books_%2831460630695%29.jpg/1280px-Canadian_law_books_%2831460630695%29.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'كتب قانونية حقيقية من كندا، صورة عامة مرخصة لا تتبع Lexora':'CC0 editorial Canadian law books, not an operating Lexora office'}/></div>
+                  : d.slug==='diagnostics-lab'
+                  ? <div className="relative h-52 bg-[#E7F4F6] overflow-hidden"><img src={CLEARPATH.media[0].url} loading="lazy" decoding="async" className="w-full h-full object-cover" alt={CLEARPATH.media[0].alt[locale]}/><span className="absolute bottom-0 inset-x-0 bg-[#12334A] text-white text-[10px] px-2 py-1"><a href={CLEARPATH.media[0].source} className="underline">Belikov Maxim</a> · <a href={CLEARPATH.media[0].licenseUrl} className="underline">CC BY 4.0</a> · {isAr?'اقتصاص':'Display crop'}</span></div>
                   : d.slug==='skin-clinic'
                   ? <div className="relative h-52 bg-[#EEE3E7] overflow-hidden"><img src={ELYRA.media[0].url} loading="lazy" decoding="async" className="w-full h-full object-cover" alt={ELYRA.media[0].alt[locale]}/><span className="absolute bottom-0 inset-x-0 bg-[#352B39] text-white text-[10px] px-2 py-1">Shixart1985 · CC BY 2.0 · {isAr?'صورة تحريرية':'Editorial photo'}</span></div>
                   : d.slug==='logistics'

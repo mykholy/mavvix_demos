@@ -28,14 +28,14 @@ export function RestaurantHeader({ locale }: { locale: 'ar' | 'en' }) {
         <div className="flex items-center justify-between h-20">
           {/* Brand Logo */}
           <Link href={`/${locale}/preview/restaurant`} className="flex items-center gap-3 group">
-            <span className="w-10 h-10 rounded-full bg-[#BA5C34] text-white flex items-center justify-center font-serif text-xl font-bold shadow-sm group-hover:bg-[#9E4A28] transition-colors">
+            <span className="w-10 h-10 rounded-full bg-[#984321] text-white flex items-center justify-center font-serif text-xl font-bold shadow-sm group-hover:bg-[#9E4A28] transition-colors">
               ز
             </span>
             <div className="flex flex-col">
               <span className="font-serif text-xl font-bold tracking-tight text-[#321F18]">
                 {isAr ? 'سُفرة زعفران' : 'SAFFRON TABLE'}
               </span>
-              <span className="text-[10px] tracking-widest uppercase text-[#8B8B52] font-semibold">
+              <span className="text-[10px] tracking-widest uppercase text-[#62622F] font-semibold">
                 {isAr ? 'مطبخ وتراث شرقي' : 'Heritage Culinary'}
               </span>
             </div>
@@ -50,7 +50,7 @@ export function RestaurantHeader({ locale }: { locale: 'ar' | 'en' }) {
                   key={link.href}
                   href={link.href}
                   className={`text-sm font-medium transition-colors ${
-                    active ? 'text-[#BA5C34] font-semibold' : 'text-[#321F18]/80 hover:text-[#BA5C34]'
+                    active ? 'text-[#984321] font-semibold' : 'text-[#321F18]/80 hover:text-[#984321]'
                   }`}
                 >
                   {link.label}
@@ -64,7 +64,7 @@ export function RestaurantHeader({ locale }: { locale: 'ar' | 'en' }) {
             {/* Language Switch */}
             <Link
               href={switchLocaleHref}
-              className="text-xs px-2.5 py-1 rounded border border-[#321F18]/20 text-[#321F18] hover:border-[#BA5C34] hover:text-[#BA5C34] transition-colors"
+              className="text-xs px-2.5 py-1 rounded border border-[#321F18]/20 text-[#321F18] hover:border-[#BA5C34] hover:text-[#984321] transition-colors"
             >
               {isAr ? 'English' : 'عربي'}
             </Link>
@@ -72,6 +72,7 @@ export function RestaurantHeader({ locale }: { locale: 'ar' | 'en' }) {
             {/* Order Bag Button */}
             <Link
               href={`/${locale}/preview/restaurant/order`}
+              aria-label={isAr ? 'عرض الطلب' : 'View order'}
               className="relative flex items-center gap-2 px-3 py-2 rounded-lg bg-[#321F18] text-[#FAF3E6] hover:bg-[#452B21] transition-all text-xs font-medium"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,7 +80,7 @@ export function RestaurantHeader({ locale }: { locale: 'ar' | 'en' }) {
               </svg>
               <span className="hidden sm:inline">{isAr ? 'الطلب' : 'Order'}</span>
               {itemCount > 0 && (
-                <span className="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 text-[11px] font-bold bg-[#BA5C34] text-white rounded-full">
+                <span className="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 text-[11px] font-bold bg-[#984321] text-white rounded-full">
                   {itemCount}
                 </span>
               )}
@@ -88,7 +89,7 @@ export function RestaurantHeader({ locale }: { locale: 'ar' | 'en' }) {
             {/* Table Reservation Button */}
             <Link
               href={`/${locale}/preview/restaurant/reserve`}
-              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#BA5C34] text-white hover:bg-[#9E4A28] transition-all text-xs font-semibold shadow-sm"
+              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#984321] text-white hover:bg-[#9E4A28] transition-all text-xs font-semibold shadow-sm"
             >
               <span>{isAr ? 'حجز طاولة' : 'Book Table'}</span>
             </Link>
@@ -126,7 +127,7 @@ export function RestaurantHeader({ locale }: { locale: 'ar' | 'en' }) {
             <Link
               href={`/${locale}/preview/restaurant/reserve`}
               onClick={() => setMobileMenuOpen(false)}
-              className="mt-2 text-center py-2.5 px-4 rounded-lg bg-[#BA5C34] text-white text-sm font-semibold"
+              className="mt-2 text-center py-2.5 px-4 rounded-lg bg-[#984321] text-white text-sm font-semibold"
             >
               {isAr ? 'طلب حجز طاولة' : 'Request Table Reservation'}
             </Link>

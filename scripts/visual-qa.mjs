@@ -28,6 +28,16 @@ async function ready(){
  throw Error('Next server did not start: '+serverLog.slice(-2000));
 }
 const cases=[
+ // The original eight must receive direct browser coverage, not showcase-only coverage.
+ ['construction',''],['construction','request-quote'],
+ ['industrial',''],['industrial','rfq'],
+ ['real-estate',''],['real-estate','viewing'],
+ ['dental',''],['dental','request-appointment'],
+ ['ecommerce',''],['ecommerce','checkout'],
+ ['portfolio',''],['portfolio','contact'],
+ ['restaurant',''],['restaurant','reserve'],
+ ['academy',''],['academy','enrollment-interest'],
+ ['diagnostics-lab',''],['diagnostics-lab','services'],['diagnostics-lab','services/clinical-chemistry'],['diagnostics-lab','contact'],['diagnostics-lab','results'],['diagnostics-lab','home-collection'],['diagnostics-lab','privacy'],['diagnostics-lab','guides/private-results'],
  ['skin-clinic',''],['skin-clinic','services'],['skin-clinic','services/consultation'],['skin-clinic','contact'],['skin-clinic','privacy'],['skin-clinic','informed-choice'],['skin-clinic','guides/prepare-for-consultation'],
  ['logistics',''],['logistics','services'],['logistics','services/ocean-fcl'],['logistics','quote'],['logistics','scope'],['logistics','tracking'],['logistics','guides/freight-quote-checklist'],
  ['events',''],['events','experiences'],['events','experiences/corporate-conferences'],['events','enquiry'],['events','venue-brief'],['events','guides/event-brief'],
@@ -103,7 +113,11 @@ try{
      if(pre.unlabeled.length)entry.issues.push('Unlabeled form controls: '+JSON.stringify(pre.unlabeled));
      if(sector!=='showcase'&&(!pre.hasWhatsApp||!pre.hasCall))entry.issues.push('Missing persistent Mavvix contact link');
      if(entry.images.length)entry.issues.push('Broken image(s): '+entry.images.map(x=>x.src).join(' | '));
-     if(sector!=='showcase'&&subpath===''&&viewport.width<1280){
+     const legacySharedBreakpoints={construction:1024,industrial:1024,'real-estate':1024,portfolio:768};
+     const customBreakpoints={ecommerce:768,restaurant:1024,academy:1024};
+     const customHeader=Object.hasOwn(customBreakpoints,sector);
+     const navBreakpoint=legacySharedBreakpoints[sector]??1280;
+     if(sector!=='showcase'&&!customHeader&&subpath===''&&viewport.width<navBreakpoint){
        const trigger=page.locator('[data-mobile-sector-nav] button').first();
        if(!(await trigger.isVisible()))entry.issues.push('Mobile/tablet navigation unavailable');
        else{
@@ -114,6 +128,19 @@ try{
          if(box&&(box.x< -1||box.x+box.width>viewport.width+1))entry.issues.push('Navigation drawer overflows viewport');
          await trigger.press('Escape');
          if(await menu.isVisible())entry.issues.push('Navigation drawer did not close on Escape');
+       }
+     }
+     if(customHeader&&subpath===''&&viewport.width<customBreakpoints[sector]){
+       const trigger=page.getByRole('button',{name:sector==='ecommerce'?'Toggle Navigation':'Toggle navigation menu',exact:true});
+       if(!(await trigger.isVisible()))entry.issues.push('Legacy mobile navigation unavailable');
+       else{
+         const header=page.locator('header').first();
+         const visibleLinks=()=>header.locator('a[href]').evaluateAll(links=>links.filter(a=>a.getClientRects().length>0).length);
+         const before=await visibleLinks();
+         await trigger.click();
+         if(await visibleLinks()<=before)entry.issues.push('Legacy mobile menu did not expose navigation links');
+         if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+5))entry.issues.push('Legacy mobile menu overflows viewport');
+         await trigger.click();
        }
      }
      await page.addScriptTag({path:axePath});

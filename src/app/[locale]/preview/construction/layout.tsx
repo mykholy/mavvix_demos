@@ -47,19 +47,19 @@ export default async function ConstructionLayout(props: Props) {
   ];
 
   return (
-    <div className="bg-[#F2EFE9] text-[#162327] min-h-screen flex flex-col font-sans selection:bg-[#D26A3B] selection:text-white">
+    <div className="bg-[#F2EFE9] text-[#162327] min-h-screen flex flex-col font-sans selection:bg-[#A64B26] selection:text-white">
       {/* Brand Header */}
       <header className="sticky top-0 z-40 bg-[#162327] text-white border-b border-stone-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <Link href={`/${locale}/preview/construction`} className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded bg-[#D26A3B] flex items-center justify-center text-white font-bold tracking-widest text-lg shadow-sm">
+            <div className="w-10 h-10 rounded bg-[#A64B26] flex items-center justify-center text-white font-bold tracking-widest text-lg shadow-sm">
               <Compass className="w-5 h-5 text-white" />
             </div>
             <div>
               <span className="text-base font-extrabold tracking-widest uppercase block text-white group-hover:text-amber-400 transition-colors">
                 ATLAS STRUCTURES
               </span>
-              <span className="text-[11px] font-medium text-stone-400 block tracking-wider">
+              <span className="text-[11px] font-medium text-stone-300 block tracking-wider">
                 {isAr ? 'أطلس للبناء والتطوير الهندسي' : 'General Contracting & Fit-Out'}
               </span>
             </div>
@@ -81,7 +81,7 @@ export default async function ConstructionLayout(props: Props) {
           <div className="flex items-center gap-3">
             <Link
               href={`/${locale}/preview/construction/request-quote`}
-              className="inline-flex items-center gap-2 bg-[#D26A3B] hover:bg-[#b85629] text-white text-xs font-bold px-4 py-2.5 rounded shadow-sm transition-all uppercase tracking-wider"
+              className="inline-flex items-center gap-2 bg-[#A64B26] hover:bg-[#b85629] text-white text-xs font-bold px-4 py-2.5 rounded shadow-sm transition-all uppercase tracking-wider"
             >
               <span>{isAr ? 'طلب تسعير مناقصة' : 'Tender Quote'}</span>
               <Arrow className="w-3.5 h-3.5" />
@@ -101,7 +101,7 @@ export default async function ConstructionLayout(props: Props) {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
             <div className="md:col-span-2 space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded bg-[#D26A3B] flex items-center justify-center text-white font-bold text-sm">
+                <div className="w-8 h-8 rounded bg-[#A64B26] flex items-center justify-center text-white font-bold text-sm">
                   <Compass className="w-4 h-4 text-white" />
                 </div>
                 <span className="text-sm font-extrabold text-white tracking-widest uppercase">
@@ -158,7 +158,7 @@ export default async function ConstructionLayout(props: Props) {
             </div>
           </div>
 
-          <div className="pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-stone-500">
+          <div className="pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-stone-300">
             <p>© {new Date().getFullYear()} Atlas Structures — design experience by Mavvix. Project examples are illustrative, not confirmed delivered contracts.</p>
             <p>Designed and built for Mavvix Studio.</p>
           </div>

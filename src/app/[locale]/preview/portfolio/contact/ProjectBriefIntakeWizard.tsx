@@ -264,7 +264,7 @@ export default function ProjectBriefIntakeWizard({
                 >
                   <div className="space-y-1">
                     <span className="font-serif text-sm font-bold block">{svc.name}</span>
-                    <span className="text-[11px] font-mono block opacity-80">{svc.timeline}</span>
+                    <span className={`text-[11px] font-mono block ${selectedServiceSlug === svc.slug ? 'text-[#E8F3B0]' : 'text-[#57544C]'}`}>{svc.timeline}</span>
                   </div>
                 </button>
               ))}
@@ -277,7 +277,8 @@ export default function ProjectBriefIntakeWizard({
                 {isAr ? '2. هل تود الإشارة إلى دراسة حالة مرجعية؟ (اختياري)' : '2. Reference an Existing Case Study? (Optional)'}
               </label>
               <select
-                value={referencedCaseSlug}
+                aria-label={isAr ? 'دراسة حالة مرجعية' : 'Reference case study'}
+            value={referencedCaseSlug}
                 onChange={e => setReferencedCaseSlug(e.target.value)}
                 className="w-full px-4 py-2.5 rounded-xl bg-[#F6F5F2] border border-[#DDD9CE] font-mono text-xs text-[#0F0F10] focus:outline-none"
               >

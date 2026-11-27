@@ -1,0 +1,37 @@
+{
+  "vertical": "diagnostics-lab",
+  "assets": [
+    {
+      "id": "clearpath-glassware",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Laboratory_equipment.jpg",
+      "author": "Belikov Maxim",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Laboratory_equipment.jpg",
+      "original_dimensions": "6000x3368",
+      "original_sha1": "754bf09b37bc17ce0a3e825755f6e22c4eba4297",
+      "source_sha1_verified": false,
+      "local": "/assets/portfolio/clearpath-glassware.webp",
+      "dimensions": "1600x898",
+      "sha256": "5cc0415f20a9376ab23d6acfe07603314d102526cea92e4ce7225a3526d38016",
+      "bytes": 158458,
+      "changes": "Resized and WebP encoded; metadata stripped; display may crop. Original visible markings preserved. Independent scientific editorial media, not ClearPath property."
+    },
+    {
+      "id": "clearpath-analyzer",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Cobas_machine.jpg",
+      "author": "Lazborn",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Cobas_machine.jpg",
+      "original_dimensions": "1020x768",
+      "original_sha1": "390ffbe1236e4b547382366c0d0066a61512fa1e",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/clearpath-analyzer.webp",
+      "dimensions": "1020x768",
+      "sha256": "335fcca8fca219e985696f790485e4b6946ac7225177441fe0a74a07a5f16223",
+      "bytes": 51506,
+      "changes": "Resized and WebP encoded; metadata stripped; display may crop. Original visible markings preserved. Independent scientific editorial media, not ClearPath property."
+    }
+  ]
+}

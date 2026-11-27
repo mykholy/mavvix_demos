@@ -48,7 +48,7 @@ export default async function EcommerceStorefrontPage(
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1A1715]/5 text-[#695E57] text-xs font-semibold uppercase tracking-widest border border-[#E0D8D0]">
-                <Sparkles className="w-3.5 h-3.5 text-[#C89B8C]" />
+                <Sparkles className="w-3.5 h-3.5 text-[#895549]" />
                 <span>{isAr ? 'مجموعة الكتان والألياف الطبيعية' : 'The Natural Linen Edition'}</span>
               </div>
 
@@ -70,7 +70,7 @@ export default async function EcommerceStorefrontPage(
                   className="px-6 py-3.5 rounded-xl bg-[#1A1715] hover:bg-[#332E2A] text-white text-xs sm:text-sm font-semibold transition-all shadow-md hover:shadow-lg flex items-center gap-2"
                 >
                   <span>{isAr ? 'استكشف التشكيلة الحالية' : 'Shop Current Campaign'}</span>
-                  <Arrow className="w-4 h-4 text-[#C89B8C]" />
+                  <Arrow className="w-4 h-4 text-[#895549]" />
                 </Link>
                 <Link
                   href={`/${locale}/preview/ecommerce/story`}
@@ -100,7 +100,7 @@ export default async function EcommerceStorefrontPage(
             <div className="lg:col-span-5">
               <div className="relative rounded-3xl bg-white p-6 sm:p-8 shadow-xl border border-[#E0D8D0] space-y-6">
                 <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-[#EFEAE4] to-[#DFD7CE] flex flex-col items-center justify-center p-8 text-center border border-[#D5CDC4]">
-                  <span className="text-[11px] font-mono uppercase tracking-widest text-[#8C7D73] mb-2">
+                  <span className="text-[11px] font-mono uppercase tracking-widest text-[#6D5C51] mb-2">
                     Edition 2026 / Campaign 01
                   </span>
                   <span className="font-serif text-4xl sm:text-5xl font-light text-[#1A1715] mb-2">
@@ -115,7 +115,7 @@ export default async function EcommerceStorefrontPage(
                   <span>{isAr ? 'تسوق النمط' : 'Curated Look'}</span>
                   <Link
                     href={`/${locale}/preview/ecommerce/collections`}
-                    className="text-[#C89B8C] hover:underline flex items-center gap-1"
+                    className="text-[#895549] hover:underline flex items-center gap-1"
                   >
                     <span>{isAr ? 'تصفح كل التشكيلات' : 'View Collections'}</span>
                     <Arrow className="w-3.5 h-3.5" />
@@ -141,7 +141,7 @@ export default async function EcommerceStorefrontPage(
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
           <div>
-            <span className="text-xs font-mono uppercase tracking-widest text-[#8C7D73]">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#6D5C51]">
               {isAr ? 'تصنيفات الأتيليه' : 'Categories'}
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#193A39] mt-2 text-[#1A1715]">
@@ -150,7 +150,7 @@ export default async function EcommerceStorefrontPage(
           </div>
           <Link
             href={`/${locale}/preview/ecommerce/collections`}
-            className="text-xs sm:text-sm font-semibold text-[#1A1715] hover:text-[#C89B8C] inline-flex items-center gap-1"
+            className="text-xs sm:text-sm font-semibold text-[#1A1715] hover:text-[#895549] inline-flex items-center gap-1"
           >
             <span>{isAr ? 'جميع الفئات (4)' : 'View all 4 categories'}</span>
             <Arrow className="w-4 h-4" />
@@ -164,10 +164,10 @@ export default async function EcommerceStorefrontPage(
               href={`/${locale}/preview/ecommerce/collections/${col.slug}`}
               className="group block p-5 rounded-2xl bg-white border border-[#EBE5DF] hover:border-[#C89B8C] hover:shadow-md transition-all"
             >
-              <div className="aspect-square rounded-xl bg-[#F4EFEA] mb-4 flex items-center justify-center font-serif text-3xl font-light text-[#8C7D73] group-hover:scale-105 transition-transform duration-300">
+              <div className="aspect-square rounded-xl bg-[#F4EFEA] mb-4 flex items-center justify-center font-serif text-3xl font-light text-[#6D5C51] group-hover:scale-105 transition-transform duration-300">
                 {col.name.slice(0, 2)}
               </div>
-              <h3 className="font-serif text-base font-bold text-[#1A1715] group-hover:text-[#C89B8C] transition-colors">
+              <h3 className="font-serif text-base font-bold text-[#1A1715] group-hover:text-[#895549] transition-colors">
                 {col.name}
               </h3>
               <p className="text-[11px] text-[#695E57] line-clamp-1 mt-1">
@@ -182,7 +182,7 @@ export default async function EcommerceStorefrontPage(
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
           <div>
-            <span className="text-xs font-mono uppercase tracking-widest text-[#8C7D73]">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#6D5C51]">
               {isAr ? 'قطع مختارة' : 'Curated Selection'}
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1A1715] mt-2">
@@ -191,7 +191,7 @@ export default async function EcommerceStorefrontPage(
           </div>
           <Link
             href={`/${locale}/preview/ecommerce/collections`}
-            className="text-xs sm:text-sm font-semibold text-[#1A1715] hover:text-[#C89B8C] inline-flex items-center gap-1"
+            className="text-xs sm:text-sm font-semibold text-[#1A1715] hover:text-[#895549] inline-flex items-center gap-1"
           >
             <span>{isAr ? 'عرض كافة المنتجات (24)' : 'Browse all 24 products'}</span>
             <Arrow className="w-4 h-4" />
@@ -209,7 +209,7 @@ export default async function EcommerceStorefrontPage(
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl bg-[#1A1715] text-[#FAF8F5] p-8 sm:p-12 relative overflow-hidden">
           <div className="max-w-2xl space-y-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#C89B8C]">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#E2BEB0]">
               {isAr ? 'فلسفة المواد المستدامة' : 'Ethical Fabric Heritage'}
             </span>
             <h2 className="font-serif text-2xl sm:text-4xl font-bold text-white">
@@ -237,7 +237,7 @@ export default async function EcommerceStorefrontPage(
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="noria-guide-heading">
         <div className="border-t border-[#E7DED4] pt-10">
           <div className="max-w-xl space-y-2">
-            <span className="text-[#A48776] tracking-[.2em] uppercase font-mono text-xs">{isAr ? 'اختيارات مدروسة' : 'THE ATELIER GUIDE'}</span>
+            <span className="text-[#775642] tracking-[.2em] uppercase font-mono text-xs">{isAr ? 'اختيارات مدروسة' : 'THE ATELIER GUIDE'}</span>
             <h2 id="noria-guide-heading" className="font-serif text-3xl sm:text-4xl text-[#1A1715] font-bold">{isAr ? 'تفاصيل صغيرة تصنع تجربة أفضل' : 'A little more confidence in every choice'}</h2>
             <p className="text-sm leading-7 text-[#695E57]">{isAr ? 'معلومات واضحة تساعدك على اختيار المقاس والعناية بالأقمشة وفهم خطوات الشحن والاستبدال.' : 'Explore fit guidance, fabric care, and the delivery and exchange information that helps you choose with confidence.'}</p>
           </div>
@@ -248,8 +248,8 @@ export default async function EcommerceStorefrontPage(
               {no:'03',ar:'العناية بالكتان',en:'Care that lasts',arText:'تعرّف على طرق غسل الأنسجة الطبيعية وتجفيفها وتخزينها.',enText:'Learn the basics of laundering, drying and storing natural textiles.',to:'story'},
             ].map((item) => (
               <Link key={item.no} href={`/${locale}/preview/ecommerce/${item.to}`} className="group bg-white border border-[#EBE5DF] rounded-3xl p-7 min-h-[230px] flex flex-col justify-between hover:border-[#C89B8C] hover:-translate-y-1 hover:shadow-md transition-all">
-                <div><span className="font-mono text-sm text-[#B49584]">{item.no}</span><h3 className="font-serif text-xl text-[#1A1715] font-bold mt-5">{isAr ? item.ar : item.en}</h3><p className="text-sm text-[#695E57] leading-7 mt-3">{isAr ? item.arText : item.enText}</p></div>
-                <div className="pt-5 flex justify-between items-center text-[#9D7965] border-t border-[#F1ECE6] text-xs font-bold mt-4">{isAr ? 'اعرف المزيد' : 'Explore the guide'} <Arrow className="w-4 h-4" /></div>
+                <div><span className="font-mono text-sm text-[#805C4A]">{item.no}</span><h3 className="font-serif text-xl text-[#1A1715] font-bold mt-5">{isAr ? item.ar : item.en}</h3><p className="text-sm text-[#695E57] leading-7 mt-3">{isAr ? item.arText : item.enText}</p></div>
+                <div className="pt-5 flex justify-between items-center text-[#79533F] border-t border-[#F1ECE6] text-xs font-bold mt-4">{isAr ? 'اعرف المزيد' : 'Explore the guide'} <Arrow className="w-4 h-4" /></div>
               </Link>
             ))}
           </div>
@@ -261,7 +261,7 @@ export default async function EcommerceStorefrontPage(
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-[#8C7D73]">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#6D5C51]">
                 {isAr ? 'مجلة الأسلوب' : 'Editorial Perspectives'}
               </span>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1A1715] mt-2">
@@ -270,7 +270,7 @@ export default async function EcommerceStorefrontPage(
             </div>
             <Link
               href={`/${locale}/preview/ecommerce/journal`}
-              className="text-xs sm:text-sm font-semibold text-[#1A1715] hover:text-[#C89B8C] inline-flex items-center gap-1"
+              className="text-xs sm:text-sm font-semibold text-[#1A1715] hover:text-[#895549] inline-flex items-center gap-1"
             >
               <span>{isAr ? 'جميع مقالات المجلة' : 'Read all journal articles'}</span>
               <Arrow className="w-4 h-4" />
@@ -281,7 +281,7 @@ export default async function EcommerceStorefrontPage(
             {articles.slice(0, 2).map(a => (
               <div key={a.id} className="p-6 rounded-2xl bg-white border border-[#EBE5DF] flex flex-col justify-between">
                 <div>
-                  <span className="text-[11px] font-mono text-[#8C7D73] uppercase tracking-wider block mb-2">
+                  <span className="text-[11px] font-mono text-[#6D5C51] uppercase tracking-wider block mb-2">
                     {a.category}
                   </span>
                   <h3 className="font-serif text-lg font-bold text-[#1A1715] mb-2">
@@ -294,7 +294,7 @@ export default async function EcommerceStorefrontPage(
                 <div className="pt-3 border-t border-[#F0EAE3]">
                   <Link
                     href={`/${locale}/preview/ecommerce/journal/${a.slug}`}
-                    className="text-xs font-semibold text-[#1A1715] hover:text-[#C89B8C] inline-flex items-center gap-1"
+                    className="text-xs font-semibold text-[#1A1715] hover:text-[#895549] inline-flex items-center gap-1"
                   >
                     <span>{isAr ? 'قراءة المقال' : 'Read Article'}</span>
                     <Arrow className="w-3.5 h-3.5" />

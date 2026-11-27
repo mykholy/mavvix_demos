@@ -162,7 +162,7 @@ export default async function DentalHomePage(
           <SectorPhoto sector="dental" secondary alt="" className="col-span-8 h-52 sm:h-[340px] rounded-[1.5rem]" />
           <SectorPhoto sector="dental" alt="" className="col-span-4 h-52 sm:h-[340px] rounded-[1.5rem]" />
         </div>
-        <figcaption className="text-[11px] mt-3 opacity-60 text-center px-4">
+        <figcaption className="text-[11px] mt-3 opacity-90 text-center px-4">
           {isAr ? 'صور فوتوغرافية مرجعية لاتجاه التصميم، وليست توثيقًا لمشروعات أو منشآت هذه العلامة' : 'Licensed editorial art direction — not documentation of this brand’s real facilities or work'}
         </figcaption>
       </figure>
@@ -191,7 +191,7 @@ export default async function DentalHomePage(
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white p-6 rounded-2xl border border-[#E0EBE7] shadow-sm relative">
-            <span className="text-4xl font-serif font-bold text-[#EDF5F2] absolute top-4 right-4">01</span>
+            <span className="text-4xl font-serif font-bold text-[#47736C] absolute top-4 right-4">01</span>
             <div className="w-10 h-10 rounded-xl bg-[#EDF5F2] text-[#193A39] flex items-center justify-center font-bold mb-4">
               1
             </div>
@@ -206,7 +206,7 @@ export default async function DentalHomePage(
           </div>
 
           <div className="bg-white p-6 rounded-2xl border border-[#E0EBE7] shadow-sm relative">
-            <span className="text-4xl font-serif font-bold text-[#EDF5F2] absolute top-4 right-4">02</span>
+            <span className="text-4xl font-serif font-bold text-[#47736C] absolute top-4 right-4">02</span>
             <div className="w-10 h-10 rounded-xl bg-[#EDF5F2] text-[#193A39] flex items-center justify-center font-bold mb-4">
               2
             </div>
@@ -221,7 +221,7 @@ export default async function DentalHomePage(
           </div>
 
           <div className="bg-white p-6 rounded-2xl border border-[#E0EBE7] shadow-sm relative">
-            <span className="text-4xl font-serif font-bold text-[#EDF5F2] absolute top-4 right-4">03</span>
+            <span className="text-4xl font-serif font-bold text-[#47736C] absolute top-4 right-4">03</span>
             <div className="w-10 h-10 rounded-xl bg-[#EDF5F2] text-[#193A39] flex items-center justify-center font-bold mb-4">
               3
             </div>

@@ -15,7 +15,7 @@ export default async function AcademyLayout({
   const isAr = locale === 'ar';
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F5F7FF] text-[#192A48] font-sans antialiased selection:bg-[#EF6A55] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#F5F7FF] text-[#192A48] font-sans antialiased selection:bg-[#B74132] selection:text-white">
       <SectorUtilityBar sector="academy" locale={locale as 'ar' | 'en'} />
       {/* Main Header */}
       <AcademyHeader locale={locale as 'ar' | 'en'} />
@@ -50,7 +50,7 @@ export default async function AcademyLayout({
 
             {/* Col 3: Tracks */}
             <div className="space-y-3">
-              <h3 className="text-xs uppercase font-semibold text-[#EF6A55] tracking-wider">
+              <h3 className="text-xs uppercase font-semibold text-[#FFB4A5] tracking-wider">
                 {isAr ? 'المسارات التخصصية' : 'Applied Tracks'}
               </h3>
               <ul className="space-y-2 text-sm text-white/70">
@@ -79,7 +79,7 @@ export default async function AcademyLayout({
 
             {/* Col 4: Platform Navigation */}
             <div className="space-y-3">
-              <h3 className="text-xs uppercase font-semibold text-[#EF6A55] tracking-wider">
+              <h3 className="text-xs uppercase font-semibold text-[#FFB4A5] tracking-wider">
                 {isAr ? 'استكشف المنصة' : 'Explore Platform'}
               </h3>
               <ul className="space-y-2 text-sm text-white/70">
@@ -113,7 +113,7 @@ export default async function AcademyLayout({
 
             {/* Col 5: Direct Action */}
             <div className="space-y-4">
-              <h3 className="text-xs uppercase font-semibold text-[#EF6A55] tracking-wider">
+              <h3 className="text-xs uppercase font-semibold text-[#FFB4A5] tracking-wider">
                 {isAr ? 'تجربة تفاعلية فورية' : 'Explore Learning'}
               </h3>
               <p className="text-xs text-white/60 leading-relaxed">
@@ -129,7 +129,7 @@ export default async function AcademyLayout({
               </Link>
               <Link
                 href={`/${locale}/preview/academy/enrollment-interest`}
-                className="block text-center px-4 py-2.5 rounded-lg border border-[#EF6A55] text-[#EF6A55] hover:bg-[#EF6A55] hover:text-white text-xs font-semibold transition-all"
+                className="block text-center px-4 py-2.5 rounded-lg border border-[#EF6A55] text-[#FFB4A5] hover:bg-[#B74132] hover:text-white text-xs font-semibold transition-all"
               >
                 {isAr ? 'تسجيل اهتمام بالالتحاق' : 'Register Enrollment Interest'}
               </Link>
@@ -147,9 +147,9 @@ export default async function AcademyLayout({
                 : 'Education platform experience by Mavvix. Curricula, instructors and certificates require approval from the real training operator before an accredited offering. No tuition fees are collected here.'}
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-white/40">© 2026 Mavvix Studio</span>
+              <span className="text-white/70">© 2026 Mavvix Studio</span>
               <span className="w-1.5 h-1.5 rounded-full bg-white/20" />
-              <Link href={`/${locale}/showcase`} className="text-[#EF6A55] hover:underline">
+              <Link href={`/${locale}/showcase`} className="text-[#FFB4A5] hover:underline">
                 Mavvix Showcase
               </Link>
             </div>

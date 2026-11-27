@@ -48,12 +48,12 @@ export default async function RealEstateLayout(props: Props) {
   ];
 
   return (
-    <div className="bg-[#F5F0E6] text-[#25312D] min-h-screen flex flex-col font-sans selection:bg-[#A8764F] selection:text-white">
+    <div className="bg-[#F5F0E6] text-[#25312D] min-h-screen flex flex-col font-sans selection:bg-[#805333] selection:text-white">
       {/* Brand Header */}
       <header className="sticky top-0 z-40 bg-[#25312D] text-white border-b border-stone-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <Link href={`/${locale}/preview/real-estate`} className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded bg-[#A8764F] flex items-center justify-center text-white font-bold tracking-widest text-lg shadow-sm">
+            <div className="w-10 h-10 rounded bg-[#805333] flex items-center justify-center text-white font-bold tracking-widest text-lg shadow-sm">
               <Building className="w-5 h-5 text-white" />
             </div>
             <div>
@@ -82,7 +82,7 @@ export default async function RealEstateLayout(props: Props) {
           <div className="flex items-center gap-3">
             <Link
               href={`/${locale}/preview/real-estate/viewing`}
-              className="inline-flex items-center gap-2 bg-[#A8764F] hover:bg-[#8e613e] text-white text-xs font-bold px-4 py-2.5 rounded shadow-sm transition-all uppercase tracking-wider"
+              className="inline-flex items-center gap-2 bg-[#805333] hover:bg-[#8e613e] text-white text-xs font-bold px-4 py-2.5 rounded shadow-sm transition-all uppercase tracking-wider"
             >
               <Calendar className="w-4 h-4" />
               <span>{isAr ? 'طلب معاينة خاصة' : 'Request Viewing'}</span>
@@ -97,12 +97,12 @@ export default async function RealEstateLayout(props: Props) {
       </div>
 
       {/* Brand Footer */}
-      <footer className="bg-[#25312D] text-stone-400 border-t border-stone-800 text-xs py-14">
+      <footer className="bg-[#25312D] text-stone-300 border-t border-stone-800 text-xs py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
             <div className="md:col-span-2 space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded bg-[#A8764F] flex items-center justify-center text-white font-bold text-sm">
+                <div className="w-8 h-8 rounded bg-[#805333] flex items-center justify-center text-white font-bold text-sm">
                   <Building className="w-4 h-4 text-white" />
                 </div>
                 <span className="text-sm font-extrabold text-white tracking-widest uppercase font-serif">
@@ -159,7 +159,7 @@ export default async function RealEstateLayout(props: Props) {
             </div>
           </div>
 
-          <div className="pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-stone-500">
+          <div className="pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-stone-300">
             <p>© {new Date().getFullYear()} Meridian Residences — property website experience by Mavvix. Listings require seller verification.</p>
             <p>Designed and engineered for Mavvix Studio.</p>
           </div>

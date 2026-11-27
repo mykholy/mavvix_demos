@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { SectorUtilityBar } from '@/components/shared/SectorUtilityBar';
+import { MobileSectorNav } from '@/components/shared/MobileSectorNav';
 import { ContactDock } from '@/components/shared/ContactDock';
 import React from 'react';
 import Link from 'next/link';
@@ -28,27 +29,27 @@ export default async function DentalLayout(
       <SectorUtilityBar sector="dental" locale={locale} />
       {/* Main Clinic Header */}
       <header className="sticky top-0 z-40 bg-[#FFFFFF]/90 backdrop-blur-md border-b border-[#E0EBE7] shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-20 flex items-center justify-between gap-2">
           {/* Logo & Brand */}
-          <Link href={`/${locale}/preview/dental`} className="flex items-center gap-3 group">
-            <div className="w-11 h-11 rounded-xl bg-[#193A39] text-[#EDF5F2] flex items-center justify-center font-serif text-2xl font-bold tracking-tight shadow-sm group-hover:bg-[#2C5251] transition-colors">
+          <Link href={`/${locale}/preview/dental`} className="flex items-center gap-2 sm:gap-3 group min-w-0">
+            <div className="w-9 h-9 sm:w-11 sm:h-11 shrink-0 rounded-xl bg-[#193A39] text-[#EDF5F2] flex items-center justify-center font-serif text-2xl font-bold tracking-tight shadow-sm group-hover:bg-[#2C5251] transition-colors">
               L
             </div>
             <div>
               <div className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#193A39] flex items-center gap-2">
                 <span>{isAr ? 'لومِن' : 'LUMEN'}</span>
-                <span className="text-xs font-sans font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full bg-[#EDF5F2] text-[#2C5251] border border-[#CDE0D9]">
+                <span className="hidden sm:inline text-xs font-sans font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full bg-[#EDF5F2] text-[#2C5251] border border-[#CDE0D9]">
                   {isAr ? 'طب الأسنان' : 'DENTAL'}
                 </span>
               </div>
-              <p className="text-[11px] text-[#557874] tracking-normal font-sans">
+              <p className="hidden sm:block text-[11px] text-[#557874] tracking-normal font-sans">
                 {isAr ? 'رعاية سنية متقدمة بأسلوب هادئ ومطمئن' : 'Calm, patient-first specialized care'}
               </p>
             </div>
           </Link>
 
           {/* Navigation Links */}
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-[#2C5251]">
+          <nav className="hidden xl:flex items-center gap-6 text-sm font-medium text-[#2C5251]">
             <Link href={`/${locale}/preview/dental/services`} className="hover:text-[#193A39] transition-colors">
               {isAr ? 'الخدمات والعلاجات' : 'Treatments'}
             </Link>
@@ -70,14 +71,18 @@ export default async function DentalLayout(
           </nav>
 
           {/* CTA Action */}
-          <div className="flex items-center gap-3">
+          <div className="flex shrink-0 items-center gap-2">
             <Link
               href={`/${locale}/preview/dental/request-appointment`}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#193A39] hover:bg-[#234B49] text-white text-xs sm:text-sm font-medium transition-all shadow-sm hover:shadow"
+              aria-label={isAr ? 'طلب استشارة' : 'Request Consultation'}
+              className="inline-flex min-h-11 items-center gap-2 px-3 sm:px-4 py-2.5 rounded-lg bg-[#193A39] hover:bg-[#234B49] text-white text-xs sm:text-sm font-medium transition-all shadow-sm hover:shadow"
             >
               <Calendar className="w-4 h-4 text-[#7AC7A5]" />
-              <span>{isAr ? 'طلب استشارة' : 'Request Consultation'}</span>
+              <span className="hidden sm:inline">{isAr ? 'طلب استشارة' : 'Request Consultation'}</span>
             </Link>
+            <MobileSectorNav tone="light" breakpoint="xl" links={[
+              ['services','الخدمات والعلاجات','Treatments'],['team','الأطباء المتخصصون','Specialists'],['patient-guide','دليل الزيارة','Patient Guide'],['locations','الفروع والمراكز','Branches'],['faq','الأسئلة الشائعة','FAQ'],['contact','تواصل معنا','Contact']
+            ].map(([slug,ar,en])=>({href:`/${locale}/preview/dental/${slug}`,label:isAr?ar:en}))}/>
           </div>
         </div>
       </header>

@@ -24,7 +24,7 @@ export default async function EcommerceCheckoutPage(
     <div className="py-12 sm:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <div className="max-w-3xl space-y-3">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#8C7D73]">
+          <span className="text-xs font-mono uppercase tracking-widest text-[#6D5C51]">
             {isAr ? 'إتمام الشراء' : 'Secure Checkout'}
           </span>
           <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A1715]">

@@ -133,7 +133,7 @@ export const VERTICALS = [
     "en": "Diagnostics",
     "wave": 3,
     "accent": "#60B6EF",
-    "status": "planned"
+    "status": "in_progress"
   },
   {
     "slug": "veterinary",

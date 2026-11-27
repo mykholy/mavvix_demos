@@ -26,7 +26,7 @@ export default async function RestaurantLayout(
 
   return (
     <OrderProvider>
-      <div className="min-h-screen flex flex-col bg-[#FAF3E6] text-[#321F18] font-sans selection:bg-[#BA5C34] selection:text-white">
+      <div className="min-h-screen flex flex-col bg-[#FAF3E6] text-[#321F18] font-sans selection:bg-[#984321] selection:text-white">
         <SectorUtilityBar sector="restaurant" locale={locale} />
       {/* Header */}
         <RestaurantHeader locale={locale} />
@@ -43,14 +43,14 @@ export default async function RestaurantLayout(
               {/* Brand Col */}
               <div className="md:col-span-1 space-y-4">
                 <div className="flex items-center gap-3">
-                  <span className="w-9 h-9 rounded-full bg-[#BA5C34] text-white flex items-center justify-center font-serif text-lg font-bold">
+                  <span className="w-9 h-9 rounded-full bg-[#984321] text-white flex items-center justify-center font-serif text-lg font-bold">
                     ز
                   </span>
                   <div>
                     <h3 className="font-serif text-lg font-bold">
                       {isAr ? 'سُفرة زعفران' : 'SAFFRON TABLE'}
                     </h3>
-                    <p className="text-[11px] text-[#8B8B52] uppercase tracking-wider font-medium">
+                    <p className="text-[11px] text-[#D9D5A2] uppercase tracking-wider font-medium">
                       {isAr ? 'مطبخ وتراث شرقي' : 'Heritage Culinary Experience'}
                     </p>
                   </div>
@@ -64,7 +64,7 @@ export default async function RestaurantLayout(
 
               {/* Navigation Links */}
               <div>
-                <h4 className="text-xs uppercase tracking-widest text-[#BA5C34] font-bold mb-4">
+                <h4 className="text-xs uppercase tracking-widest text-[#F2B38E] font-bold mb-4">
                   {isAr ? 'استكشف القائمة' : 'Explore'}
                 </h4>
                 <ul className="space-y-2 text-xs text-white/80">
@@ -103,7 +103,7 @@ export default async function RestaurantLayout(
 
               {/* Branches */}
               <div>
-                <h4 className="text-xs uppercase tracking-widest text-[#BA5C34] font-bold mb-4">
+                <h4 className="text-xs uppercase tracking-widest text-[#F2B38E] font-bold mb-4">
                   {isAr ? 'الفروع والمناطق' : 'Dining locations'}
                 </h4>
                 <ul className="space-y-3 text-xs text-white/80">
@@ -136,7 +136,7 @@ export default async function RestaurantLayout(
 
               {/* Commercial Mavvix CTA */}
               <div className="bg-white/5 p-5 rounded-xl border border-white/10 space-y-3">
-                <span className="text-[10px] uppercase font-bold tracking-wider text-[#BA5C34] block">
+                <span className="text-[10px] uppercase font-bold tracking-wider text-[#F2B38E] block">
                   {isAr ? 'حلول مافيكس للمطاعم' : 'Mavvix Commercial'}
                 </span>
                 <p className="text-xs text-white/90 leading-relaxed">
@@ -148,7 +148,7 @@ export default async function RestaurantLayout(
                   href={mavvixSalesUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-block text-xs font-semibold px-4 py-2 rounded-lg bg-[#BA5C34] text-white hover:bg-[#9E4A28] transition-colors"
+                  className="inline-block text-xs font-semibold px-4 py-2 rounded-lg bg-[#984321] text-white hover:bg-[#9E4A28] transition-colors"
                 >
                   {isAr ? 'تواصل مع فريق مافيكس' : 'Schedule a Discovery Call'}
                 </a>
@@ -156,10 +156,10 @@ export default async function RestaurantLayout(
             </div>
 
             {/* Bottom Bar */}
-            <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 gap-4">
+            <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/75 gap-4">
               <p>
                 © 2026 SAFFRON TABLE. {isAr ? 'تجربة موقع مطعم صممتها' : 'Design by'}{' '}
-                <a href={mavvixSalesUrl} target="_blank" rel="noreferrer" className="text-[#BA5C34] hover:underline">
+                <a href={mavvixSalesUrl} target="_blank" rel="noreferrer" className="text-[#F2B38E] underline underline-offset-2">
                   Mavvix
                 </a>.
               </p>

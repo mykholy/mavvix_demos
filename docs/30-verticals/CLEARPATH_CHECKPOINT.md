@@ -1,0 +1,5 @@
+# ClearPath Labs — sector 26 checkpoint
+
+25 verified sites are already merged in main. PR #9 implements ClearPath only. 11 home sections, 8 service dossiers, 3 guides, 5 FAQs, 9 section topics, 44 bilingual routes, privacy-minimal administrative callback, strict API, SQLite and existing protected request queue. No clinical information, UTM, real test availability, reports or bookings.
+
+Media preparation run 45900948878 succeeded. Local WebP files and provenance are committed at a492f4800270b8359101e6652222d8cc5efbaca5. Both originals downloaded and decoded, dimensions verified; analyzer SHA1 matches a separately sourced expected hash. Glassware SHA1 is recorded from downloaded original but not independently matched. Author, dimensions and CC BY 4.0 license rechecked at https://commons.wikimedia.org/wiki/File:Laboratory_equipment.jpg on 2026-11-27. Local WebP integrity checked by unit test. The temporary write-capable media workflow and script were removed. Final exact-head regression checks and actual screenshot review remain mandatory before merge. No medical or commercial launch approval implied.

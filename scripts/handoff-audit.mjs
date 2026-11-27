@@ -248,3 +248,9 @@ assert.ok((elyraHome.match(/data-sector-specific=/g)||[]).length>=9);
 assert.match(readFileSync(join(elyraDir,'layout.tsx'),'utf8'),/<ContactDock/);
 for(const route of ['[section]','services/[slug]','guides/[slug]','contact'])assert.ok(existsSync(join(elyraDir,route,'page.tsx')),'Missing Elyra route '+route);
 console.log('PASS: distinct Elyra consultation home, specialist routes and privacy-minimal contact');
+
+const labDir=join(root,'diagnostics-lab');
+assert.ok((readFileSync(join(labDir,'page.tsx'),'utf8').match(/data-sector-specific=/g)||[]).length>=9);
+assert.match(readFileSync(join(labDir,'layout.tsx'),'utf8'),/<ContactDock/);
+for(const route of ['[section]','services/[slug]','guides/[slug]','contact'])assert.ok(existsSync(join(labDir,route,'page.tsx')),'Missing ClearPath route '+route);
+console.log('PASS: independent ClearPath laboratory directory and privacy-minimal callback');

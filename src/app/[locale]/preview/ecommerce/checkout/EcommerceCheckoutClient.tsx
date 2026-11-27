@@ -135,7 +135,7 @@ export default function EcommerceCheckoutClient({ locale }: Props) {
           className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#1A1715] text-white text-xs font-semibold"
         >
           <span>{isAr ? 'تصفح التشكيلات' : 'Explore Collections'}</span>
-          <Arrow className="w-4 h-4 text-[#C89B8C]" />
+          <Arrow className="w-4 h-4 text-[#895549]" />
         </Link>
       </div>
     );
@@ -150,7 +150,7 @@ export default function EcommerceCheckoutClient({ locale }: Props) {
             <h2 className="font-serif text-xl font-bold text-[#1A1715]">
               {isAr ? '1. بيانات التوصيل التوضيحية' : '1. Delivery Information'}
             </h2>
-            <span className="text-xs text-[#8C7D73] font-mono">
+            <span className="text-xs text-[#6D5C51] font-mono">
               {shippingZone}
             </span>
           </div>
@@ -287,7 +287,7 @@ export default function EcommerceCheckoutClient({ locale }: Props) {
               <div key={item.variantId} className="pt-2 flex justify-between items-center text-[#524842]">
                 <div className="space-y-0.5">
                   <span className="font-bold text-[#1A1715]">{item.title}</span>
-                  <span className="block text-[11px] text-[#8C7D73] font-mono">
+                  <span className="block text-[11px] text-[#6D5C51] font-mono">
                     {item.size} • {item.color} (x{item.quantity})
                   </span>
                 </div>
@@ -325,7 +325,7 @@ export default function EcommerceCheckoutClient({ locale }: Props) {
             disabled={isSubmitting}
             className="w-full py-3.5 rounded-xl bg-[#1A1715] hover:bg-[#332E2A] text-white text-xs sm:text-sm font-semibold transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-50"
           >
-            <Lock className="w-4 h-4 text-[#C89B8C]" />
+            <Lock className="w-4 h-4 text-[#895549]" />
             <span>{isSubmitting ? (isAr ? 'جاري تسجيل الطلب...' : 'Processing...') : (isAr ? 'تأكيد طلب الشراء التجريبي' : 'Confirm Simulated Order')}</span>
           </button>
         </div>

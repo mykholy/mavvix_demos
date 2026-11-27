@@ -17,7 +17,7 @@ export default async function RealEstateViewingPage(props: Props) {
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-10 text-center space-y-2">
-        <span className="text-xs font-mono font-bold text-[#A8764F] uppercase tracking-widest block">
+        <span className="text-xs font-mono font-bold text-[#805333] uppercase tracking-widest block">
           PRIVATE APPOINTMENT INTAKE // DEMO WORKFLOW
         </span>
         <h1 className="text-3xl sm:text-5xl font-black text-[#25312D] tracking-tight font-serif">

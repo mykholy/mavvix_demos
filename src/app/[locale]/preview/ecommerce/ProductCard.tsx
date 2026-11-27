@@ -61,7 +61,7 @@ export default function ProductCard({ locale, product }: Props) {
           <button
             onClick={() => toggleWishlist(product.slug)}
             className={`p-1.5 rounded-full transition-colors ${
-              wish ? 'text-[#C89B8C] bg-[#F7EFEA]' : 'text-[#8C7D73] hover:text-[#1A1715] hover:bg-[#F3EFEA]'
+              wish ? 'text-[#895549] bg-[#F7EFEA]' : 'text-[#6D5C51] hover:text-[#1A1715] hover:bg-[#F3EFEA]'
             }`}
             title={wish ? (isAr ? 'إزالة من المفضلة' : 'Remove from Wishlist') : (isAr ? 'إضافة للمفضلة' : 'Add to Wishlist')}
           >
@@ -112,7 +112,7 @@ export default function ProductCard({ locale, product }: Props) {
             </span>
           ))}
           {sizes.length > 0 && (
-            <span className="text-[10px] text-[#8C7D73] ml-1 rtl:ml-0 rtl:mr-1">
+            <span className="text-[10px] text-[#6D5C51] ml-1 rtl:ml-0 rtl:mr-1">
               ({sizes.join('/')})
             </span>
           )}
@@ -126,7 +126,7 @@ export default function ProductCard({ locale, product }: Props) {
         </div>
 
         {isAllSoldOut ? (
-          <span className="text-xs text-[#8C7D73] font-medium">
+          <span className="text-xs text-[#6D5C51] font-medium">
             {isAr ? 'غير متاح' : 'Unavailable'}
           </span>
         ) : (
@@ -134,7 +134,7 @@ export default function ProductCard({ locale, product }: Props) {
             onClick={handleQuickAdd}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#1A1715] hover:bg-[#332E2A] text-white text-xs font-semibold transition-colors shadow-sm"
           >
-            <ShoppingBag className="w-3.5 h-3.5 text-[#C89B8C]" />
+            <ShoppingBag className="w-3.5 h-3.5 text-[#895549]" />
             <span>{isAr ? 'إضافة للحقيبة' : 'Add'}</span>
           </button>
         )}

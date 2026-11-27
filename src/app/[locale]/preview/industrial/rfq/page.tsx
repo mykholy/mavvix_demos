@@ -16,7 +16,7 @@ export default async function IndustrialRfqPage(props: Props) {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-10 text-center space-y-2">
-        <span className="text-xs font-mono font-bold text-amber-600 uppercase tracking-widest block">
+        <span className="text-xs font-mono font-bold text-amber-800 uppercase tracking-widest block">
           COMMERCIAL PROCUREMENT // MULTI-LINE RFQ BASKET
         </span>
         <h1 className="text-3xl sm:text-5xl font-black text-[#12243C] tracking-tight">
