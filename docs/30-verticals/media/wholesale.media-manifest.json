@@ -1,0 +1,37 @@
+{
+  "vertical": "wholesale",
+  "assets": [
+    {
+      "id": "tradebridge-warehouse",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Warehouse_distribution-center-1136510.jpg",
+      "author": "Rsherwin",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Warehouse_distribution-center-1136510.jpg",
+      "original_dimensions": "5746x2807",
+      "original_sha1": "2175b46d3ce8f495d660f43194845c988cd4a7dc",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/tradebridge-warehouse.webp",
+      "dimensions": "1600x781",
+      "sha256": "17c687f61aac1cd9bb1b7f02bc1e3bc916edf0e341add6a869ba42d1168f6063",
+      "bytes": 501296,
+      "changes": "Resized and WebP encoded; display may crop. Original license retained for adapted image. Independent editorial photograph, not TradeBridge facilities or inventory."
+    },
+    {
+      "id": "tradebridge-stock",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Warehouse_goods.jpg",
+      "author": "ProjectManhattan",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Warehouse_goods.jpg",
+      "original_dimensions": "3920x2204",
+      "original_sha1": "8dc3f7dbf5b7ae552e0cb3554bf9a43cbe007892",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/tradebridge-stock.webp",
+      "dimensions": "1600x900",
+      "sha256": "1fa2f12012334f66091d52d42592caa63a4a3e25ac3f2f716af2afe0873af838",
+      "bytes": 339052,
+      "changes": "Resized and WebP encoded; display may crop. Original license retained for adapted image. Independent editorial photograph, not TradeBridge facilities or inventory."
+    }
+  ]
+}
