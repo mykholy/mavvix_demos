@@ -424,10 +424,11 @@ export default function OaklineStudioConfigurator({ locale }: { locale: Locale }
                   max={selectedProduct.minMax.width[1]}
                   step={50}
                   value={width}
+                  aria-label={isAr ? 'عرض القطعة بالملليمتر' : 'Furniture piece width in millimeters'}
                   onChange={(e) => setWidth(Number(e.target.value))}
                   className="w-full accent-[#7E5322] cursor-pointer"
                 />
-                <div className="flex justify-between text-[10px] font-mono text-[#8C7A68]">
+                <div className="flex justify-between text-[10px] font-mono text-[#65513D] font-bold">
                   <span>{selectedProduct.minMax.width[0]} mm</span>
                   <span>{selectedProduct.minMax.width[1]} mm</span>
                 </div>
@@ -445,10 +446,11 @@ export default function OaklineStudioConfigurator({ locale }: { locale: Locale }
                   max={selectedProduct.minMax.depth[1]}
                   step={25}
                   value={depth}
+                  aria-label={isAr ? 'عمق القطعة بالملليمتر' : 'Furniture piece depth in millimeters'}
                   onChange={(e) => setDepth(Number(e.target.value))}
                   className="w-full accent-[#7E5322] cursor-pointer"
                 />
-                <div className="flex justify-between text-[10px] font-mono text-[#8C7A68]">
+                <div className="flex justify-between text-[10px] font-mono text-[#65513D] font-bold">
                   <span>{selectedProduct.minMax.depth[0]} mm</span>
                   <span>{selectedProduct.minMax.depth[1]} mm</span>
                 </div>
@@ -466,10 +468,11 @@ export default function OaklineStudioConfigurator({ locale }: { locale: Locale }
                   max={selectedProduct.minMax.height[1]}
                   step={25}
                   value={height}
+                  aria-label={isAr ? 'ارتفاع القطعة بالملليمتر' : 'Furniture piece height in millimeters'}
                   onChange={(e) => setHeight(Number(e.target.value))}
                   className="w-full accent-[#7E5322] cursor-pointer"
                 />
-                <div className="flex justify-between text-[10px] font-mono text-[#8C7A68]">
+                <div className="flex justify-between text-[10px] font-mono text-[#65513D] font-bold">
                   <span>{selectedProduct.minMax.height[0]} mm</span>
                   <span>{selectedProduct.minMax.height[1]} mm</span>
                 </div>
@@ -493,7 +496,7 @@ export default function OaklineStudioConfigurator({ locale }: { locale: Locale }
 
             <Link
               href={`/${locale}/preview/furniture/quote`}
-              className="bg-[#BA9062] hover:bg-[#A37B50] text-white text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-xl shadow-md shrink-0 flex items-center gap-2 transition-all"
+              className="bg-[#7E5322] hover:bg-[#684318] text-white text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-xl shadow-md shrink-0 flex items-center gap-2 transition-all"
             >
               <span>{isAr ? 'إضافة إلى سلة التسعير' : 'Add to Quote Basket'}</span>
               <Arrow className="w-4 h-4" />

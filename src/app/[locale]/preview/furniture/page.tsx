@@ -450,7 +450,7 @@ export default async function OaklineHome(props: { params: Promise<{ locale: Loc
             href={ar ? 'https://mavvix.com/ar/contact' : 'https://mavvix.com/en/contact'}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#BA9062] hover:bg-[#A37B50] text-white font-bold text-xs uppercase tracking-wider px-8 py-5 rounded-full shadow-lg flex items-center gap-2.5 shrink-0 transition-all"
+            className="bg-[#7E5322] hover:bg-[#684318] text-white font-bold text-xs uppercase tracking-wider px-8 py-5 rounded-full shadow-lg flex items-center gap-2.5 shrink-0 transition-all"
           >
             <span>{ar ? 'اطلب تنفيذ موقع معرضك' : 'Discuss Your Website Build'}</span>
             <ArrowUpRight size={16} />
