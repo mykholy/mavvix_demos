@@ -1,0 +1,115 @@
+{
+  "sector": "portfolio",
+  "brand": "Salma Hassan Studio",
+  "editorial_disclaimer": "Photographs depict authentic typography casting, Bauhaus modernist architecture, heritage letterpress workshops, minimalist contemporary art foundation exhibitions, archival folio monographs, and historic engineering blueprint drawings with verified open-license provenance (Creative Commons and Public Domain). They do NOT represent private commercial client facilities, confidential branding commissions, or guaranteed project deliverables.",
+  "assets": [
+    {
+      "id": "leadtype",
+      "filename": "leadtype.webp",
+      "local_path": "/assets/portfolio/portfolio/leadtype.webp",
+      "category": "typography",
+      "title_en": "Lead Type Sorts & Typesetter Composing Stick in Studio",
+      "title_ar": "حروف الطباعة الرصاصية ومسطرة الجمع اليدوي بالاستوديو",
+      "dimensions": { "width": 1800, "height": 1350 },
+      "bytes": 416936,
+      "sha256": "b5c236d004499f37612d47840c7594df1ef6696b9a979064e06fb15735690f79",
+      "provenance": {
+        "author": "Hajotthu",
+        "license": "CC BY 3.0 Unported",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Bleisatz_im_Winkelhaken.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Bleisatz_im_Winkelhaken.jpg"
+      }
+    },
+    {
+      "id": "architecture",
+      "filename": "architecture.webp",
+      "local_path": "/assets/portfolio/portfolio/architecture.webp",
+      "category": "spatial",
+      "title_en": "Bauhaus Dessau Modernist Architecture & Rationalist Grid",
+      "title_ar": "عمارة باوهاوس دساو العقلانية والشبكة الهندسية المعاصرة",
+      "dimensions": { "width": 1800, "height": 937 },
+      "bytes": 258370,
+      "sha256": "47a2017f544a0ecc3bce3a42e3621f5439ee7a3018925b916fb18ed04b5712dc",
+      "provenance": {
+        "author": "Aconcagua",
+        "license": "CC BY-SA 4.0 International",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Au%C3%9Fenansichten_des_Bauhaus-Geb%C3%A4udes_in_Dessau_06.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Au%C3%9Fenansichten_des_Bauhaus-Geb%C3%A4udes_in_Dessau_06.jpg"
+      }
+    },
+    {
+      "id": "workshop",
+      "filename": "workshop.webp",
+      "local_path": "/assets/portfolio/portfolio/workshop.webp",
+      "category": "print_craft",
+      "title_en": "Master Letterpress Atelier with Type Cabinets & Archival Proofs",
+      "title_ar": "محترف الطباعة اليدوية وخزائن الحروف الخشبية وسجلات التجارب",
+      "dimensions": { "width": 1800, "height": 1200 },
+      "bytes": 158724,
+      "sha256": "7d74bf1be717b149186bb46583e3fd92de89ea3692b769c5b46ebbbb07404dbe",
+      "provenance": {
+        "author": "Stamperia Benedetti",
+        "license": "CC BY-SA 4.0 International",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:09092018-stamperia_Benedetti3.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/09092018-stamperia_Benedetti3.jpg"
+      }
+    },
+    {
+      "id": "gallery",
+      "filename": "gallery.webp",
+      "local_path": "/assets/portfolio/portfolio/gallery.webp",
+      "category": "exhibition",
+      "title_en": "Contemporary Arts Foundation Minimalist Exhibition Gallery",
+      "title_ar": "صالة العرض المعاصرة بمؤسسة الفنون التشكيلية والمعمارية",
+      "dimensions": { "width": 1800, "height": 1199 },
+      "bytes": 134782,
+      "sha256": "d2fd23a8b20e6e084d6c9975e289f26a56cdc501ec7524e52ad4138642fb83c3",
+      "provenance": {
+        "author": "Pejman Foundation",
+        "license": "CC BY-SA 4.0 International",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:06-Pejman-foundation.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/5/59/06-Pejman-foundation.jpg"
+      }
+    },
+    {
+      "id": "monograph",
+      "filename": "monograph.webp",
+      "local_path": "/assets/portfolio/portfolio/monograph.webp",
+      "category": "editorial",
+      "title_en": "Rare Printed Folio Monograph with Classical Typographic Layout",
+      "title_ar": "مخطوطة ومطبوعة تحريرية نادرة بنظام طباعي كلاسيكي متوازن",
+      "dimensions": { "width": 1800, "height": 1197 },
+      "bytes": 165126,
+      "sha256": "8046694b6cfe7b7df340c921954781bea561a4acf153b6e3769d935418df7653",
+      "provenance": {
+        "author": "Wellcome Collection",
+        "license": "CC BY 4.0 International",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:%27De_Motu_Cordis%27,_by_William_Harvey,_Frankfurt,_Germany,_162_Wellcome_L0060483.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/%27De_Motu_Cordis%27%2C_by_William_Harvey%2C_Frankfurt%2C_Germany%2C_162_Wellcome_L0060483.jpg"
+      }
+    },
+    {
+      "id": "blueprint",
+      "filename": "blueprint.webp",
+      "local_path": "/assets/portfolio/portfolio/blueprint.webp",
+      "category": "systems",
+      "title_en": "Architectural Sectional Elevation & Structural Blueprint Draft",
+      "title_ar": "مخطط قطاعي إنشائي ومسقط هندسي يوضح دقة القياسات والنظم",
+      "dimensions": { "width": 1800, "height": 927 },
+      "bytes": 235608,
+      "sha256": "c54f518fdf09e0455cb0df3f31c6b0df2e9b9f6a7af99402fedd90e1054b95a1",
+      "provenance": {
+        "author": "Historic American Engineering Record / Library of Congress",
+        "license": "Public domain",
+        "license_url": "https://commons.wikimedia.org/wiki/File:00019.BH--Reinforced_Oil_House_(d1ac2b92-d1d1-423d-b796-bc6b7f5606fc).jpg",
+        "source_page": "https://commons.wikimedia.org/wiki/File:00019.BH--Reinforced_Oil_House_(d1ac2b92-d1d1-423d-b796-bc6b7f5606fc).jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/00019.BH--Reinforced_Oil_House_%28d1ac2b92-d1d1-423d-b796-bc6b7f5606fc%29.jpg"
+      }
+    }
+  ]
+}

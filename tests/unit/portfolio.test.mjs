@@ -2,6 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { DatabaseSync } from 'node:sqlite';
 import path from 'node:path';
+import fs from 'node:fs';
+import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -81,3 +83,31 @@ test('Portfolio Journey 1: Project brief inquiry persists to SQLite', () => {
   assert.equal(lines.length, 1);
 });
 
+test('Salma Hassan Studio: Six local WebP assets match manifest and verified SHA-256 checksums', () => {
+  const manifestPath = path.join(rootDir, 'docs', '30-verticals', 'media', 'portfolio.media-manifest.json');
+  assert.ok(fs.existsSync(manifestPath), 'portfolio.media-manifest.json must exist');
+
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+  assert.equal(manifest.sector, 'portfolio');
+  assert.equal(manifest.brand, 'Salma Hassan Studio');
+  assert.equal(manifest.assets.length, 6, 'Must document exactly 6 photographic assets');
+
+  for (const a of manifest.assets) {
+    const assetPath = path.join(rootDir, 'public', a.local_path.replace(/^\//, ''));
+    assert.ok(fs.existsSync(assetPath), `Asset file ${a.local_path} must exist locally`);
+
+    const stat = fs.statSync(assetPath);
+    assert.equal(stat.size, a.bytes, `File size for ${a.id} must match manifest bytes`);
+
+    const buf = fs.readFileSync(assetPath);
+    // RIFF WEBP magic bytes validation
+    const isRiffWebp =
+      buf.length >= 12 &&
+      buf.toString('ascii', 0, 4) === 'RIFF' &&
+      buf.toString('ascii', 8, 12) === 'WEBP';
+    assert.ok(isRiffWebp, `Asset ${a.filename} must be a valid RIFF/WEBP binary`);
+
+    const hash = crypto.createHash('sha256').update(buf).digest('hex');
+    assert.equal(hash, a.sha256, `SHA-256 for ${a.id} must match manifest`);
+  }
+});

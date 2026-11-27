@@ -309,13 +309,15 @@ export default function ProjectBriefIntakeWizard({
       {step === 2 && (
         <div className="space-y-6">
           <div className="space-y-2">
-            <label className="block font-mono text-xs font-bold uppercase tracking-widest text-[#0F0F10]">
+            <label htmlFor="portfolio-project-goal" className="block font-mono text-xs font-bold uppercase tracking-widest text-[#0F0F10]">
               {isAr ? '1. ما هو التحدي أو الهدف الرئيسي للمشروع؟' : '1. Primary Challenge or Project Ambition'}
             </label>
             <textarea
+              id="portfolio-project-goal"
               rows={3}
               value={projectGoal}
               onChange={e => setProjectGoal(e.target.value)}
+              aria-label={isAr ? 'التحدي أو الهدف الرئيسي للمشروع' : 'Primary challenge or project ambition'}
               placeholder={isAr ? 'مثال: نحتاج إلى إعادة هيكلة الهوية البصرية لدعم توسع إقليمي خلال الربع القادم...' : 'e.g., Establishing an authoritative visual system ahead of regional market expansion...'}
               className="w-full px-4 py-2.5 rounded-xl bg-[#F6F5F2] border border-[#DDD9CE] text-xs text-[#0F0F10] focus:outline-none focus:ring-2 focus:ring-[#0F0F10]/20"
             />
@@ -391,27 +393,31 @@ export default function ProjectBriefIntakeWizard({
           <div className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block font-mono text-xs font-bold text-[#0F0F10] mb-1">
+                <label htmlFor="portfolio-client-name" className="block font-mono text-xs font-bold text-[#0F0F10] mb-1">
                   {isAr ? 'اسم المسؤول *' : 'Client Representative Name *'}
                 </label>
                 <input
+                  id="portfolio-client-name"
                   type="text"
                   required
                   value={clientName}
                   onChange={e => setClientName(e.target.value)}
+                  aria-label={isAr ? 'اسم المسؤول' : 'Client representative name'}
                   placeholder={isAr ? 'مثال: مروان خليل' : 'e.g. Marwan Khalil'}
                   className="w-full px-4 py-2.5 rounded-xl bg-[#F6F5F2] border border-[#DDD9CE] text-xs text-[#0F0F10] focus:outline-none"
                 />
               </div>
 
               <div>
-                <label className="block font-mono text-xs font-bold text-[#0F0F10] mb-1">
+                <label htmlFor="portfolio-client-org" className="block font-mono text-xs font-bold text-[#0F0F10] mb-1">
                   {isAr ? 'اسم الشركة أو المؤسسة' : 'Company / Venture Name'}
                 </label>
                 <input
+                  id="portfolio-client-org"
                   type="text"
                   value={clientOrganization}
                   onChange={e => setClientOrganization(e.target.value)}
+                  aria-label={isAr ? 'اسم الشركة أو المؤسسة' : 'Company or venture name'}
                   placeholder="Studio Apex / Venture"
                   className="w-full px-4 py-2.5 rounded-xl bg-[#F6F5F2] border border-[#DDD9CE] text-xs text-[#0F0F10] focus:outline-none"
                 />
@@ -420,27 +426,31 @@ export default function ProjectBriefIntakeWizard({
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block font-mono text-xs font-bold text-[#0F0F10] mb-1">
+                <label htmlFor="portfolio-client-email" className="block font-mono text-xs font-bold text-[#0F0F10] mb-1">
                   {isAr ? 'البريد الإلكتروني المهني *' : 'Professional Email *'}
                 </label>
                 <input
+                  id="portfolio-client-email"
                   type="email"
                   required
                   value={clientEmail}
                   onChange={e => setClientEmail(e.target.value)}
+                  aria-label={isAr ? 'البريد الإلكتروني المهني' : 'Professional email'}
                   placeholder="founder@venture.test"
                   className="w-full px-4 py-2.5 rounded-xl bg-[#F6F5F2] border border-[#DDD9CE] text-xs text-[#0F0F10] focus:outline-none"
                 />
               </div>
 
               <div>
-                <label className="block font-mono text-xs font-bold text-[#0F0F10] mb-1">
+                <label htmlFor="portfolio-client-phone" className="block font-mono text-xs font-bold text-[#0F0F10] mb-1">
                   {isAr ? 'رقم الهاتف' : 'Phone / WhatsApp'}
                 </label>
                 <input
+                  id="portfolio-client-phone"
                   type="tel"
                   value={clientPhone}
                   onChange={e => setClientPhone(e.target.value)}
+                  aria-label={isAr ? 'رقم الهاتف أو الواتساب' : 'Phone or WhatsApp'}
                   placeholder="+20 100 000 0000"
                   className="w-full px-4 py-2.5 rounded-xl bg-[#F6F5F2] border border-[#DDD9CE] text-xs text-[#0F0F10] focus:outline-none"
                 />
