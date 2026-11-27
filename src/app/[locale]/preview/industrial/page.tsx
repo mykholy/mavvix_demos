@@ -5,6 +5,9 @@ import { getSectorHeroStyle } from '@/lib/media/sector-images';
 import Link from 'next/link';
 import { getCatalogItems, getEditorialPosts } from '@/lib/db/repositories';
 import type { Locale } from '@/lib/i18n/config';
+import { IndustrialSpecificationExplorer } from './components/IndustrialSpecificationExplorer';
+import { IndustrialMillStandard } from './components/IndustrialMillStandard';
+import { IndustrialVisualGallery } from './components/IndustrialVisualGallery';
 import {
   Factory,
   Cog,
@@ -155,6 +158,9 @@ export default async function IndustrialHomePage(props: Props) {
         </figcaption>
       </figure>
 
+      {/* Signature Module 1: Metallurgical Specifier & Mechanical Comparator */}
+      <IndustrialSpecificationExplorer locale={locale} />
+
 
       {/* Product Categories Quick Rails */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -276,6 +282,9 @@ export default async function IndustrialHomePage(props: Props) {
         </div>
       </section>
 
+      {/* Signature Module 2: Mill Test Standards & Inspection Protocols */}
+      <IndustrialMillStandard locale={locale} />
+
       {/* Production Capabilities Strip */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#12243C] text-white rounded-2xl p-8 sm:p-12 border border-slate-800">
@@ -323,6 +332,9 @@ export default async function IndustrialHomePage(props: Props) {
           </div>
         </div>
       </section>
+
+      {/* Signature Module 3: Living Photographic Archive & Visual Atelier */}
+      <IndustrialVisualGallery locale={locale} />
 
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="ferroline-rfq-heading">

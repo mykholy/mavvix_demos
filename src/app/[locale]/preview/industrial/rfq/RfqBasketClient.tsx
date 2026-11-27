@@ -346,6 +346,7 @@ export function RfqBasketClient({ allProducts, locale, initialSku }: Props) {
                   onClick={() => removeLine(l.id)}
                   className="p-1.5 text-stone-600 hover:text-red-600 transition-colors"
                   title="Remove SKU line"
+                  aria-label={isAr ? `حذف البند ${l.sku}` : `Remove SKU line ${l.sku}`}
                 >
                   <Trash2 className="w-4 h-4" />
                 </button>
