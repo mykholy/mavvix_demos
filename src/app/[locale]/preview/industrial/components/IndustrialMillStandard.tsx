@@ -184,7 +184,9 @@ export function IndustrialMillStandard({ locale }: Props) {
                     : 'bg-[#F4F6F6] text-stone-700 border-stone-200 hover:border-stone-400 hover:text-[#12243C]'
                 }`}
               >
-                <span className="text-amber-500 font-black me-2">{p.badge}</span>
+                <span className={`${isSelected ? 'text-amber-400' : 'text-amber-900'} font-black me-2`}>
+                  {p.badge}
+                </span>
                 <span>{isAr ? p.titleAr.split('(')[0].trim() : p.titleEn.split('(')[0].trim()}</span>
               </button>
             );

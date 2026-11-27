@@ -371,7 +371,7 @@ export function IndustrialSpecificationExplorer({ locale }: Props) {
               <div className="grid grid-cols-4 gap-2 text-center font-mono text-xs">
                 {activeAlloy.chemistry.map((c) => (
                   <div key={c.element} className="bg-slate-950 py-2.5 px-2 rounded-lg border border-slate-800">
-                    <span className="text-slate-500 block text-[10px]">{c.element}</span>
+                    <span className="text-slate-300 block text-[10px] font-bold">{c.element}</span>
                     <span className="text-amber-400 font-bold text-sm">{c.percent}</span>
                   </div>
                 ))}

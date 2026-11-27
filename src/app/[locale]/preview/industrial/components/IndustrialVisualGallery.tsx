@@ -186,27 +186,27 @@ export function IndustrialVisualGallery({ locale }: Props) {
 
             <div className="space-y-3 bg-slate-950 p-4 rounded-xl border border-slate-800 text-slate-300">
               <div className="flex justify-between">
-                <span className="text-slate-500">File Identifier:</span>
+                <span className="text-slate-400 font-bold">File Identifier:</span>
                 <span className="text-white font-bold">{activePhotoModal.filename}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-500">Photographer / Author:</span>
+                <span className="text-slate-400 font-bold">Photographer / Author:</span>
                 <span className="text-amber-400 font-bold">{activePhotoModal.author}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-500">License Standard:</span>
+                <span className="text-slate-400 font-bold">License Standard:</span>
                 <span className="text-emerald-400 font-bold">{activePhotoModal.license}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-500">Resolution & Format:</span>
+                <span className="text-slate-400 font-bold">Resolution & Format:</span>
                 <span className="text-white">{activePhotoModal.width} × {activePhotoModal.height} (WebP)</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-500">Self-Hosted Bytes:</span>
+                <span className="text-slate-400 font-bold">Self-Hosted Bytes:</span>
                 <span className="text-white">{activePhotoModal.bytes.toLocaleString()} bytes</span>
               </div>
               <div className="pt-2 border-t border-slate-800">
-                <span className="text-slate-500 block mb-1">SHA-256 Checksum:</span>
+                <span className="text-slate-400 font-bold block mb-1">SHA-256 Checksum:</span>
                 <span className="text-[10px] text-amber-300 break-all select-all font-mono">
                   {activePhotoModal.sha256}
                 </span>
