@@ -241,7 +241,7 @@ export function SaffronTastingMenuBuilder({ locale }: { locale: Locale }) {
           <div className="pt-4 border-t border-white/10 space-y-3">
             <Link
               href={`/${locale}/preview/restaurant/reserve?party=${guestCount}&plan=banquet`}
-              className="w-full inline-flex items-center justify-between px-6 py-4 rounded-xl bg-[#BA5C34] hover:bg-[#984321] text-white font-mono text-xs font-bold transition-all shadow-md group"
+              className="w-full inline-flex items-center justify-between px-6 py-4 rounded-xl bg-[#984321] hover:bg-[#803518] text-white font-mono text-xs font-bold transition-all shadow-md group"
               aria-label={isAr ? 'طلب حجز طاولة لهذه المأدبة' : 'Reserve table for this tasting banquet'}
             >
               <span>{isAr ? 'طلب حجز طاولة لهذه المأدبة' : 'Request Table for this Banquet'}</span>

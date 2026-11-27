@@ -183,7 +183,7 @@ export function RestaurantOrderClient({
         <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
           <Link
             href={`/${locale}/preview/restaurant/menu`}
-            className="w-full sm:w-1/2 py-3 rounded-xl bg-[#BA5C34] text-white text-center font-semibold text-xs hover:bg-[#9E4A28] transition-colors"
+            className="w-full sm:w-1/2 py-3 rounded-xl bg-[#984321] text-white text-center font-semibold text-xs hover:bg-[#803518] transition-colors"
           >
             {isAr ? 'العودة للقائمة' : 'Back to Menu'}
           </Link>
@@ -214,7 +214,7 @@ export function RestaurantOrderClient({
         <div>
           <Link
             href={`/${locale}/preview/restaurant/menu`}
-            className="inline-block px-6 py-3 rounded-xl bg-[#BA5C34] text-white text-xs font-semibold hover:bg-[#9E4A28] transition-colors shadow-sm"
+            className="inline-block px-6 py-3 rounded-xl bg-[#984321] text-white text-xs font-semibold hover:bg-[#803518] transition-colors shadow-sm"
           >
             {isAr ? 'استكشف قائمة الطعام والطلب' : 'Explore Menu & Start Order'}
           </Link>
@@ -448,7 +448,7 @@ export function RestaurantOrderClient({
             type="submit"
             id="simulate-order-submit-btn"
             disabled={submitting || items.length === 0}
-            className="w-full py-4 px-6 rounded-2xl bg-[#BA5C34] text-white hover:bg-[#9E4A28] disabled:opacity-50 font-semibold text-sm transition-all shadow-md shadow-[#BA5C34]/20 flex items-center justify-center gap-2"
+            className="w-full py-4 px-6 rounded-2xl bg-[#984321] text-white hover:bg-[#803518] disabled:opacity-50 font-semibold text-sm transition-all shadow-md shadow-[#BA5C34]/20 flex items-center justify-center gap-2"
           >
             {submitting ? (
               <span>{isAr ? 'جارٍ تسجيل الطلب التجريبي...' : 'Recording Demo Order...'}</span>

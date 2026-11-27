@@ -226,7 +226,7 @@ export function SaffronVisualAtelier({ locale }: { locale: Locale }) {
               <button
                 type="button"
                 onClick={() => setActiveModalPhoto(null)}
-                className="px-5 py-2.5 rounded-xl bg-[#BA5C34] hover:bg-[#984321] text-white font-mono text-xs font-bold transition-colors"
+                className="px-5 py-2.5 rounded-xl bg-[#984321] hover:bg-[#803518] text-white font-mono text-xs font-bold transition-colors"
               >
                 {isAr ? 'تم' : 'Done'}
               </button>
