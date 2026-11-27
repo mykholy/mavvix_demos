@@ -3,6 +3,7 @@ import path from 'node:path';
 import { spawn } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 import assert from 'node:assert/strict';
+import { filterCases } from './visual-scope.mjs';
 
 /**
  * Real Chromium visual QA. Run only with an isolated seeded SQLite database.
@@ -15,11 +16,7 @@ const axePath=path.join(qaRoot,'node_modules','axe-core','axe.min.js');
 const out=path.join(root,'artifacts','visual-qa');
 fs.mkdirSync(out,{recursive:true});
 const base='http://127.0.0.1:31467';
-const app=spawn(process.execPath,['node_modules/next/dist/bin/next','start','-p','31467','-H','127.0.0.1'],{
- cwd:root,env:{...process.env,NEXT_TELEMETRY_DISABLED:'1'},stdio:['ignore','pipe','pipe']
-});
 let serverLog='';
-for(const stream of [app.stdout,app.stderr])stream.on('data',b=>{serverLog+=String(b).slice(-2000)});
 async function ready(){
  for(let i=0;i<75;i++){
   try{const r=await fetch(base+'/ar/showcase');if(r.ok)return;}catch{}
@@ -54,7 +51,7 @@ const cases=[
  ['fitness',''],['fitness','classes'],['fitness','classes/foundations'],['fitness','trial'],['fitness','journal/starting-with-strength'],
  ['sports-venues',''],['sports-venues','courts'],['sports-venues','courts/padel-doubles'],['sports-venues','book'],['sports-venues','schedule'],
  ['furniture',''],['furniture','collections'],['furniture','collections/modular-sofa'],['furniture','quote'],['furniture','gallery'],['furniture','journal/measuring-a-room'],
- ['interiors-kitchens',''],['interiors-kitchens','services'],['interiors-kitchens','services/l-shaped'],['interiors-kitchens','consultation'],['interiors-kitchens','layouts'],['interiors-kitchens','gallery'],['interiors-kitchens','journal/measure-before-design'],['interiors-kitchens','journal'],['interiors-kitchens','materials'],['interiors-kitchens','finishes'],['interiors-kitchens','process'],['interiors-kitchens','measurement'],['interiors-kitchens','contact'],['interiors-kitchens','about'],['interiors-kitchens','faq'],['interiors-kitchens','services/u-shaped'],['interiors-kitchens','services/island'],
+ ['interiors-kitchens',''],['interiors-kitchens','services'],['interiors-kitchens','services/l-shaped'],['interiors-kitchens','consultation'],['interiors-kitchens','layouts'],['interiors-kitchens','gallery'],['interiors-kitchens','journal/measure-before-design'],['interiors-kitchens','journal'],['interiors-kitchens','materials'],['interiors-kitchens','finishes'],['interiors-kitchens','process'],['interiors-kitchens','measurement'],['interiors-kitchens','contact'],['interiors-kitchens','about'],['interiors-kitchens','faq'],['interiors-kitchens','services/u-shaped'],['interiors-kitchens','services/island'],['interiors-kitchens','services/galley'],['interiors-kitchens','services/wardrobes'],['interiors-kitchens','services/vanity'],['interiors-kitchens','services/pantry'],['interiors-kitchens','services/countertops'],['interiors-kitchens','services/lighting'],['interiors-kitchens','journal/finishes-matter'],['interiors-kitchens','journal/layout-decision'],
  ['nursery',''],['nursery','age-groups'],['nursery','programs/curious-toddlers'],['nursery','curriculum'],['nursery','safety'],['nursery','gallery'],['nursery','admissions'],['nursery','journal/first-nursery-visit'],
  ['car-detailing',''],['car-detailing','packages'],['car-detailing','packages/ceramic-protection'],
  ['car-detailing','quote'],['car-detailing','journal/coating-vs-ppf'],['car-detailing','gallery'],
@@ -64,20 +61,29 @@ const cases=[
  ['veterinary','pets'],['veterinary','guides/pet-first-visit'],['veterinary','emergencies'],
  ['showcase','']
 ];
+const visualScope=process.env.MAVVIX_VISUAL_SECTORS??'all';
+const selectedCases=filterCases(cases,visualScope);
+console.log('VISUAL_QA_SELECTED '+visualScope+' | routes per locale: '+selectedCases.length+' / '+cases.length);
 const viewports=[{name:'mobile-360',width:360,height:780},{name:'mobile-390',width:390,height:844},
  {name:'tablet-768',width:768,height:1024},{name:'tablet-1024',width:1024,height:768},{name:'desktop-1440',width:1440,height:900}];
 const results=[],issues=[];
+const app=spawn(process.execPath,['node_modules/next/dist/bin/next','start','-p','31467','-H','127.0.0.1'],{
+ cwd:root,env:{...process.env,NEXT_TELEMETRY_DISABLED:'1'},stdio:['ignore','pipe','pipe']
+});
+for(const stream of [app.stdout,app.stderr])stream.on('data',b=>{serverLog+=String(b).slice(-2000)});
+
 let browser;
 try{
  await ready();
  browser=await chromium.launch({headless:true,args:['--no-sandbox']});
  for(const locale of ['ar','en']){
-  for(const [sector,subpath] of cases){
+  for(const [sector,subpath] of selectedCases){
    const url='/'+locale+(sector==='showcase'?'/showcase':'/preview/'+sector+(subpath?'/'+subpath:''));
    const widths=(subpath===''&&sector!=='showcase')?viewports:[viewports[1],viewports[viewports.length-1]];
    for(const viewport of widths){
-    const page=await browser.newPage({viewport:{width:viewport.width,height:viewport.height},deviceScaleFactor:1,
+    const context=await browser.newContext({viewport:{width:viewport.width,height:viewport.height},deviceScaleFactor:1,
      isMobile:viewport.width<=390,hasTouch:viewport.width<=390,reducedMotion:'reduce'});
+    const page=await context.newPage();
     const entry={url,locale,sector,viewport:viewport.name,issues:[],images:[],a11y:[]};
     try{
      const response=await page.goto(base+url,{waitUntil:'domcontentloaded',timeout:25000});
@@ -275,18 +281,19 @@ try{
        console.log('PASS OASIS_STAY_FLOW '+locale);
      }
     }catch(e){entry.issues.push('Browser error: '+String(e instanceof Error?e.message:e));}
-    finally{await page.close();}
+    finally{await context.close();}
     results.push(entry);
     console.log((entry.issues.length?'FAIL':'PASS')+' '+url+' '+viewport.name+(entry.issues.length?' => '+entry.issues.join('; '):''));
     issues.push(...entry.issues.map(e=>({url,viewport:viewport.name,error:e})));
    }
   }
  }
- const data={date:new Date().toISOString(),browser:'Chromium (Playwright 1.58.2)',cases:results.length,
+ assert.ok(results.length>0,'Visual QA must execute at least one case');
+ const data={scope:visualScope,selectedRoutes:selectedCases.length,date:new Date().toISOString(),browser:'Chromium (Playwright 1.58.2)',cases:results.length,
   screenshotCount:results.filter(x=>x.screenshot).length,issues,results};
  fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(data,null,2));
  fs.writeFileSync(path.join(out,'summary.md'),
-  '# Mavvix real-browser AR/EN QA\n\nCases: '+data.cases+' | screenshots: '+data.screenshotCount+
+  '# Mavvix real-browser AR/EN QA\n\nScope: '+visualScope+'\n\nCases: '+data.cases+' | screenshots: '+data.screenshotCount+
   ' | issues: '+issues.length+'\n\n'+issues.map(x=>'- '+x.url+' ['+x.viewport+']: '+x.error).join('\n')+'\n');
  assert.equal(issues.length,0,'Browser visual/a11y/image findings recorded in artifacts/visual-qa/report.json');
 }finally{

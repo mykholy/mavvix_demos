@@ -8,8 +8,23 @@ on:
       - '05_ENGINEERING/**'
       - 'tests/**'
       - 'package*.json'
+      - 'public/**'
+      - 'next.config.*'
+      - 'tailwind.config.*'
+      - 'postcss.config.*'
+      - 'tsconfig.json'
+      - 'docs/30-verticals/**'
       - '.github/workflows/visual-quality.yml'
   workflow_dispatch:
+    inputs:
+      sectors:
+        description: 'Comma-separated sector slugs, or all for full regression'
+        required: false
+        default: 'all'
+        type: string
+concurrency:
+  group: visual-qa-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 jobs:
   chromium-visual:
     runs-on: ubuntu-latest
@@ -26,10 +41,17 @@ jobs:
       MAVVIX_VISUAL_QA_PACKAGES: /tmp/mavvix-visual-qa
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: npm
+      - name: Detect affected visual QA sectors
+        id: scope
+        env:
+          MAVVIX_REQUESTED_SCOPE: ${{ inputs.sectors || 'all' }}
+        run: node scripts/visual-scope.mjs
       - name: Locked install
         run: npm ci
       - name: Fresh isolated database schema + authored data
@@ -41,6 +63,8 @@ jobs:
       - name: Install pinned Playwright API and axe audit (browser preinstalled in official container)
         run: npm install --prefix /tmp/mavvix-visual-qa --no-save --no-package-lock playwright@1.58.2 axe-core@4.10.3
       - name: Inspect actual mobile, tablet and desktop AR/EN browser layouts and record screenshots
+        env:
+          MAVVIX_VISUAL_SECTORS: ${{ steps.scope.outputs.sectors }}
         run: node scripts/visual-qa.mjs
       - name: Upload image artifacts, issue ledger and accessibility results even on failure
         if: always()
