@@ -138,7 +138,7 @@ export function AtlasStandardsGrid({ locale }: { locale: Locale }) {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-stone-200">
         <div>
-          <span className="text-xs font-mono font-bold text-[#D97935] uppercase tracking-widest block mb-1">
+          <span className="text-xs font-mono font-bold text-[#9C4318] uppercase tracking-widest block mb-1">
             ENGINEERING QUALITY GATES & COMPLIANCE
           </span>
           <h2 className="text-2xl sm:text-3xl font-black text-[#12181F] tracking-tight">
@@ -190,18 +190,18 @@ export function AtlasStandardsGrid({ locale }: { locale: Locale }) {
               onClick={() => setActiveItem(item)}
               className={`p-6 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between ${
                 isSelected
-                  ? 'bg-[#192027] text-white border-[#D97935] shadow-lg ring-1 ring-[#D97935]/40'
+                  ? 'bg-[#192027] text-white border-[#B85629] shadow-lg ring-1 ring-[#B85629]/40'
                   : 'bg-[#F9F8F5] text-[#12181F] border-stone-200 hover:border-stone-300 hover:bg-white'
               }`}
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between text-xs">
                   <span className={`font-mono font-bold px-2 py-0.5 rounded text-[11px] ${
-                    isSelected ? 'bg-black/60 text-[#D97935] border border-[#D97935]/40' : 'bg-stone-200 text-stone-800'
+                    isSelected ? 'bg-black/60 text-amber-400 border border-amber-400/40' : 'bg-stone-200 text-stone-800'
                   }`}>
                     {item.code}
                   </span>
-                  <span className={`text-[11px] font-mono ${isSelected ? 'text-amber-400' : 'text-[#D97935]'} font-bold`}>
+                  <span className={`text-[11px] font-mono ${isSelected ? 'text-amber-400' : 'text-[#9C4318]'} font-bold`}>
                     {item.metricValue}
                   </span>
                 </div>
@@ -235,7 +235,7 @@ export function AtlasStandardsGrid({ locale }: { locale: Locale }) {
       {/* Selected standard detail drawer / highlight */}
       <div className="bg-[#12181F] text-white p-6 sm:p-8 rounded-2xl border border-stone-800 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="space-y-2">
-          <div className="flex items-center gap-2 text-[#D97935] text-xs font-mono font-bold uppercase">
+          <div className="flex items-center gap-2 text-amber-400 text-xs font-mono font-bold uppercase">
             <ShieldCheck className="w-4 h-4" />
             <span>{isAr ? 'معيار القبول الهندسي المعتمد' : 'Contractual Quality Acceptance Rule'}</span>
           </div>

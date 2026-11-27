@@ -115,18 +115,18 @@ export default async function ConstructionHomePage(props: Props) {
             {/* Left Column: Headlines & Actions */}
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#192027] border border-stone-700/80 rounded text-amber-400 text-xs font-mono font-semibold uppercase tracking-wider">
-                <Compass className="w-3.5 h-3.5 text-[#D97935]" />
+                <Compass className="w-3.5 h-3.5 text-amber-400" />
                 <span>ATLAS STRUCTURES // GENERAL CONTRACTING & FIT-OUT</span>
               </div>
 
               <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-[1.12] text-white">
                 {isAr ? (
                   <>
-                    المشروع الهندسي القوي <span className="text-[#D97935]">يبدأ بنطاق دقيق</span> وتنفيذ صارم.
+                    المشروع الهندسي القوي <span className="text-amber-400">يبدأ بنطاق دقيق</span> وتنفيذ صارم.
                   </>
                 ) : (
                   <>
-                    Precision contracting <span className="text-[#D97935]">begins with clear scoping</span> and zero guesswork.
+                    Precision contracting <span className="text-amber-400">begins with clear scoping</span> and zero guesswork.
                   </>
                 )}
               </h1>
@@ -184,7 +184,7 @@ export default async function ConstructionHomePage(props: Props) {
                   SUPERSTRUCTURE EXECUTION
                 </div>
                 <div className="absolute bottom-4 start-4 end-4 space-y-1">
-                  <span className="text-xs font-mono text-[#D97935] font-bold uppercase tracking-wider block">
+                  <span className="text-xs font-mono text-amber-400 font-bold uppercase tracking-wider block">
                     ACTIVE PROJECT DOSSIER // CIVIL ENGINEERING
                   </span>
                   <h3 className="text-sm sm:text-base font-bold text-white">
@@ -199,7 +199,7 @@ export default async function ConstructionHomePage(props: Props) {
               {/* Quick reference rail */}
               <div className="bg-[#192027] p-4 rounded-xl border border-stone-800/80 flex items-center justify-between text-xs">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded bg-[#D97935]/20 text-[#D97935] flex items-center justify-center font-bold">
+                  <div className="w-8 h-8 rounded bg-[#B85629]/20 text-amber-400 flex items-center justify-center font-bold">
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <div>
@@ -240,7 +240,7 @@ export default async function ConstructionHomePage(props: Props) {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 pb-6 border-b border-stone-300">
           <div>
-            <span className="text-xs font-mono font-bold text-[#D97935] uppercase tracking-widest block mb-1">
+            <span className="text-xs font-mono font-bold text-[#9C4318] uppercase tracking-widest block mb-1">
               ENGINEERING DISCIPLINES & CONTRACTING SCOPES
             </span>
             <h2 className="text-2xl sm:text-4xl font-black text-[#12181F] tracking-tight">
@@ -263,7 +263,7 @@ export default async function ConstructionHomePage(props: Props) {
                 className="bg-white border border-stone-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-[#F4F1EA] group-hover:bg-[#D97935] text-[#D97935] group-hover:text-white flex items-center justify-center transition-colors mb-6 shadow-sm">
+                  <div className="w-12 h-12 rounded-xl bg-[#F4F1EA] group-hover:bg-[#B85629] text-[#9C4318] group-hover:text-white flex items-center justify-center transition-colors mb-6 shadow-sm">
                     <Icon className="w-6 h-6" />
                   </div>
                   <h3 className="text-base font-bold text-[#12181F] mb-2 leading-snug">
@@ -277,7 +277,7 @@ export default async function ConstructionHomePage(props: Props) {
                 <div className="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between text-xs">
                   <Link
                     href={s.href}
-                    className="text-[#D97935] font-bold flex items-center gap-1 group-hover:underline"
+                    className="text-[#9C4318] hover:text-[#7A3210] font-bold flex items-center gap-1 group-hover:underline"
                   >
                     <span>{isAr ? 'تفاصيل الحزمة' : 'Package Specs'}</span>
                     <Arrow className="w-3.5 h-3.5" />
@@ -310,7 +310,7 @@ export default async function ConstructionHomePage(props: Props) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-xs">
-            <div className="border-t-2 border-[#D97935] pt-4 space-y-2">
+            <div className="border-t-2 border-[#B85629] pt-4 space-y-2">
               <span className="font-mono text-amber-400 font-bold">PHASE 01</span>
               <h4 className="text-sm font-bold text-white">{isAr ? 'المعاينة وتدقيق الموقع' : 'Site Survey & Audit'}</h4>
               <p className="text-stone-400 leading-relaxed">
@@ -320,7 +320,7 @@ export default async function ConstructionHomePage(props: Props) {
               </p>
             </div>
 
-            <div className="border-t-2 border-[#D97935] pt-4 space-y-2">
+            <div className="border-t-2 border-[#B85629] pt-4 space-y-2">
               <span className="font-mono text-amber-400 font-bold">PHASE 02</span>
               <h4 className="text-sm font-bold text-white">{isAr ? 'إعداد جداول الكميات (BOQ)' : 'BOQ Planning & Procurement'}</h4>
               <p className="text-stone-400 leading-relaxed">
@@ -330,7 +330,7 @@ export default async function ConstructionHomePage(props: Props) {
               </p>
             </div>
 
-            <div className="border-t-2 border-[#D97935] pt-4 space-y-2">
+            <div className="border-t-2 border-[#B85629] pt-4 space-y-2">
               <span className="font-mono text-amber-400 font-bold">PHASE 03</span>
               <h4 className="text-sm font-bold text-white">{isAr ? 'التنفيذ والإشراف الهندسي' : 'Turnkey Site Execution'}</h4>
               <p className="text-stone-400 leading-relaxed">
@@ -340,7 +340,7 @@ export default async function ConstructionHomePage(props: Props) {
               </p>
             </div>
 
-            <div className="border-t-2 border-[#D97935] pt-4 space-y-2">
+            <div className="border-t-2 border-[#B85629] pt-4 space-y-2">
               <span className="font-mono text-amber-400 font-bold">PHASE 04</span>
               <h4 className="text-sm font-bold text-white">{isAr ? 'الفحص والتسليم النهائي' : 'Commissioning & Handover'}</h4>
               <p className="text-stone-400 leading-relaxed">
@@ -370,7 +370,7 @@ export default async function ConstructionHomePage(props: Props) {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-8 pb-4 border-b border-stone-300">
           <div>
-            <span className="text-xs font-mono font-bold text-[#D97935] uppercase tracking-widest block mb-1">
+            <span className="text-xs font-mono font-bold text-[#9C4318] uppercase tracking-widest block mb-1">
               ENGINEERING JOURNAL
             </span>
             <h2 className="text-2xl font-black text-[#12181F]">
@@ -379,7 +379,7 @@ export default async function ConstructionHomePage(props: Props) {
           </div>
           <Link
             href={`/${locale}/preview/construction/journal`}
-            className="text-xs font-bold uppercase tracking-wider text-[#D97935] flex items-center gap-1 hover:underline"
+            className="text-xs font-bold uppercase tracking-wider text-[#9C4318] hover:text-[#7A3210] flex items-center gap-1 hover:underline"
           >
             <span>{isAr ? 'كل المقالات' : 'All Articles'}</span>
             <Arrow className="w-4 h-4" />
@@ -394,10 +394,10 @@ export default async function ConstructionHomePage(props: Props) {
               className="bg-white border border-stone-200 rounded-2xl p-6 hover:shadow-md transition-all group flex flex-col justify-between"
             >
               <div>
-                <span className="text-[11px] font-mono font-bold text-[#D97935] uppercase">
+                <span className="text-[11px] font-mono font-bold text-[#9C4318] uppercase">
                   {a.category}
                 </span>
-                <h3 className="text-base font-bold text-[#12181F] group-hover:text-[#D97935] transition-colors mt-2 mb-3">
+                <h3 className="text-base font-bold text-[#12181F] group-hover:text-[#9C4318] transition-colors mt-2 mb-3">
                   {a.title}
                 </h3>
                 <p className="text-xs text-stone-600 leading-relaxed line-clamp-3">
@@ -407,7 +407,7 @@ export default async function ConstructionHomePage(props: Props) {
 
               <div className="pt-4 mt-6 border-t border-stone-100 flex items-center justify-between text-xs text-stone-600">
                 <span>{new Date(a.published_at).toLocaleDateString(locale)}</span>
-                <span className="text-[#D97935] font-bold group-hover:underline flex items-center gap-1">
+                <span className="text-[#9C4318] font-bold group-hover:underline flex items-center gap-1">
                   <span>{isAr ? 'قراءة المقال' : 'Read Article'}</span>
                   <Arrow className="w-3 h-3" />
                 </span>
@@ -429,7 +429,7 @@ export default async function ConstructionHomePage(props: Props) {
             }}
           />
           <div className="space-y-3 max-w-2xl text-center lg:text-start relative z-10">
-            <span className="text-xs font-mono font-bold text-[#D97935] uppercase tracking-wider block">
+            <span className="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider block">
               INSTANT TENDER ESTIMATOR // SQLITE PERSISTED
             </span>
             <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">

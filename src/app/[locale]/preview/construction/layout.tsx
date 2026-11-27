@@ -47,12 +47,12 @@ export default async function ConstructionLayout(props: Props) {
   ];
 
   return (
-    <div className="bg-[#F2EFE9] text-[#162327] min-h-screen flex flex-col font-sans selection:bg-[#D97935] selection:text-white">
+    <div className="bg-[#F2EFE9] text-[#162327] min-h-screen flex flex-col font-sans selection:bg-[#B85629] selection:text-white">
       {/* Brand Header */}
       <header className="sticky top-0 z-40 bg-[#162327] text-white border-b border-stone-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <Link href={`/${locale}/preview/construction`} className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded bg-[#D97935] flex items-center justify-center text-white font-bold tracking-widest text-lg shadow-sm">
+            <div className="w-10 h-10 rounded bg-[#B85629] flex items-center justify-center text-white font-bold tracking-widest text-lg shadow-sm">
               <Compass className="w-5 h-5 text-white" />
             </div>
             <div>
@@ -101,7 +101,7 @@ export default async function ConstructionLayout(props: Props) {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
             <div className="md:col-span-2 space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded bg-[#D97935] flex items-center justify-center text-white font-bold text-sm">
+                <div className="w-8 h-8 rounded bg-[#B85629] flex items-center justify-center text-white font-bold text-sm">
                   <Compass className="w-4 h-4 text-white" />
                 </div>
                 <span className="text-sm font-extrabold text-white tracking-widest uppercase">

@@ -132,7 +132,7 @@ export function TenderScopeWizard({ locale, initialRef, initialService, initialA
 
           <div className="text-start sm:text-end font-mono">
             <span className="text-[11px] text-stone-600 block uppercase">{isAr ? 'رقم المرجع التجريبي' : 'Reference Code'}</span>
-            <span className="text-lg font-black text-[#D97935]">{receipt.refNumber}</span>
+            <span className="text-lg font-black text-[#9C4318]">{receipt.refNumber}</span>
           </div>
         </div>
 
@@ -204,7 +204,7 @@ export function TenderScopeWizard({ locale, initialRef, initialService, initialA
 
           <Link
             href={`/${locale}/preview/construction/projects`}
-            className="text-[#D97935] hover:underline flex items-center gap-1"
+            className="text-[#9C4318] hover:underline flex items-center gap-1"
           >
             <span>{isAr ? 'العودة لمشاريع الأطلس' : 'Return to Project Atlas'}</span>
             <Arrow className="w-3.5 h-3.5" />
@@ -363,7 +363,7 @@ export function TenderScopeWizard({ locale, initialRef, initialService, initialA
                   }`}
                 >
                   <span>{srv.title}</span>
-                  {services.includes(srv.id) && <CheckCircle2 className="w-4 h-4 text-[#D97935]" />}
+                  {services.includes(srv.id) && <CheckCircle2 className="w-4 h-4 text-[#B85629]" />}
                 </button>
               ))}
             </div>

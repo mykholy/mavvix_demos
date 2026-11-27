@@ -79,7 +79,7 @@ export function AtlasVisualGallery({ locale }: { locale: Locale }) {
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
             <div className="absolute bottom-4 start-4 end-4 flex items-end justify-between gap-4">
               <div className="space-y-1">
-                <span className="text-xs font-mono text-[#D97935] font-bold uppercase tracking-wider block">
+                <span className="text-xs font-mono text-amber-400 font-bold uppercase tracking-wider block">
                   CATEGORY // {activePhoto.category.toUpperCase()}
                 </span>
                 <h3 className="text-base sm:text-lg font-bold text-white leading-snug">
@@ -116,24 +116,24 @@ export function AtlasVisualGallery({ locale }: { locale: Locale }) {
 
             <div className="bg-[#161D24] p-4 rounded-xl border border-stone-800 space-y-2 text-xs">
               <div className="flex justify-between">
-                <span className="text-stone-500">{isAr ? 'المصور / المؤلف:' : 'Author / Photographer:'}</span>
+                <span className="text-stone-300">{isAr ? 'المصور / المؤلف:' : 'Author / Photographer:'}</span>
                 <span className="font-semibold text-white">{activePhoto.author}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-stone-500">{isAr ? 'الترخيص المعتمد:' : 'License:'}</span>
+                <span className="text-stone-300">{isAr ? 'الترخيص المعتمد:' : 'License:'}</span>
                 <a href={activePhoto.licenseUrl} target="_blank" rel="noopener noreferrer" className="font-mono text-amber-400 hover:underline">
                   {activePhoto.license}
                 </a>
               </div>
               <div className="flex justify-between">
-                <span className="text-stone-500">{isAr ? 'المسار المحلي:' : 'Local WebP Path:'}</span>
+                <span className="text-stone-300">{isAr ? 'المسار المحلي:' : 'Local WebP Path:'}</span>
                 <span className="font-mono text-stone-300 text-[11px]">{activePhoto.url}</span>
               </div>
             </div>
 
             {/* Thumbnail Strip */}
             <div className="space-y-2">
-              <span className="text-xs font-mono text-stone-400 uppercase tracking-wider block">
+              <span className="text-xs font-mono text-stone-300 uppercase tracking-wider block">
                 {isAr ? 'تبديل المشهد:' : 'Switch Scene:'}
               </span>
               <div className="grid grid-cols-3 gap-2">
@@ -147,7 +147,7 @@ export function AtlasVisualGallery({ locale }: { locale: Locale }) {
                       onClick={() => setActivePhoto(p)}
                       className={`relative aspect-video rounded-lg overflow-hidden border-2 transition-all ${
                         isCurrent
-                          ? 'border-[#D97935] shadow-md ring-2 ring-[#D97935]/40 scale-105'
+                          ? 'border-[#B85629] shadow-md ring-2 ring-[#B85629]/40 scale-105'
                           : 'border-stone-800 opacity-60 hover:opacity-100 hover:border-stone-600'
                       }`}
                     >

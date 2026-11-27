@@ -224,7 +224,7 @@ export function AtlasProjectExplorer({ locale }: { locale: Locale }) {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Left: Project Selector List */}
         <div className="lg:col-span-4 space-y-3">
-          <span className="text-xs font-mono text-stone-500 font-semibold uppercase tracking-wider block mb-1">
+          <span className="text-xs font-mono text-stone-300 font-semibold uppercase tracking-wider block mb-1">
             {isAr ? 'اختر المشروع للفحص الفني:' : 'Select Project Dossier:'}
           </span>
           {filteredProjects.map((p, idx) => {
@@ -236,22 +236,22 @@ export function AtlasProjectExplorer({ locale }: { locale: Locale }) {
                 onClick={() => setSelectedProjectId(p.id)}
                 className={`w-full text-start p-4 rounded-xl border transition-all flex flex-col gap-1.5 ${
                   isSelected
-                    ? 'bg-[#192027] border-[#D97935] shadow-lg ring-1 ring-[#D97935]/30'
-                    : 'bg-[#161D24]/60 border-stone-800/80 hover:bg-[#192027]/70 text-stone-400 hover:text-stone-200'
+                    ? 'bg-[#192027] border-[#B85629] shadow-lg ring-1 ring-[#B85629]/40'
+                    : 'bg-[#161D24]/60 border-stone-800/80 hover:bg-[#192027]/70 text-stone-300 hover:text-white'
                 }`}
               >
                 <div className="flex items-center justify-between text-xs">
-                  <span className={`font-mono font-bold ${isSelected ? 'text-[#D97935]' : 'text-stone-500'}`}>
+                  <span className={`font-mono font-bold ${isSelected ? 'text-amber-400' : 'text-stone-400'}`}>
                     REF // 0{idx + 1}
                   </span>
-                  <span className="text-[11px] font-mono text-stone-400 bg-stone-900 px-2 py-0.5 rounded border border-stone-800">
+                  <span className="text-[11px] font-mono text-stone-300 bg-stone-900 px-2 py-0.5 rounded border border-stone-800">
                     {p.areaM2.toLocaleString()} m² • {p.timelineMonths} {isAr ? 'شهر' : 'mo'}
                   </span>
                 </div>
-                <h3 className={`text-sm font-bold leading-snug ${isSelected ? 'text-white' : 'text-stone-300'}`}>
+                <h3 className={`text-sm font-bold leading-snug ${isSelected ? 'text-white' : 'text-stone-200'}`}>
                   {isAr ? p.titleAr : p.titleEn}
                 </h3>
-                <p className="text-[11px] text-stone-400 line-clamp-2 leading-relaxed">
+                <p className="text-[11px] text-stone-300 line-clamp-2 leading-relaxed">
                   {isAr ? p.summaryAr : p.summaryEn}
                 </p>
               </button>
@@ -274,7 +274,7 @@ export function AtlasProjectExplorer({ locale }: { locale: Locale }) {
           {/* Top Project Badge & View Toggles */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-stone-800">
             <div>
-              <span className="text-xs font-mono text-[#D97935] font-bold uppercase tracking-wider">
+              <span className="text-xs font-mono text-amber-400 font-bold uppercase tracking-wider">
                 {currentProject.category.toUpperCase()} // DOSSIER {currentProject.slug}
               </span>
               <h3 className="text-xl sm:text-2xl font-black text-white mt-0.5">
@@ -417,15 +417,15 @@ export function AtlasProjectExplorer({ locale }: { locale: Locale }) {
                   </div>
                   <div className="space-y-1.5 pt-2 border-t border-stone-800 text-stone-300">
                     <div className="flex justify-between">
-                      <span className="text-stone-500">{isAr ? 'مساحة البناء (BUA):' : 'Gross Floor Area:'}</span>
+                      <span className="text-stone-300">{isAr ? 'مساحة البناء (BUA):' : 'Gross Floor Area:'}</span>
                       <span className="font-mono font-bold text-white">{currentProject.specs.bua}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-stone-500">{isAr ? 'المدة التعاقدية:' : 'Contract Duration:'}</span>
+                      <span className="text-stone-300">{isAr ? 'المدة التعاقدية:' : 'Contract Duration:'}</span>
                       <span className="font-mono font-bold text-white">{currentProject.timelineMonths} {isAr ? 'شهر' : 'Months'}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-stone-500">{isAr ? 'معيار التصنيف البيئي:' : 'Sustainability Tier:'}</span>
+                      <span className="text-stone-300">{isAr ? 'معيار التصنيف البيئي:' : 'Sustainability Tier:'}</span>
                       <span className="font-mono font-bold text-emerald-400">{currentProject.specs.leedTier}</span>
                     </div>
                   </div>
@@ -438,15 +438,15 @@ export function AtlasProjectExplorer({ locale }: { locale: Locale }) {
                   </div>
                   <div className="space-y-1.5 pt-2 border-t border-stone-800 text-stone-300">
                     <div className="flex justify-between">
-                      <span className="text-stone-500">{isAr ? 'المعامل الزلزالي:' : 'Seismic Zone:'}</span>
+                      <span className="text-stone-300">{isAr ? 'المعامل الزلزالي:' : 'Seismic Zone:'}</span>
                       <span className="font-mono font-bold text-white">{currentProject.specs.seismic}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-stone-500">{isAr ? 'كود الحريق ومكافحة اللهب:' : 'Fire Life Safety:'}</span>
+                      <span className="text-stone-300">{isAr ? 'كود الحريق ومكافحة اللهب:' : 'Fire Life Safety:'}</span>
                       <span className="font-mono font-bold text-white">{currentProject.specs.fireRating}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-stone-500">{isAr ? 'العزل الصوتي المعتمد:' : 'Acoustic Rating:'}</span>
+                      <span className="text-stone-300">{isAr ? 'العزل الصوتي المعتمد:' : 'Acoustic Rating:'}</span>
                       <span className="font-mono font-bold text-white">{currentProject.specs.acoustic}</span>
                     </div>
                   </div>
@@ -459,11 +459,11 @@ export function AtlasProjectExplorer({ locale }: { locale: Locale }) {
                   </div>
                   <div className="space-y-1.5 pt-2 border-t border-stone-800 text-stone-300">
                     <div className="flex justify-between">
-                      <span className="text-stone-500">{isAr ? 'قوة الكسر المعتمدة:' : 'Compressive Strength:'}</span>
+                      <span className="text-stone-300">{isAr ? 'قوة الكسر المعتمدة:' : 'Compressive Strength:'}</span>
                       <span className="font-mono font-bold text-white">{currentProject.concreteGrade}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-stone-500">{isAr ? 'اختبارات الموقع:' : 'Field Tests:'}</span>
+                      <span className="text-stone-300">{isAr ? 'اختبارات الموقع:' : 'Field Tests:'}</span>
                       <span className="font-mono font-bold text-white">Slump Flow & Cube 28d</span>
                     </div>
                   </div>
@@ -476,11 +476,11 @@ export function AtlasProjectExplorer({ locale }: { locale: Locale }) {
                   </div>
                   <div className="space-y-1.5 pt-2 border-t border-stone-800 text-stone-300">
                     <div className="flex justify-between">
-                      <span className="text-stone-500">{isAr ? 'رتبة المقاطع:' : 'Section Grade:'}</span>
+                      <span className="text-stone-300">{isAr ? 'رتبة المقاطع:' : 'Section Grade:'}</span>
                       <span className="font-mono font-bold text-white">{currentProject.steelSpec}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-stone-500">{isAr ? 'فحص اللحامات:' : 'Weld Quality Control:'}</span>
+                      <span className="text-stone-300">{isAr ? 'فحص اللحامات:' : 'Weld Quality Control:'}</span>
                       <span className="font-mono font-bold text-white">100% Ultrasonic NDT</span>
                     </div>
                   </div>
@@ -498,7 +498,7 @@ export function AtlasProjectExplorer({ locale }: { locale: Locale }) {
                     className="bg-[#12181F] p-4 rounded-xl border border-stone-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs"
                   >
                     <div className="flex items-start gap-3">
-                      <div className="w-7 h-7 rounded bg-[#D97935]/20 text-[#D97935] flex items-center justify-center font-mono font-bold shrink-0 mt-0.5">
+                      <div className="w-7 h-7 rounded bg-[#B85629]/20 text-amber-400 flex items-center justify-center font-mono font-bold shrink-0 mt-0.5">
                         0{idx + 1}
                       </div>
                       <div>
