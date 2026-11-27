@@ -195,7 +195,7 @@ export function RealEstatePropertiesClient({ units, locale, initialType, initial
           </div>
           <Link
             href={`/${locale}/preview/real-estate/compare?units=${compareList.join(',')}`}
-            className="bg-[#A8764F] text-white font-bold px-3 py-1 rounded text-xs hover:bg-[#8e613e]"
+            className="bg-[#805333] text-white font-bold px-3 py-1 rounded text-xs hover:bg-[#8e613e]"
           >
             {isAr ? 'فتح المقارنة الفنية ←' : 'Open Spec Comparison →'}
           </Link>
@@ -219,7 +219,7 @@ export function RealEstatePropertiesClient({ units, locale, initialType, initial
           </p>
           <button
             onClick={handleReset}
-            className="inline-flex items-center gap-1.5 bg-[#A8764F] text-white text-xs font-bold px-4 py-2.5 rounded-lg"
+            className="inline-flex items-center gap-1.5 bg-[#805333] text-white text-xs font-bold px-4 py-2.5 rounded-lg"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             <span>{isAr ? 'إعادة ضبط التصفية' : 'Reset Filters'}</span>
@@ -276,7 +276,7 @@ export function RealEstatePropertiesClient({ units, locale, initialType, initial
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-bold text-[#25312D] group-hover:text-[#A8764F] transition-colors mb-2">
+                  <h3 className="text-lg font-bold text-[#25312D] group-hover:text-[#805333] transition-colors mb-2">
                     {u.title}
                   </h3>
                   <p className="text-xs text-stone-500 line-clamp-2 leading-relaxed mb-4">
@@ -301,7 +301,7 @@ export function RealEstatePropertiesClient({ units, locale, initialType, initial
                   <div className="pt-4 flex items-center justify-between">
                     <div>
                       <span className="text-[10px] text-stone-400 block uppercase font-mono">{isAr ? 'السعر النقدي' : 'Base Price'}</span>
-                      <span className="text-base font-black text-[#A8764F] font-mono">{priceEgp} EGP</span>
+                      <span className="text-base font-black text-[#805333] font-mono">{priceEgp} EGP</span>
                     </div>
                   </div>
                 </div>
@@ -309,7 +309,7 @@ export function RealEstatePropertiesClient({ units, locale, initialType, initial
                 <div className="p-4 bg-stone-50 border-t border-stone-100 flex items-center justify-between text-xs font-bold">
                   <Link
                     href={`/${locale}/preview/real-estate/properties/${u.slug}`}
-                    className="text-[#25312D] hover:text-[#A8764F] flex items-center gap-1"
+                    className="text-[#25312D] hover:text-[#805333] flex items-center gap-1"
                   >
                     <span>{isAr ? 'تفاصيل الوحدة' : 'Inspect Unit'}</span>
                     <Arrow className="w-3.5 h-3.5" />
@@ -317,7 +317,7 @@ export function RealEstatePropertiesClient({ units, locale, initialType, initial
 
                   <Link
                     href={`/${locale}/preview/real-estate/viewing?unit=${u.slug}`}
-                    className="text-[#A8764F] hover:underline text-[11px]"
+                    className="text-[#805333] hover:underline text-[11px]"
                   >
                     {isAr ? 'طلب معاينة' : 'Request Viewing'}
                   </Link>

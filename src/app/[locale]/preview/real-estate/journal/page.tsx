@@ -25,7 +25,7 @@ export default async function RealEstateJournalPage(props: Props) {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
       {/* Header */}
       <div className="pb-6 border-b border-stone-300">
-        <span className="text-xs font-mono font-bold text-[#A8764F] uppercase tracking-widest block mb-1">
+        <span className="text-xs font-mono font-bold text-[#805333] uppercase tracking-widest block mb-1">
           BUYER ADVISORY & DISTRICT EDITORIAL
         </span>
         <h1 className="text-3xl sm:text-5xl font-black text-[#25312D] tracking-tight font-serif">
@@ -48,13 +48,13 @@ export default async function RealEstateJournalPage(props: Props) {
           >
             <div>
               <div className="flex items-center justify-between text-xs mb-3 text-stone-400 font-mono">
-                <span className="text-[#A8764F] font-bold uppercase tracking-wider">
+                <span className="text-[#805333] font-bold uppercase tracking-wider">
                   {a.category}
                 </span>
                 <span>{new Date(a.published_at).toLocaleDateString(locale)}</span>
               </div>
 
-              <h2 className="text-lg font-bold text-[#25312D] group-hover:text-[#A8764F] transition-colors mb-3 leading-snug font-serif">
+              <h2 className="text-lg font-bold text-[#25312D] group-hover:text-[#805333] transition-colors mb-3 leading-snug font-serif">
                 {a.title}
               </h2>
 
@@ -63,7 +63,7 @@ export default async function RealEstateJournalPage(props: Props) {
               </p>
             </div>
 
-            <div className="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between text-xs font-bold text-[#A8764F]">
+            <div className="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between text-xs font-bold text-[#805333]">
               <span>{isAr ? 'قراءة الدليل الاستشاري' : 'Read Full Guide'}</span>
               <Arrow className="w-3.5 h-3.5" />
             </div>

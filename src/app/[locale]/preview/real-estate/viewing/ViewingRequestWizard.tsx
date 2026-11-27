@@ -212,7 +212,7 @@ export function ViewingRequestWizard({ allUnits, locale, initialUnitSlug }: Prop
           aria-label={isAr ? 'الوحدة السكنية' : 'Target property unit'}
             value={selectedUnitSlug}
           onChange={(e) => setSelectedUnitSlug(e.target.value)}
-          className="w-full p-3 bg-[#F5F0E6] border border-stone-300 rounded-xl text-xs font-bold text-[#25312D] font-mono focus:outline-none focus:ring-2 focus:ring-[#A8764F]"
+          className="w-full p-3 bg-[#F5F0E6] border border-stone-300 rounded-xl text-xs font-bold text-[#25312D] font-mono focus:outline-none focus:ring-2 focus:ring-[#805333]"
         >
           {allUnits.map((u) => (
             <option key={u.id} value={u.slug}>

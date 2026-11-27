@@ -5,19 +5,24 @@ import { getSectorHeroStyle } from '@/lib/media/sector-images';
 import Link from 'next/link';
 import { getPropertyUnits, getDevelopments, getEditorialPosts } from '@/lib/db/repositories';
 import type { Locale } from '@/lib/i18n/config';
+import MeridianUnitExplorer from './MeridianUnitExplorer';
+import MeridianMasterplanViewer from './MeridianMasterplanViewer';
+import MeridianVisualGallery from './MeridianVisualGallery';
 import {
   Building,
   Home,
   Compass,
   ArrowRight,
   ArrowLeft,
+  ArrowUpRight,
   CheckCircle2,
   Calendar,
   Ruler,
   Bed,
   Bath,
   Search,
-  Scale
+  Scale,
+  Sparkles
 } from 'lucide-react';
 
 interface Props {
@@ -119,7 +124,7 @@ export default async function RealEstateHomePage(props: Props) {
                   <label className="block text-stone-600 font-bold mb-1">{isAr ? 'عدد غرف النوم' : 'Bedrooms'}</label>
                   <div className="grid grid-cols-4 gap-2">
                     {[{ label: isAr ? 'الكل' : 'Any', value: 'all' }, { label: '2+', value: '2' }, { label: '3+', value: '3' }, { label: '4+', value: '4' }].map((b) => (
-                      <label key={b.value} className="relative cursor-pointer rounded bg-[#F5F0E6] border border-stone-300 font-bold hover:bg-[#805333]/10 focus-within:ring-2 focus-within:ring-[#A8764F]">
+                      <label key={b.value} className="relative cursor-pointer rounded bg-[#F5F0E6] border border-stone-300 font-bold hover:bg-[#805333]/10 focus-within:ring-2 focus-within:ring-[#805333]">
                         <input type="radio" name="beds" value={b.value} defaultChecked={b.value === 'all'} className="peer sr-only" />
                         <span className="block p-2 text-center peer-checked:bg-[#25312D] peer-checked:text-white rounded">{b.label}</span>
                       </label>
@@ -136,15 +141,10 @@ export default async function RealEstateHomePage(props: Props) {
           </div>
         </div>
       </section>
-      <figure className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8 sm:my-12">
-        <div className="grid grid-cols-12 gap-3 sm:gap-5 rounded-[2rem] overflow-hidden shadow-[0_20px_65px_rgba(0,0,0,0.12)] bg-white p-2 sm:p-3">
-          <SectorPhoto sector="real-estate" secondary alt="" className="col-span-8 h-52 sm:h-[340px] rounded-[1.5rem]" />
-          <SectorPhoto sector="real-estate" alt="" className="col-span-4 h-52 sm:h-[340px] rounded-[1.5rem]" />
-        </div>
-        <figcaption className="text-[11px] mt-3 opacity-90 text-center px-4">
-          {isAr ? 'صور فوتوغرافية مرجعية لاتجاه التصميم، وليست توثيقًا لمشروعات أو منشآت هذه العلامة' : 'Licensed editorial art direction — not documentation of this brand’s real facilities or work'}
-        </figcaption>
-      </figure>
+      {/* Bespoke Interactive Signature Module: Unit Architecture & Installment Calibrator */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <MeridianUnitExplorer locale={locale} />
+      </section>
 
 
       {/* Featured Properties Grid from SQLite */}
@@ -264,6 +264,11 @@ export default async function RealEstateHomePage(props: Props) {
         </div>
       </section>
 
+      {/* Bespoke Interactive Masterplan & Zoning Strategy */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <MeridianMasterplanViewer locale={locale} />
+      </section>
+
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="meridian-process-heading">
         <div className="bg-[#25312D] rounded-[2rem] text-[#F7F2E8] p-8 sm:p-12 lg:p-16">
           <div className="max-w-3xl">
@@ -278,7 +283,7 @@ export default async function RealEstateHomePage(props: Props) {
               { n:'03', ar:'راجع التفاصيل', en:'Review the details', arBody:'اطلع على توزيع الغرف وتفاصيل الوحدة والشروط.', enBody:'Understand room arrangements, unit specifics and terms.' },
               { n:'04', ar:'اطلب موعد معاينة', en:'Request a viewing', arBody:'أرسل تفضيلات الموعد لتأكيدها لاحقًا مع المسؤول.', enBody:'Submit a viewing preference for later confirmation.' },
             ].map(step => (
-              <div key={step.n} className="border-t-2 border-[#A8764F] pt-5">
+              <div key={step.n} className="border-t-2 border-[#805333] pt-5">
                 <span className="text-[#D8B18A] font-mono text-sm">{step.n}</span>
                 <h3 className="text-lg font-semibold mt-4 mb-2">{isAr ? step.ar : step.en}</h3>
                 <p className="text-sm leading-6 text-white/60">{isAr ? step.arBody : step.enBody}</p>
@@ -288,6 +293,9 @@ export default async function RealEstateHomePage(props: Props) {
           <Link href={`/${locale}/preview/real-estate/compare`} className="inline-flex gap-2 items-center bg-[#D7AE85] hover:bg-[#E4BF99] text-[#25312D] px-6 py-3 rounded-full mt-10 text-sm font-bold transition-colors">{isAr ? 'ابدأ مقارنة الوحدات' : 'Compare residences'} <Arrow className="w-4 h-4" /></Link>
         </div>
       </section>
+
+      {/* Bespoke Editorial Residential Visual Archive & Provenance */}
+      <MeridianVisualGallery locale={locale} />
 
       {/* Neighborhood Guides / Journal Preview */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -361,6 +369,35 @@ export default async function RealEstateHomePage(props: Props) {
           </div>
         </div>
       </section>
+      {/* Editorial Commercial Conversion Bridge */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-[#25312D] text-white rounded-[2rem] p-8 sm:p-14 border border-stone-800 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="space-y-3 max-w-2xl">
+            <span className="text-[#D8B18A] font-mono text-xs font-bold uppercase tracking-widest block">
+              MAVVIX BESPOKE PROPERTY DIGITAL FLAGSHIPS
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-serif font-black tracking-tight text-white">
+              {isAr ? 'مشروعك العقاري يستحق بوابة رقمية ترتقي لمستوى فخامته' : 'Commission an authoritative digital flagship for your real estate brand'}
+            </h2>
+            <p className="text-xs sm:text-sm text-[#E4D6C5] leading-relaxed">
+              {isAr
+                ? 'مافكس تصمم وتطور مواقع استثمار وتطوير عقاري فاخرة للمطورين والوكالات الكبرى في مصر والخليج، مزودة بمخططات CAD تفاعلية وحاسبات خطط سداد ونظام حجز مواعيد معاينة متصل بقاعدة بيانات حقيقية.'
+                : 'Mavvix crafts high-converting bespoke digital flagships for premier developers and property brokerages across Egypt and the Gulf, complete with CAD zoning viewers, dynamic installment calculators, and persistent viewing pipelines.'}
+            </p>
+          </div>
+
+          <a
+            href={isAr ? 'https://mavvix.com/ar/contact' : 'https://mavvix.com/en/contact'}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#805333] hover:bg-[#6e4629] text-white font-bold text-xs uppercase tracking-wider px-8 py-5 rounded-full shadow-lg flex items-center gap-2.5 shrink-0 transition-all"
+          >
+            <span>{isAr ? 'اطلب تنفيذ موقع مطوّرك العقاري' : 'Commission Your Real Estate Portal'}</span>
+            <ArrowUpRight size={16} />
+          </a>
+        </div>
+      </section>
+
       <SectorDepth sector="real-estate" locale={locale} />
     </div>
   );

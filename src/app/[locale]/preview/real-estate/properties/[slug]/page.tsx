@@ -48,7 +48,7 @@ export default async function RealEstatePropertyDetailPage(props: Props) {
       {/* Breadcrumb */}
       <div className="flex items-center justify-between text-xs text-stone-500 font-mono pb-4 border-b border-stone-200">
         <div className="flex items-center gap-2">
-          <Link href={`/${locale}/preview/real-estate/properties`} className="hover:text-[#A8764F]">
+          <Link href={`/${locale}/preview/real-estate/properties`} className="hover:text-[#805333]">
             {isAr ? 'دليل العقارات' : 'Properties'}
           </Link>
           <span>/</span>
@@ -57,7 +57,7 @@ export default async function RealEstatePropertyDetailPage(props: Props) {
 
         <Link
           href={`/${locale}/preview/real-estate/properties`}
-          className="text-[#A8764F] hover:underline font-bold"
+          className="text-[#805333] hover:underline font-bold"
         >
           {isAr ? 'العودة للدليل' : 'Back to Listings'}
         </Link>
@@ -70,7 +70,7 @@ export default async function RealEstatePropertyDetailPage(props: Props) {
       {/* Main Header & Specs */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         <div className="lg:col-span-8 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#A8764F]/10 text-[#A8764F] text-xs font-mono font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#805333]/10 text-[#805333] text-xs font-mono font-bold uppercase tracking-wider">
             <span>REF: {unit.slug.toUpperCase()}</span>
             <span>•</span>
             <span className="capitalize">{unit.unit_type}</span>
@@ -89,7 +89,7 @@ export default async function RealEstatePropertyDetailPage(props: Props) {
         <div className="lg:col-span-4 bg-white border border-stone-200 rounded-2xl p-6 shadow-sm space-y-5">
           <div>
             <span className="text-stone-400 block text-[11px] font-mono uppercase">{isAr ? 'السعر الإجمالي' : 'Total Price'}</span>
-            <span className="text-2xl font-black text-[#A8764F] font-mono">{priceEgp.toLocaleString()} EGP</span>
+            <span className="text-2xl font-black text-[#805333] font-mono">{priceEgp.toLocaleString()} EGP</span>
           </div>
 
           <div className="grid grid-cols-2 gap-3 text-xs border-y border-stone-100 py-3 font-mono">
@@ -114,7 +114,7 @@ export default async function RealEstatePropertyDetailPage(props: Props) {
           <div className="space-y-2 pt-2">
             <Link
               href={`/${locale}/preview/real-estate/viewing?unit=${unit.slug}`}
-              className="w-full bg-[#A8764F] hover:bg-[#8e613e] text-white text-xs font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all uppercase tracking-wider shadow-sm"
+              className="w-full bg-[#805333] hover:bg-[#8e613e] text-white text-xs font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all uppercase tracking-wider shadow-sm"
             >
               <Calendar className="w-4 h-4" />
               <span>{isAr ? 'طلب موعد معاينة خاصة' : 'Request Private Viewing'}</span>
@@ -134,7 +134,7 @@ export default async function RealEstatePropertyDetailPage(props: Props) {
       {/* Installment Estimator (Signature Differentiator 03) */}
       <div className="bg-white border border-stone-200 rounded-2xl p-8 shadow-sm space-y-6">
         <div className="flex items-center gap-3 border-b border-stone-100 pb-4">
-          <Calculator className="w-5 h-5 text-[#A8764F]" />
+          <Calculator className="w-5 h-5 text-[#805333]" />
           <div>
             <h3 className="text-base font-bold text-[#25312D]">
               {isAr ? 'حاسبة خطة السداد والأقساط التوضيحية' : 'Illustrative Payment & Installment Schedule'}
@@ -153,7 +153,7 @@ export default async function RealEstatePropertyDetailPage(props: Props) {
 
           <div className="p-4 bg-[#F5F0E6] rounded-xl border border-stone-300 space-y-1">
             <span className="text-stone-500 block text-[11px] uppercase">{isAr ? 'القسط الشهري (7 سنوات)' : 'Monthly Installment (7 Yrs)'}</span>
-            <span className="text-lg font-bold text-[#A8764F]">{monthly7Years.toLocaleString()} EGP / mo</span>
+            <span className="text-lg font-bold text-[#805333]">{monthly7Years.toLocaleString()} EGP / mo</span>
           </div>
 
           <div className="p-4 bg-[#F5F0E6] rounded-xl border border-stone-300 space-y-1">
@@ -166,7 +166,7 @@ export default async function RealEstatePropertyDetailPage(props: Props) {
       {/* Architectural Specs & Floorplan */}
       <div className="bg-white border border-stone-200 rounded-2xl p-8 shadow-sm space-y-6">
         <h3 className="text-base font-bold text-[#25312D] flex items-center gap-2">
-          <FileText className="w-5 h-5 text-[#A8764F]" />
+          <FileText className="w-5 h-5 text-[#805333]" />
           <span>{isAr ? 'مخطط الدور والمواصفات المعمارية' : 'Architectural Floorplan & Orientation'}</span>
         </h3>
 
@@ -201,15 +201,15 @@ export default async function RealEstatePropertyDetailPage(props: Props) {
               <Link
                 key={r.id}
                 href={`/${locale}/preview/real-estate/properties/${r.slug}`}
-                className="bg-white p-6 rounded-xl border border-stone-200 hover:border-[#A8764F] transition-all group"
+                className="bg-white p-6 rounded-xl border border-stone-200 hover:border-[#805333] transition-all group"
               >
                 <span className="font-mono text-stone-400 font-bold text-xs block mb-1">
                   {r.area_m2} m² • {r.bedrooms} Beds
                 </span>
-                <h4 className="text-sm font-bold text-[#25312D] group-hover:text-[#A8764F] transition-colors mb-2">
+                <h4 className="text-sm font-bold text-[#25312D] group-hover:text-[#805333] transition-colors mb-2">
                   {r.title}
                 </h4>
-                <p className="text-xs font-mono font-bold text-[#A8764F]">
+                <p className="text-xs font-mono font-bold text-[#805333]">
                   {(r.price_cents / 100).toLocaleString()} EGP
                 </p>
               </Link>

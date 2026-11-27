@@ -122,7 +122,7 @@ export function RealEstateSavedClient({ allUnits, locale }: Props) {
                   <div className="pt-4 flex items-center justify-between">
                     <div>
                       <span className="text-[10px] text-stone-400 block uppercase font-mono">{isAr ? 'السعر النقدي' : 'Base Price'}</span>
-                      <span className="text-base font-black text-[#A8764F] font-mono">{priceEgp} EGP</span>
+                      <span className="text-base font-black text-[#805333] font-mono">{priceEgp} EGP</span>
                     </div>
                   </div>
                 </div>
@@ -130,7 +130,7 @@ export function RealEstateSavedClient({ allUnits, locale }: Props) {
                 <div className="p-4 bg-stone-50 border-t border-stone-100 flex items-center justify-between text-xs font-bold">
                   <Link
                     href={`/${locale}/preview/real-estate/properties/${u.slug}`}
-                    className="text-[#25312D] hover:text-[#A8764F] flex items-center gap-1"
+                    className="text-[#25312D] hover:text-[#805333] flex items-center gap-1"
                   >
                     <span>{isAr ? 'تفاصيل الوحدة' : 'Inspect Unit'}</span>
                     <Arrow className="w-3.5 h-3.5" />
@@ -138,7 +138,7 @@ export function RealEstateSavedClient({ allUnits, locale }: Props) {
 
                   <Link
                     href={`/${locale}/preview/real-estate/viewing?unit=${u.slug}`}
-                    className="text-[#A8764F] hover:underline text-[11px]"
+                    className="text-[#805333] hover:underline text-[11px]"
                   >
                     {isAr ? 'طلب معاينة' : 'Request Viewing'}
                   </Link>

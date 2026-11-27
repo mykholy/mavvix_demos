@@ -1,0 +1,92 @@
+{
+  "vertical": "real-estate",
+  "brand": "Meridian Residences",
+  "updated_at": "2026-11-27",
+  "policy": "Self-hosted, high-resolution WebP photographic assets exclusively from verified CC0/CC-BY Wikimedia Commons sources. Zero external runtime network requests.",
+  "assets": [
+    {
+      "id": "sky-villa",
+      "file": "/assets/portfolio/real-estate/sky-villa.webp",
+      "width": 1800,
+      "height": 2400,
+      "byte_size": 545416,
+      "sha256": "e97673eb3dc1aba9d6eae71ccf697dd1440ca2d10ea54c5279de4321fe3a9608",
+      "title_en": "Sky villa penthouse with panoramic floor-to-ceiling glazing",
+      "title_ar": "بنتهاوس سكاي فيلا بإطلالة بانورامية وواجهات زجاجية ممتدة",
+      "author": "Radlord",
+      "license": "CC0 1.0 Universal",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Corner_Penthouse.png"
+    },
+    {
+      "id": "living-interior",
+      "file": "/assets/portfolio/real-estate/living-interior.webp",
+      "width": 1800,
+      "height": 1201,
+      "byte_size": 132756,
+      "sha256": "fe2d9ba49146592ff747ceedaf6e9b19e898cd0ef63a6ae8f5db95b30d2baa2b",
+      "title_en": "Expansive open-plan living salon with integrated kitchen suite",
+      "title_ar": "صالون معيشة مفتوح وواسع متصل بجناح مطبخ معماري متكامل",
+      "author": "Shixart",
+      "license": "CC BY 2.0 Generic",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Modern_luxury_living_room_with_kitchen_interior.jpg"
+    },
+    {
+      "id": "terrace-balcony",
+      "file": "/assets/portfolio/real-estate/terrace-balcony.webp",
+      "width": 1800,
+      "height": 2707,
+      "byte_size": 396202,
+      "sha256": "e1235184d56403b456ec8b5a508c14469eae3b0d642a70d9d2f801706696742b",
+      "title_en": "Cantilevered residential terrace with unobstructed horizon views",
+      "title_ar": "شرفة سكنية معلقة بإطلالة أفقية واسعة ومساحة جلوس رحبة",
+      "author": "DimiTal",
+      "license": "CC0 1.0 Universal",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Apartment_balconies,_Kanalv%C3%A4gen_and_Floragatan,_%C3%96rebro.jpg"
+    },
+    {
+      "id": "facade-tower",
+      "file": "/assets/portfolio/real-estate/facade-tower.webp",
+      "width": 1800,
+      "height": 1567,
+      "byte_size": 433022,
+      "sha256": "ce40935f291dad8d8a918a3a7e43901358bca8ce1833f28dc47dbc524e05978f",
+      "title_en": "Contemporary residential tower with bronze and architectural glass facade",
+      "title_ar": "برج سكني معاصر بواجهات برونزية وزجاج معماري عاكس",
+      "author": "Kenneth C. Zirkel",
+      "license": "CC BY-SA 2.0 Generic",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "source_page": "https://commons.wikimedia.org/wiki/File:4_East_Elm,_Gold_Coast,_Chicago,_IL_(52877219272).jpg"
+    },
+    {
+      "id": "lobby-reception",
+      "file": "/assets/portfolio/real-estate/lobby-reception.webp",
+      "width": 1800,
+      "height": 1200,
+      "byte_size": 168728,
+      "sha256": "944eda0d23645f7334107371ecc2e0d7543623b18ec0064c5da0fca5e1177d44",
+      "title_en": "Private resident arrival lounge and bespoke concierge pavilion",
+      "title_ar": "ردهة استقبال خاصة للمقيمين وجناح كونسيرج بتصميم هادئ",
+      "author": "Basile Morin",
+      "license": "CC BY-SA 4.0 International",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Reception_lounge_at_Amantaka_luxury_Resort_%26_Hotel_at_blue_hour_in_Luang_Prabang_Laos.jpg"
+    },
+    {
+      "id": "masterplan-model",
+      "file": "/assets/portfolio/real-estate/masterplan-model.webp",
+      "width": 1800,
+      "height": 1350,
+      "byte_size": 349650,
+      "sha256": "e13c7f0964693cd32f9e7d2953f4d85b56c0f3617d0ffe0c32804bde0c39cf05",
+      "title_en": "Architectural community masterplan and zoning podium scale model",
+      "title_ar": "مجسم معماري تخطيطي للمجمع السكني وتوزيع المساحات الخضراء",
+      "author": "Meow2026",
+      "license": "CC BY-SA 4.0 International",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Scale_model_of_Park_Royal_2.jpg"
+    }
+  ]
+}

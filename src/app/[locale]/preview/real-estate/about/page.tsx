@@ -25,7 +25,7 @@ export default async function RealEstateAboutPage(props: Props) {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
       {/* Header */}
       <div className="pb-6 border-b border-stone-300">
-        <span className="text-xs font-mono font-bold text-[#A8764F] uppercase tracking-widest block mb-1">
+        <span className="text-xs font-mono font-bold text-[#805333] uppercase tracking-widest block mb-1">
           EDITORIAL PUBLISHING & PROPERTY CURATION
         </span>
         <h1 className="text-3xl sm:text-5xl font-black text-[#25312D] tracking-tight font-serif">
@@ -41,7 +41,7 @@ export default async function RealEstateAboutPage(props: Props) {
       {/* Core Values Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="bg-white border border-stone-200 rounded-2xl p-8 shadow-sm space-y-3">
-          <div className="w-12 h-12 rounded-xl bg-[#F5F0E6] text-[#A8764F] flex items-center justify-center font-bold">
+          <div className="w-12 h-12 rounded-xl bg-[#F5F0E6] text-[#805333] flex items-center justify-center font-bold">
             <Building className="w-6 h-6" />
           </div>
           <h3 className="text-lg font-bold text-[#25312D] font-serif">
@@ -55,7 +55,7 @@ export default async function RealEstateAboutPage(props: Props) {
         </div>
 
         <div className="bg-white border border-stone-200 rounded-2xl p-8 shadow-sm space-y-3">
-          <div className="w-12 h-12 rounded-xl bg-[#F5F0E6] text-[#A8764F] flex items-center justify-center font-bold">
+          <div className="w-12 h-12 rounded-xl bg-[#F5F0E6] text-[#805333] flex items-center justify-center font-bold">
             <ShieldCheck className="w-6 h-6" />
           </div>
           <h3 className="text-lg font-bold text-[#25312D] font-serif">
@@ -69,7 +69,7 @@ export default async function RealEstateAboutPage(props: Props) {
         </div>
 
         <div className="bg-white border border-stone-200 rounded-2xl p-8 shadow-sm space-y-3">
-          <div className="w-12 h-12 rounded-xl bg-[#F5F0E6] text-[#A8764F] flex items-center justify-center font-bold">
+          <div className="w-12 h-12 rounded-xl bg-[#F5F0E6] text-[#805333] flex items-center justify-center font-bold">
             <Calendar className="w-6 h-6" />
           </div>
           <h3 className="text-lg font-bold text-[#25312D] font-serif">

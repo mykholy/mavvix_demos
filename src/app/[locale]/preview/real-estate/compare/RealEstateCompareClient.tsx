@@ -52,7 +52,7 @@ export function RealEstateCompareClient({ allUnits, locale, initialSlugs }: Prop
       {/* Comparator Controls */}
       <div className="flex flex-wrap items-center justify-between gap-4 p-4 bg-white border border-stone-200 rounded-xl">
         <div className="flex items-center gap-2 text-xs font-mono">
-          <Scale className="w-4 h-4 text-[#A8764F]" />
+          <Scale className="w-4 h-4 text-[#805333]" />
           <span>
             {isAr ? 'الوحدات المقارنة:' : 'Comparing:'} <strong>{comparedUnits.length} / 3</strong>
           </span>
@@ -136,7 +136,7 @@ export function RealEstateCompareClient({ allUnits, locale, initialSlugs }: Prop
                 <tr>
                   <td className="py-3 px-6 font-bold bg-stone-50 font-sans">{isAr ? 'السعر الإجمالي' : 'Total Price'}</td>
                   {comparedUnits.map((u) => (
-                    <td key={u.id} className="py-3 px-6 font-bold text-[#A8764F]">
+                    <td key={u.id} className="py-3 px-6 font-bold text-[#805333]">
                       {(u.price_cents / 100).toLocaleString()} EGP
                     </td>
                   ))}
@@ -194,7 +194,7 @@ export function RealEstateCompareClient({ allUnits, locale, initialSlugs }: Prop
                     <td key={u.id} className="py-4 px-6">
                       <Link
                         href={`/${locale}/preview/real-estate/viewing?unit=${u.slug}`}
-                        className="inline-flex items-center gap-1.5 bg-[#A8764F] hover:bg-[#8e613e] text-white px-3.5 py-1.5 rounded-lg font-bold text-xs shadow-sm font-sans"
+                        className="inline-flex items-center gap-1.5 bg-[#805333] hover:bg-[#8e613e] text-white px-3.5 py-1.5 rounded-lg font-bold text-xs shadow-sm font-sans"
                       >
                         <Calendar className="w-3.5 h-3.5" />
                         <span>{isAr ? 'طلب معاينة' : 'Request Viewing'}</span>
