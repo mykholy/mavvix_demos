@@ -158,6 +158,22 @@ try{
      await page.screenshot({path:path.join(out,png),fullPage:true,animations:'disabled',timeout:25000});
      entry.screenshot=png;
      entry.title=pre.title;
+     if(sector==='interiors-kitchens'&&!subpath&&['mobile-390','desktop-1440'].includes(viewport.name)){
+       const studio=page.locator('#layout-studio'),buttons=studio.locator('button[aria-pressed]');
+       assert.equal(await buttons.count(),4);
+       const diagram=studio.locator('svg[role=img] path').first();
+       const initial=await diagram.getAttribute('d');
+       for(const [i,slug] of ['l-shaped','u-shaped','galley','island'].entries()){
+         await buttons.nth(i).click();
+         assert.equal(await buttons.nth(i).getAttribute('aria-pressed'),'true');
+         assert.equal(await studio.locator('button[aria-pressed=true]').count(),1);
+         assert.equal(await studio.locator('a[href*="consultation?service="]').getAttribute('href'),'/'+locale+'/preview/interiors-kitchens/consultation?service='+slug);
+       }
+       assert.notEqual(await diagram.getAttribute('d'),initial);
+       entry.formaLayoutStudio={allFourLayouts:true,selectedConsultationLink:true};
+       console.log('PASS FORMA_LAYOUT_STUDIO '+locale+' '+viewport.name);
+     }
+
      if(sector==='wholesale'&&['rfq','supplier-interest'].includes(subpath)&&viewport.name==='mobile-390'){
         const form=page.locator('main form'),button=form.locator('button[type=submit]'),buyer=subpath==='rfq';
         assert.ok(await button.isDisabled(),'Consent required');
