@@ -26,7 +26,7 @@ export default async function RealEstateContactPage(props: Props) {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
       {/* Header */}
       <div className="pb-6 border-b border-stone-300">
-        <span className="text-xs font-mono font-bold text-[#A8764F] uppercase tracking-widest block mb-1">
+        <span className="text-xs font-mono font-bold text-[#805333] uppercase tracking-widest block mb-1">
           COMMUNICATION & VIEWING INQUIRIES
         </span>
         <h1 className="text-3xl sm:text-5xl font-black text-[#25312D] tracking-tight font-serif">
@@ -49,7 +49,7 @@ export default async function RealEstateContactPage(props: Props) {
 
             <div className="space-y-4 text-xs">
               <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#A8764F] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#805333] shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-[#25312D] block mb-0.5">{isAr ? 'صالة العرض الرئيسية' : 'Flagship Experience Center'}</span>
                   <span className="text-stone-600 leading-relaxed">
@@ -59,7 +59,7 @@ export default async function RealEstateContactPage(props: Props) {
               </div>
 
               <div className="flex items-start gap-3">
-                <Mail className="w-4 h-4 text-[#A8764F] shrink-0 mt-0.5" />
+                <Mail className="w-4 h-4 text-[#805333] shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-[#25312D] block mb-0.5">{isAr ? 'استشارات المبيعات والملاك' : 'Client Relations & Inquiries'}</span>
                   <span className="text-stone-600 font-mono">inquiries@meridian-residences.demo</span>
@@ -67,7 +67,7 @@ export default async function RealEstateContactPage(props: Props) {
               </div>
 
               <div className="flex items-start gap-3">
-                <Clock className="w-4 h-4 text-[#A8764F] shrink-0 mt-0.5" />
+                <Clock className="w-4 h-4 text-[#805333] shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-[#25312D] block mb-0.5">{isAr ? 'أوقات الزيارات الخاصة' : 'Private Viewing Hours'}</span>
                   <span className="text-stone-600">
@@ -80,7 +80,7 @@ export default async function RealEstateContactPage(props: Props) {
             <div className="pt-4 border-t border-stone-100">
               <Link
                 href={`/${locale}/preview/real-estate/viewing`}
-                className="w-full bg-[#A8764F] hover:bg-[#8e613e] text-white text-xs font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all uppercase tracking-wider shadow-sm"
+                className="w-full bg-[#805333] hover:bg-[#8e613e] text-white text-xs font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all uppercase tracking-wider shadow-sm"
               >
                 <Calendar className="w-4 h-4" />
                 <span>{isAr ? 'طلب موعد معاينة لوحدة' : 'Request Private Viewing'}</span>
@@ -149,7 +149,7 @@ export default async function RealEstateContactPage(props: Props) {
             </span>
             <Link
               href={`/${locale}/preview/real-estate/viewing`}
-              className="text-xs font-bold text-[#A8764F] hover:underline flex items-center gap-1 font-mono uppercase"
+              className="text-xs font-bold text-[#805333] hover:underline flex items-center gap-1 font-mono uppercase"
             >
               <span>{isAr ? 'ابدأ طلب المعاينة' : 'Schedule Viewing'}</span>
               <Arrow className="w-3.5 h-3.5" />

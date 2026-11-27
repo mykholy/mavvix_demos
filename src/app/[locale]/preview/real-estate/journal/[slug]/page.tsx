@@ -35,7 +35,7 @@ export default async function RealEstateBuyerGuideDetailPage(props: Props) {
       {/* Breadcrumb */}
       <div className="flex items-center justify-between text-xs text-stone-500 font-mono pb-4 border-b border-stone-200">
         <div className="flex items-center gap-2">
-          <Link href={`/${locale}/preview/real-estate/journal`} className="hover:text-[#A8764F]">
+          <Link href={`/${locale}/preview/real-estate/journal`} className="hover:text-[#805333]">
             {isAr ? 'دليل المشترين' : 'Buyer Guides'}
           </Link>
           <span>/</span>
@@ -44,7 +44,7 @@ export default async function RealEstateBuyerGuideDetailPage(props: Props) {
 
         <Link
           href={`/${locale}/preview/real-estate/journal`}
-          className="text-[#A8764F] hover:underline font-bold shrink-0"
+          className="text-[#805333] hover:underline font-bold shrink-0"
         >
           {isAr ? 'كافة الأدلة' : 'All Guides'}
         </Link>
@@ -53,7 +53,7 @@ export default async function RealEstateBuyerGuideDetailPage(props: Props) {
       {/* Header */}
       <div className="space-y-4">
         <div className="flex items-center gap-3 text-xs text-stone-500 font-mono">
-          <span className="bg-[#A8764F]/10 text-[#A8764F] px-2.5 py-0.5 rounded font-bold uppercase">
+          <span className="bg-[#805333]/10 text-[#805333] px-2.5 py-0.5 rounded font-bold uppercase">
             {article.category}
           </span>
           <span>•</span>
@@ -71,7 +71,7 @@ export default async function RealEstateBuyerGuideDetailPage(props: Props) {
 
       {/* Body */}
       <article className="prose prose-stone max-w-none bg-white p-8 sm:p-12 rounded-2xl border border-stone-200 shadow-sm space-y-8 text-stone-800 leading-relaxed text-sm sm:text-base">
-        <p className="text-lg leading-relaxed font-semibold text-[#25312D] border-l-4 rtl:border-r-4 rtl:border-l-0 border-[#A8764F] pl-4 rtl:pr-4">
+        <p className="text-lg leading-relaxed font-semibold text-[#25312D] border-l-4 rtl:border-r-4 rtl:border-l-0 border-[#805333] pl-4 rtl:pr-4">
           {article.body?.intro || article.summary}
         </p>
 
@@ -99,7 +99,7 @@ export default async function RealEstateBuyerGuideDetailPage(props: Props) {
         </div>
         <Link
           href={`/${locale}/preview/real-estate/properties`}
-          className="bg-[#A8764F] hover:bg-[#8e613e] text-white text-xs font-bold px-6 py-3 rounded-xl uppercase tracking-wider shrink-0 transition-all flex items-center gap-2"
+          className="bg-[#805333] hover:bg-[#8e613e] text-white text-xs font-bold px-6 py-3 rounded-xl uppercase tracking-wider shrink-0 transition-all flex items-center gap-2"
         >
           <Home className="w-4 h-4" />
           <span>{isAr ? 'تصفح الوحدات (24)' : 'Browse Properties'}</span>

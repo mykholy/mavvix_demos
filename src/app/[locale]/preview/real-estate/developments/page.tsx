@@ -28,7 +28,7 @@ export default async function RealEstateDevelopmentsPage(props: Props) {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
       {/* Header */}
       <div className="pb-6 border-b border-stone-300">
-        <span className="text-xs font-mono font-bold text-[#A8764F] uppercase tracking-widest block mb-1">
+        <span className="text-xs font-mono font-bold text-[#805333] uppercase tracking-widest block mb-1">
           MASTERPLANNED COMMUNITIES // CURATED RESIDENTIAL CONCEPTS
         </span>
         <h1 className="text-3xl sm:text-5xl font-black text-[#25312D] tracking-tight font-serif">
@@ -56,7 +56,7 @@ export default async function RealEstateDevelopmentsPage(props: Props) {
                 <span className="text-emerald-700 font-bold uppercase">COMMUNITY</span>
               </div>
 
-              <h2 className="text-xl font-bold text-[#25312D] group-hover:text-[#A8764F] transition-colors mb-3 font-serif">
+              <h2 className="text-xl font-bold text-[#25312D] group-hover:text-[#805333] transition-colors mb-3 font-serif">
                 {d.title}
               </h2>
 
@@ -79,7 +79,7 @@ export default async function RealEstateDevelopmentsPage(props: Props) {
             <div className="pt-4 border-t border-stone-100 flex items-center justify-between">
               <Link
                 href={`/${locale}/preview/real-estate/developments/${d.slug}`}
-                className="text-xs font-bold text-[#25312D] hover:text-[#A8764F] flex items-center gap-1.5"
+                className="text-xs font-bold text-[#25312D] hover:text-[#805333] flex items-center gap-1.5"
               >
                 <span>{isAr ? 'قصة المجمع والمخطط' : 'Project Dossier'}</span>
                 <Arrow className="w-3.5 h-3.5" />
@@ -87,7 +87,7 @@ export default async function RealEstateDevelopmentsPage(props: Props) {
 
               <Link
                 href={`/${locale}/preview/real-estate/properties`}
-                className="text-xs font-bold text-[#A8764F] hover:underline"
+                className="text-xs font-bold text-[#805333] hover:underline"
               >
                 {isAr ? 'عرض الوحدات' : 'View Units'}
               </Link>
