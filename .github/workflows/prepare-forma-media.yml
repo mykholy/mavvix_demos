@@ -19,9 +19,9 @@ jobs:
       - name: Commit only generated photos and manifest
         run: |
           set -euo pipefail
-          git add -- public/assets/portfolio/interiors-kitchens/*.webp docs/30-verticals/media/interiors-kitchens.media-manifest.json
-          test "$(git diff --cached --name-only | wc -l)" -eq 7
+          git add -- public/assets/portfolio/interiors-kitchens/walnut.webp docs/30-verticals/media/interiors-kitchens.media-manifest.json
+          test "$(git diff --cached --name-only | wc -l)" -eq 2
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'Vendor six licensed Forma design references as local WebP'
+          git commit -m 'Correct Forma walnut wood sample after screenshot review'
           git push origin HEAD:refs/heads/chore/forma-local-media
