@@ -1,0 +1,7 @@
+# Talentyx HR — sector 29 research, 2026-11-27
+
+- [WUZZUF employers](https://employers.wuzzuf.net/) — distinct hiring and candidate journeys.
+- [JOBMASTER](https://jobmaster.jobmastergroup.com/) — HR consulting and talent solutions.
+- [Hays Saudi Arabia workforce solutions](https://www.hays.ae/saudi-arabia-workforce-solutions) — permanent/contract recruitment and advisory scope.
+- [Cooper Fitch](https://cooperfitch.ae/about-us/) — recruitment, executive search and RPO.
+Design direction: midnight navy #17243E, cobalt #3549A5, ice #E8EEFF, ivory #F8F9FC. Separate hiring brief and candidate career interest; eight specialist dossiers, six clearly illustrative role profiles, filtered sectors, human-reviewed and job-relevant assessment. No real vacancy, employer affiliation, placement guarantee, fees, CV upload, automated ranking, passport or sensitive personal fields. Original editorial photo sources visually reviewed: https://commons.wikimedia.org/wiki/File:Job_Interview_-_38630953066.jpg (Amtec Photos, CC BY-SA 2.0, credit link https://www.amtec.us.com, SHA1 8c8668c7d4a81c10ecba34048c9e0ea0f75e49b0) and https://commons.wikimedia.org/wiki/File:Team_Meeting.jpg (woodleywonderworks, CC BY 2.0, SHA1 fe6004b4d8add8b6d810454041a65cd745846583). Independent editorial photographs, not actual staff, applicants or clients; verify source hashes, mirror locally and review displayed crops before merge. Commercial release requires verified recruitment provider, applicable licensing, privacy and data retention review.

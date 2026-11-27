@@ -1,0 +1,519 @@
+{
+  "slug": "recruitment",
+  "brand": "Talentyx HR",
+  "classification": "fictional_portfolio_concept_no_live_recruitment",
+  "categories": [
+    "hiring",
+    "advisory",
+    "candidate"
+  ],
+  "sectors": [
+    "technology",
+    "finance",
+    "operations",
+    "commercial",
+    "people",
+    "other"
+  ],
+  "services": [
+    {
+      "slug": "permanent-hiring",
+      "category": "hiring",
+      "rank": 1,
+      "title": {
+        "ar": "التوظيف الدائم",
+        "en": "Permanent hiring"
+      },
+      "summary": {
+        "ar": "تحديد الدور والمهارات ومعايير الاختيار قبل البحث.",
+        "en": "Define the role, skills and selection criteria before sourcing."
+      },
+      "body": {
+        "ar": "تبدأ رحلة التوظيف الدائم بوصف وظيفي واضح ومراجعة نطاق المسؤوليات والمهارات المطلوبة. يتفق صاحب العمل ومقدم الخدمة على مراحل الفرز والمقابلات ومعايير تقييم مرتبطة بالدور، ثم يتخذ المسؤول البشري قرار الاختيار النهائي.",
+        "en": "Permanent hiring begins with a clear role description, responsibilities and required skills. Employers and providers agree sourcing, interview stages and job-relevant evaluation criteria, with a human decision-maker responsible for final selection."
+      },
+      "checkpoints": {
+        "ar": [
+          "وصف وظيفي",
+          "معايير مرتبطة بالدور",
+          "قرار بشري"
+        ],
+        "en": [
+          "Role brief",
+          "Job-relevant criteria",
+          "Human decision"
+        ]
+      }
+    },
+    {
+      "slug": "executive-search",
+      "category": "hiring",
+      "rank": 2,
+      "title": {
+        "ar": "البحث عن القيادات",
+        "en": "Executive search"
+      },
+      "summary": {
+        "ar": "تحديد نطاق القيادة والسياق التنظيمي والنتائج المنتظرة.",
+        "en": "Define leadership scope, organizational context and expected outcomes."
+      },
+      "body": {
+        "ar": "تحتاج الأدوار القيادية إلى اتفاق واضح على المسؤوليات والأولويات والسياق التنظيمي. تُراجع الخبرات ذات الصلة والإنجازات والمراجع المهنية بموافقة أصحابها. لا يضمن الطلب تعيين مرشح أو وصولاً إلى أشخاص بعينهم.",
+        "en": "Leadership search requires agreement on responsibilities, priorities and organizational context. Relevant achievements and references are reviewed with consent. An enquiry guarantees neither an appointment nor access to specific individuals."
+      },
+      "checkpoints": {
+        "ar": [
+          "نطاق القيادة",
+          "السرية والموافقة",
+          "مراجعة النتائج"
+        ],
+        "en": [
+          "Leadership scope",
+          "Confidentiality and consent",
+          "Outcome review"
+        ]
+      }
+    },
+    {
+      "slug": "volume-recruitment",
+      "category": "hiring",
+      "rank": 3,
+      "title": {
+        "ar": "التوظيف متعدد الأدوار",
+        "en": "Volume recruitment"
+      },
+      "summary": {
+        "ar": "تنظيم الاحتياج المتكرر ومراحل التقييم المتسقة.",
+        "en": "Organize recurring needs and consistent assessment stages."
+      },
+      "body": {
+        "ar": "عند توظيف عدد كبير من الأشخاص، تُحدد مجموعات الأدوار والاحتياجات الزمنية وقنوات التواصل. يراجع الفريق معايير الاختيار المتسقة لكل دور ويحدد كيفية إدارة البيانات والمواعيد والقرارات البشرية دون وعد بزمن إغلاق أو عدد مرشحين محدد.",
+        "en": "For larger hiring needs, define role groups, timelines and communication channels. Teams review consistent criteria for each role, manage data and schedules, and retain human decisions without promising time-to-fill or candidate volume."
+      },
+      "checkpoints": {
+        "ar": [
+          "مجموعات الأدوار",
+          "مراحل متسقة",
+          "تواصل واضح"
+        ],
+        "en": [
+          "Role groups",
+          "Consistent stages",
+          "Clear communication"
+        ]
+      }
+    },
+    {
+      "slug": "contract-staffing",
+      "category": "hiring",
+      "rank": 4,
+      "title": {
+        "ar": "التوظيف بعقود محددة",
+        "en": "Contract staffing"
+      },
+      "summary": {
+        "ar": "دراسة نطاق العمل والمدة والمسؤوليات قبل الاتفاق.",
+        "en": "Review scope, duration and responsibilities before engagement."
+      },
+      "body": {
+        "ar": "تحتاج الأدوار المؤقتة أو التعاقدية إلى تحديد المخرجات والمدة وطبيعة العلاقة والمسؤوليات وشروط العمل. يراجع مقدم الخدمة المؤهل المتطلبات القانونية والتعاقدية في البلد المعني قبل أي اتفاق؛ لا يعرض الموقع عقوداً أو وظائف متاحة بالفعل.",
+        "en": "Contract roles require defined deliverables, duration, relationship and working terms. Qualified providers review applicable employment and contractual requirements before engagement. This concept advertises no actual contracts or vacancies."
+      },
+      "checkpoints": {
+        "ar": [
+          "نطاق ومدة",
+          "مسؤوليات واضحة",
+          "مراجعة تعاقدية"
+        ],
+        "en": [
+          "Scope and duration",
+          "Clear responsibilities",
+          "Contract review"
+        ]
+      }
+    },
+    {
+      "slug": "recruitment-process-outsourcing",
+      "category": "advisory",
+      "rank": 5,
+      "title": {
+        "ar": "إدارة عمليات التوظيف",
+        "en": "Recruitment process outsourcing"
+      },
+      "summary": {
+        "ar": "تنسيق مراحل الطلبات والمقابلات والتقارير ضمن نطاق متفق عليه.",
+        "en": "Coordinate requisitions, interviews and reporting within an agreed scope."
+      },
+      "body": {
+        "ar": "تبدأ إدارة التوظيف بتحديد مسؤوليات فريق الشركة ومقدم الخدمة، وخطوات الموافقة والتواصل ومؤشرات المتابعة. يلزم اعتماد صلاحيات الوصول وفترات الاحتفاظ بالبيانات والاتفاق على مستوى الخدمة قبل بدء تشغيل حقيقي.",
+        "en": "Recruitment outsourcing begins with responsibilities, approval steps, communication and reporting indicators. Access permissions, retention and service commitments must be agreed before real operation."
+      },
+      "checkpoints": {
+        "ar": [
+          "مسؤوليات الفريق",
+          "مسارات الموافقة",
+          "حوكمة البيانات"
+        ],
+        "en": [
+          "Team responsibilities",
+          "Approval pathways",
+          "Data governance"
+        ]
+      }
+    },
+    {
+      "slug": "talent-assessment",
+      "category": "advisory",
+      "rank": 6,
+      "title": {
+        "ar": "تقييم المهارات",
+        "en": "Talent assessment"
+      },
+      "summary": {
+        "ar": "اختيار وسائل تقييم مرتبطة بمهام الوظيفة.",
+        "en": "Choose assessments relevant to actual work tasks."
+      },
+      "body": {
+        "ar": "يُبنى التقييم على مهارات مطلوبة فعلاً في الدور، مع تعليمات واضحة ووسائل مناسبة لإتاحة المشاركة. لا يستنتج هذا الموقع صفات شخصية أو أهلية توظيف من بيانات حساسة، ولا يتخذ قرارات توظيف آلية أو يقدم ترتيباً للمرشحين.",
+        "en": "Assessments focus on actual role requirements with clear instructions and appropriate accessibility. This concept infers no personal traits or eligibility from sensitive data, makes no automated hiring decisions and ranks no candidates."
+      },
+      "checkpoints": {
+        "ar": [
+          "مهام مرتبطة بالدور",
+          "إتاحة المشاركة",
+          "مراجعة بشرية"
+        ],
+        "en": [
+          "Job-relevant tasks",
+          "Accessible participation",
+          "Human review"
+        ]
+      }
+    },
+    {
+      "slug": "workforce-planning",
+      "category": "advisory",
+      "rank": 7,
+      "title": {
+        "ar": "تخطيط القوى العاملة",
+        "en": "Workforce planning"
+      },
+      "summary": {
+        "ar": "تحديد فجوات الأدوار والمهارات وأولويات النمو.",
+        "en": "Identify role and skill gaps and growth priorities."
+      },
+      "body": {
+        "ar": "تبدأ الدراسة بفهم أهداف المنشأة والفرق القائمة والأعمال التي تحتاج قدرات إضافية. يحدد المختص نطاق الوظائف والمهارات والسيناريوهات والقيود، ويعرض بدائل قابلة للمراجعة دون افتراض أعداد موظفين أو تكاليف غير موثقة.",
+        "en": "Planning starts with organizational objectives, existing teams and work requiring additional capabilities. Specialists define roles, skills, scenarios and constraints with reviewable alternatives rather than unsupported staffing or cost assumptions."
+      },
+      "checkpoints": {
+        "ar": [
+          "أهداف المنشأة",
+          "فجوات المهارات",
+          "سيناريوهات قابلة للمراجعة"
+        ],
+        "en": [
+          "Business objectives",
+          "Skill gaps",
+          "Reviewable scenarios"
+        ]
+      }
+    },
+    {
+      "slug": "career-guidance",
+      "category": "candidate",
+      "rank": 8,
+      "title": {
+        "ar": "إرشاد المسار المهني",
+        "en": "Career guidance"
+      },
+      "summary": {
+        "ar": "استكشاف مجالات العمل والخبرات المطلوبة دون طلب توظيف فعلي.",
+        "en": "Explore career paths and role expectations without a live application."
+      },
+      "body": {
+        "ar": "يستفيد المرشح من تحديد المجال المهني والمهارات التي يريد تطويرها وطريقة عرض الخبرة. ملفات الأدوار هنا توضيحية وليست وظائف شاغرة؛ يمكن حفظ رغبة مبدئية في التواصل دون إرسال سيرة ذاتية أو مستندات أو بيانات حساسة.",
+        "en": "Candidates can explore professional fields, skills to develop and ways to communicate experience. Role profiles are illustrative, not vacancies; a contact preference can be saved without CVs, documents or sensitive personal details."
+      },
+      "checkpoints": {
+        "ar": [
+          "مجال مهني",
+          "تطوير المهارات",
+          "تواصل غير ملزم"
+        ],
+        "en": [
+          "Career field",
+          "Skill development",
+          "Nonbinding interest"
+        ]
+      }
+    }
+  ],
+  "roles": [
+    {
+      "slug": "software-engineering",
+      "sector": "technology",
+      "level": "mid-senior",
+      "title": {
+        "ar": "مهندس برمجيات",
+        "en": "Software engineer"
+      },
+      "skills": {
+        "ar": [
+          "تصميم الحلول",
+          "اختبار البرمجيات",
+          "التعاون التقني"
+        ],
+        "en": [
+          "Solution design",
+          "Software testing",
+          "Technical collaboration"
+        ]
+      },
+      "classification": "illustrative_role_not_vacancy"
+    },
+    {
+      "slug": "finance-controller",
+      "sector": "finance",
+      "level": "senior",
+      "title": {
+        "ar": "مراقب مالي",
+        "en": "Financial controller"
+      },
+      "skills": {
+        "ar": [
+          "التقارير المالية",
+          "الرقابة الداخلية",
+          "التنسيق المالي"
+        ],
+        "en": [
+          "Financial reporting",
+          "Internal controls",
+          "Finance coordination"
+        ]
+      },
+      "classification": "illustrative_role_not_vacancy"
+    },
+    {
+      "slug": "operations-manager",
+      "sector": "operations",
+      "level": "senior",
+      "title": {
+        "ar": "مدير عمليات",
+        "en": "Operations manager"
+      },
+      "skills": {
+        "ar": [
+          "تخطيط العمليات",
+          "الجودة والمتابعة",
+          "إدارة الفريق"
+        ],
+        "en": [
+          "Operations planning",
+          "Quality and follow-up",
+          "Team management"
+        ]
+      },
+      "classification": "illustrative_role_not_vacancy"
+    },
+    {
+      "slug": "sales-specialist",
+      "sector": "commercial",
+      "level": "mid",
+      "title": {
+        "ar": "أخصائي مبيعات",
+        "en": "Sales specialist"
+      },
+      "skills": {
+        "ar": [
+          "فهم العملاء",
+          "إدارة الفرص",
+          "التواصل التجاري"
+        ],
+        "en": [
+          "Customer discovery",
+          "Opportunity management",
+          "Commercial communication"
+        ]
+      },
+      "classification": "illustrative_role_not_vacancy"
+    },
+    {
+      "slug": "supply-chain-coordinator",
+      "sector": "operations",
+      "level": "mid",
+      "title": {
+        "ar": "منسق سلاسل الإمداد",
+        "en": "Supply chain coordinator"
+      },
+      "skills": {
+        "ar": [
+          "تنسيق الموردين",
+          "متابعة المخزون",
+          "إعداد التقارير"
+        ],
+        "en": [
+          "Supplier coordination",
+          "Inventory follow-up",
+          "Reporting"
+        ]
+      },
+      "classification": "illustrative_role_not_vacancy"
+    },
+    {
+      "slug": "people-partner",
+      "sector": "people",
+      "level": "mid-senior",
+      "title": {
+        "ar": "شريك موارد بشرية",
+        "en": "People partner"
+      },
+      "skills": {
+        "ar": [
+          "تخطيط القوى العاملة",
+          "علاقات العمل",
+          "التواصل مع الفرق"
+        ],
+        "en": [
+          "Workforce planning",
+          "Employee relations",
+          "Team communication"
+        ]
+      },
+      "classification": "illustrative_role_not_vacancy"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "write-a-role-brief",
+      "title": {
+        "ar": "كيف تكتب وصفاً وظيفياً؟",
+        "en": "Write a useful role brief"
+      },
+      "summary": {
+        "ar": "حدد النتائج المطلوبة والمهارات الأساسية.",
+        "en": "Define outcomes and essential skills."
+      },
+      "body": {
+        "ar": "ابدأ بالمهام والنتائج المتوقعة والمسؤوليات. افصل المتطلبات الأساسية عن التفضيلات، وراجع لغة الإعلان حتى ترتبط بالعمل نفسه. ناقش مراحل الاختيار والخصوصية مع فريق التوظيف الحقيقي.",
+        "en": "Begin with tasks, expected outcomes and responsibilities. Separate essential requirements from preferences and make language job-relevant. Agree selection stages and privacy handling with the actual hiring team."
+      }
+    },
+    {
+      "slug": "prepare-for-interview",
+      "title": {
+        "ar": "الاستعداد للمقابلة",
+        "en": "Prepare for an interview"
+      },
+      "summary": {
+        "ar": "راجع أمثلة عملية من خبرتك المهنية.",
+        "en": "Review practical examples from your experience."
+      },
+      "body": {
+        "ar": "اختر أمثلة توضح المشكلة ودورك والنتيجة، واستعد لشرح ما تعلمته. تحقق من هوية الجهة والوظيفة وقناة التواصل الرسمية قبل مشاركة مستنداتك. لا تدفع رسوماً لمجرد التقديم عبر جهة غير موثوقة.",
+        "en": "Choose examples showing the problem, your contribution and outcome. Verify the organization, role and official contact channel before sharing documents. Do not pay fees merely to apply through an unverified party."
+      }
+    },
+    {
+      "slug": "fair-selection",
+      "title": {
+        "ar": "اختيار مهني عادل",
+        "en": "Fair, job-related selection"
+      },
+      "summary": {
+        "ar": "اتفق على معايير واضحة ومتسقة ومراجعة بشرية.",
+        "en": "Agree clear, consistent criteria and human review."
+      },
+      "body": {
+        "ar": "حدد معايير مرتبطة بمهام الوظيفة، واستخدم أسئلة متسقة ووسائل تقييم ملائمة. وفر ترتيبات إتاحة عند الحاجة واحتفظ بمراجعة بشرية وشفافية التعامل مع البيانات. لا تستخدم البيانات الحساسة لتصنيف أهلية المرشحين.",
+        "en": "Set criteria tied to job tasks, use consistent questions and suitable assessments. Provide accessibility arrangements where needed, retain human review and handle data transparently. Do not use sensitive attributes to classify candidate eligibility."
+      }
+    }
+  ],
+  "faq": [
+    {
+      "question": {
+        "ar": "هل الوظائف المعروضة شاغرة بالفعل؟",
+        "en": "Are these real vacancies?"
+      },
+      "answer": {
+        "ar": "لا، الملفات أمثلة توضيحية على الأدوار وليست إعلانات وظائف.",
+        "en": "No, profiles are illustrative role examples, not job listings."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل يضمن الطلب مقابلة أو توظيفاً؟",
+        "en": "Does an enquiry guarantee an interview or hire?"
+      },
+      "answer": {
+        "ar": "لا، المرجع يؤكد حفظ الطلب للمراجعة فقط.",
+        "en": "No. The reference confirms only that an enquiry was saved."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل أرسل سيرتي الذاتية هنا؟",
+        "en": "Can I upload my CV here?"
+      },
+      "answer": {
+        "ar": "لا، النموذج يجمع تفضيلات عامة وبيانات تواصل فقط.",
+        "en": "No. The form collects only broad preferences and contact details."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل توجد رسوم أو عقود هنا؟",
+        "en": "Are there fees or contracts here?"
+      },
+      "answer": {
+        "ar": "لا، يجب الاتفاق على نطاق الخدمة مع مقدم حقيقي موثوق.",
+        "en": "No. Agree scope with a verified actual provider."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل يتم تقييم المرشحين آلياً؟",
+        "en": "Are candidates automatically scored?"
+      },
+      "answer": {
+        "ar": "لا، لا يوجد ترتيب أو قرار توظيف آلي.",
+        "en": "No. There is no automated candidate ranking or hiring decision."
+      }
+    }
+  ],
+  "media": [
+    {
+      "role": "interview",
+      "credit": "Amtec Photos / amtec_photos",
+      "creditUrl": "https://www.amtec.us.com",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Job_Interview_-_38630953066.jpg",
+      "url": "/assets/portfolio/talentyx-interview.webp",
+      "originalSha1": "8c8668c7d4a81c10ecba34048c9e0ea0f75e49b0",
+      "width": 5825,
+      "height": 3777,
+      "alt": {
+        "ar": "مقابلة عمل في صورة تحريرية مستقلة، لا تمثل موظفي تالنتكس",
+        "en": "Independent editorial job interview photograph, not Talentyx staff"
+      }
+    },
+    {
+      "role": "team-meeting",
+      "credit": "woodleywonderworks",
+      "creditUrl": "https://www.flickr.com/people/73645804@N00/",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Team_Meeting.jpg",
+      "url": "/assets/portfolio/talentyx-team.webp",
+      "originalSha1": "fe6004b4d8add8b6d810454041a65cd745846583",
+      "width": 5559,
+      "height": 2092,
+      "alt": {
+        "ar": "اجتماع فريق في صورة مستقلة، لا يمثل شركة عميلة",
+        "en": "Independent editorial team meeting photograph, not a client company"
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "vertical": "recruitment",
+  "assets": [
+    {
+      "id": "talentyx-interview",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Job_Interview_-_38630953066.jpg",
+      "author": "Amtec Photos / amtec_photos",
+      "credit_url": "https://www.amtec.us.com",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Job_Interview_-_38630953066.jpg",
+      "original_dimensions": "5825x3777",
+      "original_sha1": "8c8668c7d4a81c10ecba34048c9e0ea0f75e49b0",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/talentyx-interview.webp",
+      "dimensions": "1600x1037",
+      "sha256": "d80b55e6f14a91c819e2bbd11c85b489c30a57b97d7a21c29f58d5919975d1a7",
+      "bytes": 129672,
+      "changes": "Resized and WebP encoded; display may crop. Original license retained for adapted image. Independent editorial photograph, not Talentyx staff, candidates or clients."
+    },
+    {
+      "id": "talentyx-team",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Team_Meeting.jpg",
+      "author": "woodleywonderworks",
+      "credit_url": "https://www.flickr.com/people/73645804@N00/",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Team_Meeting.jpg",
+      "original_dimensions": "5559x2092",
+      "original_sha1": "fe6004b4d8add8b6d810454041a65cd745846583",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/talentyx-team.webp",
+      "dimensions": "1600x602",
+      "sha256": "e48201aa03d752e78077467d8da35bdce74350c68fe4dc54ec09d4297ebd19e6",
+      "bytes": 130648,
+      "changes": "Resized and WebP encoded; display may crop. Original license retained for adapted image. Independent editorial photograph, not Talentyx staff, candidates or clients."
+    }
+  ]
+}

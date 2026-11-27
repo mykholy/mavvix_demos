@@ -28,6 +28,8 @@ async function ready(){
  throw Error('Next server did not start: '+serverLog.slice(-2000));
 }
 const cases=[
+ ['wholesale',''],['wholesale','catalogue'],['wholesale','catalogue/kraft-paper-bags'],['wholesale','categories'],['wholesale','buyers'],['wholesale','suppliers'],['wholesale','process'],['wholesale','terms'],['wholesale','rfq'],['wholesale','supplier-interest'],['wholesale','guides/carton-vs-unit'],
+ ['recruitment',''],['recruitment','services'],['recruitment','services/permanent-hiring'],['recruitment','employers'],['recruitment','candidates'],['recruitment','roles'],['recruitment','roles/software-engineering'],['recruitment','hiring-brief'],['recruitment','career-interest'],['recruitment','privacy'],['recruitment','insights/fair-selection'],
  ['solar-energy',''],['solar-energy','solutions'],['solar-energy','solutions/commercial-rooftop'],['solar-energy','assessment'],['solar-energy','sectors'],['solar-energy','process'],['solar-energy','feasibility'],['solar-energy','maintenance'],['solar-energy','guides/site-survey-checklist'],
  ['boutique-hotel',''],['boutique-hotel','rooms'],['boutique-hotel','rooms/courtyard-king'],['boutique-hotel','compare'],['boutique-hotel','stay'],['boutique-hotel','dining'],['boutique-hotel','experiences'],['boutique-hotel','policies'],['boutique-hotel','arrival'],['boutique-hotel','journal/choose-your-room'],
  // The original eight must receive direct browser coverage, not showcase-only coverage.
@@ -156,6 +158,31 @@ try{
      await page.screenshot({path:path.join(out,png),fullPage:true,animations:'disabled',timeout:25000});
      entry.screenshot=png;
      entry.title=pre.title;
+     if(sector==='wholesale'&&['rfq','supplier-interest'].includes(subpath)&&viewport.name==='mobile-390'){
+        const form=page.locator('main form'),button=form.locator('button[type=submit]'),buyer=subpath==='rfq';
+        assert.ok(await button.isDisabled(),'Consent required');
+        if(buyer){await form.locator('[data-add-rfq-line]').click();assert.equal(await form.locator('[data-rfq-line]').count(),2);await form.locator('input[type=number]').first().fill('3');assert.match(await form.locator('[data-total-cartons]').innerText(),/5/);}
+        await form.locator('input[autocomplete=organization]').fill('Browser QA Wholesale');
+        await form.locator('input[autocomplete=name]').fill('Browser QA Contact');await form.locator('input[type=tel]').fill('01000000000');await form.locator('input[type=checkbox]').check();
+        assert.ok(await button.isEnabled(),'Valid wholesale enquiry must be submittable');
+        const responsePromise=page.waitForResponse(r=>r.url().endsWith('/api/portfolio/wholesale')&&r.request().method()==='POST');await button.click();const saved=await responsePromise;assert.equal(saved.status(),201);
+        const sent=saved.request().postDataJSON();assert.equal(sent.flowType,buyer?'wholesale_rfq':'wholesale_supplier_interest');if(buyer)assert.equal(sent.lines.length,2);
+        const body=await saved.json();assert.match(body.refNumber,/^MVX-TBR-[A-F0-9]{10}$/);assert.equal(body.status,'pending_operator_confirmation');
+        const status=page.locator('main [role=status]');await status.waitFor({state:'visible',timeout:10000});assert.ok((await status.innerText()).includes(body.refNumber));
+        entry.wholesaleFlow={flowType:sent.flowType,consentRequired:true,validRequestSaved:true,referenceDisplayed:true};console.log('PASS TRADEBRIDGE_INTAKE_FLOW '+locale+' '+subpath);
+      }
+      if(sector==='recruitment'&&['hiring-brief','career-interest'].includes(subpath)&&viewport.name==='mobile-390'){
+       const form=page.locator('main form'),button=form.locator('button[type=submit]');const employer=subpath==='hiring-brief';
+       assert.ok(await button.isDisabled(),'Consent required');
+       if(employer)await form.locator('input[autocomplete=organization]').fill('Browser QA Company');
+       await form.locator('input[autocomplete=name]').fill('Browser QA Recruitment');await form.locator('input[type=tel]').fill('01000000000');await form.locator('input[type=checkbox]').check();
+       assert.ok(await button.isEnabled(),'Valid recruitment enquiry must be submittable');
+       const responsePromise=page.waitForResponse(r=>r.url().endsWith('/api/portfolio/recruitment')&&r.request().method()==='POST');await button.click();const saved=await responsePromise;assert.equal(saved.status(),201);
+       const sent=saved.request().postDataJSON();assert.equal(sent.flowType,employer?'employer_hiring_brief':'candidate_career_interest');
+       const body=await saved.json();assert.match(body.refNumber,/^MVX-TLX-[A-F0-9]{10}$/);assert.equal(body.status,'pending_operator_confirmation');
+       const status=page.locator('main [role=status]');await status.waitFor({state:'visible',timeout:10000});assert.ok((await status.innerText()).includes(body.refNumber));
+       entry.recruitmentFlow={flowType:sent.flowType,consentRequired:true,validRequestSaved:true,referenceDisplayed:true};console.log('PASS TALENTYX_INTAKE_FLOW '+locale+' '+subpath);
+     }
      if(sector==='solar-energy'&&subpath==='assessment'&&viewport.name==='mobile-390'){
        const form=page.locator('main form'),button=form.locator('button[type=submit]'),selects=form.locator('select');
        await selects.nth(0).selectOption('commercial-rooftop');await selects.nth(1).selectOption('home');

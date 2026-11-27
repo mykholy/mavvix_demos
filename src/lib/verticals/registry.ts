@@ -259,7 +259,7 @@ export const VERTICALS = [
     "en": "Recruitment",
     "wave": 3,
     "accent": "#73A6D9",
-    "status": "planned"
+    "status": "in_progress"
   },
   {
     "slug": "wholesale",
@@ -268,7 +268,7 @@ export const VERTICALS = [
     "en": "Wholesale",
     "wave": 3,
     "accent": "#EE8766",
-    "status": "planned"
+    "status": "in_progress"
   }
 ] as const;
 export type VerticalSlug=typeof VERTICALS[number]['slug'];

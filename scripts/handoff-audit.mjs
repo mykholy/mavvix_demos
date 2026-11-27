@@ -266,3 +266,15 @@ assert.ok((readFileSync(join(solarDir,'page.tsx'),'utf8').match(/data-sector-spe
 assert.match(readFileSync(join(solarDir,'layout.tsx'),'utf8'),/<ContactDock/);
 for(const route of ['[section]','solutions/[slug]','guides/[slug]','assessment'])assert.ok(existsSync(join(solarDir,route,'page.tsx')),'Missing VoltEdge route '+route);
 console.log('PASS: independent VoltEdge solution directory, engineering pathways and assessment');
+
+const talentDir=join(root,'recruitment');
+assert.ok((readFileSync(join(talentDir,'page.tsx'),'utf8').match(/data-sector-specific=/g)||[]).length>=9);
+assert.match(readFileSync(join(talentDir,'layout.tsx'),'utf8'),/<ContactDock/);
+for(const route of ['[section]','services/[slug]','roles/[slug]','insights/[slug]','hiring-brief','career-interest'])assert.ok(existsSync(join(talentDir,route,'page.tsx')),'Missing Talentyx route '+route);
+console.log('PASS: independent Talentyx dual-audience directory and intake');
+
+const tradeDir=join(root,'wholesale');
+assert.ok((readFileSync(join(tradeDir,'page.tsx'),'utf8').match(/data-sector-specific=/g)||[]).length>=9);
+assert.match(readFileSync(join(tradeDir,'layout.tsx'),'utf8'),/<ContactDock/);
+for(const route of ['[section]','catalogue/[slug]','guides/[slug]','rfq','supplier-interest'])assert.ok(existsSync(join(tradeDir,route,'page.tsx')),'Missing TradeBridge route '+route);
+console.log('PASS: independent TradeBridge wholesale catalogue, multi-line RFQ and supplier intake');
