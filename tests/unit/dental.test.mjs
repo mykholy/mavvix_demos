@@ -2,6 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { DatabaseSync } from 'node:sqlite';
 import path from 'node:path';
+import fs from 'node:fs';
+import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -39,6 +41,33 @@ test('Dental: Articles count in SQLite', () => {
     WHERE s.slug = 'dental'
   `).get();
   assert.equal(row.count, 8, 'Dental must have exactly 8 seeded patient articles');
+});
+
+test('Dental: Six local WebP assets match manifest and verified SHA-256 checksums', () => {
+  const manifestPath = path.join(rootDir, 'docs', '30-verticals', 'media', 'dental.media-manifest.json');
+  assert.ok(fs.existsSync(manifestPath), 'dental.media-manifest.json must exist');
+
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+  assert.equal(manifest.vertical, 'dental');
+  assert.equal(manifest.assets.length, 6, 'Must document exactly 6 photographic assets');
+
+  for (const a of manifest.assets) {
+    const assetPath = path.join(rootDir, 'public', a.file.replace(/^\//, ''));
+    assert.ok(fs.existsSync(assetPath), `Asset file ${a.file} must exist locally`);
+
+    const stat = fs.statSync(assetPath);
+    assert.equal(stat.size, a.byte_size, `File size for ${a.id} must match manifest byte_size`);
+
+    const buf = fs.readFileSync(assetPath);
+    // RIFF WEBP magic bytes validation
+    const isRiffWebp = buf.length >= 12 &&
+      buf.toString('ascii', 0, 4) === 'RIFF' &&
+      buf.toString('ascii', 8, 12) === 'WEBP';
+    assert.ok(isRiffWebp, `Asset ${a.file} must be a valid RIFF/WEBP binary`);
+
+    const hash = crypto.createHash('sha256').update(buf).digest('hex');
+    assert.equal(hash, a.sha256, `SHA-256 for ${a.id} must match manifest`);
+  }
 });
 
 test('Dental Journey 1: Simulated Appointment request persists to SQLite', () => {
@@ -79,4 +108,7 @@ test('Dental Journey 1: Simulated Appointment request persists to SQLite', () =>
   assert.equal(parsed.doctorSlug, 'clinician-01');
   assert.equal(parsed.preferredDay, 'Tuesday');
   assert.equal(parsed.refNumber, refNumber);
+
+  // Clean up
+  db.prepare('DELETE FROM demo_submissions WHERE id = ?').run(subId);
 });
