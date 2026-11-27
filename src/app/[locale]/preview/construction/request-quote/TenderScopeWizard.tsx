@@ -132,7 +132,7 @@ export function TenderScopeWizard({ locale, initialRef, initialService, initialA
 
           <div className="text-start sm:text-end font-mono">
             <span className="text-[11px] text-stone-600 block uppercase">{isAr ? 'رقم المرجع التجريبي' : 'Reference Code'}</span>
-            <span className="text-lg font-black text-[#A64B26]">{receipt.refNumber}</span>
+            <span className="text-lg font-black text-[#D97935]">{receipt.refNumber}</span>
           </div>
         </div>
 
@@ -204,7 +204,7 @@ export function TenderScopeWizard({ locale, initialRef, initialService, initialA
 
           <Link
             href={`/${locale}/preview/construction/projects`}
-            className="text-[#A64B26] hover:underline flex items-center gap-1"
+            className="text-[#D97935] hover:underline flex items-center gap-1"
           >
             <span>{isAr ? 'العودة لمشاريع الأطلس' : 'Return to Project Atlas'}</span>
             <Arrow className="w-3.5 h-3.5" />
@@ -229,7 +229,7 @@ export function TenderScopeWizard({ locale, initialRef, initialService, initialA
             <div
               className={`w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs transition-colors ${
                 step === s.num
-                  ? 'bg-[#A64B26] text-white'
+                  ? 'bg-[#D97935] text-white'
                   : step > s.num
                   ? 'bg-stone-800 text-white'
                   : 'bg-stone-100 text-stone-600'
@@ -363,7 +363,7 @@ export function TenderScopeWizard({ locale, initialRef, initialService, initialA
                   }`}
                 >
                   <span>{srv.title}</span>
-                  {services.includes(srv.id) && <CheckCircle2 className="w-4 h-4 text-[#A64B26]" />}
+                  {services.includes(srv.id) && <CheckCircle2 className="w-4 h-4 text-[#D97935]" />}
                 </button>
               ))}
             </div>
@@ -518,7 +518,7 @@ export function TenderScopeWizard({ locale, initialRef, initialService, initialA
               setError(null);
               setStep(step + 1);
             }}
-            className="px-6 py-2.5 rounded-lg bg-[#A64B26] hover:bg-[#b85629] text-white text-xs font-bold flex items-center gap-2 transition-all uppercase tracking-wider"
+            className="px-6 py-2.5 rounded-lg bg-[#D97935] hover:bg-[#b85629] text-white text-xs font-bold flex items-center gap-2 transition-all uppercase tracking-wider"
           >
             <span>{isAr ? 'متابعة' : 'Next Step'}</span>
             <Arrow className="w-3.5 h-3.5" />
