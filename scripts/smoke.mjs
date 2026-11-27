@@ -704,6 +704,19 @@ try {
   const solarQueue=await get('/admin/portfolio-requests?sector=solar-energy',{redirect:'manual'});assert.ok([302,303,307,308,401].includes(solarQueue.status),'VoltEdge queue must remain private');
   console.log('PASS: 42 VoltEdge bilingual routes, scope/PII validation and idempotent assessment');
 
+  const talentRoutes=['','employers','candidates','services','roles','process','insights','privacy','faq','about','hiring-brief','career-interest','services/permanent-hiring','services/executive-search','services/volume-recruitment','services/contract-staffing','services/recruitment-process-outsourcing','services/talent-assessment','services/workforce-planning','services/career-guidance','roles/software-engineering','roles/finance-controller','roles/operations-manager','roles/sales-specialist','roles/supply-chain-coordinator','roles/people-partner','insights/write-a-role-brief','insights/prepare-for-interview','insights/fair-selection'];
+  for(const lang of ['ar','en'])for(const tail of talentRoutes){const url='/'+lang+'/preview/recruitment'+(tail?'/'+tail:'');const res=await get(url);assert.equal(res.status,200,'Talentyx route failed '+url);assert.ok((await res.text()).includes('data-mavvix-contact-dock'),'Talentyx dock missing '+url);}
+  assert.equal((await get('/en/preview/recruitment/roles/unknown')).status,404);
+  const employer={flowType:'employer_hiring_brief',clientRequestId:'f1111111-1111-4111-8111-111111111111',guestName:'QA Employer',guestPhone:'01000000000',country:'egypt',sector:'technology',consent:true,honeypot:'',serviceSlug:'permanent-hiring',organization:'QA Company',headcount:'2-5',engagement:'permanent',timeline:'1-3-months'};
+  const candidate={flowType:'candidate_career_interest',clientRequestId:'f2222222-2222-4222-8222-222222222222',guestName:'QA Candidate',guestPhone:'01000000000',country:'egypt',sector:'technology',consent:true,honeypot:'',roleSlug:'software-engineering',workPreference:'hybrid',experienceBand:'mid'};
+  const talentEndpoint='/api/portfolio/recruitment';
+  for(const bad of [{...employer,consent:false},{...employer,serviceSlug:'career-guidance'},{...candidate,cv:'PRIVATE'},{...candidate,passport:'PRIVATE'},{...candidate,sector:'finance'},{...candidate,roleSlug:'unknown'}])assert.equal((await post(talentEndpoint,bad)).status,400);
+  const talentRefs=[];
+  for(const payload of [employer,candidate]){const saved=await post(talentEndpoint,payload),body=await saved.json();assert.equal(saved.status,201,'Talentyx persistence '+JSON.stringify(body));assert.match(body.refNumber,/^MVX-TLX-[A-F0-9]{10}$/);assert.equal(body.status,'pending_operator_confirmation');assert.equal(saved.headers.get('cache-control'),'no-store');talentRefs.push(body.refNumber);const dup=await post(talentEndpoint,payload),again=await dup.json();assert.equal(dup.status,200);assert.equal(again.duplicate,true);assert.equal(again.refNumber,body.refNumber);}
+  assert.notEqual(talentRefs[0],talentRefs[1]);assert.equal((await post(talentEndpoint,{...candidate,clientRequestId:employer.clientRequestId})).status,409);
+  const talentQueue=await get('/admin/portfolio-requests?sector=recruitment',{redirect:'manual'});assert.ok([302,303,307,308,401].includes(talentQueue.status),'Talentyx queue must remain private');
+  console.log('PASS: 58 Talentyx bilingual routes, distinct employer/candidate flows, consent/PII validation and idempotency');
+
   console.log('PASS: auth guard, flow validation, Academy SQLite progress, trusted ecommerce price, private receipt');
 } catch (error) {
   console.error(error);

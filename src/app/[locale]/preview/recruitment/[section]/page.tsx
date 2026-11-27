@@ -1,4 +1,4 @@
-import Link from 'next/link';import {notFound} from 'next/navigation';import type {Metadata} from 'next';import {ArrowUpRight,CheckCircle2,BriefcaseBusiness} from 'lucide-react';import {TALENTYX,talentPath} from '@/lib/verticals/recruitment/data';
+import Link from 'next/link';import {notFound} from 'next/navigation';import type {Metadata} from 'next';import {ArrowUpRight,CheckCircle2} from 'lucide-react';import {TALENTYX,talentPath} from '@/lib/verticals/recruitment/data';
 const topics={employers:['رحلة الشركات','For employers'],candidates:['رحلة المرشحين','For candidates'],services:['خدمات التوظيف','Recruitment services'],roles:['أمثلة الأدوار','Illustrative role profiles'],process:['رحلة الاختيار','Selection process'],insights:['الأدلة','Practical insights'],privacy:['الخصوصية والاختيار العادل','Privacy & fair selection'],faq:['الأسئلة الشائعة','FAQ'],about:['عن التصميم','About this concept']} as const;
 type Params={locale:string;section:string};type Topic=keyof typeof topics;
 export function generateStaticParams(){return Object.keys(topics).map(section=>({section}));}
