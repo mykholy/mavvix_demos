@@ -57,7 +57,7 @@ export function AtlasVisualGallery({ locale }: { locale: Locale }) {
                   }}
                   className={`text-xs font-bold px-3 py-1.5 rounded-lg transition-all whitespace-nowrap ${
                     active
-                      ? 'bg-[#D97935] text-white shadow-sm'
+                      ? 'bg-[#B85629] text-white shadow-sm'
                       : 'text-stone-400 hover:text-white hover:bg-stone-800'
                   }`}
                 >
@@ -143,6 +143,7 @@ export function AtlasVisualGallery({ locale }: { locale: Locale }) {
                     <button
                       key={p.id}
                       type="button"
+                      aria-label={isAr ? p.ar : p.en}
                       onClick={() => setActivePhoto(p)}
                       className={`relative aspect-video rounded-lg overflow-hidden border-2 transition-all ${
                         isCurrent
@@ -150,7 +151,7 @@ export function AtlasVisualGallery({ locale }: { locale: Locale }) {
                           : 'border-stone-800 opacity-60 hover:opacity-100 hover:border-stone-600'
                       }`}
                     >
-                      <img src={p.url} alt="" className="w-full h-full object-cover" />
+                      <img src={p.url} alt={isAr ? p.ar : p.en} className="w-full h-full object-cover" />
                     </button>
                   );
                 })}

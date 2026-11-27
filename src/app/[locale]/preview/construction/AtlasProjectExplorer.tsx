@@ -209,7 +209,7 @@ export function AtlasProjectExplorer({ locale }: { locale: Locale }) {
                 }}
                 className={`text-xs font-bold px-3 py-1.5 rounded-lg transition-all whitespace-nowrap ${
                   active
-                    ? 'bg-[#D97935] text-white shadow-sm'
+                    ? 'bg-[#B85629] text-white shadow-sm'
                     : 'text-stone-400 hover:text-white hover:bg-stone-800/60'
                 }`}
               >
@@ -288,7 +288,7 @@ export function AtlasProjectExplorer({ locale }: { locale: Locale }) {
                 type="button"
                 onClick={() => setViewMode('photo')}
                 className={`text-xs font-bold px-3 py-1.5 rounded-lg transition-all ${
-                  viewMode === 'photo' ? 'bg-[#D97935] text-white shadow-sm' : 'text-stone-400 hover:text-white'
+                  viewMode === 'photo' ? 'bg-[#B85629] text-white shadow-sm' : 'text-stone-400 hover:text-white'
                 }`}
               >
                 {isAr ? 'صورة التنفيذ' : 'Site Photo'}
@@ -297,7 +297,7 @@ export function AtlasProjectExplorer({ locale }: { locale: Locale }) {
                 type="button"
                 onClick={() => setViewMode('blueprint')}
                 className={`text-xs font-bold px-3 py-1.5 rounded-lg transition-all ${
-                  viewMode === 'blueprint' ? 'bg-[#D97935] text-white shadow-sm' : 'text-stone-400 hover:text-white'
+                  viewMode === 'blueprint' ? 'bg-[#B85629] text-white shadow-sm' : 'text-stone-400 hover:text-white'
                 }`}
               >
                 {isAr ? 'المخطط الهندسي' : 'CAD Blueprint'}
@@ -306,7 +306,7 @@ export function AtlasProjectExplorer({ locale }: { locale: Locale }) {
                 type="button"
                 onClick={() => setViewMode('specs')}
                 className={`text-xs font-bold px-3 py-1.5 rounded-lg transition-all ${
-                  viewMode === 'specs' ? 'bg-[#D97935] text-white shadow-sm' : 'text-stone-400 hover:text-white'
+                  viewMode === 'specs' ? 'bg-[#B85629] text-white shadow-sm' : 'text-stone-400 hover:text-white'
                 }`}
               >
                 {isAr ? 'المواصفات الفنية' : 'Tech Specs'}
@@ -315,7 +315,7 @@ export function AtlasProjectExplorer({ locale }: { locale: Locale }) {
                 type="button"
                 onClick={() => setViewMode('milestones')}
                 className={`text-xs font-bold px-3 py-1.5 rounded-lg transition-all ${
-                  viewMode === 'milestones' ? 'bg-[#D97935] text-white shadow-sm' : 'text-stone-400 hover:text-white'
+                  viewMode === 'milestones' ? 'bg-[#B85629] text-white shadow-sm' : 'text-stone-400 hover:text-white'
                 }`}
               >
                 {isAr ? 'المراحل الزمنية' : 'Milestones'}
@@ -527,7 +527,7 @@ export function AtlasProjectExplorer({ locale }: { locale: Locale }) {
 
             <Link
               href={`/${locale}/preview/construction/request-quote?ref=${currentProject.slug}&service=structural&area=${currentProject.areaM2}`}
-              className="bg-[#D97935] hover:bg-[#c46828] text-white font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-xl shadow-lg transition-all flex items-center gap-2"
+              className="bg-[#B85629] hover:bg-[#9E4320] text-white font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-xl shadow-lg transition-all flex items-center gap-2"
             >
               <span>{isAr ? 'حساب مقايسة نطاق مماثل' : 'Configure Matching Scope'}</span>
               <Arrow className="w-4 h-4" />

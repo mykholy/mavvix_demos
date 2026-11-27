@@ -156,7 +156,7 @@ export default async function ConstructionHomePage(props: Props) {
               <div className="pt-4 flex flex-wrap items-center gap-4">
                 <Link
                   href={`/${locale}/preview/construction/request-quote`}
-                  className="bg-[#D97935] hover:bg-[#c46828] text-white font-bold text-xs uppercase tracking-wider px-7 py-4 rounded-xl shadow-lg flex items-center gap-2 transition-all"
+                  className="bg-[#B85629] hover:bg-[#9E4320] text-white font-bold text-xs uppercase tracking-wider px-7 py-4 rounded-xl shadow-lg flex items-center gap-2 transition-all"
                 >
                   <span>{isAr ? 'بدء معالج تسعير المناقصة' : 'Launch Tender Scope Wizard'}</span>
                   <Arrow className="w-4 h-4" />
@@ -444,7 +444,7 @@ export default async function ConstructionHomePage(props: Props) {
 
           <Link
             href={`/${locale}/preview/construction/request-quote`}
-            className="bg-[#D97935] hover:bg-[#c46828] text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-lg transition-all shrink-0 flex items-center gap-2 relative z-10"
+            className="bg-[#B85629] hover:bg-[#9E4320] text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-lg transition-all shrink-0 flex items-center gap-2 relative z-10"
           >
             <span>{isAr ? 'ابدأ معالج التسعير الآن' : 'Launch Tender Wizard'}</span>
             <Arrow className="w-4 h-4" />

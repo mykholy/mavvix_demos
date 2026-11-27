@@ -81,7 +81,7 @@ export default async function ConstructionLayout(props: Props) {
           <div className="flex items-center gap-3">
             <Link
               href={`/${locale}/preview/construction/request-quote`}
-              className="inline-flex items-center gap-2 bg-[#D97935] hover:bg-[#b85629] text-white text-xs font-bold px-4 py-2.5 rounded shadow-sm transition-all uppercase tracking-wider"
+              className="inline-flex items-center gap-2 bg-[#B85629] hover:bg-[#9E4320] text-white text-xs font-bold px-4 py-2.5 rounded shadow-sm transition-all uppercase tracking-wider"
             >
               <span>{isAr ? 'طلب تسعير مناقصة' : 'Tender Quote'}</span>
               <Arrow className="w-3.5 h-3.5" />

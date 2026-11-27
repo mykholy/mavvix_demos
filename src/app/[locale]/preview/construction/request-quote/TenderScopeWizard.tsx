@@ -229,7 +229,7 @@ export function TenderScopeWizard({ locale, initialRef, initialService, initialA
             <div
               className={`w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs transition-colors ${
                 step === s.num
-                  ? 'bg-[#D97935] text-white'
+                  ? 'bg-[#B85629] text-white'
                   : step > s.num
                   ? 'bg-stone-800 text-white'
                   : 'bg-stone-100 text-stone-600'
@@ -518,7 +518,7 @@ export function TenderScopeWizard({ locale, initialRef, initialService, initialA
               setError(null);
               setStep(step + 1);
             }}
-            className="px-6 py-2.5 rounded-lg bg-[#D97935] hover:bg-[#b85629] text-white text-xs font-bold flex items-center gap-2 transition-all uppercase tracking-wider"
+            className="px-6 py-2.5 rounded-lg bg-[#B85629] hover:bg-[#9E4320] text-white text-xs font-bold flex items-center gap-2 transition-all uppercase tracking-wider"
           >
             <span>{isAr ? 'متابعة' : 'Next Step'}</span>
             <Arrow className="w-3.5 h-3.5" />
