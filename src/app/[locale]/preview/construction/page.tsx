@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { SectorDepth } from '@/components/shared/SectorDepth';
+import { SectorPhoto } from '@/components/shared/SectorPhoto';
 import Link from 'next/link';
 import { getProjects, getEditorialPosts } from '@/lib/db/repositories';
 import type { Locale } from '@/lib/i18n/config';
@@ -218,6 +219,17 @@ export default async function ConstructionHomePage(props: Props) {
           </div>
         </div>
       </section>
+
+      {/* Editorial Art Direction Photography */}
+      <figure className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8 sm:my-12">
+        <div className="grid grid-cols-12 gap-3 sm:gap-5 rounded-[2rem] overflow-hidden shadow-[0_20px_65px_rgba(0,0,0,0.12)] bg-white p-2 sm:p-3">
+          <SectorPhoto sector="construction" secondary alt="" className="col-span-8 h-52 sm:h-[340px] rounded-[1.5rem]" />
+          <SectorPhoto sector="construction" alt="" className="col-span-4 h-52 sm:h-[340px] rounded-[1.5rem]" />
+        </div>
+        <figcaption className="text-[11px] mt-3 opacity-90 text-center px-4 text-stone-600">
+          {isAr ? 'صور فوتوغرافية مرجعية لاتجاه التصميم، وليست توثيقًا لمشروعات أو منشآت هذه العلامة' : 'Licensed editorial art direction — not documentation of this brand’s real facilities or work'}
+        </figcaption>
+      </figure>
 
       {/* Signature Feature 01: Interactive Project Explorer */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
