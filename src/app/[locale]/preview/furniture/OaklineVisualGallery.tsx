@@ -17,7 +17,7 @@ export default function OaklineVisualGallery({ locale }: { locale: Locale }) {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#D8CCBD]">
+      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-[#D8CCBD]">
         <div>
           <span className="text-xs font-mono font-bold text-[#7E5322] uppercase tracking-widest block mb-1">
             EDITORIAL PHOTOGRAPHY & LIVING SPACES // CC LICENSED
@@ -33,7 +33,7 @@ export default function OaklineVisualGallery({ locale }: { locale: Locale }) {
         </div>
 
         {/* Filter categories */}
-        <div className="flex items-center gap-1.5 bg-[#EDE5D7] p-1.5 rounded-xl shrink-0 overflow-x-auto max-w-full">
+        <div className="flex items-center gap-1.5 bg-[#EDE5D7] p-1.5 rounded-xl overflow-x-auto max-w-full w-full lg:w-auto">
           {(['all', 'living', 'dining', 'bedroom', 'craft', 'seating'] as const).map((cat) => {
             const labels = {
               all: isAr ? 'الكل (6)' : 'All (6)',

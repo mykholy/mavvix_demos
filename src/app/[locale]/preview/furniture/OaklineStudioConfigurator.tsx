@@ -201,7 +201,7 @@ export default function OaklineStudioConfigurator({ locale }: { locale: Locale }
   return (
     <div className="bg-[#FAF6EF] rounded-3xl p-6 sm:p-10 border border-[#D8CCBD] shadow-sm space-y-8">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#D8CCBD]">
+      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-[#D8CCBD]">
         <div>
           <span className="text-xs font-mono font-bold text-[#7E5322] uppercase tracking-widest block mb-1">
             TIMBER & TEXTILE ATELIER // INTERACTIVE CONFIGURATOR
@@ -217,7 +217,7 @@ export default function OaklineStudioConfigurator({ locale }: { locale: Locale }
         </div>
 
         {/* Room Typology Filter */}
-        <div className="flex items-center gap-1.5 bg-[#EDE5D7] p-1.5 rounded-xl shrink-0 overflow-x-auto max-w-full">
+        <div className="flex items-center gap-1.5 bg-[#EDE5D7] p-1.5 rounded-xl overflow-x-auto max-w-full w-full lg:w-auto">
           {(['all', 'living', 'dining', 'bedroom', 'workspace'] as const).map((r) => {
             const labels = {
               all: isAr ? 'كافة الغرف' : 'All Rooms',

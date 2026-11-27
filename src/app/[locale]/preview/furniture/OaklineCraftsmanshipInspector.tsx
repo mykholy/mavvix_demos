@@ -124,7 +124,7 @@ export default function OaklineCraftsmanshipInspector({ locale }: { locale: Loca
   return (
     <div className="bg-white rounded-3xl p-6 sm:p-10 border border-[#D8CCBD] shadow-sm space-y-8">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#D8CCBD]">
+      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-[#D8CCBD]">
         <div>
           <span className="text-xs font-mono font-bold text-[#7E5322] uppercase tracking-widest block mb-1">
             WOODCRAFT INTEGRITY & JOINERY SCIENCE
