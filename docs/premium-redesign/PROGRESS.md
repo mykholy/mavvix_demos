@@ -14,8 +14,8 @@ Autonomous transformation of Mavvix's 30 commercial industry websites into world
 | # | Sector / Vertical | Brand Name | Core Creative Direction | Status | PR # / Branch | Visual QA | Verification Date |
 |---|-------------------|------------|-------------------------|--------|---------------|-----------|-------------------|
 | 1 | `interiors-kitchens` | Forma Atelier | Luxury Italian minimalist cabinetry & spatial planning studio. Asymmetric photo hero, interactive 4-option layout studio, walnut/marble/brass materials. | **VERIFIED (DONE)** | PR #14 (`feat/premium-forma-editorial`) | Pass (106 scoped assertions, 6 licensed WebP assets) | 2026-11-27 |
-| 2 | `construction` | Atlas Structures | Heavy engineering, high-end commercial fit-outs & civil contracting. Technical blueprint rhythm, dark charcoal `#192027`, concrete `#DED9CF`, copper orange `#D97935`. Interactive Tender & BOQ Scope Configurator. | **IN PROGRESS** | `feat/premium-atlas` | Pending | Target: 2026-11-27 |
-| 3 | `furniture` | Oakline Living | Bespoke artisanal timber, architectural living spaces, room curation & finish customization. | **QUEUED** | `feat/premium-oakline` | Pending | - |
+| 2 | `construction` | Atlas Structures | Heavy engineering, high-end commercial fit-outs & civil contracting. Technical blueprint rhythm, dark charcoal `#192027`, concrete `#F2EFE9`, burnt copper `#B85629` / `#9C4318`. Interactive Dossier Console, Engineering Standards Grid, and Tender Scope Wizard. | **VERIFIED (DONE)** | PR #15 (`feat/premium-atlas`) | Pass (Clean install, dependency audit, Playwright/axe chromium-visual pass) | 2026-11-27 |
+| 3 | `furniture` | Oakline Living | Bespoke artisanal timber, architectural living spaces, room curation & finish customization. | **IN PROGRESS** | `feat/premium-oakline` | Pending | Target: 2026-11-27 |
 | 4 | `real-estate` | Meridian Residences | Cinematic luxury development, masterplan discovery, panoramic views & installment calculator. | **QUEUED** | `feat/premium-meridian` | Pending | - |
 | 5 | `dental` | Lumen Dental | High-end aesthetic dentistry, implantology, sterile clinical elegance & patient preference intake. | **QUEUED** | `feat/premium-lumen` | Pending | - |
 | 6 | `car-detailing` | GlossBay | High-end automotive detailing, paint correction, ceramic & PPF configurator. | **QUEUED** | `feat/premium-glossbay` | Pending | - |
@@ -57,3 +57,4 @@ Autonomous transformation of Mavvix's 30 commercial industry websites into world
 
 - **2026-11-27:** Baseline audit completed. Fixed typo `prefault` -> `default` in `src/app/api/portfolio/[vertical]/route.ts`. 77/77 unit tests passing, typecheck 100% green.
 - **2026-11-27:** Forma Atelier verified as benchmark standard.
+- **2026-11-27:** Atlas Structures (`construction`) PR #15 merged to `main`. Passed `dependency-audit`, `clean-install`, unit tests (78/78), Next.js production build (1,176 pages), and Playwright/axe `chromium-visual` with zero WCAG AA violations. 6 self-hosted WebP assets with SHA-256 provenance manifests verified.
