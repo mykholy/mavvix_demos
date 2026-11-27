@@ -7,6 +7,9 @@ import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
 import { getDentalServices, getDentalPractitioners, getEditorialPosts, getDentalLocations } from '@/lib/db/repositories';
 import DentalHomeFinder from './DentalHomeFinder';
+import LumenServiceCalibrator from './LumenServiceCalibrator';
+import LumenSterilizationStandard from './LumenSterilizationStandard';
+import LumenVisualGallery from './LumenVisualGallery';
 import {
   Calendar, ShieldCheck, HeartHandshake, Sparkles, Clock, CheckCircle2,
   ChevronRight, ArrowRight, ArrowLeft, VolumeX, Eye, Smile, HelpCircle
@@ -157,15 +160,10 @@ export default async function DentalHomePage(
           </div>
         </div>
       </section>
-      <figure className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8 sm:my-12">
-        <div className="grid grid-cols-12 gap-3 sm:gap-5 rounded-[2rem] overflow-hidden shadow-[0_20px_65px_rgba(0,0,0,0.12)] bg-white p-2 sm:p-3">
-          <SectorPhoto sector="dental" secondary alt="" className="col-span-8 h-52 sm:h-[340px] rounded-[1.5rem]" />
-          <SectorPhoto sector="dental" alt="" className="col-span-4 h-52 sm:h-[340px] rounded-[1.5rem]" />
-        </div>
-        <figcaption className="text-[11px] mt-3 opacity-90 text-center px-4">
-          {isAr ? 'صور فوتوغرافية مرجعية لاتجاه التصميم، وليست توثيقًا لمشروعات أو منشآت هذه العلامة' : 'Licensed editorial art direction — not documentation of this brand’s real facilities or work'}
-        </figcaption>
-      </figure>
+      {/* Bespoke Interactive Signature Module: Clinical Treatment Pathways & Comfort Protocols */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <LumenServiceCalibrator locale={locale} />
+      </section>
 
 
       {/* Signature Differentiator 1: Care Navigator / Service Finder */}
@@ -236,6 +234,14 @@ export default async function DentalHomePage(
           </div>
         </div>
       </section>
+
+      {/* Bespoke Interactive Module: European EN 13060 Class B Sterilization & Hygiene Standard */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <LumenSterilizationStandard locale={locale} />
+      </section>
+
+      {/* Bespoke Clinical Suite Archive & Visual Provenance */}
+      <LumenVisualGallery locale={locale} />
 
       {/* Featured Clinical Specialists */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

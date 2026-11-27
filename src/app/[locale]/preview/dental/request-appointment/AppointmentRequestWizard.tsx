@@ -452,6 +452,7 @@ export default function AppointmentRequestWizard({
               <input
                 type="text"
                 required
+                aria-label={isAr ? 'الاسم بالكامل' : 'Full name'}
                 value={contactName}
                 onChange={e => setContactName(e.target.value)}
                 placeholder={isAr ? 'مثال: سارة محمد (عرض تجريبي)' : 'e.g., Sarah Jenkins (Demo Guest)'}
@@ -467,6 +468,7 @@ export default function AppointmentRequestWizard({
                 <input
                   type="tel"
                   required
+                  aria-label={isAr ? 'رقم الهاتف' : 'Phone number'}
                   value={contactPhone}
                   onChange={e => setContactPhone(e.target.value)}
                   placeholder="+20 100 000 0000"
@@ -480,6 +482,7 @@ export default function AppointmentRequestWizard({
                 </label>
                 <input
                   type="email"
+                  aria-label={isAr ? 'البريد الإلكتروني' : 'Email address'}
                   value={contactEmail}
                   onChange={e => setContactEmail(e.target.value)}
                   placeholder="demo@mavvix.test"
@@ -494,6 +497,7 @@ export default function AppointmentRequestWizard({
               </label>
               <textarea
                 rows={2}
+                aria-label={isAr ? 'ملاحظات تنظيمية لوجستية' : 'Logistical notes'}
                 value={generalNote}
                 onChange={e => setGeneralNote(e.target.value)}
                 placeholder={isAr ? 'مثال: أفضل الحضور برفقة طفلي الصغير، أحتاج كرسي متحرك' : 'e.g., Requesting wheelchair access assistance upon arrival'}

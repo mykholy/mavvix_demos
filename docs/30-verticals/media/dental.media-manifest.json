@@ -1,0 +1,92 @@
+{
+  "vertical": "dental",
+  "brand": "Lumen Dental",
+  "updated_at": "2026-11-27",
+  "policy": "Self-hosted, high-resolution WebP photographic assets exclusively from verified CC0/CC-BY Wikimedia Commons sources. Zero external runtime network requests.",
+  "assets": [
+    {
+      "id": "operatory",
+      "file": "/assets/portfolio/dental/operatory.webp",
+      "width": 1800,
+      "height": 1350,
+      "byte_size": 311612,
+      "sha256": "3c307fa8bf9d72bfdc4ee1d2c47eead6f72556526f5e9e63524711e1dabbc033",
+      "title_en": "Ergonomic clinical dental operatory suite with daylight illumination",
+      "title_ar": "جناح عيادة أسنان متطور ومريح مع إضاءة طبيعية وتجهيز مريح للمريض",
+      "author": "Washuotaku",
+      "license": "CC BY 4.0 International",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "source_page": "https://commons.wikimedia.org/wiki/File:A_dental_chair_in_a_dentist_clinic_in_North_Carolina,_United_States.jpg"
+    },
+    {
+      "id": "suite",
+      "file": "/assets/portfolio/dental/suite.webp",
+      "width": 1800,
+      "height": 1350,
+      "byte_size": 317698,
+      "sha256": "72d5da05b2f69e9a8742ac3d74272c58b67cd5194eb599790b380d6f8baa4bb4",
+      "title_en": "Modern dental care chair and sterile procedure environment",
+      "title_ar": "مقعد رعاية أسنان متكامل وبيئة عمل معقمة ومريحة للمريض",
+      "author": "Washuotaku",
+      "license": "CC BY-SA 4.0 International",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Dental_chair_in_a_dentist_clinic.jpg"
+    },
+    {
+      "id": "lounge",
+      "file": "/assets/portfolio/dental/lounge.webp",
+      "width": 1800,
+      "height": 1350,
+      "byte_size": 255984,
+      "sha256": "deb7cfc38bd9e6205ec282a7cc0231cc38a8ba4cdd1ac98d898a69ee02a79f27",
+      "title_en": "Calm and soothing patient reception lounge with natural timber seating",
+      "title_ar": "استراحة مرضى هادئة ومريحة بأثاث خشبي طبيعي وإضاءة خافتة للاسترخاء",
+      "author": "Washuotaku",
+      "license": "CC BY 4.0 International",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "source_page": "https://commons.wikimedia.org/wiki/File:A_waiting_room_at_a_medical_healthcare_clinic,_doctor%27s_office,_hospital.jpg"
+    },
+    {
+      "id": "consultation",
+      "file": "/assets/portfolio/dental/consultation.webp",
+      "width": 1800,
+      "height": 1350,
+      "byte_size": 107818,
+      "sha256": "e0d1bb7684a955037f886de9afc9fa0632629aabcc37f8b926fcca3d70279412",
+      "title_en": "Private clinical consultation and diagnostics suite",
+      "title_ar": "جناح استشارة سريرية وتشخيص متقدم لمناقشة خطة العلاج بخصوصية",
+      "author": "Infrogmation of New Orleans",
+      "license": "CC BY-SA 4.0 International",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Medical_office_on_Johnson_Street,_New_Orleans_October_2025_-_Exam_Room.jpg"
+    },
+    {
+      "id": "hygiene",
+      "file": "/assets/portfolio/dental/hygiene.webp",
+      "width": 1800,
+      "height": 1012,
+      "byte_size": 35216,
+      "sha256": "6b5df8230a1b01ab2f583a376d99b2cd2c89eb581e5e50d9b69f0f761d2bfd1a",
+      "title_en": "Surgically sterile precision dental diagnostic mirror and inspection tools",
+      "title_ar": "مرآة تشخيصية وأدوات فحص دقيقة معقمة جراحيًا لطب الأسنان الوقائي",
+      "author": "Gerd Fahrenhorst",
+      "license": "CC BY-SA 4.0 International",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Dental_mirror.jpg"
+    },
+    {
+      "id": "prosthetics",
+      "file": "/assets/portfolio/dental/prosthetics.webp",
+      "width": 1800,
+      "height": 1533,
+      "byte_size": 194170,
+      "sha256": "6594b863c2cf9b4c9d6dba88cead3768ff9dd7fec91dbf28cc9fa9c64237afb7",
+      "title_en": "Precision implant-retained anatomical dental model for treatment planning",
+      "title_ar": "نموذج تشريحي لزراعة وتثبيت الجسور السنية لتوضيح مسار الخطة العلاجية",
+      "author": "Dr. Parneet Sehgal",
+      "license": "CC BY-SA 3.0 Unported",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Implant_retained_bridge_model.jpg"
+    }
+  ]
+}
