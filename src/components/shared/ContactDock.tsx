@@ -307,7 +307,7 @@ export function ContactDock({
           }`}
         >
           {!expanded && (
-            <span className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 opacity-30 blur-sm group-hover:opacity-60 transition duration-500 -z-10 animate-pulse-subtle" />
+            <span className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 opacity-30 blur-sm group-hover:opacity-60 transition duration-500 -z-10 animate-pulse-subtle" />
           )}
 
           {expanded ? (
