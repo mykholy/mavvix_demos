@@ -1,6 +1,8 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
 import { DatabaseSync } from 'node:sqlite';
+import fs from 'node:fs';
+import crypto from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -219,5 +221,33 @@ describe('08 — Academy (Nova Learning / نوفا للتعلم) Unit Tests', ()
     assert.ok(content.transcript_en && content.transcript_en.length > 100, 'Must have detailed EN transcript');
     assert.ok(content.exercise_ar, 'Must have AR exercise directive');
     assert.ok(content.exercise_en, 'Must have EN exercise directive');
+  });
+
+  test('Nova Learning: Six local WebP assets match manifest and verified SHA-256 checksums', () => {
+    const manifestPath = path.join(rootDir, 'docs', '30-verticals', 'media', 'academy.media-manifest.json');
+    assert.ok(fs.existsSync(manifestPath), 'academy.media-manifest.json must exist');
+
+    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    assert.equal(manifest.sector, 'academy');
+    assert.equal(manifest.brand, 'Nova Learning');
+    assert.equal(manifest.assets.length, 6, 'Must document exactly 6 photographic assets');
+
+    for (const a of manifest.assets) {
+      const assetPath = path.join(rootDir, 'public', a.local_path.replace(/^\//, ''));
+      assert.ok(fs.existsSync(assetPath), `Asset file ${a.local_path} must exist locally`);
+
+      const stat = fs.statSync(assetPath);
+      assert.equal(stat.size, a.bytes, `File size for ${a.id} must match manifest bytes`);
+
+      const buf = fs.readFileSync(assetPath);
+      const isRiffWebp =
+        buf.length >= 12 &&
+        buf.toString('ascii', 0, 4) === 'RIFF' &&
+        buf.toString('ascii', 8, 12) === 'WEBP';
+      assert.ok(isRiffWebp, `Asset ${a.filename} must be a valid RIFF/WEBP binary`);
+
+      const hash = crypto.createHash('sha256').update(buf).digest('hex');
+      assert.equal(hash, a.sha256, `SHA-256 for ${a.id} must match manifest`);
+    }
   });
 });

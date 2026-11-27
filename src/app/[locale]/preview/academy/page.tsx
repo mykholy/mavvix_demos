@@ -6,6 +6,9 @@ import React from 'react';
 import Link from 'next/link';
 import { getAcademyCourses, getAcademyTracks, getAcademyInstructors, getEditorialPosts } from '@/lib/db/repositories';
 import type { Locale } from '@/lib/i18n/config';
+import { NovaVisualAtelier } from './NovaVisualAtelier';
+import { NovaCurriculumCalibrator } from './NovaCurriculumCalibrator';
+import { NovaProductionEngineeringLab } from './NovaProductionEngineeringLab';
 
 export async function generateMetadata(props: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const params = await props.params;
@@ -171,6 +174,13 @@ export default async function AcademyHomePage({
           ))}
         </div>
       </section>
+
+      {/* Signature Interactive Tools: Visual Atelier, Curriculum Calibrator, Production Engineering Lab */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        <NovaVisualAtelier locale={loc} />
+        <NovaCurriculumCalibrator locale={loc} />
+        <NovaProductionEngineeringLab locale={loc} />
+      </div>
 
       {/* Featured Curricula Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
