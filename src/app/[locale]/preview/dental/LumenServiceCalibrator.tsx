@@ -176,9 +176,9 @@ export default function LumenServiceCalibrator({ locale }: { locale: Locale }) {
   const photo = lumenPhotos.find((p) => p.id === activePathway.photoId) || lumenPhotos[0];
 
   return (
-    <div className="bg-white rounded-3xl p-6 sm:p-10 border border-[#CBDCD5] shadow-sm space-y-8">
+    <div className="bg-white rounded-3xl p-6 sm:p-10 border border-[#CBDCD5] shadow-sm space-y-8 overflow-hidden">
       {/* Header */}
-      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-[#CBDCD5]">
+      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-[#CBDCD5] w-full min-w-0">
         <div>
           <span className="text-xs font-mono font-bold text-[#193A39] uppercase tracking-widest block mb-1">
             CLINICAL PATHWAYS & SPECIALIST PROTOCOLS
@@ -194,7 +194,7 @@ export default function LumenServiceCalibrator({ locale }: { locale: Locale }) {
         </div>
 
         {/* Pathway Selector Bar */}
-        <div className="flex items-center gap-1.5 bg-[#E4EFEA] p-1.5 rounded-xl overflow-x-auto max-w-full w-full lg:w-auto">
+        <div className="flex flex-wrap items-center gap-1.5 bg-[#E4EFEA] p-1.5 rounded-xl max-w-full">
           {CLINICAL_PATHWAYS.map((item) => {
             const isSelected = item.id === activeId;
             return (
@@ -202,7 +202,7 @@ export default function LumenServiceCalibrator({ locale }: { locale: Locale }) {
                 key={item.id}
                 type="button"
                 onClick={() => setActiveId(item.id)}
-                className={`text-xs font-bold px-3 py-1.5 rounded-lg transition-all whitespace-nowrap ${
+                className={`text-xs font-bold px-3 py-1.5 rounded-lg transition-all ${
                   isSelected
                     ? 'bg-[#193A39] text-white shadow-sm'
                     : 'text-[#3D5C58] hover:text-[#193A39] hover:bg-white'

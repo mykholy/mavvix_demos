@@ -22,9 +22,9 @@ export default function LumenVisualGallery({ locale }: { locale: Locale }) {
     : lumenPhotos.filter((p) => p.category === categoryFilter);
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 overflow-hidden">
       {/* Header */}
-      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-[#CBDCD5]">
+      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-[#CBDCD5] w-full min-w-0">
         <div>
           <span className="text-xs font-mono font-bold text-[#193A39] uppercase tracking-widest block mb-1">
             CLINICAL SUITE ARCHIVE // LICENSED PHOTOGRAPHY
@@ -40,7 +40,7 @@ export default function LumenVisualGallery({ locale }: { locale: Locale }) {
         </div>
 
         {/* Filter categories */}
-        <div className="flex items-center gap-1.5 bg-[#E4EFEA] p-1.5 rounded-xl overflow-x-auto max-w-full w-full lg:w-auto">
+        <div className="flex flex-wrap items-center gap-1.5 bg-[#E4EFEA] p-1.5 rounded-xl max-w-full">
           {(['all', 'operatory', 'suite', 'lounge', 'consultation', 'hygiene', 'prosthetics'] as const).map((cat) => {
             const labels = {
               all: isAr ? 'الكل (6)' : 'All (6)',
@@ -57,7 +57,7 @@ export default function LumenVisualGallery({ locale }: { locale: Locale }) {
                 key={cat}
                 type="button"
                 onClick={() => setCategoryFilter(cat)}
-                className={`text-xs font-bold px-3 py-1.5 rounded-lg transition-all whitespace-nowrap ${
+                className={`text-xs font-bold px-3 py-1.5 rounded-lg transition-all ${
                   active
                     ? 'bg-[#193A39] text-white shadow-sm'
                     : 'text-[#3D5C58] hover:text-[#193A39] hover:bg-white'
