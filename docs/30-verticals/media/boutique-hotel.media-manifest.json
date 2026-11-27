@@ -16,6 +16,38 @@
       "sha256": "af1663b00c1e057b60f7fcc40c342d465723edae6cbb374e3d22000cd11db394",
       "bytes": 201826,
       "changes": "Resized and WebP encoded; display may crop. Adapted image remains CC BY-SA 4.0. Independent editorial photograph, not Oasis property."
+    },
+    {
+      "id": "oasis-dining",
+      "source_page": "https://commons.wikimedia.org/wiki/File:TableSetting_20240504_073606.jpg",
+      "author": "Ka23 13",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/TableSetting_20240504_073606.jpg",
+      "original_dimensions": "4608x2592",
+      "original_sha1": "025b96be0abacf3ecee7cf3c3d77dc43e8686a18",
+      "source_sha1_verified": false,
+      "local": "/assets/portfolio/oasis-dining.webp",
+      "dimensions": "1600x900",
+      "sha256": "4cbb571d71a5e52a3447a29c9f5fb658e3c0ab42971226458345c508e1059ed6",
+      "bytes": 61644,
+      "changes": "Resized and WebP encoded; display may crop. Adapted image retains original CC BY-SA licence. Independent editorial photography, not Oasis property."
+    },
+    {
+      "id": "oasis-courtyard",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Riad_Maroc_034.JPG",
+      "author": "Arnaud 25",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Riad_Maroc_034.JPG",
+      "original_dimensions": "1600x1200",
+      "original_sha1": "2988732a3bc4227bbc070756d3006f6c923b0eaa",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/oasis-courtyard.webp",
+      "dimensions": "1600x1200",
+      "sha256": "3dcae254f59fa21a5cabf3811e798147806f8a94d4db4d1dc0bf3c4b5d774d70",
+      "bytes": 275734,
+      "changes": "Resized and WebP encoded; display may crop. Adapted image retains original CC BY-SA licence. Independent editorial photography, not Oasis property."
     }
   ]
 }
