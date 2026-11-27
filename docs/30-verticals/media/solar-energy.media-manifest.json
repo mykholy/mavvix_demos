@@ -1,0 +1,37 @@
+{
+  "vertical": "solar-energy",
+  "assets": [
+    {
+      "id": "voltedge-farm",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Photovoltaic_Panels_Reap_Solar_Energy_on_Farms_(20240809-USDA-RD-DCK-0329).jpg",
+      "author": "David Kosling / USDA",
+      "license": "Public domain (US government work)",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Photovoltaic_Panels_Reap_Solar_Energy_on_Farms_%2820240809-USDA-RD-DCK-0329%29.jpg",
+      "original_dimensions": "4000x3000",
+      "original_sha1": "5e17ada10e513b72209cd94b8ff9f0c0ed0def5e",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/voltedge-farm.webp",
+      "dimensions": "1600x1200",
+      "sha256": "fb9aad55ac62a025695a4acbcbf31af0e1fcaf14985e3e42002e91b2f470b856",
+      "bytes": 628650,
+      "changes": "Resized and WebP encoded; display may crop. Original license retained for adapted image. Independent editorial photograph, not a VoltEdge project."
+    },
+    {
+      "id": "voltedge-rooftop",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Rooftop_solar_photovoltaic_installation.jpg",
+      "author": "Marta Victoria",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Rooftop_solar_photovoltaic_installation.jpg",
+      "original_dimensions": "1600x1079",
+      "original_sha1": "17a3d9fc96b1b7e1dcbf57f8e3aadf3c2918ea61",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/voltedge-rooftop.webp",
+      "dimensions": "1600x1079",
+      "sha256": "3bf383b442219cb20429483fca343e00f09cef88f4ac3753c89206019fa6106c",
+      "bytes": 410302,
+      "changes": "Resized and WebP encoded; display may crop. Original license retained for adapted image. Independent editorial photograph, not a VoltEdge project."
+    }
+  ]
+}

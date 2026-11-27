@@ -1,0 +1,401 @@
+{
+  "slug": "solar-energy",
+  "brand": "VoltEdge Energy",
+  "classification": "fictional_portfolio_concept_no_engineering_service",
+  "categories": [
+    "generation",
+    "storage",
+    "support"
+  ],
+  "services": [
+    {
+      "slug": "commercial-rooftop",
+      "category": "generation",
+      "rank": 1,
+      "title": {
+        "ar": "أسطح المنشآت التجارية",
+        "en": "Commercial rooftop"
+      },
+      "summary": {
+        "ar": "استغلال المساحة المتاحة لتغطية جزء من الأحمال النهارية.",
+        "en": "Use available roof area for a portion of daytime demand."
+      },
+      "body": {
+        "ar": "تبدأ دراسة المشروع بمراجعة بيانات استهلاك الكهرباء على مدار اليوم ومساحة السطح والظلال وقدرة الهيكل على التحمل. يحدد مهندس مؤهل التصميم والتوافق الكهربائي بعد المعاينة، ولا تمثل هذه الصفحة تقديراً للإنتاج أو عرضاً مالياً.",
+        "en": "Assess daily electricity demand, usable roof area, shading and structural capacity. Qualified engineers determine system design and electrical compatibility after survey. This page provides neither a production estimate nor a commercial offer."
+      },
+      "checkpoints": {
+        "ar": [
+          "منحنى الأحمال",
+          "المعاينة الإنشائية",
+          "دراسة الربط"
+        ],
+        "en": [
+          "Load profile",
+          "Structural survey",
+          "Connection review"
+        ]
+      }
+    },
+    {
+      "slug": "industrial-solar",
+      "category": "generation",
+      "rank": 2,
+      "title": {
+        "ar": "محطات المصانع",
+        "en": "Industrial solar"
+      },
+      "summary": {
+        "ar": "دراسة أحمال التصنيع ومساحات الأسطح أو الأراضي.",
+        "en": "Assess production loads and available roofs or land."
+      },
+      "body": {
+        "ar": "تختلف متطلبات المصنع مع الورديات وخطوط الإنتاج ونوعية الأحمال. يجب دراسة الاستهلاك الفعلي وتوافق الحماية الكهربائية وتوقيت التنفيذ بما لا يعطل الإنتاج، ثم مراجعة الجدوى والتصاريح مع مقدمي الخدمة المؤهلين.",
+        "en": "Industrial requirements vary by shifts, production lines and load characteristics. Study actual consumption, protection compatibility and work scheduling to avoid disruption, then review feasibility and permissions with qualified providers."
+      },
+      "checkpoints": {
+        "ar": [
+          "الأحمال حسب الورديات",
+          "الحماية والتشغيل",
+          "خطة التنفيذ"
+        ],
+        "en": [
+          "Shift-based demand",
+          "Protection and operation",
+          "Work scheduling"
+        ]
+      }
+    },
+    {
+      "slug": "residential-solar",
+      "category": "generation",
+      "rank": 3,
+      "title": {
+        "ar": "الطاقة الشمسية للمنازل",
+        "en": "Residential solar"
+      },
+      "summary": {
+        "ar": "تقييم الاحتياج اليومي والمساحات المتاحة قبل اختيار النظام.",
+        "en": "Assess daily demand and available space before selecting a system."
+      },
+      "body": {
+        "ar": "يحتاج المنزل إلى تقييم الاستهلاك الفعلي ومساحة السطح والظلال وحالة الشبكة. يوضح المختص ما إذا كان النظام المتصل بالشبكة أو الهجين ملائماً، وأي موافقات أو تجهيزات إضافية مطلوبة. لا يُعد النموذج عرض سعر أو تصريحاً بالتركيب.",
+        "en": "Review household demand, roof space, shading and grid conditions. A specialist determines whether grid-connected or hybrid options fit and what approvals or upgrades may be required. The enquiry is not a quote or installation permission."
+      },
+      "checkpoints": {
+        "ar": [
+          "فواتير الاستهلاك",
+          "ملاءمة السطح",
+          "خيارات النظام"
+        ],
+        "en": [
+          "Consumption records",
+          "Roof suitability",
+          "System options"
+        ]
+      }
+    },
+    {
+      "slug": "agricultural-solar",
+      "category": "generation",
+      "rank": 4,
+      "title": {
+        "ar": "الطاقة للزراعة والمزارع",
+        "en": "Agricultural solar"
+      },
+      "summary": {
+        "ar": "دراسة احتياجات تشغيل المزرعة على مدار الموسم.",
+        "en": "Assess farm operating needs throughout the season."
+      },
+      "body": {
+        "ar": "يحتاج المشروع الزراعي إلى مراجعة طبيعة الأحمال وساعات التشغيل وموسمية الطلب والموارد المتاحة. يختار المهندس الحل بعد تقييم الموقع والمعدات، دون افتراض قدرة مضخة أو إنتاج أو توفير مضمون من نموذج مختصر.",
+        "en": "Agricultural projects require review of load types, operating hours, seasonal demand and site resources. Engineers select a solution after assessing equipment and location; a short questionnaire cannot guarantee pump capacity, generation or savings."
+      },
+      "checkpoints": {
+        "ar": [
+          "الأحمال الموسمية",
+          "الموقع والمعدات",
+          "تقييم التشغيل"
+        ],
+        "en": [
+          "Seasonal demand",
+          "Site and equipment",
+          "Operational assessment"
+        ]
+      }
+    },
+    {
+      "slug": "battery-backup",
+      "category": "storage",
+      "rank": 5,
+      "title": {
+        "ar": "البطاريات والطاقة الاحتياطية",
+        "en": "Battery storage & backup"
+      },
+      "summary": {
+        "ar": "دراسة الأحمال الحرجة ومدة الاستمرارية المطلوبة.",
+        "en": "Assess essential loads and continuity requirements."
+      },
+      "body": {
+        "ar": "يبدأ تقييم التخزين بتحديد الأحمال التي يجب استمرارها، والفترة المطلوبة وظروف التشغيل والسلامة. يجب اعتماد سعة البطاريات ونظام الحماية ومكان التركيب بواسطة مختص؛ لا يوفر الموقع تصميماً كهربائياً أو تعليمات تركيب ذاتي.",
+        "en": "Storage assessment begins with critical loads, required continuity, operating conditions and safety. A qualified specialist specifies capacity, protection and location. This concept does not provide wiring designs or DIY installation instructions."
+      },
+      "checkpoints": {
+        "ar": [
+          "الأحمال الحرجة",
+          "مدة الاستمرارية",
+          "اشتراطات السلامة"
+        ],
+        "en": [
+          "Critical loads",
+          "Continuity duration",
+          "Safety requirements"
+        ]
+      }
+    },
+    {
+      "slug": "hybrid-offgrid",
+      "category": "storage",
+      "rank": 6,
+      "title": {
+        "ar": "الأنظمة الهجينة والمستقلة",
+        "en": "Hybrid & off-grid"
+      },
+      "summary": {
+        "ar": "مراجعة مصادر الطاقة المتاحة وأولوية استمرارية التشغيل.",
+        "en": "Review available energy sources and continuity priorities."
+      },
+      "body": {
+        "ar": "تحتاج المواقع البعيدة أو ذات الشبكة غير المستقرة إلى تقييم مصادر الطاقة والأحمال وتغيرها على مدار اليوم. يجب أن يراجع المختص ملاءمة النظام الهجين أو المستقل وإدارة التشغيل والحماية، دون وعد باستقلال كامل أو زمن تشغيل محدد.",
+        "en": "Remote or unreliable-grid sites need assessment of energy sources and load variation. Specialists review hybrid or off-grid suitability, operating strategy and protection, without promising complete independence or a fixed runtime."
+      },
+      "checkpoints": {
+        "ar": [
+          "حالة الشبكة",
+          "تنوع مصادر الطاقة",
+          "مراجعة الحماية"
+        ],
+        "en": [
+          "Grid conditions",
+          "Available energy sources",
+          "Protection review"
+        ]
+      }
+    },
+    {
+      "slug": "energy-audit",
+      "category": "support",
+      "rank": 7,
+      "title": {
+        "ar": "تقييم الطاقة والجدوى",
+        "en": "Energy audit & feasibility"
+      },
+      "summary": {
+        "ar": "جمع بيانات أولية تساعد على تحديد نطاق الدراسة الفنية.",
+        "en": "Gather initial inputs to define the engineering study."
+      },
+      "body": {
+        "ar": "تبدأ الجدوى بمراجعة الاستهلاك والتعرفة وساعات التشغيل والموقع والقيود. يقارن المهندس سيناريوهات الإنتاج والتكلفة بعد استخدام بيانات موثوقة وافتراضات موثقة. أي نتائج لاحقة تتطلب دراسة خاصة ولا يمكن ضمان فترة استرداد.",
+        "en": "Feasibility starts with consumption, tariff, operating hours, site and constraints. Engineers compare generation and cost scenarios using verified inputs and documented assumptions. Results require a site-specific study; payback cannot be guaranteed."
+      },
+      "checkpoints": {
+        "ar": [
+          "البيانات الأساسية",
+          "الافتراضات والقيود",
+          "مراجعة الجدوى"
+        ],
+        "en": [
+          "Baseline data",
+          "Assumptions and constraints",
+          "Feasibility review"
+        ]
+      }
+    },
+    {
+      "slug": "operations-maintenance",
+      "category": "support",
+      "rank": 8,
+      "title": {
+        "ar": "التشغيل والصيانة",
+        "en": "Operations & maintenance"
+      },
+      "summary": {
+        "ar": "تقييم حالة المنظومة ومؤشرات الأداء وخطة المتابعة.",
+        "en": "Review system condition, performance indicators and maintenance scope."
+      },
+      "body": {
+        "ar": "تتطلب الصيانة مراجعة تاريخ المنظومة والمعدات والضمانات والبيانات التشغيلية. يحدد مقدم الخدمة المؤهل إجراءات الفحص والعمل الآمن ونطاق المسؤوليات. لا يقدم الموقع تعليمات للعمل على منظومة كهربائية حية أو ضمان أداء.",
+        "en": "Maintenance requires review of system history, equipment, warranties and operating data. Qualified providers define inspections, safe work and responsibilities. This site offers no instructions for work on energized systems and no performance guarantees."
+      },
+      "checkpoints": {
+        "ar": [
+          "حالة المعدات",
+          "مراجعة الضمانات",
+          "خطة متابعة آمنة"
+        ],
+        "en": [
+          "Equipment condition",
+          "Warranty review",
+          "Safe maintenance plan"
+        ]
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slug": "site-survey-checklist",
+      "title": {
+        "ar": "قبل معاينة الموقع",
+        "en": "Before a site survey"
+      },
+      "summary": {
+        "ar": "جهز معلومات الاستهلاك والمساحة وساعات التشغيل.",
+        "en": "Prepare demand, space and operating-hour information."
+      },
+      "body": {
+        "ar": "اجمع فواتير الاستهلاك المتاحة وحدد نوع الموقع وأوقات التشغيل. لا ترسل المستندات أو العناوين الحساسة في نموذج عام، واطلب من مهندس مؤهل مراجعة الهيكل والظلال والحماية والتصاريح.",
+        "en": "Collect available consumption records and identify site type and operating hours. Do not upload sensitive records or addresses to a public form. Ask a qualified engineer to review structure, shading, protection and permissions."
+      }
+    },
+    {
+      "slug": "grid-vs-hybrid",
+      "title": {
+        "ar": "المتصل بالشبكة أم الهجين؟",
+        "en": "Grid-connected or hybrid?"
+      },
+      "summary": {
+        "ar": "الاختيار يعتمد على احتياجات التشغيل وليس الألواح فقط.",
+        "en": "The choice depends on operating needs, not panels alone."
+      },
+      "body": {
+        "ar": "قارن حالة الشبكة والأحمال الحرجة والميزانية وشروط الربط مع مختص. قد تضيف البطاريات مرونة لكنها تتطلب دراسة السعة والسلامة والتكلفة. لا تعتمد على تقدير عام لتحديد نظام كهربائي.",
+        "en": "Compare grid conditions, critical loads, budget and connection requirements with a specialist. Batteries may add flexibility but require capacity, safety and cost review. Do not use a generic estimate to specify an electrical system."
+      }
+    },
+    {
+      "slug": "understand-feasibility",
+      "title": {
+        "ar": "كيف تقرأ دراسة الجدوى؟",
+        "en": "Understanding feasibility"
+      },
+      "summary": {
+        "ar": "راجع الافتراضات بدلاً من الاكتفاء بفترة الاسترداد.",
+        "en": "Review assumptions, not only payback."
+      },
+      "body": {
+        "ar": "اسأل عن مصادر بيانات الاستهلاك والإشعاع الشمسي وخسائر المنظومة والتعرفة وتكاليف الصيانة والتمويل. اطلب سيناريوهات بديلة ووضح ما هو تقديري وما هو تعاقدي قبل اتخاذ قرار الاستثمار.",
+        "en": "Ask about consumption and solar resource data, system losses, tariff, maintenance and financing. Request alternative scenarios and clarify what is estimated versus contractual before making an investment decision."
+      }
+    }
+  ],
+  "faq": [
+    {
+      "question": {
+        "ar": "هل التقييم عرض سعر؟",
+        "en": "Is the assessment a quote?"
+      },
+      "answer": {
+        "ar": "لا؛ هو طلب دراسة مبدئي يحتاج معاينة هندسية.",
+        "en": "No; it is a preliminary enquiry requiring engineering review."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل يمكن ضمان نسبة توفير؟",
+        "en": "Can savings be guaranteed?"
+      },
+      "answer": {
+        "ar": "لا، تعتمد على الاستهلاك والموقع والتعرفة والتصميم.",
+        "en": "No; they depend on demand, location, tariff and design."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل أحتاج بطاريات؟",
+        "en": "Do I need batteries?"
+      },
+      "answer": {
+        "ar": "يتحدد ذلك بعد دراسة الأحمال وحالة الشبكة واحتياج الاستمرارية.",
+        "en": "That depends on loads, grid conditions and continuity requirements."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل أرفع فاتورة الكهرباء؟",
+        "en": "Should I upload my electricity bill?"
+      },
+      "answer": {
+        "ar": "لا، النموذج يطلب نطاق الاستهلاك فقط؛ استخدم قناة آمنة مع مقدم الخدمة.",
+        "en": "No, the form requests a usage band only; use a secure provider channel."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل يتم حجز معاينة مؤكدة؟",
+        "en": "Is a site visit confirmed?"
+      },
+      "answer": {
+        "ar": "لا، رقم المرجع يؤكد حفظ الطلب للمراجعة فقط.",
+        "en": "No; the reference confirms only that the enquiry was saved."
+      }
+    }
+  ],
+  "media": [
+    {
+      "role": "farm-hero",
+      "credit": "David Kosling / USDA",
+      "license": "Public domain (US government work)",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Photovoltaic_Panels_Reap_Solar_Energy_on_Farms_(20240809-USDA-RD-DCK-0329).jpg",
+      "url": "/assets/portfolio/voltedge-farm.webp",
+      "originalSha1": "5e17ada10e513b72209cd94b8ff9f0c0ed0def5e",
+      "width": 4000,
+      "height": 3000,
+      "alt": {
+        "ar": "مصفوفة ألواح شمسية في مزرعة أمريكية، صورة مستقلة من وزارة الزراعة الأمريكية",
+        "en": "US farm solar array, independent USDA editorial photograph"
+      }
+    },
+    {
+      "role": "roof-editorial",
+      "credit": "Marta Victoria",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Rooftop_solar_photovoltaic_installation.jpg",
+      "url": "/assets/portfolio/voltedge-rooftop.webp",
+      "originalSha1": "17a3d9fc96b1b7e1dcbf57f8e3aadf3c2918ea61",
+      "width": 1600,
+      "height": 1079,
+      "alt": {
+        "ar": "ألواح شمسية على سطح منزل، صورة مستقلة ليست من مشاريع فولتيج",
+        "en": "Residential rooftop PV, independent editorial photo, not a VoltEdge project"
+      }
+    }
+  ],
+  "siteTypes": [
+    "home",
+    "commercial",
+    "factory",
+    "farm",
+    "other"
+  ],
+  "consumptionBands": [
+    "under-500",
+    "500-1999",
+    "2000-9999",
+    "10000-plus",
+    "unknown"
+  ],
+  "gridTypes": [
+    "connected",
+    "unreliable",
+    "offgrid",
+    "unknown"
+  ],
+  "spaceTypes": [
+    "roof",
+    "land",
+    "both",
+    "unknown"
+  ]
+}

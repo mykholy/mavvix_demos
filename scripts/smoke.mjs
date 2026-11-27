@@ -691,6 +691,19 @@ try {
   const hotelQueue=await get('/admin/portfolio-requests?sector=boutique-hotel',{redirect:'manual'});assert.ok([302,303,307,308,401].includes(hotelQueue.status),'Oasis queue must remain private');
   console.log('PASS: 44 Oasis bilingual routes, date/occupancy/PII validation and idempotent stay preferences');
 
+  const solarRoutes=['','solutions','sectors','process','feasibility','maintenance','guides','faq','about','assessment','solutions/commercial-rooftop','solutions/industrial-solar','solutions/residential-solar','solutions/agricultural-solar','solutions/battery-backup','solutions/hybrid-offgrid','solutions/energy-audit','solutions/operations-maintenance','guides/site-survey-checklist','guides/grid-vs-hybrid','guides/understand-feasibility'];
+  for(const lang of ['ar','en'])for(const tail of solarRoutes){
+    const url='/'+lang+'/preview/solar-energy'+(tail?'/'+tail:'');const response=await get(url);assert.equal(response.status,200,'VoltEdge route failed '+url);assert.ok((await response.text()).includes('data-mavvix-contact-dock'),'VoltEdge dock missing '+url);
+  }
+  assert.equal((await get('/en/preview/solar-energy/solutions/unknown')).status,404);
+  const solar={flowType:'solar_assessment_request',clientRequestId:'eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee',guestName:'QA Solar Guest',guestPhone:'01000000000',serviceSlug:'commercial-rooftop',siteType:'commercial',consumptionBand:'2000-9999',gridType:'connected',spaceType:'roof',country:'egypt',consent:true,honeypot:''};
+  const solarEndpoint='/api/portfolio/solar-energy';
+  for(const invalid of [{consent:false},{bill:'PRIVATE'},{address:'PRIVATE'},{siteType:'home'},{consumptionBand:'100000000'},{serviceSlug:'unknown'}])assert.equal((await post(solarEndpoint,{...solar,...invalid})).status,400);
+  const solarSaved=await post(solarEndpoint,solar),solarBody=await solarSaved.json();assert.equal(solarSaved.status,201,'VoltEdge persistence '+JSON.stringify(solarBody));assert.match(solarBody.refNumber,/^MVX-VLT-[A-F0-9]{10}$/);assert.equal(solarBody.status,'pending_operator_confirmation');assert.equal(solarSaved.headers.get('cache-control'),'no-store');
+  const solarDuplicate=await post(solarEndpoint,solar),solarAgain=await solarDuplicate.json();assert.equal(solarDuplicate.status,200);assert.equal(solarAgain.duplicate,true);assert.equal(solarAgain.refNumber,solarBody.refNumber);
+  const solarQueue=await get('/admin/portfolio-requests?sector=solar-energy',{redirect:'manual'});assert.ok([302,303,307,308,401].includes(solarQueue.status),'VoltEdge queue must remain private');
+  console.log('PASS: 42 VoltEdge bilingual routes, scope/PII validation and idempotent assessment');
+
   console.log('PASS: auth guard, flow validation, Academy SQLite progress, trusted ecommerce price, private receipt');
 } catch (error) {
   console.error(error);

@@ -1,3 +1,4 @@
+import { VOLTEDGE } from '@/lib/verticals/solar-energy/data';
 import { OASIS } from '@/lib/verticals/boutique-hotel/data';
 import { CLEARPATH } from '@/lib/verticals/diagnostics-lab/data';
 import { ELYRA } from '@/lib/verticals/skin-clinic/data';
@@ -29,6 +30,7 @@ import {
   Sparkles,
   FlaskConical,
   Hotel,
+  Zap,
   Layers,
   Database,
   Trophy,
@@ -445,6 +447,15 @@ const demos = [
     tagline:{ar:'تجربة اختيار الإقامة ومقارنة الغرف وحفظ التفضيلات',en:'Room discovery, comparison and stay preference enquiry'},
     journeys:[{ar:'ثمانية أنواع إقامة بتفاصيل متخصصة',en:'Eight accommodation dossiers'},{ar:'مقارنة الغرف والضيوف ودليل الوصول والمائدة',en:'Room comparison, party fit, arrival and dining guidance'},{ar:'طلب إقامة محفوظ بالتواريخ والضيوف دون حجز مؤكد',en:'Persisted stay enquiry with dates and occupancy, no confirmed reservation'}],
     features:['Room Comparison','Hospitality Journal','Stay Enquiry']
+  },
+  {
+    number:'28',slug:'solar-energy',
+    name:{ar:'فولتيج — حلول الطاقة الشمسية',en:'VoltEdge Energy — Solar Solutions Website'},
+    sector:{ar:'الطاقة الشمسية والتخزين والدراسات',en:'Solar generation, storage and assessments'},
+    icon:Zap,color:'#12352D',bgColor:'bg-lime-50',borderColor:'border-lime-200',routesCount:21,
+    tagline:{ar:'كتالوج حلول ودراسة نطاق المشروع دون وعود أو أسعار وهمية',en:'Solution discovery and structured project assessment without fabricated prices'},
+    journeys:[{ar:'ثمانية حلول متخصصة للمنازل والمنشآت والمزارع',en:'Eight specialist solution dossiers'},{ar:'مراحل دراسة الموقع والجدوى والصيانة',en:'Site assessment, feasibility and maintenance pathway'},{ar:'طلب دراسة محفوظ بنطاق الاستهلاك والموقع والشبكة',en:'Persisted project scope with demand, site and grid context'}],
+    features:['Solution Directory','Engineering Pathway','Assessment Intake']
   }
 ];
 
@@ -610,6 +621,8 @@ export default async function ShowcasePage(props: Props) {
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#E8EFE5]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Veterinary_Office_with_dog.JPG/1280px-Veterinary_Office_with_dog.JPG" loading="lazy" decoding="async" className="h-full w-full object-cover" alt={isAr?'صورة حقيقية مرخصة لكلب في عيادة بيطرية مستقلة، ليست PawWell':'Real CC0 editorial dog photograph in an unrelated veterinary clinic'}/></div>
                   : d.slug==='law-firm'
                   ? <div className="relative h-52 bg-[#D6CAB8] overflow-hidden"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Canadian_law_books_%2831460630695%29.jpg/1280px-Canadian_law_books_%2831460630695%29.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'كتب قانونية حقيقية من كندا، صورة عامة مرخصة لا تتبع Lexora':'CC0 editorial Canadian law books, not an operating Lexora office'}/></div>
+                  : d.slug==='solar-energy'
+                  ? <div className="relative h-52 bg-[#E0E9DB] overflow-hidden"><img src={VOLTEDGE.media[0].url} loading="lazy" decoding="async" className="w-full h-full object-cover" alt={VOLTEDGE.media[0].alt[locale]}/><span className="absolute bottom-0 inset-x-0 bg-[#12352D] text-white text-[10px] px-2 py-1"><a href={VOLTEDGE.media[0].source} className="underline">David Kosling / USDA</a> · <a href={VOLTEDGE.media[0].licenseUrl} className="underline">Public domain</a> · {isAr?'اقتصاص':'Display crop'}</span></div>
                   : d.slug==='boutique-hotel'
                   ? <div className="relative h-52 bg-[#E7DCC9] overflow-hidden"><img src={OASIS.media[0].url} loading="lazy" decoding="async" className="w-full h-full object-cover" alt={OASIS.media[0].alt[locale]}/><span className="absolute bottom-0 inset-x-0 bg-[#282A25] text-white text-[10px] px-2 py-1"><a href={OASIS.media[0].source} className="underline">Book Elizabeth</a> · <a href={OASIS.media[0].licenseUrl} className="underline">CC BY-SA 4.0</a> · {isAr?'اقتصاص':'Display crop'}</span></div>
                   : d.slug==='diagnostics-lab'
