@@ -1,0 +1,7 @@
+# TradeBridge — sector 30 research, 2026-11-27
+
+- [Cartona](https://cartona.com/) — clear retailer/wholesaler/FMCG marketplace positioning, distinct purchasing audience.
+- [MaxAB](https://www.maxab.io/) — procurement, fulfilment and payment integration; distinguish illustrative catalogue from live commerce.
+- [Sary official app listing](https://apps.apple.com/sa/app/id1341656558) — restaurant, café, hospitality and retailer procurement journeys.
+- [Gumla](https://gumla.com/en) — separate retailer and supplier journeys, sourcing and fulfilment context.
+TradeBridge direction: B2B catalogue and multi-line RFQ, not real marketplace. Deep slate #213044, warm coral #D45D42, pale warm #F8F4EF, ink #26323B. Eight independently authored generic product dossiers, four categories, illustrative SKU/carton units, clear quantity limits and server-calculated unit totals, no money/price/stock promises. Buyer RFQ and separate supplier interest, strict validation, consent and idempotent SQLite pending reference, admin review. Real licensed editorial warehouse/packaging photos with attribution and optimized local assets required; no actual warehouse ownership or supplier affiliation. Commercial launch requires verified business/supplier identity, inventory, product compliance and terms, privacy, pricing and fulfilment. This branch contains isolated data and API only until Talentyx is merged; update to latest main before integrating registry/router/seed and UI.
