@@ -34,7 +34,7 @@ export default async function OaklineLayout(props:{children:React.ReactNode;para
      <span className="min-w-11 min-h-11 w-11 h-11 rounded-full border-2 border-[#685139] grid place-items-center"><Armchair size={25} strokeWidth={1.3}/></span>
      <span className="flex flex-col min-w-0"><strong className="oakline-display text-[25px] sm:text-[32px] leading-none tracking-tight font-medium whitespace-nowrap">OAKLINE<span className="text-[#AD8352]">.</span></strong><span className="text-[9px] sm:text-[10px] tracking-[.16em] sm:tracking-[.28em] text-[#6B5947] font-semibold mt-1">LIVING / BY DESIGN</span></span>
     </Link>
-    <nav aria-label={ar?'القائمة الرئيسية':'Main navigation'} className="hidden xl:flex items-center gap-6 text-xs font-bold text-[#584737]">{nav.map(n=><Link key={n.href} href={n.href} className="hover:text-[#996735]">{n.label}</Link>)}</nav>
+    <nav aria-label={ar?'القائمة الرئيسية':'Main navigation'} className="hidden xl:flex items-center gap-6 text-xs font-bold text-[#584737]">{nav.map(n=><Link key={n.href} href={n.href} className="hover:text-[#7E5322]">{n.label}</Link>)}</nav>
     <div className="flex shrink-0 gap-2 items-center"><Link aria-label={ar?'طلب تسعير أثاث':'Furniture quote basket'} href={oakPath(locale,'quote')} className="min-w-11 min-h-11 px-3 sm:px-6 py-3 bg-[#392C24] text-[#F8F2E9] rounded-full inline-flex items-center justify-center gap-2 text-xs font-extrabold">
       <Leaf size={18}/><span className="hidden sm:inline">{ar?'ابدأ طلب تسعير':'PREPARE A QUOTE'}</span>
      </Link><MobileSectorNav breakpoint="xl" tone="light" links={[...nav,{href:oakPath(locale,'quote'),label:ar?'طلب تسعير':'Quote request'}]}/></div>
