@@ -32,7 +32,7 @@ export default async function PawWellHome(props: { params: Promise<{ locale: Loc
             <h1 className="paw-display text-[clamp(3rem,6vw,6.6rem)] font-black leading-[1.06] mt-7 tracking-tight">
               {ar ? <>كل كائن صغير <em className="not-italic text-[#A65D3B]">يستاهل رعاية كبيرة.</em></> : <>A whole lot of love for <em className="not-italic text-[#A65D3B]">little lives.</em></>}
             </h1>
-            <p className="text-[#45645A] text-base sm:text-lg leading-9 mt-7 max-w-xl">
+            <p className="text-[#2E5246] text-base sm:text-lg leading-9 mt-7 max-w-xl">
               {ar ? 'استكشف ملف الرعاية المناسبة لحيوانك، وجهز الأسئلة قبل الزيارة، وجرّب طلب موعد بشكل منظم. بدون نصائح علاجية عن بعد أو ادعاء تشغيل عيادة فعلية.' : 'Understand the kind of care your pet may need, prepare practical questions and experience a clear nonbinding visit request. No online diagnosis, fictional veterinarians or unverified clinic availability.'}
             </p>
             <div className="flex gap-3 flex-wrap mt-9">
@@ -44,7 +44,7 @@ export default async function PawWellHome(props: { params: Promise<{ locale: Loc
                 {ar ? 'دليل الرعاية' : 'Care guide'}
               </Link>
             </div>
-            <div className="mt-10 inline-flex gap-3 items-center text-xs text-[#52685C]">
+            <div className="mt-10 inline-flex gap-3 items-center text-xs text-[#24463D] font-medium">
               <ShieldCheck size={19} />
               <span>{ar ? 'المعلومة للتثقيف. الفحص والعلاج للطبيب البيطري الحقيقي.' : 'Helpful context, not a substitute for a veterinarian.'}</span>
             </div>

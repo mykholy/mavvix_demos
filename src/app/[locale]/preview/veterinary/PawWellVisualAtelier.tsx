@@ -121,12 +121,12 @@ export function PawWellVisualAtelier({ locale }: { locale: Locale }) {
                 <h3 className="font-extrabold text-base text-[#24463D] mt-2 group-hover:text-[#915736] transition-colors">
                   {isAr ? photo.titleAr : photo.titleEn}
                 </h3>
-                <p className="text-xs text-[#45645A] mt-1 line-clamp-2 leading-relaxed">
+                <p className="text-xs text-[#2E5246] mt-1 line-clamp-2 leading-relaxed">
                   {isAr ? photo.subtitleAr : photo.subtitleEn}
                 </p>
               </div>
 
-              <div className="pt-3 border-t border-[#24463D]/10 flex items-center justify-between text-[11px] text-[#6E887E]">
+              <div className="pt-3 border-t border-[#24463D]/10 flex items-center justify-between text-[11px] text-[#24463D] font-medium">
                 <span>{photo.author}</span>
                 <span className="font-mono">{photo.width} × {photo.height}</span>
               </div>

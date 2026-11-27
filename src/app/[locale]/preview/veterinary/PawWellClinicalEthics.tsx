@@ -170,7 +170,7 @@ export function PawWellClinicalEthics({ locale }: { locale: Locale }) {
                   : 'bg-[#17362D] text-[#DEE8DD] border-[#2E554B] hover:border-[#F3B98E]/50 hover:bg-[#1D4036]'
               }`}
             >
-              <div className="text-[11px] font-mono font-bold uppercase opacity-80">
+              <div className={`text-[11px] font-mono font-bold uppercase ${active ? 'text-[#17362D]' : 'text-[#E2ECE3]'}`}>
                 PILLAR // 0{PILLARS.indexOf(p) + 1}
               </div>
               <div className="font-extrabold text-sm sm:text-base mt-2 line-clamp-2 leading-snug">

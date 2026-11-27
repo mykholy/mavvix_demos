@@ -253,7 +253,7 @@ export function PawWellCareProtocolCalibrator({ locale }: { locale: Locale }) {
         <h2 className="paw-display text-3xl sm:text-5xl font-black text-[#24463D] leading-tight">
           {isAr ? 'بروتوكول الرعاية المخصص لصديقك الأليف' : 'Calibrated Care Protocols for Every Companion'}
         </h2>
-        <p className="text-[#45645A] text-sm sm:text-base leading-relaxed">
+        <p className="text-[#2E5246] text-sm sm:text-base leading-relaxed">
           {isAr
             ? 'تختلف الاحتياجات السريرية والتطعيمات وبرامج الفحص بحسب الفصيلة ومرحلة النمو. استخدم المعاير التفاعلي لاستكشاف المحاور التي يناقشها الطبيب البيطري الحقيقي.'
             : 'Clinical checklists, core immunizations, and screening frequencies vary substantially by species and physiological life stage. Explore evidence-based focus points for your upcoming consultation.'}
@@ -319,7 +319,7 @@ export function PawWellCareProtocolCalibrator({ locale }: { locale: Locale }) {
                 <div className="font-extrabold text-sm sm:text-base text-[#24463D] mt-2">
                   {isAr ? s.titleAr : s.titleEn}
                 </div>
-                <div className="text-xs text-[#5C7A6E] mt-1 font-medium">
+                <div className={`text-xs mt-1 font-medium ${active ? 'text-[#17362D] font-bold' : 'text-[#35584A]'}`}>
                   {isAr ? s.ageSpanAr : s.ageSpanEn}
                 </div>
               </button>
@@ -349,9 +349,9 @@ export function PawWellCareProtocolCalibrator({ locale }: { locale: Locale }) {
               {isAr ? 'قيمة الاستشارة التقديرية' : 'Estimated Visit Range'}
             </div>
             <div className="text-3xl sm:text-4xl font-black text-[#24463D] mt-1">
-              {currentStage.estimatedVisitFeeEgp} <span className="text-sm font-bold text-[#45645A]">{isAr ? 'ج.م' : 'EGP'}</span>
+              {currentStage.estimatedVisitFeeEgp} <span className="text-sm font-bold text-[#24463D]">{isAr ? 'ج.م' : 'EGP'}</span>
             </div>
-            <div className="text-[11px] text-[#6E887E] mt-1">
+            <div className="text-[11px] text-[#24463D] font-medium mt-1">
               {isAr ? 'إرشادية توضيحية لمركز طبي حقيقي' : 'Illustrative concept benchmark'}
             </div>
           </div>
@@ -394,7 +394,7 @@ export function PawWellCareProtocolCalibrator({ locale }: { locale: Locale }) {
 
         {/* CTA & Disclaimer Row */}
         <div className="pt-6 border-t border-[#24463D]/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-xs text-[#52685C] flex items-center gap-2">
+          <div className="text-xs text-[#24463D] font-medium flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 text-[#24463D] shrink-0" />
             <span>{isAr ? 'هذا المعاير لتنظيم الأسئلة وليس بديلاً عن كشف الطبيب البيطري الحقيقي.' : 'Guidance model only. Examinations and prescriptions require a licensed veterinarian.'}</span>
           </div>
