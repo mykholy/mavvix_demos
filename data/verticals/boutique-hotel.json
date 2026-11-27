@@ -1,0 +1,396 @@
+{
+  "slug": "boutique-hotel",
+  "brand": "Oasis & Co",
+  "classification": "fictional_portfolio_concept_no_live_hotel",
+  "categories": [
+    "room",
+    "suite"
+  ],
+  "services": [
+    {
+      "slug": "courtyard-king",
+      "category": "room",
+      "maxGuests": 2,
+      "rank": 1,
+      "title": {
+        "ar": "غرفة كينغ بالفناء",
+        "en": "Courtyard King"
+      },
+      "summary": {
+        "ar": "سرير كينغ ومساحة للراحة لشخصين.",
+        "en": "King-bed concept for two guests."
+      },
+      "body": {
+        "ar": "اختيار هادئ لإقامة قصيرة لشخص أو شخصين، مع تصور نافذة على فناء داخلي ومكان للقراءة. اطلب تأكيد مساحة الغرفة والإطلالة وإمكانية الوصول من الفندق الحقيقي قبل الحجز.",
+        "en": "A quiet short-stay concept for one or two guests, with a courtyard-facing window and reading nook. Confirm room dimensions, outlook and access with the actual hotel."
+      },
+      "checkpoints": {
+        "ar": [
+          "سرير كينغ",
+          "ضيفان بحد أقصى",
+          "تأكيد الإطلالة"
+        ],
+        "en": [
+          "King bed",
+          "Up to two guests",
+          "Confirm outlook"
+        ]
+      }
+    },
+    {
+      "slug": "terrace-twin",
+      "category": "room",
+      "maxGuests": 2,
+      "rank": 2,
+      "title": {
+        "ar": "غرفة توين بالتراس",
+        "en": "Terrace Twin"
+      },
+      "summary": {
+        "ar": "سريران منفصلان لإقامة الأصدقاء أو الزملاء.",
+        "en": "Two separate beds for friends or colleagues."
+      },
+      "body": {
+        "ar": "تجربة غرفة بسريرين منفصلين ومساحة مقترحة للجلوس في الهواء الطلق. تناسب من يفضلون استقلالية النوم. اسأل عن خصوصية التراس ودرجات السلالم وإمكانية الوصول قبل الاتفاق.",
+        "en": "A twin-bed room concept with an outdoor seating option for guests preferring separate beds. Ask about terrace privacy, steps and accessibility before making arrangements."
+      },
+      "checkpoints": {
+        "ar": [
+          "سريران منفصلان",
+          "ضيفان بحد أقصى",
+          "تأكيد التراس"
+        ],
+        "en": [
+          "Twin beds",
+          "Up to two guests",
+          "Confirm terrace"
+        ]
+      }
+    },
+    {
+      "slug": "garden-studio",
+      "category": "room",
+      "maxGuests": 2,
+      "rank": 3,
+      "title": {
+        "ar": "استوديو الحديقة",
+        "en": "Garden Studio"
+      },
+      "summary": {
+        "ar": "مساحة مفتوحة للإقامة والعمل الهادئ.",
+        "en": "Open-plan stay and quiet working space."
+      },
+      "body": {
+        "ar": "تصور لاستوديو يضم سريراً وطاولة للعمل وركناً للجلوس. يصلح كنمط إقامة ممتدة لشخصين؛ يجب تأكيد تجهيزات العمل والاتصال والتنظيف والتكلفة مع مشغل فعلي.",
+        "en": "An open-plan studio concept with sleeping, desk and seating areas for longer stays. Confirm workspace, connectivity, housekeeping and charges with the actual operator."
+      },
+      "checkpoints": {
+        "ar": [
+          "ركن للعمل",
+          "ضيفان بحد أقصى",
+          "تأكيد الخدمات"
+        ],
+        "en": [
+          "Workspace",
+          "Up to two guests",
+          "Confirm services"
+        ]
+      }
+    },
+    {
+      "slug": "junior-suite",
+      "category": "suite",
+      "maxGuests": 3,
+      "rank": 4,
+      "title": {
+        "ar": "جناح جونيور",
+        "en": "Junior Suite"
+      },
+      "summary": {
+        "ar": "مساحة جلوس مستقلة جزئياً ومرونة في توزيع النوم.",
+        "en": "A generous seating zone and flexible sleeping layout."
+      },
+      "body": {
+        "ar": "تصور لجناح يوفر مساحة إضافية للجلوس ومكاناً لسرير إضافي عند الحاجة. لا يضمن الطلب توافر السرير الإضافي؛ يجب تأكيد توزيع الضيوف والتجهيزات مع الفندق الفعلي.",
+        "en": "A suite concept offering extra lounge space and an optional additional sleeping arrangement. Enquiry does not guarantee an extra bed; confirm occupancy and furnishings with the actual property."
+      },
+      "checkpoints": {
+        "ar": [
+          "سرير رئيسي",
+          "حتى ثلاثة ضيوف",
+          "تأكيد السرير الإضافي"
+        ],
+        "en": [
+          "Main bed",
+          "Up to three guests",
+          "Confirm additional bed"
+        ]
+      }
+    },
+    {
+      "slug": "heritage-suite",
+      "category": "suite",
+      "maxGuests": 2,
+      "rank": 5,
+      "title": {
+        "ar": "الجناح التراثي",
+        "en": "Heritage Suite"
+      },
+      "summary": {
+        "ar": "تفاصيل حرفية وإقامة بتصميم مستوحى من التراث.",
+        "en": "Craft-inspired details and heritage-led interiors."
+      },
+      "body": {
+        "ar": "تصور لجناح يركز على الخامات الطبيعية والتفاصيل الحرفية ومساحة هادئة لشخصين. الصور تحريرية مستقلة؛ تحقق من مرافق وإطلالة وخصائص الغرفة الحقيقية قبل اختيارها.",
+        "en": "A suite concept focused on natural materials, craft and a calm two-person retreat. Photography is independent editorial imagery; verify the actual room’s amenities and outlook before choosing."
+      },
+      "checkpoints": {
+        "ar": [
+          "سرير كينغ",
+          "ضيفان بحد أقصى",
+          "تأكيد خصائص الغرفة"
+        ],
+        "en": [
+          "King bed",
+          "Up to two guests",
+          "Verify room features"
+        ]
+      }
+    },
+    {
+      "slug": "family-retreat",
+      "category": "suite",
+      "maxGuests": 4,
+      "rank": 6,
+      "title": {
+        "ar": "جناح العائلة",
+        "en": "Family Retreat"
+      },
+      "summary": {
+        "ar": "غرفتا نوم مقترحتان وخصوصية أكبر للعائلة.",
+        "en": "Two proposed sleeping zones for family privacy."
+      },
+      "body": {
+        "ar": "تصور لإقامة عائلية حتى أربعة ضيوف بمساحتين للنوم، مع جلسة مشتركة. راجع توزيع الأسرّة وأعمار الأطفال وسياسات السلامة وأي تجهيزات إضافية مع الفندق الحقيقي.",
+        "en": "A family-oriented concept for up to four guests, two sleeping zones and a shared lounge. Confirm bed arrangements, child policies, safety and additional equipment with the actual hotel."
+      },
+      "checkpoints": {
+        "ar": [
+          "مساحتان للنوم",
+          "حتى أربعة ضيوف",
+          "تأكيد سياسات الأطفال"
+        ],
+        "en": [
+          "Two sleeping zones",
+          "Up to four guests",
+          "Confirm child policies"
+        ]
+      }
+    },
+    {
+      "slug": "accessible-stay",
+      "category": "room",
+      "maxGuests": 2,
+      "rank": 7,
+      "title": {
+        "ar": "إقامة تراعي سهولة الوصول",
+        "en": "Access-conscious Stay"
+      },
+      "summary": {
+        "ar": "اختيار قائم على احتياجات الوصول الفردية.",
+        "en": "Room enquiry focused on individual access requirements."
+      },
+      "body": {
+        "ar": "يحتاج الوصول الملائم إلى تحقق من المسار من المدخل إلى الغرفة والحمام وأبعاد الأبواب. هذا التصور ليس شهادة إتاحة؛ اطلب تفاصيل مكتوبة من الفندق الحقيقي دون مشاركة بيانات طبية في النموذج العام.",
+        "en": "Accessible stays require verification of routes, doors, bathrooms and entrance arrangements. This concept is not an accessibility certification; request written details from the actual hotel without submitting medical information publicly."
+      },
+      "checkpoints": {
+        "ar": [
+          "مسار الدخول",
+          "تأكيد تجهيزات الحمام",
+          "ضيفان بحد أقصى"
+        ],
+        "en": [
+          "Entrance route",
+          "Confirm bathroom layout",
+          "Up to two guests"
+        ]
+      }
+    },
+    {
+      "slug": "flexible-stay",
+      "category": "room",
+      "maxGuests": 4,
+      "rank": 8,
+      "title": {
+        "ar": "اختيار إقامة مرن",
+        "en": "Flexible Stay"
+      },
+      "summary": {
+        "ar": "اترك اختيار نوع الغرفة للمراجعة بعد تحديد التواريخ والضيوف.",
+        "en": "Leave the room category open until dates and party are reviewed."
+      },
+      "body": {
+        "ar": "اختيار مناسب عندما لم تحسم نوع الغرفة بعد. يوضح الطلب التواريخ وعدد الضيوف والفئة المفضلة، ثم يحتاج مشغل حقيقي لمراجعة المخزون والأسعار وسياسات الإلغاء قبل أي تأكيد.",
+        "en": "For guests who have not chosen a room category. The enquiry describes dates, party and preferences; an actual operator must verify inventory, rates and cancellation terms before confirming."
+      },
+      "checkpoints": {
+        "ar": [
+          "فئة غير محددة",
+          "حتى أربعة ضيوف",
+          "مراجعة المشغل"
+        ],
+        "en": [
+          "Open room category",
+          "Up to four guests",
+          "Operator review"
+        ]
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slug": "choose-your-room",
+      "title": {
+        "ar": "كيف تختار الغرفة المناسبة؟",
+        "en": "Choosing the right room"
+      },
+      "summary": {
+        "ar": "قارن توزيع النوم والخصوصية قبل السعر.",
+        "en": "Compare sleeping arrangements and privacy before price."
+      },
+      "body": {
+        "ar": "ابدأ بعدد الضيوف ونمط الإقامة؛ راجع مساحة النوم والحمام واحتياجات الوصول. تأكد من الإطلالة والخدمات المشمولة والتكلفة النهائية وسياسة الإلغاء لدى المشغل الفعلي قبل الدفع.",
+        "en": "Start with party size and stay purpose. Review sleeping space, bathroom and access needs. Confirm the outlook, inclusions, final price and cancellation terms with the actual operator before payment."
+      }
+    },
+    {
+      "slug": "arrival-checklist",
+      "title": {
+        "ar": "دليل الوصول والمغادرة",
+        "en": "Arrival and departure checklist"
+      },
+      "summary": {
+        "ar": "جهز ترتيبات الوصول مع الفندق الحقيقي.",
+        "en": "Prepare arrival arrangements with the actual hotel."
+      },
+      "body": {
+        "ar": "تأكد من العنوان الصحيح ووقت تسجيل الوصول والمغادرة وسياسة الوصول المتأخر. اسأل عن حفظ الأمتعة والنقل. شارك مستندات الهوية فقط عبر قناة رسمية آمنة عند الحاجة.",
+        "en": "Confirm the actual address, check-in and departure times, and late-arrival policy. Ask about luggage storage and transport. Share identity documents only through a secure official channel when required."
+      }
+    },
+    {
+      "slug": "slow-stay",
+      "title": {
+        "ar": "إقامة على مهل",
+        "en": "The art of a slower stay"
+      },
+      "summary": {
+        "ar": "خطط لأيام مرنة وتجارب محلية دون ازدحام.",
+        "en": "Plan flexible days and meaningful local experiences."
+      },
+      "body": {
+        "ar": "اختر وقتاً للتجول والراحة والطعام المحلي دون ضغط الجدول. تحقق من توافر الأنشطة وساعاتها والرسوم ومتطلبات الحجز مسبقاً. هذه أفكار تحريرية لا تمثل خدمات أو جولات مؤكدة.",
+        "en": "Leave time for exploration, rest and local food rather than overscheduling. Verify activity availability, hours, charges and reservation requirements beforehand. These editorial ideas do not represent confirmed tours or services."
+      }
+    }
+  ],
+  "faq": [
+    {
+      "question": {
+        "ar": "هل الطلب حجز مؤكد؟",
+        "en": "Is the request a confirmed reservation?"
+      },
+      "answer": {
+        "ar": "لا، يحفظ تفضيلات الإقامة للمراجعة فقط.",
+        "en": "No. It saves preferences for review only."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل الأسعار والتوافر لحظية؟",
+        "en": "Are rates and availability live?"
+      },
+      "answer": {
+        "ar": "لا؛ يجب الحصول عليهما من الفندق الحقيقي.",
+        "en": "No. Obtain them from the actual property."
+      }
+    },
+    {
+      "question": {
+        "ar": "كيف أحدد عدد الضيوف؟",
+        "en": "How do I select party size?"
+      },
+      "answer": {
+        "ar": "اختر فئة تناسب العدد وفق الحد الموضح، ثم أكد توزيع الأسرة مع المشغل.",
+        "en": "Choose a category within the indicated occupancy and confirm bedding with the operator."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل أدفع عربوناً هنا؟",
+        "en": "Can I pay a deposit here?"
+      },
+      "answer": {
+        "ar": "لا، لا توجد مدفوعات أو بيانات بطاقات في هذا الموقع.",
+        "en": "No. This concept takes no payment or card details."
+      }
+    },
+    {
+      "question": {
+        "ar": "ماذا عن الإلغاء والوصول المبكر؟",
+        "en": "What about cancellation and early arrival?"
+      },
+      "answer": {
+        "ar": "تحتاج السياسات والرسوم والتوقيت إلى تأكيد كتابي من الفندق الفعلي.",
+        "en": "Policies, charges and timing require written confirmation from the actual hotel."
+      }
+    }
+  ],
+  "media": [
+    {
+      "role": "room-editorial",
+      "credit": "Book Elizabeth",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Boutique-hotel.jpg",
+      "url": "/assets/portfolio/oasis-room.webp",
+      "originalSha1": "6cb170ab0f72dbd466de403e095ef2ac72cd29c0",
+      "width": 2560,
+      "height": 2560,
+      "alt": {
+        "ar": "غرفة فندقية أنيقة في صورة تحريرية مستقلة",
+        "en": "Elegant boutique hotel room, independent editorial photography"
+      }
+    },
+    {
+      "role": "dining-editorial",
+      "credit": "Ka23 13",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:TableSetting_20240504_073606.jpg",
+      "url": "/assets/portfolio/oasis-dining.webp",
+      "width": 4608,
+      "height": 2592,
+      "alt": {
+        "ar": "مائدة إفطار فندقية في صورة تحريرية مستقلة من اليابان",
+        "en": "Independent editorial photograph of hotel breakfast table settings in Japan"
+      }
+    },
+    {
+      "role": "courtyard-editorial",
+      "credit": "Arnaud 25",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Riad_Maroc_034.JPG",
+      "url": "/assets/portfolio/oasis-courtyard.webp",
+      "originalSha1": "2988732a3bc4227bbc070756d3006f6c923b0eaa",
+      "width": 1600,
+      "height": 1200,
+      "alt": {
+        "ar": "فناء رياض مونسو في مراكش، صورة مستقلة ليست من أواسيس",
+        "en": "Courtyard of Riad Monceau in Marrakech, independent editorial image, not Oasis property"
+      }
+    }
+  ]
+}

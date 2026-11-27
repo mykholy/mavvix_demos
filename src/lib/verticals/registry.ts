@@ -187,7 +187,7 @@ export const VERTICALS = [
     "en": "Boutique hotels",
     "wave": 3,
     "accent": "#CBA676",
-    "status": "planned"
+    "status": "in_progress"
   },
   {
     "slug": "events",

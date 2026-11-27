@@ -675,6 +675,22 @@ try {
   assert.ok([302,303,307,308,401].includes(labQueue.status),'ClearPath queue must remain private');
   console.log('PASS: 44 ClearPath bilingual routes, health data rejection, consent and idempotent callback');
 
+  const hotelRoutes=['','rooms','compare','dining','experiences','arrival','policies','journal','faq','about','stay','rooms/courtyard-king','rooms/terrace-twin','rooms/garden-studio','rooms/junior-suite','rooms/heritage-suite','rooms/family-retreat','rooms/accessible-stay','rooms/flexible-stay','journal/choose-your-room','journal/arrival-checklist','journal/slow-stay'];
+  for(const lang of ['ar','en'])for(const tail of hotelRoutes){
+    const url='/'+lang+'/preview/boutique-hotel'+(tail?'/'+tail:'');const response=await get(url);
+    assert.equal(response.status,200,'Oasis route failed '+url);assert.ok((await response.text()).includes('data-mavvix-contact-dock'),'Oasis dock missing '+url);
+  }
+  assert.equal((await get('/en/preview/boutique-hotel/rooms/unknown')).status,404);
+  const dateOffset=n=>new Date(Date.now()+n*86400000).toISOString().slice(0,10);
+  const hotel={flowType:'hotel_stay_request',clientRequestId:'dddddddd-dddd-4ddd-8ddd-dddddddddddd',guestName:'QA Hotel Guest',guestPhone:'01000000000',serviceSlug:'courtyard-king',checkIn:dateOffset(5),checkOut:dateOffset(8),adults:2,children:0,consent:true,honeypot:''};
+  const hotelEndpoint='/api/portfolio/boutique-hotel';
+  for(const invalid of [{consent:false},{passport:'PRIVATE'},{checkOut:hotel.checkIn},{checkIn:'2020-02-30'},{children:1},{serviceSlug:'unknown'},{checkOut:dateOffset(40)}])assert.equal((await post(hotelEndpoint,{...hotel,...invalid})).status,400);
+  const hotelSaved=await post(hotelEndpoint,hotel),hotelBody=await hotelSaved.json();
+  assert.equal(hotelSaved.status,201,'Oasis persistence '+JSON.stringify(hotelBody));assert.match(hotelBody.refNumber,/^MVX-OAS-[A-F0-9]{10}$/);assert.equal(hotelBody.status,'pending_operator_confirmation');assert.equal(hotelSaved.headers.get('cache-control'),'no-store');
+  const hotelDuplicate=await post(hotelEndpoint,hotel),hotelAgain=await hotelDuplicate.json();assert.equal(hotelDuplicate.status,200);assert.equal(hotelAgain.duplicate,true);assert.equal(hotelAgain.refNumber,hotelBody.refNumber);
+  const hotelQueue=await get('/admin/portfolio-requests?sector=boutique-hotel',{redirect:'manual'});assert.ok([302,303,307,308,401].includes(hotelQueue.status),'Oasis queue must remain private');
+  console.log('PASS: 44 Oasis bilingual routes, date/occupancy/PII validation and idempotent stay preferences');
+
   console.log('PASS: auth guard, flow validation, Academy SQLite progress, trusted ecommerce price, private receipt');
 } catch (error) {
   console.error(error);

@@ -1,3 +1,4 @@
+import { OASIS } from '@/lib/verticals/boutique-hotel/data';
 import { CLEARPATH } from '@/lib/verticals/diagnostics-lab/data';
 import { ELYRA } from '@/lib/verticals/skin-clinic/data';
 import { ROUTELINE } from '@/lib/verticals/logistics/data';
@@ -27,6 +28,7 @@ import {
   CheckCircle2,
   Sparkles,
   FlaskConical,
+  Hotel,
   Layers,
   Database,
   Trophy,
@@ -434,6 +436,15 @@ const demos = [
     tagline:{ar:'دليل متخصص للأقسام والتواصل الإداري مع مراعاة خصوصية التقارير',en:'Specialist laboratory directory and privacy-minimal administrative contact'},
     journeys:[{ar:'ثمانية مجالات معملية ومعلومات متخصصة',en:'Eight authored laboratory and access dossiers'},{ar:'رحلة العينة والتقرير ودليل الزيارة المنزلية',en:'Specimen-to-report journey and home collection guide'},{ar:'تواصل إداري محفوظ دون نتائج أو بيانات طبية',en:'Persisted administrative callback without results or clinical details'}],
     features:['Laboratory Directory','Private Report Guidance','Administrative Callback']
+  },
+  {
+    number:'27',slug:'boutique-hotel',
+    name:{ar:'أواسيس — موقع فنادق بوتيك',en:'Oasis & Co — Boutique Hotel Website'},
+    sector:{ar:'الفنادق والغرف والأجنحة',en:'Boutique hospitality and accommodation'},
+    icon:Hotel,color:'#46543C',bgColor:'bg-amber-50',borderColor:'border-amber-200',routesCount:22,
+    tagline:{ar:'تجربة اختيار الإقامة ومقارنة الغرف وحفظ التفضيلات',en:'Room discovery, comparison and stay preference enquiry'},
+    journeys:[{ar:'ثمانية أنواع إقامة بتفاصيل متخصصة',en:'Eight accommodation dossiers'},{ar:'مقارنة الغرف والضيوف ودليل الوصول والمائدة',en:'Room comparison, party fit, arrival and dining guidance'},{ar:'طلب إقامة محفوظ بالتواريخ والضيوف دون حجز مؤكد',en:'Persisted stay enquiry with dates and occupancy, no confirmed reservation'}],
+    features:['Room Comparison','Hospitality Journal','Stay Enquiry']
   }
 ];
 
@@ -599,6 +610,8 @@ export default async function ShowcasePage(props: Props) {
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#E8EFE5]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Veterinary_Office_with_dog.JPG/1280px-Veterinary_Office_with_dog.JPG" loading="lazy" decoding="async" className="h-full w-full object-cover" alt={isAr?'صورة حقيقية مرخصة لكلب في عيادة بيطرية مستقلة، ليست PawWell':'Real CC0 editorial dog photograph in an unrelated veterinary clinic'}/></div>
                   : d.slug==='law-firm'
                   ? <div className="relative h-52 bg-[#D6CAB8] overflow-hidden"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Canadian_law_books_%2831460630695%29.jpg/1280px-Canadian_law_books_%2831460630695%29.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'كتب قانونية حقيقية من كندا، صورة عامة مرخصة لا تتبع Lexora':'CC0 editorial Canadian law books, not an operating Lexora office'}/></div>
+                  : d.slug==='boutique-hotel'
+                  ? <div className="relative h-52 bg-[#E7DCC9] overflow-hidden"><img src={OASIS.media[0].url} loading="lazy" decoding="async" className="w-full h-full object-cover" alt={OASIS.media[0].alt[locale]}/><span className="absolute bottom-0 inset-x-0 bg-[#282A25] text-white text-[10px] px-2 py-1"><a href={OASIS.media[0].source} className="underline">Book Elizabeth</a> · <a href={OASIS.media[0].licenseUrl} className="underline">CC BY-SA 4.0</a> · {isAr?'اقتصاص':'Display crop'}</span></div>
                   : d.slug==='diagnostics-lab'
                   ? <div className="relative h-52 bg-[#E7F4F6] overflow-hidden"><img src={CLEARPATH.media[0].url} loading="lazy" decoding="async" className="w-full h-full object-cover" alt={CLEARPATH.media[0].alt[locale]}/><span className="absolute bottom-0 inset-x-0 bg-[#12334A] text-white text-[10px] px-2 py-1"><a href={CLEARPATH.media[0].source} className="underline">Belikov Maxim</a> · <a href={CLEARPATH.media[0].licenseUrl} className="underline">CC BY 4.0</a> · {isAr?'اقتصاص':'Display crop'}</span></div>
                   : d.slug==='skin-clinic'
