@@ -1,0 +1,416 @@
+{
+  "slug": "wholesale",
+  "brand": "TradeBridge",
+  "classification": "fictional_portfolio_concept_no_live_wholesale_inventory",
+  "categories": [
+    "packaging",
+    "hospitality",
+    "office",
+    "operations"
+  ],
+  "services": [
+    {
+      "slug": "kraft-paper-bags",
+      "category": "packaging",
+      "sku": "TB-PK-001",
+      "unitsPerCarton": 50,
+      "maxCartons": 1000,
+      "minCartons": 2,
+      "rank": 1,
+      "title": {
+        "ar": "أكياس كرافت ورقية",
+        "en": "Kraft paper bags"
+      },
+      "summary": {
+        "ar": "عبوات توريد للتجزئة والمقاهي.",
+        "en": "Bulk packaging for retailers and cafés."
+      },
+      "body": {
+        "ar": "تُحدد المواصفات النهائية حسب المقاس وسُمك الورق ونوع المقبض والطباعة والاستخدام. هذا الملف يوضح طريقة طلب الكميات بوحدة الكرتونة فقط؛ يجب تأكيد العدد الفعلي والتوافق مع الاستخدام والطباعة والتكلفة والتوافر مع المورد قبل التعاقد.",
+        "en": "Final specifications depend on dimensions, paper weight, handles, printing and intended use. This profile illustrates carton-based quantity requests only. Confirm pack count, suitability, printing, cost and availability with the actual supplier."
+      },
+      "checkpoints": {
+        "ar": [
+          "تأكيد المقاس",
+          "نوع المقبض",
+          "خيار الطباعة"
+        ],
+        "en": [
+          "Confirm dimensions",
+          "Handle style",
+          "Printing options"
+        ]
+      },
+      "classification": "illustrative_catalogue_no_live_inventory"
+    },
+    {
+      "slug": "shipping-cartons",
+      "category": "packaging",
+      "sku": "TB-PK-002",
+      "unitsPerCarton": 25,
+      "maxCartons": 1000,
+      "minCartons": 2,
+      "rank": 2,
+      "title": {
+        "ar": "كراتين الشحن",
+        "en": "Shipping cartons"
+      },
+      "summary": {
+        "ar": "تغليف خارجي للتجميع والشحن.",
+        "en": "Outer cartons for consolidation and shipping."
+      },
+      "body": {
+        "ar": "تختلف مواصفات كراتين الشحن حسب أبعاد المنتج والوزن ومقاومة الضغط وظروف النقل. تُراجع درجة الكرتون والمقاسات وطريقة الرص مع المورد الفعلي قبل الاتفاق. لا يمثل النموذج اختبار تحمل أو اعتماداً للشحن.",
+        "en": "Shipping cartons vary with product dimensions, weight, compression needs and transit conditions. Confirm board grade, dimensions and stacking with the actual supplier before commitment. The enquiry is not a load test or shipping certification."
+      },
+      "checkpoints": {
+        "ar": [
+          "الأبعاد الداخلية",
+          "درجة الكرتون",
+          "متطلبات النقل"
+        ],
+        "en": [
+          "Inner dimensions",
+          "Board grade",
+          "Transport requirements"
+        ]
+      },
+      "classification": "illustrative_catalogue_no_live_inventory"
+    },
+    {
+      "slug": "paper-cups",
+      "category": "hospitality",
+      "sku": "TB-HO-001",
+      "unitsPerCarton": 100,
+      "maxCartons": 1000,
+      "minCartons": 2,
+      "rank": 3,
+      "title": {
+        "ar": "أكواب ورقية للضيافة",
+        "en": "Paper cups"
+      },
+      "summary": {
+        "ar": "نطاق توريد أكواب للمنشآت والمقاهي.",
+        "en": "Cup procurement scope for cafés and businesses."
+      },
+      "body": {
+        "ar": "تحتاج الأكواب إلى التحقق من السعة والاستخدام المقصود والتوافق مع المشروبات الساخنة أو الباردة والأغطية. يلزم الحصول على وثائق مطابقة ملامسة الغذاء من المورد الفعلي عند الحاجة؛ لا يُعد هذا الملف شهادة مطابقة أو توصية بمنتج محدد.",
+        "en": "Cups require verification of capacity, intended hot or cold use and lid compatibility. Obtain applicable food-contact documentation from the actual supplier where needed. This profile is not a compliance certification or specific product recommendation."
+      },
+      "checkpoints": {
+        "ar": [
+          "السعة",
+          "توافق الأغطية",
+          "وثائق المطابقة"
+        ],
+        "en": [
+          "Capacity",
+          "Lid compatibility",
+          "Compliance documents"
+        ]
+      },
+      "classification": "illustrative_catalogue_no_live_inventory"
+    },
+    {
+      "slug": "napkin-packs",
+      "category": "hospitality",
+      "sku": "TB-HO-002",
+      "unitsPerCarton": 40,
+      "maxCartons": 1000,
+      "minCartons": 2,
+      "rank": 4,
+      "title": {
+        "ar": "مناديل مائدة",
+        "en": "Table napkin packs"
+      },
+      "summary": {
+        "ar": "تجهيزات استهلاكية للمطاعم والفنادق.",
+        "en": "Consumable supplies for foodservice and hospitality."
+      },
+      "body": {
+        "ar": "تحدد طلبات مناديل المائدة وفق الأبعاد والطبقات وعدد العبوات والتغليف والاستخدام. يراجع المشتري والمورد المواصفات والعينات والحد الأدنى الحقيقي للتوريد قبل إصدار أمر شراء. لا توجد مخزونات أو أسعار لحظية هنا.",
+        "en": "Napkin requirements depend on dimensions, ply, pack count, packaging and intended use. Buyers and suppliers review specifications, samples and actual minimums before issuing purchase orders. No live stock or pricing is provided here."
+      },
+      "checkpoints": {
+        "ar": [
+          "المقاس والطبقات",
+          "عدد العبوات",
+          "عينة ومواصفات"
+        ],
+        "en": [
+          "Dimensions and ply",
+          "Pack count",
+          "Sample and specs"
+        ]
+      },
+      "classification": "illustrative_catalogue_no_live_inventory"
+    },
+    {
+      "slug": "document-folders",
+      "category": "office",
+      "sku": "TB-OF-001",
+      "unitsPerCarton": 50,
+      "maxCartons": 1000,
+      "minCartons": 2,
+      "rank": 5,
+      "title": {
+        "ar": "ملفات مستندات",
+        "en": "Document folders"
+      },
+      "summary": {
+        "ar": "مستلزمات تنظيم الملفات للمكاتب.",
+        "en": "Document organization supplies for offices."
+      },
+      "body": {
+        "ar": "تحدد الملفات حسب مقاس المستندات والخامة وطريقة الإغلاق واللون وعدد القطع في العبوة. يمكن استخدام ملف الطلب لتجميع الاحتياج حسب الفئة، ثم تأكيد المواصفات والعينة وموعد التوريد والسعر مع مورد حقيقي قبل الشراء.",
+        "en": "Folders depend on document format, material, closure, colour and pack size. The request can consolidate needs by category; confirm specification, sample, delivery date and price with a real supplier before purchase."
+      },
+      "checkpoints": {
+        "ar": [
+          "مقاس المستند",
+          "نوع الخامة",
+          "تأكيد العبوة"
+        ],
+        "en": [
+          "Document size",
+          "Material type",
+          "Confirm pack"
+        ]
+      },
+      "classification": "illustrative_catalogue_no_live_inventory"
+    },
+    {
+      "slug": "copy-paper",
+      "category": "office",
+      "sku": "TB-OF-002",
+      "unitsPerCarton": 5,
+      "maxCartons": 1000,
+      "minCartons": 2,
+      "rank": 6,
+      "title": {
+        "ar": "ورق طباعة وتصوير",
+        "en": "Copy paper"
+      },
+      "summary": {
+        "ar": "نطاق توريد ورق للمكاتب والمؤسسات.",
+        "en": "Paper procurement for offices and organizations."
+      },
+      "body": {
+        "ar": "تختلف مواصفات ورق الطباعة حسب المقاس والوزن والبياض والاستخدام وطريقة التخزين. يجب مراجعة توافقه مع أجهزة الطباعة وعدد الرزم في الكرتونة والعلامة التجارية ومصدر التوريد مع المورد قبل الاتفاق.",
+        "en": "Copy paper specifications vary by dimensions, weight, whiteness, intended use and storage. Review printer compatibility, reams per carton, brand and source with an actual supplier before agreement."
+      },
+      "checkpoints": {
+        "ar": [
+          "المقاس والوزن",
+          "توافق الطباعة",
+          "عدد الرزم"
+        ],
+        "en": [
+          "Size and weight",
+          "Printer compatibility",
+          "Reams per carton"
+        ]
+      },
+      "classification": "illustrative_catalogue_no_live_inventory"
+    },
+    {
+      "slug": "storage-bins",
+      "category": "operations",
+      "sku": "TB-OP-001",
+      "unitsPerCarton": 10,
+      "maxCartons": 1000,
+      "minCartons": 2,
+      "rank": 7,
+      "title": {
+        "ar": "صناديق تنظيم وتخزين",
+        "en": "Storage bins"
+      },
+      "summary": {
+        "ar": "تجهيزات تنظيم المخازن ومناطق العمل.",
+        "en": "Organization supplies for storage and work areas."
+      },
+      "body": {
+        "ar": "تحدد الصناديق حسب الأبعاد والخامة ونوع الاستخدام وقابلية الرص والمناولة. يجب مراجعة حدود التحمل الفعلية وطريقة التخزين والسلامة لدى المورد المؤهل؛ لا يوفر الملف تصنيفاً للأحمال أو ضماناً لمواصفات لم تُختبر.",
+        "en": "Storage bins vary by dimensions, material, intended use, stacking and handling. Verify actual load ratings, storage methods and safety with a qualified supplier; the profile provides no untested load rating or specification guarantee."
+      },
+      "checkpoints": {
+        "ar": [
+          "الأبعاد",
+          "الخامة",
+          "تأكيد التحمل"
+        ],
+        "en": [
+          "Dimensions",
+          "Material",
+          "Verify load rating"
+        ]
+      },
+      "classification": "illustrative_catalogue_no_live_inventory"
+    },
+    {
+      "slug": "shelf-labels",
+      "category": "operations",
+      "sku": "TB-OP-002",
+      "unitsPerCarton": 100,
+      "maxCartons": 1000,
+      "minCartons": 2,
+      "rank": 8,
+      "title": {
+        "ar": "بطاقات وملصقات الأرفف",
+        "en": "Shelf labels"
+      },
+      "summary": {
+        "ar": "تنظيم تعريف المنتجات والمواقع داخل المخزن.",
+        "en": "Product and location identification for shelves."
+      },
+      "body": {
+        "ar": "تحتاج ملصقات الأرفف إلى تحديد أبعاد الملصق وسطح الاستخدام وطريقة الطباعة ومقاومة ظروف التخزين. يراجع المشتري توافقها مع أجهزة الطباعة أو الحوامل الحالية والعينة قبل التوريد، ولا يقدم الموقع ملصقات أو مخزوناً مؤكداً.",
+        "en": "Shelf labels require dimensions, application surface, printing method and storage-condition review. Buyers confirm compatibility with existing printers or holders and samples before procurement. This concept offers no live stock or confirmed label supply."
+      },
+      "checkpoints": {
+        "ar": [
+          "مقاس الملصق",
+          "طريقة الطباعة",
+          "توافق الحوامل"
+        ],
+        "en": [
+          "Label size",
+          "Printing method",
+          "Holder compatibility"
+        ]
+      },
+      "classification": "illustrative_catalogue_no_live_inventory"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "prepare-bulk-rfq",
+      "title": {
+        "ar": "كيف تجهز طلب عرض جملة؟",
+        "en": "Prepare a bulk RFQ"
+      },
+      "summary": {
+        "ar": "حدد الأصناف والكميات ووحدة التوريد.",
+        "en": "Define items, quantities and procurement units."
+      },
+      "body": {
+        "ar": "ابدأ بقائمة الأصناف ووحدة التوريد والكمية المطلوبة ونطاق التسليم. تحقق من محتويات الكرتونة والمواصفات والعينات واطلب عرضاً مكتوباً من مورد موثوق يتضمن السعر والتكاليف والمدة وشروط الإلغاء.",
+        "en": "Start with item list, procurement units, quantities and delivery scope. Confirm carton contents, specifications and samples. Obtain a written quote from a verified supplier including pricing, charges, timing and cancellation terms."
+      }
+    },
+    {
+      "slug": "carton-vs-unit",
+      "title": {
+        "ar": "الكرتونة أم القطعة؟",
+        "en": "Cartons versus units"
+      },
+      "summary": {
+        "ar": "تأكد من تحويل وحدات التوريد قبل الشراء.",
+        "en": "Verify procurement unit conversions before purchase."
+      },
+      "body": {
+        "ar": "راجع عدد القطع داخل الكرتونة واضربه في الكمية المطلوبة من الكراتين. قارن عروض الموردين بنفس الوحدة والمواصفات، ولا تعتمد على محتويات توضيحية دون تأكيد المورد الحقيقي.",
+        "en": "Confirm units per carton and multiply by the number of cartons. Compare supplier offers using equivalent units and specifications; never rely on illustrative pack contents without supplier confirmation."
+      }
+    },
+    {
+      "slug": "supplier-due-diligence",
+      "title": {
+        "ar": "مراجعة المورد قبل الاتفاق",
+        "en": "Supplier due diligence"
+      },
+      "summary": {
+        "ar": "تحقق من الهوية والمواصفات والشروط.",
+        "en": "Verify identity, specifications and terms."
+      },
+      "body": {
+        "ar": "تحقق من الهوية التجارية وقنوات التواصل وسجل المورد والعينات والمواصفات والفاتورة. اطلب شروط التسليم والدفع والمرتجعات بشكل مكتوب، ولا تحول أموالاً أو مستندات حساسة عبر نموذج عام غير موثوق.",
+        "en": "Verify business identity, contact channels, supplier record, samples, specifications and invoicing. Obtain written delivery, payment and returns terms; do not send funds or sensitive documents through an unverified public form."
+      }
+    }
+  ],
+  "faq": [
+    {
+      "question": {
+        "ar": "هل الكتالوج يعرض مخزوناً فعلياً؟",
+        "en": "Is catalogue stock live?"
+      },
+      "answer": {
+        "ar": "لا، الأصناف والمواصفات أمثلة توضيحية فقط.",
+        "en": "No, items and specifications are illustrative only."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل يوجد سعر جملة مؤكد؟",
+        "en": "Are wholesale prices confirmed?"
+      },
+      "answer": {
+        "ar": "لا، يجب طلب عرض من المورد الحقيقي.",
+        "en": "No. Obtain a quote from an actual supplier."
+      }
+    },
+    {
+      "question": {
+        "ar": "كيف يتم حساب القطع؟",
+        "en": "How are units calculated?"
+      },
+      "answer": {
+        "ar": "تضرب الكراتين في عدد القطع التوضيحي للكرتونة، ويجب تأكيد العبوة الفعلية.",
+        "en": "Cartons multiply by illustrative units per carton; verify actual pack contents."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل الطلب أمر شراء أو دفع؟",
+        "en": "Is the request a purchase order or payment?"
+      },
+      "answer": {
+        "ar": "لا، يحفظ طلب عرض سعر للمراجعة فقط.",
+        "en": "No, it saves an RFQ for review only."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل يوجد توصيل مضمون؟",
+        "en": "Is delivery guaranteed?"
+      },
+      "answer": {
+        "ar": "لا، التغطية والمدة والتكاليف تحتاج اتفاقاً مع المورد.",
+        "en": "No. Coverage, timing and charges require supplier agreement."
+      }
+    }
+  ],
+  "media": [
+    {
+      "role": "warehouse",
+      "credit": "Rsherwin",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Warehouse_distribution-center-1136510.jpg",
+      "url": "/assets/portfolio/tradebridge-warehouse.webp",
+      "originalSha1": "2175b46d3ce8f495d660f43194845c988cd4a7dc",
+      "width": 5746,
+      "height": 2807,
+      "alt": {
+        "ar": "مركز توزيع في صورة تحريرية مستقلة لا يمثل مخازن تريد بريدج",
+        "en": "Independent distribution-centre photograph, not TradeBridge premises"
+      }
+    },
+    {
+      "role": "stock-editorial",
+      "credit": "ProjectManhattan",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Warehouse_goods.jpg",
+      "url": "/assets/portfolio/tradebridge-stock.webp",
+      "originalSha1": "8dc3f7dbf5b7ae552e0cb3554bf9a43cbe007892",
+      "width": 3920,
+      "height": 2204,
+      "alt": {
+        "ar": "طرود على أرفف مستودع إيكيا في سنغافورة، صورة مستقلة ليست مخزون تريد بريدج",
+        "en": "Crates on racks at IKEA Singapore, independent editorial photograph, not TradeBridge inventory"
+      }
+    }
+  ]
+}

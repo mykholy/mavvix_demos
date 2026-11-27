@@ -1,3 +1,4 @@
+import { TRADEBRIDGE } from '@/lib/verticals/wholesale/data';
 import { TALENTYX } from '@/lib/verticals/recruitment/data';
 import { VOLTEDGE } from '@/lib/verticals/solar-energy/data';
 import { OASIS } from '@/lib/verticals/boutique-hotel/data';
@@ -467,6 +468,15 @@ const demos = [
     tagline:{ar:'رحلتان مستقلتان للشركات والمرشحين وملفات أدوار توضيحية',en:'Separate employer and candidate journeys with illustrative role profiles'},
     journeys:[{ar:'ثماني خدمات للتوظيف والاستشارات',en:'Eight specialist recruitment services'},{ar:'ستة ملفات أدوار قابلة للتصفية دون وظائف وهمية',en:'Six filterable role profiles, no fictitious vacancies'},{ar:'طلب شركة واهتمام مهني محفوظان بشكل مستقل',en:'Distinct persisted employer and candidate enquiries'}],
     features:['Employer Brief','Career Interest','Role Directory']
+  },
+  {
+    number:'30',slug:'wholesale',
+    name:{ar:'تريد بريدج — التجارة والتوريدات بالجملة',en:'TradeBridge — Wholesale Procurement Website'},
+    sector:{ar:'التجارة بالجملة وتوريدات الشركات',en:'B2B wholesale and procurement'},
+    icon:ShoppingBag,color:'#B9442E',bgColor:'bg-orange-50',borderColor:'border-orange-200',routesCount:23,
+    tagline:{ar:'كتالوج أصناف وطلب عرض متعدد المنتجات ورحلة مستقلة للموردين',en:'Product catalogue, multi-line RFQ and distinct supplier journey'},
+    journeys:[{ar:'ثمانية أصناف توضيحية قابلة للتصفية',en:'Eight filterable illustrative catalogue items'},{ar:'حساب الكراتين والوحدات والتحقق من الكميات',en:'Carton and unit calculations with quantity validation'},{ar:'طلب عرض واهتمام مورد محفوظان بشكل مستقل',en:'Distinct persisted buyer RFQ and supplier enquiries'}],
+    features:['Multi-line RFQ','Catalogue Filters','Supplier Interest']
   }
 ];
 
@@ -632,6 +642,8 @@ export default async function ShowcasePage(props: Props) {
                   ? <div className="relative h-52 w-full overflow-hidden bg-[#E8EFE5]"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Veterinary_Office_with_dog.JPG/1280px-Veterinary_Office_with_dog.JPG" loading="lazy" decoding="async" className="h-full w-full object-cover" alt={isAr?'صورة حقيقية مرخصة لكلب في عيادة بيطرية مستقلة، ليست PawWell':'Real CC0 editorial dog photograph in an unrelated veterinary clinic'}/></div>
                   : d.slug==='law-firm'
                   ? <div className="relative h-52 bg-[#D6CAB8] overflow-hidden"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Canadian_law_books_%2831460630695%29.jpg/1280px-Canadian_law_books_%2831460630695%29.jpg" loading="lazy" decoding="async" className="w-full h-full object-cover" alt={isAr?'كتب قانونية حقيقية من كندا، صورة عامة مرخصة لا تتبع Lexora':'CC0 editorial Canadian law books, not an operating Lexora office'}/></div>
+                  : d.slug==='wholesale'
+                  ? <div className="relative h-52 bg-[#F3E7DD] overflow-hidden"><img src={TRADEBRIDGE.media[0].url} loading="lazy" decoding="async" className="w-full h-full object-cover" alt={TRADEBRIDGE.media[0].alt[locale]}/><span className="absolute bottom-0 inset-x-0 bg-[#213044] text-white text-[10px] px-2 py-1"><a href={TRADEBRIDGE.media[0].source} className="underline">Rsherwin · {isAr?'المصدر':'Source'}</a> · <a href={TRADEBRIDGE.media[0].licenseUrl} className="underline">CC BY-SA 4.0</a> · {isAr?'اقتصاص':'Display crop'}</span></div>
                   : d.slug==='recruitment'
                   ? <div className="relative h-52 bg-[#E8EEFF] overflow-hidden"><img src={TALENTYX.media[0].url} loading="lazy" decoding="async" className="w-full h-full object-cover" alt={TALENTYX.media[0].alt[locale]}/><span className="absolute bottom-0 inset-x-0 bg-[#17243E] text-white text-[10px] px-2 py-1"><a href={TALENTYX.media[0].creditUrl} className="underline">Amtec Photos</a> · <a href={TALENTYX.media[0].source} className="underline">{isAr?'المصدر':'Source'}</a> · <a href={TALENTYX.media[0].licenseUrl} className="underline">CC BY-SA 2.0</a> · {isAr?'اقتصاص':'Display crop'}</span></div>
                   : d.slug==='solar-energy'

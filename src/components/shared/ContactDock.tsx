@@ -56,6 +56,7 @@ const DEMOS_LIST = [
   { slug: 'physiotherapy', nameAr: 'موشن لاب / علاج طبيعي', nameEn: 'Motion Lab · Physiotherapy', icon: Activity, color: '#79C9C1' },
   { slug: 'veterinary', nameAr: 'بوويل / عيادات بيطرية', nameEn: 'PawWell · Veterinary', icon: HeartPulse, color: '#F3B98E' },
   { slug: 'law-firm', nameAr: 'ليكسورا / محاماة واستشارات', nameEn: 'Lexora Counsel · Law Firm', icon: Building2, color: '#B79B6A' },
+  { slug: 'wholesale', nameAr: 'تريد بريدج / تجارة الجملة', nameEn: 'TradeBridge · Wholesale', icon: ShoppingBag, color: '#B9442E' },
   { slug: 'recruitment', nameAr: 'تالنتكس / التوظيف', nameEn: 'Talentyx HR · Recruitment', icon: Network, color: '#3549A5' },
   { slug: 'solar-energy', nameAr: 'فولتيج / الطاقة الشمسية', nameEn: 'VoltEdge Energy · Solar', icon: Zap, color: '#12352D' },
   { slug: 'boutique-hotel', nameAr: 'أواسيس / فنادق بوتيك', nameEn: 'Oasis & Co · Boutique Hotels', icon: Hotel, color: '#46543C' },

@@ -19,6 +19,7 @@ export function seedPortfolioVerticals(db, rootDir=process.cwd()) {
     {filename:'physiotherapy.json',slug:'physiotherapy',ar:'موشن لاب — العلاج الطبيعي والحركة الوظيفية',en:'Motion Lab · Physiotherapy',wave:2},
     {filename:'veterinary.json',slug:'veterinary',ar:'بوويل — رعاية الحيوانات الأليفة',en:'PawWell · Veterinary Clinic Website',wave:2},
     {filename:'law-firm.json',slug:'law-firm',ar:'ليكسورا كاونسل — واجهة خدمات قانونية',en:'Lexora Counsel · Legal Practice Website',wave:2},
+    {filename:'wholesale.json',slug:'wholesale',ar:'تريد بريدج — توريدات الجملة',en:'TradeBridge · Wholesale',wave:3},
     {filename:'recruitment.json',slug:'recruitment',ar:'تالنتكس — التوظيف',en:'Talentyx HR · Recruitment',wave:3},
     {filename:'solar-energy.json',slug:'solar-energy',ar:'فولتيج — الطاقة الشمسية',en:'VoltEdge Energy · Solar',wave:3},
     {filename:'boutique-hotel.json',slug:'boutique-hotel',ar:'أواسيس — الفنادق البوتيك',en:'Oasis & Co · Boutique Hotels',wave:3},
