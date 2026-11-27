@@ -6,8 +6,11 @@ export const oakPath=(locale:Locale,slug='')=>'/'+locale+'/preview/furniture'+(s
 export const oakProduct=(slug:string)=>content.services.find(p=>p.slug===slug)||null;
 export const oakGuide=(slug:string)=>content.articles.find(a=>a.slug===slug)||null;
 export const oakText=(copy:{ar:string;en:string},locale:Locale)=>copy[locale];
-export const OAK_PHOTOS={
- room:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Living_room_%28Unsplash%29.jpg/1280px-Living_room_%28Unsplash%29.jpg',
- sofa:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Couch-furniture-living-room-sofa_%2824300293356%29.jpg/1280px-Couch-furniture-living-room-sofa_%2824300293356%29.jpg',
- vignette:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Living_room_%28Unsplash%29.jpg/1280px-Living_room_%28Unsplash%29.jpg',
+export const OAK_PHOTOS = {
+  room: '/assets/portfolio/furniture/living.webp',
+  sofa: '/assets/portfolio/furniture/sofa.webp',
+  vignette: '/assets/portfolio/furniture/vignette.webp',
+  dining: '/assets/portfolio/furniture/dining.webp',
+  joinery: '/assets/portfolio/furniture/joinery.webp',
+  bedroom: '/assets/portfolio/furniture/bedroom.webp',
 } as const;
