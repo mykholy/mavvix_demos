@@ -4,17 +4,20 @@ import type { Locale } from '@/lib/i18n/config';
 import { FORMA, FORMA_IMAGES, formaPath, formaText } from '@/lib/verticals/interiors-kitchens/data';
 import { ArrowUpRight, ArrowLeft, ArrowRight } from 'lucide-react';
 import { LayoutStudio } from './LayoutStudio';
+import { formaPhoto } from './media';
+import { PhotoCredit, MaterialSamples } from './VisualLibrary';
 
 export async function generateMetadata({params}:{params:Promise<{locale:Locale}>}):Promise<Metadata>{
  const {locale}=await params;const ar=locale==='ar';
  const title=ar?'Forma Atelier | مطابخ وديكور حسب المساحة — تصميم من مافكس':'Forma Atelier | Bespoke kitchen & interior website by Mavvix';
  const description=ar?'استكشف تخطيطات المطابخ والخامات وابدأ ملف استشارة تصميم مبدئي.':'Explore kitchen layouts, finishes and an interactive preliminary design brief.';
- return {title,description,robots:{index:false,follow:false},openGraph:{title,description,type:'website',images:[FORMA_IMAGES.hero]}};
+ return {title,description,robots:{index:false,follow:false},openGraph:{title,description,type:'website',images:[formaPhoto('exclusive').url]}};
 }
 
 export default async function FormaHome({params}:{params:Promise<{locale:Locale}>}){
  const {locale}=await params;const ar=locale==='ar';const Arrow=ar?ArrowLeft:ArrowRight;
  const t=(a:string,e:string)=>ar?a:e;
+ const hero=formaPhoto('exclusive');
  const wrap='max-w-[1440px] mx-auto px-5 sm:px-10 xl:px-16';
  const heading='forma-display text-[clamp(2rem,4vw,4.5rem)] font-semibold leading-[1.14] tracking-tight';
  const eyebrow='text-[#843F2B] text-xs font-bold tracking-wide';
@@ -31,14 +34,14 @@ export default async function FormaHome({params}:{params:Promise<{locale:Locale}
      <div className="mt-10 border-t border-[#B8AB9B] pt-5 flex flex-wrap gap-x-6 gap-y-2 text-xs text-[#544D44] font-bold"><span>{t('تصميم حسب المساحة','Space-led design')}</span><span>{t('خامات وتفاصيل','Materials & details')}</span><span>{t('استشارة مبدئية','Initial consultation')}</span></div>
     </div>
     <figure className="min-w-0 relative">
-     <div className="relative aspect-[4/4.2] sm:aspect-[5/4] lg:aspect-[5/5.2] overflow-hidden bg-[#D7C8B6]"><img src={FORMA_IMAGES.hero} alt={t('مطبخ معاصر بصورة تحريرية مرخصة مستقلة','Independent licensed editorial photograph of a contemporary kitchen')} loading="eager" fetchPriority="high" className="absolute inset-0 w-full h-full object-cover"/></div>
+     <div className="relative aspect-[4/4.2] sm:aspect-[5/4] lg:aspect-[5/5.2] overflow-hidden bg-[#D7C8B6]"><img src={hero.url} alt={hero[locale]} loading="eager" fetchPriority="high" className="absolute inset-0 w-full h-full object-cover"/></div>
      <div className="absolute bottom-12 start-0 bg-[#292722] text-[#F5F0E8] px-5 py-4 max-w-[85%]"><p className="text-xs text-[#E6B99F]">{t('دراسة مساحة / 01','SPACE STUDY / 01')}</p><p className="forma-display text-xl mt-2">{t('هدوء في التفاصيل','Quiet by design')}</p></div>
-     <figcaption className="mt-3 text-xs text-[#544D44] flex flex-wrap justify-between gap-2"><span>{t('صورة تحريرية مستقلة · CC0','Independent editorial image · CC0')}</span><Link className="underline" href={formaPath(locale,'gallery')}>{t('مصدر الصورة','Image credits')}</Link></figcaption>
+     <figcaption className="mt-3 text-xs text-[#544D44] flex flex-wrap justify-between gap-2"><PhotoCredit photo={hero} locale={locale}/><Link className="underline" href={formaPath(locale,'gallery')}>{t('مصدر الصورة','Image credits')}</Link></figcaption>
     </figure>
    </div>
   </section>
   <section data-sector-specific="cabinetry-editorial" className="bg-[#292722] text-[#F5F0E8]">
-   <div className={wrap+' py-9 sm:py-12 flex flex-wrap justify-between items-center gap-6'}><p className="forma-display text-2xl sm:text-3xl max-w-2xl leading-snug">{t('البيت الجميل يبدأ بمساحة مدروسة.','Good design begins with the room itself.')}</p><Link href={formaPath(locale,'process')} className="text-sm font-bold text-[#E6B99F] inline-flex gap-3 items-center underline underline-offset-4">{t('تعرف على رحلة التصميم','Discover the design journey')}<Arrow size={18}/></Link></div>
+   <div className={wrap+' py-9 sm:py-12 flex flex-wrap justify-between items-center gap-6'}><p className="forma-display text-2xl sm:text-3xl max-w-2xl leading-snug">{t('البيت الجميل يبدأ بمساحة مدروسة.','Good design begins with the room itself.')}</p><Link href={formaPath(locale,'gallery')} className="text-sm font-bold text-[#E6B99F] inline-flex gap-3 items-center underline underline-offset-4">{t('استكشف معرض الإلهام','Explore the inspiration gallery')}<Arrow size={18}/></Link></div>
   </section>
   <section id="layout-studio" data-sector-specific="layout-chooser" className={wrap+' py-16 sm:py-24 scroll-mt-28'}>
    <div className="max-w-3xl mb-9"><p className={eyebrow}>{t('استوديو التخطيط','THE LAYOUT STUDIO')}</p><h2 className={heading+' mt-4'}>{t('كل مساحة لها حل.','Find the shape of your space.')}</h2><p className="mt-5 text-[#544D44] leading-8">{t('جرّب تخطيطات مختلفة وشاهد الفرق في توزيع الوحدات قبل اختيار التشطيب.','Compare different floor-plan arrangements before you choose a finish.')}</p></div>
@@ -48,7 +51,7 @@ export default async function FormaHome({params}:{params:Promise<{locale:Locale}
    <div className={wrap+' py-16 sm:py-24 grid lg:grid-cols-[1fr_.9fr] gap-10 items-center'}>
     <figure className="min-w-0"><img src={FORMA_IMAGES.cabinetry} alt={t('خزائن مطبخ حقيقية بصورة تحريرية مستقلة','Real cabinetry in an independently licensed editorial photograph')} loading="lazy" className="w-full aspect-[5/4] object-cover"/><figcaption className="mt-3 text-xs text-[#544D44]">Tomwsulcer · CC0 · {t('صورة مستقلة','Independent image')}</figcaption></figure>
     <div><p className={eyebrow}>{t('الخامات والملمس','MATERIAL LIBRARY')}</p><h2 className={heading+' mt-4'}>{t('الجمال في ما تلمسه.','Beauty you can feel.')}</h2><p className="mt-5 text-[#544D44] leading-8">{t('اللون نقطة البداية. الحواف، المفصلات، نوع اللوح وطريقة العناية هي ما يحدد اختيار الخامة المناسبة.','Colour is a starting point. Edges, hinges, substrate and maintenance determine the right finish.')}</p>
-    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-7">{[[t('مطفي','Matte'),'#C5B59D'],[t('خشبي','Wood'),'#765341'],[t('حجر','Stone'),'#E8E3D8'],[t('معدني','Metal'),'#726D63']].map(([name,color])=><div key={name}><div className="h-20 sm:h-24 border border-[#A99A88]" style={{backgroundColor:color}}/><p className="mt-2 text-xs font-bold">{name}</p></div>)}</div><Link href={formaPath(locale,'materials')} className={textlink+' mt-7'}>{t('دليل اختيار الخامات','Explore the materials guide')}<Arrow size={17}/></Link></div>
+    <div className="mt-7"><MaterialSamples locale={locale}/></div><Link href={formaPath(locale,'materials')} className={textlink+' mt-7'}>{t('دليل اختيار الخامات','Explore the materials guide')}<Arrow size={17}/></Link></div>
    </div>
   </section>
   <section data-sector-specific="bespoke-services" className={wrap+' py-16 sm:py-24'}>
@@ -72,6 +75,6 @@ export default async function FormaHome({params}:{params:Promise<{locale:Locale}
    <div className="mt-9 border-t border-[#B8AB9B]">{FORMA.articles.map((a,i)=><Link href={formaPath(locale,'journal/'+a.slug)} key={a.slug} className="flex gap-5 py-7 border-b border-[#B8AB9B] items-center"><span className="text-[#843F2B] text-xs">0{i+1}</span><div className="min-w-0 flex-1"><h3 className="forma-display text-xl sm:text-2xl font-semibold">{formaText(a.title,locale)}</h3><p className="mt-2 text-[#544D44] leading-7 text-sm">{formaText(a.summary,locale)}</p></div><ArrowUpRight size={20} className="shrink-0"/></Link>)}</div>
   </section>
   <section data-sector-specific="design-questions" className="bg-[#FFFCF7]"><div className={wrap+' py-16 sm:py-24 grid lg:grid-cols-[.7fr_1.3fr] gap-10'}><div><p className={eyebrow}>{t('الأسئلة الشائعة','GOOD TO KNOW')}</p><h2 className={heading+' mt-4'}>{t('خلّي التفاصيل واضحة.','Make the details clear.')}</h2></div><div className="border-t border-[#B8AB9B]">{FORMA.faq.map((f,i)=><details className="border-b border-[#B8AB9B] py-5" key={i}><summary className="cursor-pointer font-bold leading-7">{formaText(f.q,locale)}</summary><p className="mt-4 text-[#544D44] text-sm leading-8">{formaText(f.a,locale)}</p></details>)}</div></div></section>
-  <section data-sector-specific="mavvix-business-conversion" className="bg-[#292722] text-[#F5F0E8]"><div className={wrap+' py-16 sm:py-24 grid lg:grid-cols-[1fr_auto] gap-9 items-center'}><div><p className="text-xs text-[#E6B99F] font-bold">MAVVIX / DIGITAL STUDIO</p><h2 className={heading+' mt-4'}>{t('عندك شركة مطابخ أو ديكور؟','Own a kitchen or interior business?')}</h2><p className="mt-5 leading-8 text-[#E6D9C8] max-w-3xl">{t('نصمم لشركتك تجربة رقمية بهويتك وصور مشروعاتك الحقيقية، مع استقبال طلبات التصميم وإدارتها. Forma تصور مستقل من مافكس وليس شركة تنفيذ مطابخ.','Mavvix can build a bespoke experience using your real brand, project photography and enquiry workflow. Forma is an independent website concept, not an operating fabricator.')}</p></div><a href={ar?'https://mavvix.com/ar/contact':'https://mavvix.com/en/contact'} className="inline-flex gap-4 items-center justify-center min-h-12 px-7 py-4 bg-[#E6B99F] text-[#292722] font-bold text-sm">{t('اطلب موقع لشركتك','Commission your website')}<ArrowUpRight size={20}/></a></div></section>
+  <section data-sector-specific="mavvix-business-conversion" className="bg-[#292722] text-[#F5F0E8]"><div className={wrap+' py-16 sm:py-24 grid lg:grid-cols-[1fr_auto] gap-9 items-center'}><div><p className="text-xs text-[#E6B99F] font-bold">MAVVIX / DIGITAL STUDIO</p><h2 className={heading+' mt-4'}>{t('شغلك يستحق موقع بنفس فخامته.','Your work deserves a website just as considered.')}</h2><p className="mt-5 leading-8 text-[#E6D9C8] max-w-3xl">{t('نصمم لشركتك تجربة رقمية بهويتك وصور مشروعاتك الحقيقية، مع استقبال طلبات التصميم وإدارتها. Forma تصور مستقل من مافكس وليس شركة تنفيذ مطابخ.','Mavvix can build a bespoke experience using your real brand, project photography and enquiry workflow. Forma is an independent website concept, not an operating fabricator.')}</p><div className="mt-6 flex flex-wrap gap-3 text-sm font-bold text-[#F5F0E8]">{[t('برمجة خاصة بهويتك','Bespoke development'),t('كتالوج تفاعلي','Interactive catalogue'),t('إدارة طلبات العملاء','Lead management')].map(v=><span key={v} className="border border-[#8E8274] px-4 py-2">{v}</span>)}</div></div><a href={ar?'https://mavvix.com/ar/contact':'https://mavvix.com/en/contact'} className="inline-flex gap-4 items-center justify-center min-h-12 px-7 py-4 bg-[#E6B99F] text-[#292722] font-bold text-sm">{t('اطلب موقع لشركتك','Commission your website')}<ArrowUpRight size={20}/></a></div></section>
  </div>;
 }

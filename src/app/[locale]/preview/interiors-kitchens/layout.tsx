@@ -21,7 +21,7 @@ export default async function FormaLayout(props:{children:React.ReactNode;params
   {href:formaPath(locale,'services'),label:ar?'التصميمات':'Solutions'},
   {href:formaPath(locale,'layouts'),label:ar?'التخطيطات':'Layouts'},
   {href:formaPath(locale,'materials'),label:ar?'المواد':'Materials'},
-  {href:formaPath(locale,'measurement'),label:ar?'القياسات':'Measurement'},
+  {href:formaPath(locale,'gallery'),label:ar?'الإلهام':'Inspiration'},
   {href:formaPath(locale,'process'),label:ar?'خطوات العمل':'Process'},
   {href:formaPath(locale,'journal'),label:ar?'مقالات':'Field journal'}
  ];
@@ -50,7 +50,7 @@ export default async function FormaLayout(props:{children:React.ReactNode;params
   <footer className="bg-[#292722] text-[#F4EFE9] pt-16 pb-32 sm:pb-20">
    <div className="max-w-7xl px-5 sm:px-8 mx-auto">
     <div className="grid md:grid-cols-[1.25fr_.75fr_.9fr] gap-12 pb-14 border-b border-white/20">
-     <div><strong className="forma-display text-5xl">FORMA<span className="text-[#9A4B32]">/</span></strong><p className="text-sm text-[#D8C9B9] leading-8 mt-6 max-w-sm">{ar?'اتجاه فني لتصميم واجهات مواقع المطابخ والدريسنج من مافكس. Forma ليست شركة مطابخ فعلية ولا تعرض مشروعات منفذة.':'An original Mavvix editorial website experience for bespoke cabinetry and kitchen design. Forma is not an operating fabricator or a finished-project portfolio.'}</p></div>
+     <div><strong className="forma-display text-5xl">FORMA<span className="text-[#E6B99F]">/</span></strong><p className="text-sm text-[#D8C9B9] leading-8 mt-6 max-w-sm">{ar?'اتجاه فني لتصميم واجهات مواقع المطابخ والدريسنج من مافكس. Forma ليست شركة مطابخ فعلية ولا تعرض مشروعات منفذة.':'An original Mavvix editorial website experience for bespoke cabinetry and kitchen design. Forma is not an operating fabricator or a finished-project portfolio.'}</p></div>
      <div><h2 className="text-sm text-[#E8AF8D] font-bold uppercase tracking-widest">{ar?'استكشف':'Explore'}</h2><div className="mt-5 flex flex-col gap-3 text-xs text-[#E3D8CE]">{menu.slice(0,5).map(m=><Link href={m.href} key={m.href}>{m.label}</Link>)}</div></div>
      <div><h2 className="text-sm text-[#E8AF8D] font-bold uppercase tracking-widest">{ar?'نفّذ موقعًا مشابهًا':'Your business deserves a unique site'}</h2><p className="text-sm text-[#D8C9B9] leading-8 mt-5">{ar?'بيانات ورشتك وصور مشروعاتك وطلبات تصميمك الحقيقية يمكن تحويلها إلى موقع متخصص مستقل.':'Turn your real business identity, owner-approved project portfolio and design briefs into a standalone premium website.'}</p><a href={ar?'https://mavvix.com/ar/contact':'https://mavvix.com/en/contact'} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-[#F9DED0] underline underline-offset-4 mt-5">{ar?'تحدث مع مافكس':'Contact Mavvix'}<ArrowUpRight size={16}/></a></div>
     </div>
