@@ -1,6 +1,8 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
 import { DatabaseSync } from 'node:sqlite';
+import fs from 'node:fs';
+import crypto from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -184,6 +186,34 @@ describe('07 — Restaurant (Saffron Table / سفرة زعفران) Unit Tests',
 
       assert.ok(arWordCount >= 200, `Article ${a.slug} AR word count (${arWordCount}) should exceed 200`);
       assert.ok(enWordCount >= 200, `Article ${a.slug} EN word count (${enWordCount}) should exceed 200`);
+    }
+  });
+
+  test('Saffron Table: Six local WebP assets match manifest and verified SHA-256 checksums', () => {
+    const manifestPath = path.join(rootDir, 'docs', '30-verticals', 'media', 'restaurant.media-manifest.json');
+    assert.ok(fs.existsSync(manifestPath), 'restaurant.media-manifest.json must exist');
+
+    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    assert.equal(manifest.sector, 'restaurant');
+    assert.equal(manifest.brand, 'Saffron Table');
+    assert.equal(manifest.assets.length, 6, 'Must document exactly 6 photographic assets');
+
+    for (const a of manifest.assets) {
+      const assetPath = path.join(rootDir, 'public', a.local_path.replace(/^\//, ''));
+      assert.ok(fs.existsSync(assetPath), `Asset file ${a.local_path} must exist locally`);
+
+      const stat = fs.statSync(assetPath);
+      assert.equal(stat.size, a.bytes, `File size for ${a.id} must match manifest bytes`);
+
+      const buf = fs.readFileSync(assetPath);
+      const isRiffWebp =
+        buf.length >= 12 &&
+        buf.toString('ascii', 0, 4) === 'RIFF' &&
+        buf.toString('ascii', 8, 12) === 'WEBP';
+      assert.ok(isRiffWebp, `Asset ${a.filename} must be a valid RIFF/WEBP binary`);
+
+      const hash = crypto.createHash('sha256').update(buf).digest('hex');
+      assert.equal(hash, a.sha256, `SHA-256 for ${a.id} must match manifest`);
     }
   });
 });

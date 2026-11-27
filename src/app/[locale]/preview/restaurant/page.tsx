@@ -6,6 +6,9 @@ import React from 'react';
 import Link from 'next/link';
 import { Locale } from '@/lib/i18n/config';
 import { getRestaurantDishes, getRestaurantBranches, getEditorialPosts } from '@/lib/db/repositories';
+import { SaffronVisualAtelier } from './SaffronVisualAtelier';
+import { SaffronTastingMenuBuilder } from './SaffronTastingMenuBuilder';
+import { SaffronCulinaryHeritage } from './SaffronCulinaryHeritage';
 
 export async function generateMetadata(props: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const params = await props.params;
@@ -95,7 +98,7 @@ export default async function RestaurantHomePage(
               </div>
 
               {/* Discrete Notice */}
-              <p className="text-xs text-[#62622F] font-medium pt-2">
+              <p className="text-xs text-[#4A2318] font-semibold pt-2">
                 {isAr
                   ? '✦ نموذج رقمي استعراضي من مافيكس — يمكنك تجربة اختيار المكونات وتخصيص الأطباق وحجز الطاولات تجريبيًا.'
                   : '✦ Interactive Mavvix demonstration — customize portion sizes, test allergen filters, and preview table requests.'}
@@ -198,7 +201,7 @@ export default async function RestaurantHomePage(
               <h3 className="font-serif text-base font-bold text-[#321F18] group-hover:text-[#984321] transition-colors">
                 {cat.name}
               </h3>
-              <span className="text-xs text-[#62622F] mt-1 inline-block">
+              <span className="text-xs text-[#4A2318] mt-1 inline-block font-semibold">
                 {cat.count} {isAr ? 'أطباق' : 'dishes'}
               </span>
             </Link>
@@ -236,7 +239,7 @@ export default async function RestaurantHomePage(
 
               <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div>
-                  <div className="flex items-center justify-between text-xs text-[#62622F] mb-2">
+                  <div className="flex items-center justify-between text-xs text-[#4A2318] mb-2 font-medium">
                     <span className="uppercase font-semibold tracking-wider">{dish.category}</span>
                     {dish.attributes?.dietary_tags?.includes('vegetarian') && (
                       <span className="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-bold">
@@ -385,20 +388,20 @@ export default async function RestaurantHomePage(
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold text-[#984321] uppercase tracking-wider">{branch.district}</span>
-                  <span className="text-xs text-[#62622F] font-medium">{branch.capacityTables} {isAr ? 'طاولة' : 'tables'}</span>
+                  <span className="text-xs text-[#4A2318] font-semibold">{branch.capacityTables} {isAr ? 'طاولة' : 'tables'}</span>
                 </div>
 
                 <h3 className="font-serif text-xl font-bold text-[#321F18]">
                   {branch.name}
                 </h3>
 
-                <p className="text-xs text-[#321F18]/70 leading-relaxed">
+                <p className="text-xs text-[#321F18]/80 leading-relaxed">
                   {branch.address}
                 </p>
 
                 <div className="p-3 rounded-lg bg-[#FAF3E6] border border-[#321F18]/10 text-xs space-y-1">
                   <span className="font-semibold block text-[#321F18]">{branch.hours}</span>
-                  <span className="text-[11px] text-[#62622F] block">{branch.fridayNote}</span>
+                  <span className="text-[11px] text-[#4A2318] font-semibold block">{branch.fridayNote}</span>
                 </div>
 
                 <p className="text-xs text-[#321F18]/80 italic">
@@ -425,6 +428,13 @@ export default async function RestaurantHomePage(
           ))}
         </div>
       </section>
+
+      {/* Signature Interactive Tools: Visual Atelier, Tasting Menu Builder, Culinary Heritage */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        <SaffronVisualAtelier locale={locale} />
+        <SaffronTastingMenuBuilder locale={locale} />
+        <SaffronCulinaryHeritage locale={locale} />
+      </div>
 
       {/* Culinary Journal Teaser */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -453,7 +463,7 @@ export default async function RestaurantHomePage(
               className="p-6 rounded-2xl bg-white border border-[#321F18]/10 hover:border-[#BA5C34] hover:shadow-md transition-all group flex flex-col justify-between"
             >
               <div className="space-y-3">
-                <span className="text-[11px] uppercase tracking-wider font-semibold text-[#62622F]">
+                <span className="text-[11px] uppercase tracking-wider font-bold text-[#4A2318]">
                   {art.category}
                 </span>
                 <h3 className="font-serif text-lg font-bold text-[#321F18] group-hover:text-[#984321] transition-colors leading-snug">

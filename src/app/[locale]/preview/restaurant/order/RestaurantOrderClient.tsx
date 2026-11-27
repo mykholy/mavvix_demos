@@ -255,19 +255,19 @@ export function RestaurantOrderClient({
                       {item.name}
                     </h3>
                     {item.sizeLabel && (
-                      <span className="text-[10px] px-2 py-0.5 rounded bg-[#FAF3E6] border border-[#321F18]/10 text-[#8B8B52] font-semibold">
+                      <span className="text-[10px] px-2 py-0.5 rounded bg-[#FAF3E6] border border-[#321F18]/10 text-[#4A2318] font-bold">
                         {item.sizeLabel}
                       </span>
                     )}
                   </div>
 
                   {item.extrasLabels && item.extrasLabels.length > 0 && (
-                    <p className="text-[11px] text-[#321F18]/60">
+                    <p className="text-[11px] text-[#321F18]/70">
                       + {item.extrasLabels.join(', ')}
                     </p>
                   )}
 
-                  <span className="text-xs text-[#8B8B52] block font-mono">
+                  <span className="text-xs text-[#4A2318] block font-mono font-semibold">
                     {(item.unitPriceCents / 100).toFixed(0)} {isAr ? 'ج.م' : 'EGP'}
                   </span>
                 </div>
@@ -277,6 +277,7 @@ export function RestaurantOrderClient({
                   <div className="flex items-center gap-2">
                     <button
                       type="button"
+                      aria-label={isAr ? 'تقليل الكمية' : 'Decrease quantity'}
                       onClick={() => updateQuantity(item.id, item.quantity - 1)}
                       className="w-7 h-7 rounded-lg bg-[#FAF3E6] border border-[#321F18]/20 flex items-center justify-center font-bold text-xs hover:bg-[#321F18] hover:text-white transition-colors"
                     >
@@ -285,6 +286,7 @@ export function RestaurantOrderClient({
                     <span className="w-6 text-center font-bold text-xs">{item.quantity}</span>
                     <button
                       type="button"
+                      aria-label={isAr ? 'زيادة الكمية' : 'Increase quantity'}
                       onClick={() => updateQuantity(item.id, item.quantity + 1)}
                       className="w-7 h-7 rounded-lg bg-[#FAF3E6] border border-[#321F18]/20 flex items-center justify-center font-bold text-xs hover:bg-[#321F18] hover:text-white transition-colors"
                     >
@@ -300,8 +302,9 @@ export function RestaurantOrderClient({
                   {/* Remove Button */}
                   <button
                     type="button"
+                    aria-label={isAr ? 'حذف الطبق من الطلب' : 'Remove item from order'}
                     onClick={() => removeItem(item.id)}
-                    className="text-xs text-[#321F18]/40 hover:text-rose-700 p-1"
+                    className="text-xs text-[#321F18]/60 hover:text-rose-700 p-1 font-bold"
                     title={isAr ? 'حذف' : 'Remove'}
                   >
                     ✕
@@ -356,10 +359,12 @@ export function RestaurantOrderClient({
 
           {/* Guest Name */}
           <div className="space-y-1.5">
-            <label className="text-xs font-bold text-[#321F18] uppercase tracking-wider block">
+            <label htmlFor="order-guest-name" className="text-xs font-bold text-[#321F18] uppercase tracking-wider block">
               {isAr ? 'اسم الضيف (تجريبي):' : 'Guest Name (Demo):'}
             </label>
             <input
+              id="order-guest-name"
+              aria-label={isAr ? 'اسم الضيف' : 'Guest Name'}
               type="text"
               required
               value={guestName}
@@ -370,10 +375,12 @@ export function RestaurantOrderClient({
 
           {/* Guest Phone */}
           <div className="space-y-1.5">
-            <label className="text-xs font-bold text-[#321F18] uppercase tracking-wider block">
+            <label htmlFor="order-guest-phone" className="text-xs font-bold text-[#321F18] uppercase tracking-wider block">
               {isAr ? 'رقم الهاتف للتواصل (تجريبي):' : 'Phone Contact (Demo):'}
             </label>
             <input
+              id="order-guest-phone"
+              aria-label={isAr ? 'رقم الهاتف للتواصل' : 'Phone Contact'}
               type="text"
               required
               value={guestPhone}
@@ -384,13 +391,15 @@ export function RestaurantOrderClient({
 
           {/* Pickup Branch */}
           <div className="space-y-1.5">
-            <label className="text-xs font-bold text-[#321F18] uppercase tracking-wider block">
+            <label htmlFor="order-pickup-branch" className="text-xs font-bold text-[#321F18] uppercase tracking-wider block">
               {isAr ? 'فرع الاستلام:' : 'Pickup Branch:'}
             </label>
             <select
+              id="order-pickup-branch"
+              aria-label={isAr ? 'فرع الاستلام' : 'Pickup Branch'}
               value={selectedBranchId}
               onChange={e => setSelectedBranchId(e.target.value)}
-              className="w-full px-3.5 py-2.5 rounded-xl border border-[#321F18]/20 text-xs focus:outline-none focus:border-[#BA5C34] text-[#321F18] bg-white"
+              className="w-full px-3.5 py-2.5 rounded-xl border border-[#321F18]/20 text-xs focus:outline-none focus:border-[#BA5C34] text-[#321F18] bg-white font-medium"
             >
               {branches.map(b => (
                 <option key={b.id} value={b.id}>
@@ -402,10 +411,12 @@ export function RestaurantOrderClient({
 
           {/* Kitchen Note */}
           <div className="space-y-1.5">
-            <label className="text-xs font-bold text-[#321F18] uppercase tracking-wider block">
+            <label htmlFor="order-pickup-notes" className="text-xs font-bold text-[#321F18] uppercase tracking-wider block">
               {isAr ? 'ملاحظات التحضير أو الحساسية:' : 'Kitchen Preparation Notes:'}
             </label>
             <textarea
+              id="order-pickup-notes"
+              aria-label={isAr ? 'ملاحظات التحضير أو الحساسية' : 'Kitchen Preparation Notes'}
               rows={2}
               value={pickupNote}
               onChange={e => setPickupNote(e.target.value)}
@@ -449,7 +460,7 @@ export function RestaurantOrderClient({
             )}
           </button>
 
-          <p className="text-[10px] text-center text-[#8B8B52]">
+          <p className="text-[10px] text-center text-[#4A2318] font-semibold">
             {isAr
               ? 'يُحفظ هذا الطلب في قاعدة بيانات SQLite المحلية لإظهاره في لوحة الإدارة للمراجعة.'
               : 'Persists to local SQLite demo_submissions for demonstration in the admin studio.'}
