@@ -396,6 +396,21 @@
         "ar": "مركز توزيع في صورة تحريرية مستقلة لا يمثل مخازن تريد بريدج",
         "en": "Independent distribution-centre photograph, not TradeBridge premises"
       }
+    },
+    {
+      "role": "stock-editorial",
+      "credit": "ProjectManhattan",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Warehouse_goods.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Warehouse_goods.jpg",
+      "originalSha1": "8dc3f7dbf5b7ae552e0cb3554bf9a43cbe007892",
+      "width": 3920,
+      "height": 2204,
+      "alt": {
+        "ar": "طرود على أرفف مستودع إيكيا في سنغافورة، صورة مستقلة ليست مخزون تريد بريدج",
+        "en": "Crates on racks at IKEA Singapore, independent editorial photograph, not TradeBridge inventory"
+      }
     }
   ]
 }
