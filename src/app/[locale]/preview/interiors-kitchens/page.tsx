@@ -24,17 +24,17 @@ export default async function FormaHome({params}:{params:Promise<{locale:Locale}
  const cta='inline-flex items-center justify-center gap-4 min-h-12 bg-[#9A4B32] text-white px-6 py-4 text-sm font-bold hover:bg-[#773623] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#292722]';
  const textlink='inline-flex items-center gap-3 text-sm font-bold underline underline-offset-[6px]';
  return <div className="bg-[#F5F0E8] text-[#292722]">
-  <section data-sector-specific="architectural-editorial-hero" className={wrap+' pt-10 sm:pt-16 pb-12 lg:pb-20'}>
-   <div className="grid lg:grid-cols-[.78fr_1.22fr] gap-9 lg:gap-14 items-center">
+  <section data-sector-specific="architectural-editorial-hero" className={wrap+' pt-6 sm:pt-16 pb-10 sm:pb-12 lg:pb-20'}>
+   <div className="grid lg:grid-cols-[.78fr_1.22fr] gap-5 sm:gap-9 lg:gap-14 items-center">
     <div className="min-w-0">
      <p className={eyebrow}>{t('فورما أتيليه — تصميم داخلي','FORMA ATELIER / INTERIOR DESIGN')}</p>
-     <h1 className="forma-display mt-6 text-[clamp(2.7rem,5.3vw,6.1rem)] leading-[1.08] font-semibold tracking-tight">{t('مساحة تشبهك.','Spaces that')}<span className="block text-[#843F2B]">{t('وتفاصيل تعيش معك.','feel like home.')}</span></h1>
-     <p className="mt-7 max-w-[35rem] text-[#544D44] text-base sm:text-lg leading-[1.9]">{t('مطبخ يبدأ من أسلوب حياتك، لا من كتالوج جاهز. استكشف توزيع المساحة والخامات والتفاصيل التي تصنع الفرق في كل يوم.','A kitchen shaped around everyday life, not a ready-made catalogue. Explore spatial planning, materials and the details that make a difference.')}</p>
-     <div className="mt-8 flex flex-wrap gap-5 items-center"><Link href={formaPath(locale,'consultation')} className={cta}>{t('ابدأ تصور مطبخك','Start your design brief')}<Arrow size={19}/></Link><Link href="#layout-studio" className={textlink}>{t('استكشف المساحات','Explore layouts')}<ArrowUpRight size={17}/></Link></div>
-     <div className="mt-10 border-t border-[#B8AB9B] pt-5 flex flex-wrap gap-x-6 gap-y-2 text-xs text-[#544D44] font-bold"><span>{t('تصميم حسب المساحة','Space-led design')}</span><span>{t('خامات وتفاصيل','Materials & details')}</span><span>{t('استشارة مبدئية','Initial consultation')}</span></div>
+     <h1 className="forma-display mt-4 sm:mt-6 text-[clamp(2.15rem,5.3vw,6.1rem)] leading-[1.08] font-semibold tracking-tight">{t('مساحة تشبهك.','Spaces that')}<span className="block text-[#843F2B]">{t('وتفاصيل تعيش معك.','feel like home.')}</span></h1>
+     <p className="mt-4 sm:mt-7 max-w-[35rem] text-[#544D44] text-base sm:text-lg leading-[1.75] sm:leading-[1.9]">{t('مطبخ يليق بأسلوب حياتك. استكشف التخطيطات والخامات، وابدأ تصور مساحتك.','A kitchen shaped around your life. Explore layouts and materials, then start designing your space.')}</p>
+     <div className="mt-5 sm:mt-8 flex flex-wrap gap-3 sm:gap-5 items-center"><Link href={formaPath(locale,'consultation')} className={cta}>{t('ابدأ تصور مطبخك','Start your design brief')}<Arrow size={19}/></Link><Link href="#layout-studio" className={textlink}>{t('استكشف المساحات','Explore layouts')}<ArrowUpRight size={17}/></Link></div>
+     <div className="mt-5 sm:mt-10 border-t border-[#B8AB9B] pt-3 sm:pt-5 flex flex-wrap gap-x-6 gap-y-2 text-xs text-[#544D44] font-bold"><span>{t('تصميم حسب المساحة','Space-led design')}</span><span>{t('خامات وتفاصيل','Materials & details')}</span><span>{t('استشارة مبدئية','Initial consultation')}</span></div>
     </div>
     <figure className="min-w-0 relative">
-     <div className="relative aspect-[4/4.2] sm:aspect-[5/4] lg:aspect-[5/5.2] overflow-hidden bg-[#D7C8B6]"><img src={hero.url} alt={hero[locale]} loading="eager" fetchPriority="high" className="absolute inset-0 w-full h-full object-cover"/></div>
+     <div className="relative aspect-[5/4] sm:aspect-[5/4] lg:aspect-[5/5.2] overflow-hidden bg-[#D7C8B6]"><img src={hero.url} alt={hero[locale]} loading="eager" fetchPriority="high" className="absolute inset-0 w-full h-full object-cover"/></div>
      <div className="absolute bottom-12 start-0 bg-[#292722] text-[#F5F0E8] px-5 py-4 max-w-[85%]"><p className="text-xs text-[#E6B99F]">{t('دراسة مساحة / 01','SPACE STUDY / 01')}</p><p className="forma-display text-xl mt-2">{t('هدوء في التفاصيل','Quiet by design')}</p></div>
      <figcaption className="mt-3 text-xs text-[#544D44] flex flex-wrap justify-between gap-2"><PhotoCredit photo={hero} locale={locale}/><Link className="underline" href={formaPath(locale,'gallery')}>{t('مصدر الصورة','Image credits')}</Link></figcaption>
     </figure>

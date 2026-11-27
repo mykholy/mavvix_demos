@@ -15,7 +15,7 @@ const headlines:Record<Section,{ar:string;en:string}>={
  materials:{ar:'اختيار الخامات من المواصفات وليس الصور',en:'Materials should be selected by specification'},
  measurement:{ar:'قبل تصميم مطبخك: دليل المقاسات الأولية',en:'Prepare useful kitchen measurements'},
  process:{ar:'رحلة التصميم من الاستشارة للتصنيع المعتمد',en:'The design process from first brief to approved scope'},
- gallery:{ar:'صور مطابخ حقيقية من مصادر مرخصة',en:'Licensed real-world kitchen image references'},
+ gallery:{ar:'معرض إلهام للمطابخ والخامات',en:'Kitchen and material inspiration'},
  finishes:{ar:'تفاصيل الإضاءة والتشطيبات والتخزين',en:'Finishes, lighting and storage details'},
  about:{ar:'فكرة Forma Atelier من مافكس',en:'About the Forma Atelier experience'},
  contact:{ar:'موقع متخصص لشركة المطابخ الخاصة بك',en:'Create a tailored website for your kitchen business'},

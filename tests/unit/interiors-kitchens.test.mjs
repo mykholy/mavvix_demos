@@ -20,6 +20,11 @@ test('Forma uses six local WebP assets matching documented sizes and SHA-256',()
   assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),a.sha256);
   assert.ok(media.includes("url:'"+a.local+"'"));
  }
+ const wood=manifest.assets.find(a=>a.id==='walnut');
+ assert.equal(wood.source_page,'https://commons.wikimedia.org/wiki/File:Texture_de_noyer.jpg');
+ assert.equal(wood.author,'Cyril5555');
+ assert.equal(wood.license,'CC BY-SA 3.0');
+ assert.ok(!media.includes('Walnut_textures.jpg'));
  assert.ok(!media.includes('upload.wikimedia.org'));
  assert.ok(!data.includes('upload.wikimedia.org'));
 });
