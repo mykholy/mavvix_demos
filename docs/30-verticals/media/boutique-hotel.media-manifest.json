@@ -1,0 +1,21 @@
+{
+  "vertical": "boutique-hotel",
+  "assets": [
+    {
+      "id": "oasis-room",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Boutique-hotel.jpg",
+      "author": "Book Elizabeth",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Boutique-hotel.jpg",
+      "original_dimensions": "2560x2560",
+      "original_sha1": "6cb170ab0f72dbd466de403e095ef2ac72cd29c0",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/oasis-room.webp",
+      "dimensions": "1600x1600",
+      "sha256": "af1663b00c1e057b60f7fcc40c342d465723edae6cbb374e3d22000cd11db394",
+      "bytes": 201826,
+      "changes": "Resized and WebP encoded; display may crop. Adapted image remains CC BY-SA 4.0. Independent editorial photograph, not Oasis property."
+    }
+  ]
+}
