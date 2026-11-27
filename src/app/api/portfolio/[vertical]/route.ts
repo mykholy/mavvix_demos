@@ -44,7 +44,7 @@ const schema=z.object({
  region:clean.min(2).max(90),
  consent:z.literal(true),
  honeypot:z.literal('').optional().default(''),
- utm:z.object({source:utmField,medium:utmField,campaign:utmField,content:utmField,term:utmField}).prefault({}),
+ utm:z.object({source:utmField,medium:utmField,campaign:utmField,content:utmField,term:utmField}).default({}),
 }).strict();
 function failure(code:string,status=422){return NextResponse.json({success:false,code,message:code},{status});}
 
