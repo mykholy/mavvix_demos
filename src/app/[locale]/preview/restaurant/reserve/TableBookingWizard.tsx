@@ -367,10 +367,12 @@ export function TableBookingWizard({
         <div className="space-y-6">
           {/* Date Picker */}
           <div className="space-y-1.5">
-            <label className="text-xs font-bold text-[#321F18] uppercase tracking-wider block">
+            <label htmlFor="reservation-dining-date" className="text-xs font-bold text-[#321F18] uppercase tracking-wider block">
               {isAr ? 'تاريخ الزيارة المرغوب:' : 'Select Dining Date:'}
             </label>
             <input
+              id="reservation-dining-date"
+              aria-label={isAr ? 'تاريخ الزيارة' : 'Select Dining Date'}
               type="date"
               required
               value={date}
@@ -452,10 +454,12 @@ export function TableBookingWizard({
       {step === 3 && (
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-1.5">
-            <label className="text-xs font-bold text-[#321F18] uppercase tracking-wider block">
+            <label htmlFor="reservation-guest-name" className="text-xs font-bold text-[#321F18] uppercase tracking-wider block">
               {isAr ? 'اسم الضيف الكريم (تجريبي):' : 'Guest Name (Demo):'}
             </label>
             <input
+              id="reservation-guest-name"
+              aria-label={isAr ? 'اسم الضيف' : 'Guest Name'}
               type="text"
               required
               value={guestName}
@@ -465,10 +469,12 @@ export function TableBookingWizard({
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-bold text-[#321F18] uppercase tracking-wider block">
+            <label htmlFor="reservation-guest-phone" className="text-xs font-bold text-[#321F18] uppercase tracking-wider block">
               {isAr ? 'رقم الهاتف للتواصل (تجريبي):' : 'Phone Number (Demo):'}
             </label>
             <input
+              id="reservation-guest-phone"
+              aria-label={isAr ? 'رقم الهاتف للتواصل' : 'Phone Number'}
               type="text"
               required
               value={guestPhone}
@@ -478,10 +484,12 @@ export function TableBookingWizard({
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-bold text-[#321F18] uppercase tracking-wider block">
+            <label htmlFor="reservation-guest-notes" className="text-xs font-bold text-[#321F18] uppercase tracking-wider block">
               {isAr ? 'ملاحظات خاصة (حساسيات، مناسبة عائلية، إلخ):' : 'Special Notes (Allergies, Occasions):'}
             </label>
             <textarea
+              id="reservation-guest-notes"
+              aria-label={isAr ? 'ملاحظات خاصة' : 'Special Notes'}
               rows={3}
               value={guestNotes}
               onChange={e => setGuestNotes(e.target.value)}

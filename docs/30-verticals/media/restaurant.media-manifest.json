@@ -1,0 +1,115 @@
+{
+  "sector": "restaurant",
+  "brand": "Saffron Table",
+  "editorial_disclaimer": "Photographs depict authentic culinary preparations, slow-simmered ceramic tagines, Eastern mezze spreads, high-grade crimson saffron threads, clay hearth baking, pistachio honey baklava, and traditional shaded courtyard pavilions with verified open-license provenance (Creative Commons and Public Domain). They do NOT depict proprietary Saffron Table kitchen facilities or commercial trademarked dishes.",
+  "assets": [
+    {
+      "id": "tagine",
+      "filename": "tagine.webp",
+      "local_path": "/assets/portfolio/restaurant/tagine.webp",
+      "category": "heritage_mains",
+      "title_en": "Clay Tagine Simmered with Saffron, Braised Meat & Roasted Almonds",
+      "title_ar": "طاجن فخاري مغربي مطهو بالزعفران البلدي والمكسرات المحمصة",
+      "dimensions": { "width": 1800, "height": 1350 },
+      "bytes": 391078,
+      "sha256": "438c616a6380a825e8380e9c7527752862cc9c90be834c19f759e1423740e887",
+      "provenance": {
+        "author": "Rida Benalla",
+        "license": "CC BY-SA 4.0 International",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Moroccan_tagine.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Moroccan_tagine.jpg"
+      }
+    },
+    {
+      "id": "mezze",
+      "filename": "mezze.webp",
+      "local_path": "/assets/portfolio/restaurant/mezze.webp",
+      "category": "starters_mezze",
+      "title_en": "Eastern Mezze Table with Hummus, Virgin Olive Oil & Fresh Herbs",
+      "title_ar": "سفرة مقبلات ومزة شرقية مع الحمص وزيت الزيتون البكر والأعشاب",
+      "dimensions": { "width": 1800, "height": 1350 },
+      "bytes": 283210,
+      "sha256": "8a2da912271f978d9108748bd5009546e7aa34a7e9bb9135c6288270afdf471c",
+      "provenance": {
+        "author": "cyclonebill",
+        "license": "CC BY 2.0 Generic",
+        "license_url": "https://creativecommons.org/licenses/by/2.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Lebanese_M%C3%A9z%C3%A9_(4039076597).jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Lebanese_M%C3%A9z%C3%A9_%284039076597%29.jpg"
+      }
+    },
+    {
+      "id": "saffron",
+      "filename": "saffron.webp",
+      "local_path": "/assets/portfolio/restaurant/saffron.webp",
+      "category": "spices_sourcing",
+      "title_en": "Pure Crimson Mountain Saffron Threads in Traditional Porcelain",
+      "title_ar": "خيوط الزعفران الجبلي القرمزية النقية في صحن الخزف التراثي",
+      "dimensions": { "width": 1613, "height": 1545 },
+      "bytes": 205182,
+      "sha256": "1f481aae4911508b927def7b4e9860e7ad09ade229dd39b0ef568cdfb04fa4bc",
+      "provenance": {
+        "author": "Rainer Zenz",
+        "license": "Public domain",
+        "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Iran_saffron_threads.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Iran_saffron_threads.jpg"
+      }
+    },
+    {
+      "id": "bread",
+      "filename": "bread.webp",
+      "local_path": "/assets/portfolio/restaurant/bread.webp",
+      "category": "hearth_breads",
+      "title_en": "Clay Hearth Wood-Fired Oven Baking Golden Artisan Flatbread",
+      "title_ar": "خبز التنور الفخاري الساخن المخبوز على نار الحطب المباشرة",
+      "dimensions": { "width": 1800, "height": 1012 },
+      "bytes": 278782,
+      "sha256": "212120ba408e570bc8726b29b3736abd3105545e1d4b5591a2db1f35a84e8155",
+      "provenance": {
+        "author": "Siddhartha Ghosh",
+        "license": "CC BY-SA 3.0 Unported",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Tandoor_bread_1.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Tandoor_bread_1.jpg"
+      }
+    },
+    {
+      "id": "baklava",
+      "filename": "baklava.webp",
+      "local_path": "/assets/portfolio/restaurant/baklava.webp",
+      "category": "artisan_desserts",
+      "title_en": "Layered Pistachio Baklava Pastry with Orange Blossom Honey",
+      "title_ar": "بقلاوة بالفستق الحلبي المقرمش وعسل زهر البرتقال الطبيعي",
+      "dimensions": { "width": 1600, "height": 1200 },
+      "bytes": 132304,
+      "sha256": "5a4b9b2523b96f9f2de9b474dbe500b47b9417e95050e82349189d135f7cb487",
+      "provenance": {
+        "author": "Marco Verch",
+        "license": "CC BY-SA 2.0 Generic",
+        "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Pistachio_Baklava_(23102093965).jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Pistachio_Baklava_%2823102093965%29.jpg"
+      }
+    },
+    {
+      "id": "courtyard",
+      "filename": "courtyard.webp",
+      "local_path": "/assets/portfolio/restaurant/courtyard.webp",
+      "category": "dining_ambiance",
+      "title_en": "Heritage Courtyard Dining Pavilion with Traditional Lanterns",
+      "title_ar": "فناء المطعم التراثي المشجر مع فوانيس الإضاءة الدافئة الهادئة",
+      "dimensions": { "width": 1800, "height": 1199 },
+      "bytes": 372844,
+      "sha256": "fd595b0d63cd0a662ebf3a23435fc768b519495b5bc3186481d2280ae18f1db4",
+      "provenance": {
+        "author": "Christian Benseler",
+        "license": "CC BY 2.0 Generic",
+        "license_url": "https://creativecommons.org/licenses/by/2.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Lovely_courtyard_restaurant_in_the_Bastakia_Quarter_(5374150000).jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Lovely_courtyard_restaurant_in_the_Bastakia_Quarter_%285374150000%29.jpg"
+      }
+    }
+  ]
+}
