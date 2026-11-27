@@ -28,6 +28,7 @@ async function ready(){
  throw Error('Next server did not start: '+serverLog.slice(-2000));
 }
 const cases=[
+ ['solar-energy',''],['solar-energy','solutions'],['solar-energy','solutions/commercial-rooftop'],['solar-energy','assessment'],['solar-energy','sectors'],['solar-energy','process'],['solar-energy','feasibility'],['solar-energy','maintenance'],['solar-energy','guides/site-survey-checklist'],
  ['boutique-hotel',''],['boutique-hotel','rooms'],['boutique-hotel','rooms/courtyard-king'],['boutique-hotel','compare'],['boutique-hotel','stay'],['boutique-hotel','dining'],['boutique-hotel','experiences'],['boutique-hotel','policies'],['boutique-hotel','arrival'],['boutique-hotel','journal/choose-your-room'],
  // The original eight must receive direct browser coverage, not showcase-only coverage.
  ['construction',''],['construction','request-quote'],
@@ -155,6 +156,17 @@ try{
      await page.screenshot({path:path.join(out,png),fullPage:true,animations:'disabled',timeout:25000});
      entry.screenshot=png;
      entry.title=pre.title;
+     if(sector==='solar-energy'&&subpath==='assessment'&&viewport.name==='mobile-390'){
+       const form=page.locator('main form'),button=form.locator('button[type=submit]'),selects=form.locator('select');
+       await selects.nth(0).selectOption('commercial-rooftop');await selects.nth(1).selectOption('home');
+       await form.locator('input[autocomplete=name]').fill('Browser QA Solar');await form.locator('input[type=tel]').fill('01000000000');await form.locator('input[type=checkbox]').check();
+       assert.ok(await button.isDisabled(),'VoltEdge must reject mismatched site');
+       await selects.nth(1).selectOption('commercial');assert.ok(await button.isEnabled(),'Valid scope must be submittable');
+       const responsePromise=page.waitForResponse(r=>r.url().endsWith('/api/portfolio/solar-energy')&&r.request().method()==='POST');await button.click();const saved=await responsePromise;assert.equal(saved.status(),201);
+       const body=await saved.json();assert.match(body.refNumber,/^MVX-VLT-[A-F0-9]{10}$/);assert.equal(body.status,'pending_operator_confirmation');
+       const status=page.locator('main [role=status]');await status.waitFor({state:'visible',timeout:10000});assert.ok((await status.innerText()).includes(body.refNumber));
+       entry.assessmentFlow={mismatchRejected:true,validRequestSaved:true,referenceDisplayed:true};console.log('PASS VOLTEDGE_ASSESSMENT_FLOW '+locale);
+     }
      if(sector==='boutique-hotel'&&subpath==='stay'&&viewport.name==='mobile-390'){
        const form=page.locator('main form');
        const button=form.locator('button[type=submit]');

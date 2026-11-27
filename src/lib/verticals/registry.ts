@@ -241,7 +241,7 @@ export const VERTICALS = [
     "en": "Solar energy",
     "wave": 3,
     "accent": "#C7DA59",
-    "status": "planned"
+    "status": "in_progress"
   },
   {
     "slug": "logistics",
