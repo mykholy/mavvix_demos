@@ -1,0 +1,115 @@
+{
+  "sector": "ecommerce",
+  "brand": "Noria Atelier",
+  "editorial_disclaimer": "Photographs show genuine haute couture tailoring ateliers, traditional leather saddle stitching, artisanal goldsmithing, natural woven linen fabrics, and museum-curated evening gowns with verified open-license provenance (Creative Commons and Public Domain). They do NOT depict proprietary Noria Atelier commercial inventory, private atelier facilities, or guaranteed garment outcomes.",
+  "assets": [
+    {
+      "id": "linen",
+      "filename": "linen.webp",
+      "local_path": "/assets/portfolio/ecommerce/linen.webp",
+      "category": "textiles",
+      "title_en": "Finely Pleated Pure Linen Fabric Detail & Texture",
+      "title_ar": "تفاصيل طيات الكتان الطبيعي الفاخر والملمس النسيجي",
+      "dimensions": { "width": 1800, "height": 1198 },
+      "bytes": 946806,
+      "sha256": "7689a91357d36395f961843e5e0ac8cd9fcfd083c5eda0ef22d89450135c0036",
+      "provenance": {
+        "author": "Hunt Museum and Eamonn O'Mahony",
+        "license": "CC0 1.0 Universal",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Lavender_evening_gown_by_Sybil_Connolly_fabric_detail.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Lavender_evening_gown_by_Sybil_Connolly_fabric_detail.jpg"
+      }
+    },
+    {
+      "id": "gown",
+      "filename": "gown.webp",
+      "local_path": "/assets/portfolio/ecommerce/gown.webp",
+      "category": "haute_couture",
+      "title_en": "Architectural Evening Gown & Silk Draped Silhouette",
+      "title_ar": "فستان سهرة معماري بانسيابية الحرير الخالص",
+      "dimensions": { "width": 1800, "height": 2544 },
+      "bytes": 308870,
+      "sha256": "50b4e1c94fe7091c3644f2c0b91602ee1e24de59b2ff95e2e29e9a633635d4e7",
+      "provenance": {
+        "author": "Callot Soeurs / The Metropolitan Museum of Art",
+        "license": "CC0 1.0 Universal",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Evening_dress_MET_DT414.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Evening_dress_MET_DT414.jpg"
+      }
+    },
+    {
+      "id": "leather",
+      "filename": "leather.webp",
+      "local_path": "/assets/portfolio/ecommerce/leather.webp",
+      "category": "leather_craft",
+      "title_en": "Master Leather Artisan Workbench & Traditional Saddle Stitching",
+      "title_ar": "طاولة الحرفي وحياكة الجلود الطبيعية يدوياً بغرز السراجة",
+      "dimensions": { "width": 1800, "height": 1200 },
+      "bytes": 58128,
+      "sha256": "f8c3e2b92a8b5fde65418ed635eb459e90bd317941d8d01802e059487e1bfbff",
+      "provenance": {
+        "author": "Armitage Leather",
+        "license": "CC BY-SA 4.0 International",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Armitage_Leather_-_Nigel_Armitage.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Armitage_Leather_-_Nigel_Armitage.jpg"
+      }
+    },
+    {
+      "id": "atelier",
+      "filename": "atelier.webp",
+      "local_path": "/assets/portfolio/ecommerce/atelier.webp",
+      "category": "tailoring",
+      "title_en": "Bespoke Fashion Tailoring Atelier & Pattern Drafting",
+      "title_ar": "أتيليه تصميم الأزياء المعاصرة وإعداد الباترون والقص",
+      "dimensions": { "width": 1800, "height": 1198 },
+      "bytes": 226056,
+      "sha256": "989d14b0ce061db86dc51658382f89bbc01a520e61ef0834f6d1b127279fe5dc",
+      "provenance": {
+        "author": "Karim Diarra",
+        "license": "CC BY-SA 4.0 International",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:L%27atelier_couture.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/L%27atelier_couture.jpg"
+      }
+    },
+    {
+      "id": "jewelry",
+      "filename": "jewelry.webp",
+      "local_path": "/assets/portfolio/ecommerce/jewelry.webp",
+      "category": "jewelry",
+      "title_en": "Artisanal Goldsmithing & Micro-Gemstone Setting Craft",
+      "title_ar": "صياغة المجوهرات وتثبيت الأحجار الكريمة بحرفية يدوية",
+      "dimensions": { "width": 1800, "height": 1012 },
+      "bytes": 292766,
+      "sha256": "77699825befedc951f7d8482e1b68bd44abea7a055ef54e9d9462877ff03a738",
+      "provenance": {
+        "author": "SerChevalerie",
+        "license": "CC0 1.0 Universal",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Traditional_goldsmith_at_work_in_Margao%2C_Goa%2C_India.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Traditional_goldsmith_at_work_in_Margao%2C_Goa%2C_India.jpg"
+      }
+    },
+    {
+      "id": "sautoir",
+      "filename": "sautoir.webp",
+      "local_path": "/assets/portfolio/ecommerce/sautoir.webp",
+      "category": "accessories",
+      "title_en": "Fine Pearl Sautoir Pendant & Platinum Filigree Necklace",
+      "title_ar": "عقد اللؤلؤ الطبيعي الفاخر والمشغولات البلاتينية الدقيقة",
+      "dimensions": { "width": 1434, "height": 1799 },
+      "bytes": 49292,
+      "sha256": "60bc023520572ed91f8c23c81bb8ae42958226f82c030d4f178582698e96ff53",
+      "provenance": {
+        "author": "Tiffany & Co. / Walters Art Museum",
+        "license": "Public domain",
+        "license_url": "https://commons.wikimedia.org/wiki/File:Tiffany_and_Company_-_Sautoir_with_Pearl_Pendant_-_Walters_572034.jpg",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Tiffany_and_Company_-_Sautoir_with_Pearl_Pendant_-_Walters_572034.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Tiffany_and_Company_-_Sautoir_with_Pearl_Pendant_-_Walters_572034.jpg"
+      }
+    }
+  ]
+}

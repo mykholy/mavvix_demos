@@ -8,6 +8,9 @@ import { Locale } from '@/lib/i18n/config';
 import { getCatalogItems, getEcommerceCollections, getEditorialPosts } from '@/lib/db/repositories';
 import ProductCard from './ProductCard';
 import { Sparkles, ArrowRight, ArrowLeft, ShieldCheck, HeartHandshake, Leaf, Scissors } from 'lucide-react';
+import { AureliaAtelierConfigurator } from './components/AureliaAtelierConfigurator';
+import { AureliaSavoirFaire } from './components/AureliaSavoirFaire';
+import { AureliaVisualAtelier } from './components/AureliaVisualAtelier';
 
 
 
@@ -136,6 +139,9 @@ export default async function EcommerceStorefrontPage(
         </figcaption>
       </figure>
 
+      {/* Signature Module 1: Bespoke Garment & Atelier Commission Configurator */}
+      <AureliaAtelierConfigurator locale={locale} />
+
 
       {/* Category Overview Grid (4 Collections) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -205,6 +211,9 @@ export default async function EcommerceStorefrontPage(
         </div>
       </section>
 
+      {/* Signature Module 2: Haute Craftsmanship & Savoir-Faire Standards */}
+      <AureliaSavoirFaire locale={locale} />
+
       {/* Material & Craftsmanship Philosophy Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl bg-[#1A1715] text-[#FAF8F5] p-8 sm:p-12 relative overflow-hidden">
@@ -232,6 +241,9 @@ export default async function EcommerceStorefrontPage(
           </div>
         </div>
       </section>
+
+      {/* Signature Module 3: Living Visual Atelier & Editorial Lookbook */}
+      <AureliaVisualAtelier locale={locale} />
 
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="noria-guide-heading">

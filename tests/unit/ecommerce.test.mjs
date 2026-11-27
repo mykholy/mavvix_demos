@@ -2,6 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { DatabaseSync } from 'node:sqlite';
 import path from 'node:path';
+import fs from 'node:fs';
+import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -126,5 +128,34 @@ test('Ecommerce Journey 1: Simulated Order with lines persists to SQLite', () =>
   const lines = db.prepare('SELECT * FROM demo_submission_lines WHERE submission_id = ?').all(subId);
   assert.equal(lines.length, 1);
   assert.equal(lines[0].quantity, 2);
+});
+
+test('Aurelia Luxe: Six local WebP assets match manifest and verified SHA-256 checksums', () => {
+  const manifestPath = path.join(rootDir, 'docs', '30-verticals', 'media', 'ecommerce.media-manifest.json');
+  assert.ok(fs.existsSync(manifestPath), 'ecommerce.media-manifest.json must exist');
+
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+  assert.equal(manifest.sector, 'ecommerce');
+  assert.equal(manifest.brand, 'Noria Atelier');
+  assert.equal(manifest.assets.length, 6, 'Must document exactly 6 photographic assets');
+
+  for (const a of manifest.assets) {
+    const assetPath = path.join(rootDir, 'public', a.local_path.replace(/^\//, ''));
+    assert.ok(fs.existsSync(assetPath), `Asset file ${a.local_path} must exist locally`);
+
+    const stat = fs.statSync(assetPath);
+    assert.equal(stat.size, a.bytes, `File size for ${a.id} must match manifest bytes`);
+
+    const buf = fs.readFileSync(assetPath);
+    // RIFF WEBP magic bytes validation
+    const isRiffWebp =
+      buf.length >= 12 &&
+      buf.toString('ascii', 0, 4) === 'RIFF' &&
+      buf.toString('ascii', 8, 12) === 'WEBP';
+    assert.ok(isRiffWebp, `Asset ${a.filename} must be a valid RIFF/WEBP binary`);
+
+    const hash = crypto.createHash('sha256').update(buf).digest('hex');
+    assert.equal(hash, a.sha256, `SHA-256 for ${a.id} must match manifest`);
+  }
 });
 
