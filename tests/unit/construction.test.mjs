@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import { DatabaseSync } from 'node:sqlite';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import fs from 'node:fs';
+import crypto from 'node:crypto';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -96,3 +98,26 @@ test('Construction Journey 1: Simulated Tender Quote submission persists to SQLi
   assert.equal(updated.status, 'reviewed', 'Admin was able to transition submission status to reviewed');
 });
 
+test('Atlas Construction uses six local WebP assets matching documented sizes and SHA-256', () => {
+  const manifest = JSON.parse(fs.readFileSync('docs/30-verticals/media/construction.media-manifest.json', 'utf8'));
+  const media = fs.readFileSync('src/app/[locale]/preview/construction/media.ts', 'utf8');
+
+  assert.equal(manifest.vertical, 'construction');
+  assert.equal(manifest.assets.length, 6);
+  assert.equal(new Set(manifest.assets.map(a => a.id)).size, 6);
+
+  for (const a of manifest.assets) {
+    assert.match(a.local, /^\/assets\/portfolio\/construction\/[a-z]+\.webp$/);
+    assert.ok(a.author && a.license && a.license_url && a.source_page && a.changes);
+    assert.match(a.original_sha1, /^[a-f0-9]{40}$/);
+    const bytes = fs.readFileSync('public' + a.local);
+    assert.equal(bytes.length, a.bytes);
+    assert.equal(bytes.toString('ascii', 0, 4), 'RIFF');
+    assert.equal(bytes.toString('ascii', 8, 12), 'WEBP');
+    assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'), a.sha256);
+    assert.ok(media.includes("url: '" + a.local + "'"));
+  }
+
+  assert.ok(!media.includes('upload.wikimedia.org'));
+  assert.ok(!media.includes('images.unsplash.com'));
+});
