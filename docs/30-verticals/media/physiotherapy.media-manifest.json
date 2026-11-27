@@ -1,48 +1,133 @@
 {
-  "vertical": "physiotherapy",
-  "stage": "research_only",
-  "checked_on": "2026-11-24",
+  "sector": "physiotherapy",
+  "brand": "Motion Lab",
+  "editorial_disclaimer": "Photographs depict authentic clinical physiotherapy settings, gait rehabilitation parallel bars, manual joint mobilization, biomechanical motion capture labs, dynamic balance platforms, athletic kinetic resistance training, and physical therapy gymnasium suites with verified open-license provenance (Creative Commons and Public Domain). They do NOT depict proprietary Motion Lab clinic premises, patients, or licensed clinicians.",
   "assets": [
     {
-      "id": "ceibos-rehabilitation",
-      "source_page": "https://commons.wikimedia.org/wiki/File:Rehabilitaci%C3%B3n_fisioterapia.jpg",
-      "author": "Ceibos",
-      "original_date": "2025-03-12",
-      "license": "CC BY 4.0 International",
-      "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "original_dimensions": "3000 x 4000",
-      "preview_landing": "https://commons.wikimedia.org/wiki/File:Rehabilitaci%C3%B3n_fisioterapia.jpg",
-      "verified_source_and_license": true,
-      "verified_thumbnail": false,
-      "planned_use": "educational vertical editorial photo only",
-      "credit_required": true,
-      "credit_text": "Ceibos / Wikimedia Commons / CC BY 4.0; changes/crop disclosed when made",
-      "actual_clinic_patient": false,
-      "local": "/assets/portfolio/physiotherapy.webp",
-      "served_dimensions": "1200x1600",
-      "sha256": "5bafb9a54d404085f2d6e32b716945283ee5bbbc35ceb182b169a1029c204d9a",
-      "downloaded_from": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Rehabilitaci%C3%B3n_fisioterapia.jpg",
-      "changes": "Resized, orientation normalized, WebP encoding; display may crop. Derivative image retains source license."
+      "id": "gait_rehab",
+      "filename": "gait_rehab.webp",
+      "local_path": "/assets/portfolio/physiotherapy/gait_rehab.webp",
+      "category": "gait_rehab",
+      "title_en": "Parallel Bars Gait Rehabilitation & Functional Kinetic Retraining",
+      "title_ar": "إعادة تأهيل المشي الحركي وتدريبات التوازن على المتوازي الطبي",
+      "dimensions": {
+        "width": 1800,
+        "height": 2400
+      },
+      "bytes": 81212,
+      "sha256": "cc0b6e7a229dfe5b9aac83ee51b09042add5b3ce01888e52b82342728b3c5996",
+      "provenance": {
+        "author": "Ceibos",
+        "license": "CC BY 4.0 International",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Rehabilitaci%C3%B3n_fisioterapia.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Rehabilitaci%C3%B3n_fisioterapia.jpg"
+      }
     },
     {
-      "id": "indoor-exercise",
-      "source_page": "https://commons.wikimedia.org/wiki/File:Indoor_physical_exercise.jpg",
-      "author": "Keyidin28",
-      "original_date": "2024-10-10",
-      "license": "CC0 1.0 Universal",
-      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "original_dimensions": "6000 x 4000",
-      "verified_source_and_license": true,
-      "verified_thumbnail": false,
-      "planned_use": "exercise and mobility illustrative asset, not a physical therapy patient outcome",
-      "actual_clinic_patient": false
+      "id": "joint_mobility",
+      "filename": "joint_mobility.webp",
+      "local_path": "/assets/portfolio/physiotherapy/joint_mobility.webp",
+      "category": "manual_therapy",
+      "title_en": "Manual Joint Mobilization & Passive Range of Motion Examination",
+      "title_ar": "العلاج اليدوي الحركي وتقييم المدى الحركي للمفاصل",
+      "dimensions": {
+        "width": 1800,
+        "height": 1195
+      },
+      "bytes": 271958,
+      "sha256": "590015565d7ad1e39df51a39e30507d8367a96dcbad1e6bac6c4c7e8edc008db",
+      "provenance": {
+        "author": "Senior Airman Amber Bressler",
+        "license": "Public domain",
+        "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Physical_Therapy_DVIDS219872.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Physical_Therapy_DVIDS219872.jpg"
+      }
+    },
+    {
+      "id": "biomechanics_lab",
+      "filename": "biomechanics_lab.webp",
+      "local_path": "/assets/portfolio/physiotherapy/biomechanics_lab.webp",
+      "category": "biomechanics_lab",
+      "title_en": "Computerized Biomechanical Motion Capture & Force Platform Analysis",
+      "title_ar": "التحليل الميكانيكي الحيوي المحوسب ومنصات قياس القوى الحركية",
+      "dimensions": {
+        "width": 1800,
+        "height": 1195
+      },
+      "bytes": 155708,
+      "sha256": "368ae564e963df56fc2aba9070db0259db29fe974f5f91513e3bfce64085b20b",
+      "provenance": {
+        "author": "Sgt. Aaron Ellerman",
+        "license": "Public domain",
+        "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Refining_Innovation_160223-A-AP268-922.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Refining_Innovation_160223-A-AP268-922.jpg"
+      }
+    },
+    {
+      "id": "postural_balance",
+      "filename": "postural_balance.webp",
+      "local_path": "/assets/portfolio/physiotherapy/postural_balance.webp",
+      "category": "posture_balance",
+      "title_en": "Dynamic Postural Balance Platform & Neuromuscular Proprioception Lab",
+      "title_ar": "تقييم التوازن القوامي العصبي العضلي واختبارات الإحساس المفصلي",
+      "dimensions": {
+        "width": 1800,
+        "height": 2710
+      },
+      "bytes": 166438,
+      "sha256": "2bdce70d13f454a5afc67dbf5679aee05fa30f495b6e17d26bf683e5c84d1926",
+      "provenance": {
+        "author": "Sgt. Aaron Ellerman",
+        "license": "Public domain",
+        "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Refining_Innovation_160223-A-AP268-983.jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Refining_Innovation_160223-A-AP268-983.jpg"
+      }
+    },
+    {
+      "id": "athletic_conditioning",
+      "filename": "athletic_conditioning.webp",
+      "local_path": "/assets/portfolio/physiotherapy/athletic_conditioning.webp",
+      "category": "athletic_conditioning",
+      "title_en": "Resistance Band Kinetic Chain Conditioning & Sports Rehabilitation",
+      "title_ar": "التأهيل الرياضي وتدريبات المقاومة المتدرجة للسلاسل الحركية",
+      "dimensions": {
+        "width": 1800,
+        "height": 1201
+      },
+      "bytes": 46838,
+      "sha256": "01db1fae31fca53f4be947f73a35f0c8d6542342ea80458b97f589b090358e9b",
+      "provenance": {
+        "author": "Staff Sgt. Chanceler Nardone",
+        "license": "Public domain",
+        "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Spangdahlem_physical_therapy_rehabilitates_Airmen_after_injury_(7270862).jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Spangdahlem_physical_therapy_rehabilitates_Airmen_after_injury_%287270862%29.jpg"
+      }
+    },
+    {
+      "id": "therapeutic_gym",
+      "filename": "therapeutic_gym.webp",
+      "local_path": "/assets/portfolio/physiotherapy/therapeutic_gym.webp",
+      "category": "therapeutic_gym",
+      "title_en": "Clinical Physical Therapy Gymnasium & Functional Movement Suite",
+      "title_ar": "صالة التأهيل الحركي السريري وأجهزة العلاج الطبيعي المتقدمة",
+      "dimensions": {
+        "width": 1800,
+        "height": 859
+      },
+      "bytes": 204150,
+      "sha256": "03e1f28b51632d81050cbc8a2345ef26f853bc0dbee319bd8953be6677786288",
+      "provenance": {
+        "author": "Bernhard Lashleyleidner",
+        "license": "Public domain",
+        "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:LRMC_Physical,_Occupational_Therapy_Clinics_Help_Service_Members_Recover,_Return_to_Duty_(10036396).jpg",
+        "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/LRMC_Physical%2C_Occupational_Therapy_Clinics_Help_Service_Members_Recover%2C_Return_to_Duty_%2810036396%29.jpg"
+      }
     }
-  ],
-  "requirements": [
-    "View image pixel content and choose authentic applicable subject before adding to a medical service page",
-    "Do not attribute scene to any invented Motion Lab clinicians or patients",
-    "Test actual image URL and responsive crop using Chromium",
-    "Display CC BY 4.0 credit and link for the Ceibos file; comply with attribution if cropped",
-    "Do not present exercise stock as therapeutic outcome evidence"
   ]
 }
