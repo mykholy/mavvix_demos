@@ -3,6 +3,7 @@ import path from 'node:path';
 import { spawn } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 import assert from 'node:assert/strict';
+import { filterCases } from './visual-scope.mjs';
 
 /**
  * Real Chromium visual QA. Run only with an isolated seeded SQLite database.
@@ -15,11 +16,7 @@ const axePath=path.join(qaRoot,'node_modules','axe-core','axe.min.js');
 const out=path.join(root,'artifacts','visual-qa');
 fs.mkdirSync(out,{recursive:true});
 const base='http://127.0.0.1:31467';
-const app=spawn(process.execPath,['node_modules/next/dist/bin/next','start','-p','31467','-H','127.0.0.1'],{
- cwd:root,env:{...process.env,NEXT_TELEMETRY_DISABLED:'1'},stdio:['ignore','pipe','pipe']
-});
 let serverLog='';
-for(const stream of [app.stdout,app.stderr])stream.on('data',b=>{serverLog+=String(b).slice(-2000)});
 async function ready(){
  for(let i=0;i<75;i++){
   try{const r=await fetch(base+'/ar/showcase');if(r.ok)return;}catch{}
@@ -54,7 +51,7 @@ const cases=[
  ['fitness',''],['fitness','classes'],['fitness','classes/foundations'],['fitness','trial'],['fitness','journal/starting-with-strength'],
  ['sports-venues',''],['sports-venues','courts'],['sports-venues','courts/padel-doubles'],['sports-venues','book'],['sports-venues','schedule'],
  ['furniture',''],['furniture','collections'],['furniture','collections/modular-sofa'],['furniture','quote'],['furniture','gallery'],['furniture','journal/measuring-a-room'],
- ['interiors-kitchens',''],['interiors-kitchens','services'],['interiors-kitchens','services/l-shaped'],['interiors-kitchens','consultation'],['interiors-kitchens','layouts'],['interiors-kitchens','gallery'],['interiors-kitchens','journal/measure-before-design'],
+ ['interiors-kitchens',''],['interiors-kitchens','services'],['interiors-kitchens','services/l-shaped'],['interiors-kitchens','consultation'],['interiors-kitchens','layouts'],['interiors-kitchens','gallery'],['interiors-kitchens','journal/measure-before-design'],['interiors-kitchens','journal'],['interiors-kitchens','materials'],['interiors-kitchens','finishes'],['interiors-kitchens','process'],['interiors-kitchens','measurement'],['interiors-kitchens','contact'],['interiors-kitchens','about'],['interiors-kitchens','faq'],['interiors-kitchens','services/u-shaped'],['interiors-kitchens','services/island'],['interiors-kitchens','services/galley'],['interiors-kitchens','services/wardrobes'],['interiors-kitchens','services/vanity'],['interiors-kitchens','services/pantry'],['interiors-kitchens','services/countertops'],['interiors-kitchens','services/lighting'],['interiors-kitchens','journal/finishes-matter'],['interiors-kitchens','journal/layout-decision'],
  ['nursery',''],['nursery','age-groups'],['nursery','programs/curious-toddlers'],['nursery','curriculum'],['nursery','safety'],['nursery','gallery'],['nursery','admissions'],['nursery','journal/first-nursery-visit'],
  ['car-detailing',''],['car-detailing','packages'],['car-detailing','packages/ceramic-protection'],
  ['car-detailing','quote'],['car-detailing','journal/coating-vs-ppf'],['car-detailing','gallery'],
@@ -64,20 +61,29 @@ const cases=[
  ['veterinary','pets'],['veterinary','guides/pet-first-visit'],['veterinary','emergencies'],
  ['showcase','']
 ];
+const visualScope=process.env.MAVVIX_VISUAL_SECTORS??'all';
+const selectedCases=filterCases(cases,visualScope);
+console.log('VISUAL_QA_SELECTED '+visualScope+' | routes per locale: '+selectedCases.length+' / '+cases.length);
 const viewports=[{name:'mobile-360',width:360,height:780},{name:'mobile-390',width:390,height:844},
  {name:'tablet-768',width:768,height:1024},{name:'tablet-1024',width:1024,height:768},{name:'desktop-1440',width:1440,height:900}];
 const results=[],issues=[];
+const app=spawn(process.execPath,['node_modules/next/dist/bin/next','start','-p','31467','-H','127.0.0.1'],{
+ cwd:root,env:{...process.env,NEXT_TELEMETRY_DISABLED:'1'},stdio:['ignore','pipe','pipe']
+});
+for(const stream of [app.stdout,app.stderr])stream.on('data',b=>{serverLog+=String(b).slice(-2000)});
+
 let browser;
 try{
  await ready();
  browser=await chromium.launch({headless:true,args:['--no-sandbox']});
  for(const locale of ['ar','en']){
-  for(const [sector,subpath] of cases){
+  for(const [sector,subpath] of selectedCases){
    const url='/'+locale+(sector==='showcase'?'/showcase':'/preview/'+sector+(subpath?'/'+subpath:''));
    const widths=(subpath===''&&sector!=='showcase')?viewports:[viewports[1],viewports[viewports.length-1]];
    for(const viewport of widths){
-    const page=await browser.newPage({viewport:{width:viewport.width,height:viewport.height},deviceScaleFactor:1,
+    const context=await browser.newContext({viewport:{width:viewport.width,height:viewport.height},deviceScaleFactor:1,
      isMobile:viewport.width<=390,hasTouch:viewport.width<=390,reducedMotion:'reduce'});
+    const page=await context.newPage();
     const entry={url,locale,sector,viewport:viewport.name,issues:[],images:[],a11y:[]};
     try{
      const response=await page.goto(base+url,{waitUntil:'domcontentloaded',timeout:25000});
@@ -158,6 +164,63 @@ try{
      await page.screenshot({path:path.join(out,png),fullPage:true,animations:'disabled',timeout:25000});
      entry.screenshot=png;
      entry.title=pre.title;
+     if(sector==='interiors-kitchens'&&!subpath&&['mobile-390','desktop-1440'].includes(viewport.name)){
+       const studio=page.locator('#layout-studio'),buttons=studio.locator('button[aria-pressed]');
+       assert.equal(await buttons.count(),4);
+       const diagram=studio.locator('svg[role=img] path').first();
+       const initial=await diagram.getAttribute('d');
+       for(const [i,slug] of ['l-shaped','u-shaped','galley','island'].entries()){
+         await buttons.nth(i).click();
+         assert.equal(await buttons.nth(i).getAttribute('aria-pressed'),'true');
+         assert.equal(await studio.locator('button[aria-pressed=true]').count(),1);
+         assert.equal(await studio.locator('a[href*="consultation?service="]').getAttribute('href'),'/'+locale+'/preview/interiors-kitchens/consultation?service='+slug);
+       }
+       assert.notEqual(await diagram.getAttribute('d'),initial);
+       const consultation=await page.context().newPage();
+       try{
+         for(const [slug,layout,walls] of [['l-shaped','L',2],['u-shaped','U',3],['galley','galley',2],['island','island',2]]){
+           const res=await consultation.goto(base+'/'+locale+'/preview/interiors-kitchens/consultation?service='+slug);
+           assert.equal(res.status(),200);
+           assert.equal(await consultation.locator('#forma-design-scope').inputValue(),slug);
+           assert.equal(await consultation.locator('button[data-layout][aria-pressed=true]').getAttribute('data-layout'),layout);
+           const lengths=consultation.locator('input[type=number][min="120"][max="1200"]');
+           assert.equal(await lengths.count(),walls);
+         }
+       }finally{await consultation.close();}
+       entry.formaLayoutStudio={allFourLayouts:true,selectedConsultationLink:true,consultationLayoutAndWallCount:true};
+       console.log('PASS FORMA_LAYOUT_STUDIO '+locale+' '+viewport.name);
+     }
+
+     if(sector==='interiors-kitchens'&&subpath==='gallery'&&viewport.name==='mobile-390'){
+       assert.equal(await page.locator('[data-gallery-item]').count(),6);
+       await page.locator('[data-gallery-filter=materials]').click();
+       assert.equal(await page.locator('[data-gallery-item]').count(),2);
+       await page.locator('[data-gallery-filter=kitchens]').click();
+       assert.equal(await page.locator('[data-gallery-item]').count(),4);
+       await page.locator('[data-gallery-filter=all]').click();
+       assert.equal(await page.locator('[data-gallery-item]').count(),6);
+       console.log('PASS FORMA_GALLERY '+locale);
+     }
+     if(sector==='interiors-kitchens'&&subpath==='consultation'&&viewport.name==='mobile-390'){
+       const form=page.locator('main form'),next=form.locator('[data-forma-next]');
+       await form.locator('button[data-layout=U]').click();
+       await next.click();
+       assert.ok(await form.locator('select:visible').count()>0);
+       await form.locator('[data-forma-back]').click();
+       assert.equal(await form.locator('button[data-layout=U]').getAttribute('aria-pressed'),'true');
+       await next.click();await next.click();
+       assert.ok(await next.isDisabled());
+       await form.locator('input[autocomplete=name]').fill('QA Forma');
+       await form.locator('input[type=tel]').fill('01000000000');
+       await form.locator('input[type=checkbox]').check();
+       assert.ok(await next.isEnabled());
+       const response=page.waitForResponse(res=>res.url().endsWith('/api/portfolio/interiors-kitchens')&&res.request().method()==='POST');
+       await next.click();const saved=await response;assert.equal(saved.status(),201);
+       const sent=saved.request().postDataJSON();assert.equal(sent.layout,'U');assert.equal(sent.serviceSlug,'u-shaped');assert.equal(sent.wallLengthsCm.length,3);
+       const data=await saved.json();assert.ok(data.refNumber);
+       const receipt=page.locator('main [role=status]');await receipt.waitFor({state:'visible'});assert.ok((await receipt.innerText()).includes(data.refNumber));
+       console.log('PASS FORMA_CONSULTATION_WIZARD '+locale);
+     }
      if(sector==='wholesale'&&['rfq','supplier-interest'].includes(subpath)&&viewport.name==='mobile-390'){
         const form=page.locator('main form'),button=form.locator('button[type=submit]'),buyer=subpath==='rfq';
         assert.ok(await button.isDisabled(),'Consent required');
@@ -218,18 +281,19 @@ try{
        console.log('PASS OASIS_STAY_FLOW '+locale);
      }
     }catch(e){entry.issues.push('Browser error: '+String(e instanceof Error?e.message:e));}
-    finally{await page.close();}
+    finally{await context.close();}
     results.push(entry);
     console.log((entry.issues.length?'FAIL':'PASS')+' '+url+' '+viewport.name+(entry.issues.length?' => '+entry.issues.join('; '):''));
     issues.push(...entry.issues.map(e=>({url,viewport:viewport.name,error:e})));
    }
   }
  }
- const data={date:new Date().toISOString(),browser:'Chromium (Playwright 1.58.2)',cases:results.length,
+ assert.ok(results.length>0,'Visual QA must execute at least one case');
+ const data={scope:visualScope,selectedRoutes:selectedCases.length,date:new Date().toISOString(),browser:'Chromium (Playwright 1.58.2)',cases:results.length,
   screenshotCount:results.filter(x=>x.screenshot).length,issues,results};
  fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(data,null,2));
  fs.writeFileSync(path.join(out,'summary.md'),
-  '# Mavvix real-browser AR/EN QA\n\nCases: '+data.cases+' | screenshots: '+data.screenshotCount+
+  '# Mavvix real-browser AR/EN QA\n\nScope: '+visualScope+'\n\nCases: '+data.cases+' | screenshots: '+data.screenshotCount+
   ' | issues: '+issues.length+'\n\n'+issues.map(x=>'- '+x.url+' ['+x.viewport+']: '+x.error).join('\n')+'\n');
  assert.equal(issues.length,0,'Browser visual/a11y/image findings recorded in artifacts/visual-qa/report.json');
 }finally{
