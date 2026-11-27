@@ -54,7 +54,7 @@ const cases=[
  ['fitness',''],['fitness','classes'],['fitness','classes/foundations'],['fitness','trial'],['fitness','journal/starting-with-strength'],
  ['sports-venues',''],['sports-venues','courts'],['sports-venues','courts/padel-doubles'],['sports-venues','book'],['sports-venues','schedule'],
  ['furniture',''],['furniture','collections'],['furniture','collections/modular-sofa'],['furniture','quote'],['furniture','gallery'],['furniture','journal/measuring-a-room'],
- ['interiors-kitchens',''],['interiors-kitchens','services'],['interiors-kitchens','services/l-shaped'],['interiors-kitchens','consultation'],['interiors-kitchens','layouts'],['interiors-kitchens','gallery'],['interiors-kitchens','journal/measure-before-design'],
+ ['interiors-kitchens',''],['interiors-kitchens','services'],['interiors-kitchens','services/l-shaped'],['interiors-kitchens','consultation'],['interiors-kitchens','layouts'],['interiors-kitchens','gallery'],['interiors-kitchens','journal/measure-before-design'],['interiors-kitchens','journal'],['interiors-kitchens','materials'],['interiors-kitchens','finishes'],['interiors-kitchens','process'],['interiors-kitchens','measurement'],['interiors-kitchens','contact'],['interiors-kitchens','about'],['interiors-kitchens','faq'],['interiors-kitchens','services/u-shaped'],['interiors-kitchens','services/island'],
  ['nursery',''],['nursery','age-groups'],['nursery','programs/curious-toddlers'],['nursery','curriculum'],['nursery','safety'],['nursery','gallery'],['nursery','admissions'],['nursery','journal/first-nursery-visit'],
  ['car-detailing',''],['car-detailing','packages'],['car-detailing','packages/ceramic-protection'],
  ['car-detailing','quote'],['car-detailing','journal/coating-vs-ppf'],['car-detailing','gallery'],
@@ -185,6 +185,36 @@ try{
        console.log('PASS FORMA_LAYOUT_STUDIO '+locale+' '+viewport.name);
      }
 
+     if(sector==='interiors-kitchens'&&subpath==='gallery'&&viewport.name==='mobile-390'){
+       assert.equal(await page.locator('[data-gallery-item]').count(),6);
+       await page.locator('[data-gallery-filter=materials]').click();
+       assert.equal(await page.locator('[data-gallery-item]').count(),2);
+       await page.locator('[data-gallery-filter=kitchens]').click();
+       assert.equal(await page.locator('[data-gallery-item]').count(),4);
+       await page.locator('[data-gallery-filter=all]').click();
+       assert.equal(await page.locator('[data-gallery-item]').count(),6);
+       console.log('PASS FORMA_GALLERY '+locale);
+     }
+     if(sector==='interiors-kitchens'&&subpath==='consultation'&&viewport.name==='mobile-390'){
+       const form=page.locator('main form'),next=form.locator('[data-forma-next]');
+       await form.locator('button[data-layout=U]').click();
+       await next.click();
+       assert.ok(await form.locator('select:visible').count()>0);
+       await form.locator('[data-forma-back]').click();
+       assert.equal(await form.locator('button[data-layout=U]').getAttribute('aria-pressed'),'true');
+       await next.click();await next.click();
+       assert.ok(await next.isDisabled());
+       await form.locator('input[autocomplete=name]').fill('QA Forma');
+       await form.locator('input[type=tel]').fill('01000000000');
+       await form.locator('input[type=checkbox]').check();
+       assert.ok(await next.isEnabled());
+       const response=page.waitForResponse(res=>res.url().endsWith('/api/portfolio/interiors-kitchens')&&res.request().method()==='POST');
+       await next.click();const saved=await response;assert.equal(saved.status(),201);
+       const sent=saved.request().postDataJSON();assert.equal(sent.layout,'U');assert.equal(sent.serviceSlug,'u-shaped');assert.equal(sent.wallLengthsCm.length,3);
+       const data=await saved.json();assert.ok(data.refNumber);
+       const receipt=page.locator('main [role=status]');await receipt.waitFor({state:'visible'});assert.ok((await receipt.innerText()).includes(data.refNumber));
+       console.log('PASS FORMA_CONSULTATION_WIZARD '+locale);
+     }
      if(sector==='wholesale'&&['rfq','supplier-interest'].includes(subpath)&&viewport.name==='mobile-390'){
         const form=page.locator('main form'),button=form.locator('button[type=submit]'),buyer=subpath==='rfq';
         assert.ok(await button.isDisabled(),'Consent required');

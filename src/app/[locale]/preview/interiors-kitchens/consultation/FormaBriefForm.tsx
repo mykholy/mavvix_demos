@@ -23,14 +23,17 @@ export function FormaBriefForm({locale,initial='l-shaped'}:{locale:Locale;initia
  const [finish,setFinish]=useState('matte'),[countertop,setCountertop]=useState('undecided');
  const [budget,setBudget]=useState('researching'),[timeline,setTimeline]=useState('exploring'),[area,setArea]=useState('Cairo');
  const [name,setName]=useState(''),[phone,setPhone]=useState(''),[consent,setConsent]=useState(false);
+ const [step,setStep]=useState(0);
  const [busy,setBusy]=useState(false),[error,setError]=useState(''),[ref,setRef]=useState('');
  const requestId=useRef<string|null>(null);
  const run=useMemo(()=>lengths.slice(0,wallCount[layout]).reduce((sum,x)=>sum+x,0),[layout,lengths]);
  const field='block text-sm font-extrabold text-[#473B37]';
- const input='block w-full mt-2 px-4 py-3.5 bg-[#FFFCF8] border border-[#BCAE9D] text-sm text-[#272827] focus-visible:outline-[#6C3538]';
- function layoutChange(value:string){setLayout(value);requestId.current=null;}
+ const input='block w-full mt-2 px-4 py-3.5 bg-[#FFFCF8] border border-[#BCAE9D] text-sm text-[#272827] focus-visible:outline-[#9A4B32]';
+ function layoutChange(value:string){setLayout(value);requestId.current=null;if(serviceLayouts[serviceSlug]){const matching=Object.keys(serviceLayouts).find(k=>serviceLayouts[k]===value);if(matching)setServiceSlug(matching);}}
  async function submit(e:React.FormEvent<HTMLFormElement>){
   e.preventDefault();if(busy||ref)return;
+  if(step<2){setStep(step+1);setError('');return;}
+  if(!consent||lengths.slice(0,wallCount[layout]).some(x=>!Number.isInteger(x)||x<120||x>1200)||!Number.isFinite(floorArea)||floorArea<3||floorArea>500){setError(ar?'راجع المقاسات والموافقة قبل الحفظ.':'Review dimensions and consent before saving.');setStep(0);return;}
   setBusy(true);setError('');
   try{
    if(!requestId.current)requestId.current=crypto.randomUUID();
@@ -49,40 +52,43 @@ export function FormaBriefForm({locale,initial='l-shaped'}:{locale:Locale;initia
   }catch{setError(ar?'تعذر حفظ الطلب. راجع المقاسات وتفاصيل التواصل ثم حاول مرة ثانية.':'Unable to save this brief. Check dimensions and contact information, then retry.');}
   finally{setBusy(false);}
  }
- if(ref)return <div role="status" aria-live="polite" className="p-10 sm:p-14 bg-[#FFFCF8] border-2 border-[#6C3538] text-center">
+ if(ref)return <div role="status" aria-live="polite" className="p-10 sm:p-14 bg-[#FFFCF8] border-2 border-[#9A4B32] text-center">
   <CheckCircle2 size={48} className="mx-auto text-[#547960]"/><h2 className="forma-display text-3xl sm:text-4xl mt-7">{ar?'تم حفظ فكرة المشروع':'Your design brief is saved'}</h2>
   <p className="text-[#58473E] leading-9 mt-5">{ar?'المرجع يخص تجربة الموقع فقط. لم تتم معاينة المنزل أو اعتماد المقاسات أو تصميم ثلاثي الأبعاد أو عرض سعر أو موعد حقيقي.':'This reference belongs to a Mavvix website experience. No real home survey, detailed plan, price, manufacturing order or appointment has been approved.'}</p>
   <p className="mt-7 p-4 bg-[#EFE5DA] font-mono font-extrabold text-xl">{ref}</p>
-  <a href={ar?'https://mavvix.com/ar/contact':'https://mavvix.com/en/contact'} target="_blank" rel="noopener noreferrer" className="inline-flex gap-2 items-center bg-[#6C3538] px-8 py-4 text-white text-sm font-bold mt-8">{ar?'اطلب موقع زي ده لنشاطك':'Get a website for your studio'}<ArrowUpRight size={17}/></a>
+  <a href={ar?'https://mavvix.com/ar/contact':'https://mavvix.com/en/contact'} target="_blank" rel="noopener noreferrer" className="inline-flex gap-2 items-center bg-[#9A4B32] px-8 py-4 text-white text-sm font-bold mt-8">{ar?'اطلب موقع زي ده لنشاطك':'Get a website for your studio'}<ArrowUpRight size={17}/></a>
  </div>;
  return <form onSubmit={submit} className="bg-[#FFFCF8] border border-[#CCBCAA] p-6 sm:p-10 space-y-8 shadow-[0_25px_80px_rgba(39,40,39,.07)]">
-  <div className="border-b border-[#D7C8B9] pb-7"><p className="font-mono text-[#6C3538] text-xs font-bold tracking-widest">FORMA / DESIGN INTAKE — 01</p>
+  <div className="border-b border-[#D7C8B9] pb-7"><p className="font-mono text-[#9A4B32] text-xs font-bold tracking-widest">FORMA / DESIGN INTAKE</p>
    <h2 className="forma-display text-3xl sm:text-4xl mt-4">{ar?'خلّينا نرسم أول تصور':'Start with an honest room brief'}</h2>
    <p className="text-[#65534B] text-sm leading-8 mt-4">{ar?'دي خطوة استكشافية، مش رسم معتمد للتصنيع أو حساب سعر.':'This is only a preliminary brief, not a measured production plan or binding quote.'}</p>
   </div>
+  <ol aria-label={ar?'خطوات الاستشارة':'Consultation steps'} className="grid grid-cols-3 gap-2">{(ar?['المساحة','الخامات والميزانية','بيانات التواصل']:['Space','Materials & budget','Contact']).map((label,i)=><li key={label} aria-current={i===step?'step':undefined} className={'border-t-4 pt-3 text-xs font-bold '+(i<=step?'border-[#9A4B32] text-[#843F2B]':'border-[#D7C8B9] text-[#544D44]')}><span className="block text-lg mb-1">{i+1}</span>{label}</li>)}</ol>
+  <fieldset disabled={step!==0||busy} hidden={step!==0} className={step===0?'space-y-6 min-w-0':'hidden'}>
+  <legend className="sr-only">{ar?'المساحة والمقاسات':'Space and dimensions'}</legend>
   <div><label htmlFor="forma-design-scope" className={field}>{ar?'المجال أو نوع المشروع':'Design scope'}</label>
-   <select id="forma-design-scope" className={input} value={serviceSlug} onChange={e=>{const next=e.target.value;setServiceSlug(next);if(serviceLayouts[next])layoutChange(serviceLayouts[next]);}}>{FORMA.services.map(s=><option key={s.slug} value={s.slug}>{formaText(s.title,locale)}</option>)}</select>
+   <select id="forma-design-scope" className={input} value={serviceSlug} onChange={e=>{const next=e.target.value;setServiceSlug(next);if(serviceLayouts[next]){setLayout(serviceLayouts[next]);requestId.current=null;}}}>{FORMA.services.map(s=><option key={s.slug} value={s.slug}>{formaText(s.title,locale)}</option>)}</select>
   </div>
   <fieldset><legend className={field}>{ar?'شكل المساحة المفضل':'Initial layout idea'}</legend>
    <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 mt-3">{FORMA.layouts.map(l=><button key={l} type="button" onClick={()=>layoutChange(l)} data-layout={l} aria-pressed={layout===l}
-    className={'p-3 min-h-16 text-xs font-black border-2 '+(layout===l?'bg-[#6C3538] border-[#6C3538] text-white':'border-[#CBB9AA] hover:bg-[#EEE4DA]')}>{layoutLabels[l][locale]}</button>)}</div>
+    className={'p-3 min-h-16 text-xs font-black border-2 '+(layout===l?'bg-[#9A4B32] border-[#9A4B32] text-white':'border-[#CBB9AA] hover:bg-[#EEE4DA]')}>{layoutLabels[l][locale]}</button>)}</div>
   </fieldset>
   <div className="grid lg:grid-cols-[.85fr_1fr] gap-7 items-center p-6 bg-[#EFE5D9]">
    <div aria-label={ar?'رسم توضيحي لشكل المطبخ، ليس مخططًا تنفيذيا':'Schematic layout, not construction-ready plan'}>
     <svg width="100%" viewBox="0 0 220 220" role="img" aria-label={ar?'مخطط مبدئي لمواضع الخزائن':'Illustrative cabinet-run diagram'} className="max-w-[300px] mx-auto">
      <rect x="11" y="11" width="198" height="198" rx="4" fill="#F8F2E9" stroke="#9F8B77" strokeWidth="2"/>
      <rect x="17" y="17" width="186" height="186" fill="none" stroke="#CCBFAF" strokeDasharray="5 6" strokeWidth="2"/>
-     {layout!=='galley'&&<rect x="25" y="25" width="170" height="27" fill="#6C3538"/>}
-     {layout!=='single-wall'&&<rect x="25" y="25" width="27" height="170" fill="#6C3538"/>}
-     {(layout==='U'||layout==='galley')&&<rect x="169" y="25" width="26" height="170" fill="#6C3538"/>}
-     {layout==='island'&&<rect x="85" y="100" width="67" height="37" fill="#B9866B" stroke="#6C3538" strokeWidth="1.5"/>}
+     {layout!=='galley'&&<rect x="25" y="25" width="170" height="27" fill="#9A4B32"/>}
+     {layout!=='single-wall'&&<rect x="25" y="25" width="27" height="170" fill="#9A4B32"/>}
+     {(layout==='U'||layout==='galley')&&<rect x="169" y="25" width="26" height="170" fill="#9A4B32"/>}
+     {layout==='island'&&<rect x="85" y="100" width="67" height="37" fill="#B9866B" stroke="#9A4B32" strokeWidth="1.5"/>}
      <text x="111" y="118" dominantBaseline="middle" textAnchor="middle" fill="#272827" fontSize="10">FORMA</text>
-     <text x="110" y="214" textAnchor="middle" fill="#6C3538" fontSize="9">NOT TO SCALE</text>
+     <text x="110" y="214" textAnchor="middle" fill="#9A4B32" fontSize="9">NOT TO SCALE</text>
     </svg>
    </div>
    <div><h3 className="forma-display text-2xl font-bold">{ar?'تخطيط توضيحي قابل للتغيير':'Concept layout — subject to survey'}</h3>
     <p className="mt-3 text-[#5F5045] text-sm leading-8">{ar?'رسم مبسط لعدد جوانب الخزائن. لا يوضح فتحات الأجهزة أو مسافات الأمان؛ المتخصص يراجعها بعد قياس الموقع.':'A visual starting point for cabinet runs, not appliance locations or safe clearances. The operator must verify everything in a site survey.'}</p>
-    <p className="text-xs font-mono mt-5 text-[#6C3538]">{ar?'أطوال حوائط مبدئية:':'Preliminary wall-run sum:'} <b>{run} cm</b></p>
+    <p className="text-xs font-mono mt-5 text-[#9A4B32]">{ar?'أطوال حوائط مبدئية:':'Preliminary wall-run sum:'} <b>{run} cm</b></p>
    </div>
   </div>
   <fieldset><legend className={field}>{ar?'مقاسات استرشادية بالسنتيمتر (120 إلى 1200)':'Approximate wall lengths in centimetres (120–1200)'}</legend>
@@ -93,17 +99,23 @@ export function FormaBriefForm({locale,initial='l-shaped'}:{locale:Locale;initia
   </fieldset>
   <div className="grid sm:grid-cols-2 gap-6">
    <label className={field}>{ar?'مساحة الغرفة التقريبية (م²)':'Approximate room area (m²)'}<input type="number" required min="3" max="500" step=".5" className={input} value={floorArea} onChange={e=>setFloorArea(Number(e.target.value))}/></label>
+   </div></fieldset>
+  <fieldset disabled={step!==1||busy} hidden={step!==1} className={step===1?'space-y-6 min-w-0':'hidden'}><legend className="sr-only">{ar?'الخامات والميزانية':'Materials and budget'}</legend><div className="grid sm:grid-cols-2 gap-6">
    <label className={field}>{ar?'تشطيب الواجهات':'Cabinet face direction'}<select value={finish} onChange={e=>setFinish(e.target.value)} className={input}>{FORMA.finishFamilies.map(x=><option value={x} key={x}>{optionNames.finish[x][locale]}</option>)}</select></label>
    <label className={field}>{ar?'سطح العمل المفضل':'Countertop preference'}<select value={countertop} onChange={e=>setCountertop(e.target.value)} className={input}>{FORMA.countertops.map(x=><option value={x} key={x}>{optionNames.countertop[x][locale]}</option>)}</select></label>
    <label className={field}>{ar?'نطاق الميزانية (للتخطيط فقط)':'Planning budget band'}<select value={budget} onChange={e=>setBudget(e.target.value)} className={input}>{FORMA.budgetBands.map(x=><option value={x} key={x}>{optionNames.budget[x][locale]}</option>)}</select></label>
    <label className={field}>{ar?'الوقت المفضل للمشروع':'Intended timeline'}<select value={timeline} onChange={e=>setTimeline(e.target.value)} className={input}>{FORMA.timelines.map(x=><option value={x} key={x}>{optionNames.timeline[x][locale]}</option>)}</select></label>
    <label className={field}>{ar?'المنطقة العامة بدون عنوان':'General city / region, no street address'}<select value={area} onChange={e=>setArea(e.target.value)} className={input}>{FORMA.areas.map(x=><option value={x} key={x}>{x}</option>)}</select></label>
-   <label className={field}>{ar?'الاسم':'Contact name'}<input value={name} onChange={e=>setName(e.target.value)} minLength={2} maxLength={110} required autoComplete="name" className={input}/></label>
-   <label className={field}>{ar?'رقم الهاتف':'Contact phone'}<input value={phone} onChange={e=>setPhone(e.target.value)} type="tel" minLength={8} maxLength={24} pattern="[+0-9 ()-]{8,24}" required autoComplete="tel" className={input}/></label>
+   </div></fieldset>
+  <fieldset disabled={step!==2||busy} hidden={step!==2} className={step===2?'space-y-6 min-w-0':'hidden'}><legend className="sr-only">{ar?'بيانات التواصل':'Contact information'}</legend>
+   <div className="bg-[#E6D9C8] p-5 text-sm leading-7"><p className="font-bold">{ar?'ملخص اختيارك':'Your selection'}</p><p>{formaText(FORMA.services.find(s=>s.slug===serviceSlug)!.title,locale)} · {layoutLabels[layout][locale]} · {floorArea} m²</p><p>{optionNames.finish[finish][locale]} · {optionNames.budget[budget][locale]}</p></div>
+   <div className="grid sm:grid-cols-2 gap-6"><label className={field}>{ar?'الاسم':'Contact name'}<input value={name} onChange={e=>setName(e.target.value)} minLength={2} maxLength={110} required autoComplete="name" className={input}/></label>
+   <label className={field}>{ar?'رقم الهاتف':'Contact phone'}<input value={phone} onChange={e=>setPhone(e.target.value)} type="tel" minLength={8} maxLength={24} pattern="[+0-9 \(\)\-]{8,24}" required autoComplete="tel" className={input}/></label>
   </div>
-  <label className="flex gap-3 items-start text-sm text-[#58473E] leading-8"><input type="checkbox" required checked={consent} onChange={e=>setConsent(e.target.checked)} className="mt-2 accent-[#6C3538]"/><span>{ar?'أوافق على حفظ معلومات التواصل والتفضيلات لهذا النموذج فقط. لا أقدم عنوان منزل كامل أو مخططًا سريًا أو بيانات ملكية.':'I consent to storing this example\'s contact and design preferences. I will not share a full street address, confidential plans or property documents.'}</span></label>
+  <label className="flex gap-3 items-start text-sm text-[#58473E] leading-8"><input type="checkbox" required checked={consent} onChange={e=>setConsent(e.target.checked)} className="mt-2 accent-[#9A4B32]"/><span>{ar?'أوافق على حفظ معلومات التواصل والتفضيلات لهذا النموذج فقط. لا أقدم عنوان منزل كامل أو مخططًا سريًا أو بيانات ملكية.':'I consent to storing this example\'s contact and design preferences. I will not share a full street address, confidential plans or property documents.'}</span></label>
   <p className="border-s-4 border-[#B9866B] bg-[#F0E5DB] p-4 text-sm text-[#58473E] leading-8 flex gap-3"><AlertCircle size={22} className="shrink-0 mt-1"/>{ar?'لا يوجد عرض سعر نهائي ولا تصميم معماري معتمد؛ التوصيلات والتراخيص والمتطلبات الفنية يراجعها المشغل الفعلي.':'No final price, licensed engineering drawing or fabrication authorization is generated. A real operator must verify measurements, material specs and utilities.'}</p>
+  </fieldset>
   {error&&<p role="alert" className="p-4 bg-red-50 text-red-700 text-sm">{error}</p>}
-  <button disabled={!consent||busy} className="w-full min-h-14 bg-[#6C3538] text-white px-8 py-4 font-extrabold disabled:opacity-40" type="submit">{busy?(ar?'جارٍ حفظ الفكرة':'Saving brief'):(ar?'احفظ طلب استشارة التصميم':'Save design consultation brief')}</button>
+  <div className="flex flex-wrap items-center gap-3">{step>0&&<button type="button" data-forma-back onClick={()=>{setStep(step-1);setError('');}} className="min-h-12 border border-[#B8AB9B] px-5 py-3 font-bold text-sm">{ar?'رجوع':'Back'}</button>}<button data-forma-next type="submit" disabled={busy||(step===2&&!consent)} className="flex-1 min-h-14 bg-[#9A4B32] text-white px-5 py-4 font-bold disabled:opacity-60">{busy?(ar?'جارٍ الحفظ':'Saving'):step<2?(ar?'الخطوة التالية':'Continue'):(ar?'احفظ طلب الاستشارة':'Save consultation brief')}</button></div>
  </form>;
 }
