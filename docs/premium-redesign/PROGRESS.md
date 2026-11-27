@@ -18,7 +18,7 @@ Autonomous transformation of Mavvix's 30 commercial industry websites into world
 | 3 | `furniture` | Oakline Living | Bespoke artisanal timber, architectural living spaces, room curation & finish customization. | **VERIFIED (DONE)** | PR #16 (`feat/premium-oakline`) | Pass (Clean install, dependency audit, Playwright/axe chromium-visual pass, 6 licensed WebP assets) | 2026-11-27 |
 | 4 | `real-estate` | Meridian Residences | Cinematic luxury development, masterplan discovery, panoramic views & installment calculator. | **VERIFIED (DONE)** | PR #17 (`feat/premium-meridian`) | Pass (Clean install, dependency audit, Playwright/axe chromium-visual pass, 6 licensed WebP assets) | 2026-11-27 |
 | 5 | `dental` | Lumen Dental | High-end aesthetic dentistry, implantology, sterile clinical elegance & patient preference intake. | **VERIFIED (DONE)** | PR #18 | PASS | 2026-11-27 |
-| 6 | `car-detailing` | GlossBay | High-end automotive detailing, paint correction, ceramic & PPF configurator. | **IN PROGRESS** | `feat/premium-glossbay` | Pending | Target: 2026-11-27 |
+| 6 | `car-detailing` | GlossBay | High-end automotive detailing, paint correction, ceramic & PPF configurator. | **VERIFIED (DONE)** | PR #19 | PASS | 2026-11-27 |
 
 ---
 
@@ -26,7 +26,7 @@ Autonomous transformation of Mavvix's 30 commercial industry websites into world
 
 | # | Sector / Vertical | Brand Name | Track | Current Registry State | Target Milestone |
 |---|-------------------|------------|-------|------------------------|------------------|
-| 7 | `industrial` | SteelCore Industrial | Manufacturing / B2B | Live (V1) | Wave 2 |
+| 7 | `industrial` | SteelCore Industrial | Manufacturing / B2B | **IN PROGRESS** (`feat/premium-steelcore`) | Wave 2 |
 | 8 | `ecommerce` | Aurelia Luxe | Fashion & Retail | Live (V1) | Wave 2 |
 | 9 | `portfolio` | Studio Form | Agency / Creative | Live (V1) | Wave 2 |
 | 10 | `restaurant` | Saffron Table | Fine Dining / Hospitality | Live (V1) | Wave 2 |
@@ -61,3 +61,4 @@ Autonomous transformation of Mavvix's 30 commercial industry websites into world
 - **2026-11-27:** Oakline Living (`furniture`) PR #16 merged to `main`. Added 6 licensed high-resolution local WebP assets, `OaklineStudioConfigurator` with spatial footprint calculations, `OaklineCraftsmanshipInspector` with DIN/AWI joinery metrics, and `OaklineVisualGallery`. Passed `dependency-audit`, `clean-install`, 82/82 unit tests, and Playwright/axe `chromium-visual` with zero WCAG AA violations.
 - **2026-11-27:** Meridian Residences (`real-estate`) PR #17 merged to `main`. Added 6 licensed high-resolution local WebP assets with SHA-256 manifest, `MeridianUnitExplorer` with dynamic down payment and tenure installment calibrator, `MeridianMasterplanViewer` with 4-zone environmental CAD scale strategy, and `MeridianVisualGallery`. Passed `dependency-audit`, `clean-install`, 83/83 unit tests, and Playwright/axe `chromium-visual` with zero WCAG AA violations.
 - **2026-11-27:** Lumen Dental (`dental`) PR #18 merged to `main`. Added 6 licensed high-resolution local WebP assets with SHA-256 manifest, `LumenServiceCalibrator` with 4 clinical pathways and comfort protocols, `LumenSterilizationStandard` with European EN 13060 Class B hygiene assurance, and `LumenVisualGallery`. Passed `dependency-audit` (10s), `clean-install` (1m54s), 84/84 unit tests, and Playwright/axe `chromium-visual` (2m21s) with zero WCAG AA violations and zero horizontal overflow across mobile-360, 390, 768, 1024, and 1440.
+- **2026-11-27:** GlossBay (`car-detailing`) PR #19 merged to `main`. Added 6 licensed high-resolution local WebP assets with SHA-256 manifest, `GlossBayStageComparator` with 4-stage defect removal and clear coat consumption lab metrics, `GlossBayProtectionMatrix` with vehicle typology switcher and ASTM testing standards, and `GlossBayVisualAtelier` living photography archive. Passed `dependency-audit` (10s), `clean-install` (2m6s), 87/87 unit tests, and Playwright/axe `chromium-visual` (2m51s) with zero WCAG AA violations and zero horizontal overflow across all viewports. Priority Advertising Pipeline (Sectors 1-6) is now 100% complete and verified.
