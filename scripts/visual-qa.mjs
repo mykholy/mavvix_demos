@@ -170,7 +170,18 @@ try{
          assert.equal(await studio.locator('a[href*="consultation?service="]').getAttribute('href'),'/'+locale+'/preview/interiors-kitchens/consultation?service='+slug);
        }
        assert.notEqual(await diagram.getAttribute('d'),initial);
-       entry.formaLayoutStudio={allFourLayouts:true,selectedConsultationLink:true};
+       const consultation=await page.context().newPage();
+       try{
+         for(const [slug,layout,walls] of [['l-shaped','L',2],['u-shaped','U',3],['galley','galley',2],['island','island',2]]){
+           const res=await consultation.goto(base+'/'+locale+'/preview/interiors-kitchens/consultation?service='+slug);
+           assert.equal(res.status(),200);
+           assert.equal(await consultation.locator('#forma-design-scope').inputValue(),slug);
+           assert.equal(await consultation.locator('button[data-layout][aria-pressed=true]').getAttribute('data-layout'),layout);
+           const lengths=consultation.locator('input[type=number][min="120"][max="1200"]');
+           assert.equal(await lengths.count(),walls);
+         }
+       }finally{await consultation.close();}
+       entry.formaLayoutStudio={allFourLayouts:true,selectedConsultationLink:true,consultationLayoutAndWallCount:true};
        console.log('PASS FORMA_LAYOUT_STUDIO '+locale+' '+viewport.name);
      }
 

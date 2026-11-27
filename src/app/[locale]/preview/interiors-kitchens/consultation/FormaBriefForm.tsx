@@ -14,10 +14,11 @@ const optionNames={
  budget:{researching:{ar:'بدور على أفكار',en:'Researching'},'under-100k-egp':{ar:'أقل من 100 ألف جنيه',en:'Below EGP 100k'},'100k-250k-egp':{ar:'100 إلى 250 ألف جنيه',en:'EGP 100k–250k'},'250k-plus-egp':{ar:'أكثر من 250 ألف جنيه',en:'EGP 250k+'},'quotation-needed':{ar:'محتاج مقايسة',en:'Need a real quote'}} as Record<string,{ar:string;en:string}>,
  timeline:{exploring:{ar:'بستكشف',en:'Exploring'},'1-3-months':{ar:'من 1 إلى 3 شهور',en:'1–3 months'},'3-6-months':{ar:'من 3 إلى 6 شهور',en:'3–6 months'},'6-months-plus':{ar:'بعد 6 شهور',en:'6+ months'}} as Record<string,{ar:string;en:string}>,
 };
+const serviceLayouts:Record<string,string>={'l-shaped':'L','u-shaped':'U',galley:'galley',island:'island'};
 const wallCount:Record<string,number>={L:2,U:3,galley:2,'single-wall':1,island:2};
 export function FormaBriefForm({locale,initial='l-shaped'}:{locale:Locale;initial?:string}){
  const ar=locale==='ar';const first=FORMA.services.some(s=>s.slug===initial)?initial:'l-shaped';
- const [serviceSlug,setServiceSlug]=useState(first),[layout,setLayout]=useState('L');
+ const [serviceSlug,setServiceSlug]=useState(first),[layout,setLayout]=useState(serviceLayouts[first]??'L');
  const [lengths,setLengths]=useState([320,280,240]),[floorArea,setFloorArea]=useState(15);
  const [finish,setFinish]=useState('matte'),[countertop,setCountertop]=useState('undecided');
  const [budget,setBudget]=useState('researching'),[timeline,setTimeline]=useState('exploring'),[area,setArea]=useState('Cairo');
@@ -60,10 +61,10 @@ export function FormaBriefForm({locale,initial='l-shaped'}:{locale:Locale;initia
    <p className="text-[#65534B] text-sm leading-8 mt-4">{ar?'دي خطوة استكشافية، مش رسم معتمد للتصنيع أو حساب سعر.':'This is only a preliminary brief, not a measured production plan or binding quote.'}</p>
   </div>
   <div><label htmlFor="forma-design-scope" className={field}>{ar?'المجال أو نوع المشروع':'Design scope'}</label>
-   <select id="forma-design-scope" className={input} value={serviceSlug} onChange={e=>setServiceSlug(e.target.value)}>{FORMA.services.map(s=><option key={s.slug} value={s.slug}>{formaText(s.title,locale)}</option>)}</select>
+   <select id="forma-design-scope" className={input} value={serviceSlug} onChange={e=>{const next=e.target.value;setServiceSlug(next);if(serviceLayouts[next])layoutChange(serviceLayouts[next]);}}>{FORMA.services.map(s=><option key={s.slug} value={s.slug}>{formaText(s.title,locale)}</option>)}</select>
   </div>
   <fieldset><legend className={field}>{ar?'شكل المساحة المفضل':'Initial layout idea'}</legend>
-   <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 mt-3">{FORMA.layouts.map(l=><button key={l} type="button" onClick={()=>layoutChange(l)} aria-pressed={layout===l}
+   <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 mt-3">{FORMA.layouts.map(l=><button key={l} type="button" onClick={()=>layoutChange(l)} data-layout={l} aria-pressed={layout===l}
     className={'p-3 min-h-16 text-xs font-black border-2 '+(layout===l?'bg-[#6C3538] border-[#6C3538] text-white':'border-[#CBB9AA] hover:bg-[#EEE4DA]')}>{layoutLabels[l][locale]}</button>)}</div>
   </fieldset>
   <div className="grid lg:grid-cols-[.85fr_1fr] gap-7 items-center p-6 bg-[#EFE5D9]">
@@ -71,10 +72,9 @@ export function FormaBriefForm({locale,initial='l-shaped'}:{locale:Locale;initia
     <svg width="100%" viewBox="0 0 220 220" role="img" aria-label={ar?'مخطط مبدئي لمواضع الخزائن':'Illustrative cabinet-run diagram'} className="max-w-[300px] mx-auto">
      <rect x="11" y="11" width="198" height="198" rx="4" fill="#F8F2E9" stroke="#9F8B77" strokeWidth="2"/>
      <rect x="17" y="17" width="186" height="186" fill="none" stroke="#CCBFAF" strokeDasharray="5 6" strokeWidth="2"/>
-     <rect x="25" y="25" width="170" height="27" fill="#6C3538"/>
+     {layout!=='galley'&&<rect x="25" y="25" width="170" height="27" fill="#6C3538"/>}
      {layout!=='single-wall'&&<rect x="25" y="25" width="27" height="170" fill="#6C3538"/>}
-     {layout==='U'&&<rect x="169" y="25" width="26" height="170" fill="#6C3538"/>}
-     {layout==='galley'&&<rect x="25" y="169" width="170" height="26" fill="#6C3538"/>}
+     {(layout==='U'||layout==='galley')&&<rect x="169" y="25" width="26" height="170" fill="#6C3538"/>}
      {layout==='island'&&<rect x="85" y="100" width="67" height="37" fill="#B9866B" stroke="#6C3538" strokeWidth="1.5"/>}
      <text x="111" y="118" dominantBaseline="middle" textAnchor="middle" fill="#272827" fontSize="10">FORMA</text>
      <text x="110" y="214" textAnchor="middle" fill="#6C3538" fontSize="9">NOT TO SCALE</text>

@@ -9,7 +9,7 @@ const options=[
  {slug:'l-shaped',ar:'حرف L',en:'L-shaped',arNote:'استغلال الزاوية وترك مساحة حركة مفتوحة.',enNote:'Two cabinet runs meet at a corner, leaving open circulation.',shape:'M40 40H250V75H75V185H40Z'},
  {slug:'u-shaped',ar:'حرف U',en:'U-shaped',arNote:'ثلاثة جوانب للتخزين والعمل مع مراجعة عرض الممر.',enNote:'Three working runs, subject to adequate clearance.',shape:'M40 40H280V185H245V75H75V185H40Z'},
  {slug:'galley',ar:'متوازٍ',en:'Galley',arNote:'صفان متوازيان للمساحات الطولية.',enNote:'Parallel working runs for long, narrow spaces.',shape:'M40 40H75V185H40ZM245 40H280V185H245Z'},
- {slug:'island',ar:'جزيرة',en:'Island',arNote:'سطح إضافي في المنتصف عندما تسمح مساحة الحركة.',enNote:'An additional central worktop where circulation permits.',shape:'M40 40H280V75H40ZM120 115H220V160H120Z'}
+ {slug:'island',ar:'جزيرة',en:'Island',arNote:'سطح إضافي في المنتصف عندما تسمح مساحة الحركة.',enNote:'An additional central worktop where circulation permits.',shape:'M40 40H280V75H75V185H40ZM120 115H220V160H120Z'}
 ] as const;
 export function LayoutStudio({locale}:{locale:Locale}){
  const ar=locale==='ar';const [selected,setSelected]=useState(0);const item=options[selected];
