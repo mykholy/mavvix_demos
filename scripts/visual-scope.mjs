@@ -50,7 +50,10 @@ function main(){
   const base=event.pull_request.base.sha,head=event.pull_request.head.sha;
   if(!/^[a-f0-9]{40}$/.test(base)||!/^[a-f0-9]{40}$/.test(head))throw Error('Invalid PR SHAs');
   // Three-dot diff; --no-renames includes both old and new sector paths on moves.
-  const files=execFileSync('git',['diff','--name-only','--no-renames','-z',base+'...'+head],{encoding:'utf8',maxBuffer:16*1024*1024}).split('\0').filter(Boolean);
+  const cwd=fs.realpathSync(process.cwd());
+  // Checkout's temporary safe.directory config is not inherited by later container steps.
+  const gitArgs=['-c','safe.directory='+cwd,'-C',cwd];
+  const files=execFileSync('git',[...gitArgs,'diff','--name-only','--no-renames','-z',base+'...'+head,'--'],{encoding:'utf8',maxBuffer:16*1024*1024}).split('\0').filter(Boolean);
   selected=chooseScope(files,sectors);
   selected.changedFiles=files;
  }else selected=chooseScope([],sectors,requested||'all');
