@@ -26,11 +26,11 @@ Autonomous transformation of Mavvix's 30 commercial industry websites into world
 
 | # | Sector / Vertical | Brand Name | Track | Current Registry State | Target Milestone |
 |---|-------------------|------------|-------|------------------------|------------------|
-| 7 | `industrial` | Ferroline Industrial | Manufacturing / B2B | **VERIFIED (DONE)** (PR #20) | Wave 2 |
-| 8 | `ecommerce` | Aurelia Luxe | Fashion & Retail | **IN PROGRESS** (`feat/premium-ecommerce`) | Wave 2 |
-| 9 | `portfolio` | Studio Form | Agency / Creative | Live (V1) | Wave 2 |
-| 10 | `restaurant` | Saffron Table | Fine Dining / Hospitality | Live (V1) | Wave 2 |
-| 11 | `academy` | Nova Learning | EdTech / Professional | Live (V1) | Wave 2 |
+| 7 | `industrial` | Ferroline Industrial | Manufacturing / B2B | **VERIFIED (DONE)** | PR #20 | Pass | 2026-11-27 |
+| 8 | `ecommerce` | Noria Atelier / Aurelia Luxe | Haute Couture & Luxury Lifestyle | **VERIFIED (DONE)** | PR #21 | Pass (zero violations, 6 WebP assets) | 2026-11-27 |
+| 9 | `portfolio` | Salma Hassan Studio | Creative Direction & Design Systems | **VERIFIED (DONE)** | PR #22 | Pass (zero violations, 6 WebP assets) | 2026-11-27 |
+| 10 | `restaurant` | Saffron Table | Fine Dining / Hospitality | **IN PROGRESS** | Wave 2 |
+| 11 | `academy` | Nova Learning | EdTech / Professional | Queued | Wave 2 |
 | 12 | `physiotherapy` | Motion Lab | Healthcare / Rehab | In Progress | Wave 3 |
 | 13 | `veterinary` | PawWell Clinic | Animal Healthcare | In Progress | Wave 3 |
 | 14 | `law-firm` | ClearPath Legal | Legal Practice / Advisory | In Progress | Wave 3 |
@@ -63,4 +63,6 @@ Autonomous transformation of Mavvix's 30 commercial industry websites into world
 - **2026-11-27:** Lumen Dental (`dental`) PR #18 merged to `main`. Added 6 licensed high-resolution local WebP assets with SHA-256 manifest, `LumenServiceCalibrator` with 4 clinical pathways and comfort protocols, `LumenSterilizationStandard` with European EN 13060 Class B hygiene assurance, and `LumenVisualGallery`. Passed `dependency-audit` (10s), `clean-install` (1m54s), 84/84 unit tests, and Playwright/axe `chromium-visual` (2m21s) with zero WCAG AA violations and zero horizontal overflow across mobile-360, 390, 768, 1024, and 1440.
 - **2026-11-27:** GlossBay (`car-detailing`) PR #19 merged to `main`. Added 6 licensed high-resolution local WebP assets with SHA-256 manifest, `GlossBayStageComparator` with 4-stage defect removal and clear coat consumption lab metrics, `GlossBayProtectionMatrix` with vehicle typology switcher and ASTM testing standards, and `GlossBayVisualAtelier` living photography archive. Passed `dependency-audit` (10s), `clean-install` (2m6s), 87/87 unit tests, and Playwright/axe `chromium-visual` (2m51s) with zero WCAG AA violations and zero horizontal overflow across all viewports. Priority Advertising Pipeline (Sectors 1-6) is now 100% complete and verified.
 - **2026-11-27:** Ferroline Industrial (`industrial`) PR #20 merged to `main`. Added 6 licensed high-resolution local WebP assets with SHA-256 manifest, `IndustrialSpecificationExplorer` with 6 engineering alloy grades (AISI 304, 316L, S355, 4140, Hardox 450, Duplex 2205) and DIN/ASTM mechanical properties, `IndustrialMillStandard` with MTC EN 10204 3.1, NDT ultrasonic testing, 210 bar hydrostatic pressure, PMI XRF spectrometry, and seaworthy packing, and `IndustrialVisualGallery` living photography archive. Passed `dependency-audit` (19s), `clean-install` (2m13s), 88/88 unit tests, and Playwright/axe `chromium-visual` (2m51s) with zero WCAG AA violations and zero horizontal overflow across all viewports.
+- **2026-11-27:** Noria Atelier / Aurelia Luxe (`ecommerce`) PR #21 merged to `main`. Added 6 licensed high-resolution local WebP assets with SHA-256 manifest, `AureliaAtelierConfigurator` with interactive made-to-measure silhouette customization and dynamic EGP atelier estimation, `AureliaSavoirFaire` haute craftsmanship inspector across 4 pillars, and `AureliaVisualAtelier` living lookbook. Passed `clean-install` (1m44s), `dependency-audit` (10s), and Playwright/axe `chromium-visual` (2m5s) with zero WCAG AA violations and zero horizontal overflow.
+- **2026-11-27:** Salma Hassan Studio (`portfolio`) PR #22 merged to `main`. Added 6 licensed high-resolution local WebP assets with SHA-256 manifest, `PortfolioScopeCalibrator` with interactive engagement horizon and investment benchmark in EGP/USD, `PortfolioDesignDisciplines` with dual-script typographic rigor and modular token systems, and `PortfolioVisualGallery` with live provenance modal. Passed `clean-install` (2m6s), `dependency-audit` (8s), and Playwright/axe `chromium-visual` (2m43s) with zero WCAG AA violations and zero horizontal overflow.
 
