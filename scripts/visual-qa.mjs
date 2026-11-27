@@ -28,6 +28,7 @@ async function ready(){
  throw Error('Next server did not start: '+serverLog.slice(-2000));
 }
 const cases=[
+ ['boutique-hotel',''],['boutique-hotel','rooms'],['boutique-hotel','rooms/courtyard-king'],['boutique-hotel','compare'],['boutique-hotel','stay'],['boutique-hotel','dining'],['boutique-hotel','arrival'],['boutique-hotel','journal/choose-your-room'],
  // The original eight must receive direct browser coverage, not showcase-only coverage.
  ['construction',''],['construction','request-quote'],
  ['industrial',''],['industrial','rfq'],

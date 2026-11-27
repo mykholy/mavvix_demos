@@ -254,3 +254,9 @@ assert.ok((readFileSync(join(labDir,'page.tsx'),'utf8').match(/data-sector-speci
 assert.match(readFileSync(join(labDir,'layout.tsx'),'utf8'),/<ContactDock/);
 for(const route of ['[section]','services/[slug]','guides/[slug]','contact'])assert.ok(existsSync(join(labDir,route,'page.tsx')),'Missing ClearPath route '+route);
 console.log('PASS: independent ClearPath laboratory directory and privacy-minimal callback');
+
+const hotelDir=join(root,'boutique-hotel');
+assert.ok((readFileSync(join(hotelDir,'page.tsx'),'utf8').match(/data-sector-specific=/g)||[]).length>=9);
+assert.match(readFileSync(join(hotelDir,'layout.tsx'),'utf8'),/<ContactDock/);
+for(const route of ['[section]','rooms/[slug]','journal/[slug]','stay'])assert.ok(existsSync(join(hotelDir,route,'page.tsx')),'Missing Oasis route '+route);
+console.log('PASS: independent Oasis hotel homepage, room comparison and stay enquiry');
