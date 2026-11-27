@@ -28,7 +28,7 @@ async function ready(){
  throw Error('Next server did not start: '+serverLog.slice(-2000));
 }
 const cases=[
- ['boutique-hotel',''],['boutique-hotel','rooms'],['boutique-hotel','rooms/courtyard-king'],['boutique-hotel','compare'],['boutique-hotel','stay'],['boutique-hotel','dining'],['boutique-hotel','arrival'],['boutique-hotel','journal/choose-your-room'],
+ ['boutique-hotel',''],['boutique-hotel','rooms'],['boutique-hotel','rooms/courtyard-king'],['boutique-hotel','compare'],['boutique-hotel','stay'],['boutique-hotel','dining'],['boutique-hotel','experiences'],['boutique-hotel','policies'],['boutique-hotel','arrival'],['boutique-hotel','journal/choose-your-room'],
  // The original eight must receive direct browser coverage, not showcase-only coverage.
  ['construction',''],['construction','request-quote'],
  ['industrial',''],['industrial','rfq'],
@@ -155,6 +155,29 @@ try{
      await page.screenshot({path:path.join(out,png),fullPage:true,animations:'disabled',timeout:25000});
      entry.screenshot=png;
      entry.title=pre.title;
+     if(sector==='boutique-hotel'&&subpath==='stay'&&viewport.name==='mobile-390'){
+       const form=page.locator('main form');
+       const button=form.locator('button[type=submit]');
+       const inputDates=form.locator('input[type=date]');
+       const selects=form.locator('select');
+       const dates=n=>new Date(Date.now()+n*86400000).toISOString().slice(0,10);
+       await inputDates.nth(0).fill(dates(5));await inputDates.nth(1).fill(dates(5));
+       await selects.nth(2).selectOption('courtyard-king');
+       await form.locator('input[autocomplete=name]').fill('Browser QA Guest');
+       await form.locator('input[type=tel]').fill('01000000000');
+       await form.locator('input[type=checkbox]').check();
+       assert.ok(await button.isDisabled(),'Oasis must reject zero-night stays');
+       await inputDates.nth(1).fill(dates(8));await selects.nth(0).selectOption('4');
+       assert.ok(await button.isDisabled(),'Oasis must reject excess occupancy');
+       await selects.nth(0).selectOption('2');await selects.nth(1).selectOption('0');
+       assert.ok(await button.isEnabled(),'Valid stay should be submittable');
+       const responsePromise=page.waitForResponse(r=>r.url().endsWith('/api/portfolio/boutique-hotel')&&r.request().method()==='POST');
+       await button.click();const saved=await responsePromise;assert.equal(saved.status(),201);
+       const body=await saved.json();assert.match(body.refNumber,/^MVX-OAS-[A-F0-9]{10}$/);assert.equal(body.status,'pending_operator_confirmation');
+       const status=page.locator('main [role=status]');await status.waitFor({state:'visible',timeout:10000});assert.ok((await status.innerText()).includes(body.refNumber),'Oasis receipt must render saved reference');
+       entry.stayFlow={invalidDatesRejected:true,overCapacityRejected:true,validRequestSaved:true,referenceDisplayed:true};
+       console.log('PASS OASIS_STAY_FLOW '+locale);
+     }
     }catch(e){entry.issues.push('Browser error: '+String(e instanceof Error?e.message:e));}
     finally{await page.close();}
     results.push(entry);
