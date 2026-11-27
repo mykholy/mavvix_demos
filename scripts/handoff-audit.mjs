@@ -260,3 +260,9 @@ assert.ok((readFileSync(join(hotelDir,'page.tsx'),'utf8').match(/data-sector-spe
 assert.match(readFileSync(join(hotelDir,'layout.tsx'),'utf8'),/<ContactDock/);
 for(const route of ['[section]','rooms/[slug]','journal/[slug]','stay'])assert.ok(existsSync(join(hotelDir,route,'page.tsx')),'Missing Oasis route '+route);
 console.log('PASS: independent Oasis hotel homepage, room comparison and stay enquiry');
+
+const solarDir=join(root,'solar-energy');
+assert.ok((readFileSync(join(solarDir,'page.tsx'),'utf8').match(/data-sector-specific=/g)||[]).length>=9);
+assert.match(readFileSync(join(solarDir,'layout.tsx'),'utf8'),/<ContactDock/);
+for(const route of ['[section]','solutions/[slug]','guides/[slug]','assessment'])assert.ok(existsSync(join(solarDir,route,'page.tsx')),'Missing VoltEdge route '+route);
+console.log('PASS: independent VoltEdge solution directory, engineering pathways and assessment');
