@@ -6,6 +6,6 @@ export const formaService=(slug:string)=>content.services.find(s=>s.slug===slug)
 export const formaArticle=(slug:string)=>content.articles.find(a=>a.slug===slug)||null;
 export const formaText=(text:{ar:string;en:string},locale:Locale)=>text[locale];
 export const FORMA_IMAGES={
- hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Kitchen_Design.jpg/960px-Kitchen_Design.jpg',
- cabinetry:'https://upload.wikimedia.org/wikipedia/commons/3/35/Newly_renovated_kitchen_with_cabinets_refrigerator_stove_and_hardwood_floor.jpg',
+ hero:'/assets/portfolio/interiors-kitchens/room.webp',
+ cabinetry:'/assets/portfolio/interiors-kitchens/cabinetry.webp',
 } as const;
