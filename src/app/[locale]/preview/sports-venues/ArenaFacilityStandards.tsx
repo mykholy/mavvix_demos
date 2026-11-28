@@ -213,7 +213,7 @@ export function ArenaFacilityStandards({ locale }: { locale: Locale }) {
                     {pillar.tagline[locale]}
                   </p>
 
-                  <p className="mt-3 text-sm text-[#94A3B8] leading-7">
+                  <p className="mt-3 text-sm text-[#CBD5E1] leading-7">
                     {pillar.description[locale]}
                   </p>
                 </div>

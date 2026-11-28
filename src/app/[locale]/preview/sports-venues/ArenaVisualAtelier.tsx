@@ -112,7 +112,7 @@ export function ArenaVisualAtelier({ locale }: { locale: Locale }) {
                   <h3 className="font-bold text-base text-white leading-snug">
                     {asset.caption[locale]}
                   </h3>
-                  <p className="mt-2 text-xs text-[#94A3B8] leading-relaxed">
+                  <p className="mt-2 text-xs text-[#CBD5E1] leading-relaxed">
                     {asset.alt[locale]}
                   </p>
                 </div>
@@ -149,7 +149,7 @@ export function ArenaVisualAtelier({ locale }: { locale: Locale }) {
               type="button"
               onClick={() => setActiveModalAsset(null)}
               aria-label={ar ? 'إغلاق نافذة التوثيق' : 'Close provenance modal'}
-              className="absolute top-6 end-6 text-[#94A3B8] hover:text-white p-2 rounded-full bg-[#162338] border border-[#2A3F60] focus-visible:outline-2 focus-visible:outline-white"
+              className="absolute top-6 end-6 text-[#CBD5E1] hover:text-white p-2 rounded-full bg-[#162338] border border-[#2A3F60] focus-visible:outline-2 focus-visible:outline-white"
             >
               <X size={18} />
             </button>
@@ -160,7 +160,7 @@ export function ArenaVisualAtelier({ locale }: { locale: Locale }) {
                 <h3 id="modal-title" className="font-black text-xl text-white">
                   {ar ? 'شهادة التوثيق الرقمي والترخيص' : 'Cryptographic Provenance Manifest'}
                 </h3>
-                <p className="text-xs text-[#94A3B8] mt-0.5">
+                <p className="text-xs text-[#CBD5E1] mt-0.5">
                   {activeModalAsset.id} · {activeModalAsset.format.toUpperCase()}
                 </p>
               </div>
@@ -168,7 +168,7 @@ export function ArenaVisualAtelier({ locale }: { locale: Locale }) {
 
             <div className="mt-6 space-y-4 text-xs">
               <div>
-                <p className="text-[#94A3B8] uppercase font-mono tracking-wider">
+                <p className="text-[#CBD5E1] uppercase font-mono tracking-wider">
                   {ar ? 'الوصف المعتمد' : 'VERIFIED DESCRIPTION'}
                 </p>
                 <p className="text-white font-medium mt-1 text-sm leading-relaxed">
@@ -178,7 +178,7 @@ export function ArenaVisualAtelier({ locale }: { locale: Locale }) {
 
               <div className="grid sm:grid-cols-2 gap-4 bg-[#090E17] p-4 rounded-xl border border-[#1B2B45]">
                 <div>
-                  <p className="text-[#94A3B8] uppercase font-mono tracking-wider">
+                  <p className="text-[#CBD5E1] uppercase font-mono tracking-wider">
                     {ar ? 'المصور / الجهة المالكة' : 'AUTHOR / ATTRIBUTION'}
                   </p>
                   <p className="text-white font-bold mt-1 text-sm">
@@ -186,7 +186,7 @@ export function ArenaVisualAtelier({ locale }: { locale: Locale }) {
                   </p>
                 </div>
                 <div>
-                  <p className="text-[#94A3B8] uppercase font-mono tracking-wider">
+                  <p className="text-[#CBD5E1] uppercase font-mono tracking-wider">
                     {ar ? 'الترخيص القانوني' : 'LEGAL LICENSE'}
                   </p>
                   <a
@@ -202,7 +202,7 @@ export function ArenaVisualAtelier({ locale }: { locale: Locale }) {
               </div>
 
               <div>
-                <p className="text-[#94A3B8] uppercase font-mono tracking-wider">
+                <p className="text-[#CBD5E1] uppercase font-mono tracking-wider">
                   {ar ? 'البصمة الرقمية الفريدة (SHA-256 CHECKSUM)' : 'CRYPTOGRAPHIC SHA-256 HASH'}
                 </p>
                 <p className="text-[#CBD5E1] font-mono text-[11px] bg-[#090E17] p-3 rounded-lg border border-[#1B2B45] break-all mt-1">
@@ -212,7 +212,7 @@ export function ArenaVisualAtelier({ locale }: { locale: Locale }) {
 
               <div className="grid grid-cols-2 gap-4 text-center">
                 <div className="bg-[#131E31] p-3 rounded-xl border border-[#2A3F60]">
-                  <p className="text-[10px] text-[#94A3B8] uppercase font-mono">
+                  <p className="text-[10px] text-[#CBD5E1] uppercase font-mono">
                     {ar ? 'الأبعاد الهندسية' : 'NATIVE DIMENSIONS'}
                   </p>
                   <p className="text-sm font-black text-white mt-1 font-mono">
@@ -220,7 +220,7 @@ export function ArenaVisualAtelier({ locale }: { locale: Locale }) {
                   </p>
                 </div>
                 <div className="bg-[#131E31] p-3 rounded-xl border border-[#2A3F60]">
-                  <p className="text-[10px] text-[#94A3B8] uppercase font-mono">
+                  <p className="text-[10px] text-[#CBD5E1] uppercase font-mono">
                     {ar ? 'المسار المحلي' : 'LOCAL HOSTED URI'}
                   </p>
                   <p className="text-[11px] font-bold text-[#CBD5E1] mt-1 truncate font-mono">

@@ -178,7 +178,11 @@ export function ArenaRequestForm({
                     : 'bg-[#F5F8F4] border-[#CEDAD0] text-[#173F32] hover:border-[#10B981]/60'
                 }`}
               >
-                <span className="block font-black text-sm leading-6 text-white">
+                <span
+                  className={`block font-black text-sm leading-6 ${
+                    serviceSlug === s.slug ? 'text-white' : 'text-[#102B26]'
+                  }`}
+                >
                   {arenaText(s.title, locale)}
                 </span>
                 <span

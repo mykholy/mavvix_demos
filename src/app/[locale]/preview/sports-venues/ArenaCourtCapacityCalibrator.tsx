@@ -292,7 +292,7 @@ export function ArenaCourtCapacityCalibrator({ locale }: { locale: Locale }) {
                   <h3 className="font-black text-base text-white mt-4 leading-snug">
                     {court.name[locale]}
                   </h3>
-                  <p className="text-xs text-[#94A3B8] mt-2 line-clamp-2 leading-relaxed">
+                  <p className="text-xs text-[#CBD5E1] mt-2 line-clamp-2 leading-relaxed">
                     {court.summary[locale]}
                   </p>
                 </div>
@@ -369,7 +369,7 @@ export function ArenaCourtCapacityCalibrator({ locale }: { locale: Locale }) {
               <p className="text-sm text-[#E2E8F0] leading-relaxed">
                 {activeCourt.footwearRule[locale]}
               </p>
-              <div className="pt-2 border-t border-[#1B2B45] text-xs text-[#94A3B8]">
+              <div className="pt-2 border-t border-[#1B2B45] text-xs text-[#CBD5E1]">
                 <span className="font-mono text-[#CBD5E1] block mb-1">
                   {ar ? 'مواصفة النجيل / الأرضية:' : 'Surface Composition:'}
                 </span>
@@ -398,7 +398,7 @@ export function ArenaCourtCapacityCalibrator({ locale }: { locale: Locale }) {
             <div>
               <div className="flex items-center justify-between pb-4 border-b border-[#2A3F60]">
                 <div>
-                  <span className="text-[10px] font-mono tracking-widest uppercase text-[#94A3B8] font-bold block">
+                  <span className="text-[10px] font-mono tracking-widest uppercase text-[#CBD5E1] font-bold block">
                     {ar ? 'مؤشرات الملعب التشغيلية' : 'CALIBRATED PITCH METRICS'}
                   </span>
                   <h4 className="font-black text-xl text-white mt-1">
@@ -413,7 +413,7 @@ export function ArenaCourtCapacityCalibrator({ locale }: { locale: Locale }) {
               {/* Stats Grid */}
               <div className="my-6 grid grid-cols-2 gap-4">
                 <div className="bg-[#0C131F] p-5 rounded-2xl border border-[#2A3F60] text-center">
-                  <p className="text-xs font-mono uppercase tracking-widest text-[#94A3B8]">
+                  <p className="text-xs font-mono uppercase tracking-widest text-[#CBD5E1]">
                     {ar ? 'سعة اللاعبين' : 'Squad Capacity'}
                   </p>
                   <p className="text-3xl font-black text-[#10B981] mt-2 font-mono">
@@ -428,7 +428,7 @@ export function ArenaCourtCapacityCalibrator({ locale }: { locale: Locale }) {
                 </div>
 
                 <div className="bg-[#0C131F] p-5 rounded-2xl border border-[#2A3F60] text-center">
-                  <p className="text-xs font-mono uppercase tracking-widest text-[#94A3B8]">
+                  <p className="text-xs font-mono uppercase tracking-widest text-[#CBD5E1]">
                     {ar ? 'مستوى الإنارة' : 'Lighting Lux'}
                   </p>
                   <p className="text-3xl font-black text-white mt-2 font-mono">
@@ -473,7 +473,7 @@ export function ArenaCourtCapacityCalibrator({ locale }: { locale: Locale }) {
               </Link>
 
               {/* Strict Non-Binding Disclaimer */}
-              <div className="mt-4 flex items-start gap-2 text-xs text-[#94A3B8] leading-relaxed">
+              <div className="mt-4 flex items-start gap-2 text-xs text-[#CBD5E1] leading-relaxed">
                 <AlertTriangle size={15} className="text-[#10B981] shrink-0 mt-0.5" />
                 <span>
                   {ar
