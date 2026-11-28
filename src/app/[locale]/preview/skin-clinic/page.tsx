@@ -99,7 +99,9 @@ export default async function ElyraHome({
       </section>
 
       {/* 02. Signature Component: ElyraSkinCalibrator */}
-      <ElyraSkinCalibrator locale={locale} />
+      <div data-sector-specific="skin-consultation-calibrator">
+        <ElyraSkinCalibrator locale={locale} />
+      </div>
 
       {/* 03. Care Pathways */}
       <section data-sector-specific="consultation-pathways" className="bg-[#DCE6DA] py-16 sm:py-20 border-b border-[#BACBB8]">
@@ -245,7 +247,9 @@ export default async function ElyraHome({
       </section>
 
       {/* 06. Signature Component: ElyraClinicalGovernance */}
-      <ElyraClinicalGovernance locale={locale} />
+      <div data-sector-specific="clinical-governance-standards">
+        <ElyraClinicalGovernance locale={locale} />
+      </div>
 
       {/* 07. The Patient Journey */}
       <section data-sector-specific="care-journey" className={wrap + ' py-16 sm:py-24'}>
@@ -310,7 +314,9 @@ export default async function ElyraHome({
       </section>
 
       {/* 08. Signature Component: ElyraVisualAtelier */}
-      <ElyraVisualAtelier locale={locale} />
+      <div data-sector-specific="clinical-visual-atelier">
+        <ElyraVisualAtelier locale={locale} />
+      </div>
 
       {/* 09. Privacy by Design & Contact Request Banner */}
       <section data-sector-specific="clinical-privacy" className={wrap + ' pb-16 sm:pb-24'}>
