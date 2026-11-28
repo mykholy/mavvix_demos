@@ -383,34 +383,94 @@
   ],
   "media": [
     {
-      "role": "warehouse",
-      "credit": "Rsherwin",
-      "license": "CC BY-SA 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-      "source": "https://commons.wikimedia.org/wiki/File:Warehouse_distribution-center-1136510.jpg",
-      "url": "/assets/portfolio/tradebridge-warehouse.webp",
-      "originalSha1": "2175b46d3ce8f495d660f43194845c988cd4a7dc",
-      "width": 5746,
-      "height": 2807,
+      "url": "/assets/portfolio/wholesale/warehouse.webp",
+      "caption": {
+        "ar": "مركز التوزيع والفرز اللوجستي الإقليمي",
+        "en": "Regional Distribution and Sorting Center"
+      },
       "alt": {
         "ar": "مركز توزيع في صورة تحريرية مستقلة لا يمثل مخازن تريد بريدج",
         "en": "Independent distribution-centre photograph, not TradeBridge premises"
-      }
+      },
+      "credit": "Rsherwin",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Warehouse_distribution-center-1136510.jpg"
     },
     {
-      "role": "stock-editorial",
+      "url": "/assets/portfolio/wholesale/stock.webp",
+      "caption": {
+        "ar": "منظومة التخزين والرفوف الموحدة للشحن التجاري",
+        "en": "Standardized High-Bay Racking System"
+      },
+      "alt": {
+        "ar": "طرود على أرفف مستودع تجاري، صورة مستقلة ليست مخزون تريد بريدج",
+        "en": "Commercial warehouse racks with inventory, independent photograph"
+      },
       "credit": "ProjectManhattan",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "source": "https://commons.wikimedia.org/wiki/File:Warehouse_goods.jpg",
-      "url": "/assets/portfolio/tradebridge-stock.webp",
-      "originalSha1": "8dc3f7dbf5b7ae552e0cb3554bf9a43cbe007892",
-      "width": 3920,
-      "height": 2204,
+      "source": "https://commons.wikimedia.org/wiki/File:Warehouse_goods.jpg"
+    },
+    {
+      "url": "/assets/portfolio/wholesale/forklift.webp",
+      "caption": {
+        "ar": "عمليات مناولة البالتات والمعدات الثقيلة",
+        "en": "Mechanical Pallet Handling and Staging"
+      },
       "alt": {
-        "ar": "طرود على أرفف مستودع إيكيا في سنغافورة، صورة مستقلة ليست مخزون تريد بريدج",
-        "en": "Crates on racks at IKEA Singapore, independent editorial photograph, not TradeBridge inventory"
-      }
+        "ar": "رافعات شوكية تنقل بضائع داخل مستودع لوجستي، صورة تحريرية مستقلة",
+        "en": "Forklift moving freight inside a warehouse, independent editorial photo"
+      },
+      "credit": "Flickr / USDAgov",
+      "license": "Public domain",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Workers_drive_Forkloaders_laden_with_USAID_goods_inside_a_large_warehouse_-_20110826-FS-LSC-0108_-_Flickr_-_USDAgov.jpg"
+    },
+    {
+      "url": "/assets/portfolio/wholesale/pallets.webp",
+      "caption": {
+        "ar": "تغليف وتثبيت البالتات للتوزيع الآمن",
+        "en": "Pallet Shrink-Wrapping and Edge Protection"
+      },
+      "alt": {
+        "ar": "منصات شحن خشبية مغلفة ومجهزة للشحن، صورة تحريرية مستقلة",
+        "en": "Standard Euro-pallets stretch-wrapped for dispatch, independent editorial"
+      },
+      "credit": "UNICEF / Wikimedia Commons",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:UNICEF_pallets_01.jpg"
+    },
+    {
+      "url": "/assets/portfolio/wholesale/highbay.webp",
+      "caption": {
+        "ar": "المستودعات الذكية والرفع الآلي فائق الكثافة",
+        "en": "Automated High-Bay Storage Corridors"
+      },
+      "alt": {
+        "ar": "مستودع آلي عالي الارتفاع مع رافعات فرز، صورة تحريرية مستقلة",
+        "en": "Automated high-bay warehouse corridor, independent editorial photo"
+      },
+      "credit": "KlausFoehl",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Automatisches_Hochregallager_mit_Regalbedienger%C3%A4ten.jpg"
+    },
+    {
+      "url": "/assets/portfolio/wholesale/inventory.webp",
+      "caption": {
+        "ar": "عنابر المخزون التجاري الجاهز للفرز والتوزيع",
+        "en": "Commercial Inventory Staging Floor"
+      },
+      "alt": {
+        "ar": "عنابر تخزين واسعة تحتوي على مخزون منظم، صورة تحريرية مستقلة",
+        "en": "Expansive warehouse inventory floor, independent editorial photo"
+      },
+      "credit": "Flickr / USDAgov",
+      "license": "Public domain",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:A_warehouse_full_of_USAID_goods_-_20110826-FS-LSC-0051_-_Flickr_-_USDAgov.jpg"
     }
   ]
 }
