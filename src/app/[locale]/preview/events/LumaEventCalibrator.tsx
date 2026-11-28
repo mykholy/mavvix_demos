@@ -228,11 +228,13 @@ export function LumaEventCalibrator({ locale }: { locale: Locale }) {
 
             {/* Attendance Tier */}
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-[#874F63] mb-2">
+              <label htmlFor="luma-calibrator-guest-band" className="block text-xs font-bold uppercase tracking-wider text-[#874F63] mb-2">
                 <Users size={14} className="inline me-1" />
                 {ar ? 'نطاق الحضور المتوقع' : 'Target Guest Count'}
               </label>
               <select
+                id="luma-calibrator-guest-band"
+                aria-label={ar ? 'نطاق الحضور المتوقع' : 'Target Guest Count'}
                 value={guestBand}
                 onChange={(e) => setGuestBand(e.target.value)}
                 className="w-full bg-white border border-[#AD979B] text-[#291C2D] text-sm p-3 font-medium focus:ring-2 focus:ring-[#874F63] outline-none"
@@ -247,11 +249,13 @@ export function LumaEventCalibrator({ locale }: { locale: Locale }) {
 
             {/* Venue Readiness */}
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-[#874F63] mb-2">
+              <label htmlFor="luma-calibrator-venue-status" className="block text-xs font-bold uppercase tracking-wider text-[#874F63] mb-2">
                 <MapPin size={14} className="inline me-1" />
                 {ar ? 'حالة اختيار وتأكيد المكان' : 'Venue Readiness Status'}
               </label>
               <select
+                id="luma-calibrator-venue-status"
+                aria-label={ar ? 'حالة اختيار وتأكيد المكان' : 'Venue Readiness Status'}
                 value={venueStatus}
                 onChange={(e) => setVenueStatus(e.target.value)}
                 className="w-full bg-white border border-[#AD979B] text-[#291C2D] text-sm p-3 font-medium focus:ring-2 focus:ring-[#874F63] outline-none"
@@ -264,11 +268,13 @@ export function LumaEventCalibrator({ locale }: { locale: Locale }) {
 
             {/* Budget Scope */}
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-[#874F63] mb-2">
+              <label htmlFor="luma-calibrator-budget-band" className="block text-xs font-bold uppercase tracking-wider text-[#874F63] mb-2">
                 <Sparkles size={14} className="inline me-1" />
                 {ar ? 'نطاق الميزانية ومستوى التجهيز' : 'Production Scope Tier'}
               </label>
               <select
+                id="luma-calibrator-budget-band"
+                aria-label={ar ? 'نطاق الميزانية ومستوى التجهيز' : 'Production Scope Tier'}
                 value={budgetBand}
                 onChange={(e) => setBudgetBand(e.target.value)}
                 className="w-full bg-white border border-[#AD979B] text-[#291C2D] text-sm p-3 font-medium focus:ring-2 focus:ring-[#874F63] outline-none"
