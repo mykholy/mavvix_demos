@@ -9,3 +9,5 @@ export function findAutoService(slug:string){return content.services.find(s=>s.s
 export function findAutoArticle(slug:string){return content.articles.find(a=>a.slug===slug)||null;}
 export const AUTO_BASE='/preview/auto-service';
 export function autoPath(locale:Locale,suffix=''){return '/'+locale+AUTO_BASE+(suffix?'/'+suffix:'');}
+export const AUTO_HERO_LOCAL = '/assets/portfolio/auto-service/engine_bay_diagnostic.webp';
+
