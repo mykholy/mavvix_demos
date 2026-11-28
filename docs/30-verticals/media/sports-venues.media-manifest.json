@@ -1,43 +1,358 @@
 {
   "vertical": "sports-venues",
-  "checked_on": "2026-11-23",
-  "photography": [
+  "sector": "sports-venues",
+  "brand": "ArenaHub",
+  "mediaCount": 6,
+  "assets": [
     {
-      "id": "arena-floodlit-football",
+      "id": "sports-floodlit-football-pitch",
       "source_page": "https://commons.wikimedia.org/wiki/File:Pexels-jonathan-petersson-399187.jpg",
-      "photographer": "Jonathan Petersson",
-      "source_date": "2017-05-02",
-      "license": "CC0 1.0",
+      "author": "Jonathan Petersson",
+      "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "verified_license_on_commons": true,
-      "dimensions": "3008x2000",
-      "direct_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Pexels-jonathan-petersson-399187.jpg/1280px-Pexels-jonathan-petersson-399187.jpg",
-      "media_status": "editorial; depicts unrelated field",
-      "local_copy": false,
-      "independent_browser_load_verified": false,
-      "alt_ar": "صورة تحريرية حقيقية لملعب مضاء ليلاً ولا تمثل Arena",
-      "alt_en": "CC0 floodlit football field, not an Arena venue"
+      "downloaded_from": "https://upload.wikimedia.org/wikipedia/commons/d/de/Pexels-jonathan-petersson-399187.jpg",
+      "original_sha1": "a566b52ea23f7cb13dd784f322f455aed064a12a",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/sports-venues/floodlit_football_pitch.webp",
+      "src": "/assets/portfolio/sports-venues/floodlit_football_pitch.webp",
+      "url": "/assets/portfolio/sports-venues/floodlit_football_pitch.webp",
+      "dimensions": "1800x1197",
+      "width": 1800,
+      "height": 1197,
+      "sha256": "02f9a8ba518b52cd659f151cf20db4b01de254c4ba4dfa6a1233731fe02d35fd",
+      "bytes": 318148,
+      "fileSizeBytes": 318148,
+      "category": "football",
+      "changes": "Resized and WebP encoded; display crop; authentic licensed football venue photograph",
+      "alt": {
+        "ar": "ملعب كرة قدم ليلي بإضاءة كاشفة وأرضية عشب صناعي معتمدة",
+        "en": "Floodlit football pitch with FIFA-quality artificial turf at night"
+      },
+      "caption": {
+        "ar": "ملعب كرة قدم خماسي وسباعي بأعمدة إنارة كاشفة تفوق ٥٠٠ لوكس",
+        "en": "Five-a-side and seven-a-side pitch with high-lux LED anti-glare floodlighting"
+      }
     },
     {
-      "id": "arena-soccer-at-night",
+      "id": "sports-night-football-action",
       "source_page": "https://commons.wikimedia.org/wiki/File:Soccer_at_night_(Unsplash).jpg",
-      "photographer": "Abigail Keenan",
-      "source_date": "2015-05-11",
-      "license": "CC0 1.0",
+      "author": "Abigail Keenan",
+      "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "verified_license_on_commons": true,
-      "dimensions": "5184x3456",
-      "direct_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Soccer_at_night_%28Unsplash%29.jpg/1280px-Soccer_at_night_%28Unsplash%29.jpg",
-      "media_status": "secondary licensed editorial option not currently represented as operator property",
-      "local_copy": false,
-      "independent_browser_load_verified": false,
-      "alt_ar": "صورة تحريرية لمباراة ليلاً بمصدر مستقل",
-      "alt_en": "Independent nighttime soccer editorial photography"
+      "downloaded_from": "https://upload.wikimedia.org/wikipedia/commons/6/68/Soccer_at_night_%28Unsplash%29.jpg",
+      "original_sha1": "89dbfea8f591cbe1695f935eb64c6510f92c33e3",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/sports-venues/night_football_action.webp",
+      "src": "/assets/portfolio/sports-venues/night_football_action.webp",
+      "url": "/assets/portfolio/sports-venues/night_football_action.webp",
+      "dimensions": "1800x1200",
+      "width": 1800,
+      "height": 1200,
+      "sha256": "cbc6fb7b5f223bc9ffdc31dda0087934df27273f114b5a72132ccc53547b5270",
+      "bytes": 188516,
+      "fileSizeBytes": 188516,
+      "category": "football",
+      "changes": "Resized and WebP encoded; display crop; authentic licensed football venue photograph",
+      "alt": {
+        "ar": "مباراة تنافسية ليلية على أرضية عشبية ممتازة تحت أضواء الملعب",
+        "en": "Competitive night match underway on premium turf under stadium floodlights"
+      },
+      "caption": {
+        "ar": "مباريات دورية وبطولات مسائية مع تنظيم كامل لأوقات اللعب والتبديل",
+        "en": "Organized evening leagues and community tournament matches with timed intervals"
+      }
+    },
+    {
+      "id": "sports-panoramic-padel-court",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Cancha_de_p%C3%A1del_en_el_centro_deportivo_%22El_Tuc%C3%A1n%22.jpg",
+      "author": "Diegodlh",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "downloaded_from": "https://upload.wikimedia.org/wikipedia/commons/5/51/Cancha_de_p%C3%A1del_en_el_centro_deportivo_%22El_Tuc%C3%A1n%22.jpg",
+      "original_sha1": "20fcf8ed0e8de9a7f974e7a74e76fa3d6f8ea6c4",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/sports-venues/panoramic_padel_court.webp",
+      "src": "/assets/portfolio/sports-venues/panoramic_padel_court.webp",
+      "url": "/assets/portfolio/sports-venues/panoramic_padel_court.webp",
+      "dimensions": "1800x1355",
+      "width": 1800,
+      "height": 1355,
+      "sha256": "68ca12f84e4cb5f0d2d99307d398767aa268e5630732cd8043fb5626d542de4f",
+      "bytes": 1033220,
+      "fileSizeBytes": 1033220,
+      "category": "padel",
+      "changes": "Resized and WebP encoded; display crop; authentic licensed padel venue photograph",
+      "alt": {
+        "ar": "ملعب بادل زجاجي بانورامي حديث مع عشب أزرق محبب وإضاءة متطورة",
+        "en": "Modern panoramic glass padel court with textured blue monofilament turf"
+      },
+      "caption": {
+        "ar": "ملاعب بادل مطابقة لمعايير FIP بزجاج حراري مقسى وشبكات متطورة",
+        "en": "FIP-compliant panoramic padel court with tempered safety glass and anti-glare illumination"
+      }
+    },
+    {
+      "id": "sports-outdoor-padel-arena",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Bagartorp_Padelbana_1000_Solnabilder.jpg",
+      "author": "Sniper Zeta",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "downloaded_from": "https://upload.wikimedia.org/wikipedia/commons/1/13/Bagartorp_Padelbana_1000_Solnabilder.jpg",
+      "original_sha1": "05616025926cd54e45a6ce147b1182c3e334adfa",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/sports-venues/outdoor_padel_arena.webp",
+      "src": "/assets/portfolio/sports-venues/outdoor_padel_arena.webp",
+      "url": "/assets/portfolio/sports-venues/outdoor_padel_arena.webp",
+      "dimensions": "1800x1200",
+      "width": 1800,
+      "height": 1200,
+      "sha256": "176b3af413e25076b965bf360649d8b4142e60a4481ed393effa724cf43e96dc",
+      "bytes": 482928,
+      "fileSizeBytes": 482928,
+      "category": "padel",
+      "changes": "Resized and WebP encoded; display crop; authentic licensed padel venue photograph",
+      "alt": {
+        "ar": "مجمع ملاعب بادل مفتوحة مهيأة للحجوزات الفردية والجماعية",
+        "en": "Outdoor padel court complex prepared for individual matches and group training"
+      },
+      "caption": {
+        "ar": "أرضيات ممتصة للصدمات تقلل إجهاد المفاصل وتوفر ارتدادًا متجانسًا للكرة",
+        "en": "Shock-absorbent padel surfaces delivering optimal ball rebound and joint protection"
+      }
+    },
+    {
+      "id": "sports-indoor-basketball-arena",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Indoor_Basketball_Court_in_Karlovasi,_Samos.jpg",
+      "author": "Samos@Wikipedia Project",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "downloaded_from": "https://upload.wikimedia.org/wikipedia/commons/0/05/Indoor_Basketball_Court_in_Karlovasi%2C_Samos.jpg",
+      "original_sha1": "3393d0a332da7e03efabb65a0b7b2268136b9d78",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/sports-venues/indoor_basketball_arena.webp",
+      "src": "/assets/portfolio/sports-venues/indoor_basketball_arena.webp",
+      "url": "/assets/portfolio/sports-venues/indoor_basketball_arena.webp",
+      "dimensions": "1800x1012",
+      "width": 1800,
+      "height": 1012,
+      "sha256": "f973b6494e4c70a5e089d774d97112a71edf2cb61eac669e62aeafe6028d2908",
+      "bytes": 213490,
+      "fileSizeBytes": 213490,
+      "category": "indoor",
+      "changes": "Resized and WebP encoded; display crop; authentic licensed indoor venue photograph",
+      "alt": {
+        "ar": "صالة كرة سلة وملاعب متعددة الأغراض بأرضية باركيه خشبية معتمدة",
+        "en": "Indoor basketball and multi-sport sports arena with certified hardwood parquet flooring"
+      },
+      "caption": {
+        "ar": "صالة مغطاة مكيفة بخطوط تخطيط رسمية لسلة وطائرة ويد وفق المعايير الدولية",
+        "en": "Climate-controlled indoor arena with FIBA-regulation hardwood lines for basketball and volleyball"
+      }
+    },
+    {
+      "id": "sports-clay-tennis-court",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Clay_tennis_courts_melbourne_looking_down_the_net.jpg",
+      "author": "KeepActive Australia",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "downloaded_from": "https://upload.wikimedia.org/wikipedia/commons/8/85/Clay_tennis_courts_melbourne_looking_down_the_net.jpg",
+      "original_sha1": "8f20daf0219a203496e8cae00938b7f813bbe26f",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/sports-venues/clay_tennis_court.webp",
+      "src": "/assets/portfolio/sports-venues/clay_tennis_court.webp",
+      "url": "/assets/portfolio/sports-venues/clay_tennis_court.webp",
+      "dimensions": "1800x1350",
+      "width": 1800,
+      "height": 1350,
+      "sha256": "bae1c1d9676a03318f4bb8bfaa93b82a91c8f415815ab84964813b68b0c06553",
+      "bytes": 950668,
+      "fileSizeBytes": 950668,
+      "category": "tennis",
+      "changes": "Resized and WebP encoded; display crop; authentic licensed tennis venue photograph",
+      "alt": {
+        "ar": "ملعب تنس ترابي احترافي مع شبكة قياسية وتخطيط أبيض دقيق",
+        "en": "Professional clay tennis court with regulation net and precise baseline markings"
+      },
+      "caption": {
+        "ar": "ملاعب تنس كلاسيكية مطابقة لمعايير ITF مع خدمات صيانة دورية للرمال والتسوية",
+        "en": "ITF-standard clay court surface maintained for consistent sliding and authentic ball bounce"
+      }
     }
   ],
-  "disclosures": [
-    "No image shows an Arena-operated venue, verified available pitch, named employee or booked game.",
-    "Any actual venue site must replace illustrative images with approved original photography.",
-    "Browser image-load and responsive crop pass must be attached to PR before release."
+  "items": [
+    {
+      "id": "sports-floodlit-football-pitch",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Pexels-jonathan-petersson-399187.jpg",
+      "author": "Jonathan Petersson",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloaded_from": "https://upload.wikimedia.org/wikipedia/commons/d/de/Pexels-jonathan-petersson-399187.jpg",
+      "original_sha1": "a566b52ea23f7cb13dd784f322f455aed064a12a",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/sports-venues/floodlit_football_pitch.webp",
+      "src": "/assets/portfolio/sports-venues/floodlit_football_pitch.webp",
+      "url": "/assets/portfolio/sports-venues/floodlit_football_pitch.webp",
+      "dimensions": "1800x1197",
+      "width": 1800,
+      "height": 1197,
+      "sha256": "02f9a8ba518b52cd659f151cf20db4b01de254c4ba4dfa6a1233731fe02d35fd",
+      "bytes": 318148,
+      "fileSizeBytes": 318148,
+      "category": "football",
+      "changes": "Resized and WebP encoded; display crop; authentic licensed football venue photograph",
+      "alt": {
+        "ar": "ملعب كرة قدم ليلي بإضاءة كاشفة وأرضية عشب صناعي معتمدة",
+        "en": "Floodlit football pitch with FIFA-quality artificial turf at night"
+      },
+      "caption": {
+        "ar": "ملعب كرة قدم خماسي وسباعي بأعمدة إنارة كاشفة تفوق ٥٠٠ لوكس",
+        "en": "Five-a-side and seven-a-side pitch with high-lux LED anti-glare floodlighting"
+      }
+    },
+    {
+      "id": "sports-night-football-action",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Soccer_at_night_(Unsplash).jpg",
+      "author": "Abigail Keenan",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloaded_from": "https://upload.wikimedia.org/wikipedia/commons/6/68/Soccer_at_night_%28Unsplash%29.jpg",
+      "original_sha1": "89dbfea8f591cbe1695f935eb64c6510f92c33e3",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/sports-venues/night_football_action.webp",
+      "src": "/assets/portfolio/sports-venues/night_football_action.webp",
+      "url": "/assets/portfolio/sports-venues/night_football_action.webp",
+      "dimensions": "1800x1200",
+      "width": 1800,
+      "height": 1200,
+      "sha256": "cbc6fb7b5f223bc9ffdc31dda0087934df27273f114b5a72132ccc53547b5270",
+      "bytes": 188516,
+      "fileSizeBytes": 188516,
+      "category": "football",
+      "changes": "Resized and WebP encoded; display crop; authentic licensed football venue photograph",
+      "alt": {
+        "ar": "مباراة تنافسية ليلية على أرضية عشبية ممتازة تحت أضواء الملعب",
+        "en": "Competitive night match underway on premium turf under stadium floodlights"
+      },
+      "caption": {
+        "ar": "مباريات دورية وبطولات مسائية مع تنظيم كامل لأوقات اللعب والتبديل",
+        "en": "Organized evening leagues and community tournament matches with timed intervals"
+      }
+    },
+    {
+      "id": "sports-panoramic-padel-court",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Cancha_de_p%C3%A1del_en_el_centro_deportivo_%22El_Tuc%C3%A1n%22.jpg",
+      "author": "Diegodlh",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "downloaded_from": "https://upload.wikimedia.org/wikipedia/commons/5/51/Cancha_de_p%C3%A1del_en_el_centro_deportivo_%22El_Tuc%C3%A1n%22.jpg",
+      "original_sha1": "20fcf8ed0e8de9a7f974e7a74e76fa3d6f8ea6c4",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/sports-venues/panoramic_padel_court.webp",
+      "src": "/assets/portfolio/sports-venues/panoramic_padel_court.webp",
+      "url": "/assets/portfolio/sports-venues/panoramic_padel_court.webp",
+      "dimensions": "1800x1355",
+      "width": 1800,
+      "height": 1355,
+      "sha256": "68ca12f84e4cb5f0d2d99307d398767aa268e5630732cd8043fb5626d542de4f",
+      "bytes": 1033220,
+      "fileSizeBytes": 1033220,
+      "category": "padel",
+      "changes": "Resized and WebP encoded; display crop; authentic licensed padel venue photograph",
+      "alt": {
+        "ar": "ملعب بادل زجاجي بانورامي حديث مع عشب أزرق محبب وإضاءة متطورة",
+        "en": "Modern panoramic glass padel court with textured blue monofilament turf"
+      },
+      "caption": {
+        "ar": "ملاعب بادل مطابقة لمعايير FIP بزجاج حراري مقسى وشبكات متطورة",
+        "en": "FIP-compliant panoramic padel court with tempered safety glass and anti-glare illumination"
+      }
+    },
+    {
+      "id": "sports-outdoor-padel-arena",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Bagartorp_Padelbana_1000_Solnabilder.jpg",
+      "author": "Sniper Zeta",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "downloaded_from": "https://upload.wikimedia.org/wikipedia/commons/1/13/Bagartorp_Padelbana_1000_Solnabilder.jpg",
+      "original_sha1": "05616025926cd54e45a6ce147b1182c3e334adfa",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/sports-venues/outdoor_padel_arena.webp",
+      "src": "/assets/portfolio/sports-venues/outdoor_padel_arena.webp",
+      "url": "/assets/portfolio/sports-venues/outdoor_padel_arena.webp",
+      "dimensions": "1800x1200",
+      "width": 1800,
+      "height": 1200,
+      "sha256": "176b3af413e25076b965bf360649d8b4142e60a4481ed393effa724cf43e96dc",
+      "bytes": 482928,
+      "fileSizeBytes": 482928,
+      "category": "padel",
+      "changes": "Resized and WebP encoded; display crop; authentic licensed padel venue photograph",
+      "alt": {
+        "ar": "مجمع ملاعب بادل مفتوحة مهيأة للحجوزات الفردية والجماعية",
+        "en": "Outdoor padel court complex prepared for individual matches and group training"
+      },
+      "caption": {
+        "ar": "أرضيات ممتصة للصدمات تقلل إجهاد المفاصل وتوفر ارتدادًا متجانسًا للكرة",
+        "en": "Shock-absorbent padel surfaces delivering optimal ball rebound and joint protection"
+      }
+    },
+    {
+      "id": "sports-indoor-basketball-arena",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Indoor_Basketball_Court_in_Karlovasi,_Samos.jpg",
+      "author": "Samos@Wikipedia Project",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "downloaded_from": "https://upload.wikimedia.org/wikipedia/commons/0/05/Indoor_Basketball_Court_in_Karlovasi%2C_Samos.jpg",
+      "original_sha1": "3393d0a332da7e03efabb65a0b7b2268136b9d78",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/sports-venues/indoor_basketball_arena.webp",
+      "src": "/assets/portfolio/sports-venues/indoor_basketball_arena.webp",
+      "url": "/assets/portfolio/sports-venues/indoor_basketball_arena.webp",
+      "dimensions": "1800x1012",
+      "width": 1800,
+      "height": 1012,
+      "sha256": "f973b6494e4c70a5e089d774d97112a71edf2cb61eac669e62aeafe6028d2908",
+      "bytes": 213490,
+      "fileSizeBytes": 213490,
+      "category": "indoor",
+      "changes": "Resized and WebP encoded; display crop; authentic licensed indoor venue photograph",
+      "alt": {
+        "ar": "صالة كرة سلة وملاعب متعددة الأغراض بأرضية باركيه خشبية معتمدة",
+        "en": "Indoor basketball and multi-sport sports arena with certified hardwood parquet flooring"
+      },
+      "caption": {
+        "ar": "صالة مغطاة مكيفة بخطوط تخطيط رسمية لسلة وطائرة ويد وفق المعايير الدولية",
+        "en": "Climate-controlled indoor arena with FIBA-regulation hardwood lines for basketball and volleyball"
+      }
+    },
+    {
+      "id": "sports-clay-tennis-court",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Clay_tennis_courts_melbourne_looking_down_the_net.jpg",
+      "author": "KeepActive Australia",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "downloaded_from": "https://upload.wikimedia.org/wikipedia/commons/8/85/Clay_tennis_courts_melbourne_looking_down_the_net.jpg",
+      "original_sha1": "8f20daf0219a203496e8cae00938b7f813bbe26f",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/sports-venues/clay_tennis_court.webp",
+      "src": "/assets/portfolio/sports-venues/clay_tennis_court.webp",
+      "url": "/assets/portfolio/sports-venues/clay_tennis_court.webp",
+      "dimensions": "1800x1350",
+      "width": 1800,
+      "height": 1350,
+      "sha256": "bae1c1d9676a03318f4bb8bfaa93b82a91c8f415815ab84964813b68b0c06553",
+      "bytes": 950668,
+      "fileSizeBytes": 950668,
+      "category": "tennis",
+      "changes": "Resized and WebP encoded; display crop; authentic licensed tennis venue photograph",
+      "alt": {
+        "ar": "ملعب تنس ترابي احترافي مع شبكة قياسية وتخطيط أبيض دقيق",
+        "en": "Professional clay tennis court with regulation net and precise baseline markings"
+      },
+      "caption": {
+        "ar": "ملاعب تنس كلاسيكية مطابقة لمعايير ITF مع خدمات صيانة دورية للرمال والتسوية",
+        "en": "ITF-standard clay court surface maintained for consistent sliding and authentic ball bounce"
+      }
+    }
   ]
 }
