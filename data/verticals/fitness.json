@@ -463,5 +463,145 @@
     "Riyadh",
     "Jeddah",
     "Other"
+  ],
+  "media": [
+    {
+      "id": "fitness-center-floor-equipment",
+      "src": "/assets/portfolio/fitness/fitness_center_floor_equipment.webp",
+      "url": "/assets/portfolio/fitness/fitness_center_floor_equipment.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Fitness_Center_Equipment.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fitness_Center_Equipment.jpg",
+      "author": "Teddyhtsai",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "width": 1800,
+      "height": 1200,
+      "bytes": 296556,
+      "sha256": "aec8812a9ac888c7bac3a4fbfa8d084a3586c5de73028f880075d60701442f36",
+      "category": "cardio",
+      "alt": {
+        "ar": "صالة لياقة بدنية مجهزة بأجهزة تدريب هوائي وقوة في منشأة مستقلة",
+        "en": "Fitness center floor equipped with cardio and strength conditioning machines in an unrelated facility"
+      },
+      "caption": {
+        "ar": "تخطيط أرضية التدريب الرياضي وتوزيع مساحات الحركة الحرة والأجهزة الميكانيكية",
+        "en": "Spacious gym floor layout optimizing functional movement lanes and resistance machines"
+      }
+    },
+    {
+      "id": "strength-selectorized-machine-suite",
+      "src": "/assets/portfolio/fitness/strength_selectorized_machine_suite.webp",
+      "url": "/assets/portfolio/fitness/strength_selectorized_machine_suite.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Gym_Equipment.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gym_Equipment.jpg",
+      "author": "Teddyhtsai",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "width": 1108,
+      "height": 1478,
+      "bytes": 334702,
+      "sha256": "4206080d53907fde05c6474f070f77215af367d7a0e105c1bc6bfe14922ea681",
+      "category": "strength",
+      "alt": {
+        "ar": "أجهزة تمارين القوة وتدريب الأوزان المنتقاة كابلياً",
+        "en": "Selectorized cable and pin-loaded strength resistance training machines"
+      },
+      "caption": {
+        "ar": "مسارات حركة مقيدة للأوزان تتيح للمتدربين عزل المجموعات العضلية بأمان وتحكم حركي",
+        "en": "Biomechanical cable machines facilitating controlled muscular overload and safe isolation"
+      }
+    },
+    {
+      "id": "barbell-deadlift-technique-station",
+      "src": "/assets/portfolio/fitness/barbell_deadlift_technique_station.webp",
+      "url": "/assets/portfolio/fitness/barbell_deadlift_technique_station.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Fit_young_man_doing_deadlift_exercise_in_gym.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fit_young_man_doing_deadlift_exercise_in_gym.jpg",
+      "author": "Nenad Stojkovic",
+      "license": "CC-BY-2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "width": 1800,
+      "height": 1202,
+      "bytes": 216332,
+      "sha256": "f661acdf37536809f407124cdf9350e57c828b9e1b2c2abf8d90b42d3651f670",
+      "category": "strength",
+      "alt": {
+        "ar": "متدرب يؤدي تمرين الرفعة الميتة بالبار الأولمبي مع الحفاظ على استقامة العمود الفقري",
+        "en": "Athlete executing an Olympic barbell deadlift maintaining neutral spinal alignment"
+      },
+      "caption": {
+        "ar": "معايرة تقنية الرفعات المركبة وتنشيط عضلات السلسلة الخلفية بأوزان متدرجة ومحسوبة",
+        "en": "Compound lift biomechanics and posterior chain recruitment with progressive calibration"
+      }
+    },
+    {
+      "id": "kettlebell-functional-training-zone",
+      "src": "/assets/portfolio/fitness/kettlebell_functional_training_zone.webp",
+      "url": "/assets/portfolio/fitness/kettlebell_functional_training_zone.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Kettlebell_workout.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kettlebell_workout.jpg",
+      "author": "Rafaelqcn",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 1800,
+      "height": 1200,
+      "bytes": 93184,
+      "sha256": "5878b0ef4a437a399b8ef2137e993d19c40a7b1d5e5b7adb733e9f79101a5144",
+      "category": "functional",
+      "alt": {
+        "ar": "تدريب وظيفي باستخدام الكيتل بل لتطوير القوة الانفجارية والتحكم في الجذع",
+        "en": "Functional kettlebell training conditioning explosive hip hinge power and core stability"
+      },
+      "caption": {
+        "ar": "تمارين الأرجحة والرفع الحركي للأوزان الحرة لتطوير التوازن والتحمل القلبي العضلي",
+        "en": "Dynamic kettlebell swings and ballistic transitions developing cardiovascular endurance"
+      }
+    },
+    {
+      "id": "dumbbells-freeweight_rack-conditioning",
+      "src": "/assets/portfolio/fitness/dumbbells_freeweight_rack_conditioning.webp",
+      "url": "/assets/portfolio/fitness/dumbbells_freeweight_rack_conditioning.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Fitness_dumbbell_marked_with_a_green_logo_resting_on_a_gym_rack.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fitness_dumbbell_marked_with_a_green_logo_resting_on_a_gym_rack.jpg",
+      "author": "Shixart1985",
+      "license": "CC-BY-2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "width": 1800,
+      "height": 1202,
+      "bytes": 158868,
+      "sha256": "5aaddf485783909f117e577b63310a6629b2cab04cf5859a97b8f607ef2ef61d",
+      "category": "strength",
+      "alt": {
+        "ar": "حامل دامبلز احترافي مجهز بأوزان تدريجية للأوزان الحرة داخل الجيم",
+        "en": "Commercial gym dumbbell rack holding graduated urethane free weights"
+      },
+      "caption": {
+        "ar": "مجموعة الأوزان الحرة المتدرجة المخصصة لتمارين العزل وتطوير القوة المتوازنة",
+        "en": "Graduated free-weight dumbbells enabling unilateral symmetry and hypertrophy progressions"
+      }
+    },
+    {
+      "id": "treadmill-cardiovascular-endurance-bay",
+      "src": "/assets/portfolio/fitness/treadmill_cardiovascular_endurance_bay.webp",
+      "url": "/assets/portfolio/fitness/treadmill_cardiovascular_endurance_bay.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Young_blonde_woman_running_on_a_treadmill_in_the_gym_closeup.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Young_blonde_woman_running_on_a_treadmill_in_the_gym_closeup.jpg",
+      "author": "Shixart1985",
+      "license": "CC-BY-2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "width": 1800,
+      "height": 1202,
+      "bytes": 188670,
+      "sha256": "79cc49fc4d349ac4882a243d874ca31501f8c62be969e43a8cf9186f980d3def",
+      "category": "cardio",
+      "alt": {
+        "ar": "متدربة تمارس الجري والتحمل القلبي على جهاز سير الجري الكهربائي في الجيم",
+        "en": "Athlete running and training cardiovascular aerobic pace on commercial treadmill"
+      },
+      "caption": {
+        "ar": "منطقة التدريب الهوائي المصممة لتمارين فترات الشدة والتحمل التنفسي والتعافي النشط",
+        "en": "Aerobic conditioning zone calibrated for interval pacing, cardiovascular VO2 max, and active recovery"
+      }
+    }
   ]
 }
