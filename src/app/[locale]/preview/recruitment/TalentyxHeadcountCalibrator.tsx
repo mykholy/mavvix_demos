@@ -270,7 +270,7 @@ export default function TalentyxHeadcountCalibrator({ locale }: TalentyxHeadcoun
                       aria-pressed={active}
                     >
                       <div className="text-xs font-black truncate">{isAr ? t.labelAr : t.labelEn}</div>
-                      <div className={`text-[11px] mt-1 font-medium ${active ? 'text-blue-100' : 'text-[#7D8DA6]'}`}>
+                      <div className={`text-[11px] mt-1 font-medium ${active ? 'text-blue-100' : 'text-[#334155]'}`}>
                         {isAr ? t.yearsAr : t.yearsEn}
                       </div>
                     </button>
@@ -287,7 +287,7 @@ export default function TalentyxHeadcountCalibrator({ locale }: TalentyxHeadcoun
                 </label>
                 <div className="flex items-center gap-2">
                   <span className="text-2xl font-black text-[#17243E]">{headcount}</span>
-                  <span className="text-xs text-[#7D8DA6] font-semibold">
+                  <span className="text-xs text-[#334155] font-semibold">
                     {isAr ? (headcount === 1 ? 'وظيفة' : 'وظائف') : (headcount === 1 ? 'hire' : 'hires')}
                   </span>
                 </div>
@@ -302,7 +302,7 @@ export default function TalentyxHeadcountCalibrator({ locale }: TalentyxHeadcoun
                 className="w-full h-2 bg-[#E1E6F0] rounded-lg appearance-none cursor-pointer accent-[#3549A5]"
                 aria-label={isAr ? 'حجم التوظيف المستهدف' : 'Targeted Headcount Volume'}
               />
-              <div className="flex justify-between text-[11px] font-mono text-[#7D8DA6] mt-2">
+              <div className="flex justify-between text-[11px] font-mono text-[#334155] mt-2">
                 <span>1 {isAr ? 'وظيفة مفردة' : 'Single Hire'}</span>
                 <span>5 {isAr ? 'فريق مصغر' : 'Core Pod'}</span>
                 <span>15 {isAr ? 'توسع واسع' : 'Team Scaling'}</span>

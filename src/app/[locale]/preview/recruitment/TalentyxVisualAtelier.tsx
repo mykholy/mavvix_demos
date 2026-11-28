@@ -123,7 +123,7 @@ export default function TalentyxVisualAtelier({ locale }: TalentyxVisualAtelierP
 
               {/* Card Footer with Provenance Trigger */}
               <div className="px-5 py-3.5 bg-white border-t border-[#E1E6F0] flex items-center justify-between text-xs">
-                <span className="text-[#7D8DA6] font-medium text-[11px] truncate max-w-[170px]">
+                <span className="text-[#334155] font-medium text-[11px] truncate max-w-[170px]">
                   {photo.author} · {photo.license}
                 </span>
                 <button
@@ -151,7 +151,7 @@ export default function TalentyxVisualAtelier({ locale }: TalentyxVisualAtelierP
               <button
                 type="button"
                 onClick={() => setSelectedPhoto(null)}
-                className="absolute top-5 right-5 p-1.5 rounded-lg text-[#7D8DA6] hover:bg-[#F8F9FC] hover:text-[#17243E] transition-colors"
+                className="absolute top-5 right-5 p-1.5 rounded-lg text-[#334155] hover:bg-[#F8F9FC] hover:text-[#17243E] transition-colors"
                 aria-label={isAr ? 'إغلاق' : 'Close'}
               >
                 <X size={20} />
@@ -171,19 +171,19 @@ export default function TalentyxVisualAtelier({ locale }: TalentyxVisualAtelierP
 
               <div className="mt-5 space-y-3 bg-[#F8F9FC] p-4 rounded-xl border border-[#E1E6F0] text-xs font-mono">
                 <div>
-                  <span className="text-[#7D8DA6] block text-[10px] uppercase">{isAr ? 'المسار المحلي:' : 'Local Path:'}</span>
+                  <span className="text-[#334155] block text-[10px] uppercase">{isAr ? 'المسار المحلي:' : 'Local Path:'}</span>
                   <span className="text-[#17243E] font-bold break-all">{selectedPhoto.src}</span>
                 </div>
 
                 <div>
-                  <span className="text-[#7D8DA6] block text-[10px] uppercase">{isAr ? 'الأبعاد وحجم الملف:' : 'Dimensions & Byte Size:'}</span>
+                  <span className="text-[#334155] block text-[10px] uppercase">{isAr ? 'الأبعاد وحجم الملف:' : 'Dimensions & Byte Size:'}</span>
                   <span className="text-[#17243E] font-bold">
                     {selectedPhoto.width}x{selectedPhoto.height} px · {selectedPhoto.byteSize.toLocaleString()} bytes
                   </span>
                 </div>
 
                 <div>
-                  <span className="text-[#7D8DA6] block text-[10px] uppercase">{isAr ? 'المؤلف والترخيص المعتمد:' : 'Author & Applicable License:'}</span>
+                  <span className="text-[#334155] block text-[10px] uppercase">{isAr ? 'المؤلف والترخيص المعتمد:' : 'Author & Applicable License:'}</span>
                   <span className="text-[#17243E] font-bold">
                     {selectedPhoto.author} ({selectedPhoto.license})
                   </span>
@@ -191,7 +191,7 @@ export default function TalentyxVisualAtelier({ locale }: TalentyxVisualAtelierP
 
                 <div>
                   <div className="flex justify-between items-center mb-1">
-                    <span className="text-[#7D8DA6] text-[10px] uppercase">{isAr ? 'بصمة SHA-256 للملف:' : 'SHA-256 Checksum:'}</span>
+                    <span className="text-[#334155] text-[10px] uppercase">{isAr ? 'بصمة SHA-256 للملف:' : 'SHA-256 Checksum:'}</span>
                     <button
                       type="button"
                       onClick={() => handleCopySha(selectedPhoto.sha256)}

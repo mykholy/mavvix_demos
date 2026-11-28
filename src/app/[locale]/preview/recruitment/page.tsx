@@ -162,7 +162,7 @@ export default async function Home({
                 <span className="font-mono text-xs font-bold text-[#3549A5]">
                   TX / {String(s.rank).padStart(2, '0')}
                 </span>
-                <ArrowUpRight size={20} className="text-[#7D8DA6]" />
+                <ArrowUpRight size={20} className="text-[#334155]" />
               </div>
               <h3 className="mt-5 text-xl font-black">{s.title[locale]}</h3>
               <p className="mt-4 text-sm leading-8 text-[#4E5D78]">{s.summary[locale]}</p>
