@@ -1,5 +1,6 @@
 {
   "vertical": "wholesale",
+  "reviewed_on": "2026-11-28",
   "assets": [
     {
       "id": "tradebridge-warehouse",
@@ -11,7 +12,7 @@
       "original_dimensions": "5746x2807",
       "original_sha1": "2175b46d3ce8f495d660f43194845c988cd4a7dc",
       "source_sha1_verified": true,
-      "local": "/assets/portfolio/tradebridge-warehouse.webp",
+      "local": "/assets/portfolio/wholesale/warehouse.webp",
       "dimensions": "1600x781",
       "sha256": "17c687f61aac1cd9bb1b7f02bc1e3bc916edf0e341add6a869ba42d1168f6063",
       "bytes": 501296,
@@ -27,10 +28,70 @@
       "original_dimensions": "3920x2204",
       "original_sha1": "8dc3f7dbf5b7ae552e0cb3554bf9a43cbe007892",
       "source_sha1_verified": true,
-      "local": "/assets/portfolio/tradebridge-stock.webp",
+      "local": "/assets/portfolio/wholesale/stock.webp",
       "dimensions": "1600x900",
       "sha256": "1fa2f12012334f66091d52d42592caa63a4a3e25ac3f2f716af2afe0873af838",
       "bytes": 339052,
+      "changes": "Resized and WebP encoded; display may crop. Original license retained for adapted image. Independent editorial photograph, not TradeBridge facilities or inventory."
+    },
+    {
+      "id": "tradebridge-forklift",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Workers_drive_Forkloaders_laden_with_USAID_goods_inside_a_large_warehouse_-_20110826-FS-LSC-0108_-_Flickr_-_USDAgov.jpg",
+      "author": "Flickr / USDAgov",
+      "license": "Public domain",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Workers_drive_Forkloaders_laden_with_USAID_goods_inside_a_large_warehouse_-_20110826-FS-LSC-0108_-_Flickr_-_USDAgov.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": "4928x3264",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/wholesale/forklift.webp",
+      "dimensions": "1800x1192",
+      "sha256": "043a5806dbd8fbf7f01c232f53de26ad902edaa8fdaa18ebbbf6bfb11efd263a",
+      "bytes": 623804,
+      "changes": "Resized and WebP encoded; display may crop. Original license retained for adapted image. Independent editorial photograph, not TradeBridge facilities or inventory."
+    },
+    {
+      "id": "tradebridge-pallets",
+      "source_page": "https://commons.wikimedia.org/wiki/File:UNICEF_pallets_01.jpg",
+      "author": "UNICEF / Wikimedia Commons",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/UNICEF_pallets_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": "2000x1306",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/wholesale/pallets.webp",
+      "dimensions": "1800x1175",
+      "sha256": "3f30bd3ebbf7fb71f5dfd33bc72edfc4a094209c559430a9376fde7b702ad7c6",
+      "bytes": 229600,
+      "changes": "Resized and WebP encoded; display may crop. Original license retained for adapted image. Independent editorial photograph, not TradeBridge facilities or inventory."
+    },
+    {
+      "id": "tradebridge-highbay",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Automatisches_Hochregallager_mit_Regalbedienger%C3%A4ten.jpg",
+      "author": "KlausFoehl",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Automatisches_Hochregallager_mit_Regalbedienger%C3%A4ten.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": "2250x1131",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/wholesale/highbay.webp",
+      "dimensions": "1800x905",
+      "sha256": "86e8d766bd5104a029b6754a247679e7eb9a8a784739b1a03240420b3b27ad1e",
+      "bytes": 221698,
+      "changes": "Resized and WebP encoded; display may crop. Original license retained for adapted image. Independent editorial photograph, not TradeBridge facilities or inventory."
+    },
+    {
+      "id": "tradebridge-inventory",
+      "source_page": "https://commons.wikimedia.org/wiki/File:A_warehouse_full_of_USAID_goods_-_20110826-FS-LSC-0051_-_Flickr_-_USDAgov.jpg",
+      "author": "Flickr / USDAgov",
+      "license": "Public domain",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/30/A_warehouse_full_of_USAID_goods_-_20110826-FS-LSC-0051_-_Flickr_-_USDAgov.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": "3666x2532",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/wholesale/inventory.webp",
+      "dimensions": "1800x1243",
+      "sha256": "3a8a58a4dc9cfa85933e621c3dc28e3e7de732bc36586c16d682306bc4cc19f0",
+      "bytes": 425478,
       "changes": "Resized and WebP encoded; display may crop. Original license retained for adapted image. Independent editorial photograph, not TradeBridge facilities or inventory."
     }
   ]
