@@ -7,6 +7,10 @@ export const arenaFormat=(slug:string)=>content.services.find(s=>s.slug===slug)|
 export const arenaGuide=(slug:string)=>content.articles.find(a=>a.slug===slug)||null;
 export const arenaText=(value:{ar:string;en:string},locale:Locale)=>value[locale];
 export const ARENA_PHOTOS={
- floodlit:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Pexels-jonathan-petersson-399187.jpg/1280px-Pexels-jonathan-petersson-399187.jpg',
- night:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Soccer_at_night_%28Unsplash%29.jpg/1280px-Soccer_at_night_%28Unsplash%29.jpg'
+ floodlit:'/assets/portfolio/sports-venues/floodlit_football_pitch.webp',
+ night:'/assets/portfolio/sports-venues/night_football_action.webp',
+ padel:'/assets/portfolio/sports-venues/panoramic_padel_court.webp',
+ basketball:'/assets/portfolio/sports-venues/indoor_basketball_arena.webp',
+ tennis:'/assets/portfolio/sports-venues/clay_tennis_court.webp'
 } as const;
+
