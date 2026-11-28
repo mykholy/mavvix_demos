@@ -131,7 +131,7 @@ export function OasisStayCalibrator({ locale }: OasisStayCalibratorProps) {
         {/* Section Header */}
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#46543C] text-[#F5F0E6] text-xs font-bold tracking-widest uppercase">
-            <Compass size={14} className="text-[#CBA676]" />
+            <Compass size={14} className="text-white" />
             <span>{isAr ? 'منسق تجربة الإقامة' : 'Stay Curation Calibrator'}</span>
           </div>
           <h2
@@ -179,10 +179,10 @@ export function OasisStayCalibrator({ locale }: OasisStayCalibratorProps) {
                       }`}
                     >
                       <div className="flex items-center justify-between">
-                        <span className={`text-sm font-bold ${active ? 'text-[#CBA676]' : 'text-[#46543C]'}`}>
+                        <span className={`text-sm font-bold ${active ? 'text-white' : 'text-[#282A25]'}`}>
                           {isAr ? exp.titleAr : exp.titleEn}
                         </span>
-                        {active && <CheckCircle2 size={16} className="text-[#CBA676]" />}
+                        {active && <CheckCircle2 size={16} className="text-white" />}
                       </div>
                       <p className={`mt-2 text-xs leading-5 line-clamp-2 ${active ? 'text-[#F5F0E6]' : 'text-[#334155]'}`}>
                         {isAr ? exp.descAr : exp.descEn}

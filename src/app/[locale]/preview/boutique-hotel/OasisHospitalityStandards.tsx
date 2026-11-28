@@ -63,7 +63,7 @@ export function OasisHospitalityStandards({ locale }: OasisHospitalityStandardsP
         {/* Section Header */}
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#46543C] text-[#F5F0E6] text-xs font-bold tracking-widest uppercase">
-            <ShieldCheck size={14} className="text-[#CBA676]" />
+            <ShieldCheck size={14} className="text-white" />
             <span>{isAr ? 'ميثاق الضيافة الأصيلة' : 'Slow Hospitality Governance'}</span>
           </div>
           <h2

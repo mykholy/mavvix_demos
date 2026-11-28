@@ -48,7 +48,7 @@ export function OasisVisualAtelier({ locale }: OasisVisualAtelierProps) {
         {/* Section Header */}
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#46543C] text-[#F5F0E6] text-xs font-bold tracking-widest uppercase">
-            <Camera size={14} className="text-[#CBA676]" />
+            <Camera size={14} className="text-white" />
             <span>{isAr ? 'أرشيف التوثيق البصري والأصول' : 'Photographic Archive & Media Provenance'}</span>
           </div>
           <h2
