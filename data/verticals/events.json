@@ -360,16 +360,81 @@
   ],
   "media": [
     {
-      "role": "conference-editorial",
+      "role": "conference-hall",
       "title": "Prepared conference and banquet hall",
       "credit": "PattayaPatrol",
       "license": "CC BY-SA 4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "source": "https://commons.wikimedia.org/wiki/File:DZ6_0468_Spacious_elegantly_lit_banquet_hall_set_up_with_rows_of_white-covered_chairs_facing_a_stage_ready_for_a_large_conference_or_formal_event.jpg",
-      "url": "/assets/portfolio/luma-conference-hall.webp",
+      "url": "/assets/portfolio/events/conference_hall.webp",
       "alt": {
-        "ar": "قاعة مؤتمر مجهزة في تايلاند، صورة تحريرية مستقلة لا تمثل فعالية من لوما",
-        "en": "Prepared conference hall in Thailand, independent editorial photograph, not a Luma event"
+        "ar": "قاعة مؤتمر مجهزة، صورة تحريرية مستقلة لا تمثل فعالية من لوما",
+        "en": "Prepared conference hall, independent editorial photograph, not a Luma event"
+      }
+    },
+    {
+      "role": "grand-ballroom",
+      "title": "Grand ballroom event setting",
+      "credit": "Paradisus Bali",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Melia_Bali_Villas_and_Spa_Resort_Nusa_Dua_Bali_Grand_Ballroom.jpg",
+      "url": "/assets/portfolio/events/grand_ballroom.webp",
+      "alt": {
+        "ar": "قاعة احتفالات كبرى مجهزة للمناسبات والقمم، صورة تحريرية مستقلة",
+        "en": "Grand ballroom staged for events and summits, independent editorial photograph"
+      }
+    },
+    {
+      "role": "banquet-setting",
+      "title": "Banquet table setting and floral arrangement",
+      "credit": "Tracy Hunter",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Banquet_Table_Setting_(3666060481).jpg",
+      "url": "/assets/portfolio/events/banquet_setting.webp",
+      "alt": {
+        "ar": "تنسيق موائد العشاء والمناسبات الرسمية، صورة تحريرية مستقلة",
+        "en": "Banquet table staging and formal dining arrangement, independent editorial photograph"
+      }
+    },
+    {
+      "role": "outdoor-stage",
+      "title": "Outdoor festival and concert stage lighting",
+      "credit": "Shixart1985",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Festival_stage_lighting_in_Batumi.jpg",
+      "url": "/assets/portfolio/events/outdoor_stage.webp",
+      "alt": {
+        "ar": "إضاءة مسرح مفتوح لفعالية خارجية، صورة تحريرية مستقلة",
+        "en": "Outdoor festival stage lighting and truss rigging, independent editorial photograph"
+      }
+    },
+    {
+      "role": "lighting-console",
+      "title": "Audio and lighting control console",
+      "credit": "Jeff Meyer",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Audio_and_lighting_console_at_concert.jpg",
+      "url": "/assets/portfolio/events/lighting_console.webp",
+      "alt": {
+        "ar": "وحدة التحكم في الإضاءة والصوتيات المباشرة، صورة تحريرية مستقلة",
+        "en": "Live lighting and audio mixing console, independent editorial photograph"
+      }
+    },
+    {
+      "role": "brand-pavilion",
+      "title": "Exhibition brand pavilion and booth architecture",
+      "credit": "Rico Shen",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:2008Computex_NVIDIA_Booth_Hall1.jpg",
+      "url": "/assets/portfolio/events/brand_pavilion.webp",
+      "alt": {
+        "ar": "جناح عرض معماري للعلامات التجارية، صورة تحريرية مستقلة",
+        "en": "Architectural brand exhibition pavilion and activation, independent editorial photograph"
       }
     }
   ]
