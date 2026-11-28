@@ -1,6 +1,287 @@
 'use client';
-import {useRef,useState} from 'react';import type {FormEvent} from 'react';import Link from 'next/link';import type {Locale} from '@/lib/i18n/config';import { OASIS,oasisPath } from '@/lib/verticals/boutique-hotel/data';import {CheckCircle2} from 'lucide-react';
-export function StayForm({locale,initialRoom}:{locale:Locale;initialRoom:string}){const ar=locale==='ar';const [serviceSlug,setRoom]=useState(initialRoom),[checkIn,setIn]=useState(''),[checkOut,setOut]=useState(''),[adults,setAdults]=useState(2),[children,setChildren]=useState(0),[guestName,setName]=useState(''),[guestPhone,setPhone]=useState(''),[consent,setConsent]=useState(false),[busy,setBusy]=useState(false),[ref,setRef]=useState(''),[error,setError]=useState('');const request=useRef<string|null>(null),inFlight=useRef(false);const selected=OASIS.services.find(x=>x.slug===serviceSlug);const max=selected?.maxGuests??0,party=adults+children;const nights=(Date.parse(checkOut+'T00:00:00Z')-Date.parse(checkIn+'T00:00:00Z'))/86400000;const datesOk=Number.isFinite(nights)&&nights>=1&&nights<=30;const field='mt-2 block min-h-12 w-full bg-white border border-[#A89D8B] px-3 py-3 text-sm text-[#282A25] focus-visible:outline-2 focus-visible:outline-[#46543C]';const today=new Date().toISOString().slice(0,10);
-async function submit(e:FormEvent<HTMLFormElement>){e.preventDefault();if(inFlight.current||ref||!consent||!datesOk||party>max)return;inFlight.current=true;setBusy(true);setError('');try{if(!request.current)request.current=crypto.randomUUID();const res=await fetch('/api/portfolio/boutique-hotel',{method:'POST',headers:{'Content-Type':'application/json'},cache:'no-store',body:JSON.stringify({flowType:'hotel_stay_request',clientRequestId:request.current,serviceSlug,checkIn,checkOut,adults,children,guestName,guestPhone,consent,honeypot:''})});const data=await res.json();if(!res.ok||!data.success)throw Error(data.code||'SAVE_FAILED');setRef(data.refNumber);}catch{setError(ar?'تعذر حفظ الطلب. راجع التواريخ وعدد الضيوف وبيانات التواصل ثم حاول مرة أخرى.':'Could not save the enquiry. Review dates, occupancy and contact details, then retry.');}finally{inFlight.current=false;setBusy(false);}}
-if(ref)return <div role="status" className="bg-white border border-[#D9CDBB] p-9 text-center"><CheckCircle2 size={48} className="mx-auto text-[#46543C]"/><h2 className="mt-6 font-serif text-3xl">{ar?'تم حفظ تفضيلات الإقامة':'Stay preferences saved'}</h2><p className="mt-5 break-all font-mono font-bold text-xl">{ref}</p><p className="mt-6 leading-8 text-sm">{ar?'المرجع لا يؤكد حجزاً أو سعراً أو توافر غرفة.':'This reference confirms no reservation, rate or room availability.'}</p><Link href={oasisPath(locale,'rooms')} className="mt-7 inline-flex px-6 py-4 bg-[#46543C] text-white font-bold text-sm">{ar?'استكشف الغرف':'Explore rooms'}</Link></div>;
-return <form onSubmit={submit} className="border border-[#D9CDBB] bg-white"><div className="bg-[#282A25] text-[#F5F0E6] p-7"><h2 className="font-serif text-3xl">{ar?'تفاصيل الإقامة':'Stay details'}</h2><p className="mt-3 text-sm leading-7">{ar?'الطلب غير ملزم ولا يتضمن دفعاً.':'Nonbinding enquiry, no payment.'}</p></div><fieldset disabled={busy} className="min-w-0 p-6 sm:p-9 space-y-6"><div className="grid sm:grid-cols-2 gap-4"><label className="block text-sm font-bold">{ar?'الوصول':'Check-in'}<input className={field} type="date" required min={today} value={checkIn} onChange={e=>setIn(e.target.value)}/></label><label className="block text-sm font-bold">{ar?'المغادرة':'Check-out'}<input className={field} type="date" required min={checkIn||today} value={checkOut} onChange={e=>setOut(e.target.value)}/></label></div><div className="grid grid-cols-2 gap-4"><label className="block text-sm font-bold">{ar?'البالغون':'Adults'}<select className={field} value={adults} onChange={e=>setAdults(Number(e.target.value))}>{[1,2,3,4].map(n=><option key={n}>{n}</option>)}</select></label><label className="block text-sm font-bold">{ar?'الأطفال':'Children'}<select className={field} value={children} onChange={e=>setChildren(Number(e.target.value))}>{[0,1,2,3].map(n=><option key={n}>{n}</option>)}</select></label></div><label className="block text-sm font-bold">{ar?'تفضيل الغرفة':'Room preference'}<select className={field} value={serviceSlug} onChange={e=>setRoom(e.target.value)}>{OASIS.services.map(s=><option key={s.slug} value={s.slug}>{s.title[locale]}</option>)}</select></label><div aria-live="polite" className="bg-[#F5F0E6] p-4 text-sm leading-8"><p>{ar?'الحد التوضيحي للضيوف:':'Illustrative occupancy:'} {max}</p>{datesOk&&<p>{ar?'عدد الليالي:':'Nights:'} {nights}</p>}{party>max&&<p className="text-red-800 font-bold">{ar?'اختر غرفة تناسب عدد الضيوف.':'Choose a room fitting your party.'}</p>}{checkIn&&checkOut&&!datesOk&&<p className="text-red-800 font-bold">{ar?'اختر إقامة من ليلة إلى 30 ليلة.':'Choose a stay of 1 to 30 nights.'}</p>}</div><label className="block text-sm font-bold">{ar?'الاسم للتواصل':'Contact name'}<input className={field} required minLength={2} maxLength={100} autoComplete="name" value={guestName} onChange={e=>setName(e.target.value)}/></label><label className="block text-sm font-bold">{ar?'رقم الهاتف':'Phone'}<input className={field} type="tel" required minLength={8} maxLength={24} autoComplete="tel" value={guestPhone} onChange={e=>setPhone(e.target.value)}/></label><label className="flex gap-3 text-sm leading-7"><input type="checkbox" checked={consent} required onChange={e=>setConsent(e.target.checked)} className="mt-1 accent-[#46543C]"/><span>{ar?'أوافق على حفظ بيانات الاتصال وتفضيلات الإقامة لهذا الطلب التوضيحي، دون حجز أو دفع.':'I consent to storing contact details and preferences for this illustrative enquiry, without reservation or payment.'} <Link href={oasisPath(locale,'policies')} className="underline">{ar?'السياسات':'Policies'}</Link></span></label>{error&&<p role="alert" className="bg-red-50 text-red-800 p-4 text-sm">{error}</p>}<button disabled={busy||!consent||!datesOk||party>max} className="w-full min-h-14 bg-[#46543C] text-white px-6 py-4 text-sm font-bold disabled:opacity-70" type="submit">{busy?(ar?'جارٍ الحفظ':'Saving'):(ar?'حفظ طلب الإقامة':'Save stay enquiry')}</button></fieldset></form>;}
+
+import { useRef, useState } from 'react';
+import type { FormEvent } from 'react';
+import Link from 'next/link';
+import type { Locale } from '@/lib/i18n/config';
+import { OASIS, oasisPath } from '@/lib/verticals/boutique-hotel/data';
+import { CheckCircle2 } from 'lucide-react';
+
+export function StayForm({
+  locale,
+  initialRoom
+}: {
+  locale: Locale;
+  initialRoom: string;
+}) {
+  const ar = locale === 'ar';
+  const [serviceSlug, setRoom] = useState(initialRoom);
+  const [checkIn, setIn] = useState('');
+  const [checkOut, setOut] = useState('');
+  const [adults, setAdults] = useState(2);
+  const [children, setChildren] = useState(0);
+  const [guestName, setName] = useState('');
+  const [guestPhone, setPhone] = useState('');
+  const [consent, setConsent] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [ref, setRef] = useState('');
+  const [error, setError] = useState('');
+  const request = useRef<string | null>(null);
+  const inFlight = useRef(false);
+
+  const selected = OASIS.services.find((x) => x.slug === serviceSlug);
+  const max = selected?.maxGuests ?? 0;
+  const party = adults + children;
+  const nights =
+    (Date.parse(checkOut + 'T00:00:00Z') - Date.parse(checkIn + 'T00:00:00Z')) / 86400000;
+  const datesOk = Number.isFinite(nights) && nights >= 1 && nights <= 30;
+  const field =
+    'mt-2 block min-h-12 w-full bg-white border border-[#A89D8B] px-3 py-3 text-sm text-[#282A25] focus-visible:outline-2 focus-visible:outline-[#46543C]';
+  const today = new Date().toISOString().slice(0, 10);
+
+  async function submit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (inFlight.current || ref || !consent || !datesOk || party > max) return;
+    inFlight.current = true;
+    setBusy(true);
+    setError('');
+    try {
+      if (!request.current) request.current = crypto.randomUUID();
+      const res = await fetch('/api/portfolio/boutique-hotel', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        cache: 'no-store',
+        body: JSON.stringify({
+          flowType: 'hotel_stay_request',
+          clientRequestId: request.current,
+          serviceSlug,
+          checkIn,
+          checkOut,
+          adults,
+          children,
+          guestName,
+          guestPhone,
+          consent,
+          honeypot: ''
+        })
+      });
+      const data = await res.json();
+      if (!res.ok || !data.success) throw Error(data.code || 'SAVE_FAILED');
+      setRef(data.refNumber);
+    } catch {
+      setError(
+        ar
+          ? 'تعذر حفظ الطلب. راجع التواريخ وعدد الضيوف وبيانات التواصل ثم حاول مرة أخرى.'
+          : 'Could not save the enquiry. Review dates, occupancy and contact details, then retry.'
+      );
+    } finally {
+      inFlight.current = false;
+      setBusy(false);
+    }
+  }
+
+  if (ref) {
+    return (
+      <div role="status" className="bg-white border border-[#D9CDBB] p-9 text-center">
+        <CheckCircle2 size={48} className="mx-auto text-[#46543C]" />
+        <h2 className="mt-6 font-serif text-3xl font-bold text-[#282A25]">
+          {ar ? 'تم حفظ تفضيلات الإقامة' : 'Stay preferences saved'}
+        </h2>
+        <p className="mt-5 break-all font-mono font-bold text-xl text-[#46543C]">{ref}</p>
+        <p className="mt-6 leading-8 text-sm text-[#334155]">
+          {ar
+            ? 'المرجع لا يؤكد حجزاً أو سعراً أو توافر غرفة.'
+            : 'This reference confirms no reservation, rate or room availability.'}
+        </p>
+        <Link
+          href={oasisPath(locale, 'rooms')}
+          className="mt-7 inline-flex px-6 py-4 bg-[#46543C] text-white font-bold text-sm hover:bg-[#282A25] transition-colors"
+        >
+          {ar ? 'استكشف الغرف' : 'Explore rooms'}
+        </Link>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={submit} className="border border-[#D9CDBB] bg-white">
+      <div className="bg-[#282A25] text-[#F5F0E6] p-7">
+        <h2 className="font-serif text-3xl font-bold">{ar ? 'تفاصيل الإقامة' : 'Stay details'}</h2>
+        <p className="mt-3 text-sm leading-7 text-[#E7DCC9]">
+          {ar ? 'الطلب غير ملزم ولا يتضمن دفعاً.' : 'Nonbinding enquiry, no payment.'}
+        </p>
+      </div>
+      <fieldset disabled={busy} className="min-w-0 p-6 sm:p-9 space-y-6">
+        <div className="grid sm:grid-cols-2 gap-4">
+          <label className="block text-sm font-bold text-[#282A25]">
+            {ar ? 'الوصول' : 'Check-in'}
+            <input
+              className={field}
+              type="date"
+              required
+              min={today}
+              value={checkIn}
+              aria-label={ar ? 'تاريخ الوصول' : 'Check-in date'}
+              onChange={(e) => setIn(e.target.value)}
+            />
+          </label>
+          <label className="block text-sm font-bold text-[#282A25]">
+            {ar ? 'المغادرة' : 'Check-out'}
+            <input
+              className={field}
+              type="date"
+              required
+              min={checkIn || today}
+              value={checkOut}
+              aria-label={ar ? 'تاريخ المغادرة' : 'Check-out date'}
+              onChange={(e) => setOut(e.target.value)}
+            />
+          </label>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <label className="block text-sm font-bold text-[#282A25]">
+            {ar ? 'البالغون' : 'Adults'}
+            <select
+              className={field}
+              value={adults}
+              aria-label={ar ? 'عدد البالغين' : 'Number of adults'}
+              onChange={(e) => setAdults(Number(e.target.value))}
+            >
+              {[1, 2, 3, 4].map((n) => (
+                <option key={n} value={n}>
+                  {n}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="block text-sm font-bold text-[#282A25]">
+            {ar ? 'الأطفال' : 'Children'}
+            <select
+              className={field}
+              value={children}
+              aria-label={ar ? 'عدد الأطفال' : 'Number of children'}
+              onChange={(e) => setChildren(Number(e.target.value))}
+            >
+              {[0, 1, 2, 3].map((n) => (
+                <option key={n} value={n}>
+                  {n}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+
+        <label className="block text-sm font-bold text-[#282A25]">
+          {ar ? 'تفضيل الغرفة' : 'Room preference'}
+          <select
+            className={field}
+            value={serviceSlug}
+            aria-label={ar ? 'تفضيل الغرفة' : 'Room preference'}
+            onChange={(e) => setRoom(e.target.value)}
+          >
+            {OASIS.services.map((s) => (
+              <option key={s.slug} value={s.slug}>
+                {s.title[locale]}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <div aria-live="polite" className="bg-[#F5F0E6] p-4 text-sm leading-8 border border-[#D9CDBB]">
+          <p className="text-[#282A25]">
+            {ar ? 'الحد التوضيحي للضيوف:' : 'Illustrative occupancy:'}{' '}
+            <span className="font-bold">{max}</span>
+          </p>
+          {datesOk && (
+            <p className="text-[#282A25]">
+              {ar ? 'عدد الليالي:' : 'Nights:'} <span className="font-bold">{nights}</span>
+            </p>
+          )}
+          {party > max && (
+            <p className="text-red-800 font-bold">
+              {ar ? 'اختر غرفة تناسب عدد الضيوف.' : 'Choose a room fitting your party.'}
+            </p>
+          )}
+          {checkIn && checkOut && !datesOk && (
+            <p className="text-red-800 font-bold">
+              {ar ? 'اختر إقامة من ليلة إلى 30 ليلة.' : 'Choose a stay of 1 to 30 nights.'}
+            </p>
+          )}
+        </div>
+
+        <label className="block text-sm font-bold text-[#282A25]">
+          {ar ? 'الاسم للتواصل' : 'Contact name'}
+          <input
+            className={field}
+            required
+            minLength={2}
+            maxLength={100}
+            autoComplete="name"
+            aria-label={ar ? 'الاسم للتواصل' : 'Contact name'}
+            value={guestName}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </label>
+
+        <label className="block text-sm font-bold text-[#282A25]">
+          {ar ? 'رقم الهاتف' : 'Phone'}
+          <input
+            className={field}
+            type="tel"
+            required
+            minLength={8}
+            maxLength={24}
+            autoComplete="tel"
+            aria-label={ar ? 'رقم الهاتف' : 'Phone'}
+            value={guestPhone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
+        </label>
+
+        <label className="flex gap-3 text-sm leading-7 text-[#282A25]">
+          <input
+            type="checkbox"
+            checked={consent}
+            required
+            aria-label={
+              ar
+                ? 'الموافقة على حفظ بيانات الاتصال وتفضيلات الإقامة'
+                : 'Consent to storing contact details and stay preferences'
+            }
+            onChange={(e) => setConsent(e.target.checked)}
+            className="mt-1 accent-[#46543C]"
+          />
+          <span>
+            {ar
+              ? 'أوافق على حفظ بيانات الاتصال وتفضيلات الإقامة لهذا الطلب التوضيحي، دون حجز أو دفع.'
+              : 'I consent to storing contact details and preferences for this illustrative enquiry, without reservation or payment.'}{' '}
+            <Link href={oasisPath(locale, 'policies')} className="underline font-bold text-[#46543C]">
+              {ar ? 'السياسات' : 'Policies'}
+            </Link>
+          </span>
+        </label>
+
+        {error && (
+          <p role="alert" className="bg-red-50 text-red-800 p-4 text-sm font-bold border border-red-200">
+            {error}
+          </p>
+        )}
+
+        <button
+          disabled={busy || !consent || !datesOk || party > max}
+          className="w-full min-h-14 bg-[#46543C] text-white px-6 py-4 text-sm font-bold disabled:opacity-70 hover:bg-[#282A25] transition-colors"
+          type="submit"
+        >
+          {busy
+            ? ar
+              ? 'جارٍ الحفظ'
+              : 'Saving'
+            : ar
+            ? 'حفظ طلب الإقامة'
+            : 'Save stay enquiry'}
+        </button>
+      </fieldset>
+    </form>
+  );
+}

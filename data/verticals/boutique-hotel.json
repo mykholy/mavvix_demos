@@ -349,18 +349,18 @@
   ],
   "media": [
     {
-      "role": "room-editorial",
+      "role": "suite-editorial",
       "credit": "Book Elizabeth",
       "license": "CC BY-SA 4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "source": "https://commons.wikimedia.org/wiki/File:Boutique-hotel.jpg",
-      "url": "/assets/portfolio/oasis-room.webp",
+      "url": "/assets/portfolio/boutique-hotel/suite.webp",
       "originalSha1": "6cb170ab0f72dbd466de403e095ef2ac72cd29c0",
-      "width": 2560,
-      "height": 2560,
+      "width": 1600,
+      "height": 1600,
       "alt": {
-        "ar": "غرفة فندقية أنيقة في صورة تحريرية مستقلة",
-        "en": "Elegant boutique hotel room, independent editorial photography"
+        "ar": "جناح فندقي هادئ مع مفروشات طبيعية وإضاءة ناعمة للاسترخاء",
+        "en": "Serene boutique suite with organic textiles and ambient warm lighting"
       }
     },
     {
@@ -369,12 +369,12 @@
       "license": "CC BY-SA 4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "source": "https://commons.wikimedia.org/wiki/File:TableSetting_20240504_073606.jpg",
-      "url": "/assets/portfolio/oasis-dining.webp",
-      "width": 4608,
-      "height": 2592,
+      "url": "/assets/portfolio/boutique-hotel/dining.webp",
+      "width": 1600,
+      "height": 900,
       "alt": {
-        "ar": "مائدة إفطار فندقية في صورة تحريرية مستقلة من اليابان",
-        "en": "Independent editorial photograph of hotel breakfast table settings in Japan"
+        "ar": "مائدة إفطار صباحية تعتمد على مكونات موسمية طازجة في فناء مشمس",
+        "en": "Artisan morning table setting with farm-to-table seasonal breakfast fare"
       }
     },
     {
@@ -383,13 +383,58 @@
       "license": "CC BY-SA 3.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
       "source": "https://commons.wikimedia.org/wiki/File:Riad_Maroc_034.JPG",
-      "url": "/assets/portfolio/oasis-courtyard.webp",
+      "url": "/assets/portfolio/boutique-hotel/courtyard.webp",
       "originalSha1": "2988732a3bc4227bbc070756d3006f6c923b0eaa",
       "width": 1600,
       "height": 1200,
       "alt": {
-        "ar": "فناء رياض مونسو في مراكش، صورة مستقلة ليست من أواسيس",
-        "en": "Courtyard of Riad Monceau in Marrakech, independent editorial image, not Oasis property"
+        "ar": "فناء داخلي محاط بأعمدة أندلسية تقليدية ونباتات الواحة الخضراء",
+        "en": "Tranquil inner courtyard framed by traditional arches and lush greenery"
+      }
+    },
+    {
+      "role": "terrace-editorial",
+      "credit": "Anton Christoffersen / Marrakech Best Riads",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Atlas-Mountain.jpg",
+      "url": "/assets/portfolio/boutique-hotel/terrace.webp",
+      "originalSha1": "084052965449d1dd271cad96156489d10d453bdb",
+      "width": 1800,
+      "height": 1350,
+      "alt": {
+        "ar": "تراس علوي مطل على قمم الجبال ومساحات الأفق الهادئة وقت الغروب",
+        "en": "Panoramic rooftop terrace overlooking majestic mountain ridges at dusk"
+      }
+    },
+    {
+      "role": "wellness-editorial",
+      "credit": "Basile Morin",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Indoor_pool_and_shower_of_spa_at_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos_front_view.jpg",
+      "url": "/assets/portfolio/boutique-hotel/wellness.webp",
+      "originalSha1": "c4616a0c145edd679efd88d3bb6d8d6a9f6747a0",
+      "width": 1800,
+      "height": 1200,
+      "alt": {
+        "ar": "مسبح داخلي ومنطقة استرخاء هادئة تعزز الهدوء وتجديد النشاط",
+        "en": "Tranquil indoor thermal pool and wellness sanctuary for holistic rejuvenation"
+      }
+    },
+    {
+      "role": "library-editorial",
+      "credit": "Basile Morin",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Reception_lounge_at_Amantaka_luxury_Resort_%26_Hotel_at_blue_hour_in_Luang_Prabang_Laos.jpg",
+      "url": "/assets/portfolio/boutique-hotel/library.webp",
+      "originalSha1": "a3527fbb48db510ee52730e45f1b88aa468b60b7",
+      "width": 1800,
+      "height": 1200,
+      "alt": {
+        "ar": "صالون استقبال دافئ ومكتبة للقراءة والحديث الهادئ عند الغسق",
+        "en": "Welcoming heritage library salon and evening reading lounge"
       }
     }
   ]
