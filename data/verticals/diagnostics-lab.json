@@ -342,28 +342,81 @@
   ],
   "media": [
     {
-      "role": "laboratory-glassware-editorial",
-      "credit": "Belikov Maxim",
-      "license": "CC BY 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-      "source": "https://commons.wikimedia.org/wiki/File:Laboratory_equipment.jpg",
-      "url": "/assets/portfolio/clearpath-glassware.webp",
-      "alt": {
-        "ar": "مجهر وأدوات زجاجية معملية في صورة علمية مستقلة",
-        "en": "Microscope and laboratory glassware in an independent scientific photograph"
-      }
-    },
-    {
       "role": "clinical-analyzer-editorial",
       "credit": "Lazborn",
       "license": "CC0-1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
       "source": "https://commons.wikimedia.org/wiki/File:Cobas_machine.jpg",
-      "url": "/assets/portfolio/clearpath-analyzer.webp",
+      "url": "/assets/portfolio/diagnostics-lab/analyzer.webp",
       "originalSha1": "390ffbe1236e4b547382366c0d0066a61512fa1e",
       "alt": {
-        "ar": "جهاز تحليل كيمياء إكلينيكية، صورة مستقلة لا تمثل معدات كلير باث",
-        "en": "Clinical chemistry analyzer, independent editorial photograph, not ClearPath equipment"
+        "ar": "محلل كيمياء حيوية سريري آلي لإجراء الفحوصات الروتينية والمتخصصة",
+        "en": "Automated clinical chemistry and immunoassay analyzer in a diagnostic laboratory"
+      }
+    },
+    {
+      "role": "laboratory-glassware-editorial",
+      "credit": "Belikov Maxim",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Laboratory_equipment.jpg",
+      "url": "/assets/portfolio/diagnostics-lab/glassware.webp",
+      "originalSha1": "754bf09b37bc17ce0a3e825755f6e22c4eba4297",
+      "alt": {
+        "ar": "أدوات زجاجية مخبرية وكواشف كيميائية نقية لإعداد العينات والمعايرة",
+        "en": "Volumetric laboratory glassware and sterile calibrated diagnostic reagents"
+      }
+    },
+    {
+      "role": "microscope-editorial",
+      "credit": "International Gemini Observatory/NOIRLab/NSF/AURA/T. Slovinský",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Binocular_Microscope_at_Gemini_North_Hilo_Base_Facility_(6V7A0537-CC).jpg",
+      "url": "/assets/portfolio/diagnostics-lab/microscope.webp",
+      "originalSha1": "e7d2106bb50daf5a096b362fb6583e620dfe46fe",
+      "alt": {
+        "ar": "مجهر ضوئي ثنائي العينية عالي الدقة لفحص عينات الدم والأنسجة والمسحات",
+        "en": "High-resolution optical binocular microscope for hematology and cytology smears"
+      }
+    },
+    {
+      "role": "centrifuge-editorial",
+      "credit": "Unknown / Creative Commons Zero",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Laboratory_Centrifuge.jpg",
+      "url": "/assets/portfolio/diagnostics-lab/centrifuge.webp",
+      "originalSha1": "010711d3b444b3b371e1c2cc29daa0a288e5405a",
+      "alt": {
+        "ar": "جهاز طرد مركزي مبرد لفصل مصل الدم والبلازما بسرعات دقيقة مضبوطة",
+        "en": "Benchtop laboratory centrifuge for serum and plasma specimen separation"
+      }
+    },
+    {
+      "role": "sample-accessioning-editorial",
+      "credit": "US Navy / Mass Communication Specialist 3rd Class Everett Allen",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Checking_Blood_Sample_(9955279835).jpg",
+      "url": "/assets/portfolio/diagnostics-lab/sample_intake.webp",
+      "originalSha1": "57571be592f4c3ba965e5f317bf490a28a47aabe",
+      "alt": {
+        "ar": "فحص باركود أنابيب سحب الدم والتأكد من سلامة العينات وسلسلة التتبع",
+        "en": "Biomedical specialist verifying barcoded blood collection tubes for accessioning"
+      }
+    },
+    {
+      "role": "assay-plate-editorial",
+      "credit": "J.N. Eskra",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:96_well_plate.jpg",
+      "url": "/assets/portfolio/diagnostics-lab/assay_plate.webp",
+      "originalSha1": "6508bc6b436c3f82286c7030fa02270787e64414",
+      "alt": {
+        "ar": "لوحة معايرة ميكروية 96 عيناً لإجراء اختبارات المناعة والإنزيمات الحيوية",
+        "en": "96-well microplate utilized for high-throughput immunoassays and molecular diagnostics"
       }
     }
   ]
