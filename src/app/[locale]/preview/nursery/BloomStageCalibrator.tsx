@@ -218,7 +218,7 @@ export function BloomStageCalibrator({ locale }: { locale: Locale }) {
               <div>
                 <label
                   htmlFor="calibrator-schedule"
-                  className="block text-xs font-bold text-[#F5C04E] mb-2 uppercase tracking-wider"
+                  className="block text-xs font-bold text-white mb-2 uppercase tracking-wider"
                 >
                   {ar ? 'نظام الحضور اليومي' : 'Daily Attendance Window'}
                 </label>
@@ -238,7 +238,7 @@ export function BloomStageCalibrator({ locale }: { locale: Locale }) {
               <div>
                 <label
                   htmlFor="calibrator-transition"
-                  className="block text-xs font-bold text-[#F5C04E] mb-2 uppercase tracking-wider"
+                  className="block text-xs font-bold text-white mb-2 uppercase tracking-wider"
                 >
                   {ar ? 'نمط التهيئة والتأقلم' : 'Settling-in Trajectory'}
                 </label>
@@ -267,7 +267,7 @@ export function BloomStageCalibrator({ locale }: { locale: Locale }) {
 
             {/* Key Learning Invitations */}
             <div>
-              <p className="text-xs font-bold text-[#F5C04E] uppercase tracking-wider mb-3">
+              <p className="text-xs font-bold text-white uppercase tracking-wider mb-3">
                 {ar ? 'خامات وأنشطة الاستكشاف المقترحة' : 'Sensory & Practical Invitations'}
               </p>
               <ul className="space-y-2.5">
@@ -327,7 +327,7 @@ export function BloomStageCalibrator({ locale }: { locale: Locale }) {
 
               {/* Essential Tour Questions Checklist */}
               <div>
-                <p className="text-xs font-bold text-[#F5C04E] uppercase tracking-wider mb-3">
+                <p className="text-xs font-bold text-white uppercase tracking-wider mb-3">
                   {ar ? 'أسئلة مهمة اطرحها عند الزيارة' : 'Questions to Ask on Your Tour'}
                 </p>
                 <div className="space-y-3">
@@ -348,7 +348,7 @@ export function BloomStageCalibrator({ locale }: { locale: Locale }) {
             <div className="mt-8 pt-6 border-t border-[#2B7A83]">
               <Link
                 href={bloomPath(locale, 'admissions')}
-                className="w-full py-4 px-6 bg-[#F5C04E] text-[#145960] font-black text-sm rounded-full inline-flex items-center justify-center gap-3 hover:bg-[#F7CE72] transition-colors"
+                className="w-full py-4 px-6 bg-[#F5C04E] text-[#0D383D] font-black text-sm rounded-full inline-flex items-center justify-center gap-3 hover:bg-[#F7CE72] transition-colors"
               >
                 <span>{ar ? 'ابدأ طلب استفسار الزيارة' : 'Inquire About a Visit Tour'}</span>
                 <Arrow size={18} />
