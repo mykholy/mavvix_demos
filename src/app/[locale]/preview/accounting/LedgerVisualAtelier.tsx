@@ -36,7 +36,7 @@ export function LedgerVisualAtelier({ locale }: { locale: Locale }) {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 border-b border-[#CBD9D7]">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-white border border-[#CBD9D7] px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-[#15858C]">
+            <div className="inline-flex items-center gap-2 bg-white border border-[#CBD9D7] px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-[#0E5E64]">
               <Camera size={14} />
               <span>{ar ? 'الأرشيف البصري والتوثيق التحريري' : 'Documented Editorial Image Archive'}</span>
             </div>
@@ -68,7 +68,7 @@ export function LedgerVisualAtelier({ locale }: { locale: Locale }) {
                   className={`px-4 py-2 text-xs font-bold transition-all duration-200 ${
                     active
                       ? 'bg-[#1C3343] text-white shadow-sm'
-                      : 'bg-white text-[#1C3343] border border-[#CBD9D7] hover:border-[#15858C]'
+                      : 'bg-white text-[#1C3343] border border-[#CBD9D7] hover:border-[#0E5E64]'
                   }`}
                 >
                   {ar ? f.ar : f.en}
@@ -83,7 +83,7 @@ export function LedgerVisualAtelier({ locale }: { locale: Locale }) {
           {filteredAssets.map((asset) => (
             <div
               key={asset.id}
-              className="group bg-white border border-[#CBD9D7] overflow-hidden hover:border-[#15858C] transition-all duration-300 flex flex-col justify-between shadow-sm"
+              className="group bg-white border border-[#CBD9D7] overflow-hidden hover:border-[#0E5E64] transition-all duration-300 flex flex-col justify-between shadow-sm"
             >
               <div className="relative aspect-[4/3] bg-[#E2ECE9] overflow-hidden">
                 <img
@@ -108,7 +108,7 @@ export function LedgerVisualAtelier({ locale }: { locale: Locale }) {
 
               <div className="p-6 flex flex-col justify-between flex-grow">
                 <div>
-                  <div className="flex items-center justify-between text-xs font-mono text-[#15858C] mb-2 font-bold">
+                  <div className="flex items-center justify-between text-xs font-mono text-[#0E5E64] mb-2 font-bold">
                     <span>{asset.license}</span>
                     <span>{(asset.bytes / 1024).toFixed(0)} KB</span>
                   </div>
@@ -120,14 +120,14 @@ export function LedgerVisualAtelier({ locale }: { locale: Locale }) {
                   </p>
                 </div>
 
-                <div className="mt-5 pt-4 border-t border-[#F0EEE8] flex items-center justify-between text-xs text-[#5A7480]">
+                <div className="mt-5 pt-4 border-t border-[#F0EEE8] flex items-center justify-between text-xs text-[#2D4550]">
                   <span>
                     {ar ? 'المصور:' : 'Creator:'} {asset.author}
                   </span>
                   <button
                     type="button"
                     onClick={() => setActiveAsset(asset)}
-                    className="text-[#15858C] hover:underline font-bold"
+                    className="text-[#0E5E64] hover:underline font-bold"
                   >
                     {ar ? 'فحص السجل' : 'Provenance'}
                   </button>
@@ -151,7 +151,7 @@ export function LedgerVisualAtelier({ locale }: { locale: Locale }) {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-center justify-between pb-4 border-b border-[#CBD9D7]">
-                <div className="flex items-center gap-2 text-[#15858C]">
+                <div className="flex items-center gap-2 text-[#0E5E64]">
                   <FileCheck2 size={20} />
                   <h3 id="provenance-title" className="font-bold text-base text-[#1C3343]">
                     {ar ? 'توثيق الملكية الفكرية وسلامة التشفير' : 'Cryptographic Provenance Manifest'}
@@ -161,7 +161,7 @@ export function LedgerVisualAtelier({ locale }: { locale: Locale }) {
                   type="button"
                   onClick={() => setActiveAsset(null)}
                   aria-label={ar ? 'إغلاق النافذة' : 'Close dialog'}
-                  className="p-1.5 text-[#5A7480] hover:text-[#1C3343] hover:bg-[#F0EEE8] transition-colors"
+                  className="p-1.5 text-[#2D4550] hover:text-[#1C3343] hover:bg-[#F0EEE8] transition-colors"
                 >
                   <X size={20} />
                 </button>
@@ -169,7 +169,7 @@ export function LedgerVisualAtelier({ locale }: { locale: Locale }) {
 
               <div className="mt-6 space-y-4 text-xs text-[#455F6C]">
                 <div className="p-4 bg-[#F4F8F7] border border-[#CBD9D7] flex items-center gap-3">
-                  <ShieldCheck size={24} className="text-[#15858C] shrink-0" />
+                  <ShieldCheck size={24} className="text-[#0E5E64] shrink-0" />
                   <p className="leading-relaxed">
                     {ar
                       ? 'تم التحقق من تطابق بصمة SHA-256 المحلية مع المستند التحريري المفتوح من مستودع Wikimedia Commons.'
@@ -182,7 +182,7 @@ export function LedgerVisualAtelier({ locale }: { locale: Locale }) {
                     <span className="block font-bold text-[#1C3343] uppercase text-[10px] tracking-wider">
                       {ar ? 'معرّف الأصل' : 'Asset Identifier'}
                     </span>
-                    <span className="font-mono text-[#15858C]">{activeAsset.id}</span>
+                    <span className="font-mono text-[#0E5E64]">{activeAsset.id}</span>
                   </div>
                   <div>
                     <span className="block font-bold text-[#1C3343] uppercase text-[10px] tracking-wider">
@@ -222,7 +222,7 @@ export function LedgerVisualAtelier({ locale }: { locale: Locale }) {
                     {ar ? 'الوصف التحريري المعتمد' : 'Editorial Caption'}
                   </span>
                   <p className="text-sm font-medium text-[#1C3343]">{activeAsset.caption[locale]}</p>
-                  <p className="text-xs text-[#5A7480] mt-1">{activeAsset.alt[locale]}</p>
+                  <p className="text-xs text-[#2D4550] mt-1">{activeAsset.alt[locale]}</p>
                 </div>
 
                 <div className="pt-4 flex justify-between items-center border-t border-[#CBD9D7]">
@@ -230,7 +230,7 @@ export function LedgerVisualAtelier({ locale }: { locale: Locale }) {
                     href={activeAsset.sourcePage}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#15858C] hover:underline"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0E5E64] hover:underline"
                   >
                     <span>{ar ? 'صفحة المصدر في Wikimedia Commons' : 'View on Wikimedia Commons'}</span>
                     <ExternalLink size={14} />

@@ -127,7 +127,7 @@ export function LedgerGovernanceStandards({ locale }: { locale: Locale }) {
                     <span className="font-mono text-xs font-bold text-[#176C72] tracking-wider">
                       {pillar.code}
                     </span>
-                    <span className="text-[10px] uppercase font-bold tracking-wider text-[#5A7C85] bg-[#EBF4F3] px-2.5 py-1">
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-[#142B37] bg-[#D7EAE7] px-2.5 py-1">
                       {pillar.category[locale]}
                     </span>
                   </div>
