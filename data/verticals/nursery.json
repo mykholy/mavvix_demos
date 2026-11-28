@@ -289,5 +289,73 @@
         "en": "An initial enquiry does not require a child's full identity, photo or medical history. During actual enrollment, the operator should explain why each record is needed, retention and authorized access. Ask how photography permissions and collection authorization are handled. Never upload identity documents or private records to an example website."
       }
     }
+  ],
+  "media": [
+    {
+      "id": "bloom-montessori-cube",
+      "url": "/assets/portfolio/nursery/montessori_cube.webp",
+      "author": "Rakoon",
+      "license": "CC0-1.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Montessori_cube.jpg",
+      "alt": {
+        "ar": "مكعب مونتيسوري ولعبة الألغاز الخشبية الملونة لتطوير الإدراك المكاني",
+        "en": "Montessori spatial puzzle cube and colorful wooden learning apparatus"
+      }
+    },
+    {
+      "id": "bloom-montessori-shelves",
+      "url": "/assets/portfolio/nursery/montessori_shelves.webp",
+      "author": "Clematitedusud",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Montessorishelves.jpg",
+      "alt": {
+        "ar": "أرفف خشبية مفتوحة مرتبة لخامات تعليمية واستكشاف حسي مستقل",
+        "en": "Organized wooden open shelving displaying sensory and educational materials"
+      }
+    },
+    {
+      "id": "bloom-traditional-materials",
+      "url": "/assets/portfolio/nursery/traditional_materials.webp",
+      "author": "Nixdorf",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Traditional_Montessori_educational_materials.jpg",
+      "alt": {
+        "ar": "خامات وأسطوانات ملونة لمطابقة الألوان والأحجام وتطوير الحواس",
+        "en": "Color-coded educational cylinders and wooden tactile materials"
+      }
+    },
+    {
+      "id": "bloom-metal-insets-tray",
+      "url": "/assets/portfolio/nursery/metal_insets_tray.webp",
+      "author": "Syrupisbetterthanjelly",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Montessori_Metal_Insets_Tray.jpg",
+      "alt": {
+        "ar": "صواني الأشكال الهندسية المعدنية لتدريب الأصابع والتحضير للكتابة",
+        "en": "Montessori metal geometry insets tray for pre-writing pencil grip coordination"
+      }
+    },
+    {
+      "id": "bloom-cairo-kindergarten",
+      "url": "/assets/portfolio/nursery/cairo_kindergarten.webp",
+      "author": "Linda Herrera",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Learning_in_a_KG_Classroom-Cairo,_2019.jpg",
+      "alt": {
+        "ar": "بيئة فصل روضة أطفال وأنشطة تعلم جماعية وتفاعل تفاعلي",
+        "en": "Kindergarten classroom setting featuring early childhood peer interaction and play"
+      }
+    },
+    {
+      "id": "bloom-wooden-play-blocks",
+      "url": "/assets/portfolio/nursery/wooden_play_blocks.webp",
+      "author": "CC0 / Public domain",
+      "license": "CC0-1.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Children%27s_Play_Blocks.JPG",
+      "alt": {
+        "ar": "مكعبات بناء خشبية طبيعية لتعزيز مهارات البناء والتركيز الحركي الدقيق",
+        "en": "Natural wooden building blocks supporting construction play and fine motor focus"
+      }
+    }
   ]
 }
