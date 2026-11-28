@@ -1,27 +1,316 @@
 'use client';
-import { useState,useRef } from 'react';
+
+import { useState, useRef } from 'react';
 import type { FormEvent } from 'react';
 import type { Locale } from '@/lib/i18n/config';
 import { ROUTELINE } from '@/lib/verticals/logistics/data';
 import { CheckCircle2, ShieldCheck } from 'lucide-react';
-const countries=[['egypt','مصر','Egypt'],['saudi-arabia','السعودية','Saudi Arabia'],['uae','الإمارات','UAE'],['other','أخرى','Other']] as const;
-const fields=[
- {key:'origin',ar:'دولة المنشأ',en:'Origin country',options:countries},
- {key:'destination',ar:'دولة الوجهة',en:'Destination country',options:countries},
- {key:'cargoType',ar:'نوع البضاعة',en:'Cargo type',options:[['general','بضائع عامة','General cargo'],['packaged','طرود مغلفة','Packaged goods'],['palletized','منصات تحميل','Palletized goods']]},
- {key:'weightBand',ar:'نطاق الوزن (كجم)',en:'Weight band (kg)',options:[['under-100','أقل من 100','Under 100'],['100-499','100–499','100–499'],['500-1999','500–1999','500–1999'],['2000-plus','2000 فأكثر','2000 or more'],['unknown','غير محدد','Unknown']]},
- {key:'scope',ar:'نطاق النقل',en:'Freight scope',options:[['door-to-door','الباب إلى الباب','Door to door'],['terminal-to-terminal','المحطة إلى المحطة','Terminal to terminal'],['door-to-terminal','الباب إلى المحطة','Door to terminal'],['terminal-to-door','المحطة إلى الباب','Terminal to door'],['undecided','غير محدد','Undecided']]}
+
+const countries = [
+  ['egypt', 'مصر', 'Egypt'],
+  ['saudi-arabia', 'السعودية', 'Saudi Arabia'],
+  ['uae', 'الإمارات', 'UAE'],
+  ['other', 'أخرى', 'Other']
 ] as const;
-type Prefs=Record<typeof fields[number]['key'],string>;
-export function FreightForm({locale,initial}:{locale:Locale;initial:string}){
- const ar=locale==='ar';
- const [serviceSlug,setService]=useState(initial),[prefs,setPrefs]=useState<Prefs>({origin:'egypt',destination:'saudi-arabia',cargoType:'general',weightBand:'unknown',scope:'undecided'}),[preferredDate,setDate]=useState(''),[guestName,setName]=useState(''),[guestPhone,setPhone]=useState(''),[consent,setConsent]=useState(false),[busy,setBusy]=useState(false),[reference,setReference]=useState(''),[error,setError]=useState('');
- const key=useRef<string|null>(null),inFlight=useRef(false);const service=ROUTELINE.services.find(s=>s.slug===serviceSlug)!;
- const invalidRoute=(service.category==='air'||service.category==='ocean')&&prefs.origin===prefs.destination&&prefs.origin!=='other';
- const field='mt-2 block min-h-12 w-full border border-[#829AA6] bg-white px-3 py-3 text-sm text-[#102A3A] focus-visible:outline-2 focus-visible:outline-[#31566C]';const label='block text-sm font-bold';
- async function submit(e:FormEvent<HTMLFormElement>){e.preventDefault();if(inFlight.current||reference||!consent||invalidRoute)return;inFlight.current=true;setBusy(true);setError('');
- try{if(!key.current)key.current=crypto.randomUUID();const u=new URLSearchParams(window.location.search);const res=await fetch('/api/portfolio/logistics',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({flowType:'freight_quote_request',clientRequestId:key.current,serviceSlug,mode:service.category,...prefs,preferredDate,guestName,guestPhone,consent,honeypot:'',utm:{source:(u.get('utm_source')||'').slice(0,100),medium:(u.get('utm_medium')||'').slice(0,100),campaign:(u.get('utm_campaign')||'').slice(0,100)}})});const d=await res.json();if(!res.ok||!d.success)throw Error('SAVE_FAILED');setReference(d.refNumber);}catch{setError(ar?'تعذر حفظ الطلب. راجع البيانات وحاول مرة أخرى.':'Could not save the enquiry. Review your selections and retry.');}finally{inFlight.current=false;setBusy(false);}
- }
- if(reference)return <div role="status" className="border-2 border-[#102A3A] bg-[#DDE6E9] p-9 text-center"><CheckCircle2 size={48} className="mx-auto"/><h2 className="mt-6 font-black text-3xl">{ar?'تم حفظ طلب العرض':'Freight enquiry saved'}</h2><p className="mt-6 font-mono text-xl font-bold break-all">{reference}</p><p className="mt-6 text-sm leading-8">{ar?'هذا مرجع استفسار وليس رقم تتبع أو حجز شحنة.':'This is an enquiry reference, not a shipment tracking number or booking.'}</p><a href={'https://mavvix.com/'+locale+'/contact'} className="mt-7 inline-flex bg-[#102A3A] text-white px-6 py-4 text-sm font-bold">{ar?'اطلب موقع لشركتك':'Commission your website'}</a></div>;
- return <form onSubmit={submit} className="border border-[#B9C3C8] bg-[#DDE6E9]"><div className="bg-[#102A3A] text-white p-7"><h2 className="font-black text-2xl">{ar?'متطلبات الشحنة':'Cargo requirements'}</h2><p className="mt-3 text-sm text-[#D8E3E8]">{ar?'طلب غير ملزم، دون حجز أو تسعير مباشر.':'Nonbinding enquiry, without live booking or pricing.'}</p></div><fieldset disabled={busy} className="p-6 sm:p-9 space-y-6 min-w-0"><label className={label}>{ar?'الخدمة':'Service'}<select className={field} value={serviceSlug} onChange={e=>setService(e.target.value)}>{ROUTELINE.services.map(s=><option key={s.slug} value={s.slug}>{s.title[locale]}</option>)}</select></label><div className="bg-white border border-[#B9C3C8] p-4"><p className="font-bold text-sm">{ar?'نقاط مراجعة الخدمة':'Service checkpoints'}</p>{service.checkpoints[locale].map(x=><p key={x} className="mt-2 text-xs leading-6">{x}</p>)}</div><div className="grid gap-5 sm:grid-cols-2">{fields.map(f=><label key={f.key} className={label}>{ar?f.ar:f.en}<select className={field} value={prefs[f.key]} onChange={e=>setPrefs(p=>({...p,[f.key]:e.target.value}))}>{f.options.map(([v,a,en])=><option key={v} value={v}>{ar?a:en}</option>)}</select></label>)}<label className={label}>{ar?'تاريخ مفضل (اختياري)':'Preferred date (optional)'}<input className={field} type="date" value={preferredDate} onChange={e=>setDate(e.target.value)}/></label><label className={label}>{ar?'اسم التواصل':'Contact name'}<input className={field} required minLength={2} maxLength={110} autoComplete="name" value={guestName} onChange={e=>setName(e.target.value)}/></label><label className={label}>{ar?'الهاتف':'Phone'}<input className={field} type="tel" required minLength={8} maxLength={24} autoComplete="tel" value={guestPhone} onChange={e=>setPhone(e.target.value)}/></label></div>{invalidRoute&&<p role="alert" className="bg-red-50 text-red-800 p-3 text-sm">{ar?'اختر دولتين مختلفتين لطلب الشحن البحري أو الجوي الدولي.':'Choose different countries for international air or ocean freight.'}</p>}<div className="flex gap-3 bg-white border border-[#B9C3C8] p-4 text-sm leading-7"><ShieldCheck size={23} className="shrink-0"/>{ar?'لا ترسل مستندات أو بضائع خطرة أو بيانات دفع.':'Do not submit documents, dangerous cargo or payment information.'}</div><label className="flex gap-3 text-sm leading-7"><input type="checkbox" required checked={consent} onChange={e=>setConsent(e.target.checked)} className="mt-1 accent-[#102A3A]"/><span>{ar?'أوافق على حفظ بيانات التواصل لغرض تجربة الاستفسار، دون حجز فعلي.':'I consent to storing basic contact data for this enquiry example, without a real booking.'}</span></label>{error&&<p role="alert" className="bg-red-50 text-red-800 p-4 text-sm">{error}</p>}<button type="submit" disabled={busy||!consent||invalidRoute} className="w-full min-h-14 bg-[#102A3A] text-white px-6 py-4 font-bold text-sm disabled:opacity-50">{busy?(ar?'جارٍ الحفظ':'Saving'):(ar?'حفظ طلب العرض':'Save freight enquiry')}</button></fieldset></form>;
+
+const fields = [
+  { key: 'origin', ar: 'دولة المنشأ', en: 'Origin country', options: countries },
+  { key: 'destination', ar: 'دولة الوجهة', en: 'Destination country', options: countries },
+  {
+    key: 'cargoType',
+    ar: 'نوع البضاعة',
+    en: 'Cargo type',
+    options: [
+      ['general', 'بضائع عامة', 'General cargo'],
+      ['packaged', 'طرود مغلفة', 'Packaged goods'],
+      ['palletized', 'منصات تحميل', 'Palletized goods']
+    ]
+  },
+  {
+    key: 'weightBand',
+    ar: 'نطاق الوزن (كجم)',
+    en: 'Weight band (kg)',
+    options: [
+      ['under-100', 'أقل من 100', 'Under 100'],
+      ['100-499', '100–499', '100–499'],
+      ['500-1999', '500–1999', '500–1999'],
+      ['2000-plus', '2000 فأكثر', '2000 or more'],
+      ['unknown', 'غير محدد', 'Unknown']
+    ]
+  },
+  {
+    key: 'scope',
+    ar: 'نطاق النقل',
+    en: 'Freight scope',
+    options: [
+      ['door-to-door', 'الباب إلى الباب', 'Door to door'],
+      ['terminal-to-terminal', 'المحطة إلى المحطة', 'Terminal to terminal'],
+      ['door-to-terminal', 'الباب إلى المحطة', 'Door to terminal'],
+      ['terminal-to-door', 'المحطة إلى الباب', 'Terminal to door'],
+      ['undecided', 'غير محدد', 'Undecided']
+    ]
+  }
+] as const;
+
+type Prefs = Record<typeof fields[number]['key'], string>;
+
+export function FreightForm({ locale, initial }: { locale: Locale; initial: string }) {
+  const ar = locale === 'ar';
+  const [serviceSlug, setService] = useState(initial);
+  const [prefs, setPrefs] = useState<Prefs>({
+    origin: 'egypt',
+    destination: 'saudi-arabia',
+    cargoType: 'general',
+    weightBand: 'unknown',
+    scope: 'undecided'
+  });
+  const [preferredDate, setDate] = useState('');
+  const [guestName, setName] = useState('');
+  const [guestPhone, setPhone] = useState('');
+  const [consent, setConsent] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [reference, setReference] = useState('');
+  const [error, setError] = useState('');
+
+  const key = useRef<string | null>(null);
+  const inFlight = useRef(false);
+  const service = ROUTELINE.services.find((s) => s.slug === serviceSlug) || ROUTELINE.services[0];
+  const invalidRoute =
+    (service.category === 'air' || service.category === 'ocean') &&
+    prefs.origin === prefs.destination &&
+    prefs.origin !== 'other';
+
+  const field =
+    'mt-2 block min-h-12 w-full border border-[#829AA6] bg-white px-3 py-3 text-sm text-[#102A3A] focus-visible:outline-2 focus-visible:outline-[#31566C]';
+  const label = 'block text-sm font-bold text-[#102A3A]';
+
+  async function submit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (inFlight.current || reference || !consent || invalidRoute) return;
+    inFlight.current = true;
+    setBusy(true);
+    setError('');
+
+    try {
+      if (!key.current) key.current = crypto.randomUUID();
+      const u = new URLSearchParams(window.location.search);
+      const res = await fetch('/api/portfolio/logistics', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          flowType: 'freight_quote_request',
+          clientRequestId: key.current,
+          serviceSlug,
+          mode: service.category,
+          ...prefs,
+          preferredDate,
+          guestName,
+          guestPhone,
+          consent,
+          honeypot: '',
+          utm: {
+            source: (u.get('utm_source') || '').slice(0, 100),
+            medium: (u.get('utm_medium') || '').slice(0, 100),
+            campaign: (u.get('utm_campaign') || '').slice(0, 100)
+          }
+        })
+      });
+      const d = await res.json();
+      if (!res.ok || !d.success) throw Error('SAVE_FAILED');
+      setReference(d.refNumber);
+    } catch {
+      setError(
+        ar
+          ? 'تعذر حفظ الطلب. راجع البيانات وحاول مرة أخرى.'
+          : 'Could not save the enquiry. Review your selections and retry.'
+      );
+    } finally {
+      inFlight.current = false;
+      setBusy(false);
+    }
+  }
+
+  if (reference) {
+    return (
+      <div role="status" className="border-2 border-[#102A3A] bg-[#DDE6E9] p-9 text-center">
+        <CheckCircle2 size={48} className="mx-auto text-[#102A3A]" />
+        <h2 className="mt-6 font-black text-3xl text-[#102A3A]">
+          {ar ? 'تم حفظ طلب العرض' : 'Freight enquiry saved'}
+        </h2>
+        <p className="mt-6 font-mono text-xl font-bold break-all text-[#31566C]">{reference}</p>
+        <p className="mt-6 text-sm leading-8 text-[#102A3A]">
+          {ar
+            ? 'هذا مرجع استفسار وليس رقم تتبع أو حجز شحنة.'
+            : 'This is an enquiry reference, not a shipment tracking number or booking.'}
+        </p>
+        <a
+          href={'https://mavvix.com/' + locale + '/contact'}
+          className="mt-7 inline-flex bg-[#102A3A] text-white px-6 py-4 text-sm font-bold hover:bg-[#31566C] transition-colors"
+        >
+          {ar ? 'اطلب موقع لشركتك' : 'Commission your website'}
+        </a>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={submit} className="border border-[#B9C3C8] bg-[#DDE6E9]">
+      <div className="bg-[#102A3A] text-white p-7">
+        <h2 className="font-black text-2xl">
+          {ar ? 'متطلبات الشحنة' : 'Cargo requirements'}
+        </h2>
+        <p className="mt-3 text-sm text-[#D8E3E8]">
+          {ar
+            ? 'طلب غير ملزم، دون حجز أو تسعير مباشر.'
+            : 'Nonbinding enquiry, without live booking or pricing.'}
+        </p>
+      </div>
+
+      <fieldset disabled={busy} className="p-6 sm:p-9 space-y-6 min-w-0">
+        <label className={label}>
+          {ar ? 'الخدمة' : 'Service'}
+          <select
+            className={field}
+            value={serviceSlug}
+            aria-label={ar ? 'الخدمة' : 'Service'}
+            onChange={(e) => setService(e.target.value)}
+          >
+            {ROUTELINE.services.map((s) => (
+              <option key={s.slug} value={s.slug}>
+                {s.title[locale]}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <div className="bg-white border border-[#B9C3C8] p-4 text-[#102A3A]">
+          <p className="font-bold text-sm">
+            {ar ? 'نقاط مراجعة الخدمة' : 'Service checkpoints'}
+          </p>
+          {service.checkpoints[locale].map((x) => (
+            <p key={x} className="mt-2 text-xs leading-6">
+              {x}
+            </p>
+          ))}
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2">
+          {fields.map((f) => (
+            <label key={f.key} className={label}>
+              {ar ? f.ar : f.en}
+              <select
+                className={field}
+                value={prefs[f.key]}
+                aria-label={ar ? f.ar : f.en}
+                onChange={(e) =>
+                  setPrefs((p) => ({ ...p, [f.key]: e.target.value }))
+                }
+              >
+                {f.options.map(([v, a, en]) => (
+                  <option key={v} value={v}>
+                    {ar ? a : en}
+                  </option>
+                ))}
+              </select>
+            </label>
+          ))}
+
+          <label className={label}>
+            {ar ? 'تاريخ مفضل (اختياري)' : 'Preferred date (optional)'}
+            <input
+              className={field}
+              type="date"
+              value={preferredDate}
+              aria-label={ar ? 'تاريخ مفضل (اختياري)' : 'Preferred date (optional)'}
+              onChange={(e) => setDate(e.target.value)}
+            />
+          </label>
+
+          <label className={label}>
+            {ar ? 'اسم التواصل' : 'Contact name'}
+            <input
+              className={field}
+              required
+              minLength={2}
+              maxLength={110}
+              autoComplete="name"
+              aria-label={ar ? 'اسم التواصل' : 'Contact name'}
+              value={guestName}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </label>
+
+          <label className={label}>
+            {ar ? 'الهاتف' : 'Phone'}
+            <input
+              className={field}
+              type="tel"
+              required
+              minLength={8}
+              maxLength={24}
+              autoComplete="tel"
+              aria-label={ar ? 'الهاتف' : 'Phone'}
+              value={guestPhone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+          </label>
+        </div>
+
+        {invalidRoute && (
+          <p role="alert" className="bg-red-50 text-red-800 p-3 text-sm font-bold border border-red-200">
+            {ar
+              ? 'اختر دولتين مختلفتين لطلب الشحن البحري أو الجوي الدولي.'
+              : 'Choose different countries for international air or ocean freight.'}
+          </p>
+        )}
+
+        <div className="flex gap-3 bg-white border border-[#B9C3C8] p-4 text-sm leading-7 text-[#102A3A]">
+          <ShieldCheck size={23} className="shrink-0 text-[#31566C]" />
+          {ar
+            ? 'لا ترسل مستندات أو بضائع خطرة أو بيانات دفع.'
+            : 'Do not submit documents, dangerous cargo or payment information.'}
+        </div>
+
+        <label className="flex gap-3 text-sm leading-7 text-[#102A3A]">
+          <input
+            type="checkbox"
+            required
+            checked={consent}
+            aria-label={
+              ar
+                ? 'الموافقة على حفظ بيانات التواصل لغرض تجربة الاستفسار'
+                : 'Consent to storing basic contact data'
+            }
+            onChange={(e) => setConsent(e.target.checked)}
+            className="mt-1 accent-[#102A3A]"
+          />
+          <span>
+            {ar
+              ? 'أوافق على حفظ بيانات التواصل لغرض تجربة الاستفسار، دون حجز فعلي.'
+              : 'I consent to storing basic contact data for this enquiry example, without a real booking.'}
+          </span>
+        </label>
+
+        {error && (
+          <p role="alert" className="bg-red-50 text-red-800 p-4 text-sm font-bold border border-red-200">
+            {error}
+          </p>
+        )}
+
+        <button
+          type="submit"
+          disabled={busy || !consent || invalidRoute}
+          className="w-full min-h-14 bg-[#102A3A] text-white px-6 py-4 font-bold text-sm disabled:opacity-50 hover:bg-[#31566C] transition-colors"
+        >
+          {busy
+            ? ar
+              ? 'جارٍ الحفظ'
+              : 'Saving'
+            : ar
+            ? 'حفظ طلب العرض'
+            : 'Save freight enquiry'}
+        </button>
+      </fieldset>
+    </form>
+  );
 }
