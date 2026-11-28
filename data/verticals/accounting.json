@@ -363,5 +363,73 @@
     "accounting-platform",
     "erp",
     "not-started"
+  ],
+  "media": [
+    {
+      "id": "ledger-desk-calculator",
+      "url": "/assets/portfolio/accounting/desk_calculator.webp",
+      "author": "Oliver Thomas Klein",
+      "license": "CC0-1.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Desktop_with_laptop_and_calculator_(Unsplash).jpg",
+      "alt": {
+        "ar": "مكتب عمل محاسبي مع حاسوب محمول وآلة حاسبة مكتبية ومستندات",
+        "en": "Accounting desk workspace with laptop, desk calculator, and business records"
+      }
+    },
+    {
+      "id": "ledger-financial-analysis",
+      "url": "/assets/portfolio/accounting/financial_analysis.webp",
+      "author": "Dave Dugdale",
+      "license": "CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Financial_Analysis_Graph_Laptop_(23315801934).jpg",
+      "alt": {
+        "ar": "رسوم بيانية لتحليل مالي وتقارير أعمال على شاشة حاسوب",
+        "en": "Financial analysis charts and business performance reports displayed on laptop"
+      }
+    },
+    {
+      "id": "ledger-payroll-calculator",
+      "url": "/assets/portfolio/accounting/payroll_calculator.webp",
+      "author": "Arun8388",
+      "license": "CC0-1.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Calculator_with_paper_and_pencil.jpg",
+      "alt": {
+        "ar": "آلة حاسبة مع ورقة حسابات وقلم رصاص لمطابقة الأرقام",
+        "en": "Desk calculator with calculation paper and pencil for manual tally review"
+      }
+    },
+    {
+      "id": "ledger-contract-signing",
+      "url": "/assets/portfolio/accounting/contract_signing.webp",
+      "author": "Wingtsungeeks",
+      "license": "CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Signing_Contract_Agreement.jpg",
+      "alt": {
+        "ar": "توقيع اتفاقية نطاق عمل مهني واعتماد بنود الخدمة",
+        "en": "Signing professional engagement scope agreement and terms of service"
+      }
+    },
+    {
+      "id": "ledger-advisory-boardroom",
+      "url": "/assets/portfolio/accounting/advisory_boardroom.webp",
+      "author": "MarkJaysonAranda",
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Conference_room_table_and_chairs.jpg",
+      "alt": {
+        "ar": "قاعة اجتماعات مخصصة للاستشارات المالية ومناقشة تقارير الإدارة",
+        "en": "Conference boardroom designated for executive financial advisory and governance"
+      }
+    },
+    {
+      "id": "ledger-tax-compliance",
+      "url": "/assets/portfolio/accounting/tax_compliance.webp",
+      "author": "Joe lope",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:A_laptop_showing_a_spreadsheet_program_with_calculations.jpg",
+      "alt": {
+        "ar": "جداول بيانات ومعادلات حسابية لاحتساب الالتزامات والتدقيق",
+        "en": "Spreadsheet software with structured calculation formulas for accounting audits"
+      }
+    }
   ]
 }
