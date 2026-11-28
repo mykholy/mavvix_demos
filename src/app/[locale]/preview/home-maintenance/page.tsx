@@ -114,11 +114,11 @@ export default async function HomeCarePage(props: {
             <h1 className="text-[clamp(3rem,6vw,5.5rem)] leading-[1.08] font-black tracking-tight mt-6 text-[#102B26]">
               {ar ? (
                 <>
-                  بيتك يستاهل <span className="text-[#A86D00]">خدمة واضحة.</span>
+                  بيتك يستاهل <span className="text-[#854D0E]">خدمة واضحة.</span>
                 </>
               ) : (
                 <>
-                  Home care without <span className="text-[#A86D00]">the guesswork.</span>
+                  Home care without <span className="text-[#854D0E]">the guesswork.</span>
                 </>
               )}
             </h1>
@@ -176,7 +176,7 @@ export default async function HomeCarePage(props: {
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <div className="flex flex-wrap justify-between items-end gap-6 mb-9">
             <div>
-              <p className="text-xs text-[#A86D00] font-black uppercase tracking-widest">
+              <p className="text-xs text-[#854D0E] font-black uppercase tracking-widest">
                 PROFIX SERVICE MAP
               </p>
               <h2 className="text-3xl sm:text-4xl font-black mt-3 text-[#102B26]">
@@ -272,7 +272,7 @@ export default async function HomeCarePage(props: {
 
       {/* 05: Original service dossiers */}
       <section data-sector-specific="eight-services" className="max-w-7xl mx-auto px-5 sm:px-8 py-20">
-        <p className="font-bold text-xs text-[#A86D00] tracking-widest uppercase">
+        <p className="font-bold text-xs text-[#854D0E] tracking-widest uppercase">
           EIGHT PRACTICAL SERVICE DOSSIERS
         </p>
         <div className="flex items-end justify-between gap-5 mt-4">
@@ -281,7 +281,7 @@ export default async function HomeCarePage(props: {
           </h2>
           <Link
             href={maintenancePath(locale, 'services')}
-            className="hidden sm:inline-flex text-sm text-[#A86D00] font-bold gap-2 items-center hover:underline"
+            className="hidden sm:inline-flex text-sm text-[#854D0E] font-bold gap-2 items-center hover:underline"
           >
             {ar ? 'الدليل الكامل' : 'Full directory'}
             <Arrow size={16} />
@@ -294,7 +294,7 @@ export default async function HomeCarePage(props: {
               key={s.slug}
               className="group bg-white border border-[#CBD5E1] rounded-3xl p-6 sm:p-7 hover:shadow-xl transition-all flex flex-col min-h-[270px]"
             >
-              <span className="font-mono text-[#A86D00] text-xs font-black">
+              <span className="font-mono text-[#854D0E] text-xs font-black">
                 {String(i + 1).padStart(2, '0')} / CARE
               </span>
               <h3 className="text-xl font-black mt-8 leading-7 text-[#102B26]">
@@ -320,7 +320,7 @@ export default async function HomeCarePage(props: {
         <div className="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[.9fr_1fr] gap-14 items-center">
           <div className="bg-white p-8 sm:p-12 rounded-[3rem] shadow-[0_20px_50px_rgba(23,78,120,.08)] border border-[#CBD5E1]">
             <Wind size={52} className="text-[#174E78]" />
-            <p className="text-xs font-bold tracking-widest mt-9 text-[#A86D00] uppercase">
+            <p className="text-xs font-bold tracking-widest mt-9 text-[#854D0E] uppercase">
               AIR CONDITIONING
             </p>
             <h2 className="text-3xl sm:text-4xl font-black mt-3 text-[#102B26]">
@@ -386,7 +386,7 @@ export default async function HomeCarePage(props: {
       <section data-sector-specific="plumbing-scope" className="py-20 max-w-7xl mx-auto px-5 sm:px-8">
         <div className="grid lg:grid-cols-[1fr_.8fr] gap-12 items-center">
           <div>
-            <p className="text-xs text-[#A86D00] font-black tracking-widest uppercase">
+            <p className="text-xs text-[#854D0E] font-black tracking-widest uppercase">
               WATER / PLUMBING
             </p>
             <h2 className="font-black text-3xl sm:text-4xl mt-3 text-[#102B26]">
@@ -466,7 +466,7 @@ export default async function HomeCarePage(props: {
       <section data-sector-specific="geographic-coverage" className="py-20 max-w-7xl mx-auto px-5 sm:px-8">
         <div className="flex flex-wrap items-end justify-between gap-7">
           <div>
-            <p className="text-[#A86D00] text-xs tracking-widest font-black uppercase">
+            <p className="text-[#854D0E] text-xs tracking-widest font-black uppercase">
               SERVICE AREA LOGIC
             </p>
             <h2 className="text-3xl sm:text-4xl font-black mt-4 text-[#102B26]">
@@ -487,7 +487,7 @@ export default async function HomeCarePage(props: {
               key={region}
               className="bg-white border border-[#CBD5E1] rounded-3xl p-7 min-h-44"
             >
-              <MapPin size={25} className="text-[#A86D00]" />
+              <MapPin size={25} className="text-[#854D0E]" />
               <h3 className="font-black mt-7 text-[#102B26]">{region}</h3>
               <p className="text-xs text-[#285879] leading-6 mt-3">
                 {ar
@@ -502,7 +502,7 @@ export default async function HomeCarePage(props: {
       {/* 12: Service process */}
       <section data-sector-specific="three-step-visit" className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
-          <p className="text-[#A86D00] text-xs font-black tracking-widest uppercase">
+          <p className="text-[#854D0E] text-xs font-black tracking-widest uppercase">
             HOW A REAL VISIT SHOULD BE ARRANGED
           </p>
           <h2 className="text-3xl sm:text-4xl font-black mt-4 text-[#102B26]">
@@ -551,7 +551,7 @@ export default async function HomeCarePage(props: {
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <div className="flex flex-wrap justify-between items-end gap-5">
             <div>
-              <p className="text-xs font-black text-[#A86D00] uppercase">
+              <p className="text-xs font-black text-[#854D0E] uppercase">
                 PROFIX HOME NOTES
               </p>
               <h2 className="text-3xl sm:text-4xl font-black mt-4 text-[#102B26]">
@@ -596,7 +596,7 @@ export default async function HomeCarePage(props: {
         className="max-w-7xl mx-auto px-5 sm:px-8 py-20 grid lg:grid-cols-[.65fr_1fr] gap-10"
       >
         <div>
-          <p className="text-xs font-bold text-[#A86D00] tracking-widest uppercase">
+          <p className="text-xs font-bold text-[#854D0E] tracking-widest uppercase">
             HONEST ANSWERS
           </p>
           <h2 className="mt-4 text-4xl font-black text-[#102B26]">
