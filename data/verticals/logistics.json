@@ -371,14 +371,103 @@
       "role": "terminal-editorial",
       "title": "Shipping terminal in Singapore",
       "credit": "chuttersnap",
-      "license": "CC0-1.0",
+      "license": "CC0 1.0",
       "source": "https://commons.wikimedia.org/wiki/File:Shipping_terminal_in_Singapore_(Unsplash).jpg",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "originalSha1": "778d2efe0fb0104d8ee41978e0bb25e24b6b2ca3",
+      "url": "/assets/portfolio/logistics/terminal.webp",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/73/Shipping_terminal_in_Singapore_%28Unsplash%29.jpg",
+      "width": 1600,
+      "height": 1067,
       "alt": {
         "ar": "صورة جوية لمحطة حاويات في سنغافورة، لا تمثل منشأة روت لاين",
         "en": "Aerial container terminal in Singapore, not a RouteLine facility"
-      },
-      "url": "/assets/portfolio/routeline-singapore-terminal.webp"
+      }
+    },
+    {
+      "role": "vessel-editorial",
+      "title": "MSC Harmony III container ship",
+      "credit": "Petar Milošević",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:MSC_HARMONY_III_(container_ship,_2006)_in_Port_Koper_(SIKOP,_2024).jpg",
+      "originalSha1": "92a05794cbc554360159054a36a4ac1964b1eeff",
+      "url": "/assets/portfolio/logistics/container_vessel.webp",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/62/MSC_HARMONY_III_%28container_ship%2C_2006%29_in_Port_Koper_%28SIKOP%2C_2024%29.jpg",
+      "width": 1800,
+      "height": 1183,
+      "alt": {
+        "ar": "سفينة نقل حاويات بحرية ضخمة تدخل الميناء التجاري، صورة تحريرية مستقلة",
+        "en": "Major ocean container vessel arriving at commercial port, editorial photo"
+      }
+    },
+    {
+      "role": "air-freight-editorial",
+      "title": "Boeing 747 freighter pallet cargo loading",
+      "credit": "Lance Cheung (US Air Force / DOD)",
+      "license": "Public domain",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Evergreen_B747F_-_Cargo-In-Cargo-Out_DVIDS171689.jpg",
+      "originalSha1": "ffdfce34d04751bb927e652d905b8ac53a4f48fc",
+      "url": "/assets/portfolio/logistics/air_freighter.webp",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Evergreen_B747F_-_Cargo-In-Cargo-Out_DVIDS171689.jpg",
+      "width": 1800,
+      "height": 2611,
+      "alt": {
+        "ar": "تحميل منصات الشحن الجوي في طائرة شحن تجارية، صورة تحريرية مستقلة",
+        "en": "Air cargo freighter receiving standardized aircraft pallets, editorial photograph"
+      }
+    },
+    {
+      "role": "highway-fleet-editorial",
+      "title": "Container freight transport trucks on highway",
+      "credit": "futureatlas.com",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Container_trucks_on_an_American_highway.jpg",
+      "originalSha1": "98a80520dbf578fc3d2298da6c2160d1d9a4334a",
+      "url": "/assets/portfolio/logistics/highway_fleet.webp",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Container_trucks_on_an_American_highway.jpg",
+      "width": 1062,
+      "height": 706,
+      "alt": {
+        "ar": "شاحنات نقل بري ثقيل تحمل حاويات شحن على الطريق السريع، صورة تحريرية",
+        "en": "Intermodal container freight trucks on highway, independent editorial image"
+      }
+    },
+    {
+      "role": "quay-cranes-editorial",
+      "title": "Port of Rotterdam container quay cranes",
+      "credit": "AgainErick",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Waalhaven_-_Uniport_-_Port_of_Rotterdam_-_east_quay_-_port_crane_6.jpg",
+      "originalSha1": "a87935dda43e9c3ebeaa637dc06091833636af58",
+      "url": "/assets/portfolio/logistics/quay_cranes.webp",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/91/Waalhaven_-_Uniport_-_Port_of_Rotterdam_-_east_quay_-_port_crane_6.jpg",
+      "width": 1800,
+      "height": 1350,
+      "alt": {
+        "ar": "رافعات رصيف الحاويات العملاقة في ميناء تجاري دولي، صورة تحريرية",
+        "en": "Heavy quay gantry cranes handling maritime containers at international port"
+      }
+    },
+    {
+      "role": "intermodal-hub-editorial",
+      "title": "Intermodal rail and road transfer freight hub",
+      "credit": "David Wilson",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Intermodal_terminal_loading.jpg",
+      "originalSha1": "65c396f5ee63f977e4b52a72535d854226194c51",
+      "url": "/assets/portfolio/logistics/intermodal_hub.webp",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Intermodal_terminal_loading.jpg",
+      "width": 1800,
+      "height": 1350,
+      "alt": {
+        "ar": "محطة مناولة ونقل متعدد الوسائط بين الشاحنات والقطارات، صورة تحريرية",
+        "en": "Intermodal freight transfer hub facilitating rail and road interchange"
+      }
     }
   ]
 }
