@@ -342,33 +342,117 @@
   ],
   "media": [
     {
-      "role": "farm-hero",
+      "role": "farm-solar",
       "credit": "David Kosling / USDA",
       "license": "Public domain (US government work)",
       "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
       "source": "https://commons.wikimedia.org/wiki/File:Photovoltaic_Panels_Reap_Solar_Energy_on_Farms_(20240809-USDA-RD-DCK-0329).jpg",
-      "url": "/assets/portfolio/voltedge-farm.webp",
+      "url": "/assets/portfolio/solar-energy/farm.webp",
       "originalSha1": "5e17ada10e513b72209cd94b8ff9f0c0ed0def5e",
-      "width": 4000,
-      "height": 3000,
+      "width": 1600,
+      "height": 1200,
       "alt": {
-        "ar": "مصفوفة ألواح شمسية في مزرعة أمريكية، صورة مستقلة من وزارة الزراعة الأمريكية",
-        "en": "US farm solar array, independent USDA editorial photograph"
+        "ar": "مصفوفة ألواح شمسية في مزرعة، صورة مستقلة من وزارة الزراعة الأمريكية",
+        "en": "Agricultural farm solar array, independent USDA editorial photograph"
+      },
+      "caption": {
+        "ar": "منظومات الطاقة الشمسية للقطاع الزراعي ومحطات الضخ والري",
+        "en": "Agricultural Solar Arrays & Irrigation Pumping Solutions"
       }
     },
     {
-      "role": "roof-editorial",
+      "role": "rooftop-pv",
       "credit": "Marta Victoria",
       "license": "CC BY-SA 4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "source": "https://commons.wikimedia.org/wiki/File:Rooftop_solar_photovoltaic_installation.jpg",
-      "url": "/assets/portfolio/voltedge-rooftop.webp",
+      "url": "/assets/portfolio/solar-energy/rooftop.webp",
       "originalSha1": "17a3d9fc96b1b7e1dcbf57f8e3aadf3c2918ea61",
       "width": 1600,
       "height": 1079,
       "alt": {
-        "ar": "ألواح شمسية على سطح منزل، صورة مستقلة ليست من مشاريع فولتيج",
-        "en": "Residential rooftop PV, independent editorial photo, not a VoltEdge project"
+        "ar": "ألواح شمسية على سطح مبنى، صورة تحريرية مستقلة",
+        "en": "Rooftop solar photovoltaic installation, independent editorial photo"
+      },
+      "caption": {
+        "ar": "توليد الطاقة الشمسية على أسطح المنشآت والمباني الحضرية",
+        "en": "Urban Commercial & Residential Rooftop Photovoltaic Systems"
+      }
+    },
+    {
+      "role": "utility-scale",
+      "credit": "spg solar",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Furnacecreeksolar.jpg",
+      "url": "/assets/portfolio/solar-energy/utility_scale.webp",
+      "originalSha1": "b58792e526152f6f1cd2ae4170e3594a9b09afc6",
+      "width": 1800,
+      "height": 1200,
+      "alt": {
+        "ar": "محطة طاقة شمسية كبرى في بيئة صحراوية، صورة تحريرية مستقلة",
+        "en": "Utility-scale desert solar power station, independent editorial photo"
+      },
+      "caption": {
+        "ar": "محطات التوليد المركزية والمشاريع المربوطة بالشبكة القومية",
+        "en": "Utility-Scale Ground-Mounted Solar Parks & Grid Interconnections"
+      }
+    },
+    {
+      "role": "commercial-roof",
+      "credit": "Hokusai / Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Hatil_rooftop_solar_panels.jpg",
+      "url": "/assets/portfolio/solar-energy/commercial_roof.webp",
+      "originalSha1": "a29696e1b4e1da8ba2b80ecb2336da64799626c0",
+      "width": 1800,
+      "height": 1350,
+      "alt": {
+        "ar": "ألواح شمسية تغطي سطح مصنع صناعي، صورة تحريرية مستقلة",
+        "en": "Industrial factory rooftop solar array, independent editorial photo"
+      },
+      "caption": {
+        "ar": "حلول الطاقة الشمسية للمصانع والمستودعات وسلاسل الإمداد",
+        "en": "Industrial Manufacturing & Logistics Warehouse Rooftop PV"
+      }
+    },
+    {
+      "role": "inverter-bess",
+      "credit": "Dennis Schroeder / NREL",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:PV_Inverter.jpg",
+      "url": "/assets/portfolio/solar-energy/inverter_system.webp",
+      "originalSha1": "a0bb0a6a9c13d2828a9c005183bb1c4af496d763",
+      "width": 1800,
+      "height": 1077,
+      "alt": {
+        "ar": "محولات طاقة شمسية ومنظومات تحكم كهربائية، صورة تحريرية مستقلة",
+        "en": "Solar string inverters and balance-of-system power electronics"
+      },
+      "caption": {
+        "ar": "محولات الطاقة الشمسية وأنظمة التخزين وحماية الشبكة",
+        "en": "High-Efficiency Solar Inverters & Battery Energy Storage (BESS)"
+      }
+    },
+    {
+      "role": "engineering-survey",
+      "credit": "Stephen Yang / The Solutions Project",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Technician_working_on_a_solar_panel_installation_(9232).jpg",
+      "url": "/assets/portfolio/solar-energy/engineering_survey.webp",
+      "originalSha1": "f6a01c7577e19564b9022c7f1c1346976d85429c",
+      "width": 1800,
+      "height": 1200,
+      "alt": {
+        "ar": "فني هندسي يجري فحصاً وتركيباً لألواح شمسية، صورة تحريرية مستقلة",
+        "en": "Certified solar technician inspecting and testing photovoltaic panels"
+      },
+      "caption": {
+        "ar": "الفحص الهندسي والاختبارات الميدانية والصيانة الوقائية",
+        "en": "Certified Field Engineering Surveys, Commissioning & Maintenance"
       }
     }
   ],
