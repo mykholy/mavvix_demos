@@ -425,7 +425,7 @@ export function AutoServiceDiagnosticCalibrator({ locale }: { locale: Locale }) 
                     {estimatedMinutes}{' '}
                     <span className="text-sm font-normal text-white">{ar ? 'دقيقة' : 'min'}</span>
                   </p>
-                  <p className="text-[11px] text-[#64748B] mt-1">
+                  <p className="text-[11px] text-[#CBD5E1] mt-1">
                     {ar ? 'فحص ميكانيكي وحاسوبي' : 'Physical + OBD check'}
                   </p>
                 </div>
@@ -436,7 +436,7 @@ export function AutoServiceDiagnosticCalibrator({ locale }: { locale: Locale }) 
                   <p className="text-2xl font-black text-white mt-2 font-mono">
                     {ar ? 'قياس فعلي' : 'Physical'}
                   </p>
-                  <p className="text-[11px] text-[#64748B] mt-1">
+                  <p className="text-[11px] text-[#CBD5E1] mt-1">
                     {ar ? 'بدون تخمين قطع' : 'No guessed parts'}
                   </p>
                 </div>

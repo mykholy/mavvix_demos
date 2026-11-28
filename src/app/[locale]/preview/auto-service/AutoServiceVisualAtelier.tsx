@@ -123,7 +123,7 @@ export function AutoServiceVisualAtelier({ locale }: { locale: Locale }) {
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-[#1E2736] flex items-center justify-between">
-                  <span className="text-[11px] font-mono text-[#64748B]">
+                  <span className="text-[11px] font-mono text-[#CBD5E1]">
                     {asset.width} × {asset.height} px
                   </span>
                   <button

@@ -182,7 +182,7 @@ export default async function AutoServiceHome(props: {
                   <div key={n} className="flex items-center gap-3">
                     <span className="text-[#F95721] font-mono font-bold">{n}</span>
                     <span className="text-[#E2E8F0]">{t}</span>
-                    <CheckCircle2 size={16} className="ms-auto text-[#64748B]" />
+                    <CheckCircle2 size={16} className="ms-auto text-[#CBD5E1]" />
                   </div>
                 ))}
               </div>
@@ -425,7 +425,7 @@ export default async function AutoServiceHome(props: {
               </div>
             ))}
           </div>
-          <p className="text-xs text-[#64748B] mt-5">
+          <p className="text-xs text-[#CBD5E1] mt-5">
             {localized(AUTO_SERVICE.modelNote, locale)}
           </p>
         </div>
@@ -453,7 +453,7 @@ export default async function AutoServiceHome(props: {
                 <h3 className="font-black text-base mt-6 text-white leading-snug">{t}</h3>
                 <p className="text-xs text-[#94A3B8] leading-6 mt-3">{d}</p>
               </div>
-              <span className="text-[10px] font-mono text-[#64748B] pt-4 border-t border-[#2A3649]">
+              <span className="text-[10px] font-mono text-[#CBD5E1] pt-4 border-t border-[#2A3649]">
                 STAGE {n}
               </span>
             </div>
