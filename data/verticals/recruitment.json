@@ -490,13 +490,17 @@
       "license": "CC BY-SA 2.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
       "source": "https://commons.wikimedia.org/wiki/File:Job_Interview_-_38630953066.jpg",
-      "url": "/assets/portfolio/talentyx-interview.webp",
+      "url": "/assets/portfolio/recruitment/interview.webp",
       "originalSha1": "8c8668c7d4a81c10ecba34048c9e0ea0f75e49b0",
-      "width": 5825,
-      "height": 3777,
+      "width": 1600,
+      "height": 1037,
       "alt": {
-        "ar": "مقابلة عمل في صورة تحريرية مستقلة، لا تمثل موظفي تالنتكس",
+        "ar": "مقابلة عمل تقييمية في صورة تحريرية مستقلة، لا تمثل موظفي تالنتكس",
         "en": "Independent editorial job interview photograph, not Talentyx staff"
+      },
+      "caption": {
+        "ar": "جلسات المقابلة والتقييم المهني المستند للكفاءات",
+        "en": "Competency-Based Evaluation and Interview Sessions"
       }
     },
     {
@@ -506,13 +510,97 @@
       "license": "CC BY 2.0",
       "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
       "source": "https://commons.wikimedia.org/wiki/File:Team_Meeting.jpg",
-      "url": "/assets/portfolio/talentyx-team.webp",
+      "url": "/assets/portfolio/recruitment/team.webp",
       "originalSha1": "fe6004b4d8add8b6d810454041a65cd745846583",
-      "width": 5559,
-      "height": 2092,
+      "width": 1600,
+      "height": 602,
       "alt": {
-        "ar": "اجتماع فريق في صورة مستقلة، لا يمثل شركة عميلة",
+        "ar": "اجتماع فريق عمل متعدد التخصصات في صورة تحريرية مستقلة",
         "en": "Independent editorial team meeting photograph, not a client company"
+      },
+      "caption": {
+        "ar": "جلسات التخطيط ومواءمة الكفاءات مع أهداف الفرق",
+        "en": "Cross-Functional Team Planning & Sourcing Alignment"
+      }
+    },
+    {
+      "role": "evaluation",
+      "credit": "Amtec Photos / amtec_photos",
+      "creditUrl": "https://www.amtec.us.com",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Woman_Conducting_an_Interview.jpg",
+      "url": "/assets/portfolio/recruitment/evaluation.webp",
+      "originalSha1": "9913ffe7d3b7c0514b76e32b6d9fa8df72ccf64c",
+      "width": 1800,
+      "height": 1151,
+      "alt": {
+        "ar": "مستشارة توظيف تجري حواراً تقييمياً فردياً، صورة تحريرية مستقلة",
+        "en": "Talent advisor conducting structured evaluation dialogue, independent photo"
+      },
+      "caption": {
+        "ar": "التقييم الفردي والمراجعة الموضوعية للمهارات والخبرات",
+        "en": "Structured Candidate Evaluation & Skills Review"
+      }
+    },
+    {
+      "role": "workplace",
+      "credit": "Crew / Unsplash",
+      "creditUrl": "https://unsplash.com",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Working_in_open_office_space_(Unsplash).jpg",
+      "url": "/assets/portfolio/recruitment/workplace.webp",
+      "originalSha1": "42a9ab3c644edc0863a3d86a986d8dc41f6a9a0e",
+      "width": 1800,
+      "height": 1200,
+      "alt": {
+        "ar": "بيئة عمل مفتوحة لفرق التقنية والعمليات، صورة تحريرية مستقلة",
+        "en": "Modern open workplace for technology and operations, independent photo"
+      },
+      "caption": {
+        "ar": "بيئات العمل المعاصرة ومتطلبات الفرق المتنامية",
+        "en": "Modern High-Growth Workplaces & Team Environments"
+      }
+    },
+    {
+      "role": "executive",
+      "credit": "Amy Clarke",
+      "creditUrl": "https://www.flickr.com/photos/amyclarke/",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Boss_Woman_(16374516410).jpg",
+      "url": "/assets/portfolio/recruitment/executive.webp",
+      "originalSha1": "7c7f55471e967d09ec505b9dbabc6da774e92d7a",
+      "width": 1800,
+      "height": 1196,
+      "alt": {
+        "ar": "قيادية أعمال في بيئة استشارية مهنية، صورة تحريرية مستقلة",
+        "en": "Executive business leader in professional consultation, independent photo"
+      },
+      "caption": {
+        "ar": "استقطاب القيادات التنفيذية وأعضاء مجالس الإدارة",
+        "en": "Executive Search & Strategic Leadership Advisory"
+      }
+    },
+    {
+      "role": "matchmaking",
+      "credit": "Andrew / Tech Elevator",
+      "creditUrl": "https://commons.wikimedia.org/wiki/User:Andrewtechelevator",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Employer_Matchmaking_at_Tech_Elevator.jpg",
+      "url": "/assets/portfolio/recruitment/matchmaking.webp",
+      "originalSha1": "6ecff6b0e171616e3468432ed16f0990cb92cadc",
+      "width": 1800,
+      "height": 1200,
+      "alt": {
+        "ar": "حوار تفاعلي بين مسؤولي التوظيف والمهنيين، صورة تحريرية مستقلة",
+        "en": "Employer matchmaking and professional dialogue session, independent photo"
+      },
+      "caption": {
+        "ar": "جلسات التواصل والتعارف المباشر بين الشركات والكوادر",
+        "en": "Direct Employer-Talent Matchmaking Dialogue"
       }
     }
   ]
