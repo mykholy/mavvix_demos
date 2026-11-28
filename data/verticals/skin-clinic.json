@@ -354,11 +354,11 @@
       "license": "CC BY 2.0",
       "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
       "source": "https://commons.wikimedia.org/wiki/File:Modern_medical_examination_room.jpg",
-      "url": "/assets/portfolio/elyra-room.webp",
+      "url": "/assets/portfolio/skin-clinic/room.webp",
       "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Modern_medical_examination_room.jpg",
       "originalSha1": "1c55782a48b6bcaef3f7d7e144839e4f20d85f63",
-      "width": 5926,
-      "height": 3956,
+      "width": 1600,
+      "height": 1068,
       "alt": {
         "ar": "غرفة فحص طبية حديثة في صورة تحريرية مستقلة، لا تمثل منشآت إيليرا",
         "en": "Modern medical examination room, independent editorial photograph, not Elyra premises"
@@ -372,14 +372,82 @@
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "source": "https://commons.wikimedia.org/wiki/File:Dermascope.jpg",
       "originalSha1": "765279e39fe306f89af5fef87f594dbcc0030e4a",
+      "url": "/assets/portfolio/skin-clinic/device.webp",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Dermascope.jpg",
+      "width": 1600,
+      "height": 1414,
       "alt": {
         "ar": "جهاز فحص الجلد في صورة تحريرية مستقلة، لا يمثل معدات عيادة إيليرا",
         "en": "Dermatoscope in an independent editorial photograph, not Elyra equipment"
-      },
-      "url": "/assets/portfolio/elyra-device.webp",
-      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Dermascope.jpg",
-      "width": 2886,
-      "height": 2551
+      }
+    },
+    {
+      "role": "treatment-suite",
+      "title": "Bright and modern beauty treatment room",
+      "credit": "Shixart1985 (Nenad Stojković)",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Bright_and_modern_beauty_treatment_room.jpg",
+      "originalSha1": "47c3e2fdd2860c4e3c4458dd3db493db16039462",
+      "url": "/assets/portfolio/skin-clinic/treatment_suite.webp",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/de/Bright_and_modern_beauty_treatment_room.jpg",
+      "width": 1800,
+      "height": 1201,
+      "alt": {
+        "ar": "جناح علاجي تجميلي حديث، صورة تحريرية مستقلة لا تمثل منشأة تجارية",
+        "en": "Bright and modern aesthetic treatment suite, independent editorial photography"
+      }
+    },
+    {
+      "role": "consultation-room",
+      "title": "Clean medical room with treatment chair",
+      "credit": "Shixart1985 (Nenad Stojković)",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Clean_medical_room_with_blue_treatment_chair_and_medical_equipment_in_a_quiet_clinic_setting.jpg",
+      "originalSha1": "cd8707d2ccdc784e5fdad116e972a99f0619b781",
+      "url": "/assets/portfolio/skin-clinic/consultation_room.webp",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Clean_medical_room_with_blue_treatment_chair_and_medical_equipment_in_a_quiet_clinic_setting.jpg",
+      "width": 1800,
+      "height": 1201,
+      "alt": {
+        "ar": "غرفة استشارة جلدية مجهزة بمقعد علاجي، صورة تحريرية مستقلة",
+        "en": "Clinical consultation room with ergonomic treatment chair, editorial photograph"
+      }
+    },
+    {
+      "role": "dermatoscope-optic",
+      "title": "High-resolution optical dermatoscope",
+      "credit": "Abessemans94",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:IDS-1100_Dermatoscope.jpg",
+      "originalSha1": "8e20e53845b39485e78224c05b050bdecd64a97a",
+      "url": "/assets/portfolio/skin-clinic/dermatoscope_optic.webp",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/65/IDS-1100_Dermatoscope.jpg",
+      "width": 1800,
+      "height": 1800,
+      "alt": {
+        "ar": "منظار جلدي بصري عالي الدقة لفحص الآفات الجلدية، صورة تحريرية مستقلة",
+        "en": "High-resolution optical dermatoscope for skin surface inspection, editorial photo"
+      }
+    },
+    {
+      "role": "aesthetic-lounge",
+      "title": "Aesthetic clinic patient reception lounge",
+      "credit": "ELIZABETH XIONG",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Interior_of_Snow_Clinic_Ansan_branch_in_March_2026.jpg",
+      "originalSha1": "fdf75e9d54c7a9334d7dbf0b97347ed960ba57f7",
+      "url": "/assets/portfolio/skin-clinic/aesthetic_lounge.webp",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/56/Interior_of_Snow_Clinic_Ansan_branch_in_March_2026.jpg",
+      "width": 1800,
+      "height": 1350,
+      "alt": {
+        "ar": "صالة استقبال هادئة ومريحة لعيادة جلدية، صورة تحريرية مستقلة",
+        "en": "Tranquil and minimal aesthetic dermatology clinic lounge, editorial photography"
+      }
     }
   ]
 }
