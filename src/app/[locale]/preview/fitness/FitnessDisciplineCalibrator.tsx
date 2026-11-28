@@ -377,7 +377,7 @@ export function FitnessDisciplineCalibrator({ locale }: FitnessDisciplineCalibra
               onChange={(e) => setDaysPerWeek(Number(e.target.value))}
               className="w-full accent-[#E0FE61] cursor-pointer h-2 bg-[#2E2B47] rounded-none"
             />
-            <div className="flex justify-between text-[10px] font-mono text-[#8F8CA4] mt-2">
+            <div className="flex justify-between text-[10px] font-mono text-[#B5B2C9] mt-2">
               <span>1 {ar ? 'يوم' : 'Day'}</span>
               <span>2 {ar ? 'يومين' : 'Days'}</span>
               <span>3 {ar ? 'أيام' : 'Days'}</span>

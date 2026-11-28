@@ -127,13 +127,13 @@ export function FitnessVisualAtelier({ locale }: { locale: Locale }) {
                   </p>
                   <div className="space-y-1.5 text-[11px] font-mono text-[#A28BFF] bg-[#11111C] p-3 border border-[#252338]">
                     <div className="flex justify-between">
-                      <span className="text-[#77748F]">{ar ? 'الأبعاد' : 'Dimensions'}:</span>
+                      <span className="text-[#B5B2C9]">{ar ? 'الأبعاد' : 'Dimensions'}:</span>
                       <span>
                         {asset.width} × {asset.height} px
                       </span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-[#77748F]">SHA-256:</span>
+                      <span className="text-[#B5B2C9]">SHA-256:</span>
                       <span className="truncate max-w-[170px]" title={asset.sha256}>
                         {asset.sha256.substring(0, 16)}…
                       </span>

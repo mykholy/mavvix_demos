@@ -181,7 +181,7 @@ export function FitnessFacilityStandards({ locale }: FitnessFacilityStandardsPro
                 </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-[#26243A] flex items-center justify-between text-[11px] font-mono text-[#8F8CA4]">
+              <div className="mt-6 pt-4 border-t border-[#26243A] flex items-center justify-between text-[11px] font-mono text-[#B5B2C9]">
                 <span>{ar ? 'بروتوكول ملزم ومعتمد' : 'Audited Standard'}</span>
                 <span className="font-bold text-[#E0FE61]">{ar ? 'جاهزية 100%' : '100% Verified'}</span>
               </div>
