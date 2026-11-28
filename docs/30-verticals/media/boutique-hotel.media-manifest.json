@@ -1,8 +1,9 @@
 {
   "vertical": "boutique-hotel",
+  "reviewed_on": "2026-11-28",
   "assets": [
     {
-      "id": "oasis-room",
+      "id": "oasis-suite",
       "source_page": "https://commons.wikimedia.org/wiki/File:Boutique-hotel.jpg",
       "author": "Book Elizabeth",
       "license": "CC BY-SA 4.0",
@@ -11,11 +12,11 @@
       "original_dimensions": "2560x2560",
       "original_sha1": "6cb170ab0f72dbd466de403e095ef2ac72cd29c0",
       "source_sha1_verified": true,
-      "local": "/assets/portfolio/oasis-room.webp",
+      "local": "/assets/portfolio/boutique-hotel/suite.webp",
       "dimensions": "1600x1600",
-      "sha256": "af1663b00c1e057b60f7fcc40c342d465723edae6cbb374e3d22000cd11db394",
-      "bytes": 201826,
-      "changes": "Resized and WebP encoded; display may crop. Adapted image remains CC BY-SA 4.0. Independent editorial photograph, not Oasis property."
+      "sha256": "79a591b5900a6d30b0a59dd68d408f74b9e5ae4db5af6507b404cc57642acf12",
+      "bytes": 177202,
+      "changes": "Resized and WebP encoded; display may crop. Adapted image remains CC BY-SA 4.0. Independent editorial photograph, not an Oasis & Co property."
     },
     {
       "id": "oasis-dining",
@@ -26,12 +27,12 @@
       "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/TableSetting_20240504_073606.jpg",
       "original_dimensions": "4608x2592",
       "original_sha1": "025b96be0abacf3ecee7cf3c3d77dc43e8686a18",
-      "source_sha1_verified": false,
-      "local": "/assets/portfolio/oasis-dining.webp",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/boutique-hotel/dining.webp",
       "dimensions": "1600x900",
-      "sha256": "4cbb571d71a5e52a3447a29c9f5fb658e3c0ab42971226458345c508e1059ed6",
-      "bytes": 61644,
-      "changes": "Resized and WebP encoded; display may crop. Adapted image retains original CC BY-SA licence. Independent editorial photography, not Oasis property."
+      "sha256": "b18e685c3378d90f37551896c87581900d446a0d4999059c43fd6d99d98222d5",
+      "bytes": 55710,
+      "changes": "Resized and WebP encoded; display may crop. Adapted image retains original CC BY-SA licence. Independent editorial photography, not an Oasis & Co property."
     },
     {
       "id": "oasis-courtyard",
@@ -43,11 +44,59 @@
       "original_dimensions": "1600x1200",
       "original_sha1": "2988732a3bc4227bbc070756d3006f6c923b0eaa",
       "source_sha1_verified": true,
-      "local": "/assets/portfolio/oasis-courtyard.webp",
+      "local": "/assets/portfolio/boutique-hotel/courtyard.webp",
       "dimensions": "1600x1200",
-      "sha256": "3dcae254f59fa21a5cabf3811e798147806f8a94d4db4d1dc0bf3c4b5d774d70",
-      "bytes": 275734,
-      "changes": "Resized and WebP encoded; display may crop. Adapted image retains original CC BY-SA licence. Independent editorial photography, not Oasis property."
+      "sha256": "13ecc7e7acf37e456d7b0ab0a30e7a16e5da71cf147addab4c4715b33e5b30ea",
+      "bytes": 250040,
+      "changes": "Resized and WebP encoded; display may crop. Adapted image retains original CC BY-SA licence. Independent editorial photography, not an Oasis & Co property."
+    },
+    {
+      "id": "oasis-terrace",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Atlas-Mountain.jpg",
+      "author": "Anton Christoffersen / Marrakech Best Riads",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Atlas-Mountain.jpg",
+      "original_dimensions": "4080x3060",
+      "original_sha1": "084052965449d1dd271cad96156489d10d453bdb",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/boutique-hotel/terrace.webp",
+      "dimensions": "1800x1350",
+      "sha256": "9a8b374be192fdeb6c16d2c4c904162b00ae45734538b087689962d94800f162",
+      "bytes": 530118,
+      "changes": "Resized and WebP encoded; display may crop. Adapted image retains original CC BY-SA licence. Independent editorial photography, not an Oasis & Co property."
+    },
+    {
+      "id": "oasis-wellness",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Indoor_pool_and_shower_of_spa_at_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos_front_view.jpg",
+      "author": "Basile Morin",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Indoor_pool_and_shower_of_spa_at_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos_front_view.jpg",
+      "original_dimensions": "6241x4161",
+      "original_sha1": "c4616a0c145edd679efd88d3bb6d8d6a9f6747a0",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/boutique-hotel/wellness.webp",
+      "dimensions": "1800x1200",
+      "sha256": "b3338a7192d9bf949b724e3ce050efa017739efcf683cbdfcbe827de96b0e1cc",
+      "bytes": 132828,
+      "changes": "Resized and WebP encoded; display may crop. Adapted image retains original CC BY-SA licence. Independent editorial photography, not an Oasis & Co property."
+    },
+    {
+      "id": "oasis-library",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Reception_lounge_at_Amantaka_luxury_Resort_%26_Hotel_at_blue_hour_in_Luang_Prabang_Laos.jpg",
+      "author": "Basile Morin",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Reception_lounge_at_Amantaka_luxury_Resort_%26_Hotel_at_blue_hour_in_Luang_Prabang_Laos.jpg",
+      "original_dimensions": "6247x4165",
+      "original_sha1": "a3527fbb48db510ee52730e45f1b88aa468b60b7",
+      "source_sha1_verified": true,
+      "local": "/assets/portfolio/boutique-hotel/library.webp",
+      "dimensions": "1800x1200",
+      "sha256": "863f534c24bb1f3d310b9ce666d26db9713b515e398bae4d8d49e5c36fb8d9f9",
+      "bytes": 187662,
+      "changes": "Resized and WebP encoded; display may crop. Adapted image retains original CC BY-SA licence. Independent editorial photography, not an Oasis & Co property."
     }
   ]
 }
