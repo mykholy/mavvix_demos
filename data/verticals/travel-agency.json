@@ -467,13 +467,79 @@
     {
       "role": "luxor-editorial-hero",
       "title": "Floating over the Valley of the Kings, Luxor, Egypt",
-      "credit": "Mustang Joe / Joe deSousa",
+      "credit": "Mustang Joe",
       "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
       "source": "https://commons.wikimedia.org/wiki/File:Floating_over_the_Valley_of_the_Kings,_Luxor,_Egypt_(54480104477).jpg",
-      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Floating_over_the_Valley_of_the_Kings,_Luxor,_Egypt_(54480104477).jpg/1280px-Floating_over_the_Valley_of_the_Kings,_Luxor,_Egypt_(54480104477).jpg",
+      "url": "/assets/portfolio/travel-agency/luxor_balloon.webp",
       "alt": {
         "ar": "منطاد فوق وادي الملوك بالأقصر — صورة تحريرية وليست نشاطًا محجوزًا",
         "en": "Hot-air balloon above the Valley of the Kings, Luxor — editorial photograph, not a booked activity"
+      }
+    },
+    {
+      "role": "giza-pyramids",
+      "title": "All Gizah Pyramids archaeological plateau",
+      "credit": "Ricardo Liberato",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:All_Gizah_Pyramids.jpg",
+      "url": "/assets/portfolio/travel-agency/giza_pyramids.webp",
+      "alt": {
+        "ar": "هضبة أهرامات الجيزة، صورة تحريرية مستقلة",
+        "en": "Giza Pyramids archaeological plateau, independent editorial photograph"
+      }
+    },
+    {
+      "role": "aswan-nile",
+      "title": "Aswan Nile sunset with traditional feluccas",
+      "credit": "Güldem Üstün",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Egypt_(Aswan)_A_sunset_view_of_a_Mosque_and_feluccas_on_the_Nile_River_(25743016964).jpg",
+      "url": "/assets/portfolio/travel-agency/aswan_nile.webp",
+      "alt": {
+        "ar": "غروب النيل في أسوان وقوارب الفلوكة الشراعية، صورة تحريرية مستقلة",
+        "en": "Aswan Nile sunset with traditional felucca sailboats, independent editorial photograph"
+      }
+    },
+    {
+      "role": "red-sea-reef",
+      "title": "Red Sea coral reef and bannerfish ecosystem",
+      "credit": "Diego Delso",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Pez_estandarte_del_mar_Rojo_(Heniochus_intermedius),_mar_Rojo,_Egipto,_2023-04-15,_DD_36.jpg",
+      "url": "/assets/portfolio/travel-agency/red_sea_reef.webp",
+      "alt": {
+        "ar": "الشعاب المرجانية والأسماك في البحر الأحمر، صورة تحريرية مستقلة",
+        "en": "Red Sea coral reef and endemic marine wildlife, independent editorial photograph"
+      }
+    },
+    {
+      "role": "alula-hegra",
+      "title": "Qasr al-Farid Nabatean monument in Hegra AlUla",
+      "credit": "Carole Raddato",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Qasr_al-Farid,_a_1st-century_AD_Nabatean_unfinished_tomb_carved_into_a_giant_boulder_in_Hegra_(Mada'in_Salih),_the_kingdom's_second_Nabatean_capital_after_Petra,_Saudi_Arabia_-_53535089614.jpg",
+      "url": "/assets/portfolio/travel-agency/alula_hegra.webp",
+      "alt": {
+        "ar": "قصر الفريد ومدائن صالح بالحجر في العلا، صورة تحريرية مستقلة",
+        "en": "Qasr al-Farid Nabatean monolithic monument at Hegra in AlUla, independent editorial photograph"
+      }
+    },
+    {
+      "role": "jeddah-balad",
+      "title": "Historic Jeddah Al-Balad architectural heritage",
+      "credit": "xiquinhosilva",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Jeddah_-_55362179623.jpg",
+      "url": "/assets/portfolio/travel-agency/jeddah_balad.webp",
+      "alt": {
+        "ar": "العمارة الحجازية التاريخية في جدة البلد، صورة تحريرية مستقلة",
+        "en": "Historic Jeddah Al-Balad traditional coral architecture and Rawashin, independent editorial photograph"
       }
     }
   ]
