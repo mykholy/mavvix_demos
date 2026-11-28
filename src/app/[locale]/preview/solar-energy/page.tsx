@@ -1,15 +1,371 @@
-import Link from 'next/link';import {notFound} from 'next/navigation';import {ArrowUpRight,Zap,Factory,House,BatteryCharging,Sun,ClipboardCheck,ChartNoAxesCombined,ShieldCheck,Wrench} from 'lucide-react';import {VOLTEDGE,voltPath} from '@/lib/verticals/solar-energy/data';
-export default async function VoltHome({params}:{params:Promise<{locale:string}>}){const {locale}=await params;if(locale!=='ar'&&locale!=='en')notFound();const ar=locale==='ar',d=VOLTEDGE;const wrap='max-w-7xl mx-auto px-5 sm:px-8',label='text-xs font-bold tracking-[.17em] uppercase text-[#476049]',head='mt-4 font-black text-3xl sm:text-5xl tracking-tight leading-tight',cta='inline-flex items-center gap-3 bg-[#12352D] text-white px-6 py-4 font-bold text-sm';const photo=(i:number)=>{const m=d.media[i];return <figure className="border border-[#D2DBCC] bg-white"><img src={m.url} alt={m.alt[locale]} className="w-full h-[300px] sm:h-[430px] object-cover" loading={i===0?'eager':'lazy'}/><figcaption className="bg-[#12352D] text-white px-4 py-3 text-xs leading-6"><a href={m.source} className="underline">{m.credit}</a> · <a href={m.licenseUrl} className="underline">{m.license}</a> · {ar?'صورة مستقلة، اقتصاص للعرض':'Independent editorial image, display crop'}</figcaption></figure>};
-return <div>
-<section data-sector-specific="energy-hero" className="bg-[#12352D] text-white"><div className={wrap+' grid gap-9 lg:grid-cols-[.95fr_1.05fr] items-center py-14 lg:py-24'}><div><p className="text-[#C7DA59] text-xs font-bold tracking-widest">VOLTEDGE / ENERGY ENGINEERING</p><h1 className="mt-6 text-[clamp(2.8rem,5.8vw,6.3rem)] font-black leading-[1.09] tracking-tight">{ar?<>طاقة تبدأ<span className="block text-[#C7DA59]">بدراسة صحيحة.</span></>:<>Energy starts<span className="block text-[#C7DA59]">with a plan.</span></>}</h1><p className="mt-6 text-[#E0E9DB] leading-9 max-w-xl">{ar?'استكشف حلول الطاقة الشمسية والتخزين للمنازل والمنشآت والمزارع، وحدد نطاق دراسة هندسية تناسب احتياجك.':'Explore solar and storage for homes, businesses and farms. Define an assessment scope around actual energy needs.'}</p><div className="mt-8 flex flex-wrap gap-3"><Link href={voltPath(locale,'assessment')} className="bg-[#C7DA59] text-[#12352D] px-6 py-4 inline-flex items-center gap-3 font-bold text-sm">{ar?'ابدأ دراسة مشروعك':'Start your assessment'}<ArrowUpRight size={20}/></Link><Link href={voltPath(locale,'solutions')} className="inline-flex items-center border border-[#A6B8A5] px-6 py-4 font-bold text-sm">{ar?'استكشف الحلول':'Explore solutions'}</Link></div></div>{photo(0)}</div></section>
-<section data-sector-specific="site-intake-strip" className="bg-[#C7DA59]"><div className={wrap+' py-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-4'}>{(ar?['نوع الموقع','نطاق الاستهلاك الشهري','حالة شبكة الكهرباء','المساحة المتاحة']:['Site type','Monthly usage band','Grid conditions','Available space']).map((x,i)=><div key={x} className="flex items-center gap-3 border-s border-[#12352D] ps-4"><span className="font-mono text-sm">0{i+1}</span><h2 className="font-bold text-sm">{x}</h2></div>)}</div></section>
-<section data-sector-specific="solution-catalogue" className={wrap+' py-16 sm:py-24'}><p className={label}>01 / SOLUTION PORTFOLIO</p><h2 className={head}>{ar?'حلول لكل نطاق تشغيل':'Solutions for different operating needs'}</h2><div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{d.services.map(s=><Link key={s.slug} href={voltPath(locale,'solutions/'+s.slug)} className="bg-white border border-[#D2DBCC] p-6"><div className="flex justify-between"><span className="font-mono text-xs font-bold text-[#476049]">VE / {String(s.rank).padStart(2,'0')}</span><ArrowUpRight size={20}/></div><h3 className="mt-5 font-black text-xl">{s.title[locale]}</h3><p className="mt-4 text-sm leading-8">{s.summary[locale]}</p></Link>)}</div></section>
-<section data-sector-specific="sector-fit" className="bg-[#E0E9DB] py-16"><div className={wrap+' grid gap-8 lg:grid-cols-[1fr_1fr] items-center'}><div><p className={label}>02 / SECTOR FIT</p><h2 className={head}>{ar?'الموقع والاستهلاك يحددان نقطة البداية':'Site and demand shape the starting point'}</h2><div className="mt-7 grid gap-4 sm:grid-cols-2">{[{Icon:House,a:'المنازل',e:'Homes'},{Icon:Factory,a:'المصانع',e:'Factories'},{Icon:Sun,a:'المزارع',e:'Farms'},{Icon:Zap,a:'المنشآت التجارية',e:'Businesses'}].map(({Icon,a,e})=><div className="bg-white border border-[#D2DBCC] p-5" key={e}><Icon size={27} className="text-[#476049]"/><h3 className="mt-4 font-bold">{ar?a:e}</h3></div>)}</div><Link href={voltPath(locale,'sectors')} className={cta+' mt-6'}>{ar?'قارن القطاعات':'Compare sectors'}<ArrowUpRight size={18}/></Link></div>{photo(1)}</div></section>
-<section data-sector-specific="grid-storage-topology" className={wrap+' py-16'}><p className={label}>03 / SYSTEM OPTIONS</p><h2 className={head}>{ar?'الشبكة والتخزين: خيارات تحتاج دراسة':'Grid and storage: options to evaluate'}</h2><div className="mt-8 grid gap-5 md:grid-cols-3">{[{Icon:Sun,a:'توليد شمسي',e:'Solar generation',ad:'تقييم المساحة والإشعاع والظلال.',ed:'Assess space, solar resource and shading.'},{Icon:BatteryCharging,a:'تخزين واحتياط',e:'Storage & backup',ad:'تحديد الأحمال الحرجة ومدتها.',ed:'Define critical loads and continuity needs.'},{Icon:Zap,a:'نظام هجين',e:'Hybrid options',ad:'مراجعة الشبكة والتوافق الهندسي.',ed:'Review grid and engineering compatibility.'}].map(({Icon,a,e,ad,ed})=><article className="border border-[#D2DBCC] p-7 bg-white" key={e}><Icon size={30} className="text-[#476049]"/><h3 className="mt-5 text-xl font-black">{ar?a:e}</h3><p className="mt-4 text-sm leading-8">{ar?ad:ed}</p></article>)}</div><p className="mt-5 text-sm leading-8">{ar?'لا تمثل هذه المقارنة مخططاً كهربائياً أو توصية بقدرة محددة.':'This comparison is not an electrical diagram or sizing recommendation.'}</p></section>
-<section data-sector-specific="engineering-stages" className="bg-[#12352D] text-white py-16"><div className={wrap}><p className="text-[#C7DA59] text-xs font-bold tracking-widest">04 / PROJECT PATHWAY</p><h2 className={head}>{ar?'من البيانات إلى التسليم':'From inputs to handover'}</h2><div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{(ar?['مراجعة الاستهلاك','معاينة هندسية','تصميم وموافقات','اختبار وتسليم']:['Demand review','Engineering survey','Design & approvals','Testing & handover']).map((x,i)=><div className="border border-[#6D8770] p-6" key={x}><span className="font-mono text-[#C7DA59] text-3xl">0{i+1}</span><h3 className="mt-5 font-bold text-xl">{x}</h3></div>)}</div><Link href={voltPath(locale,'process')} className="mt-8 inline-flex gap-3 bg-[#C7DA59] text-[#12352D] px-6 py-4 font-bold text-sm">{ar?'رحلة المشروع':'Project pathway'}<ArrowUpRight size={18}/></Link></div></section>
-<section data-sector-specific="feasibility-inputs" className={wrap+' py-16 grid lg:grid-cols-[.8fr_1fr] gap-8'}><div><ChartNoAxesCombined size={34} className="text-[#476049]"/><p className={label+' mt-5'}>05 / FEASIBILITY</p><h2 className={head}>{ar?'جدوى مبنية على بيانات لا وعود':'Feasibility based on evidence, not promises'}</h2><p className="mt-5 leading-8">{ar?'تعتمد النتائج على استهلاك حقيقي وظروف الموقع والتعرفة والتكلفة. لا توجد نسبة وفر أو فترة استرداد مضمونة.':'Results depend on measured demand, site conditions, tariffs and costs. No guaranteed saving or payback.'}</p><Link className={cta+' mt-6'} href={voltPath(locale,'feasibility')}>{ar?'افهم الجدوى':'Understand feasibility'}<ArrowUpRight size={18}/></Link></div><div className="bg-white border border-[#D2DBCC] p-7 space-y-5">{(ar?['منحنى استهلاك فعلي','المساحة والظلال','التعرفة والتكاليف','سيناريوهات ومخاطر التشغيل']:['Measured load profile','Usable area and shading','Tariffs and costs','Scenarios and operating risks']).map(x=><p key={x} className="flex gap-3 text-sm font-bold leading-8"><ClipboardCheck size={22} className="text-[#476049] shrink-0"/>{x}</p>)}</div></section>
-<section data-sector-specific="operations-lifecycle" className="bg-[#E0E9DB] py-16"><div className={wrap+' grid lg:grid-cols-2 gap-8 items-center'}><div><Wrench size={35}/><p className={label+' mt-5'}>06 / OPERATIONS</p><h2 className={head}>{ar?'الأداء يحتاج متابعة وصيانة':'Performance needs ongoing care'}</h2><p className="mt-5 leading-8">{ar?'خطط لمراجعة البيانات التشغيلية والضمانات والسلامة بواسطة متخصصين مؤهلين.':'Plan qualified review of operating data, warranties and safety.'}</p><Link href={voltPath(locale,'maintenance')} className={cta+' mt-7'}>{ar?'دليل الصيانة':'Maintenance guide'}<ArrowUpRight size={18}/></Link></div><div className="bg-[#12352D] text-white p-8"><ShieldCheck size={34} className="text-[#C7DA59]"/><h3 className="mt-5 text-2xl font-black">{ar?'السلامة أولاً':'Safety first'}</h3><p className="mt-5 text-sm leading-8 text-[#E0E9DB]">{ar?'لا تعمل على منظومة كهربائية دون مقدم خدمة مؤهل.':'Do not work on an electrical system without a qualified provider.'}</p></div></div></section>
-<section data-sector-specific="technical-guides" className={wrap+' py-16'}><p className={label}>07 / FIELD NOTES</p><h2 className={head}>{ar?'دليل القرار قبل التنفيذ':'Field notes before commitment'}</h2><div className="mt-8 grid md:grid-cols-3 gap-4">{d.articles.map(a=><Link key={a.slug} href={voltPath(locale,'guides/'+a.slug)} className="bg-white border border-[#D2DBCC] p-7"><h3 className="text-xl font-black">{a.title[locale]}</h3><p className="mt-5 text-sm leading-8">{a.summary[locale]}</p><ArrowUpRight className="mt-5" size={20}/></Link>)}</div></section>
-<section data-sector-specific="solar-faq" className="bg-[#E0E9DB] py-16"><div className={wrap+' grid lg:grid-cols-[.6fr_1fr] gap-8'}><div><p className={label}>08 / QUESTIONS</p><h2 className={head}>{ar?'أسئلة قبل الدراسة':'Before the assessment'}</h2></div><div>{d.faq.map(f=><details key={f.question.en} className="border-b border-[#A8B7A3] py-5"><summary className="cursor-pointer font-bold leading-7">{f.question[locale]}</summary><p className="mt-4 text-sm leading-8">{f.answer[locale]}</p></details>)}</div></div></section>
-<section data-sector-specific="assessment-cta" className={wrap+' py-16'}><div className="bg-[#12352D] text-white p-8 sm:p-12 flex flex-col lg:flex-row gap-7 lg:items-center justify-between"><div><h2 className="text-3xl sm:text-5xl font-black">{ar?'ابدأ بتحديد نطاق مشروعك':'Define your project scope'}</h2><p className="mt-5 text-sm leading-8 text-[#E0E9DB]">{ar?'طلب دراسة مبدئي دون رفع مستندات أو أسعار أو معاينة مؤكدة.':'A preliminary enquiry, without document uploads, rates or a confirmed survey.'}</p></div><Link href={voltPath(locale,'assessment')} className="shrink-0 bg-[#C7DA59] text-[#12352D] px-6 py-4 font-bold text-sm inline-flex gap-3 items-center">{ar?'طلب دراسة':'Request assessment'}<ArrowUpRight size={18}/></Link></div></section>
-</div>;}
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import {
+  ArrowUpRight,
+  Zap,
+  Factory,
+  House,
+  BatteryCharging,
+  Sun,
+  ClipboardCheck,
+  ChartNoAxesCombined,
+  ShieldCheck,
+  Wrench
+} from 'lucide-react';
+import { VOLTEDGE, voltPath } from '@/lib/verticals/solar-energy/data';
+import { VoltEdgeYieldCalibrator } from './VoltEdgeYieldCalibrator';
+import { VoltEdgeEngineeringStandards } from './VoltEdgeEngineeringStandards';
+import { VoltEdgeVisualAtelier } from './VoltEdgeVisualAtelier';
+
+export default async function VoltHome({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  if (locale !== 'ar' && locale !== 'en') notFound();
+  const ar = locale === 'ar',
+    d = VOLTEDGE;
+  const wrap = 'max-w-7xl mx-auto px-5 sm:px-8',
+    label = 'text-xs font-bold tracking-[.17em] uppercase text-[#264D43]',
+    head = 'mt-4 font-black text-3xl sm:text-5xl tracking-tight leading-tight text-[#12352D]',
+    cta = 'inline-flex items-center gap-3 bg-[#12352D] text-white px-6 py-4 font-bold text-sm hover:bg-[#183F36] transition-colors';
+
+  const photo = (i: number) => {
+    const m = d.media[i];
+    if (!m) return null;
+    return (
+      <figure className="border border-[#D2DBCC] bg-white">
+        <img
+          src={m.url}
+          alt={m.alt[locale]}
+          className="w-full h-[300px] sm:h-[430px] object-cover"
+          loading={i === 0 ? 'eager' : 'lazy'}
+        />
+        <figcaption className="bg-[#12352D] text-white px-4 py-3 text-xs leading-6">
+          <a href={m.source} className="underline">
+            {m.credit}
+          </a>{' '}
+          ·{' '}
+          <a href={m.licenseUrl} className="underline">
+            {m.license}
+          </a>{' '}
+          · {ar ? 'صورة مستقلة، اقتصاص للعرض' : 'Independent editorial image, display crop'}
+        </figcaption>
+      </figure>
+    );
+  };
+
+  return (
+    <div>
+      {/* 01: Hero */}
+      <section data-sector-specific="energy-hero" className="bg-[#12352D] text-white">
+        <div className={wrap + ' grid gap-9 lg:grid-cols-[.95fr_1.05fr] items-center py-14 lg:py-24'}>
+          <div>
+            <p className="text-[#C7DA59] text-xs font-bold tracking-widest">VOLTEDGE / ENERGY ENGINEERING</p>
+            <h1 className="mt-6 text-[clamp(2.8rem,5.8vw,6.3rem)] font-black leading-[1.09] tracking-tight">
+              {ar ? (
+                <>
+                  طاقة تبدأ
+                  <span className="block text-[#C7DA59]">بدراسة صحيحة.</span>
+                </>
+              ) : (
+                <>
+                  Energy starts
+                  <span className="block text-[#C7DA59]">with a plan.</span>
+                </>
+              )}
+            </h1>
+            <p className="mt-6 text-[#E0E9DB] leading-9 max-w-xl text-base">
+              {ar
+                ? 'استكشف حلول الطاقة الشمسية والتخزين للمنازل والمنشآت والمزارع، وحدد نطاق دراسة هندسية تناسب احتياجك الفعلي دون وعود مضللة.'
+                : 'Explore solar and storage for homes, businesses and farms. Define an assessment scope around actual energy needs.'}
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href={voltPath(locale, 'assessment')}
+                className="bg-[#C7DA59] text-[#12352D] px-6 py-4 inline-flex items-center gap-3 font-bold text-sm hover:bg-white transition-colors"
+              >
+                {ar ? 'ابدأ دراسة مشروعك' : 'Start your assessment'}
+                <ArrowUpRight size={20} />
+              </Link>
+              <Link
+                href={voltPath(locale, 'solutions')}
+                className="inline-flex items-center border border-[#A6B8A5] text-white hover:bg-white/10 px-6 py-4 font-bold text-sm transition-colors"
+              >
+                {ar ? 'استكشف الحلول' : 'Explore solutions'}
+              </Link>
+            </div>
+          </div>
+          {photo(0)}
+        </div>
+      </section>
+
+      {/* 02: Intake Strip */}
+      <section data-sector-specific="site-intake-strip" className="bg-[#C7DA59] text-[#12352D]">
+        <div className={wrap + ' py-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-4'}>
+          {(ar
+            ? ['نوع الموقع', 'نطاق الاستهلاك الشهري', 'حالة شبكة الكهرباء', 'المساحة المتاحة']
+            : ['Site type', 'Monthly usage band', 'Grid conditions', 'Available space']
+          ).map((x, i) => (
+            <div key={x} className="flex items-center gap-3 border-s border-[#12352D] ps-4">
+              <span className="font-mono text-sm font-bold">0{i + 1}</span>
+              <h2 className="font-bold text-sm">{x}</h2>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 03: Signature Component: Yield & Capacity Calibrator */}
+      <VoltEdgeYieldCalibrator locale={locale} />
+
+      {/* 04: Solution Portfolio */}
+      <section data-sector-specific="solution-catalogue" className={wrap + ' py-16 sm:py-24'}>
+        <p className={label}>01 / SOLUTION PORTFOLIO</p>
+        <h2 className={head}>{ar ? 'حلول لكل نطاق تشغيل' : 'Solutions for different operating needs'}</h2>
+        <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {d.services.map((s) => (
+            <Link
+              key={s.slug}
+              href={voltPath(locale, 'solutions/' + s.slug)}
+              className="bg-white border border-[#D2DBCC] p-6 hover:border-[#12352D] transition-colors"
+            >
+              <div className="flex justify-between items-center">
+                <span className="font-mono text-xs font-bold text-[#264D43]">
+                  VE / {String(s.rank).padStart(2, '0')}
+                </span>
+                <ArrowUpRight size={20} className="text-[#12352D]" />
+              </div>
+              <h3 className="mt-5 font-black text-xl text-[#12352D]">{s.title[locale]}</h3>
+              <p className="mt-4 text-sm text-[#334155] leading-8">{s.summary[locale]}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* 05: Signature Component: Engineering Standards */}
+      <VoltEdgeEngineeringStandards locale={locale} />
+
+      {/* 06: Sector Fit */}
+      <section data-sector-specific="sector-fit" className="bg-[#E0E9DB] py-16">
+        <div className={wrap + ' grid gap-8 lg:grid-cols-[1fr_1fr] items-center'}>
+          <div>
+            <p className={label}>02 / SECTOR FIT</p>
+            <h2 className={head}>{ar ? 'الموقع والاستهلاك يحددان نقطة البداية' : 'Site and demand shape the starting point'}</h2>
+            <div className="mt-7 grid gap-4 sm:grid-cols-2">
+              {[
+                { Icon: House, a: 'المنازل', e: 'Homes' },
+                { Icon: Factory, a: 'المصانع', e: 'Factories' },
+                { Icon: Sun, a: 'المزارع', e: 'Farms' },
+                { Icon: Zap, a: 'المنشآت التجارية', e: 'Businesses' }
+              ].map(({ Icon, a, e }) => (
+                <div className="bg-white border border-[#D2DBCC] p-5" key={e}>
+                  <Icon size={27} className="text-[#264D43]" />
+                  <h3 className="mt-4 font-bold text-[#12352D]">{ar ? a : e}</h3>
+                </div>
+              ))}
+            </div>
+            <Link href={voltPath(locale, 'sectors')} className={cta + ' mt-6'}>
+              {ar ? 'قارن القطاعات' : 'Compare sectors'}
+              <ArrowUpRight size={18} />
+            </Link>
+          </div>
+          {photo(1)}
+        </div>
+      </section>
+
+      {/* 07: Signature Component: Visual Photographic Archive & Provenance */}
+      <VoltEdgeVisualAtelier locale={locale} />
+
+      {/* 08: System Options */}
+      <section data-sector-specific="grid-storage-topology" className={wrap + ' py-16'}>
+        <p className={label}>03 / SYSTEM OPTIONS</p>
+        <h2 className={head}>{ar ? 'الشبكة والتخزين: خيارات تحتاج دراسة' : 'Grid and storage: options to evaluate'}</h2>
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
+          {[
+            {
+              Icon: Sun,
+              a: 'توليد شمسي',
+              e: 'Solar generation',
+              ad: 'تقييم المساحة والإشعاع والظلال.',
+              ed: 'Assess space, solar resource and shading.'
+            },
+            {
+              Icon: BatteryCharging,
+              a: 'تخزين واحتياط',
+              e: 'Storage & backup',
+              ad: 'تحديد الأحمال الحرجة ومدتها.',
+              ed: 'Define critical loads and continuity needs.'
+            },
+            {
+              Icon: Zap,
+              a: 'نظام هجين',
+              e: 'Hybrid options',
+              ad: 'مراجعة الشبكة والتوافق الهندسي.',
+              ed: 'Review grid and engineering compatibility.'
+            }
+          ].map(({ Icon, a, e, ad, ed }) => (
+            <article className="border border-[#D2DBCC] p-7 bg-white" key={e}>
+              <Icon size={30} className="text-[#264D43]" />
+              <h3 className="mt-5 text-xl font-black text-[#12352D]">{ar ? a : e}</h3>
+              <p className="mt-4 text-sm text-[#334155] leading-8">{ar ? ad : ed}</p>
+            </article>
+          ))}
+        </div>
+        <p className="mt-5 text-sm text-[#334155] leading-8">
+          {ar
+            ? 'لا تمثل هذه المقارنة مخططاً كهربائياً أو توصية بقدرة محددة.'
+            : 'This comparison is not an electrical diagram or sizing recommendation.'}
+        </p>
+      </section>
+
+      {/* 09: Project Pathway */}
+      <section data-sector-specific="engineering-stages" className="bg-[#12352D] text-white py-16">
+        <div className={wrap}>
+          <p className="text-[#C7DA59] text-xs font-bold tracking-widest">04 / PROJECT PATHWAY</p>
+          <h2 className="mt-4 font-black text-3xl sm:text-5xl tracking-tight leading-tight text-white">
+            {ar ? 'من البيانات إلى التسليم' : 'From inputs to handover'}
+          </h2>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {(ar
+              ? ['مراجعة الاستهلاك', 'معاينة هندسية', 'تصميم وموافقات', 'اختبار وتسليم']
+              : ['Demand review', 'Engineering survey', 'Design & approvals', 'Testing & handover']
+            ).map((x, i) => (
+              <div className="border border-[#6D8770] p-6 bg-[#183F36]" key={x}>
+                <span className="font-mono text-[#C7DA59] text-3xl font-black">0{i + 1}</span>
+                <h3 className="mt-5 font-bold text-xl text-white">{x}</h3>
+              </div>
+            ))}
+          </div>
+          <Link
+            href={voltPath(locale, 'process')}
+            className="mt-8 inline-flex gap-3 bg-[#C7DA59] text-[#12352D] hover:bg-white transition-colors px-6 py-4 font-bold text-sm"
+          >
+            {ar ? 'رحلة المشروع' : 'Project pathway'}
+            <ArrowUpRight size={18} />
+          </Link>
+        </div>
+      </section>
+
+      {/* 10: Feasibility Inputs */}
+      <section data-sector-specific="feasibility-inputs" className={wrap + ' py-16 grid lg:grid-cols-[.8fr_1fr] gap-8'}>
+        <div>
+          <ChartNoAxesCombined size={34} className="text-[#264D43]" />
+          <p className={label + ' mt-5'}>05 / FEASIBILITY</p>
+          <h2 className={head}>{ar ? 'جدوى مبنية على بيانات لا وعود' : 'Feasibility based on evidence, not promises'}</h2>
+          <p className="mt-5 leading-8 text-[#334155] text-sm">
+            {ar
+              ? 'تعتمد النتائج على استهلاك حقيقي وظروف الموقع والتعرفة والتكلفة. لا توجد نسبة وفر أو فترة استرداد مضمونة.'
+              : 'Results depend on measured demand, site conditions, tariffs and costs. No guaranteed saving or payback.'}
+          </p>
+          <Link className={cta + ' mt-6'} href={voltPath(locale, 'feasibility')}>
+            {ar ? 'افهم الجدوى' : 'Understand feasibility'}
+            <ArrowUpRight size={18} />
+          </Link>
+        </div>
+        <div className="bg-white border border-[#D2DBCC] p-7 space-y-5">
+          {(ar
+            ? ['منحنى استهلاك فعلي', 'المساحة والظلال', 'التعرفة والتكاليف', 'سيناريوهات ومخاطر التشغيل']
+            : ['Measured load profile', 'Usable area and shading', 'Tariffs and costs', 'Scenarios and operating risks']
+          ).map((x) => (
+            <p key={x} className="flex gap-3 text-sm font-bold text-[#182720] leading-8">
+              <ClipboardCheck size={22} className="text-[#264D43] shrink-0" />
+              {x}
+            </p>
+          ))}
+        </div>
+      </section>
+
+      {/* 11: Operations Lifecycle */}
+      <section data-sector-specific="operations-lifecycle" className="bg-[#E0E9DB] py-16">
+        <div className={wrap + ' grid lg:grid-cols-2 gap-8 items-center'}>
+          <div>
+            <Wrench size={35} className="text-[#12352D]" />
+            <p className={label + ' mt-5'}>06 / OPERATIONS</p>
+            <h2 className={head}>{ar ? 'الأداء يحتاج متابعة وصيانة' : 'Performance needs ongoing care'}</h2>
+            <p className="mt-5 leading-8 text-[#334155] text-sm">
+              {ar
+                ? 'خطط لمراجعة البيانات التشغيلية والضمانات والسلامة بواسطة متخصصين مؤهلين.'
+                : 'Plan qualified review of operating data, warranties and safety.'}
+            </p>
+            <Link href={voltPath(locale, 'maintenance')} className={cta + ' mt-7'}>
+              {ar ? 'دليل الصيانة' : 'Maintenance guide'}
+              <ArrowUpRight size={18} />
+            </Link>
+          </div>
+          <div className="bg-[#12352D] text-white p-8">
+            <ShieldCheck size={34} className="text-[#C7DA59]" />
+            <h3 className="mt-5 text-2xl font-black text-white">{ar ? 'السلامة أولاً' : 'Safety first'}</h3>
+            <p className="mt-5 text-sm leading-8 text-[#E0E9DB]">
+              {ar
+                ? 'لا تعمل على منظومة كهربائية دون مقدم خدمة مؤهل.'
+                : 'Do not work on an electrical system without a qualified provider.'}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 12: Technical Field Notes */}
+      <section data-sector-specific="technical-guides" className={wrap + ' py-16'}>
+        <p className={label}>07 / FIELD NOTES</p>
+        <h2 className={head}>{ar ? 'دليل القرار قبل التنفيذ' : 'Field notes before commitment'}</h2>
+        <div className="mt-8 grid md:grid-cols-3 gap-4">
+          {d.articles.map((a) => (
+            <Link
+              key={a.slug}
+              href={voltPath(locale, 'guides/' + a.slug)}
+              className="bg-white border border-[#D2DBCC] p-7 hover:border-[#12352D] transition-colors"
+            >
+              <h3 className="text-xl font-black text-[#12352D]">{a.title[locale]}</h3>
+              <p className="mt-5 text-sm text-[#334155] leading-8">{a.summary[locale]}</p>
+              <ArrowUpRight className="mt-5 text-[#12352D]" size={20} />
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* 13: Solar FAQ */}
+      <section data-sector-specific="solar-faq" className="bg-[#E0E9DB] py-16">
+        <div className={wrap + ' grid lg:grid-cols-[.6fr_1fr] gap-8'}>
+          <div>
+            <p className={label}>08 / QUESTIONS</p>
+            <h2 className={head}>{ar ? 'أسئلة قبل الدراسة' : 'Before the assessment'}</h2>
+          </div>
+          <div>
+            {d.faq.map((f) => (
+              <details key={f.question.en} className="border-b border-[#A8B7A3] py-5">
+                <summary className="cursor-pointer font-bold text-[#12352D] leading-7">
+                  {f.question[locale]}
+                </summary>
+                <p className="mt-4 text-sm text-[#334155] leading-8">{f.answer[locale]}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 14: Final CTA */}
+      <section data-sector-specific="assessment-cta" className={wrap + ' py-16'}>
+        <div className="bg-[#12352D] text-white p-8 sm:p-12 flex flex-col lg:flex-row gap-7 lg:items-center justify-between">
+          <div>
+            <h2 className="text-3xl sm:text-5xl font-black text-white">
+              {ar ? 'ابدأ بتحديد نطاق مشروعك' : 'Define your project scope'}
+            </h2>
+            <p className="mt-5 text-sm leading-8 text-[#E0E9DB]">
+              {ar
+                ? 'طلب دراسة مبدئي دون رفع مستندات أو أسعار أو معاينة مؤكدة.'
+                : 'A preliminary enquiry, without document uploads, rates or a confirmed survey.'}
+            </p>
+          </div>
+          <Link
+            href={voltPath(locale, 'assessment')}
+            className="shrink-0 bg-[#C7DA59] text-[#12352D] hover:bg-white transition-colors px-6 py-4 font-bold text-sm inline-flex gap-3 items-center"
+          >
+            {ar ? 'طلب دراسة' : 'Request assessment'}
+            <ArrowUpRight size={18} />
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+}
