@@ -427,7 +427,7 @@ export default function TalentyxHeadcountCalibrator({ locale }: TalentyxHeadcoun
             {/* Action CTA */}
             <div className="pt-2">
               <Link
-                href={talentPath(locale, 'hiring-brief')}
+                href={talentPath(isAr ? 'ar' : 'en', 'hiring-brief')}
                 className="w-full inline-flex items-center justify-center gap-3 bg-[#3549A5] hover:bg-[#2A3A85] text-white py-4 px-6 rounded-xl font-bold text-sm shadow-md transition-colors"
               >
                 <span>{isAr ? 'بدء صياغة متطلبات التوظيف' : 'Proceed With Hiring Brief'}</span>
